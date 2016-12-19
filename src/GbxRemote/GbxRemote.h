@@ -8,6 +8,7 @@
 
 #include "GbxStructs.h"
 #include "GbxMessage.h"
+#include "GbxParameters.h"
 
 //* GbxRemote
 /**

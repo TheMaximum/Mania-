@@ -1,17 +1,21 @@
 #include "GbxMessage.h"
 #include "GbxParameter.h"
 
-GbxMessage::GbxMessage(std::string method, std::vector<void*>* params = new std::vector<void*>())
+#include <iostream>
+
+GbxMessage::GbxMessage(std::string method, GbxParameters* parameters = NULL)
     : method(method)
 {
     xml  = "<?xml version=\"1.0\" encoding=\"utf-8\" ?>";
     xml += "<methodCall>";
     xml += "<methodName>" + method + "</methodName>";
     xml += "<params>";
-    for(int paramId = 0; paramId < params->size(); paramId++)
+    for(int paramId = 0; paramId < parameters->GetParameters()->size(); paramId++)
     {
-        GbxParameter param = new GbxParameter(params->at(paramId));
-        xml += param.GetXml();
+        xml += "<param><value>";
+        GbxParameter* param = new GbxParameter(parameters->GetParameters()->at(paramId));
+        xml += param->GetXml();
+        xml += "</value></param>";
     }
     xml += "</params>";
     xml += "</methodCall>";

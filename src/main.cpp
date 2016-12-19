@@ -6,6 +6,7 @@
 #include "Config/Config.h"
 #include "Config/Version.h"
 #include "GbxRemote/GbxRemote.h"
+#include "GbxRemote/GbxParameters.h"
 
 int main(int argc, char *argv[])
 {
@@ -17,12 +18,15 @@ int main(int argc, char *argv[])
     {
         std::cout << "Current protocol: GBXRemote " << server.GetProtocol() << std::endl;
 
-        server.Query(new GbxMessage("Authenticate", new std::vector<void*> { &config->Server->username, &config->Server->password }));
+        GbxParameters* params = new GbxParameters();
+        params->Put(&config->Server->username);
+        params->Put(&config->Server->password);
+        server.Query(new GbxMessage("Authenticate", params));
         std::cout << "Authenticate: " << server.GetResponse() << std::endl;
 
-        std::string message = "$fffMania++$ff0 is now online!";
+        /*std::string message = "$fffMania++$ff0 is now online!";
         server.Query(new GbxMessage("ChatSendServerMessage", new std::vector<void*> { &message }));
-        std::cout << "ChatSendServerMessage: " << server.GetResponse() << std::endl;
+        std::cout << "ChatSendServerMessage: " << server.GetResponse() << std::endl;*/
 
         /*GbxMessage* getMethods = new GbxMessage("system.listMethods");
         if(server.Query(getMethods))

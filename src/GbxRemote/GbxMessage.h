@@ -4,6 +4,8 @@
 #include <string>
 #include <vector>
 
+#include "GbxParameters.h"
+
 //* GbxMessage
 /**
  * \brief XML-fies the message for communication with the server.
@@ -17,7 +19,7 @@ public:
      * \param method Server method name.
      * \param params Params which belong to the method.
      */
-    GbxMessage(std::string method, std::vector<void*>* params);
+    GbxMessage(std::string method, GbxParameters* parameters);
 
     /*!
      * \brief Returns the created XML message.

@@ -87,7 +87,7 @@ bool TcpClient::Send(std::string data)
     memcpy(&message[8], messageData, dataLength);
     message[7] = 0x80;
 
-    Hex::Print(message, messageLength);
+    //Hex::Print(message, messageLength);
 
     int bytes_to_write = messageLength;
     while(bytes_to_write > 0)
