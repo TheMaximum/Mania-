@@ -1,4 +1,5 @@
-#include "GbxRemote.h"
+#include "GbxMessage.h"
+#include "GbxParameter.h"
 
 GbxMessage::GbxMessage(std::string method, std::vector<void*>* params = new std::vector<void*>())
     : method(method)
@@ -9,14 +10,6 @@ GbxMessage::GbxMessage(std::string method, std::vector<void*>* params = new std:
     xml += "<params>";
     for(int paramId = 0; paramId < params->size(); paramId++)
     {
-        /*std::string* paramPtr = static_cast<std::string*>(params->at(paramId));
-        std::string  param = *paramPtr;
-        std::cout << "PARAM: " << param << std::endl;
-
-        xml += "<param><value><string>";
-        xml += param;
-        xml += "</string></value></param>";*/
-
         GbxParameter param = new GbxParameter(params->at(paramId));
         xml += param.GetXml();
     }

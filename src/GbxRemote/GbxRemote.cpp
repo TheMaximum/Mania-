@@ -5,11 +5,11 @@ bool GbxRemote::Init(int port)
     return InitWithIp("localhost", port);
 }
 
-bool GbxRemote::InitWithIp(std::string host, int port)
+bool GbxRemote::InitWithIp(std::string address, int port)
 {
-    server.conn(host, port);
-    char* data = server.receive(4);
-    const first_response* response = reinterpret_cast<const first_response*>(data);
+    server.Connect(address, port);
+    char* data = server.Receive(4);
+    const GbxFirstResponse* response = reinterpret_cast<const GbxFirstResponse*>(data);
     int size = (int)response->size;
     if(size > 64)
     {
@@ -20,7 +20,7 @@ bool GbxRemote::InitWithIp(std::string host, int port)
         return false;
     }
 
-    char* protocolRes = server.receive(size);
+    char* protocolRes = server.Receive(size);
     char protocolResponse[(size+1)];
     strcpy(protocolResponse, protocolRes);
 
@@ -48,7 +48,7 @@ bool GbxRemote::InitWithIp(std::string host, int port)
 
 void GbxRemote::Terminate()
 {
-    server.close();
+    server.Close();
 }
 
 bool GbxRemote::Query(GbxMessage* query)
@@ -56,7 +56,7 @@ bool GbxRemote::Query(GbxMessage* query)
     currentError = new GbxError();
     currentResponse = NULL;
 
-    if(!server.send_data(query->GetXml()))
+    if(!server.Send(query->GetXml()))
     {
         currentError->number = -32300;
         currentError->message = "transport error - connection interrupted!";
@@ -67,8 +67,8 @@ bool GbxRemote::Query(GbxMessage* query)
     int size = 0;
     do
     {
-        char* data = server.receive(8);
-        const message_response* message = reinterpret_cast<const message_response*>(data);
+        char* data = server.Receive(8);
+        const GbxQueryResponse* message = reinterpret_cast<const GbxQueryResponse*>(data);
         size = message->size;
 
         if(size > (4096*1024))
@@ -81,9 +81,9 @@ bool GbxRemote::Query(GbxMessage* query)
         }
 
         handle = (message->handle & 0x80000000);
-    } while(handle != (server.reqhandle & 0x80000000));
+    } while(handle != (server.RequestHandle & 0x80000000));
 
-    currentResponse = server.receive(size);
+    currentResponse = server.Receive(size);
     return true;
 }
 

@@ -1,70 +1,73 @@
 #ifndef GBXREMOTE_H_
 #define GBXREMOTE_H_
 
-#include "../Socket/Socket.h"
+#include "../Socket/TcpClient.h"
 #include <sstream>
 #include <bitset>
 #include <vector>
 
-struct first_response
-{
-    short size;
-};
+#include "GbxStructs.h"
+#include "GbxMessage.h"
 
-struct message_response
-{
-    short size;
-    long handle;
-};
-
-struct GbxError
-{
-    int number = 0;
-    std::string message;
-};
-
-class GbxParameter
-{
-public:
-    GbxParameter(void*);
-    std::string GetXml();
-
-private:
-    std::string data;
-    std::string type;
-    std::string calculateType(void*);
-};
-
-class GbxMessage
-{
-public:
-    GbxMessage(std::string method, std::vector<void*>* params);
-    std::string GetXml();
-
-private:
-    std::string method;
-    std::string xml;
-};
-
+//* GbxRemote
+/**
+ * \brief Handles communication with the ManiaPlanet server.
+ */
 class GbxRemote
 {
 public:
+    /*!
+     * \brief Initializes connection with the local server.
+     *
+     * \param port     XML-RPC port of the server.
+     */
     bool Init(int port);
-    bool InitWithIp(std::string host, int port);
+
+    /*!
+     * \brief Initializes connection with the server.
+     *
+     * \param address  Address of the server.
+     * \param port     XML-RPC port of the server.
+     */
+    bool InitWithIp(std::string address, int port);
+
+    /*!
+     * \brief Closes the connection with the server.
+     */
     void Terminate();
 
+    /*!
+     * \brief Sends a GbxMessage to the server.
+     *
+     * Returns whether the query was successfully sent.
+     *
+     * \param query    Query to be send.
+     */
     bool Query(GbxMessage* query);
+
+    /*!
+     * \brief Returns the response from the server.
+     */
     char* GetResponse();
 
+    /*!
+     * \brief Returns the current server error.
+     *
+     * Returns NULL when there currently is no error.
+     */
     GbxError* GetCurrentError();
+
+    /*!
+     * \brief Returns the current version number of the server protocol (1 or 2).
+     */
     int GetProtocol();
 
 private:
-    int protocol = 0;
-    tcp_client server;
+    int protocol = 0;                      /**< \brief Protocol version (0 = uninitialized, 1 or 2 = version). */
+    TcpClient server;                      /**< \brief Socket connection with the server. */
 
-    GbxError* currentError = new GbxError;
-    char* currentResponse = NULL;
+    GbxError* currentError = new GbxError; /**< \brief Current server error. */
+    char* currentResponse = NULL;          /**< \brief Current server response. */
 };
 
 #endif // GBXREMOTE_H_

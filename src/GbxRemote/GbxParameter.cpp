@@ -1,23 +1,11 @@
-/*class GbxParameter
-{
-public:
-    GbxParameter(void*);
-    std::string GetXml();
-
-private:
-    std::string data;
-    std::string type;
-    std::string calculateType();
-};*/
-
-#include "GbxRemote.h"
+#include "GbxParameter.h"
 
 GbxParameter::GbxParameter(void* param)
 {
     std::string* paramPtr = static_cast<std::string*>(param);
     data = *paramPtr;
 
-    type = calculateType(param);
+    calculateType(param);
 }
 
 std::string GbxParameter::GetXml()
@@ -30,7 +18,7 @@ std::string GbxParameter::GetXml()
     return xml;
 }
 
-std::string GbxParameter::calculateType(void* param)
+void GbxParameter::calculateType(void* param)
 {
     /*if(dynamic_cast<bool*>(param) != NULL)
     {
@@ -45,5 +33,5 @@ std::string GbxParameter::calculateType(void* param)
         return "double";
     }*/
 
-    return "string";
+    type = "string";
 }

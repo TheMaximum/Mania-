@@ -8,4 +8,6 @@
 * ```./build.sh```
 
 ## Running ##
+* Move ```config.dist.yaml``` to ```config.yaml```
+* Edit the configuration file with the server information
 * ```./build/Mania++```

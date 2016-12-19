@@ -1,18 +1,18 @@
 /**
     C++ client example using sockets
 */
-#include "Socket.h"
+#include "TcpClient.h"
 
 using namespace std;
 
-tcp_client::tcp_client()
+TcpClient::TcpClient()
 {
     sock = -1;
     port = 0;
     address = "";
 }
 
-void tcp_client::close()
+void TcpClient::Close()
 {
     shutdown(sock, 2);
 }
@@ -20,21 +20,20 @@ void tcp_client::close()
 /**
     Connect to a host on a certain port number
 */
-bool tcp_client::conn(string address , int port)
+bool TcpClient::Connect(std::string address, int port)
 {
     //create socket if it is not already created
     if(sock == -1)
     {
         //Create socket
         sock = socket(AF_INET , SOCK_STREAM , 0);
-        if (sock == -1)
+        if(sock == -1)
         {
             perror("Could not create socket");
         }
 
-        cout<<"Socket created\n";
+        std::cout << "Socket created" << std::endl;
     }
-    else    {   /* OK , nothing */  }
 
     //setup address structure
     if(inet_addr(address.c_str()) == -1)
@@ -43,59 +42,58 @@ bool tcp_client::conn(string address , int port)
         struct in_addr **addr_list;
 
         //resolve the hostname, its not an ip address
-        if ( (he = gethostbyname( address.c_str() ) ) == NULL)
+        if((he = gethostbyname(address.c_str())) == NULL)
         {
             //gethostbyname failed
             herror("gethostbyname");
-            cout<<"Failed to resolve hostname\n";
+            std::cout << "Failed to resolve hostname" << std::endl;
 
             return false;
         }
 
         //Cast the h_addr_list to in_addr , since h_addr_list also has the ip address in long format only
-        addr_list = (struct in_addr **) he->h_addr_list;
+        addr_list = (struct in_addr **)he->h_addr_list;
 
         for(int i = 0; addr_list[i] != NULL; i++)
         {
             //strcpy(ip , inet_ntoa(*addr_list[i]) );
             server.sin_addr = *addr_list[i];
 
-            cout<<address<<" resolved to "<<inet_ntoa(*addr_list[i])<<endl;
+            std::cout << address << " resolved to " << inet_ntoa(*addr_list[i]) << std::endl;
 
             break;
         }
     }
-
-    //plain ip address
     else
     {
-        server.sin_addr.s_addr = inet_addr( address.c_str() );
+        //plain ip address
+        server.sin_addr.s_addr = inet_addr(address.c_str());
     }
 
     server.sin_family = AF_INET;
-    server.sin_port = htons( port );
+    server.sin_port = htons(port);
 
     //Connect to remote server
-    if (connect(sock , (struct sockaddr *)&server , sizeof(server)) < 0)
+    if(connect(sock, (struct sockaddr *)&server, sizeof(server)) < 0)
     {
         perror("connect failed. Error");
         return 1;
     }
 
-    cout<<"Connected\n";
+    std::cout << "Connected" << std::endl;
     return true;
 }
 
-bool tcp_client::send_data(string data)
+bool TcpClient::Send(std::string data)
 {
-    reqhandle++;
+    RequestHandle++;
 
     const char* messageData = data.c_str();
     unsigned long dataLength = (strlen(messageData));
     unsigned long messageLength = (dataLength + 8);
     char message[messageLength];
     memcpy(&message[0], &dataLength, 4);
-    memcpy(&message[4], &reqhandle, 4);
+    memcpy(&message[4], &RequestHandle, 4);
     memcpy(&message[8], messageData, dataLength);
     message[7] = 0x80;
 
@@ -124,7 +122,7 @@ bool tcp_client::send_data(string data)
 /**
     Receive data from the connected host
 */
-char* tcp_client::receive(int size=512)
+char* TcpClient::Receive(int size = 512)
 {
     char buffer[size];
     char* reply = new char[(size+1)];
