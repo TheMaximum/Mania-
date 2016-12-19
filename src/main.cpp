@@ -22,6 +22,7 @@ int main(int argc, char *argv[])
 
         std::string message = "$fffMania++$ff0 is now online!";
         server.Query(new GbxMessage("ChatSendServerMessage", new std::vector<void*> { &message }));
+        std::cout << "ChatSendServerMessage: " << server.GetResponse() << std::endl;
 
         /*GbxMessage* getMethods = new GbxMessage("system.listMethods");
         if(server.Query(getMethods))

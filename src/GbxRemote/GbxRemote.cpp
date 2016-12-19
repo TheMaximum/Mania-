@@ -65,8 +65,8 @@ bool GbxRemote::Query(GbxMessage* query)
 
     unsigned long handle = -1;
     int size = 0;
-    do
-    {
+    //do
+    //{
         char* data = server.Receive(8);
         const GbxQueryResponse* message = reinterpret_cast<const GbxQueryResponse*>(data);
         size = message->size;
@@ -80,11 +80,18 @@ bool GbxRemote::Query(GbxMessage* query)
             return false;
         }
 
-        handle = (message->handle & 0x80000000);
-    } while(handle != (server.RequestHandle & 0x80000000));
+    //    handle = (message->handle & 0x80000000);
+    //} while(handle != (server.RequestHandle & 0x80000000));
 
-    currentResponse = server.Receive(size);
-    return true;
+    if(size > 0)
+    {
+        currentResponse = server.Receive(size);
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 GbxError* GbxRemote::GetCurrentError()

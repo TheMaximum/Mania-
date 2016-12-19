@@ -47,6 +47,8 @@ public:
 
     /*!
      * \brief Returns the response from the server.
+     *
+     * \todo Decode received response (xml -> usable values).
      */
     char* GetResponse();
 
