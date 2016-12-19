@@ -19,11 +19,8 @@ bool GbxRemote::InitWithIp(std::string host, int port)
     }
 
     char* protocolRes = server.receive(size);
-    std::cout << "protocolRes: " << protocolRes << std::endl;
-
     char protocolResponse[(size+1)];
     strcpy(protocolResponse, protocolRes);
-    std::cout << "protocolResponse: " << protocolResponse << std::endl;
 
     if(strcmp(protocolResponse, "GBXRemote 1") == 0)
     {
@@ -54,6 +51,9 @@ void GbxRemote::Terminate()
 
 bool GbxRemote::Query(GbxMessage* query)
 {
+    currentError = new GbxError();
+    currentResponse = NULL;
+
     if(!server.send_data(query->GetXml()))
     {
         currentError->number = -32300;
@@ -68,9 +68,6 @@ bool GbxRemote::Query(GbxMessage* query)
         char* data = server.receive(8);
         const message_response* message = reinterpret_cast<const message_response*>(data);
         size = message->size;
-        std::cout << "Size: " << size << std::endl;
-        std::cout << "Handle: " << (message->handle & 0x80000000) << std::endl;
-        std::cout << "Current handle: " << (server.reqhandle & 0x80000000) << std::endl;
 
         if(size > (4096*1024))
         {
@@ -90,6 +87,11 @@ bool GbxRemote::Query(GbxMessage* query)
 
 GbxError* GbxRemote::GetCurrentError()
 {
+    if(currentError->number == 0)
+    {
+        return NULL;
+    }
+
     return currentError;
 }
 

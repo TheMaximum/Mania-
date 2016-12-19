@@ -20,8 +20,7 @@ int main(int argc, char *argv[])
     {
         std::cout << "Current protocol: GBXRemote " << server.GetProtocol() << std::endl;
 
-        GbxMessage* authenticate = new GbxMessage("Authenticate", new std::vector<void*> { &login, &password });
-        server.Query(authenticate);
+        server.Query(new GbxMessage("Authenticate", new std::vector<void*> { &login, &password }));
         std::cout << "Authenticate: " << server.GetResponse() << std::endl;
 
         std::string message = "$fffMania++$ff0 is now online!";

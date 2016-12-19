@@ -19,7 +19,7 @@ struct message_response
 
 struct GbxError
 {
-    int number;
+    int number = 0;
     std::string message;
 };
 
