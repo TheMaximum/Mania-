@@ -14,7 +14,9 @@ bool GbxRemote::InitWithIp(std::string host, int port)
     if(size > 64)
     {
         currentError->number = -32300;
-        currentError->message = "transport error - wrong lowlevel protocol header";
+        std::stringstream messageStream;
+        messageStream << "transport error - wrong lowlevel protocol header (" << size << ")";
+        currentError->message = messageStream.str();
         return false;
     }
 

@@ -1,0 +1,7 @@
+config:
+    server:
+        address: '***'
+        port: 5000
+        authentication:
+            username: 'SuperAdmin'
+            password: '***'

@@ -16,7 +16,9 @@ configure_file (
 )
 
 include_directories("${PROJECT_BINARY_DIR}")
+link_directories(/usr/local/lib)
 
 file(GLOB_RECURSE SOURCES src/*.cpp)
 
 add_executable(Mania++ ${SOURCES})
+target_link_libraries(Mania++ yaml-cpp)

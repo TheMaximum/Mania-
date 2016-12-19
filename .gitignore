@@ -28,6 +28,12 @@
 *.out
 *.app
 
+# Build directory
 build/
+
+# Documentation directories
 doc/html/
 doc/latex/
+
+# Configuration file
+config.yaml

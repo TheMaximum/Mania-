@@ -8,7 +8,7 @@
 
 struct first_response
 {
-    long size;
+    short size;
 };
 
 struct message_response
