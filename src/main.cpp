@@ -6,7 +6,9 @@
 #include "Config/Version.h"
 #include "GbxRemote/GbxRemote.h"
 
-std::string login = "***";
+std::string host     = "***";
+int         port     = 5000;
+std::string login    = "SuperAdmin";
 std::string password = "***";
 
 int main(int argc, char *argv[])
@@ -14,11 +16,10 @@ int main(int argc, char *argv[])
     std::cout << VERSION_MAJOR << "." << VERSION_MINOR << std::endl;
 
     GbxRemote server;
-    if(server.InitWithIp("***", 5000))
+    if(server.InitWithIp(host, port))
     {
         std::cout << "Current protocol: GBXRemote " << server.GetProtocol() << std::endl;
 
-        //std::vector<void*> params((char*)"SuperAdmin", "kkq=F%4q^H5!#_B");
         GbxMessage* authenticate = new GbxMessage("Authenticate", new std::vector<void*> { &login, &password });
         server.Query(authenticate);
         std::cout << "Authenticate: " << server.GetResponse() << std::endl;

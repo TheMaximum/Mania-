@@ -7,7 +7,7 @@ bool GbxRemote::Init(int port)
 
 bool GbxRemote::InitWithIp(std::string host, int port)
 {
-    server.conn("178.63.88.110", 5090);
+    server.conn(host, port);
     char* data = server.receive(4);
     const first_response* response = reinterpret_cast<const first_response*>(data);
     int size = (int)response->size;
@@ -18,8 +18,12 @@ bool GbxRemote::InitWithIp(std::string host, int port)
         return false;
     }
 
+    char* protocolRes = server.receive(size);
+    std::cout << "protocolRes: " << protocolRes << std::endl;
+
     char protocolResponse[(size+1)];
-    strcpy(protocolResponse, server.receive(size));
+    strcpy(protocolResponse, protocolRes);
+    std::cout << "protocolResponse: " << protocolResponse << std::endl;
 
     if(strcmp(protocolResponse, "GBXRemote 1") == 0)
     {
@@ -34,7 +38,9 @@ bool GbxRemote::InitWithIp(std::string host, int port)
     else
     {
         currentError->number = -32300;
-        currentError->message = "transport error - wrong lowlevel protocol version";
+        std::stringstream messageStream;
+        messageStream << "transport error - wrong lowlevel protocol version (" << protocolResponse << ")";
+        currentError->message = messageStream.str();
         return false;
     }
 

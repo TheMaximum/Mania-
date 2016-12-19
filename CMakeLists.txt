@@ -1,6 +1,8 @@
 cmake_minimum_required (VERSION 2.6)
 project (Mania++)
 
+add_definitions(-std=c++11)
+
 set (PROJECT_SOURCE_DIR ${PROJECT_SOURCE_DIR}/src)
 
 set (VERSION_MAJOR 0)

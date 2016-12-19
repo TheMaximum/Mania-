@@ -142,39 +142,7 @@ char* tcp_client::receive(int size=512)
         bytes_received += response;
     }
 
-    reply = buffer;
+    strcpy(reply, buffer);
     reply[size] = '\0';
     return reply;
 }
-
-/*char* tcp_client::receive(int size=512)
-{
-    char buffer[size];
-    char* reply = new char[(size+1)];
-    //int bytes_received = 0;
-
-    //Receive a reply from the server
-    //while()
-    int response = recv(sock, buffer, sizeof(buffer), 0);
-    if(response < 0)
-    {
-        std::cout << "recv failed " << response << std::endl;
-    }
-
-    reply = buffer;
-    reply[size] = '\0';
-    return reply;
-}*/
-
-/*std::string tcp_client::receive_in_chunks(int size)
-{
-    int bytes_received = 0;
-    std::string message = "";
-
-    while(bytes_received < size)
-    {
-
-    }
-
-    return "";
-}*/

@@ -13,7 +13,7 @@ struct first_response
 
 struct message_response
 {
-    int size;
+    short size;
     long handle;
 };
 
