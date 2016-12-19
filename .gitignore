@@ -12,6 +12,7 @@
 *.so
 *.dylib
 *.dll
+lib/yaml/build/
 
 # Fortran module files
 *.mod
