@@ -27,6 +27,7 @@
 *.exe
 *.out
 *.app
+Mania++
 
 # Build directory
 build/
