@@ -15,6 +15,10 @@
 //* TcpClient
 /**
  * \brief Socket connection with server.
+ *
+ * Original version of class by Silver Moon.
+ * Last updated on September 11th, 2012
+ * Retrieved from: http://www.binarytides.com/code-a-simple-socket-client-class-in-c/
  */
 class TcpClient
 {

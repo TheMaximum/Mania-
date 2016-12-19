@@ -1,9 +1,4 @@
-/**
-    C++ client example using sockets
-*/
 #include "TcpClient.h"
-
-using namespace std;
 
 TcpClient::TcpClient()
 {
@@ -17,16 +12,13 @@ void TcpClient::Close()
     shutdown(sock, 2);
 }
 
-/**
-    Connect to a host on a certain port number
-*/
 bool TcpClient::Connect(std::string address, int port)
 {
-    //create socket if it is not already created
+    // Create socket if it is not already created
     if(sock == -1)
     {
-        //Create socket
-        sock = socket(AF_INET , SOCK_STREAM , 0);
+        // Create socket
+        sock = socket(AF_INET, SOCK_STREAM, 0);
         if(sock == -1)
         {
             perror("Could not create socket");
@@ -35,28 +27,27 @@ bool TcpClient::Connect(std::string address, int port)
         std::cout << "Socket created" << std::endl;
     }
 
-    //setup address structure
+    // Setup address structure
     if(inet_addr(address.c_str()) == -1)
     {
         struct hostent *he;
         struct in_addr **addr_list;
 
-        //resolve the hostname, its not an ip address
+        // Resolve the hostname, its not an ip address
         if((he = gethostbyname(address.c_str())) == NULL)
         {
-            //gethostbyname failed
+            // gethostbyname failed
             herror("gethostbyname");
             std::cout << "Failed to resolve hostname" << std::endl;
 
             return false;
         }
 
-        //Cast the h_addr_list to in_addr , since h_addr_list also has the ip address in long format only
+        // Cast the h_addr_list to in_addr , since h_addr_list also has the ip address in long format only
         addr_list = (struct in_addr **)he->h_addr_list;
 
         for(int i = 0; addr_list[i] != NULL; i++)
         {
-            //strcpy(ip , inet_ntoa(*addr_list[i]) );
             server.sin_addr = *addr_list[i];
 
             std::cout << address << " resolved to " << inet_ntoa(*addr_list[i]) << std::endl;
@@ -66,14 +57,13 @@ bool TcpClient::Connect(std::string address, int port)
     }
     else
     {
-        //plain ip address
+        // Plain ip address
         server.sin_addr.s_addr = inet_addr(address.c_str());
     }
 
     server.sin_family = AF_INET;
     server.sin_port = htons(port);
 
-    //Connect to remote server
     if(connect(sock, (struct sockaddr *)&server, sizeof(server)) < 0)
     {
         perror("connect failed. Error");
@@ -119,16 +109,12 @@ bool TcpClient::Send(std::string data)
     return true;
 }
 
-/**
-    Receive data from the connected host
-*/
 char* TcpClient::Receive(int size = 512)
 {
     char buffer[size];
     char* reply = new char[(size+1)];
     int bytes_received = 0;
 
-    //Receive a reply from the server
     while(bytes_received < size)
     {
         int response = recv(sock, &buffer[bytes_received], sizeof(buffer) - bytes_received, 0);
