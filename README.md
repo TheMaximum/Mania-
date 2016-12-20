@@ -21,3 +21,12 @@
 
 ## Running ##
 * ```./Mania++```
+
+## Get code documentation for development ##
+_Requires Doxygen to be installed on your system: ```sudo apt-get install doxygen```_
+
+To make it easier to contribute, you can check out the (automatic) documentation.
+To do this, do:
+* ```cd ./doc/```
+* ```doxygen```
+* Open the documentation either in HTML or LaTeX format (in subdirectories)
