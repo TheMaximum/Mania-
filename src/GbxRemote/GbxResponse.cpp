@@ -5,6 +5,12 @@ GbxResponse::GbxResponse()
     data = (char*)"";
 }
 
+GbxResponse::~GbxResponse()
+{
+    delete parameters;
+    parameters = NULL;
+}
+
 void GbxResponse::SetRaw(char* response)
 {
     data = response;

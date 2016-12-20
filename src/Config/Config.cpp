@@ -6,6 +6,12 @@ Config::Config(std::string configFile)
     parseConfig();
 }
 
+Config::~Config()
+{
+    delete Server;
+    Server = NULL;
+}
+
 void Config::parseConfig()
 {
     std::cout << "Loading configuration file '" << configFile << "' ... ";

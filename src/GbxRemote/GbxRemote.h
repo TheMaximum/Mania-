@@ -18,6 +18,11 @@ class GbxRemote
 {
 public:
     /*!
+     * Deletes and nullifies the currentError and currentResponse.
+     */
+    ~GbxRemote();
+
+    /*!
      * \brief Initializes connection with the local server.
      *
      * \param port     XML-RPC port of the server.
@@ -48,8 +53,6 @@ public:
 
     /*!
      * \brief Returns the response from the server.
-     *
-     * \todo Decode received response (xml -> usable values).
      */
     GbxResponse* GetResponse();
 

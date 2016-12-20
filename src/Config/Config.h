@@ -34,6 +34,11 @@ public:
      */
     Config(std::string configFile);
 
+    /*!
+     * Deletes and nullifies the serverconfig.
+     */
+    ~Config();
+
     ServerConfig* Server; /**< \brief Instance of ServerConfig which stores the server connection settings. */
 
 private:

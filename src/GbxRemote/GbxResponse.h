@@ -59,6 +59,11 @@ public:
     GbxResponse();
 
     /*!
+     * Delets and nullifies the parameters.
+     */
+    ~GbxResponse();
+
+    /*!
      * \brief Sets the raw message value.
      *
      * \param response Raw response from server (XML).

@@ -26,7 +26,6 @@ int main(int argc, char *argv[])
         server.Query(new GbxMessage("Authenticate", params));
 
         std::vector<GbxResponseParameter>* responseParams = server.GetResponse()->GetParameters();
-        std::cout << "GOT VECTOR" << std::endl;
         GbxResponseParameter responseParam = responseParams->at(0);
         std::cout << "Authenticate: " << responseParams->at(0).GetString() << " (" << responseParams->at(0).Type << ")" << std::endl;
 

@@ -1,5 +1,14 @@
 #include "GbxRemote.h"
 
+GbxRemote::~GbxRemote()
+{
+    delete currentError;
+    currentError = NULL;
+
+    delete currentResponse;
+    currentResponse = NULL;
+}
+
 bool GbxRemote::Init(int port)
 {
     return InitWithIp("localhost", port);
