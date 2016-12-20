@@ -2,6 +2,7 @@ cmake_minimum_required (VERSION 2.6)
 project (Mania++)
 
 add_definitions(-std=c++11)
+add_definitions(-Wno-deprecated)
 
 set (EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR})
 link_directories(${PROJECT_SOURCE_DIR}/lib/yaml/build)

@@ -1,7 +1,5 @@
 #include "GbxRemote.h"
 
-#include "tinyxml2.h"
-
 bool GbxRemote::Init(int port)
 {
     return InitWithIp("localhost", port);

@@ -3,7 +3,6 @@
 
 #include "../Socket/TcpClient.h"
 #include <sstream>
-#include <bitset>
 #include <vector>
 
 #include "GbxStructs.h"

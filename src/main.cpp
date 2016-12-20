@@ -25,21 +25,28 @@ int main(int argc, char *argv[])
         params->Put(&config->Server->password);
         server.Query(new GbxMessage("Authenticate", params));
 
-        std::vector<GbxResponseParameter> responseParams = server.GetResponse()->GetParameters();
-        std::cout << "Authenticate: " << responseParams[0].GetString() << " (" << responseParams[0].Type << ")" << std::endl;
+        std::vector<GbxResponseParameter>* responseParams = server.GetResponse()->GetParameters();
+        std::cout << "GOT VECTOR" << std::endl;
+        GbxResponseParameter responseParam = responseParams->at(0);
+        std::cout << "Authenticate: " << responseParams->at(0).GetString() << " (" << responseParams->at(0).Type << ")" << std::endl;
 
         std::string message = "$fffMania++$ff0 is now online!";
         params = new GbxParameters();
         params->Put(&message);
         server.Query(new GbxMessage("ChatSendServerMessage", params));
         responseParams = server.GetResponse()->GetParameters();
-        std::cout << "ChatSendServerMessage: " << responseParams[0].GetString() << " (" << responseParams[0].Type << ")" << std::endl;
+        std::cout << "ChatSendServerMessage: " << responseParams->at(0).GetString() << " (" << responseParams->at(0).Type << ")" << std::endl;
 
         GbxMessage* getMethods = new GbxMessage("system.listMethods");
         if(server.Query(getMethods))
         {
             responseParams = server.GetResponse()->GetParameters();
-            std::cout << "listMethods: ... (" << responseParams[0].Type << ")" << std::endl;
+            std::vector<GbxResponseParameter>* methodsArray = responseParams->at(0).GetArray();
+            std::cout << "Amount of methods: " << methodsArray->size() << " (" << responseParams->at(0).Type << ")" << std::endl;
+            for(int methodId = 0; methodId < methodsArray->size(); methodId++)
+            {
+                std::cout << "Method " << methodId << ": " << methodsArray->at(methodId).GetString() << " (" << methodsArray->at(methodId).Type << ")" << std::endl;
+            }
         }
         else
         {

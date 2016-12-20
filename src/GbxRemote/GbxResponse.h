@@ -3,7 +3,6 @@
 
 #include <string>
 #include <vector>
-#include <iostream>
 #include "tinyxml2.h"
 
 //* GbxResponseParameter
@@ -23,7 +22,9 @@ public:
     {
         if(Type.find("array") != std::string::npos)
         {
-            return static_cast<std::vector<GbxResponseParameter>*>(Value);
+            std::vector<GbxResponseParameter>* vectorPtr = static_cast<std::vector<GbxResponseParameter>*>(Value);
+            //std::vector<GbxResponseParameter> &vector = *vectorPtr;
+            return vectorPtr;
         }
 
         return NULL;
@@ -36,21 +37,9 @@ public:
     {
         if(Type.find("array") == std::string::npos)
         {
-            std::string* valuePtr = static_cast<std::string*>(Value);
-            //std::string value = *valuePtr;
-            return valuePtr->c_str();
-        }
-
-        return NULL;
-    }
-
-    std::string* GetStringPtr()
-    {
-        if(Type.find("array") == std::string::npos)
-        {
-            return static_cast<std::string*>(Value);
-            //std::string value = *valuePtr;
-            //return valuePtr->c_str();
+            char* valuePtr = static_cast<char*>(Value);
+            std::string value(valuePtr);
+            return value;
         }
 
         return NULL;
@@ -84,12 +73,11 @@ public:
     /*!
      * \brief Returns the extracted parameters.
      */
-    std::vector<GbxResponseParameter> GetParameters();
+    std::vector<GbxResponseParameter>* GetParameters();
 
 private:
-    char* data;    /**< \brief Raw response data. */
-
-    std::vector<GbxResponseParameter> parameters;
+    char* data; /**< \brief Raw response data. */
+    std::vector<GbxResponseParameter>* parameters = new std::vector<GbxResponseParameter>(); /**< \brief List of parameters. */
 
     /*!
      * \brief Extracts parameters from the raw data (XML).
@@ -100,10 +88,8 @@ private:
 
     /*!
      * \brief Extracts parameters from the raw data (XML).
-     *
-     * \todo Make passing the parameter work everywhere.
      */
-    GbxResponseParameter* extractParam(tinyxml2::XMLElement* param);
+    GbxResponseParameter extractParam(tinyxml2::XMLElement* param);
 };
 
 #endif // GBXRESPONSE_H_

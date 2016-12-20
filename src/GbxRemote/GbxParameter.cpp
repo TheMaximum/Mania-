@@ -1,10 +1,6 @@
 #include "GbxParameter.h"
 #include "GbxParameters.h"
 
-#include <iostream>
-#include <cxxabi.h>
-#include <string.h>
-
 GbxParameter::GbxParameter(GbxParam param)
 {
     determineType(param.typeinfo);

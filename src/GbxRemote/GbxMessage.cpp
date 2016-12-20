@@ -1,8 +1,6 @@
 #include "GbxMessage.h"
 #include "GbxParameter.h"
 
-#include <iostream>
-
 GbxMessage::GbxMessage(std::string method, GbxParameters* parameters)
     : method(method)
 {
