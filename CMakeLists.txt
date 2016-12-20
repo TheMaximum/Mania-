@@ -5,7 +5,9 @@ add_definitions(-std=c++11)
 
 set (EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR})
 link_directories(${PROJECT_SOURCE_DIR}/lib/yaml/build)
+link_directories(${PROJECT_SOURCE_DIR}/lib/tinyxml)
 include_directories("${PROJECT_SOURCE_DIR}/lib/yaml/include")
+include_directories("${PROJECT_SOURCE_DIR}/lib/tinyxml")
 
 set (PROJECT_SOURCE_DIR ${PROJECT_SOURCE_DIR}/src)
 
@@ -24,4 +26,4 @@ include_directories("${PROJECT_BINARY_DIR}")
 file(GLOB_RECURSE SOURCES src/*.cpp)
 
 add_executable(Mania++ ${SOURCES})
-target_link_libraries(Mania++ yaml-cpp)
+target_link_libraries(Mania++ yaml-cpp tinyxml2)

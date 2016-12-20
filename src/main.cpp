@@ -7,6 +7,7 @@
 #include "Config/Version.h"
 #include "GbxRemote/GbxRemote.h"
 #include "GbxRemote/GbxParameters.h"
+#include "GbxRemote/GbxResponse.h"
 
 int main(int argc, char *argv[])
 {
@@ -23,18 +24,22 @@ int main(int argc, char *argv[])
         params->Put(&config->Server->username);
         params->Put(&config->Server->password);
         server.Query(new GbxMessage("Authenticate", params));
-        std::cout << "Authenticate: " << server.GetResponse() << std::endl;
+
+        std::vector<GbxResponseParameter> responseParams = server.GetResponse()->GetParameters();
+        std::cout << "Authenticate: " << responseParams[0].GetString() << " (" << responseParams[0].Type << ")" << std::endl;
 
         std::string message = "$fffMania++$ff0 is now online!";
         params = new GbxParameters();
         params->Put(&message);
         server.Query(new GbxMessage("ChatSendServerMessage", params));
-        std::cout << "ChatSendServerMessage: " << server.GetResponse() << std::endl;
+        responseParams = server.GetResponse()->GetParameters();
+        std::cout << "ChatSendServerMessage: " << responseParams[0].GetString() << " (" << responseParams[0].Type << ")" << std::endl;
 
         GbxMessage* getMethods = new GbxMessage("system.listMethods");
         if(server.Query(getMethods))
         {
-            std::cout << "Methods: " << server.GetResponse() << std::endl;
+            responseParams = server.GetResponse()->GetParameters();
+            std::cout << "listMethods: ... (" << responseParams[0].Type << ")" << std::endl;
         }
         else
         {

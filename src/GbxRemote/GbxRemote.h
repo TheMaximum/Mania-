@@ -9,6 +9,7 @@
 #include "GbxStructs.h"
 #include "GbxMessage.h"
 #include "GbxParameters.h"
+#include "GbxResponse.h"
 
 //* GbxRemote
 /**
@@ -51,7 +52,7 @@ public:
      *
      * \todo Decode received response (xml -> usable values).
      */
-    char* GetResponse();
+    GbxResponse* GetResponse();
 
     /*!
      * \brief Returns the current server error.
@@ -66,11 +67,11 @@ public:
     int GetProtocol();
 
 private:
-    int protocol = 0;                      /**< \brief Protocol version (0 = uninitialized, 1 or 2 = version). */
-    TcpClient server;                      /**< \brief Socket connection with the server. */
+    int protocol = 0;                               /**< \brief Protocol version (0 = uninitialized, 1 or 2 = version). */
+    TcpClient server;                               /**< \brief Socket connection with the server. */
 
-    GbxError* currentError = new GbxError; /**< \brief Current server error. */
-    char* currentResponse = NULL;          /**< \brief Current server response. */
+    GbxError* currentError = new GbxError;          /**< \brief Current server error. */
+    GbxResponse* currentResponse = new GbxResponse; /**< \brief Current server response. */
 };
 
 #endif // GBXREMOTE_H_

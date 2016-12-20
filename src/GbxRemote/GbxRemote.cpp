@@ -1,5 +1,7 @@
 #include "GbxRemote.h"
 
+#include "tinyxml2.h"
+
 bool GbxRemote::Init(int port)
 {
     return InitWithIp("localhost", port);
@@ -55,7 +57,7 @@ void GbxRemote::Terminate()
 bool GbxRemote::Query(GbxMessage* query)
 {
     currentError = new GbxError();
-    currentResponse = NULL;
+    currentResponse = new GbxResponse();
 
     if(!server.Send(query->GetXml()))
     {
@@ -86,7 +88,8 @@ bool GbxRemote::Query(GbxMessage* query)
 
     if(size > 0)
     {
-        currentResponse = server.Receive(size);
+        currentResponse->SetRaw(server.Receive(size));
+
         return true;
     }
     else
@@ -105,16 +108,16 @@ GbxError* GbxRemote::GetCurrentError()
     return currentError;
 }
 
-char* GbxRemote::GetResponse()
+GbxResponse* GbxRemote::GetResponse()
 {
-    if(currentResponse != NULL)
+    if(currentResponse->GetRaw() != "")
     {
-        char* returnResponse = currentResponse;
-        currentResponse = NULL;
+        GbxResponse* returnResponse = currentResponse;
+        currentResponse = new GbxResponse();
         return returnResponse;
     }
 
-    return NULL;
+    return new GbxResponse();
 }
 
 int GbxRemote::GetProtocol()
