@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
 {
     std::cout << VERSION_MAJOR << "." << VERSION_MINOR << std::endl;
     Config* config = new Config("config.yaml");
+    std::cout << "Config 'config.yaml' loaded." << std::endl;
 
     GbxRemote server;
     if(server.InitWithIp(config->Server->address, config->Server->port))

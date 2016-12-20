@@ -7,6 +7,7 @@ bool GbxRemote::Init(int port)
 
 bool GbxRemote::InitWithIp(std::string address, int port)
 {
+    std::cout << "Connecting with server on " << address << ":" << port << " ..." << std::endl;
     server.Connect(address, port);
     char* data = server.Receive(4);
     const GbxFirstResponse* response = reinterpret_cast<const GbxFirstResponse*>(data);
