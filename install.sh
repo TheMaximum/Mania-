@@ -1,3 +1,5 @@
+sudo apt-get -y install libboost-dev
+
 # Go to libraries directory
 cd ./lib/
 
