@@ -32,7 +32,7 @@ void GbxParameter::determineType(const std::type_info* param)
     {
         xmlType = "array";
     }
-    else if(type.find("basic_string") != std::string::npos ||
+    else if(type.find("string") != std::string::npos ||
             type.find("char*") != std::string::npos ||
             type.find("char [") != std::string::npos)
     {
