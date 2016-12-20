@@ -1,10 +1,16 @@
 # Mania++
 ## Requirements ##
 * C++11
-* Installed [CMake](https://cmake.org)
-* Installed [yaml-cpp](https://github.com/jbeder/yaml-cpp) package (with shared libraries) (with ```make``` / ```sudo make install```)
+* Git
+* [CMake](https://cmake.org)
 
-## Building + installing ##
+## Installing for the first time ##
+* ```./install.sh```
+    * Installs Boost (requirement for yaml-cpp)
+    * Installs [yaml-cpp](https://github.com/jbeder/yaml-cpp/) 0.5.3
+    * Builds the code
+
+## Building (updates) ##
 * ```./build.sh```
 * Move ```config.dist.yaml``` to ```config.yaml```
 * Edit the configuration file with the server information
