@@ -19,7 +19,7 @@ public:
      * \param method Server method name.
      * \param params Params which belong to the method.
      */
-    GbxMessage(std::string method, GbxParameters* parameters);
+    GbxMessage(std::string method, GbxParameters* parameters = NULL);
 
     /*!
      * \brief Returns the created XML message.

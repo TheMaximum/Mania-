@@ -25,21 +25,22 @@ int main(int argc, char *argv[])
         server.Query(new GbxMessage("Authenticate", params));
         std::cout << "Authenticate: " << server.GetResponse() << std::endl;
 
-        /*std::string message = "$fffMania++$ff0 is now online!";
-        server.Query(new GbxMessage("ChatSendServerMessage", new std::vector<void*> { &message }));
-        std::cout << "ChatSendServerMessage: " << server.GetResponse() << std::endl;*/
+        std::string message = "$fffMania++$ff0 is now online!";
+        params = new GbxParameters();
+        params->Put(&message);
+        server.Query(new GbxMessage("ChatSendServerMessage", params));
+        std::cout << "ChatSendServerMessage: " << server.GetResponse() << std::endl;
 
-        /*GbxMessage* getMethods = new GbxMessage("system.listMethods");
+        GbxMessage* getMethods = new GbxMessage("system.listMethods");
         if(server.Query(getMethods))
         {
-            //server.GetResponse();
-            //std::cout << "Methods: " << server.GetResponse() << std::endl;
+            std::cout << "Methods: " << server.GetResponse() << std::endl;
         }
         else
         {
             GbxError* error = server.GetCurrentError();
             std::cout << "[ERROR " << error->number << "] " << error->message << std::endl;
-        }*/
+        }
     }
     else
     {
