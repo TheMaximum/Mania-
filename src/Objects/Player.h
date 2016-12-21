@@ -3,19 +3,28 @@
 
 #include "../GbxRemote/GbxResponse.h"
 
+//* Player
+/**
+ * \brief Contains all information about a player in easy-to-use format.
+ */
 struct Player
 {
-    int PlayerId;
-    int TeamId;
+    int PlayerId;          /**< \brief Player identifier (on server). */
+    int TeamId;            /**< \brief Team identifier (on server). */
 
-    std::string Login;
-    std::string NickName;
+    std::string Login;     /**< \brief Player login. */
+    std::string NickName;  /**< \brief Player nickname.*/
 
-    bool IsSpectator;
-    bool IsInOfficialMode;
+    bool IsSpectator;      /**< \brief Is player a spectator? */
+    bool IsInOfficialMode; /**< \brief Is player in official mode? */
 
-    int LadderRanking;
+    int LadderRanking;     /**< \brief Current ladder ranking of the player. */
 
+    /*!
+     * \brief Formats a server response into a usable form.
+     *
+     * \param serverStruct The struct with player information received from the server.
+     */
     Player(std::map<std::string, GbxResponseParameter>* serverStruct)
     {
         if(serverStruct->find("Login") != serverStruct->end())
