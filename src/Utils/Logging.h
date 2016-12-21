@@ -12,13 +12,9 @@ class Logging
 {
 public:
     /*!
-     * \brief Prints char array as hexadecimal values.
+     * \brief Prints error to console.
      *
-     * For printing the char array as hexadecimal, it uses the std::hex option.
-     * The char array is casted and printed char by char.
-     *
-     * \param message        Char array with message to be displayed.
-     * \param messageLength  Length of the char array.
+     * \param error        Error structure.
      */
     static void PrintError(GbxError* error)
     {
@@ -47,12 +43,27 @@ public:
             output << "\033[0;0m] ERROR: " + error->message;
 
             std::cout << output.str() << std::endl;
-            //std::cout << "[ERROR " << errorNumber << "] " << error->message << std::endl;
         }
         else
         {
             std::cout << "[\033[0;31m" << errorNumber << "\033[0;0m] ERROR: " << error->message << std::endl;
         }
+    }
+
+    /*!
+     * \brief Prints OK. in [         ]-spaces in console.
+     */
+    static void PrintOKFlush()
+    {
+        std::cout << "[   \033[0;32mOK.\033[0;0m" << std::endl;
+    }
+
+    /*!
+     * \brief Prints Failed! in [         ]-spaces in console.
+     */
+    static void PrintFailedFlush()
+    {
+        std::cout << "[ \033[0;31mFAILED!\033[0;0m" << std::endl;
     }
 };
 
