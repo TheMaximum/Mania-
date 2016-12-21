@@ -94,44 +94,48 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;Config/Version.h&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Config_8h.html">Config/Config.h</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="GbxRemote_8h.html">GbxRemote/GbxRemote.h</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Logging_8h.html">Utils/Logging.h</a>&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//* ManiaPP</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classManiaPP.html">   13</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classManiaPP.html">ManiaPP</a></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="classManiaPP.html#ae56f6623dc89f2c0b75bec631cfc2d19">ManiaPP</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classManiaPP.html#adb62da8dda48cf573666e82e6ecb8572">ConnectToServer</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classManiaPP.html#a87fd53fffe4a1840834a90ab575f5ce6">Terminate</a>();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classManiaPP.html#a9a91437fa70afd52c2dce19298888e36">   32</a></span>&#160;    <a class="code" href="classConfig.html">Config</a>* <a class="code" href="classManiaPP.html#a9a91437fa70afd52c2dce19298888e36">config</a>;    </div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classManiaPP.html#aa4cea090301bdf0bf652ad377e7b01c0">   33</a></span>&#160;    <a class="code" href="classLogging.html">Logging</a>* <a class="code" href="classManiaPP.html#aa4cea090301bdf0bf652ad377e7b01c0">logging</a>;  </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classManiaPP.html#ab81311d6901990cb99a7a30e0cbaab11">   34</a></span>&#160;    <a class="code" href="classGbxRemote.html">GbxRemote</a>* <a class="code" href="classManiaPP.html#ab81311d6901990cb99a7a30e0cbaab11">server</a>; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classManiaPP.html#aede94c0b982250de19186d447542e479">retrievePlayerList</a>();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif // MANIAPP_H_</span></div>
-<div class="ttc" id="classManiaPP_html"><div class="ttname"><a href="classManiaPP.html">ManiaPP</a></div><div class="ttdoc">Main class. </div><div class="ttdef"><b>Definition:</b> ManiaPP.h:13</div></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Player_8h.html">Objects/Player.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Logging_8h.html">Utils/Logging.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//* ManiaPP</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classManiaPP.html">   14</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classManiaPP.html">ManiaPP</a></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classManiaPP.html#ae56f6623dc89f2c0b75bec631cfc2d19">ManiaPP</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classManiaPP.html#adb62da8dda48cf573666e82e6ecb8572">ConnectToServer</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classManiaPP.html#a87fd53fffe4a1840834a90ab575f5ce6">Terminate</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classManiaPP.html#a9a91437fa70afd52c2dce19298888e36">   33</a></span>&#160;    <a class="code" href="classConfig.html">Config</a>* <a class="code" href="classManiaPP.html#a9a91437fa70afd52c2dce19298888e36">config</a>;               </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classManiaPP.html#aa4cea090301bdf0bf652ad377e7b01c0">   34</a></span>&#160;    <a class="code" href="classLogging.html">Logging</a>* <a class="code" href="classManiaPP.html#aa4cea090301bdf0bf652ad377e7b01c0">logging</a>;             </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classManiaPP.html#ab81311d6901990cb99a7a30e0cbaab11">   35</a></span>&#160;    <a class="code" href="classGbxRemote.html">GbxRemote</a>* <a class="code" href="classManiaPP.html#ab81311d6901990cb99a7a30e0cbaab11">server</a>;            </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classManiaPP.html#a630ca376cb1d249bf0a04cf5659adb9d">   36</a></span>&#160;    std::vector&lt;Player&gt;* <a class="code" href="classManiaPP.html#a630ca376cb1d249bf0a04cf5659adb9d">players</a>; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classManiaPP.html#aede94c0b982250de19186d447542e479">retrievePlayerList</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif // MANIAPP_H_</span></div>
+<div class="ttc" id="classManiaPP_html"><div class="ttname"><a href="classManiaPP.html">ManiaPP</a></div><div class="ttdoc">Main class. </div><div class="ttdef"><b>Definition:</b> ManiaPP.h:14</div></div>
 <div class="ttc" id="Logging_8h_html"><div class="ttname"><a href="Logging_8h.html">Logging.h</a></div></div>
 <div class="ttc" id="classGbxRemote_html"><div class="ttname"><a href="classGbxRemote.html">GbxRemote</a></div><div class="ttdoc">Handles communication with the ManiaPlanet server. </div><div class="ttdef"><b>Definition:</b> GbxRemote.h:19</div></div>
+<div class="ttc" id="classManiaPP_html_a630ca376cb1d249bf0a04cf5659adb9d"><div class="ttname"><a href="classManiaPP.html#a630ca376cb1d249bf0a04cf5659adb9d">ManiaPP::players</a></div><div class="ttdeci">std::vector&lt; Player &gt; * players</div><div class="ttdoc">Contains the list of players currently on the server. </div><div class="ttdef"><b>Definition:</b> ManiaPP.h:36</div></div>
+<div class="ttc" id="Player_8h_html"><div class="ttname"><a href="Player_8h.html">Player.h</a></div></div>
 <div class="ttc" id="Config_8h_html"><div class="ttname"><a href="Config_8h.html">Config.h</a></div></div>
 <div class="ttc" id="classLogging_html"><div class="ttname"><a href="classLogging.html">Logging</a></div><div class="ttdoc">Utility to print information to the console. </div><div class="ttdef"><b>Definition:</b> Logging.h:11</div></div>
-<div class="ttc" id="classManiaPP_html_a87fd53fffe4a1840834a90ab575f5ce6"><div class="ttname"><a href="classManiaPP.html#a87fd53fffe4a1840834a90ab575f5ce6">ManiaPP::Terminate</a></div><div class="ttdeci">void Terminate()</div><div class="ttdoc">Disconnects the software from the server. </div><div class="ttdef"><b>Definition:</b> ManiaPP.cpp:88</div></div>
+<div class="ttc" id="classManiaPP_html_a87fd53fffe4a1840834a90ab575f5ce6"><div class="ttname"><a href="classManiaPP.html#a87fd53fffe4a1840834a90ab575f5ce6">ManiaPP::Terminate</a></div><div class="ttdeci">void Terminate()</div><div class="ttdoc">Disconnects the software from the server. </div><div class="ttdef"><b>Definition:</b> ManiaPP.cpp:100</div></div>
 <div class="ttc" id="classConfig_html"><div class="ttname"><a href="classConfig.html">Config</a></div><div class="ttdoc">Reads and stores configuration information. </div><div class="ttdef"><b>Definition:</b> Config.h:27</div></div>
-<div class="ttc" id="classManiaPP_html_a9a91437fa70afd52c2dce19298888e36"><div class="ttname"><a href="classManiaPP.html#a9a91437fa70afd52c2dce19298888e36">ManiaPP::config</a></div><div class="ttdeci">Config * config</div><div class="ttdoc">Contains the configuration for the software. </div><div class="ttdef"><b>Definition:</b> ManiaPP.h:32</div></div>
+<div class="ttc" id="classManiaPP_html_a9a91437fa70afd52c2dce19298888e36"><div class="ttname"><a href="classManiaPP.html#a9a91437fa70afd52c2dce19298888e36">ManiaPP::config</a></div><div class="ttdeci">Config * config</div><div class="ttdoc">Contains the configuration for the software. </div><div class="ttdef"><b>Definition:</b> ManiaPP.h:33</div></div>
 <div class="ttc" id="classManiaPP_html_ae56f6623dc89f2c0b75bec631cfc2d19"><div class="ttname"><a href="classManiaPP.html#ae56f6623dc89f2c0b75bec631cfc2d19">ManiaPP::ManiaPP</a></div><div class="ttdeci">ManiaPP()</div><div class="ttdoc">Sets up the several variables needed to run the software. </div><div class="ttdef"><b>Definition:</b> ManiaPP.cpp:3</div></div>
-<div class="ttc" id="classManiaPP_html_aa4cea090301bdf0bf652ad377e7b01c0"><div class="ttname"><a href="classManiaPP.html#aa4cea090301bdf0bf652ad377e7b01c0">ManiaPP::logging</a></div><div class="ttdeci">Logging * logging</div><div class="ttdoc">Contains functions to log information. </div><div class="ttdef"><b>Definition:</b> ManiaPP.h:33</div></div>
+<div class="ttc" id="classManiaPP_html_aa4cea090301bdf0bf652ad377e7b01c0"><div class="ttname"><a href="classManiaPP.html#aa4cea090301bdf0bf652ad377e7b01c0">ManiaPP::logging</a></div><div class="ttdeci">Logging * logging</div><div class="ttdoc">Contains functions to log information. </div><div class="ttdef"><b>Definition:</b> ManiaPP.h:34</div></div>
 <div class="ttc" id="GbxRemote_8h_html"><div class="ttname"><a href="GbxRemote_8h.html">GbxRemote.h</a></div></div>
-<div class="ttc" id="classManiaPP_html_adb62da8dda48cf573666e82e6ecb8572"><div class="ttname"><a href="classManiaPP.html#adb62da8dda48cf573666e82e6ecb8572">ManiaPP::ConnectToServer</a></div><div class="ttdeci">void ConnectToServer()</div><div class="ttdoc">Connects and authenticates with the server. </div><div class="ttdef"><b>Definition:</b> ManiaPP.cpp:12</div></div>
-<div class="ttc" id="classManiaPP_html_ab81311d6901990cb99a7a30e0cbaab11"><div class="ttname"><a href="classManiaPP.html#ab81311d6901990cb99a7a30e0cbaab11">ManiaPP::server</a></div><div class="ttdeci">GbxRemote * server</div><div class="ttdoc">Contains the connection with the server and its methods. </div><div class="ttdef"><b>Definition:</b> ManiaPP.h:34</div></div>
-<div class="ttc" id="classManiaPP_html_aede94c0b982250de19186d447542e479"><div class="ttname"><a href="classManiaPP.html#aede94c0b982250de19186d447542e479">ManiaPP::retrievePlayerList</a></div><div class="ttdeci">void retrievePlayerList()</div><div class="ttdoc">Gets a list of current players from the server. </div><div class="ttdef"><b>Definition:</b> ManiaPP.cpp:61</div></div>
+<div class="ttc" id="classManiaPP_html_adb62da8dda48cf573666e82e6ecb8572"><div class="ttname"><a href="classManiaPP.html#adb62da8dda48cf573666e82e6ecb8572">ManiaPP::ConnectToServer</a></div><div class="ttdeci">void ConnectToServer()</div><div class="ttdoc">Connects and authenticates with the server. </div><div class="ttdef"><b>Definition:</b> ManiaPP.cpp:13</div></div>
+<div class="ttc" id="classManiaPP_html_ab81311d6901990cb99a7a30e0cbaab11"><div class="ttname"><a href="classManiaPP.html#ab81311d6901990cb99a7a30e0cbaab11">ManiaPP::server</a></div><div class="ttdeci">GbxRemote * server</div><div class="ttdoc">Contains the connection with the server and its methods. </div><div class="ttdef"><b>Definition:</b> ManiaPP.h:35</div></div>
+<div class="ttc" id="classManiaPP_html_aede94c0b982250de19186d447542e479"><div class="ttname"><a href="classManiaPP.html#aede94c0b982250de19186d447542e479">ManiaPP::retrievePlayerList</a></div><div class="ttdeci">void retrievePlayerList()</div><div class="ttdoc">Gets a list of current players from the server. </div><div class="ttdef"><b>Definition:</b> ManiaPP.cpp:62</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 21 2016 15:56:46 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 21 2016 16:28:22 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

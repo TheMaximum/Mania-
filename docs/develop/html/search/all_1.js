@@ -1,7 +1,7 @@
 var searchData=
 [
   ['close',['Close',['../classTcpClient.html#ae7a96d69db612ef4827ee23c31332a4e',1,'TcpClient']]],
-  ['config',['Config',['../classConfig.html',1,'Config'],['../classManiaPP.html#a9a91437fa70afd52c2dce19298888e36',1,'ManiaPP::config()'],['../classConfig.html#ae67e338ea42e242cb5b374b6583c8b1c',1,'Config::Config()']]],
+  ['config',['Config',['../classConfig.html',1,'Config'],['../classConfig.html#ae67e338ea42e242cb5b374b6583c8b1c',1,'Config::Config()'],['../classManiaPP.html#a9a91437fa70afd52c2dce19298888e36',1,'ManiaPP::config()']]],
   ['config_2ecpp',['Config.cpp',['../Config_8cpp.html',1,'']]],
   ['config_2eh',['Config.h',['../Config_8h.html',1,'']]],
   ['configfile',['configFile',['../classConfig.html#a08b7b2c4eadf7dda51404f76fd6e0280',1,'Config']]],
