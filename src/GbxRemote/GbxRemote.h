@@ -14,7 +14,8 @@
 /**
  * \brief Handles communication with the ManiaPlanet server.
  *
- * \todo Add support for callbacks.
+ * \todo Handle/de-XMLify callbacks (receiving works).
+ * \todo Make it possible to set an API version without upsetting TinyXML2.
  */
 class GbxRemote
 {
@@ -52,6 +53,20 @@ public:
      * \param query    Query to be send.
      */
     bool Query(GbxMessage* query);
+
+    /*!
+     * \brief Read callbacks from the server.
+     *
+     * Returns whether it found a callback.
+     */
+    bool ReadCallBacks();
+
+    /*!
+     * \brief Handles callbacks (de-XML-fies them).
+     *
+     * \param data     Raw response from the server.
+     */
+    void HandleCallBack(char* data);
 
     /*!
      * \brief Returns the response from the server.

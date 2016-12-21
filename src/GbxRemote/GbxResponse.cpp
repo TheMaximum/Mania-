@@ -1,5 +1,7 @@
 #include "GbxResponse.h"
 
+#include <iostream>
+
 GbxResponse::GbxResponse()
 {
     data = (char*)"";

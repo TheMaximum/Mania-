@@ -6,6 +6,7 @@
 #include <string.h>    //strlen
 #include <string>  //string
 #include <sstream>
+#include <vector>
 #include <sys/socket.h>    //socket
 #include <arpa/inet.h> //inet_addr
 #include <netdb.h> //hostent
@@ -55,11 +56,18 @@ public:
     char* Receive(int size);
 
     /*!
+     * \brief Wait (timeout) for callbacks from the server.
+     *
+     * \param timeout Timeout in microseconds.
+     */
+    bool SearchForCallBacks(int timeout);
+
+    /*!
      * \brief Closes the socket with the server.
      */
     void Close();
 
-    int RequestHandle = 0x80000000; /**< \brief Current request identifier. */
+    long RequestHandle;             /**< \brief Current request identifier. */
 
 private:
     int sock;                       /**< \brief Socket connection with the server. */

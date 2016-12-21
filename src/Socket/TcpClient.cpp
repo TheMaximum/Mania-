@@ -5,6 +5,8 @@ TcpClient::TcpClient()
     sock = -1;
     port = 0;
     address = "";
+
+    RequestHandle = 0x80000000;
 }
 
 void TcpClient::Close()
@@ -77,9 +79,7 @@ bool TcpClient::Send(std::string data)
     memcpy(&message[0], &dataLength, 4);
     memcpy(&message[4], &RequestHandle, 4);
     memcpy(&message[8], messageData, dataLength);
-    message[7] = 0x80;
-
-    //Hex::Print(message, messageLength);
+    //message[7] = 0x80;
 
     int bytes_to_write = messageLength;
     while(bytes_to_write > 0)
@@ -121,4 +121,24 @@ char* TcpClient::Receive(int size = 512)
     strcpy(reply, buffer);
     reply[size] = '\0';
     return reply;
+}
+
+bool TcpClient::SearchForCallBacks(int timeout)
+{
+    fd_set readfds;
+    struct timeval tv;
+
+    FD_ZERO(&readfds);
+    FD_SET(sock, &readfds);
+
+    tv.tv_sec = 0;
+    tv.tv_usec = 2;
+    int selectResult = select((sock + 1), &readfds, NULL, NULL, &tv);
+
+    if(selectResult > 0)
+    {
+        return true;
+    }
+
+    return false;
 }

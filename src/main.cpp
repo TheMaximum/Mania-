@@ -3,6 +3,9 @@
 int main(int argc, char *argv[])
 {
     ManiaPP* controller = new ManiaPP();
-    controller->ConnectToServer();
-    controller->Terminate();
+    if(controller->ConnectToServer())
+    {
+        controller->MainLoop();
+        controller->Terminate();
+    }
 }

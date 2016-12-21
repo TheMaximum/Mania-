@@ -10,7 +10,7 @@ ManiaPP::ManiaPP()
     players = new std::vector<Player>();
 }
 
-void ManiaPP::ConnectToServer()
+bool ManiaPP::ConnectToServer()
 {
     std::cout << "[         ] Connecting with server on " << config->Server->address << ":" << config->Server->port << " ... " << '\r' << std::flush;
     if(server->InitWithIp(config->Server->address, config->Server->port))
@@ -38,7 +38,14 @@ void ManiaPP::ConnectToServer()
                 std::vector<GbxResponseParameter>* methodsArray = responseParams->at(0).GetArray();
                 std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieving server methods: " << methodsArray->size() << " found." << std::endl;
 
+                bool enableCallbacks = true;
+                GbxParameters* params = new GbxParameters();
+                params->Put(&enableCallbacks);
+                server->Query(new GbxMessage("EnableCallbacks", params));
+
                 retrievePlayerList();
+
+                return true;
             }
             else
             {
@@ -56,6 +63,17 @@ void ManiaPP::ConnectToServer()
     {
         logging->PrintFailedFlush();
         logging->PrintError(server->GetCurrentError());
+    }
+
+    return false;
+}
+
+void ManiaPP::MainLoop()
+{
+    std::cout << "Starting our loop ..." << std::endl;
+    while(true)
+    {
+        server->ReadCallBacks();
     }
 }
 

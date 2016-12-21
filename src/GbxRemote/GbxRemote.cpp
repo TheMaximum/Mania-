@@ -80,13 +80,53 @@ bool GbxRemote::Query(GbxMessage* query)
         return false;
     }
 
-    unsigned long handle = -1;
-    int size = 0;
-    //do
-    //{
+    while(true)
+    {
         char* data = server.Receive(8);
         const GbxQueryResponse* message = reinterpret_cast<const GbxQueryResponse*>(data);
-        size = message->size;
+
+        if(message->size > (4096*1024))
+        {
+            currentError->number = -32300;
+            std::stringstream errorMessage;
+            errorMessage << "transport error - response too large " << message->size;
+            currentError->message = errorMessage.str();
+            return false;
+        }
+
+        if(message->size > 0)
+        {
+            char* rawResponse = server.Receive(message->size);
+
+            if(std::string(rawResponse).find("methodCall") != std::string::npos)
+            {
+                HandleCallBack(rawResponse);
+                continue;
+            }
+
+            currentResponse->SetRaw(rawResponse);
+            if(currentResponse->GetFault() != NULL)
+            {
+                currentError = currentResponse->GetFault();
+                return false;
+            }
+
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+}
+
+bool GbxRemote::ReadCallBacks()
+{
+    if(server.SearchForCallBacks(2000))
+    {
+        char* data = server.Receive(8);
+        const GbxQueryResponse* message = reinterpret_cast<const GbxQueryResponse*>(data);
+        int size = message->size;
 
         if(size > (4096*1024))
         {
@@ -97,24 +137,23 @@ bool GbxRemote::Query(GbxMessage* query)
             return false;
         }
 
-    //    handle = (message->handle & 0x80000000);
-    //} while(handle != (server.RequestHandle & 0x80000000));
-
-    if(size > 0)
-    {
-        currentResponse->SetRaw(server.Receive(size));
-        if(currentResponse->GetFault() != NULL)
+        if(size > 0)
         {
-            currentError = currentResponse->GetFault();
-            return false;
+            char* callback = server.Receive(size);
+            if(std::string(callback).find("methodCall") != std::string::npos)
+            {
+                HandleCallBack(callback);
+                return true;
+            }
         }
+    }
 
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+    return false;
+}
+
+void GbxRemote::HandleCallBack(char* data)
+{
+    std::cout << "CALLBACK: " << data << std::endl;
 }
 
 GbxError* GbxRemote::GetCurrentError()

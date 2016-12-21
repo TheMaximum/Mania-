@@ -22,7 +22,12 @@ public:
     /*!
      * \brief Connects and authenticates with the server.
      */
-    void ConnectToServer();
+    bool ConnectToServer();
+
+    /*!
+     * \brief Performing our tasks ...
+     */
+    void MainLoop();
 
     /*!
      * \brief Disconnects the software from the server.
