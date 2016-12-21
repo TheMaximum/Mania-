@@ -16,44 +16,51 @@ bool GbxRemote::Init(int port)
 
 bool GbxRemote::InitWithIp(std::string address, int port)
 {
-    std::cout << "Connecting with server on " << address << ":" << port << " ..." << std::endl;
-    server.Connect(address, port);
-    char* data = server.Receive(4);
-    const GbxFirstResponse* response = reinterpret_cast<const GbxFirstResponse*>(data);
-    int size = (int)response->size;
-    if(size > 64)
+    if(server.Connect(address, port))
     {
-        currentError->number = -32300;
-        std::stringstream messageStream;
-        messageStream << "transport error - wrong lowlevel protocol header (" << size << ")";
-        currentError->message = messageStream.str();
-        return false;
-    }
+        char* data = server.Receive(4);
+        const GbxFirstResponse* response = reinterpret_cast<const GbxFirstResponse*>(data);
+        int size = (int)response->size;
+        if(size > 64)
+        {
+            currentError->number = -32300;
+            std::stringstream messageStream;
+            messageStream << "transport error - wrong lowlevel protocol header (" << size << ")";
+            currentError->message = messageStream.str();
+            return false;
+        }
 
-    char* protocolRes = server.Receive(size);
-    char protocolResponse[(size+1)];
-    strcpy(protocolResponse, protocolRes);
+        char* protocolRes = server.Receive(size);
+        char protocolResponse[(size+1)];
+        strcpy(protocolResponse, protocolRes);
 
-    if(strcmp(protocolResponse, "GBXRemote 1") == 0)
-    {
-        currentError->number = -32300;
-        currentError->message = "transport error - old version of trackmania server detected";
-        return false;
-    }
-    else if(strcmp(protocolResponse, "GBXRemote 2") == 0)
-    {
-        protocol = 2;
+        if(strcmp(protocolResponse, "GBXRemote 1") == 0)
+        {
+            currentError->number = -32300;
+            currentError->message = "transport error - old version of trackmania server detected";
+            return false;
+        }
+        else if(strcmp(protocolResponse, "GBXRemote 2") == 0)
+        {
+            protocol = 2;
+        }
+        else
+        {
+            currentError->number = -32300;
+            std::stringstream messageStream;
+            messageStream << "transport error - wrong lowlevel protocol version (" << protocolResponse << ")";
+            currentError->message = messageStream.str();
+            return false;
+        }
+
+        return true;
     }
     else
     {
-        currentError->number = -32300;
-        std::stringstream messageStream;
-        messageStream << "transport error - wrong lowlevel protocol version (" << protocolResponse << ")";
-        currentError->message = messageStream.str();
+        currentError->number = -10;
+        currentError->message = "connection error - could not establish connection";
         return false;
     }
-
-    return true;
 }
 
 void GbxRemote::Terminate()

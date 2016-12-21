@@ -1,5 +1,7 @@
 #include "GbxResponse.h"
 
+#include <iostream>
+
 GbxResponse::GbxResponse()
 {
     data = (char*)"";
@@ -36,13 +38,18 @@ void GbxResponse::extractParameters()
     tinyxml2::XMLDocument document;
     document.Parse(data, strlen(data));
 
-    tinyxml2::XMLElement* params = document.FirstChildElement("methodResponse")->FirstChildElement("params");
+    tinyxml2::XMLElement* methodResponse = document.FirstChildElement("methodResponse");
 
-    for (tinyxml2::XMLElement* child = params->FirstChildElement(); child != NULL; child = child->NextSiblingElement())
+    if(strcmp(methodResponse->FirstChildElement()->Name(), "params") != std::string::npos)
     {
-        tinyxml2::XMLElement* value = child->FirstChildElement("value");
-        GbxResponseParameter responseParam = extractParam(value);
-        parameters->push_back(responseParam);
+        tinyxml2::XMLElement* params = methodResponse->FirstChildElement("params");
+
+        for (tinyxml2::XMLElement* child = params->FirstChildElement(); child != NULL; child = child->NextSiblingElement())
+        {
+            tinyxml2::XMLElement* value = child->FirstChildElement("value");
+            GbxResponseParameter responseParam = extractParam(value);
+            parameters->push_back(responseParam);
+        }
     }
 }
 
@@ -67,6 +74,13 @@ GbxResponseParameter GbxResponse::extractParam(tinyxml2::XMLElement* param)
             }
 
             resParam.Value = arrayData;
+        }
+        else if(valueType.find("struct") != std::string::npos)
+        {
+            // Properly handle structs ...
+            char* value = (char*)"Struct placeholder.";
+            resParam.Type = "struct";
+            resParam.Value = value;
         }
         else
         {

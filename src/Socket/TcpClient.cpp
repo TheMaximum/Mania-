@@ -23,8 +23,6 @@ bool TcpClient::Connect(std::string address, int port)
         {
             perror("Could not create socket");
         }
-
-        std::cout << "Socket created" << std::endl;
     }
 
     // Setup address structure
@@ -38,8 +36,6 @@ bool TcpClient::Connect(std::string address, int port)
         {
             // gethostbyname failed
             herror("gethostbyname");
-            std::cout << "Failed to resolve hostname" << std::endl;
-
             return false;
         }
 
@@ -49,9 +45,6 @@ bool TcpClient::Connect(std::string address, int port)
         for(int i = 0; addr_list[i] != NULL; i++)
         {
             server.sin_addr = *addr_list[i];
-
-            std::cout << address << " resolved to " << inet_ntoa(*addr_list[i]) << std::endl;
-
             break;
         }
     }
@@ -66,11 +59,10 @@ bool TcpClient::Connect(std::string address, int port)
 
     if(connect(sock, (struct sockaddr *)&server, sizeof(server)) < 0)
     {
-        perror("connect failed. Error");
-        return 1;
+        //perror("connect failed. Error");
+        return false;
     }
 
-    std::cout << "Connected" << std::endl;
     return true;
 }
 

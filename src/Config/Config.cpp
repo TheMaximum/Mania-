@@ -14,11 +14,10 @@ Config::~Config()
 
 void Config::parseConfig()
 {
-    std::cout << "Loading configuration file '" << configFile << "' ... ";
+    std::cout << "[         ] Loading configuration file '" << configFile << "' ... " << '\r' << std::flush;
     YAML::Node config = YAML::LoadFile(configFile);
-    std::cout << "OK" << std::endl;
     YAML::Node server = config["config"]["server"];
-    std::cout << "Server NODE" << std::endl;
+    std::cout << "[   \033[0;32mOK.\033[0;0m" << std::endl;
 
     Server = new ServerConfig();
     Server->address = server["address"].as<std::string>();
