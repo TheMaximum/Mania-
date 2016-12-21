@@ -7,6 +7,7 @@ ManiaPP::ManiaPP()
     config = new Config("config.yaml");
     logging = new Logging();
     server = new GbxRemote();
+    players = new std::vector<Player>();
 }
 
 void ManiaPP::ConnectToServer()
@@ -70,12 +71,23 @@ void ManiaPP::retrievePlayerList()
     {
         std::vector<GbxResponseParameter>* responseParams = server->GetResponse()->GetParameters();
         std::vector<GbxResponseParameter>* playerList = responseParams->at(0).GetArray();
-        std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieving current player list: " << playerList->size() << " found." << std::endl;
         for(int playerId = 0; playerId < playerList->size(); playerId++)
         {
             std::map<std::string, GbxResponseParameter>* player = playerList->at(playerId).GetStruct();
-            std::cout << "Player size: " << player->size() << std::endl;
-            std::cout << "Player #" << playerId << ": " << player->find("Login")->second.GetString() << std::endl;
+            players->push_back(Player(player));
+        }
+
+        std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieving current player list: " << players->size() << " found." << std::endl;
+        for(int playerInList = 0; playerInList < players->size(); playerInList++)
+        {
+            Player listPlayer = players->at(playerInList);
+            std::cout << "Player #" << listPlayer.PlayerId << ":" << std::endl;
+            std::cout << "    Team #           : " << listPlayer.TeamId << std::endl;
+            std::cout << "    Login            : " << listPlayer.Login << std::endl;
+            std::cout << "    NickName         : " << listPlayer.NickName << std::endl;
+            std::cout << "    IsSpectator      : " << listPlayer.IsSpectator << std::endl;
+            std::cout << "    IsInOfficialMode : " << listPlayer.IsInOfficialMode << std::endl;
+            std::cout << "    LadderRanking    : " << listPlayer.LadderRanking << std::endl;
         }
     }
     else
