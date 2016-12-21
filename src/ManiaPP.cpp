@@ -36,6 +36,8 @@ void ManiaPP::ConnectToServer()
                 responseParams = server->GetResponse()->GetParameters();
                 std::vector<GbxResponseParameter>* methodsArray = responseParams->at(0).GetArray();
                 std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieving server methods: " << methodsArray->size() << " found." << std::endl;
+
+                retrievePlayerList();
             }
             else
             {
@@ -47,6 +49,33 @@ void ManiaPP::ConnectToServer()
         {
             logging->PrintFailedFlush();
             logging->PrintError(server->GetCurrentError());
+        }
+    }
+    else
+    {
+        logging->PrintFailedFlush();
+        logging->PrintError(server->GetCurrentError());
+    }
+}
+
+void ManiaPP::retrievePlayerList()
+{
+    std::cout << "[         ] Retrieving current player list ... " << '\r' << std::flush;
+    int playerListLimit = 512; int playerListIndex = 0;
+    GbxParameters* params = new GbxParameters();
+    params->Put(&playerListLimit);
+    params->Put(&playerListIndex);
+    GbxMessage* getPlayerList = new GbxMessage("GetPlayerList", params);
+    if(server->Query(getPlayerList))
+    {
+        std::vector<GbxResponseParameter>* responseParams = server->GetResponse()->GetParameters();
+        std::vector<GbxResponseParameter>* playerList = responseParams->at(0).GetArray();
+        std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieving current player list: " << playerList->size() << " found." << std::endl;
+        for(int playerId = 0; playerId < playerList->size(); playerId++)
+        {
+            std::map<std::string, GbxResponseParameter>* player = playerList->at(playerId).GetStruct();
+            std::cout << "Player size: " << player->size() << std::endl;
+            std::cout << "Player #" << playerId << ": " << player->find("Login")->second.GetString() << std::endl;
         }
     }
     else

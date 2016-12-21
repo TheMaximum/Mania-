@@ -13,6 +13,8 @@
 //* GbxRemote
 /**
  * \brief Handles communication with the ManiaPlanet server.
+ *
+ * \todo Add support for callbacks.
  */
 class GbxRemote
 {

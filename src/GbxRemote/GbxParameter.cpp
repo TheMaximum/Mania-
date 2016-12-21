@@ -1,5 +1,4 @@
 #include "GbxParameter.h"
-#include "GbxParameters.h"
 
 GbxParameter::GbxParameter(GbxParam param)
 {

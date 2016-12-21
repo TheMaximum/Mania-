@@ -111,8 +111,6 @@ private:
 
     /*!
      * \brief Extracts parameters from the raw data (XML).
-     *
-     * \todo Add support for structs.
      */
     void extractParameters();
 

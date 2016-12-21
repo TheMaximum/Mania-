@@ -32,6 +32,11 @@ private:
     Config* config;    /**< \brief Contains the configuration for the software. */
     Logging* logging;  /**< \brief Contains functions to log information. */
     GbxRemote* server; /**< \brief Contains the connection with the server and its methods. */
+
+    /*!
+     * \brief Gets a list of current players from the server.
+     */
+    void retrievePlayerList();
 };
 
 #endif // MANIAPP_H_

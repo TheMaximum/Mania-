@@ -1,7 +1,5 @@
 #include "GbxResponse.h"
 
-#include <iostream>
-
 GbxResponse::GbxResponse()
 {
     data = (char*)"";
@@ -101,9 +99,10 @@ GbxResponseParameter GbxResponse::extractParam(tinyxml2::XMLElement* param)
     for (tinyxml2::XMLElement* sibling = value->FirstChildElement(); sibling != NULL; sibling = sibling->NextSiblingElement())
     {
         std::string valueType(sibling->Name());
+        resParam.Type = valueType;
+
         if(valueType.find("array") != std::string::npos)
         {
-            resParam.Type = valueType;
             std::vector<GbxResponseParameter>* arrayData = new std::vector<GbxResponseParameter>();
 
             tinyxml2::XMLElement* data = sibling->FirstChildElement("data");
@@ -117,15 +116,21 @@ GbxResponseParameter GbxResponse::extractParam(tinyxml2::XMLElement* param)
         }
         else if(valueType.find("struct") != std::string::npos)
         {
-            // Properly handle structs ...
-            char* value = (char*)"Struct placeholder.";
-            resParam.Type = "struct";
-            resParam.Value = value;
+            std::map<std::string, GbxResponseParameter>* map = new std::map<std::string, GbxResponseParameter>();
+
+            for (tinyxml2::XMLElement* member = sibling->FirstChildElement(); member != NULL; member = member->NextSiblingElement())
+            {
+                tinyxml2::XMLElement* name = member->FirstChildElement("name");
+                GbxResponseParameter structParam = extractParam(member->FirstChildElement("value"));
+
+                map->insert(std::pair<std::string, GbxResponseParameter>(name->GetText(), structParam));
+            }
+
+            resParam.Value = map;
         }
         else
         {
             char* value = (char*)sibling->GetText();
-            resParam.Type = valueType;
             resParam.Value = value;
         }
     }

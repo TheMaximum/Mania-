@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "GbxParameters.h"
+#include "GbxParameter.h"
 
 //* GbxMessage
 /**
