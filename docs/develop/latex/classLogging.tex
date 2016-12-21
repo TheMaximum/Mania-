@@ -14,7 +14,11 @@ Utility to print information to the console.
 \begin{DoxyCompactItemize}
 \item 
 static void \hyperlink{classLogging_a171703bedcbf215f0e6334f29c8281b5}{Print\-Error} (\hyperlink{structGbxError}{Gbx\-Error} $\ast$error)
-\begin{DoxyCompactList}\small\item\em Prints char array as hexadecimal values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Prints error to console. \end{DoxyCompactList}\item 
+static void \hyperlink{classLogging_a889f2ad8f991afdf0959cb1cad736fa7}{Print\-O\-K\-Flush} ()
+\begin{DoxyCompactList}\small\item\em Prints O\-K. in \mbox{[} \mbox{]}-\/spaces in console. \end{DoxyCompactList}\item 
+static void \hyperlink{classLogging_add0483bd14aef74ec988606cd7dbfc4b}{Print\-Failed\-Flush} ()
+\begin{DoxyCompactList}\small\item\em Prints Failed! in \mbox{[} \mbox{]}-\/spaces in console. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -30,17 +34,35 @@ Utility to print information to the console.
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classLogging_a171703bedcbf215f0e6334f29c8281b5}
 
 
-Prints char array as hexadecimal values. 
-
-For printing the char array as hexadecimal, it uses the std\-::hex option. The char array is casted and printed char by char.
+Prints error to console. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em message} & Char array with message to be displayed. \\
-\hline
-{\em message\-Length} & Length of the char array. \\
+{\em error} & Error structure. \\
 \hline
 \end{DoxyParams}
+\hypertarget{classLogging_add0483bd14aef74ec988606cd7dbfc4b}{\index{Logging@{Logging}!Print\-Failed\-Flush@{Print\-Failed\-Flush}}
+\index{Print\-Failed\-Flush@{Print\-Failed\-Flush}!Logging@{Logging}}
+\subsubsection[{Print\-Failed\-Flush}]{\setlength{\rightskip}{0pt plus 5cm}static void Logging\-::\-Print\-Failed\-Flush (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classLogging_add0483bd14aef74ec988606cd7dbfc4b}
+
+
+Prints Failed! in \mbox{[} \mbox{]}-\/spaces in console. 
+
+\hypertarget{classLogging_a889f2ad8f991afdf0959cb1cad736fa7}{\index{Logging@{Logging}!Print\-O\-K\-Flush@{Print\-O\-K\-Flush}}
+\index{Print\-O\-K\-Flush@{Print\-O\-K\-Flush}!Logging@{Logging}}
+\subsubsection[{Print\-O\-K\-Flush}]{\setlength{\rightskip}{0pt plus 5cm}static void Logging\-::\-Print\-O\-K\-Flush (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classLogging_a889f2ad8f991afdf0959cb1cad736fa7}
+
+
+Prints O\-K. in \mbox{[} \mbox{]}-\/spaces in console. 
+
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}

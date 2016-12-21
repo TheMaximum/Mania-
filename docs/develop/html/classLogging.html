@@ -97,8 +97,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a171703bedcbf215f0e6334f29c8281b5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogging.html#a171703bedcbf215f0e6334f29c8281b5">PrintError</a> (<a class="el" href="structGbxError.html">GbxError</a> *error)</td></tr>
-<tr class="memdesc:a171703bedcbf215f0e6334f29c8281b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints char array as hexadecimal values.  <a href="#a171703bedcbf215f0e6334f29c8281b5">More...</a><br/></td></tr>
+<tr class="memdesc:a171703bedcbf215f0e6334f29c8281b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints error to console.  <a href="#a171703bedcbf215f0e6334f29c8281b5">More...</a><br/></td></tr>
 <tr class="separator:a171703bedcbf215f0e6334f29c8281b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a889f2ad8f991afdf0959cb1cad736fa7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogging.html#a889f2ad8f991afdf0959cb1cad736fa7">PrintOKFlush</a> ()</td></tr>
+<tr class="memdesc:a889f2ad8f991afdf0959cb1cad736fa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints OK. in [ ]-spaces in console.  <a href="#a889f2ad8f991afdf0959cb1cad736fa7">More...</a><br/></td></tr>
+<tr class="separator:a889f2ad8f991afdf0959cb1cad736fa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add0483bd14aef74ec988606cd7dbfc4b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogging.html#add0483bd14aef74ec988606cd7dbfc4b">PrintFailedFlush</a> ()</td></tr>
+<tr class="memdesc:add0483bd14aef74ec988606cd7dbfc4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints Failed! in [ ]-spaces in console.  <a href="#add0483bd14aef74ec988606cd7dbfc4b">More...</a><br/></td></tr>
+<tr class="separator:add0483bd14aef74ec988606cd7dbfc4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Utility to print information to the console. </p>
@@ -125,15 +131,63 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Prints char array as hexadecimal values. </p>
-<p>For printing the char array as hexadecimal, it uses the std::hex option. The char array is casted and printed char by char.</p>
+<p>Prints error to console. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">message</td><td>Char array with message to be displayed. </td></tr>
-    <tr><td class="paramname">messageLength</td><td>Length of the char array. </td></tr>
+    <tr><td class="paramname">error</td><td>Error structure. </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="add0483bd14aef74ec988606cd7dbfc4b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Logging::PrintFailedFlush </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Prints Failed! in [ ]-spaces in console. </p>
+
+</div>
+</div>
+<a class="anchor" id="a889f2ad8f991afdf0959cb1cad736fa7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Logging::PrintOKFlush </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Prints OK. in [ ]-spaces in console. </p>
 
 </div>
 </div>
@@ -143,7 +197,7 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 21 2016 13:43:46 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 21 2016 15:05:47 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

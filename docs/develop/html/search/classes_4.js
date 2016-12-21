@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['serverconfig',['ServerConfig',['../structServerConfig.html',1,'']]]
+  ['maniapp',['ManiaPP',['../classManiaPP.html',1,'']]]
 ];
