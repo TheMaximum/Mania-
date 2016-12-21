@@ -13,6 +13,7 @@ git config user.email "travis@travis-ci.org"
 rm -rf *
 
 echo "" > .nojekyll
+echo "INPUT = ../../../../../src" >> $DOXYFILE
 
 doxygen $DOXYFILE 2>&1 | tee doxygen.log
 
