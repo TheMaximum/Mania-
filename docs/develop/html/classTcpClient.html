@@ -110,15 +110,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a83e87c3df7d1a5a27c075f9582c6350e"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTcpClient.html#a83e87c3df7d1a5a27c075f9582c6350e">Receive</a> (int size)</td></tr>
 <tr class="memdesc:a83e87c3df7d1a5a27c075f9582c6350e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns data received from the server.  <a href="#a83e87c3df7d1a5a27c075f9582c6350e">More...</a><br/></td></tr>
 <tr class="separator:a83e87c3df7d1a5a27c075f9582c6350e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4df900657b1cb45aced143fe21a81937"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTcpClient.html#a4df900657b1cb45aced143fe21a81937">SearchForCallBacks</a> (int timeout)</td></tr>
+<tr class="memdesc:a4df900657b1cb45aced143fe21a81937"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait (timeout) for callbacks from the server.  <a href="#a4df900657b1cb45aced143fe21a81937">More...</a><br/></td></tr>
+<tr class="separator:a4df900657b1cb45aced143fe21a81937"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7a96d69db612ef4827ee23c31332a4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTcpClient.html#ae7a96d69db612ef4827ee23c31332a4e">Close</a> ()</td></tr>
 <tr class="memdesc:ae7a96d69db612ef4827ee23c31332a4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the socket with the server.  <a href="#ae7a96d69db612ef4827ee23c31332a4e">More...</a><br/></td></tr>
 <tr class="separator:ae7a96d69db612ef4827ee23c31332a4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ab2a93fc91ae8adf7c94e19651339f996"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTcpClient.html#ab2a93fc91ae8adf7c94e19651339f996">RequestHandle</a> = 0x80000000</td></tr>
-<tr class="memdesc:ab2a93fc91ae8adf7c94e19651339f996"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current request identifier.  <a href="#ab2a93fc91ae8adf7c94e19651339f996">More...</a><br/></td></tr>
-<tr class="separator:ab2a93fc91ae8adf7c94e19651339f996"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57ffabce89de6e0f07a3717758f67fe6"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTcpClient.html#a57ffabce89de6e0f07a3717758f67fe6">RequestHandle</a></td></tr>
+<tr class="memdesc:a57ffabce89de6e0f07a3717758f67fe6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current request identifier.  <a href="#a57ffabce89de6e0f07a3717758f67fe6">More...</a><br/></td></tr>
+<tr class="separator:a57ffabce89de6e0f07a3717758f67fe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -234,6 +237,30 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a4df900657b1cb45aced143fe21a81937"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TcpClient::SearchForCallBacks </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>timeout</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wait (timeout) for callbacks from the server. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeout</td><td>Timeout in microseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="acac6ca70c9d99e09731181e5239381ae"></a>
 <div class="memitem">
 <div class="memproto">
@@ -304,12 +331,12 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab2a93fc91ae8adf7c94e19651339f996"></a>
+<a class="anchor" id="a57ffabce89de6e0f07a3717758f67fe6"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int TcpClient::RequestHandle = 0x80000000</td>
+          <td class="memname">long TcpClient::RequestHandle</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -369,7 +396,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 21 2016 16:52:34 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 21 2016 21:29:01 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

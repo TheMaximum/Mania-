@@ -21,12 +21,14 @@ bool \hyperlink{classTcpClient_acac6ca70c9d99e09731181e5239381ae}{Send} (std\-::
 \begin{DoxyCompactList}\small\item\em Sends an X\-M\-L message to the server. \end{DoxyCompactList}\item 
 char $\ast$ \hyperlink{classTcpClient_a83e87c3df7d1a5a27c075f9582c6350e}{Receive} (int size)
 \begin{DoxyCompactList}\small\item\em Returns data received from the server. \end{DoxyCompactList}\item 
+bool \hyperlink{classTcpClient_a4df900657b1cb45aced143fe21a81937}{Search\-For\-Call\-Backs} (int timeout)
+\begin{DoxyCompactList}\small\item\em Wait (timeout) for callbacks from the server. \end{DoxyCompactList}\item 
 void \hyperlink{classTcpClient_ae7a96d69db612ef4827ee23c31332a4e}{Close} ()
 \begin{DoxyCompactList}\small\item\em Closes the socket with the server. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{classTcpClient_ab2a93fc91ae8adf7c94e19651339f996}{Request\-Handle} = 0x80000000
+long \hyperlink{classTcpClient_a57ffabce89de6e0f07a3717758f67fe6}{Request\-Handle}
 \begin{DoxyCompactList}\small\item\em Current request identifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -109,6 +111,22 @@ Returns data received from the server.
 {\em size} & Size of the message expected. \\
 \hline
 \end{DoxyParams}
+\hypertarget{classTcpClient_a4df900657b1cb45aced143fe21a81937}{\index{Tcp\-Client@{Tcp\-Client}!Search\-For\-Call\-Backs@{Search\-For\-Call\-Backs}}
+\index{Search\-For\-Call\-Backs@{Search\-For\-Call\-Backs}!TcpClient@{Tcp\-Client}}
+\subsubsection[{Search\-For\-Call\-Backs}]{\setlength{\rightskip}{0pt plus 5cm}bool Tcp\-Client\-::\-Search\-For\-Call\-Backs (
+\begin{DoxyParamCaption}
+\item[{int}]{timeout}
+\end{DoxyParamCaption}
+)}}\label{classTcpClient_a4df900657b1cb45aced143fe21a81937}
+
+
+Wait (timeout) for callbacks from the server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timeout} & Timeout in microseconds. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classTcpClient_acac6ca70c9d99e09731181e5239381ae}{\index{Tcp\-Client@{Tcp\-Client}!Send@{Send}}
 \index{Send@{Send}!TcpClient@{Tcp\-Client}}
 \subsubsection[{Send}]{\setlength{\rightskip}{0pt plus 5cm}bool Tcp\-Client\-::\-Send (
@@ -144,9 +162,9 @@ Address of the server.
 
 X\-M\-L-\/\-R\-P\-C port of the server. 
 
-\hypertarget{classTcpClient_ab2a93fc91ae8adf7c94e19651339f996}{\index{Tcp\-Client@{Tcp\-Client}!Request\-Handle@{Request\-Handle}}
+\hypertarget{classTcpClient_a57ffabce89de6e0f07a3717758f67fe6}{\index{Tcp\-Client@{Tcp\-Client}!Request\-Handle@{Request\-Handle}}
 \index{Request\-Handle@{Request\-Handle}!TcpClient@{Tcp\-Client}}
-\subsubsection[{Request\-Handle}]{\setlength{\rightskip}{0pt plus 5cm}int Tcp\-Client\-::\-Request\-Handle = 0x80000000}}\label{classTcpClient_ab2a93fc91ae8adf7c94e19651339f996}
+\subsubsection[{Request\-Handle}]{\setlength{\rightskip}{0pt plus 5cm}long Tcp\-Client\-::\-Request\-Handle}}\label{classTcpClient_a57ffabce89de6e0f07a3717758f67fe6}
 
 
 Current request identifier. 

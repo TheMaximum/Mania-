@@ -23,6 +23,10 @@ void \hyperlink{classGbxRemote_a6fa8ca2d48aae84884cab98a0adf4360}{Terminate} ()
 \begin{DoxyCompactList}\small\item\em Closes the connection with the server. \end{DoxyCompactList}\item 
 bool \hyperlink{classGbxRemote_abf869640136958fc4756b3a60275a285}{Query} (\hyperlink{classGbxMessage}{Gbx\-Message} $\ast$query)
 \begin{DoxyCompactList}\small\item\em Sends a \hyperlink{classGbxMessage}{Gbx\-Message} to the server. \end{DoxyCompactList}\item 
+bool \hyperlink{classGbxRemote_ac595861af2f4d7349ce3841f0758507d}{Read\-Call\-Backs} ()
+\begin{DoxyCompactList}\small\item\em Read callbacks from the server. \end{DoxyCompactList}\item 
+void \hyperlink{classGbxRemote_aa46d673f3160aed8d7062c209504a0db}{Handle\-Call\-Back} (char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Handles callbacks (de-\/\-X\-M\-L-\/fies them). \end{DoxyCompactList}\item 
 \hyperlink{classGbxResponse}{Gbx\-Response} $\ast$ \hyperlink{classGbxRemote_adac67444e391ffcc1dfda8f087eaef0b}{Get\-Response} ()
 \begin{DoxyCompactList}\small\item\em Returns the response from the server. \end{DoxyCompactList}\item 
 \hyperlink{structGbxError}{Gbx\-Error} $\ast$ \hyperlink{classGbxRemote_a5467b5400129cd13239f88576aaaa2b4}{Get\-Current\-Error} ()
@@ -46,7 +50,9 @@ int \hyperlink{classGbxRemote_a5ee5c7087085cb6cb2e7bc6135ff0646}{protocol} = 0
 Handles communication with the Mania\-Planet server. 
 
 \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000001}{Todo}]Add support for callbacks. \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000001}{Todo}]Handle/de-\/\-X\-M\-Lify callbacks (receiving works). 
+
+Make it possible to set an A\-P\-I version without upsetting Tiny\-X\-M\-L2. \end{DoxyRefDesc}
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -93,6 +99,22 @@ Returns the current version number of the server protocol (1 or 2).
 
 Returns the response from the server. 
 
+\hypertarget{classGbxRemote_aa46d673f3160aed8d7062c209504a0db}{\index{Gbx\-Remote@{Gbx\-Remote}!Handle\-Call\-Back@{Handle\-Call\-Back}}
+\index{Handle\-Call\-Back@{Handle\-Call\-Back}!GbxRemote@{Gbx\-Remote}}
+\subsubsection[{Handle\-Call\-Back}]{\setlength{\rightskip}{0pt plus 5cm}void Gbx\-Remote\-::\-Handle\-Call\-Back (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{classGbxRemote_aa46d673f3160aed8d7062c209504a0db}
+
+
+Handles callbacks (de-\/\-X\-M\-L-\/fies them). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Raw response from the server. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classGbxRemote_a24d9d0df923ed85010f53dcb43c2b977}{\index{Gbx\-Remote@{Gbx\-Remote}!Init@{Init}}
 \index{Init@{Init}!GbxRemote@{Gbx\-Remote}}
 \subsubsection[{Init}]{\setlength{\rightskip}{0pt plus 5cm}bool Gbx\-Remote\-::\-Init (
@@ -146,7 +168,18 @@ Returns whether the query was successfully sent.
 {\em query} & Query to be send. \\
 \hline
 \end{DoxyParams}
-\hypertarget{classGbxRemote_a6fa8ca2d48aae84884cab98a0adf4360}{\index{Gbx\-Remote@{Gbx\-Remote}!Terminate@{Terminate}}
+\hypertarget{classGbxRemote_ac595861af2f4d7349ce3841f0758507d}{\index{Gbx\-Remote@{Gbx\-Remote}!Read\-Call\-Backs@{Read\-Call\-Backs}}
+\index{Read\-Call\-Backs@{Read\-Call\-Backs}!GbxRemote@{Gbx\-Remote}}
+\subsubsection[{Read\-Call\-Backs}]{\setlength{\rightskip}{0pt plus 5cm}bool Gbx\-Remote\-::\-Read\-Call\-Backs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGbxRemote_ac595861af2f4d7349ce3841f0758507d}
+
+
+Read callbacks from the server. 
+
+Returns whether it found a callback. \hypertarget{classGbxRemote_a6fa8ca2d48aae84884cab98a0adf4360}{\index{Gbx\-Remote@{Gbx\-Remote}!Terminate@{Terminate}}
 \index{Terminate@{Terminate}!GbxRemote@{Gbx\-Remote}}
 \subsubsection[{Terminate}]{\setlength{\rightskip}{0pt plus 5cm}void Gbx\-Remote\-::\-Terminate (
 \begin{DoxyParamCaption}

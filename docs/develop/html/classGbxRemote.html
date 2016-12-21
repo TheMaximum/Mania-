@@ -111,6 +111,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abf869640136958fc4756b3a60275a285"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#abf869640136958fc4756b3a60275a285">Query</a> (<a class="el" href="classGbxMessage.html">GbxMessage</a> *query)</td></tr>
 <tr class="memdesc:abf869640136958fc4756b3a60275a285"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a <a class="el" href="classGbxMessage.html" title="XML-fies the message for communication with the server. ">GbxMessage</a> to the server.  <a href="#abf869640136958fc4756b3a60275a285">More...</a><br/></td></tr>
 <tr class="separator:abf869640136958fc4756b3a60275a285"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac595861af2f4d7349ce3841f0758507d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#ac595861af2f4d7349ce3841f0758507d">ReadCallBacks</a> ()</td></tr>
+<tr class="memdesc:ac595861af2f4d7349ce3841f0758507d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read callbacks from the server.  <a href="#ac595861af2f4d7349ce3841f0758507d">More...</a><br/></td></tr>
+<tr class="separator:ac595861af2f4d7349ce3841f0758507d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa46d673f3160aed8d7062c209504a0db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#aa46d673f3160aed8d7062c209504a0db">HandleCallBack</a> (char *data)</td></tr>
+<tr class="memdesc:aa46d673f3160aed8d7062c209504a0db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles callbacks (de-XML-fies them).  <a href="#aa46d673f3160aed8d7062c209504a0db">More...</a><br/></td></tr>
+<tr class="separator:aa46d673f3160aed8d7062c209504a0db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adac67444e391ffcc1dfda8f087eaef0b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGbxResponse.html">GbxResponse</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#adac67444e391ffcc1dfda8f087eaef0b">GetResponse</a> ()</td></tr>
 <tr class="memdesc:adac67444e391ffcc1dfda8f087eaef0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the response from the server.  <a href="#adac67444e391ffcc1dfda8f087eaef0b">More...</a><br/></td></tr>
 <tr class="separator:adac67444e391ffcc1dfda8f087eaef0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,7 +144,9 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Handles communication with the ManiaPlanet server. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>Add support for callbacks. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd><p class="startdd">Handle/de-XMLify callbacks (receiving works). </p>
+<p class="enddd">Make it possible to set an API version without upsetting TinyXML2. </p>
+</dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a9ac65a51eb6f9127337b4f99841cfe2d"></a>
 <div class="memitem">
@@ -206,6 +214,30 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the response from the server. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa46d673f3160aed8d7062c209504a0db"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GbxRemote::HandleCallBack </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handles callbacks (de-XML-fies them). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Raw response from the server. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -290,6 +322,24 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="ac595861af2f4d7349ce3841f0758507d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GbxRemote::ReadCallBacks </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read callbacks from the server. </p>
+<p>Returns whether it found a callback. </p>
 
 </div>
 </div>
@@ -406,7 +456,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 21 2016 16:52:34 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 21 2016 21:29:01 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

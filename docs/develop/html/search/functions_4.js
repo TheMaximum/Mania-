@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['init',['Init',['../classGbxRemote.html#a24d9d0df923ed85010f53dcb43c2b977',1,'GbxRemote']]],
-  ['initwithip',['InitWithIp',['../classGbxRemote.html#aa9a57e73f2f5ebbde90484503bd0d16d',1,'GbxRemote']]]
+  ['handlecallback',['HandleCallBack',['../classGbxRemote.html#aa46d673f3160aed8d7062c209504a0db',1,'GbxRemote']]]
 ];
