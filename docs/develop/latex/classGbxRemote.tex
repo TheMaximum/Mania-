@@ -1,0 +1,192 @@
+\hypertarget{classGbxRemote}{\section{Gbx\-Remote Class Reference}
+\label{classGbxRemote}\index{Gbx\-Remote@{Gbx\-Remote}}
+}
+
+
+Handles communication with the Mania\-Planet server.  
+
+
+
+
+{\ttfamily \#include $<$Gbx\-Remote.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGbxRemote_a9ac65a51eb6f9127337b4f99841cfe2d}{$\sim$\-Gbx\-Remote} ()
+\item 
+bool \hyperlink{classGbxRemote_a24d9d0df923ed85010f53dcb43c2b977}{Init} (int port)
+\begin{DoxyCompactList}\small\item\em Initializes connection with the local server. \end{DoxyCompactList}\item 
+bool \hyperlink{classGbxRemote_aa9a57e73f2f5ebbde90484503bd0d16d}{Init\-With\-Ip} (std\-::string address, int port)
+\begin{DoxyCompactList}\small\item\em Initializes connection with the server. \end{DoxyCompactList}\item 
+void \hyperlink{classGbxRemote_a6fa8ca2d48aae84884cab98a0adf4360}{Terminate} ()
+\begin{DoxyCompactList}\small\item\em Closes the connection with the server. \end{DoxyCompactList}\item 
+bool \hyperlink{classGbxRemote_abf869640136958fc4756b3a60275a285}{Query} (\hyperlink{classGbxMessage}{Gbx\-Message} $\ast$query)
+\begin{DoxyCompactList}\small\item\em Sends a \hyperlink{classGbxMessage}{Gbx\-Message} to the server. \end{DoxyCompactList}\item 
+\hyperlink{classGbxResponse}{Gbx\-Response} $\ast$ \hyperlink{classGbxRemote_adac67444e391ffcc1dfda8f087eaef0b}{Get\-Response} ()
+\begin{DoxyCompactList}\small\item\em Returns the response from the server. \end{DoxyCompactList}\item 
+\hyperlink{structGbxError}{Gbx\-Error} $\ast$ \hyperlink{classGbxRemote_a5467b5400129cd13239f88576aaaa2b4}{Get\-Current\-Error} ()
+\begin{DoxyCompactList}\small\item\em Returns the current server error. \end{DoxyCompactList}\item 
+int \hyperlink{classGbxRemote_ae6e15060920a31482fd14045cfd42803}{Get\-Protocol} ()
+\begin{DoxyCompactList}\small\item\em Returns the current version number of the server protocol (1 or 2). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classGbxRemote_a5ee5c7087085cb6cb2e7bc6135ff0646}{protocol} = 0
+\begin{DoxyCompactList}\small\item\em Protocol version (0 = uninitialized, 1 or 2 = version). \end{DoxyCompactList}\item 
+\hyperlink{classTcpClient}{Tcp\-Client} \hyperlink{classGbxRemote_a0b0b212b945da4266fb645affdac81cb}{server}
+\begin{DoxyCompactList}\small\item\em Socket connection with the server. \end{DoxyCompactList}\item 
+\hyperlink{structGbxError}{Gbx\-Error} $\ast$ \hyperlink{classGbxRemote_ae5d44c3729140c1eba5e850cb5e5e7bd}{current\-Error} = new \hyperlink{structGbxError}{Gbx\-Error}
+\begin{DoxyCompactList}\small\item\em Current server error. \end{DoxyCompactList}\item 
+\hyperlink{classGbxResponse}{Gbx\-Response} $\ast$ \hyperlink{classGbxRemote_a3a3a0af1a692a801a33baa292b877dc2}{current\-Response} = new \hyperlink{classGbxResponse}{Gbx\-Response}
+\begin{DoxyCompactList}\small\item\em Current server response. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Handles communication with the Mania\-Planet server. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGbxRemote_a9ac65a51eb6f9127337b4f99841cfe2d}{\index{Gbx\-Remote@{Gbx\-Remote}!$\sim$\-Gbx\-Remote@{$\sim$\-Gbx\-Remote}}
+\index{$\sim$\-Gbx\-Remote@{$\sim$\-Gbx\-Remote}!GbxRemote@{Gbx\-Remote}}
+\subsubsection[{$\sim$\-Gbx\-Remote}]{\setlength{\rightskip}{0pt plus 5cm}Gbx\-Remote\-::$\sim$\-Gbx\-Remote (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGbxRemote_a9ac65a51eb6f9127337b4f99841cfe2d}
+Deletes and nullifies the current\-Error and current\-Response. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classGbxRemote_a5467b5400129cd13239f88576aaaa2b4}{\index{Gbx\-Remote@{Gbx\-Remote}!Get\-Current\-Error@{Get\-Current\-Error}}
+\index{Get\-Current\-Error@{Get\-Current\-Error}!GbxRemote@{Gbx\-Remote}}
+\subsubsection[{Get\-Current\-Error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gbx\-Error} $\ast$ Gbx\-Remote\-::\-Get\-Current\-Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGbxRemote_a5467b5400129cd13239f88576aaaa2b4}
+
+
+Returns the current server error. 
+
+Returns N\-U\-L\-L when there currently is no error. \hypertarget{classGbxRemote_ae6e15060920a31482fd14045cfd42803}{\index{Gbx\-Remote@{Gbx\-Remote}!Get\-Protocol@{Get\-Protocol}}
+\index{Get\-Protocol@{Get\-Protocol}!GbxRemote@{Gbx\-Remote}}
+\subsubsection[{Get\-Protocol}]{\setlength{\rightskip}{0pt plus 5cm}int Gbx\-Remote\-::\-Get\-Protocol (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGbxRemote_ae6e15060920a31482fd14045cfd42803}
+
+
+Returns the current version number of the server protocol (1 or 2). 
+
+\hypertarget{classGbxRemote_adac67444e391ffcc1dfda8f087eaef0b}{\index{Gbx\-Remote@{Gbx\-Remote}!Get\-Response@{Get\-Response}}
+\index{Get\-Response@{Get\-Response}!GbxRemote@{Gbx\-Remote}}
+\subsubsection[{Get\-Response}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gbx\-Response} $\ast$ Gbx\-Remote\-::\-Get\-Response (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGbxRemote_adac67444e391ffcc1dfda8f087eaef0b}
+
+
+Returns the response from the server. 
+
+\hypertarget{classGbxRemote_a24d9d0df923ed85010f53dcb43c2b977}{\index{Gbx\-Remote@{Gbx\-Remote}!Init@{Init}}
+\index{Init@{Init}!GbxRemote@{Gbx\-Remote}}
+\subsubsection[{Init}]{\setlength{\rightskip}{0pt plus 5cm}bool Gbx\-Remote\-::\-Init (
+\begin{DoxyParamCaption}
+\item[{int}]{port}
+\end{DoxyParamCaption}
+)}}\label{classGbxRemote_a24d9d0df923ed85010f53dcb43c2b977}
+
+
+Initializes connection with the local server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & X\-M\-L-\/\-R\-P\-C port of the server. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGbxRemote_aa9a57e73f2f5ebbde90484503bd0d16d}{\index{Gbx\-Remote@{Gbx\-Remote}!Init\-With\-Ip@{Init\-With\-Ip}}
+\index{Init\-With\-Ip@{Init\-With\-Ip}!GbxRemote@{Gbx\-Remote}}
+\subsubsection[{Init\-With\-Ip}]{\setlength{\rightskip}{0pt plus 5cm}bool Gbx\-Remote\-::\-Init\-With\-Ip (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{address, }
+\item[{int}]{port}
+\end{DoxyParamCaption}
+)}}\label{classGbxRemote_aa9a57e73f2f5ebbde90484503bd0d16d}
+
+
+Initializes connection with the server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & Address of the server. \\
+\hline
+{\em port} & X\-M\-L-\/\-R\-P\-C port of the server. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGbxRemote_abf869640136958fc4756b3a60275a285}{\index{Gbx\-Remote@{Gbx\-Remote}!Query@{Query}}
+\index{Query@{Query}!GbxRemote@{Gbx\-Remote}}
+\subsubsection[{Query}]{\setlength{\rightskip}{0pt plus 5cm}bool Gbx\-Remote\-::\-Query (
+\begin{DoxyParamCaption}
+\item[{{\bf Gbx\-Message} $\ast$}]{query}
+\end{DoxyParamCaption}
+)}}\label{classGbxRemote_abf869640136958fc4756b3a60275a285}
+
+
+Sends a \hyperlink{classGbxMessage}{Gbx\-Message} to the server. 
+
+Returns whether the query was successfully sent.
+
+
+\begin{DoxyParams}{Parameters}
+{\em query} & Query to be send. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGbxRemote_a6fa8ca2d48aae84884cab98a0adf4360}{\index{Gbx\-Remote@{Gbx\-Remote}!Terminate@{Terminate}}
+\index{Terminate@{Terminate}!GbxRemote@{Gbx\-Remote}}
+\subsubsection[{Terminate}]{\setlength{\rightskip}{0pt plus 5cm}void Gbx\-Remote\-::\-Terminate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGbxRemote_a6fa8ca2d48aae84884cab98a0adf4360}
+
+
+Closes the connection with the server. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classGbxRemote_ae5d44c3729140c1eba5e850cb5e5e7bd}{\index{Gbx\-Remote@{Gbx\-Remote}!current\-Error@{current\-Error}}
+\index{current\-Error@{current\-Error}!GbxRemote@{Gbx\-Remote}}
+\subsubsection[{current\-Error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gbx\-Error}$\ast$ Gbx\-Remote\-::current\-Error = new {\bf Gbx\-Error}\hspace{0.3cm}{\ttfamily [private]}}}\label{classGbxRemote_ae5d44c3729140c1eba5e850cb5e5e7bd}
+
+
+Current server error. 
+
+\hypertarget{classGbxRemote_a3a3a0af1a692a801a33baa292b877dc2}{\index{Gbx\-Remote@{Gbx\-Remote}!current\-Response@{current\-Response}}
+\index{current\-Response@{current\-Response}!GbxRemote@{Gbx\-Remote}}
+\subsubsection[{current\-Response}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gbx\-Response}$\ast$ Gbx\-Remote\-::current\-Response = new {\bf Gbx\-Response}\hspace{0.3cm}{\ttfamily [private]}}}\label{classGbxRemote_a3a3a0af1a692a801a33baa292b877dc2}
+
+
+Current server response. 
+
+\hypertarget{classGbxRemote_a5ee5c7087085cb6cb2e7bc6135ff0646}{\index{Gbx\-Remote@{Gbx\-Remote}!protocol@{protocol}}
+\index{protocol@{protocol}!GbxRemote@{Gbx\-Remote}}
+\subsubsection[{protocol}]{\setlength{\rightskip}{0pt plus 5cm}int Gbx\-Remote\-::protocol = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classGbxRemote_a5ee5c7087085cb6cb2e7bc6135ff0646}
+
+
+Protocol version (0 = uninitialized, 1 or 2 = version). 
+
+\hypertarget{classGbxRemote_a0b0b212b945da4266fb645affdac81cb}{\index{Gbx\-Remote@{Gbx\-Remote}!server@{server}}
+\index{server@{server}!GbxRemote@{Gbx\-Remote}}
+\subsubsection[{server}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tcp\-Client} Gbx\-Remote\-::server\hspace{0.3cm}{\ttfamily [private]}}}\label{classGbxRemote_a0b0b212b945da4266fb645affdac81cb}
+
+
+Socket connection with the server. 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Gbx\-Remote/\hyperlink{GbxRemote_8h}{Gbx\-Remote.\-h}\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Gbx\-Remote/\hyperlink{GbxRemote_8cpp}{Gbx\-Remote.\-cpp}\end{DoxyCompactItemize}

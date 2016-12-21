@@ -1,0 +1,133 @@
+\hypertarget{classGbxParameter}{\section{Gbx\-Parameter Class Reference}
+\label{classGbxParameter}\index{Gbx\-Parameter@{Gbx\-Parameter}}
+}
+
+
+X\-M\-L-\/fies the parameter for communication with the server.  
+
+
+
+
+{\ttfamily \#include $<$Gbx\-Parameter.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGbxParameter_a6cfd5c21c176ca6d9d2a1a3d9ad9953c}{Gbx\-Parameter} (\hyperlink{structGbxParam}{Gbx\-Param} param)
+\begin{DoxyCompactList}\small\item\em Casts parameter to string and calls calculate\-Type. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classGbxParameter_a3c6800bca78c5bb4ed7de62cf552ee35}{Get\-Xml} ()
+\begin{DoxyCompactList}\small\item\em Returns xml-\/fied parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classGbxParameter_af708857623b85684ede2ae002e53a118}{determine\-Type} (const std\-::type\-\_\-info $\ast$param)
+\begin{DoxyCompactList}\small\item\em Determines which X\-M\-L-\/\-R\-P\-C type the parameter has. \end{DoxyCompactList}\item 
+void \hyperlink{classGbxParameter_a8e038bca99e1eb7339567fe1af79586c}{dereference\-Data} (void $\ast$param)
+\begin{DoxyCompactList}\small\item\em Converts the void pointer into the type determined in determine\-Type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{classGbxParameter_a6b64cfaae4d5b3b498fb2cdd3d28f824}{data}
+\begin{DoxyCompactList}\small\item\em Stringified parameter. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classGbxParameter_a19d4cab065cb0440c675e97babf45d02}{type}
+\begin{DoxyCompactList}\small\item\em Stringified parameter type for X\-M\-L. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classGbxParameter_ad5182c3df0c77e011c61e00e182f8a49}{xml\-Type}
+\begin{DoxyCompactList}\small\item\em Stringified parameter type for X\-M\-L. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+X\-M\-L-\/fies the parameter for communication with the server. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGbxParameter_a6cfd5c21c176ca6d9d2a1a3d9ad9953c}{\index{Gbx\-Parameter@{Gbx\-Parameter}!Gbx\-Parameter@{Gbx\-Parameter}}
+\index{Gbx\-Parameter@{Gbx\-Parameter}!GbxParameter@{Gbx\-Parameter}}
+\subsubsection[{Gbx\-Parameter}]{\setlength{\rightskip}{0pt plus 5cm}Gbx\-Parameter\-::\-Gbx\-Parameter (
+\begin{DoxyParamCaption}
+\item[{{\bf Gbx\-Param}}]{param}
+\end{DoxyParamCaption}
+)}}\label{classGbxParameter_a6cfd5c21c176ca6d9d2a1a3d9ad9953c}
+
+
+Casts parameter to string and calls calculate\-Type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em param} & Parameter to be xml-\/fied. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGbxParameter_a8e038bca99e1eb7339567fe1af79586c}{\index{Gbx\-Parameter@{Gbx\-Parameter}!dereference\-Data@{dereference\-Data}}
+\index{dereference\-Data@{dereference\-Data}!GbxParameter@{Gbx\-Parameter}}
+\subsubsection[{dereference\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void Gbx\-Parameter\-::dereference\-Data (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{param}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classGbxParameter_a8e038bca99e1eb7339567fe1af79586c}
+
+
+Converts the void pointer into the type determined in determine\-Type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em param} & Void pointer to parameter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGbxParameter_af708857623b85684ede2ae002e53a118}{\index{Gbx\-Parameter@{Gbx\-Parameter}!determine\-Type@{determine\-Type}}
+\index{determine\-Type@{determine\-Type}!GbxParameter@{Gbx\-Parameter}}
+\subsubsection[{determine\-Type}]{\setlength{\rightskip}{0pt plus 5cm}void Gbx\-Parameter\-::determine\-Type (
+\begin{DoxyParamCaption}
+\item[{const std\-::type\-\_\-info $\ast$}]{param}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classGbxParameter_af708857623b85684ede2ae002e53a118}
+
+
+Determines which X\-M\-L-\/\-R\-P\-C type the parameter has. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em param} & Type information about the parameter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGbxParameter_a3c6800bca78c5bb4ed7de62cf552ee35}{\index{Gbx\-Parameter@{Gbx\-Parameter}!Get\-Xml@{Get\-Xml}}
+\index{Get\-Xml@{Get\-Xml}!GbxParameter@{Gbx\-Parameter}}
+\subsubsection[{Get\-Xml}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gbx\-Parameter\-::\-Get\-Xml (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGbxParameter_a3c6800bca78c5bb4ed7de62cf552ee35}
+
+
+Returns xml-\/fied parameter. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classGbxParameter_a6b64cfaae4d5b3b498fb2cdd3d28f824}{\index{Gbx\-Parameter@{Gbx\-Parameter}!data@{data}}
+\index{data@{data}!GbxParameter@{Gbx\-Parameter}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gbx\-Parameter\-::data\hspace{0.3cm}{\ttfamily [private]}}}\label{classGbxParameter_a6b64cfaae4d5b3b498fb2cdd3d28f824}
+
+
+Stringified parameter. 
+
+\hypertarget{classGbxParameter_a19d4cab065cb0440c675e97babf45d02}{\index{Gbx\-Parameter@{Gbx\-Parameter}!type@{type}}
+\index{type@{type}!GbxParameter@{Gbx\-Parameter}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gbx\-Parameter\-::type\hspace{0.3cm}{\ttfamily [private]}}}\label{classGbxParameter_a19d4cab065cb0440c675e97babf45d02}
+
+
+Stringified parameter type for X\-M\-L. 
+
+\hypertarget{classGbxParameter_ad5182c3df0c77e011c61e00e182f8a49}{\index{Gbx\-Parameter@{Gbx\-Parameter}!xml\-Type@{xml\-Type}}
+\index{xml\-Type@{xml\-Type}!GbxParameter@{Gbx\-Parameter}}
+\subsubsection[{xml\-Type}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gbx\-Parameter\-::xml\-Type\hspace{0.3cm}{\ttfamily [private]}}}\label{classGbxParameter_ad5182c3df0c77e011c61e00e182f8a49}
+
+
+Stringified parameter type for X\-M\-L. 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Gbx\-Remote/\hyperlink{GbxParameter_8h}{Gbx\-Parameter.\-h}\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Gbx\-Remote/\hyperlink{GbxParameter_8cpp}{Gbx\-Parameter.\-cpp}\end{DoxyCompactItemize}
