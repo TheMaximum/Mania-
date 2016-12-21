@@ -24,7 +24,7 @@
 
 ## Check documentation of latest develop commit ##
 * Latest master: not yet available
-* Latest develop: [Doxygen HTML](https://themaximum.github.io/mania-pp/docs/develop/)
+* Latest develop: [Doxygen HTML](https://themaximum.github.io/mania-pp/docs/develop/html/)
 
 ## Generate code documentation for current code ##
 _Requires Doxygen to be installed on your system: ```sudo apt-get install doxygen```_
