@@ -3,31 +3,39 @@
 }
 
 
+Contains all information about a player in easy-\/to-\/use format.  
+
+
+
+
 {\ttfamily \#include $<$Player.\-h$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{structPlayer_a2fe883e7ea5578247a61fb31d0c87fb9}{Player} (std\-::map$<$ std\-::string, \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ $\ast$server\-Struct)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Formats a server response into a usable form. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 int \hyperlink{structPlayer_a6a71d7d9837a0a12e52ca47930965e0f}{Player\-Id}
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{structPlayer}{Player} identifier (on server). \end{DoxyCompactList}\item 
 int \hyperlink{structPlayer_a350919664ba73d6d6cd6d03bd2a5cacd}{Team\-Id}
-\item 
+\begin{DoxyCompactList}\small\item\em Team identifier (on server). \end{DoxyCompactList}\item 
 std\-::string \hyperlink{structPlayer_a38398818d43e186aa982a788744792d7}{Login}
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{structPlayer}{Player} login. \end{DoxyCompactList}\item 
 std\-::string \hyperlink{structPlayer_a553cc1b0aa79108b511ba408210582cf}{Nick\-Name}
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{structPlayer}{Player} nickname. \end{DoxyCompactList}\item 
 bool \hyperlink{structPlayer_a61ba0e32d336f5cd1eb152addf6848d2}{Is\-Spectator}
-\item 
+\begin{DoxyCompactList}\small\item\em Is player a spectator? \end{DoxyCompactList}\item 
 bool \hyperlink{structPlayer_a76e8b5298bcbe9ff694b6ed490ef7ca5}{Is\-In\-Official\-Mode}
-\item 
+\begin{DoxyCompactList}\small\item\em Is player in official mode? \end{DoxyCompactList}\item 
 int \hyperlink{structPlayer_a25fe69852f0e38f541ad615cd59877ef}{Ladder\-Ranking}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Current ladder ranking of the player. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Contains all information about a player in easy-\/to-\/use format. 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{structPlayer_a2fe883e7ea5578247a61fb31d0c87fb9}{\index{Player@{Player}!Player@{Player}}
@@ -39,28 +47,65 @@ int \hyperlink{structPlayer_a25fe69852f0e38f541ad615cd59877ef}{Ladder\-Ranking}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{structPlayer_a2fe883e7ea5578247a61fb31d0c87fb9}
 
 
+Formats a server response into a usable form. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em server\-Struct} & The struct with player information received from the server. \\
+\hline
+\end{DoxyParams}
+
+
 \subsection{Member Data Documentation}
 \hypertarget{structPlayer_a76e8b5298bcbe9ff694b6ed490ef7ca5}{\index{Player@{Player}!Is\-In\-Official\-Mode@{Is\-In\-Official\-Mode}}
 \index{Is\-In\-Official\-Mode@{Is\-In\-Official\-Mode}!Player@{Player}}
 \subsubsection[{Is\-In\-Official\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\-::\-Is\-In\-Official\-Mode}}\label{structPlayer_a76e8b5298bcbe9ff694b6ed490ef7ca5}
+
+
+Is player in official mode? 
+
 \hypertarget{structPlayer_a61ba0e32d336f5cd1eb152addf6848d2}{\index{Player@{Player}!Is\-Spectator@{Is\-Spectator}}
 \index{Is\-Spectator@{Is\-Spectator}!Player@{Player}}
 \subsubsection[{Is\-Spectator}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\-::\-Is\-Spectator}}\label{structPlayer_a61ba0e32d336f5cd1eb152addf6848d2}
+
+
+Is player a spectator? 
+
 \hypertarget{structPlayer_a25fe69852f0e38f541ad615cd59877ef}{\index{Player@{Player}!Ladder\-Ranking@{Ladder\-Ranking}}
 \index{Ladder\-Ranking@{Ladder\-Ranking}!Player@{Player}}
 \subsubsection[{Ladder\-Ranking}]{\setlength{\rightskip}{0pt plus 5cm}int Player\-::\-Ladder\-Ranking}}\label{structPlayer_a25fe69852f0e38f541ad615cd59877ef}
+
+
+Current ladder ranking of the player. 
+
 \hypertarget{structPlayer_a38398818d43e186aa982a788744792d7}{\index{Player@{Player}!Login@{Login}}
 \index{Login@{Login}!Player@{Player}}
 \subsubsection[{Login}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Player\-::\-Login}}\label{structPlayer_a38398818d43e186aa982a788744792d7}
+
+
+\hyperlink{structPlayer}{Player} login. 
+
 \hypertarget{structPlayer_a553cc1b0aa79108b511ba408210582cf}{\index{Player@{Player}!Nick\-Name@{Nick\-Name}}
 \index{Nick\-Name@{Nick\-Name}!Player@{Player}}
 \subsubsection[{Nick\-Name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Player\-::\-Nick\-Name}}\label{structPlayer_a553cc1b0aa79108b511ba408210582cf}
+
+
+\hyperlink{structPlayer}{Player} nickname. 
+
 \hypertarget{structPlayer_a6a71d7d9837a0a12e52ca47930965e0f}{\index{Player@{Player}!Player\-Id@{Player\-Id}}
 \index{Player\-Id@{Player\-Id}!Player@{Player}}
 \subsubsection[{Player\-Id}]{\setlength{\rightskip}{0pt plus 5cm}int Player\-::\-Player\-Id}}\label{structPlayer_a6a71d7d9837a0a12e52ca47930965e0f}
+
+
+\hyperlink{structPlayer}{Player} identifier (on server). 
+
 \hypertarget{structPlayer_a350919664ba73d6d6cd6d03bd2a5cacd}{\index{Player@{Player}!Team\-Id@{Team\-Id}}
 \index{Team\-Id@{Team\-Id}!Player@{Player}}
 \subsubsection[{Team\-Id}]{\setlength{\rightskip}{0pt plus 5cm}int Player\-::\-Team\-Id}}\label{structPlayer_a350919664ba73d6d6cd6d03bd2a5cacd}
+
+
+Team identifier (on server). 
+
 
 
 The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
