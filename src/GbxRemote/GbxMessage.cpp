@@ -22,6 +22,11 @@ GbxMessage::GbxMessage(std::string method, GbxParameters* parameters)
     xml += "</methodCall>";
 }
 
+std::string GbxMessage::GetMethod()
+{
+    return method;
+}
+
 std::string GbxMessage::GetXml()
 {
     return xml;

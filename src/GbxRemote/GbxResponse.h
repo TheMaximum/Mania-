@@ -1,9 +1,13 @@
 #ifndef GBXRESPONSE_H_
 #define GBXRESPONSE_H_
 
+#include <stdlib.h>
 #include <string>
 #include <vector>
+#include <map>
 #include "tinyxml2.h"
+
+#include "GbxStructs.h"
 
 //* GbxResponseParameter
 /**
@@ -16,15 +20,28 @@ public:
     void* Value;       /**< \brief Data value (in text). */
 
     /*!
-     * \brief Gets the value as string.
+     * \brief Gets the value as vector of parameters.
      */
     std::vector<GbxResponseParameter>* GetArray()
     {
         if(Type.find("array") != std::string::npos)
         {
             std::vector<GbxResponseParameter>* vectorPtr = static_cast<std::vector<GbxResponseParameter>*>(Value);
-            //std::vector<GbxResponseParameter> &vector = *vectorPtr;
             return vectorPtr;
+        }
+
+        return NULL;
+    }
+
+    /*!
+     * \brief Gets the value as map of parameters.
+     */
+    std::map<std::string, GbxResponseParameter>* GetStruct()
+    {
+        if(Type.find("struct") != std::string::npos)
+        {
+            std::map<std::string, GbxResponseParameter>* mapPtr = static_cast<std::map<std::string, GbxResponseParameter>*>(Value);
+            return mapPtr;
         }
 
         return NULL;
@@ -35,7 +52,8 @@ public:
      */
     std::string GetString()
     {
-        if(Type.find("array") == std::string::npos)
+        if(Type.find("array") == std::string::npos &&
+           Type.find("struct") == std::string::npos)
         {
             char* valuePtr = static_cast<char*>(Value);
             std::string value(valuePtr);
@@ -64,6 +82,11 @@ public:
     ~GbxResponse();
 
     /*!
+     * Returns whether the response is a fault.
+     */
+    GbxError* GetFault();
+
+    /*!
      * \brief Sets the raw message value.
      *
      * \param response Raw response from server (XML).
@@ -81,7 +104,9 @@ public:
     std::vector<GbxResponseParameter>* GetParameters();
 
 private:
-    char* data; /**< \brief Raw response data. */
+    GbxError* fault = new GbxError; /**< \brief Current fault (error). */
+
+    char* data;          /**< \brief Raw response data. */
     std::vector<GbxResponseParameter>* parameters = new std::vector<GbxResponseParameter>(); /**< \brief List of parameters. */
 
     /*!

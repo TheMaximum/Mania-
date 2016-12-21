@@ -8,11 +8,13 @@
 #include "GbxRemote/GbxRemote.h"
 #include "GbxRemote/GbxParameters.h"
 #include "GbxRemote/GbxResponse.h"
+#include "Utils/Logging.h"
 
 int main(int argc, char *argv[])
 {
     std::cout << "## Running Mania++ v" << VERSION << " ########################################" << std::endl;
     Config* config = new Config("config.yaml");
+    Logging logging = Logging();
 
     std::cout << "[         ] Connecting with server on " << config->Server->address << ":" << config->Server->port << " ... " << '\r' << std::flush;
     GbxRemote server;
@@ -25,11 +27,12 @@ int main(int argc, char *argv[])
         GbxParameters* params = new GbxParameters();
         params->Put(&config->Server->username);
         params->Put(&config->Server->password);
-        server.Query(new GbxMessage("Authenticate", params));
 
-        std::vector<GbxResponseParameter>* responseParams = server.GetResponse()->GetParameters();
-        if(!responseParams->empty())
+        if(server.Query(new GbxMessage("Authenticate", params)))
         {
+            GbxResponse* response = server.GetResponse();
+            std::vector<GbxResponseParameter>* responseParams = response->GetParameters();
+
             std::cout << "[   \033[0;32mOK.\033[0;0m" << std::endl;
 
             std::cout << "[         ] Retrieving server methods ... " << '\r' << std::flush;
@@ -61,14 +64,13 @@ int main(int argc, char *argv[])
         else
         {
             std::cout << "[ \033[0;31mFAILED!\033[0;0m" << std::endl;
-            std::cout << "Vector size: " << responseParams->size() << std::endl;
+            logging.PrintError(server.GetCurrentError());
         }
     }
     else
     {
         std::cout << "[ \033[0;31mFAILED!\033[0;0m" << std::endl;
-        GbxError* error = server.GetCurrentError();
-        std::cout << "[ERROR " << error->number << "] " << error->message << std::endl;
+        logging.PrintError(server.GetCurrentError());
     }
 
     server.Terminate();

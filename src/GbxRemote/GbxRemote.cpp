@@ -103,6 +103,11 @@ bool GbxRemote::Query(GbxMessage* query)
     if(size > 0)
     {
         currentResponse->SetRaw(server.Receive(size));
+        if(currentResponse->GetFault() != NULL)
+        {
+            currentError = currentResponse->GetFault();
+            return false;
+        }
 
         return true;
     }
