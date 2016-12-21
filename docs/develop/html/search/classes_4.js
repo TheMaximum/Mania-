@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tcpclient',['TcpClient',['../classTcpClient.html',1,'']]]
+  ['serverconfig',['ServerConfig',['../structServerConfig.html',1,'']]]
 ];

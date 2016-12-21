@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['query',['Query',['../classGbxRemote.html#abf869640136958fc4756b3a60275a285',1,'GbxRemote']]]
+  ['number',['number',['../structGbxError.html#ae5627cae63e837beaa75f798e47be50e',1,'GbxError']]]
 ];

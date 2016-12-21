@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['number',['number',['../structGbxError.html#ae5627cae63e837beaa75f798e47be50e',1,'GbxError']]]
+  ['logging',['Logging',['../classLogging.html',1,'']]],
+  ['logging_2eh',['Logging.h',['../Logging_8h.html',1,'']]]
 ];

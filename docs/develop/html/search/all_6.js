@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['init',['Init',['../classGbxRemote.html#a24d9d0df923ed85010f53dcb43c2b977',1,'GbxRemote']]],
-  ['initwithip',['InitWithIp',['../classGbxRemote.html#aa9a57e73f2f5ebbde90484503bd0d16d',1,'GbxRemote']]]
+  ['handle',['handle',['../structGbxQueryResponse.html#ad37f7d084a89880263a2a36287427af3',1,'GbxQueryResponse']]],
+  ['hex',['Hex',['../classHex.html',1,'']]],
+  ['hex_2eh',['Hex.h',['../Hex_8h.html',1,'']]]
 ];

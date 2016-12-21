@@ -103,6 +103,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae29114aa0014ca50f3be6455bda1be47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27e6c9c3452f2a0c90a33177af84236b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxResponse.html#a27e6c9c3452f2a0c90a33177af84236b">~GbxResponse</a> ()</td></tr>
 <tr class="separator:a27e6c9c3452f2a0c90a33177af84236b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaeb8f1ccd18ab88799d93ea78befc0df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGbxError.html">GbxError</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxResponse.html#aaeb8f1ccd18ab88799d93ea78befc0df">GetFault</a> ()</td></tr>
+<tr class="separator:aaeb8f1ccd18ab88799d93ea78befc0df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadd25f4d4c454bb837af9b442742ff70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxResponse.html#aadd25f4d4c454bb837af9b442742ff70">SetRaw</a> (char *response)</td></tr>
 <tr class="memdesc:aadd25f4d4c454bb837af9b442742ff70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the raw message value.  <a href="#aadd25f4d4c454bb837af9b442742ff70">More...</a><br/></td></tr>
 <tr class="separator:aadd25f4d4c454bb837af9b442742ff70"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,6 +127,9 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr class="memitem:ad896e7447681008320ad9945b57a92ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGbxError.html">GbxError</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxResponse.html#ad896e7447681008320ad9945b57a92ad">fault</a> = new <a class="el" href="structGbxError.html">GbxError</a></td></tr>
+<tr class="memdesc:ad896e7447681008320ad9945b57a92ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current fault (error).  <a href="#ad896e7447681008320ad9945b57a92ad">More...</a><br/></td></tr>
+<tr class="separator:ad896e7447681008320ad9945b57a92ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee1c7b03d870c87883bd97740afd7675"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxResponse.html#aee1c7b03d870c87883bd97740afd7675">data</a></td></tr>
 <tr class="memdesc:aee1c7b03d870c87883bd97740afd7675"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw response data.  <a href="#aee1c7b03d870c87883bd97740afd7675">More...</a><br/></td></tr>
 <tr class="separator:aee1c7b03d870c87883bd97740afd7675"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -222,6 +227,22 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aaeb8f1ccd18ab88799d93ea78befc0df"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structGbxError.html">GbxError</a> * GbxResponse::GetFault </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns whether the response is a fault. </p>
+
+</div>
+</div>
 <a class="anchor" id="a9323a43f94e895422a7ee29a1eb80cc3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -303,6 +324,28 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ad896e7447681008320ad9945b57a92ad"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structGbxError.html">GbxError</a>* GbxResponse::fault = new <a class="el" href="structGbxError.html">GbxError</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Current fault (error). </p>
+
+</div>
+</div>
 <a class="anchor" id="afcbec4555fa682d9d1360ecff829d0f2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -332,7 +375,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 21 2016 01:06:19 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 21 2016 13:43:46 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

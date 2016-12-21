@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['handle',['handle',['../structGbxQueryResponse.html#ad37f7d084a89880263a2a36287427af3',1,'GbxQueryResponse']]]
+  ['fault',['fault',['../classGbxResponse.html#ad896e7447681008320ad9945b57a92ad',1,'GbxResponse']]]
 ];

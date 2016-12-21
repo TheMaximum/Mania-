@@ -17,6 +17,8 @@ Response from server, de-\/\-X\-M\-L-\/fies the response.
 \begin{DoxyCompactList}\small\item\em Empty constructor. \end{DoxyCompactList}\item 
 \hyperlink{classGbxResponse_a27e6c9c3452f2a0c90a33177af84236b}{$\sim$\-Gbx\-Response} ()
 \item 
+\hyperlink{structGbxError}{Gbx\-Error} $\ast$ \hyperlink{classGbxResponse_aaeb8f1ccd18ab88799d93ea78befc0df}{Get\-Fault} ()
+\item 
 void \hyperlink{classGbxResponse_aadd25f4d4c454bb837af9b442742ff70}{Set\-Raw} (char $\ast$response)
 \begin{DoxyCompactList}\small\item\em Sets the raw message value. \end{DoxyCompactList}\item 
 char $\ast$ \hyperlink{classGbxResponse_a3311b30d7e04c2a14eb5f675ad6e37cd}{Get\-Raw} ()
@@ -34,6 +36,8 @@ void \hyperlink{classGbxResponse_a3cd4d6c5458fcd5359b8f5d9921a2a9b}{extract\-Par
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
+\hyperlink{structGbxError}{Gbx\-Error} $\ast$ \hyperlink{classGbxResponse_ad896e7447681008320ad9945b57a92ad}{fault} = new \hyperlink{structGbxError}{Gbx\-Error}
+\begin{DoxyCompactList}\small\item\em Current fault (error). \end{DoxyCompactList}\item 
 char $\ast$ \hyperlink{classGbxResponse_aee1c7b03d870c87883bd97740afd7675}{data}
 \begin{DoxyCompactList}\small\item\em Raw response data. \end{DoxyCompactList}\item 
 std\-::vector\\*
@@ -90,7 +94,14 @@ Extracts parameters from the raw data (X\-M\-L).
 
 \begin{DoxyRefDesc}{Todo}
 \item[\hyperlink{todo__todo000001}{Todo}]Add support for structs. \end{DoxyRefDesc}
-\hypertarget{classGbxResponse_a9323a43f94e895422a7ee29a1eb80cc3}{\index{Gbx\-Response@{Gbx\-Response}!Get\-Parameters@{Get\-Parameters}}
+\hypertarget{classGbxResponse_aaeb8f1ccd18ab88799d93ea78befc0df}{\index{Gbx\-Response@{Gbx\-Response}!Get\-Fault@{Get\-Fault}}
+\index{Get\-Fault@{Get\-Fault}!GbxResponse@{Gbx\-Response}}
+\subsubsection[{Get\-Fault}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gbx\-Error} $\ast$ Gbx\-Response\-::\-Get\-Fault (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGbxResponse_aaeb8f1ccd18ab88799d93ea78befc0df}
+Returns whether the response is a fault. \hypertarget{classGbxResponse_a9323a43f94e895422a7ee29a1eb80cc3}{\index{Gbx\-Response@{Gbx\-Response}!Get\-Parameters@{Get\-Parameters}}
 \index{Get\-Parameters@{Get\-Parameters}!GbxResponse@{Gbx\-Response}}
 \subsubsection[{Get\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf Gbx\-Response\-Parameter} $>$ $\ast$ Gbx\-Response\-::\-Get\-Parameters (
 \begin{DoxyParamCaption}
@@ -137,6 +148,13 @@ Sets the raw message value.
 
 
 Raw response data. 
+
+\hypertarget{classGbxResponse_ad896e7447681008320ad9945b57a92ad}{\index{Gbx\-Response@{Gbx\-Response}!fault@{fault}}
+\index{fault@{fault}!GbxResponse@{Gbx\-Response}}
+\subsubsection[{fault}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gbx\-Error}$\ast$ Gbx\-Response\-::fault = new {\bf Gbx\-Error}\hspace{0.3cm}{\ttfamily [private]}}}\label{classGbxResponse_ad896e7447681008320ad9945b57a92ad}
+
+
+Current fault (error). 
 
 \hypertarget{classGbxResponse_afcbec4555fa682d9d1360ecff829d0f2}{\index{Gbx\-Response@{Gbx\-Response}!parameters@{parameters}}
 \index{parameters@{parameters}!GbxResponse@{Gbx\-Response}}
