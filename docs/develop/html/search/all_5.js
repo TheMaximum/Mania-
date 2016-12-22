@@ -28,6 +28,7 @@ var searchData=
   ['gbxstructs_2eh',['GbxStructs.h',['../GbxStructs_8h.html',1,'']]],
   ['getapiversion',['GetApiVersion',['../classGbxRemote.html#a6351f71fe649bff2aabfbd9b7c89e3f5',1,'GbxRemote']]],
   ['getarray',['GetArray',['../classGbxResponseParameter.html#a0cf214feb9ff46a353e999720ffea8d3',1,'GbxResponseParameter']]],
+  ['getcbresponses',['GetCBResponses',['../classGbxRemote.html#aaf03cc4c57ec402c91727ee2941814df',1,'GbxRemote']]],
   ['getcurrenterror',['GetCurrentError',['../classGbxRemote.html#a5467b5400129cd13239f88576aaaa2b4',1,'GbxRemote']]],
   ['getfault',['GetFault',['../classGbxResponse.html#aaeb8f1ccd18ab88799d93ea78befc0df',1,'GbxResponse']]],
   ['getmethod',['GetMethod',['../classGbxMessage.html#a53e00a162c293251bef476ad74d0134c',1,'GbxMessage']]],

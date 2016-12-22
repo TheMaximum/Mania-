@@ -118,6 +118,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa46d673f3160aed8d7062c209504a0db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#aa46d673f3160aed8d7062c209504a0db">HandleCallBack</a> (char *data)</td></tr>
 <tr class="memdesc:aa46d673f3160aed8d7062c209504a0db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles callbacks (de-XML-fies them).  <a href="#aa46d673f3160aed8d7062c209504a0db">More...</a><br/></td></tr>
 <tr class="separator:aa46d673f3160aed8d7062c209504a0db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf03cc4c57ec402c91727ee2941814df"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classGbxCallBack.html">GbxCallBack</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#aaf03cc4c57ec402c91727ee2941814df">GetCBResponses</a> ()</td></tr>
+<tr class="memdesc:aaf03cc4c57ec402c91727ee2941814df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the callbacks that have been received since last call.  <a href="#aaf03cc4c57ec402c91727ee2941814df">More...</a><br/></td></tr>
+<tr class="separator:aaf03cc4c57ec402c91727ee2941814df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81ba62f042948610a3cf720316e22076"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a81ba62f042948610a3cf720316e22076">ResetCBResponses</a> ()</td></tr>
+<tr class="memdesc:a81ba62f042948610a3cf720316e22076"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets list of current callbacks.  <a href="#a81ba62f042948610a3cf720316e22076">More...</a><br/></td></tr>
+<tr class="separator:a81ba62f042948610a3cf720316e22076"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adac67444e391ffcc1dfda8f087eaef0b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGbxResponse.html">GbxResponse</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#adac67444e391ffcc1dfda8f087eaef0b">GetResponse</a> ()</td></tr>
 <tr class="memdesc:adac67444e391ffcc1dfda8f087eaef0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the response from the server.  <a href="#adac67444e391ffcc1dfda8f087eaef0b">More...</a><br/></td></tr>
 <tr class="separator:adac67444e391ffcc1dfda8f087eaef0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,6 +143,7 @@ Private Attributes</h2></td></tr>
 <tr class="memdesc:a5ee5c7087085cb6cb2e7bc6135ff0646"><td class="mdescLeft">&#160;</td><td class="mdescRight">Protocol version (0 = uninitialized, 1 or 2 = version).  <a href="#a5ee5c7087085cb6cb2e7bc6135ff0646">More...</a><br/></td></tr>
 <tr class="separator:a5ee5c7087085cb6cb2e7bc6135ff0646"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81d3c0c70ab7f5e585840e9978ee900e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a81d3c0c70ab7f5e585840e9978ee900e">apiVersion</a></td></tr>
+<tr class="memdesc:a81d3c0c70ab7f5e585840e9978ee900e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Server API version.  <a href="#a81d3c0c70ab7f5e585840e9978ee900e">More...</a><br/></td></tr>
 <tr class="separator:a81d3c0c70ab7f5e585840e9978ee900e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b0b212b945da4266fb645affdac81cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTcpClient.html">TcpClient</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a0b0b212b945da4266fb645affdac81cb">server</a></td></tr>
 <tr class="memdesc:a0b0b212b945da4266fb645affdac81cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Socket connection with the server.  <a href="#a0b0b212b945da4266fb645affdac81cb">More...</a><br/></td></tr>
@@ -147,6 +154,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a3a3a0af1a692a801a33baa292b877dc2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGbxResponse.html">GbxResponse</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a3a3a0af1a692a801a33baa292b877dc2">currentResponse</a> = new <a class="el" href="classGbxResponse.html">GbxResponse</a></td></tr>
 <tr class="memdesc:a3a3a0af1a692a801a33baa292b877dc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current server response.  <a href="#a3a3a0af1a692a801a33baa292b877dc2">More...</a><br/></td></tr>
 <tr class="separator:a3a3a0af1a692a801a33baa292b877dc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41ed9a6bb1655774d66c9c78b896cda9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classGbxCallBack.html">GbxCallBack</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a41ed9a6bb1655774d66c9c78b896cda9">currentCallBacks</a> = new std::vector&lt;<a class="el" href="classGbxCallBack.html">GbxCallBack</a>*&gt;</td></tr>
+<tr class="memdesc:a41ed9a6bb1655774d66c9c78b896cda9"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of currently received callbacks.  <a href="#a41ed9a6bb1655774d66c9c78b896cda9">More...</a><br/></td></tr>
+<tr class="separator:a41ed9a6bb1655774d66c9c78b896cda9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Handles communication with the ManiaPlanet server. </p>
@@ -185,6 +195,23 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the set API version. </p>
+
+</div>
+</div>
+<a class="anchor" id="aaf03cc4c57ec402c91727ee2941814df"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="classGbxCallBack.html">GbxCallBack</a> * &gt; * GbxRemote::GetCBResponses </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the callbacks that have been received since last call. </p>
 
 </div>
 </div>
@@ -366,6 +393,23 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a81ba62f042948610a3cf720316e22076"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GbxRemote::ResetCBResponses </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resets list of current callbacks. </p>
+
+</div>
+</div>
 <a class="anchor" id="a6fa8ca2d48aae84884cab98a0adf4360"></a>
 <div class="memitem">
 <div class="memproto">
@@ -401,6 +445,30 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Server API version. </p>
+
+</div>
+</div>
+<a class="anchor" id="a41ed9a6bb1655774d66c9c78b896cda9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classGbxCallBack.html">GbxCallBack</a>*&gt;* GbxRemote::currentCallBacks = new std::vector&lt;<a class="el" href="classGbxCallBack.html">GbxCallBack</a>*&gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>List of currently received callbacks. </p>
 
 </div>
 </div>
@@ -499,7 +567,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 22 2016 14:36:00 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 22 2016 17:34:14 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -7,6 +7,7 @@ var searchData=
   ['configfile',['configFile',['../classConfig.html#a08b7b2c4eadf7dda51404f76fd6e0280',1,'Config']]],
   ['connect',['Connect',['../classTcpClient.html#ac2e9bb63b4e0dc8f4508aa2a85431fe2',1,'TcpClient']]],
   ['connecttoserver',['ConnectToServer',['../classManiaPP.html#a22561171876e54dbf633c70d9924c06a',1,'ManiaPP']]],
+  ['currentcallbacks',['currentCallBacks',['../classGbxRemote.html#a41ed9a6bb1655774d66c9c78b896cda9',1,'GbxRemote']]],
   ['currenterror',['currentError',['../classGbxRemote.html#ae5d44c3729140c1eba5e850cb5e5e7bd',1,'GbxRemote']]],
   ['currentresponse',['currentResponse',['../classGbxRemote.html#a3a3a0af1a692a801a33baa292b877dc2',1,'GbxRemote']]]
 ];
