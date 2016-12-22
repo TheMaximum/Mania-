@@ -62,6 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -126,12 +127,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae6e15060920a31482fd14045cfd42803"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#ae6e15060920a31482fd14045cfd42803">GetProtocol</a> ()</td></tr>
 <tr class="memdesc:ae6e15060920a31482fd14045cfd42803"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current version number of the server protocol (1 or 2).  <a href="#ae6e15060920a31482fd14045cfd42803">More...</a><br/></td></tr>
 <tr class="separator:ae6e15060920a31482fd14045cfd42803"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6351f71fe649bff2aabfbd9b7c89e3f5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a6351f71fe649bff2aabfbd9b7c89e3f5">GetApiVersion</a> ()</td></tr>
+<tr class="memdesc:a6351f71fe649bff2aabfbd9b7c89e3f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the set API version.  <a href="#a6351f71fe649bff2aabfbd9b7c89e3f5">More...</a><br/></td></tr>
+<tr class="separator:a6351f71fe649bff2aabfbd9b7c89e3f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a5ee5c7087085cb6cb2e7bc6135ff0646"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a5ee5c7087085cb6cb2e7bc6135ff0646">protocol</a> = 0</td></tr>
 <tr class="memdesc:a5ee5c7087085cb6cb2e7bc6135ff0646"><td class="mdescLeft">&#160;</td><td class="mdescRight">Protocol version (0 = uninitialized, 1 or 2 = version).  <a href="#a5ee5c7087085cb6cb2e7bc6135ff0646">More...</a><br/></td></tr>
 <tr class="separator:a5ee5c7087085cb6cb2e7bc6135ff0646"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81d3c0c70ab7f5e585840e9978ee900e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a81d3c0c70ab7f5e585840e9978ee900e">apiVersion</a></td></tr>
+<tr class="separator:a81d3c0c70ab7f5e585840e9978ee900e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b0b212b945da4266fb645affdac81cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTcpClient.html">TcpClient</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a0b0b212b945da4266fb645affdac81cb">server</a></td></tr>
 <tr class="memdesc:a0b0b212b945da4266fb645affdac81cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Socket connection with the server.  <a href="#a0b0b212b945da4266fb645affdac81cb">More...</a><br/></td></tr>
 <tr class="separator:a0b0b212b945da4266fb645affdac81cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -165,6 +171,23 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a6351f71fe649bff2aabfbd9b7c89e3f5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string GbxRemote::GetApiVersion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the set API version. </p>
+
+</div>
+</div>
 <a class="anchor" id="a5467b5400129cd13239f88576aaaa2b4"></a>
 <div class="memitem">
 <div class="memproto">
@@ -361,6 +384,26 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a81d3c0c70ab7f5e585840e9978ee900e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string GbxRemote::apiVersion</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ae5d44c3729140c1eba5e850cb5e5e7bd"></a>
 <div class="memitem">
 <div class="memproto">
@@ -456,7 +499,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 21 2016 21:29:01 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 22 2016 14:36:00 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

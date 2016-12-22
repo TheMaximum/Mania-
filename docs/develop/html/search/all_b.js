@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['parameters',['parameters',['../classGbxParameters.html#af2c27b8d1e5c3884d0e5cc9ba04953cf',1,'GbxParameters::parameters()'],['../classGbxResponse.html#afcbec4555fa682d9d1360ecff829d0f2',1,'GbxResponse::parameters()']]],
+  ['parameters',['parameters',['../classGbxParameters.html#af2c27b8d1e5c3884d0e5cc9ba04953cf',1,'GbxParameters::parameters()'],['../classGbxServerResponse.html#ad6fef5319c4da9461f4cd0d72d8b5ee8',1,'GbxServerResponse::parameters()']]],
   ['parseconfig',['parseConfig',['../classConfig.html#a2ddcecec4284da0fb0b53da77e0d217a',1,'Config']]],
   ['password',['password',['../structServerConfig.html#a819f5b912feb1fdb68ebd4fe36eb11ea',1,'ServerConfig']]],
   ['player',['Player',['../structPlayer.html',1,'Player'],['../structPlayer.html#a2fe883e7ea5578247a61fb31d0c87fb9',1,'Player::Player()']]],

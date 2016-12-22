@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['parameters',['parameters',['../classGbxParameters.html#af2c27b8d1e5c3884d0e5cc9ba04953cf',1,'GbxParameters::parameters()'],['../classGbxResponse.html#afcbec4555fa682d9d1360ecff829d0f2',1,'GbxResponse::parameters()']]],
+  ['parameters',['parameters',['../classGbxParameters.html#af2c27b8d1e5c3884d0e5cc9ba04953cf',1,'GbxParameters::parameters()'],['../classGbxServerResponse.html#ad6fef5319c4da9461f4cd0d72d8b5ee8',1,'GbxServerResponse::parameters()']]],
   ['password',['password',['../structServerConfig.html#a819f5b912feb1fdb68ebd4fe36eb11ea',1,'ServerConfig']]],
   ['playerid',['PlayerId',['../structPlayer.html#a6a71d7d9837a0a12e52ca47930965e0f',1,'Player']]],
   ['players',['players',['../classManiaPP.html#a630ca376cb1d249bf0a04cf5659adb9d',1,'ManiaPP']]],

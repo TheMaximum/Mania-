@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Mania++: /home/travis/build/TheMaximum/mania-pp/src/GbxRemote/GbxResponse.h Source File</title>
+<title>Mania++: /home/travis/build/TheMaximum/mania-pp/src/GbxRemote/Response/GbxResponse.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -80,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_7a6aeac25269e7cfeca8d7ac7d0d39bd.html">GbxRemote</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_774e17a6745a7fb3c301b1a2a6f3ec95.html">src</a></li><li class="navelem"><a class="el" href="dir_1bbeac1d0fea5f96c18f21ea7234a863.html">GbxRemote</a></li><li class="navelem"><a class="el" href="dir_346aef31bba6e9d94414311bdf50d260.html">Response</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -91,106 +91,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="GbxResponse_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef GBXRESPONSE_H_</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GBXRESPONSE_H_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;tinyxml2.h&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="GbxStructs_8h.html">GbxStructs.h</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">//* GbxResponseParameter</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classGbxResponseParameter.html">   16</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classGbxResponseParameter.html">GbxResponseParameter</a></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classGbxResponseParameter.html#aa1700ca65fa2526b112be24b5c0bdbf4">   19</a></span>&#160;    std::string <a class="code" href="classGbxResponseParameter.html#aa1700ca65fa2526b112be24b5c0bdbf4">Type</a>;  </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classGbxResponseParameter.html#afcbf7243976fef177ce4c6e8480a4ce3">   20</a></span>&#160;    <span class="keywordtype">void</span>* <a class="code" href="classGbxResponseParameter.html#afcbf7243976fef177ce4c6e8480a4ce3">Value</a>;       </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classGbxResponseParameter.html#a0cf214feb9ff46a353e999720ffea8d3">   25</a></span>&#160;    std::vector&lt;GbxResponseParameter&gt;* <a class="code" href="classGbxResponseParameter.html#a0cf214feb9ff46a353e999720ffea8d3">GetArray</a>()</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classGbxResponseParameter.html#aa1700ca65fa2526b112be24b5c0bdbf4">Type</a>.find(<span class="stringliteral">&quot;array&quot;</span>) != std::string::npos)</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            std::vector&lt;GbxResponseParameter&gt;* vectorPtr = <span class="keyword">static_cast&lt;</span>std::vector&lt;GbxResponseParameter&gt;*<span class="keyword">&gt;</span>(<a class="code" href="classGbxResponseParameter.html#afcbf7243976fef177ce4c6e8480a4ce3">Value</a>);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">return</span> vectorPtr;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classGbxResponseParameter.html#a11bee88d2b24ed96419b49ec78bbb8fc">   39</a></span>&#160;    std::map&lt;std::string, GbxResponseParameter&gt;* <a class="code" href="classGbxResponseParameter.html#a11bee88d2b24ed96419b49ec78bbb8fc">GetStruct</a>()</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classGbxResponseParameter.html#aa1700ca65fa2526b112be24b5c0bdbf4">Type</a>.find(<span class="stringliteral">&quot;struct&quot;</span>) != std::string::npos)</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            std::map&lt;std::string, GbxResponseParameter&gt;* mapPtr = <span class="keyword">static_cast&lt;</span>std::map&lt;std::string, GbxResponseParameter&gt;*<span class="keyword">&gt;</span>(<a class="code" href="classGbxResponseParameter.html#afcbf7243976fef177ce4c6e8480a4ce3">Value</a>);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">return</span> mapPtr;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classGbxResponseParameter.html#a014af0f74e937d9002cda3e6e791735b">   53</a></span>&#160;    std::string <a class="code" href="classGbxResponseParameter.html#a014af0f74e937d9002cda3e6e791735b">GetString</a>()</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classGbxResponseParameter.html#aa1700ca65fa2526b112be24b5c0bdbf4">Type</a>.find(<span class="stringliteral">&quot;array&quot;</span>) == std::string::npos &amp;&amp;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;           <a class="code" href="classGbxResponseParameter.html#aa1700ca65fa2526b112be24b5c0bdbf4">Type</a>.find(<span class="stringliteral">&quot;struct&quot;</span>) == std::string::npos)</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordtype">char</span>* valuePtr = <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(<a class="code" href="classGbxResponseParameter.html#afcbf7243976fef177ce4c6e8480a4ce3">Value</a>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            std::string value(valuePtr);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">return</span> value;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">//* GbxResponse</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classGbxResponse.html">   71</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classGbxResponse.html">GbxResponse</a></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="classGbxResponse.html#ae29114aa0014ca50f3be6455bda1be47">GbxResponse</a>();</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="classGbxResponse.html#a27e6c9c3452f2a0c90a33177af84236b">~GbxResponse</a>();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="structGbxError.html">GbxError</a>* <a class="code" href="classGbxResponse.html#aaeb8f1ccd18ab88799d93ea78befc0df">GetFault</a>();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGbxResponse.html#aadd25f4d4c454bb837af9b442742ff70">SetRaw</a>(<span class="keywordtype">char</span>* response);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">char</span>* <a class="code" href="classGbxResponse.html#a3311b30d7e04c2a14eb5f675ad6e37cd">GetRaw</a>();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    std::vector&lt;GbxResponseParameter&gt;* <a class="code" href="classGbxResponse.html#a9323a43f94e895422a7ee29a1eb80cc3">GetParameters</a>();</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="classGbxResponse.html#ad896e7447681008320ad9945b57a92ad">  107</a></span>&#160;    <a class="code" href="structGbxError.html">GbxError</a>* <a class="code" href="classGbxResponse.html#ad896e7447681008320ad9945b57a92ad">fault</a> = <span class="keyword">new</span> <a class="code" href="structGbxError.html">GbxError</a>; </div>
-<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="classGbxResponse.html#aee1c7b03d870c87883bd97740afd7675">  109</a></span>&#160;    <span class="keywordtype">char</span>* <a class="code" href="classGbxResponse.html#aee1c7b03d870c87883bd97740afd7675">data</a>;          </div>
-<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="classGbxResponse.html#afcbec4555fa682d9d1360ecff829d0f2">  110</a></span>&#160;    std::vector&lt;GbxResponseParameter&gt;* <a class="code" href="classGbxResponse.html#afcbec4555fa682d9d1360ecff829d0f2">parameters</a> = <span class="keyword">new</span> std::vector&lt;GbxResponseParameter&gt;(); </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGbxResponse.html#a3cd4d6c5458fcd5359b8f5d9921a2a9b">extractParameters</a>();</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="classGbxResponseParameter.html">GbxResponseParameter</a> <a class="code" href="classGbxResponse.html#af8501950f3b82ce74924f3bda746871b">extractParam</a>(tinyxml2::XMLElement* param);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;};</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="preprocessor">#endif // GBXRESPONSE_H_</span></div>
-<div class="ttc" id="classGbxResponse_html_af8501950f3b82ce74924f3bda746871b"><div class="ttname"><a href="classGbxResponse.html#af8501950f3b82ce74924f3bda746871b">GbxResponse::extractParam</a></div><div class="ttdeci">GbxResponseParameter extractParam(tinyxml2::XMLElement *param)</div><div class="ttdoc">Extracts parameters from the raw data (XML). </div><div class="ttdef"><b>Definition:</b> GbxResponse.cpp:96</div></div>
-<div class="ttc" id="classGbxResponse_html_aee1c7b03d870c87883bd97740afd7675"><div class="ttname"><a href="classGbxResponse.html#aee1c7b03d870c87883bd97740afd7675">GbxResponse::data</a></div><div class="ttdeci">char * data</div><div class="ttdoc">Raw response data. </div><div class="ttdef"><b>Definition:</b> GbxResponse.h:109</div></div>
-<div class="ttc" id="classGbxResponse_html_a27e6c9c3452f2a0c90a33177af84236b"><div class="ttname"><a href="classGbxResponse.html#a27e6c9c3452f2a0c90a33177af84236b">GbxResponse::~GbxResponse</a></div><div class="ttdeci">~GbxResponse()</div><div class="ttdef"><b>Definition:</b> GbxResponse.cpp:10</div></div>
-<div class="ttc" id="classGbxResponse_html"><div class="ttname"><a href="classGbxResponse.html">GbxResponse</a></div><div class="ttdoc">Response from server, de-XML-fies the response. </div><div class="ttdef"><b>Definition:</b> GbxResponse.h:71</div></div>
-<div class="ttc" id="classGbxResponse_html_afcbec4555fa682d9d1360ecff829d0f2"><div class="ttname"><a href="classGbxResponse.html#afcbec4555fa682d9d1360ecff829d0f2">GbxResponse::parameters</a></div><div class="ttdeci">std::vector&lt; GbxResponseParameter &gt; * parameters</div><div class="ttdoc">List of parameters. </div><div class="ttdef"><b>Definition:</b> GbxResponse.h:110</div></div>
-<div class="ttc" id="GbxStructs_8h_html"><div class="ttname"><a href="GbxStructs_8h.html">GbxStructs.h</a></div></div>
-<div class="ttc" id="classGbxResponseParameter_html_a014af0f74e937d9002cda3e6e791735b"><div class="ttname"><a href="classGbxResponseParameter.html#a014af0f74e937d9002cda3e6e791735b">GbxResponseParameter::GetString</a></div><div class="ttdeci">std::string GetString()</div><div class="ttdoc">Gets the value as string. </div><div class="ttdef"><b>Definition:</b> GbxResponse.h:53</div></div>
-<div class="ttc" id="classGbxResponseParameter_html_a0cf214feb9ff46a353e999720ffea8d3"><div class="ttname"><a href="classGbxResponseParameter.html#a0cf214feb9ff46a353e999720ffea8d3">GbxResponseParameter::GetArray</a></div><div class="ttdeci">std::vector&lt; GbxResponseParameter &gt; * GetArray()</div><div class="ttdoc">Gets the value as vector of parameters. </div><div class="ttdef"><b>Definition:</b> GbxResponse.h:25</div></div>
-<div class="ttc" id="classGbxResponseParameter_html_afcbf7243976fef177ce4c6e8480a4ce3"><div class="ttname"><a href="classGbxResponseParameter.html#afcbf7243976fef177ce4c6e8480a4ce3">GbxResponseParameter::Value</a></div><div class="ttdeci">void * Value</div><div class="ttdoc">Data value (in text). </div><div class="ttdef"><b>Definition:</b> GbxResponse.h:20</div></div>
-<div class="ttc" id="classGbxResponseParameter_html_aa1700ca65fa2526b112be24b5c0bdbf4"><div class="ttname"><a href="classGbxResponseParameter.html#aa1700ca65fa2526b112be24b5c0bdbf4">GbxResponseParameter::Type</a></div><div class="ttdeci">std::string Type</div><div class="ttdoc">XML-RPC data type. </div><div class="ttdef"><b>Definition:</b> GbxResponse.h:19</div></div>
-<div class="ttc" id="classGbxResponse_html_ad896e7447681008320ad9945b57a92ad"><div class="ttname"><a href="classGbxResponse.html#ad896e7447681008320ad9945b57a92ad">GbxResponse::fault</a></div><div class="ttdeci">GbxError * fault</div><div class="ttdoc">Current fault (error). </div><div class="ttdef"><b>Definition:</b> GbxResponse.h:107</div></div>
-<div class="ttc" id="classGbxResponseParameter_html_a11bee88d2b24ed96419b49ec78bbb8fc"><div class="ttname"><a href="classGbxResponseParameter.html#a11bee88d2b24ed96419b49ec78bbb8fc">GbxResponseParameter::GetStruct</a></div><div class="ttdeci">std::map&lt; std::string, GbxResponseParameter &gt; * GetStruct()</div><div class="ttdoc">Gets the value as map of parameters. </div><div class="ttdef"><b>Definition:</b> GbxResponse.h:39</div></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../ServerResponse/GbxServerResponse.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//* GbxResponse</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classGbxResponse.html">   10</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classGbxResponse.html">GbxResponse</a> : <span class="keyword">public</span> <a class="code" href="classGbxServerResponse.html">GbxServerResponse</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="structGbxError.html">GbxError</a>* <a class="code" href="classGbxResponse.html#aaeb8f1ccd18ab88799d93ea78befc0df">GetFault</a>();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGbxResponse.html#aadd25f4d4c454bb837af9b442742ff70">SetRaw</a>(<span class="keywordtype">char</span>* response);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classGbxResponse.html#ad896e7447681008320ad9945b57a92ad">   26</a></span>&#160;    <a class="code" href="structGbxError.html">GbxError</a>* <a class="code" href="classGbxResponse.html#ad896e7447681008320ad9945b57a92ad">fault</a> = <span class="keyword">new</span> <a class="code" href="structGbxError.html">GbxError</a>; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGbxResponse.html#a3cd4d6c5458fcd5359b8f5d9921a2a9b">extractParameters</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif // GBXRESPONSE_H_</span></div>
+<div class="ttc" id="classGbxResponse_html"><div class="ttname"><a href="classGbxResponse.html">GbxResponse</a></div><div class="ttdoc">Response from server, de-XML-fies the response. </div><div class="ttdef"><b>Definition:</b> GbxResponse.h:10</div></div>
+<div class="ttc" id="classGbxResponse_html_ad896e7447681008320ad9945b57a92ad"><div class="ttname"><a href="classGbxResponse.html#ad896e7447681008320ad9945b57a92ad">GbxResponse::fault</a></div><div class="ttdeci">GbxError * fault</div><div class="ttdoc">Current fault (error). </div><div class="ttdef"><b>Definition:</b> GbxResponse.h:26</div></div>
+<div class="ttc" id="classGbxServerResponse_html"><div class="ttname"><a href="classGbxServerResponse.html">GbxServerResponse</a></div><div class="ttdoc">Response from server, de-XML-fies the response. </div><div class="ttdef"><b>Definition:</b> GbxServerResponse.h:71</div></div>
 <div class="ttc" id="structGbxError_html"><div class="ttname"><a href="structGbxError.html">GbxError</a></div><div class="ttdoc">Stores error details from the communication with the server. </div><div class="ttdef"><b>Definition:</b> GbxStructs.h:27</div></div>
-<div class="ttc" id="classGbxResponse_html_a9323a43f94e895422a7ee29a1eb80cc3"><div class="ttname"><a href="classGbxResponse.html#a9323a43f94e895422a7ee29a1eb80cc3">GbxResponse::GetParameters</a></div><div class="ttdeci">std::vector&lt; GbxResponseParameter &gt; * GetParameters()</div><div class="ttdoc">Returns the extracted parameters. </div><div class="ttdef"><b>Definition:</b> GbxResponse.cpp:38</div></div>
-<div class="ttc" id="classGbxResponse_html_aaeb8f1ccd18ab88799d93ea78befc0df"><div class="ttname"><a href="classGbxResponse.html#aaeb8f1ccd18ab88799d93ea78befc0df">GbxResponse::GetFault</a></div><div class="ttdeci">GbxError * GetFault()</div><div class="ttdef"><b>Definition:</b> GbxResponse.cpp:16</div></div>
-<div class="ttc" id="classGbxResponse_html_aadd25f4d4c454bb837af9b442742ff70"><div class="ttname"><a href="classGbxResponse.html#aadd25f4d4c454bb837af9b442742ff70">GbxResponse::SetRaw</a></div><div class="ttdeci">void SetRaw(char *response)</div><div class="ttdoc">Sets the raw message value. </div><div class="ttdef"><b>Definition:</b> GbxResponse.cpp:26</div></div>
-<div class="ttc" id="classGbxResponse_html_ae29114aa0014ca50f3be6455bda1be47"><div class="ttname"><a href="classGbxResponse.html#ae29114aa0014ca50f3be6455bda1be47">GbxResponse::GbxResponse</a></div><div class="ttdeci">GbxResponse()</div><div class="ttdoc">Empty constructor. </div><div class="ttdef"><b>Definition:</b> GbxResponse.cpp:5</div></div>
-<div class="ttc" id="classGbxResponse_html_a3311b30d7e04c2a14eb5f675ad6e37cd"><div class="ttname"><a href="classGbxResponse.html#a3311b30d7e04c2a14eb5f675ad6e37cd">GbxResponse::GetRaw</a></div><div class="ttdeci">char * GetRaw()</div><div class="ttdoc">Returns raw response (XML). </div><div class="ttdef"><b>Definition:</b> GbxResponse.cpp:33</div></div>
-<div class="ttc" id="classGbxResponse_html_a3cd4d6c5458fcd5359b8f5d9921a2a9b"><div class="ttname"><a href="classGbxResponse.html#a3cd4d6c5458fcd5359b8f5d9921a2a9b">GbxResponse::extractParameters</a></div><div class="ttdeci">void extractParameters()</div><div class="ttdoc">Extracts parameters from the raw data (XML). </div><div class="ttdef"><b>Definition:</b> GbxResponse.cpp:43</div></div>
-<div class="ttc" id="classGbxResponseParameter_html"><div class="ttname"><a href="classGbxResponseParameter.html">GbxResponseParameter</a></div><div class="ttdoc">Parameter deducted from server response. </div><div class="ttdef"><b>Definition:</b> GbxResponse.h:16</div></div>
+<div class="ttc" id="classGbxResponse_html_aaeb8f1ccd18ab88799d93ea78befc0df"><div class="ttname"><a href="classGbxResponse.html#aaeb8f1ccd18ab88799d93ea78befc0df">GbxResponse::GetFault</a></div><div class="ttdeci">GbxError * GetFault()</div><div class="ttdef"><b>Definition:</b> GbxResponse.cpp:3</div></div>
+<div class="ttc" id="classGbxResponse_html_aadd25f4d4c454bb837af9b442742ff70"><div class="ttname"><a href="classGbxResponse.html#aadd25f4d4c454bb837af9b442742ff70">GbxResponse::SetRaw</a></div><div class="ttdeci">void SetRaw(char *response)</div><div class="ttdoc">Sets the raw message value. </div><div class="ttdef"><b>Definition:</b> GbxResponse.cpp:13</div></div>
+<div class="ttc" id="classGbxResponse_html_a3cd4d6c5458fcd5359b8f5d9921a2a9b"><div class="ttname"><a href="classGbxResponse.html#a3cd4d6c5458fcd5359b8f5d9921a2a9b">GbxResponse::extractParameters</a></div><div class="ttdeci">void extractParameters()</div><div class="ttdoc">Extracts parameters from the raw data (XML). </div><div class="ttdef"><b>Definition:</b> GbxResponse.cpp:19</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 21 2016 21:29:01 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 22 2016 14:36:00 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

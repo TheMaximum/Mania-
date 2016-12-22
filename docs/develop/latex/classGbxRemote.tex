@@ -32,12 +32,16 @@ void \hyperlink{classGbxRemote_aa46d673f3160aed8d7062c209504a0db}{Handle\-Call\-
 \hyperlink{structGbxError}{Gbx\-Error} $\ast$ \hyperlink{classGbxRemote_a5467b5400129cd13239f88576aaaa2b4}{Get\-Current\-Error} ()
 \begin{DoxyCompactList}\small\item\em Returns the current server error. \end{DoxyCompactList}\item 
 int \hyperlink{classGbxRemote_ae6e15060920a31482fd14045cfd42803}{Get\-Protocol} ()
-\begin{DoxyCompactList}\small\item\em Returns the current version number of the server protocol (1 or 2). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the current version number of the server protocol (1 or 2). \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classGbxRemote_a6351f71fe649bff2aabfbd9b7c89e3f5}{Get\-Api\-Version} ()
+\begin{DoxyCompactList}\small\item\em Returns the set A\-P\-I version. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 int \hyperlink{classGbxRemote_a5ee5c7087085cb6cb2e7bc6135ff0646}{protocol} = 0
 \begin{DoxyCompactList}\small\item\em Protocol version (0 = uninitialized, 1 or 2 = version). \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classGbxRemote_a81d3c0c70ab7f5e585840e9978ee900e}{api\-Version}
+\item 
 \hyperlink{classTcpClient}{Tcp\-Client} \hyperlink{classGbxRemote_a0b0b212b945da4266fb645affdac81cb}{server}
 \begin{DoxyCompactList}\small\item\em Socket connection with the server. \end{DoxyCompactList}\item 
 \hyperlink{structGbxError}{Gbx\-Error} $\ast$ \hyperlink{classGbxRemote_ae5d44c3729140c1eba5e850cb5e5e7bd}{current\-Error} = new \hyperlink{structGbxError}{Gbx\-Error}
@@ -66,6 +70,17 @@ Make it possible to set an A\-P\-I version without upsetting Tiny\-X\-M\-L2. \en
 Deletes and nullifies the current\-Error and current\-Response. 
 
 \subsection{Member Function Documentation}
+\hypertarget{classGbxRemote_a6351f71fe649bff2aabfbd9b7c89e3f5}{\index{Gbx\-Remote@{Gbx\-Remote}!Get\-Api\-Version@{Get\-Api\-Version}}
+\index{Get\-Api\-Version@{Get\-Api\-Version}!GbxRemote@{Gbx\-Remote}}
+\subsubsection[{Get\-Api\-Version}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gbx\-Remote\-::\-Get\-Api\-Version (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGbxRemote_a6351f71fe649bff2aabfbd9b7c89e3f5}
+
+
+Returns the set A\-P\-I version. 
+
 \hypertarget{classGbxRemote_a5467b5400129cd13239f88576aaaa2b4}{\index{Gbx\-Remote@{Gbx\-Remote}!Get\-Current\-Error@{Get\-Current\-Error}}
 \index{Get\-Current\-Error@{Get\-Current\-Error}!GbxRemote@{Gbx\-Remote}}
 \subsubsection[{Get\-Current\-Error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gbx\-Error} $\ast$ Gbx\-Remote\-::\-Get\-Current\-Error (
@@ -193,6 +208,9 @@ Closes the connection with the server.
 
 
 \subsection{Member Data Documentation}
+\hypertarget{classGbxRemote_a81d3c0c70ab7f5e585840e9978ee900e}{\index{Gbx\-Remote@{Gbx\-Remote}!api\-Version@{api\-Version}}
+\index{api\-Version@{api\-Version}!GbxRemote@{Gbx\-Remote}}
+\subsubsection[{api\-Version}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gbx\-Remote\-::api\-Version\hspace{0.3cm}{\ttfamily [private]}}}\label{classGbxRemote_a81d3c0c70ab7f5e585840e9978ee900e}
 \hypertarget{classGbxRemote_ae5d44c3729140c1eba5e850cb5e5e7bd}{\index{Gbx\-Remote@{Gbx\-Remote}!current\-Error@{current\-Error}}
 \index{current\-Error@{current\-Error}!GbxRemote@{Gbx\-Remote}}
 \subsubsection[{current\-Error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gbx\-Error}$\ast$ Gbx\-Remote\-::current\-Error = new {\bf Gbx\-Error}\hspace{0.3cm}{\ttfamily [private]}}}\label{classGbxRemote_ae5d44c3729140c1eba5e850cb5e5e7bd}
