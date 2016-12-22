@@ -13,35 +13,25 @@ void GbxCallBack::SetRaw(char* callback)
     extractParameters();
 }
 
-/*
-    <?xml version="1.0" encoding="UTF-8"?>
-    <methodCall>
-        <methodName>TrackMania.StatusChanged</methodName>
-        <params>
-            <param><value><i4>3</i4></value></param>
-            <param><value><string>Running - Synchronization</string></value></param>
-        </params>
-    </methodCall>
-*/
-
 void GbxCallBack::extractParameters()
 {
     if(data == "")
         return;
 
-    tinyxml2::XMLDocument document;
-    document.Parse(data, strlen(data));
+    pugi::xml_document pugiDoc;
+    pugi::xml_parse_result pugiResult = pugiDoc.load_string(data);
+    pugi::xml_node pugiMethodResponse = pugiDoc.first_child();
 
-    tinyxml2::XMLElement* methodResponse = document.FirstChildElement("methodCall");
-    std::string responseType(methodResponse->LastChildElement()->Name());
+    pugi::xml_node methodResponse = pugiDoc.child("methodCall");
+    std::string responseType(methodResponse.last_child().name());
     if(responseType.find("params") != std::string::npos)
     {
-        methodName = (char*)methodResponse->FirstChildElement()->GetText();
-        tinyxml2::XMLElement* params = methodResponse->FirstChildElement("params");
+        methodName = (char*)methodResponse.first_child().child_value();
+        pugi::xml_node params = methodResponse.child("params");
 
-        for (tinyxml2::XMLElement* child = params->FirstChildElement(); child != NULL; child = child->NextSiblingElement())
+        for (pugi::xml_node child = params.first_child(); child; child = child.next_sibling())
         {
-            tinyxml2::XMLElement* value = child->FirstChildElement("value");
+            pugi::xml_node value = child.child("value");
             GbxResponseParameter responseParam = extractParam(value);
             parameters->push_back(responseParam);
         }

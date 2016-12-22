@@ -33,7 +33,8 @@ void GbxParameter::determineType(const std::type_info* param)
     {
         xmlType = "string";
     }
-    else if(type.find("int") != std::string::npos ||
+    else if(type.find("i4") != std::string::npos ||
+            type.find("int") != std::string::npos ||
             type.find("long") != std::string::npos ||
             type.find("short") != std::string::npos)
     {
@@ -76,7 +77,8 @@ void GbxParameter::dereferenceData(void* pointer)
         char* paramPtr = static_cast<char*>(pointer);
         data = std::string(paramPtr);
     }
-    else if(type.find("int") != std::string::npos)
+    else if(type.find("int") != std::string::npos ||
+            type.find("i4") != std::string::npos)
     {
         int* paramPtr = static_cast<int*>(pointer);
         int param = *paramPtr;

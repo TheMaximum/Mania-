@@ -27,5 +27,6 @@ include_directories("${PROJECT_BINARY_DIR}")
 
 file(GLOB_RECURSE SOURCES src/*.cpp)
 
-add_executable(Mania++ ${SOURCES})
-target_link_libraries(Mania++ yaml-cpp tinyxml2)
+add_executable(Mania++ ${SOURCES}
+                       lib/pugixml/libpugixml.a)
+target_link_libraries(Mania++ yaml-cpp ${EXECUTABLE_OUTPUT_PATH}/lib/pugixml/libpugixml.a)

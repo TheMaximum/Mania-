@@ -15,7 +15,6 @@
 /**
  * \brief Handles communication with the ManiaPlanet server.
  *
- * \todo Handle/de-XMLify callbacks (receiving works).
  * \todo Make it possible to set an API version without upsetting TinyXML2.
  */
 class GbxRemote

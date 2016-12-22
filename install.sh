@@ -19,13 +19,22 @@ make yaml-cpp
 cd ../../
 
 # Download version 4.0.1 of the TinyXML library
-git clone https://github.com/leethomason/tinyxml2.git tinyxml/
-cd tinyxml/
-git reset --hard 74d44acb176f8510abf28ee0a70961eb26631988
+#git clone https://github.com/leethomason/tinyxml2.git tinyxml/
+#cd tinyxml/
+#git reset --hard 74d44acb176f8510abf28ee0a70961eb26631988
 
 # Build the TinyXML library
-cmake .
-make tinyxml2
+#cmake -DCMAKE_BUILD_TYPE=Debug .
+#make tinyxml2
+
+# Download version 1.8.1 of the PugiXML library
+git clone https://github.com/zeux/pugixml.git pugixml/
+cd pugixml/
+git reset --hard d2deb42
+
+# Build the PugiXML library
+cmake -DCMAKE_BUILD_TYPE=Debug .
+make
 
 # Return to root directory
 cd ../../

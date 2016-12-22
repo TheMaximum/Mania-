@@ -30,14 +30,13 @@ bool ManiaPP::ConnectToServer()
 
             logging->PrintOKFlush();
 
-            //params = new GbxParameters();
-            //std::string apiVersion = server->GetApiVersion();
-            //params->Put(&apiVersion);
-            //server->Query(new GbxMessage("SetApiVersion", params));
-            //GbxResponse* apiResponse = server->GetResponse();
-            //std::cout << apiResponse->GetRaw() << std::endl;
+            params = new GbxParameters();
+            std::string apiVersion = server->GetApiVersion();
+            params->Put(&apiVersion);
+            server->Query(new GbxMessage("SetApiVersion", params));
+            GbxResponse* apiResponse = server->GetResponse();
 
-            std::cout << "[         ] Retrieving server methods ... " << '\r' << std::flush;
+            std::cout << "[         ] Retrieving server methods ... " << std::endl /*'\r' << std::flush*/;
             GbxMessage* getMethods = new GbxMessage("system.listMethods");
             if(server->Query(getMethods))
             {
@@ -86,7 +85,18 @@ void ManiaPP::MainLoop()
         {
             for(int callBackId = 0; callBackId < callBacks->size(); callBackId++)
             {
-                std::cout << "CALLBACK: " << callBacks->at(callBackId)->GetMethodName() << " (parameters: " << callBacks->at(callBackId)->GetParameters()->size() << ")" << std::endl;
+                GbxCallBack* callBack = callBacks->at(callBackId);
+                std::vector<GbxResponseParameter>* parameters = callBack->GetParameters();
+
+                std::cout << "CALLBACK: " << callBack->GetMethodName() << " (parameters: " << parameters->size() << ")" << std::endl;
+                for(int paramId = 0; paramId < parameters->size(); paramId++)
+                {
+                    GbxResponseParameter parameter = parameters->at(paramId);
+                    if(parameter.Type != "array" && parameter.Type != "struct")
+                    {
+                        std::cout << "    Parameter #" << paramId << ": " << parameter.GetString() << " (" << parameter.Type << ")" << std::endl;
+                    }
+                }
             }
 
             server->ResetCBResponses();

@@ -5,8 +5,7 @@
 #include <string>
 #include <vector>
 #include <map>
-#include "tinyxml2.h"
-
+#include "../../../lib/pugixml/src/pugixml.hpp"
 #include "../GbxStructs.h"
 
 //* GbxResponseParameter
@@ -105,7 +104,7 @@ protected:
     /*!
      * \brief Extracts parameters from the raw data (XML).
      */
-    GbxResponseParameter extractParam(tinyxml2::XMLElement* param);
+    GbxResponseParameter extractParam(pugi::xml_node param);
 };
 
 #endif // GBXSERVERRESPONSE_H_
