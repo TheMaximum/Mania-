@@ -81,6 +81,16 @@ void ManiaPP::MainLoop()
     while(true)
     {
         server->ReadCallBacks();
+        std::vector<GbxCallBack*>* callBacks = server->GetCBResponses();
+        if(callBacks->size() > 0)
+        {
+            for(int callBackId = 0; callBackId < callBacks->size(); callBackId++)
+            {
+                std::cout << "CALLBACK: " << callBacks->at(callBackId)->GetMethodName() << " (parameters: " << callBacks->at(callBackId)->GetParameters()->size() << ")" << std::endl;
+            }
+
+            server->ResetCBResponses();
+        }
     }
 }
 

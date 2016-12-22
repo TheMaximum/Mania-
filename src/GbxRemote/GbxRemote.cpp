@@ -156,7 +156,17 @@ void GbxRemote::HandleCallBack(char* data)
 {
     GbxCallBack* callBack = new GbxCallBack();
     callBack->SetRaw(data);
-    std::cout << "CALLBACK: " << callBack->GetMethodName() << " (parameters: " << callBack->GetParameters()->size() << ")" << std::endl;
+    currentCallBacks->push_back(callBack);
+}
+
+std::vector<GbxCallBack*>* GbxRemote::GetCBResponses()
+{
+    return currentCallBacks;
+}
+
+void GbxRemote::ResetCBResponses()
+{
+    currentCallBacks = new std::vector<GbxCallBack*>;
 }
 
 GbxError* GbxRemote::GetCurrentError()

@@ -70,6 +70,16 @@ public:
     void HandleCallBack(char* data);
 
     /*!
+     * \brief Returns the callbacks that have been received since last call.
+     */
+    std::vector<GbxCallBack*>* GetCBResponses();
+
+    /*!
+     * \brief Resets list of current callbacks.
+     */
+    void ResetCBResponses();
+
+    /*!
      * \brief Returns the response from the server.
      */
     GbxResponse* GetResponse();
@@ -93,11 +103,12 @@ public:
 
 private:
     int protocol = 0;                               /**< \brief Protocol version (0 = uninitialized, 1 or 2 = version). */
-    std::string apiVersion;
+    std::string apiVersion;                         /**< \brief Server API version. */
     TcpClient server;                               /**< \brief Socket connection with the server. */
 
     GbxError* currentError = new GbxError;          /**< \brief Current server error. */
     GbxResponse* currentResponse = new GbxResponse; /**< \brief Current server response. */
+    std::vector<GbxCallBack*>* currentCallBacks = new std::vector<GbxCallBack*>; /**< \brief List of currently received callbacks. */
 };
 
 #endif // GBXREMOTE_H_
