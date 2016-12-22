@@ -30,6 +30,13 @@ bool ManiaPP::ConnectToServer()
 
             logging->PrintOKFlush();
 
+            //params = new GbxParameters();
+            //std::string apiVersion = server->GetApiVersion();
+            //params->Put(&apiVersion);
+            //server->Query(new GbxMessage("SetApiVersion", params));
+            //GbxResponse* apiResponse = server->GetResponse();
+            //std::cout << apiResponse->GetRaw() << std::endl;
+
             std::cout << "[         ] Retrieving server methods ... " << '\r' << std::flush;
             GbxMessage* getMethods = new GbxMessage("system.listMethods");
             if(server->Query(getMethods))

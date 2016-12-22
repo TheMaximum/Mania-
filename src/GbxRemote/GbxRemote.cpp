@@ -16,6 +16,7 @@ bool GbxRemote::Init(int port)
 
 bool GbxRemote::InitWithIp(std::string address, int port)
 {
+    apiVersion = (char*)"2015-02-10";
     if(server.Connect(address, port))
     {
         char* data = server.Receive(4);
@@ -153,7 +154,9 @@ bool GbxRemote::ReadCallBacks()
 
 void GbxRemote::HandleCallBack(char* data)
 {
-    std::cout << "CALLBACK: " << data << std::endl;
+    GbxCallBack* callBack = new GbxCallBack();
+    callBack->SetRaw(data);
+    std::cout << "CALLBACK: " << callBack->GetMethodName() << " (parameters: " << callBack->GetParameters()->size() << ")" << std::endl;
 }
 
 GbxError* GbxRemote::GetCurrentError()
@@ -181,4 +184,9 @@ GbxResponse* GbxRemote::GetResponse()
 int GbxRemote::GetProtocol()
 {
     return protocol;
+}
+
+std::string GbxRemote::GetApiVersion()
+{
+    return apiVersion;
 }

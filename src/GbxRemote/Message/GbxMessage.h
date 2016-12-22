@@ -4,8 +4,8 @@
 #include <string>
 #include <vector>
 
-#include "GbxParameters.h"
-#include "GbxParameter.h"
+#include "../Parameters/GbxParameters.h"
+#include "../Parameters/GbxParameter.h"
 
 //* GbxMessage
 /**

@@ -6,9 +6,10 @@
 #include <vector>
 
 #include "GbxStructs.h"
-#include "GbxMessage.h"
-#include "GbxParameters.h"
-#include "GbxResponse.h"
+#include "Message/GbxMessage.h"
+#include "Parameters/GbxParameters.h"
+#include "Response/GbxResponse.h"
+#include "CallBack/GbxCallBack.h"
 
 //* GbxRemote
 /**
@@ -85,8 +86,14 @@ public:
      */
     int GetProtocol();
 
+    /*!
+     * \brief Returns the set API version.
+     */
+    std::string GetApiVersion();
+
 private:
     int protocol = 0;                               /**< \brief Protocol version (0 = uninitialized, 1 or 2 = version). */
+    std::string apiVersion;
     TcpClient server;                               /**< \brief Socket connection with the server. */
 
     GbxError* currentError = new GbxError;          /**< \brief Current server error. */

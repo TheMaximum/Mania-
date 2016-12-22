@@ -1,5 +1,5 @@
-#ifndef GBXRESPONSE_H_
-#define GBXRESPONSE_H_
+#ifndef GBXSERVERRESPONSE_H_
+#define GBXSERVERRESPONSE_H_
 
 #include <stdlib.h>
 #include <string>
@@ -7,7 +7,7 @@
 #include <map>
 #include "tinyxml2.h"
 
-#include "GbxStructs.h"
+#include "../GbxStructs.h"
 
 //* GbxResponseParameter
 /**
@@ -64,27 +64,22 @@ public:
     }
 };
 
-//* GbxResponse
+//* GbxServerResponse
 /**
  * \brief Response from server, de-XML-fies the response.
  */
-class GbxResponse
+class GbxServerResponse
 {
 public:
     /*!
      * \brief Empty constructor.
      */
-    GbxResponse();
+    GbxServerResponse();
 
     /*!
      * Delets and nullifies the parameters.
      */
-    ~GbxResponse();
-
-    /*!
-     * Returns whether the response is a fault.
-     */
-    GbxError* GetFault();
+    ~GbxServerResponse();
 
     /*!
      * \brief Sets the raw message value.
@@ -103,16 +98,9 @@ public:
      */
     std::vector<GbxResponseParameter>* GetParameters();
 
-private:
-    GbxError* fault = new GbxError; /**< \brief Current fault (error). */
-
-    char* data;          /**< \brief Raw response data. */
+protected:
+    char* data; /**< \brief Raw response data. */
     std::vector<GbxResponseParameter>* parameters = new std::vector<GbxResponseParameter>(); /**< \brief List of parameters. */
-
-    /*!
-     * \brief Extracts parameters from the raw data (XML).
-     */
-    void extractParameters();
 
     /*!
      * \brief Extracts parameters from the raw data (XML).
@@ -120,4 +108,4 @@ private:
     GbxResponseParameter extractParam(tinyxml2::XMLElement* param);
 };
 
-#endif // GBXRESPONSE_H_
+#endif // GBXSERVERRESPONSE_H_

@@ -1,7 +1,7 @@
 #ifndef PLAYER_H_
 #define PLAYER_H_
 
-#include "../GbxRemote/GbxResponse.h"
+#include "../GbxRemote/Response/GbxResponse.h"
 
 //* Player
 /**
