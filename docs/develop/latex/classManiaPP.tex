@@ -17,6 +17,8 @@ Main class.
 \begin{DoxyCompactList}\small\item\em Sets up the several variables needed to run the software. \end{DoxyCompactList}\item 
 bool \hyperlink{classManiaPP_a22561171876e54dbf633c70d9924c06a}{Connect\-To\-Server} ()
 \begin{DoxyCompactList}\small\item\em Connects and authenticates with the server. \end{DoxyCompactList}\item 
+void \hyperlink{classManiaPP_a56d2774a29f21b3a164ae1f7ea6bd88b}{Print\-Server\-Info} ()
+\begin{DoxyCompactList}\small\item\em Prints information about the server. \end{DoxyCompactList}\item 
 void \hyperlink{classManiaPP_a8dff9e8e3835c3cac0df105a7bcce43c}{Main\-Loop} ()
 \begin{DoxyCompactList}\small\item\em Performing our tasks ... \end{DoxyCompactList}\item 
 void \hyperlink{classManiaPP_a87fd53fffe4a1840834a90ab575f5ce6}{Terminate} ()
@@ -37,7 +39,7 @@ void \hyperlink{classManiaPP_aede94c0b982250de19186d447542e479}{retrieve\-Player
 \begin{DoxyCompactList}\small\item\em Contains functions to log information. \end{DoxyCompactList}\item 
 \hyperlink{classGbxRemote}{Gbx\-Remote} $\ast$ \hyperlink{classManiaPP_ab81311d6901990cb99a7a30e0cbaab11}{server}
 \begin{DoxyCompactList}\small\item\em Contains the connection with the server and its methods. \end{DoxyCompactList}\item 
-std\-::vector$<$ \hyperlink{structPlayer}{Player} $>$ $\ast$ \hyperlink{classManiaPP_a630ca376cb1d249bf0a04cf5659adb9d}{players}
+std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$ \hyperlink{classManiaPP_a45712ccfa91b20242b39cb1164d305d8}{players}
 \begin{DoxyCompactList}\small\item\em Contains the list of players currently on the server. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -90,6 +92,17 @@ Performing our tasks ...
 \item[{std\-::string}]{spaces = {\ttfamily \char`\"{}~~~~\char`\"{}}}
 \end{DoxyParamCaption}
 )}}\label{classManiaPP_a3548cbafbf949dbb9d210c08adb5f7de}
+\hypertarget{classManiaPP_a56d2774a29f21b3a164ae1f7ea6bd88b}{\index{Mania\-P\-P@{Mania\-P\-P}!Print\-Server\-Info@{Print\-Server\-Info}}
+\index{Print\-Server\-Info@{Print\-Server\-Info}!ManiaPP@{Mania\-P\-P}}
+\subsubsection[{Print\-Server\-Info}]{\setlength{\rightskip}{0pt plus 5cm}void Mania\-P\-P\-::\-Print\-Server\-Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classManiaPP_a56d2774a29f21b3a164ae1f7ea6bd88b}
+
+
+Prints information about the server. 
+
 \hypertarget{classManiaPP_aede94c0b982250de19186d447542e479}{\index{Mania\-P\-P@{Mania\-P\-P}!retrieve\-Player\-List@{retrieve\-Player\-List}}
 \index{retrieve\-Player\-List@{retrieve\-Player\-List}!ManiaPP@{Mania\-P\-P}}
 \subsubsection[{retrieve\-Player\-List}]{\setlength{\rightskip}{0pt plus 5cm}void Mania\-P\-P\-::retrieve\-Player\-List (
@@ -129,9 +142,9 @@ Contains the configuration for the software.
 
 Contains functions to log information. 
 
-\hypertarget{classManiaPP_a630ca376cb1d249bf0a04cf5659adb9d}{\index{Mania\-P\-P@{Mania\-P\-P}!players@{players}}
+\hypertarget{classManiaPP_a45712ccfa91b20242b39cb1164d305d8}{\index{Mania\-P\-P@{Mania\-P\-P}!players@{players}}
 \index{players@{players}!ManiaPP@{Mania\-P\-P}}
-\subsubsection[{players}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Player}$>$$\ast$ Mania\-P\-P\-::players\hspace{0.3cm}{\ttfamily [private]}}}\label{classManiaPP_a630ca376cb1d249bf0a04cf5659adb9d}
+\subsubsection[{players}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$std\-::string, {\bf Player}$>$$\ast$ Mania\-P\-P\-::players\hspace{0.3cm}{\ttfamily [private]}}}\label{classManiaPP_a45712ccfa91b20242b39cb1164d305d8}
 
 
 Contains the list of players currently on the server. 

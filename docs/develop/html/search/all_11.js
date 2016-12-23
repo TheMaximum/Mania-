@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['value',['Value',['../classGbxResponseParameter.html#afcbf7243976fef177ce4c6e8480a4ce3',1,'GbxResponseParameter']]]
+  ['username',['username',['../structServerConfig.html#ad2216f13f13acbe6bfd61f275bc72e27',1,'ServerConfig']]]
 ];

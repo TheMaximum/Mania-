@@ -39,6 +39,19 @@ int \hyperlink{classGbxRemote_ae6e15060920a31482fd14045cfd42803}{Get\-Protocol} 
 \begin{DoxyCompactList}\small\item\em Returns the current version number of the server protocol (1 or 2). \end{DoxyCompactList}\item 
 std\-::string \hyperlink{classGbxRemote_a6351f71fe649bff2aabfbd9b7c89e3f5}{Get\-Api\-Version} ()
 \begin{DoxyCompactList}\small\item\em Returns the set A\-P\-I version. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{classGbxRemote_aca6e6ee86b785451d52735daf222cc6d}{Login}
+\begin{DoxyCompactList}\small\item\em Server login. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classGbxRemote_a144e618f3f124b77054165d2d8519eee}{Build}
+\begin{DoxyCompactList}\small\item\em Current server build (f.\-e. 2015-\/06-\/16\-\_\-18\-\_\-00). \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classGbxRemote_a0ce9914944a8f0d35f5d1bb0ddb8d292}{Platform}
+\begin{DoxyCompactList}\small\item\em Program name (Mania\-Planet). \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classGbxRemote_a12d98a9add104392142ec8494dd022df}{Title\-Id}
+\begin{DoxyCompactList}\small\item\em Server title (f.\-e. T\-M\-Canyon). \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classGbxRemote_a654b4cae6e4eed717d602700a90fcc27}{Version}
+\begin{DoxyCompactList}\small\item\em Program version (f.\-e. 3.\-3.\-0). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -241,6 +254,13 @@ Closes the connection with the server.
 
 Server A\-P\-I version. 
 
+\hypertarget{classGbxRemote_a144e618f3f124b77054165d2d8519eee}{\index{Gbx\-Remote@{Gbx\-Remote}!Build@{Build}}
+\index{Build@{Build}!GbxRemote@{Gbx\-Remote}}
+\subsubsection[{Build}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gbx\-Remote\-::\-Build}}\label{classGbxRemote_a144e618f3f124b77054165d2d8519eee}
+
+
+Current server build (f.\-e. 2015-\/06-\/16\-\_\-18\-\_\-00). 
+
 \hypertarget{classGbxRemote_a41ed9a6bb1655774d66c9c78b896cda9}{\index{Gbx\-Remote@{Gbx\-Remote}!current\-Call\-Backs@{current\-Call\-Backs}}
 \index{current\-Call\-Backs@{current\-Call\-Backs}!GbxRemote@{Gbx\-Remote}}
 \subsubsection[{current\-Call\-Backs}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Gbx\-Call\-Back}$\ast$$>$$\ast$ Gbx\-Remote\-::current\-Call\-Backs = new std\-::vector$<${\bf Gbx\-Call\-Back}$\ast$$>$\hspace{0.3cm}{\ttfamily [private]}}}\label{classGbxRemote_a41ed9a6bb1655774d66c9c78b896cda9}
@@ -262,6 +282,20 @@ Current server error.
 
 Current server response. 
 
+\hypertarget{classGbxRemote_aca6e6ee86b785451d52735daf222cc6d}{\index{Gbx\-Remote@{Gbx\-Remote}!Login@{Login}}
+\index{Login@{Login}!GbxRemote@{Gbx\-Remote}}
+\subsubsection[{Login}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gbx\-Remote\-::\-Login}}\label{classGbxRemote_aca6e6ee86b785451d52735daf222cc6d}
+
+
+Server login. 
+
+\hypertarget{classGbxRemote_a0ce9914944a8f0d35f5d1bb0ddb8d292}{\index{Gbx\-Remote@{Gbx\-Remote}!Platform@{Platform}}
+\index{Platform@{Platform}!GbxRemote@{Gbx\-Remote}}
+\subsubsection[{Platform}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gbx\-Remote\-::\-Platform}}\label{classGbxRemote_a0ce9914944a8f0d35f5d1bb0ddb8d292}
+
+
+Program name (Mania\-Planet). 
+
 \hypertarget{classGbxRemote_a5ee5c7087085cb6cb2e7bc6135ff0646}{\index{Gbx\-Remote@{Gbx\-Remote}!protocol@{protocol}}
 \index{protocol@{protocol}!GbxRemote@{Gbx\-Remote}}
 \subsubsection[{protocol}]{\setlength{\rightskip}{0pt plus 5cm}int Gbx\-Remote\-::protocol = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classGbxRemote_a5ee5c7087085cb6cb2e7bc6135ff0646}
@@ -275,6 +309,20 @@ Protocol version (0 = uninitialized, 1 or 2 = version).
 
 
 Socket connection with the server. 
+
+\hypertarget{classGbxRemote_a12d98a9add104392142ec8494dd022df}{\index{Gbx\-Remote@{Gbx\-Remote}!Title\-Id@{Title\-Id}}
+\index{Title\-Id@{Title\-Id}!GbxRemote@{Gbx\-Remote}}
+\subsubsection[{Title\-Id}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gbx\-Remote\-::\-Title\-Id}}\label{classGbxRemote_a12d98a9add104392142ec8494dd022df}
+
+
+Server title (f.\-e. T\-M\-Canyon). 
+
+\hypertarget{classGbxRemote_a654b4cae6e4eed717d602700a90fcc27}{\index{Gbx\-Remote@{Gbx\-Remote}!Version@{Version}}
+\index{Version@{Version}!GbxRemote@{Gbx\-Remote}}
+\subsubsection[{Version}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gbx\-Remote\-::\-Version}}\label{classGbxRemote_a654b4cae6e4eed717d602700a90fcc27}
+
+
+Program version (f.\-e. 3.\-3.\-0). 
 
 
 

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['fault',['fault',['../classGbxResponse.html#ad896e7447681008320ad9945b57a92ad',1,'GbxResponse']]],
-  ['flags',['Flags',['../structPlayer.html#aa151b994eedc8ba67b3fd48905db5ac0',1,'Player']]]
+  ['data',['data',['../classGbxParameter.html#a6b64cfaae4d5b3b498fb2cdd3d28f824',1,'GbxParameter::data()'],['../classGbxServerResponse.html#aeee1fc539a5881334926e5c6789581bd',1,'GbxServerResponse::data()']]]
 ];

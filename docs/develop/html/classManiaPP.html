@@ -105,6 +105,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a22561171876e54dbf633c70d9924c06a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classManiaPP.html#a22561171876e54dbf633c70d9924c06a">ConnectToServer</a> ()</td></tr>
 <tr class="memdesc:a22561171876e54dbf633c70d9924c06a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connects and authenticates with the server.  <a href="#a22561171876e54dbf633c70d9924c06a">More...</a><br/></td></tr>
 <tr class="separator:a22561171876e54dbf633c70d9924c06a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56d2774a29f21b3a164ae1f7ea6bd88b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classManiaPP.html#a56d2774a29f21b3a164ae1f7ea6bd88b">PrintServerInfo</a> ()</td></tr>
+<tr class="memdesc:a56d2774a29f21b3a164ae1f7ea6bd88b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints information about the server.  <a href="#a56d2774a29f21b3a164ae1f7ea6bd88b">More...</a><br/></td></tr>
+<tr class="separator:a56d2774a29f21b3a164ae1f7ea6bd88b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8dff9e8e3835c3cac0df105a7bcce43c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classManiaPP.html#a8dff9e8e3835c3cac0df105a7bcce43c">MainLoop</a> ()</td></tr>
 <tr class="memdesc:a8dff9e8e3835c3cac0df105a7bcce43c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performing our tasks ...  <a href="#a8dff9e8e3835c3cac0df105a7bcce43c">More...</a><br/></td></tr>
 <tr class="separator:a8dff9e8e3835c3cac0df105a7bcce43c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -131,9 +134,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:ab81311d6901990cb99a7a30e0cbaab11"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGbxRemote.html">GbxRemote</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classManiaPP.html#ab81311d6901990cb99a7a30e0cbaab11">server</a></td></tr>
 <tr class="memdesc:ab81311d6901990cb99a7a30e0cbaab11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the connection with the server and its methods.  <a href="#ab81311d6901990cb99a7a30e0cbaab11">More...</a><br/></td></tr>
 <tr class="separator:ab81311d6901990cb99a7a30e0cbaab11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a630ca376cb1d249bf0a04cf5659adb9d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structPlayer.html">Player</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classManiaPP.html#a630ca376cb1d249bf0a04cf5659adb9d">players</a></td></tr>
-<tr class="memdesc:a630ca376cb1d249bf0a04cf5659adb9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the list of players currently on the server.  <a href="#a630ca376cb1d249bf0a04cf5659adb9d">More...</a><br/></td></tr>
-<tr class="separator:a630ca376cb1d249bf0a04cf5659adb9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45712ccfa91b20242b39cb1164d305d8"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classManiaPP.html#a45712ccfa91b20242b39cb1164d305d8">players</a></td></tr>
+<tr class="memdesc:a45712ccfa91b20242b39cb1164d305d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the list of players currently on the server.  <a href="#a45712ccfa91b20242b39cb1164d305d8">More...</a><br/></td></tr>
+<tr class="separator:a45712ccfa91b20242b39cb1164d305d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Main class. </p>
@@ -219,6 +222,23 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a56d2774a29f21b3a164ae1f7ea6bd88b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ManiaPP::PrintServerInfo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prints information about the server. </p>
 
 </div>
 </div>
@@ -309,7 +329,7 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a630ca376cb1d249bf0a04cf5659adb9d"></a>
+<a class="anchor" id="a45712ccfa91b20242b39cb1164d305d8"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -317,7 +337,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="structPlayer.html">Player</a>&gt;* ManiaPP::players</td>
+          <td class="memname">std::map&lt;std::string, <a class="el" href="structPlayer.html">Player</a>&gt;* ManiaPP::players</td>
         </tr>
       </table>
   </td>
@@ -360,7 +380,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Dec 23 2016 16:36:24 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Dec 23 2016 19:53:20 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

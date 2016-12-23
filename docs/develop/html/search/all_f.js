@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['tcpclient',['TcpClient',['../classTcpClient.html',1,'TcpClient'],['../classTcpClient.html#ad2e6b99a63964caa825c44e93ff8e777',1,'TcpClient::TcpClient()']]],
-  ['tcpclient_2ecpp',['TcpClient.cpp',['../TcpClient_8cpp.html',1,'']]],
-  ['tcpclient_2eh',['TcpClient.h',['../TcpClient_8h.html',1,'']]],
-  ['teamid',['TeamId',['../structPlayer.html#a350919664ba73d6d6cd6d03bd2a5cacd',1,'Player']]],
-  ['terminate',['Terminate',['../classGbxRemote.html#a6fa8ca2d48aae84884cab98a0adf4360',1,'GbxRemote::Terminate()'],['../classManiaPP.html#a87fd53fffe4a1840834a90ab575f5ce6',1,'ManiaPP::Terminate()']]],
-  ['todo_20list',['Todo List',['../todo.html',1,'']]],
-  ['type',['type',['../classGbxParameter.html#a19d4cab065cb0440c675e97babf45d02',1,'GbxParameter::type()'],['../classGbxResponseParameter.html#aa1700ca65fa2526b112be24b5c0bdbf4',1,'GbxResponseParameter::Type()']]],
-  ['typeinfo',['typeinfo',['../structGbxParam.html#afb3596a5ba95fda1e27a5c6b4ed517b5',1,'GbxParam']]]
+  ['searchforcallbacks',['SearchForCallBacks',['../classTcpClient.html#a4df900657b1cb45aced143fe21a81937',1,'TcpClient']]],
+  ['send',['Send',['../classTcpClient.html#acac6ca70c9d99e09731181e5239381ae',1,'TcpClient']]],
+  ['server',['Server',['../classConfig.html#a249a19a298cdcfd4223609142e15e5de',1,'Config::Server()'],['../classGbxRemote.html#a0b0b212b945da4266fb645affdac81cb',1,'GbxRemote::server()'],['../classManiaPP.html#ab81311d6901990cb99a7a30e0cbaab11',1,'ManiaPP::server()'],['../classTcpClient.html#a75a8bd28eca3f1eea17fb430ab14cade',1,'TcpClient::server()']]],
+  ['serverconfig',['ServerConfig',['../structServerConfig.html',1,'']]],
+  ['setraw',['SetRaw',['../classGbxCallBack.html#a78a993170ce1e3c5a35f02088e4f66a0',1,'GbxCallBack::SetRaw()'],['../classGbxResponse.html#aadd25f4d4c454bb837af9b442742ff70',1,'GbxResponse::SetRaw()'],['../classGbxServerResponse.html#a1896da1a88aa07336829de953abe7364',1,'GbxServerResponse::SetRaw()']]],
+  ['size',['size',['../structGbxFirstResponse.html#ad93a9c67024b28ecddb779457dd001f8',1,'GbxFirstResponse::size()'],['../structGbxQueryResponse.html#ab7d7e30d6beb443cdae8cbf95e4c89f3',1,'GbxQueryResponse::size()']]],
+  ['sock',['sock',['../classTcpClient.html#af93f7c8c4d91d93379ba99fd3742c3dc',1,'TcpClient']]],
+  ['spectatorstatus',['SpectatorStatus',['../structPlayer.html#a2037601661fb699454a88b5649485b30',1,'Player']]]
 ];

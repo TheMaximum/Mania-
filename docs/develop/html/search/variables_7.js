@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['nickname',['NickName',['../structPlayer.html#a553cc1b0aa79108b511ba408210582cf',1,'Player']]],
-  ['number',['number',['../structGbxError.html#ae5627cae63e837beaa75f798e47be50e',1,'GbxError']]]
+  ['message',['message',['../structGbxError.html#af52353692b5c160deac99c4285f01a5a',1,'GbxError']]],
+  ['method',['method',['../classGbxMessage.html#a10b6118916999db98f28e3f495eef6b4',1,'GbxMessage']]],
+  ['methodname',['methodName',['../classGbxCallBack.html#a8c793be5cc61e7fecef301ea6932f840',1,'GbxCallBack']]]
 ];

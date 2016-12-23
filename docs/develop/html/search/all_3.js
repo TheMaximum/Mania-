@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['extractparam',['extractParam',['../classGbxServerResponse.html#a22433a652ce9d4c7e9b834aa60c93c37',1,'GbxServerResponse']]],
-  ['extractparameters',['extractParameters',['../classGbxCallBack.html#a0a9b9db5ebdc8040058b542fb51283d7',1,'GbxCallBack::extractParameters()'],['../classGbxResponse.html#a3cd4d6c5458fcd5359b8f5d9921a2a9b',1,'GbxResponse::extractParameters()']]]
+  ['data',['data',['../classGbxParameter.html#a6b64cfaae4d5b3b498fb2cdd3d28f824',1,'GbxParameter::data()'],['../classGbxServerResponse.html#aeee1fc539a5881334926e5c6789581bd',1,'GbxServerResponse::data()']]],
+  ['dereferencedata',['dereferenceData',['../classGbxParameter.html#a8e038bca99e1eb7339567fe1af79586c',1,'GbxParameter']]],
+  ['determinetype',['determineType',['../classGbxParameter.html#af708857623b85684ede2ae002e53a118',1,'GbxParameter']]]
 ];
