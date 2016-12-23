@@ -1,6 +1,5 @@
 ---
 title: Mania++
-project.name: Mania++
 ---
 
 # Mania++
