@@ -1,5 +1,6 @@
 #include "GbxServerResponse.h"
 
+#include <string.h>
 #include <iostream>
 
 GbxServerResponse::GbxServerResponse()
@@ -71,7 +72,9 @@ GbxResponseParameter GbxServerResponse::extractParam(pugi::xml_node param)
                 resParam.Type = "int";
             }
 
-            char* value = (char*)sibling.child_value();
+            char* paramValue = (char*)sibling.child_value();
+            char* value = (char*)malloc(strlen(paramValue) + 1);
+            strcpy(value, paramValue);
             resParam.Value = value;
         }
     }

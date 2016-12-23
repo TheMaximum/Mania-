@@ -21,6 +21,7 @@ bool GbxRemote::InitWithIp(std::string address, int port)
     {
         char* data = server.Receive(4);
         const GbxFirstResponse* response = reinterpret_cast<const GbxFirstResponse*>(data);
+                
         int size = (int)response->size;
         if(size > 64)
         {
