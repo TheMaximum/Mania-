@@ -11,8 +11,8 @@
 * ```./install.sh```
     * Installs Boost (requirement for yaml-cpp)
     * Installs [yaml-cpp](https://github.com/jbeder/yaml-cpp/) 0.5.3
-    * Installs [TinyXML2](https://github.com/leethomason/tinyxml2/) 4.0.1
-    * Builds the code
+    * Installs [pugixml](https://github.com/zeux/pugixml) 1.8.1
+    * Builds the code (via ```build.sh```)
 
 ## Building (updates) ##
 * ```./build.sh```
