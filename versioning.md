@@ -4,6 +4,7 @@ title: Versioning
 
 # Versioning #
 The versioning system uses three numbers to define the version of the software:
+
 * Major: system overhaul/big features added
 * Minor: added feature(s)
 * Patch: bugfix release
