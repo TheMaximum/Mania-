@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['isinofficialmode',['IsInOfficialMode',['../structPlayer.html#a76e8b5298bcbe9ff694b6ed490ef7ca5',1,'Player']]],
-  ['isspectator',['IsSpectator',['../structPlayer.html#a61ba0e32d336f5cd1eb152addf6848d2',1,'Player']]]
+  ['ladderranking',['LadderRanking',['../structPlayer.html#a25fe69852f0e38f541ad615cd59877ef',1,'Player']]],
+  ['logging',['logging',['../classManiaPP.html#aa4cea090301bdf0bf652ad377e7b01c0',1,'ManiaPP']]],
+  ['login',['Login',['../structPlayer.html#a38398818d43e186aa982a788744792d7',1,'Player']]]
 ];

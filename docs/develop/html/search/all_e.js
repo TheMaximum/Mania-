@@ -6,5 +6,6 @@ var searchData=
   ['serverconfig',['ServerConfig',['../structServerConfig.html',1,'']]],
   ['setraw',['SetRaw',['../classGbxCallBack.html#a78a993170ce1e3c5a35f02088e4f66a0',1,'GbxCallBack::SetRaw()'],['../classGbxResponse.html#aadd25f4d4c454bb837af9b442742ff70',1,'GbxResponse::SetRaw()'],['../classGbxServerResponse.html#a1896da1a88aa07336829de953abe7364',1,'GbxServerResponse::SetRaw()']]],
   ['size',['size',['../structGbxFirstResponse.html#ad93a9c67024b28ecddb779457dd001f8',1,'GbxFirstResponse::size()'],['../structGbxQueryResponse.html#ab7d7e30d6beb443cdae8cbf95e4c89f3',1,'GbxQueryResponse::size()']]],
-  ['sock',['sock',['../classTcpClient.html#af93f7c8c4d91d93379ba99fd3742c3dc',1,'TcpClient']]]
+  ['sock',['sock',['../classTcpClient.html#af93f7c8c4d91d93379ba99fd3742c3dc',1,'TcpClient']]],
+  ['spectatorstatus',['SpectatorStatus',['../structPlayer.html#a2037601661fb699454a88b5649485b30',1,'Player']]]
 ];

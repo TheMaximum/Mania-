@@ -26,10 +26,10 @@ std\-::string \hyperlink{structPlayer_a38398818d43e186aa982a788744792d7}{Login}
 \begin{DoxyCompactList}\small\item\em \hyperlink{structPlayer}{Player} login. \end{DoxyCompactList}\item 
 std\-::string \hyperlink{structPlayer_a553cc1b0aa79108b511ba408210582cf}{Nick\-Name}
 \begin{DoxyCompactList}\small\item\em \hyperlink{structPlayer}{Player} nickname. \end{DoxyCompactList}\item 
-bool \hyperlink{structPlayer_a61ba0e32d336f5cd1eb152addf6848d2}{Is\-Spectator}
-\begin{DoxyCompactList}\small\item\em Is player a spectator? \end{DoxyCompactList}\item 
-bool \hyperlink{structPlayer_a76e8b5298bcbe9ff694b6ed490ef7ca5}{Is\-In\-Official\-Mode}
-\begin{DoxyCompactList}\small\item\em Is player in official mode? \end{DoxyCompactList}\item 
+int \hyperlink{structPlayer_a2037601661fb699454a88b5649485b30}{Spectator\-Status}
+\begin{DoxyCompactList}\small\item\em Spectator status of player. \end{DoxyCompactList}\item 
+int \hyperlink{structPlayer_aa151b994eedc8ba67b3fd48905db5ac0}{Flags}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structPlayer}{Player} flags. \end{DoxyCompactList}\item 
 int \hyperlink{structPlayer_a25fe69852f0e38f541ad615cd59877ef}{Ladder\-Ranking}
 \begin{DoxyCompactList}\small\item\em Current ladder ranking of the player. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -57,19 +57,12 @@ Formats a server response into a usable form.
 
 
 \subsection{Member Data Documentation}
-\hypertarget{structPlayer_a76e8b5298bcbe9ff694b6ed490ef7ca5}{\index{Player@{Player}!Is\-In\-Official\-Mode@{Is\-In\-Official\-Mode}}
-\index{Is\-In\-Official\-Mode@{Is\-In\-Official\-Mode}!Player@{Player}}
-\subsubsection[{Is\-In\-Official\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\-::\-Is\-In\-Official\-Mode}}\label{structPlayer_a76e8b5298bcbe9ff694b6ed490ef7ca5}
+\hypertarget{structPlayer_aa151b994eedc8ba67b3fd48905db5ac0}{\index{Player@{Player}!Flags@{Flags}}
+\index{Flags@{Flags}!Player@{Player}}
+\subsubsection[{Flags}]{\setlength{\rightskip}{0pt plus 5cm}int Player\-::\-Flags}}\label{structPlayer_aa151b994eedc8ba67b3fd48905db5ac0}
 
 
-Is player in official mode? 
-
-\hypertarget{structPlayer_a61ba0e32d336f5cd1eb152addf6848d2}{\index{Player@{Player}!Is\-Spectator@{Is\-Spectator}}
-\index{Is\-Spectator@{Is\-Spectator}!Player@{Player}}
-\subsubsection[{Is\-Spectator}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\-::\-Is\-Spectator}}\label{structPlayer_a61ba0e32d336f5cd1eb152addf6848d2}
-
-
-Is player a spectator? 
+\hyperlink{structPlayer}{Player} flags. 
 
 \hypertarget{structPlayer_a25fe69852f0e38f541ad615cd59877ef}{\index{Player@{Player}!Ladder\-Ranking@{Ladder\-Ranking}}
 \index{Ladder\-Ranking@{Ladder\-Ranking}!Player@{Player}}
@@ -98,6 +91,13 @@ Current ladder ranking of the player.
 
 
 \hyperlink{structPlayer}{Player} identifier (on server). 
+
+\hypertarget{structPlayer_a2037601661fb699454a88b5649485b30}{\index{Player@{Player}!Spectator\-Status@{Spectator\-Status}}
+\index{Spectator\-Status@{Spectator\-Status}!Player@{Player}}
+\subsubsection[{Spectator\-Status}]{\setlength{\rightskip}{0pt plus 5cm}int Player\-::\-Spectator\-Status}}\label{structPlayer_a2037601661fb699454a88b5649485b30}
+
+
+Spectator status of player. 
 
 \hypertarget{structPlayer_a350919664ba73d6d6cd6d03bd2a5cacd}{\index{Player@{Player}!Team\-Id@{Team\-Id}}
 \index{Team\-Id@{Team\-Id}!Player@{Player}}

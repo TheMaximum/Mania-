@@ -116,12 +116,12 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a553cc1b0aa79108b511ba408210582cf"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlayer.html#a553cc1b0aa79108b511ba408210582cf">NickName</a></td></tr>
 <tr class="memdesc:a553cc1b0aa79108b511ba408210582cf"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structPlayer.html" title="Contains all information about a player in easy-to-use format. ">Player</a> nickname.  <a href="#a553cc1b0aa79108b511ba408210582cf">More...</a><br/></td></tr>
 <tr class="separator:a553cc1b0aa79108b511ba408210582cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61ba0e32d336f5cd1eb152addf6848d2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlayer.html#a61ba0e32d336f5cd1eb152addf6848d2">IsSpectator</a></td></tr>
-<tr class="memdesc:a61ba0e32d336f5cd1eb152addf6848d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is player a spectator?  <a href="#a61ba0e32d336f5cd1eb152addf6848d2">More...</a><br/></td></tr>
-<tr class="separator:a61ba0e32d336f5cd1eb152addf6848d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76e8b5298bcbe9ff694b6ed490ef7ca5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlayer.html#a76e8b5298bcbe9ff694b6ed490ef7ca5">IsInOfficialMode</a></td></tr>
-<tr class="memdesc:a76e8b5298bcbe9ff694b6ed490ef7ca5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is player in official mode?  <a href="#a76e8b5298bcbe9ff694b6ed490ef7ca5">More...</a><br/></td></tr>
-<tr class="separator:a76e8b5298bcbe9ff694b6ed490ef7ca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2037601661fb699454a88b5649485b30"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlayer.html#a2037601661fb699454a88b5649485b30">SpectatorStatus</a></td></tr>
+<tr class="memdesc:a2037601661fb699454a88b5649485b30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spectator status of player.  <a href="#a2037601661fb699454a88b5649485b30">More...</a><br/></td></tr>
+<tr class="separator:a2037601661fb699454a88b5649485b30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa151b994eedc8ba67b3fd48905db5ac0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlayer.html#aa151b994eedc8ba67b3fd48905db5ac0">Flags</a></td></tr>
+<tr class="memdesc:aa151b994eedc8ba67b3fd48905db5ac0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structPlayer.html" title="Contains all information about a player in easy-to-use format. ">Player</a> flags.  <a href="#aa151b994eedc8ba67b3fd48905db5ac0">More...</a><br/></td></tr>
+<tr class="separator:aa151b994eedc8ba67b3fd48905db5ac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25fe69852f0e38f541ad615cd59877ef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlayer.html#a25fe69852f0e38f541ad615cd59877ef">LadderRanking</a></td></tr>
 <tr class="memdesc:a25fe69852f0e38f541ad615cd59877ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current ladder ranking of the player.  <a href="#a25fe69852f0e38f541ad615cd59877ef">More...</a><br/></td></tr>
 <tr class="separator:a25fe69852f0e38f541ad615cd59877ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,31 +162,17 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a76e8b5298bcbe9ff694b6ed490ef7ca5"></a>
+<a class="anchor" id="aa151b994eedc8ba67b3fd48905db5ac0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool Player::IsInOfficialMode</td>
+          <td class="memname">int Player::Flags</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Is player in official mode? </p>
-
-</div>
-</div>
-<a class="anchor" id="a61ba0e32d336f5cd1eb152addf6848d2"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Player::IsSpectator</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Is player a spectator? </p>
+<p><a class="el" href="structPlayer.html" title="Contains all information about a player in easy-to-use format. ">Player</a> flags. </p>
 
 </div>
 </div>
@@ -246,6 +232,20 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a2037601661fb699454a88b5649485b30"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Player::SpectatorStatus</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Spectator status of player. </p>
+
+</div>
+</div>
 <a class="anchor" id="a350919664ba73d6d6cd6d03bd2a5cacd"></a>
 <div class="memitem">
 <div class="memproto">
@@ -266,7 +266,7 @@ Public Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 22 2016 22:40:19 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Dec 23 2016 13:59:11 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
