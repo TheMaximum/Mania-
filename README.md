@@ -8,6 +8,8 @@ Mania++ and its sources are available under the [GNU General Public License v3](
 * Master: [![Build Status](https://travis-ci.org/TheMaximum/mania-pp.svg?branch=master)](https://travis-ci.org/TheMaximum/mania-pp)
 * Develop: [![Build Status](https://travis-ci.org/TheMaximum/mania-pp.svg?branch=develop)](https://travis-ci.org/TheMaximum/mania-pp)
 
+Also checkout the [Mania++ versioning system](versioning.html) for more about the software versions and branches.
+
 ## Requirements ##
 * C++11
 * Git
