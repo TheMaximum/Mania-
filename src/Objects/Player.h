@@ -15,8 +15,8 @@ struct Player
     std::string Login;     /**< \brief Player login. */
     std::string NickName;  /**< \brief Player nickname.*/
 
-    bool IsSpectator;      /**< \brief Is player a spectator? */
-    bool IsInOfficialMode; /**< \brief Is player in official mode? */
+    int SpectatorStatus;   /**< \brief Spectator status of player. */
+    int Flags;             /**< \brief Player flags. */
 
     int LadderRanking;     /**< \brief Current ladder ranking of the player. */
 
@@ -35,8 +35,8 @@ struct Player
             Login = serverStruct->find("Login")->second.GetString();
             NickName = serverStruct->find("NickName")->second.GetString();
 
-            IsSpectator = (bool)atoi(serverStruct->find("IsSpectator")->second.GetString().c_str());
-            IsInOfficialMode = (bool)atoi(serverStruct->find("IsInOfficialMode")->second.GetString().c_str());
+            SpectatorStatus = atoi(serverStruct->find("SpectatorStatus")->second.GetString().c_str());
+            Flags = atoi(serverStruct->find("Flags")->second.GetString().c_str());
 
             LadderRanking = atoi(serverStruct->find("LadderRanking")->second.GetString().c_str());
         }

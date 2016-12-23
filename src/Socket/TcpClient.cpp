@@ -118,7 +118,7 @@ char* TcpClient::Receive(int size = 512)
         bytes_received += response;
     }
 
-    strcpy(reply, buffer);
+    memcpy(reply, buffer, sizeof(buffer));
     reply[size] = '\0';
     return reply;
 }

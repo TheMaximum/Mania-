@@ -13,7 +13,7 @@ public:
     /*!
      * Returns the method name.
      */
-    char* GetMethodName();
+    std::string GetMethodName();
 
     /*!
      * \brief Sets the raw message value.
@@ -23,7 +23,7 @@ public:
     void SetRaw(char* callback);
 
 private:
-    char* methodName; /**< \brief Method name. */
+    std::string methodName; /**< \brief Method name. */
 
     /*!
      * \brief Extracts parameters from the raw data (XML).

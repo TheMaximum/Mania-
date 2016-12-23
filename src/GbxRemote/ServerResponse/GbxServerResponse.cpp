@@ -40,19 +40,16 @@ GbxResponseParameter GbxServerResponse::extractParam(pugi::xml_node param)
 
         if(valueType.find("array") != std::string::npos)
         {
-            std::vector<GbxResponseParameter> arrayData = std::vector<GbxResponseParameter>();
+            std::vector<GbxResponseParameter>* arrayData = new std::vector<GbxResponseParameter>();
 
             pugi::xml_node data = sibling.child("data");
             for (pugi::xml_node arrayValue = data.first_child(); arrayValue; arrayValue = arrayValue.next_sibling())
             {
-                std::cout << "ARRAY VALUE..." << std::endl;
                 GbxResponseParameter arrayParam = extractParam(arrayValue);
-                std::cout << arrayParam.Type << " => " << arrayParam.GetString() << std::endl;
-                arrayData.push_back(arrayParam);
-                std::cout << "INPUTTED!" << std::endl;
+                arrayData->push_back(arrayParam);
             }
 
-            resParam.Value = &arrayData;
+            resParam.Value = arrayData;
         }
         else if(valueType.find("struct") != std::string::npos)
         {
@@ -62,7 +59,6 @@ GbxResponseParameter GbxServerResponse::extractParam(pugi::xml_node param)
             {
                 pugi::xml_node name = member.child("name");
                 GbxResponseParameter structParam = extractParam(member.child("value"));
-
                 map->insert(std::pair<std::string, GbxResponseParameter>(name.child_value(), structParam));
             }
 

@@ -1,8 +1,9 @@
 #include "GbxCallBack.h"
 
+#include <cstring>
 #include <iostream>
 
-char* GbxCallBack::GetMethodName()
+std::string GbxCallBack::GetMethodName()
 {
     return methodName;
 }
@@ -26,7 +27,7 @@ void GbxCallBack::extractParameters()
     std::string responseType(methodResponse.last_child().name());
     if(responseType.find("params") != std::string::npos)
     {
-        methodName = (char*)methodResponse.first_child().child_value();
+        methodName = (std::string)methodResponse.first_child().child_value();
         pugi::xml_node params = methodResponse.child("params");
 
         for (pugi::xml_node child = params.first_child(); child; child = child.next_sibling())

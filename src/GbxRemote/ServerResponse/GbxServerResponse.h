@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <string>
 #include <vector>
+#include <sstream>
 #include <map>
 #include "../../../lib/pugixml/src/pugixml.hpp"
 #include "../GbxStructs.h"
