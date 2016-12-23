@@ -100,6 +100,12 @@ public:
      */
     std::string GetApiVersion();
 
+    std::string Login;      /**< \brief Server login. */
+    std::string Build;      /**< \brief Current server build (f.e. 2015-06-16_18_00). */
+    std::string Platform;   /**< \brief Program name (ManiaPlanet). */
+    std::string TitleId;    /**< \brief Server title (f.e. TMCanyon). */
+    std::string Version;    /**< \brief Program version (f.e. 3.3.0). */
+
 private:
     int protocol = 0;                               /**< \brief Protocol version (0 = uninitialized, 1 or 2 = version). */
     std::string apiVersion;                         /**< \brief Server API version. */

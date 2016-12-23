@@ -2,12 +2,12 @@
 
 ManiaPP::ManiaPP()
 {
-    std::cout << "## Running Mania++ v" << VERSION << " ###########################################" << std::endl;
+    std::cout << "## Running Mania++ v" << VERSION << " #####################################################" << std::endl;
 
     config = new Config("config.yaml");
     logging = new Logging();
     server = new GbxRemote();
-    players = new std::vector<Player>();
+    players = new std::map<std::string, Player>();
 }
 
 bool ManiaPP::ConnectToServer()
@@ -44,42 +44,59 @@ bool ManiaPP::ConnectToServer()
                 {
                     responseParams = server->GetResponse()->GetParameters();
                     std::vector<GbxResponseParameter>* methodsArray = responseParams->at(0).GetArray();
-                    std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieving server methods: " << methodsArray->size() << " found." << std::endl;
+                    std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved server methods: " << methodsArray->size() << " found." << std::endl;
 
-                    retrievePlayerList();
+                    std::cout << "[         ] Retrieving server version ... " << '\r' << std::flush;
+                    if(server->Query(new GbxMessage("GetVersion")))
+                    {
+                        responseParams = server->GetResponse()->GetParameters();
+                        std::map<std::string, GbxResponseParameter>* versionStruct = responseParams->at(0).GetStruct();
+                        server->Build = (std::string)versionStruct->find("Build")->second.GetString();
+                        server->Platform = (std::string)versionStruct->find("Name")->second.GetString();
+                        server->TitleId = (std::string)versionStruct->find("TitleId")->second.GetString();
+                        server->Version = (std::string)versionStruct->find("Version")->second.GetString();
 
-                    bool enableCallbacks = true;
-                    GbxParameters* params = new GbxParameters();
-                    params->Put(&enableCallbacks);
-                    server->Query(new GbxMessage("EnableCallbacks", params));
+                        std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved server version: '" << server->Build << "'." << std::endl;
 
-                    return true;
-                }
-                else
-                {
-                    logging->PrintFailedFlush();
-                    logging->PrintError(server->GetCurrentError());
+                        std::cout << "[         ] Retrieving system info ... " << '\r' << std::flush;
+                        if(server->Query(new GbxMessage("GetSystemInfo")))
+                        {
+                            responseParams = server->GetResponse()->GetParameters();
+                            std::map<std::string, GbxResponseParameter>* systemStruct = responseParams->at(0).GetStruct();
+                            server->Login = (std::string)systemStruct->find("ServerLogin")->second.GetString();
+
+                            std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved system info, server login: '" << server->Login << "'." << std::endl;
+
+                            retrievePlayerList();
+
+                            bool enableCallbacks = true;
+                            GbxParameters* params = new GbxParameters();
+                            params->Put(&enableCallbacks);
+                            server->Query(new GbxMessage("EnableCallbacks", params));
+
+                            PrintServerInfo();
+
+                            return true;
+                        }
+                    }
                 }
             }
-            else
-            {
-                logging->PrintFailedFlush();
-                logging->PrintError(server->GetCurrentError());
-            }
-        }
-        else
-        {
-            logging->PrintFailedFlush();
-            logging->PrintError(server->GetCurrentError());
         }
     }
-    else
-    {
-        logging->PrintFailedFlush();
-        logging->PrintError(server->GetCurrentError());
-    }
+
+    logging->PrintFailedFlush();
+    logging->PrintError(server->GetCurrentError());
 
     return false;
+}
+
+void ManiaPP::PrintServerInfo()
+{
+    std::cout << "###############################################################################" << std::endl;
+    std::cout << "  Mania++ v" << VERSION << " running on " << config->Server->address << ":" << config->Server->port << std::endl;
+    std::cout << "  Game    : " << server->Platform << " / " << server->TitleId << std::endl;
+    std::cout << "  Version : " << server->Version << " / " << server->Build << std::endl;
+    std::cout << "###############################################################################" << std::endl;
 }
 
 void ManiaPP::MainLoop()
@@ -95,12 +112,37 @@ void ManiaPP::MainLoop()
             {
                 GbxCallBack* callBack = callBacks->at(callBackId);
                 std::vector<GbxResponseParameter>* parameters = callBack->GetParameters();
+                std::string methodName = callBack->GetMethodName();
 
-                std::cout << "CALLBACK: " << callBack->GetMethodName() << " (parameters: " << parameters->size() << ")" << std::endl;
-                for(int paramId = 0; paramId < parameters->size(); paramId++)
+                if(methodName.find("PlayerConnect") != std::string::npos)
                 {
-                    GbxResponseParameter parameter = parameters->at(paramId);
-                    PrintParameter(parameter, paramId);
+                    GbxParameters* params = new GbxParameters();
+                    std::string login = parameters->at(0).GetString();
+                    params->Put(&login);
+
+                    server->Query(new GbxMessage("GetPlayerInfo", params));
+                    Player newPlayer = Player(server->GetResponse()->GetParameters()->at(0).GetStruct());
+                    players->insert(std::pair<std::string, Player>(newPlayer.Login, newPlayer));
+
+                    std::cout << "Player connected: " << newPlayer.Login << " (# players: " << players->size() << ")" << std::endl;
+                }
+                else if(methodName.find("PlayerDisconnect") != std::string::npos)
+                {
+                    GbxParameters* params = new GbxParameters();
+                    std::string login = parameters->at(0).GetString();
+
+                    Player disconnectingPlayer = players->find(login)->second;
+                    players->erase(disconnectingPlayer.Login);
+                    std::cout << "Player disconnected: " << disconnectingPlayer.Login << " (# players: " << players->size() << ")" << std::endl;
+                }
+                else
+                {
+                    std::cout << "CALLBACK: " << methodName << " (parameters: " << parameters->size() << ")" << std::endl;
+                    for(int paramId = 0; paramId < parameters->size(); paramId++)
+                    {
+                        GbxResponseParameter parameter = parameters->at(paramId);
+                        PrintParameter(parameter, paramId);
+                    }
                 }
             }
 
@@ -130,6 +172,7 @@ void ManiaPP::PrintParameter(GbxResponseParameter parameter, int paramId, std::s
         int subParamId = 0;
         for(std::map<std::string, GbxResponseParameter>::iterator subParam = structParam->begin(); subParam != structParam->end(); ++subParam)
         {
+            std::cout << "(" << subParam->first << ") ";
             PrintParameter(subParam->second, subParamId, spaces);
             subParamId++;
         }
@@ -156,14 +199,20 @@ void ManiaPP::retrievePlayerList()
         for(int playerId = 0; playerId < playerList->size(); playerId++)
         {
             std::map<std::string, GbxResponseParameter>* player = playerList->at(playerId).GetStruct();
-            players->push_back(Player(player));
+            if(player->find("Login")->second.GetString() != server->Login)
+            {
+                Player newPlayer = Player(player);
+                players->insert(std::pair<std::string, Player>(newPlayer.Login, newPlayer));
+            }
         }
 
-        std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieving current player list: " << players->size() << " found." << std::endl;
+        std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved current player list: " << players->size() << " found." << std::endl;
 
-        for(int playerInList = 0; playerInList < players->size(); playerInList++)
+        //for(int playerInList = 0; playerInList < players->size(); playerInList++)
+        std::map<std::string, Player> playerMap = *players;
+        for(std::map<std::string, Player>::iterator it = playerMap.begin(); it != playerMap.end(); ++it)
         {
-            Player listPlayer = players->at(playerInList);
+            Player listPlayer = it->second;
             std::cout << "Player #" << listPlayer.PlayerId << ":" << std::endl;
             std::cout << "    Team #           : " << listPlayer.TeamId << std::endl;
             std::cout << "    Login            : " << listPlayer.Login << std::endl;

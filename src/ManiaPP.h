@@ -25,6 +25,11 @@ public:
     bool ConnectToServer();
 
     /*!
+     * \brief Prints information about the server.
+     */
+    void PrintServerInfo();
+
+    /*!
      * \brief Performing our tasks ...
      */
     void MainLoop();
@@ -37,10 +42,10 @@ public:
     void PrintParameter(GbxResponseParameter parameter, int paramId, std::string spaces = "    ");
 
 private:
-    Config* config;               /**< \brief Contains the configuration for the software. */
-    Logging* logging;             /**< \brief Contains functions to log information. */
-    GbxRemote* server;            /**< \brief Contains the connection with the server and its methods. */
-    std::vector<Player>* players; /**< \brief Contains the list of players currently on the server. */
+    Config* config;                         /**< \brief Contains the configuration for the software. */
+    Logging* logging;                       /**< \brief Contains functions to log information. */
+    GbxRemote* server;                      /**< \brief Contains the connection with the server and its methods. */
+    std::map<std::string, Player>* players; /**< \brief Contains the list of players currently on the server. */
 
     /*!
      * \brief Gets a list of current players from the server.
