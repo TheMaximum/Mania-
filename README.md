@@ -1,14 +1,18 @@
 # Mania++
 Mania++ is an in-development Server Controller for TrackMania 2 (ManiaPlanet) servers. It is written in C++ and is at this moment basically a hobby-project. You're free to try it and contribute to the system, all ideas and assitance is welcome. No guarantee this makes it to a release-ready state, so be aware of that before using it on your servers.
 
-## License ##
-Mania++ and its sources are available under the [GNU General Public License v3](https://www.gnu.org/licenses/#GPL). This allows users/contributors to make changes to the source code, as long as those changes are made available under the same license as the original. The copyright/license notices should not be removed from the sources/workspace.
-
 ## Current build status ##
 * Master: [![Build Status](https://travis-ci.org/TheMaximum/mania-pp.svg?branch=master)](https://travis-ci.org/TheMaximum/mania-pp)
 * Develop: [![Build Status](https://travis-ci.org/TheMaximum/mania-pp.svg?branch=develop)](https://travis-ci.org/TheMaximum/mania-pp)
 
 Also checkout the [Mania++ versioning system](versioning.html) for more about the software versions and branches.
+
+## License ##
+Mania++ and its sources are available under the [GNU General Public License v3](https://www.gnu.org/licenses/#GPL). This allows users/contributors to make changes to the source code, as long as those changes are made available under the same license as the original. The copyright/license notices should not be removed from the sources/workspace.
+
+## Tested environments ##
+* Ubuntu 16.10 (Linux 4.8.0-30), 64-bit with gcc 6.2.0 (development)
+* Ubuntu 14.04.5 LTS (Linux 4.4.0-51), 64-bit with gcc 4.8.4 (Travis)
 
 ## Requirements ##
 * C++11
