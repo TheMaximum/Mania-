@@ -34,6 +34,8 @@ public:
      */
     void Terminate();
 
+    void PrintParameter(GbxResponseParameter parameter, int paramId, std::string spaces = "    ");
+
 private:
     Config* config;               /**< \brief Contains the configuration for the software. */
     Logging* logging;             /**< \brief Contains functions to log information. */

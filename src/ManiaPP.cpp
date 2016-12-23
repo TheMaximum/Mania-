@@ -100,23 +100,43 @@ void ManiaPP::MainLoop()
                 for(int paramId = 0; paramId < parameters->size(); paramId++)
                 {
                     GbxResponseParameter parameter = parameters->at(paramId);
-                    if(parameter.Type == "array")
-                    {
-                        std::cout << "    Parameter #" << paramId << ": array" << std::endl;
-                    }
-                    else if(parameter.Type == "struct")
-                    {
-                        std::cout << "    Parameter #" << paramId << ": array" << std::endl;
-                    }
-                    else
-                    {
-                        std::cout << "    Parameter #" << paramId << ": " << parameter.GetString() << " (" << parameter.Type << ")" << std::endl;
-                    }
+                    PrintParameter(parameter, paramId);
                 }
             }
 
             server->ResetCBResponses();
         }
+    }
+}
+
+void ManiaPP::PrintParameter(GbxResponseParameter parameter, int paramId, std::string spaces)
+{
+    if(parameter.Type.find("array") != std::string::npos)
+    {
+        std::cout << spaces << "Parameter #" << paramId << ": array" << std::endl;
+        spaces += "    ";
+        std::vector<GbxResponseParameter>* arrayParam = parameter.GetArray();
+        for(int subParamId = 0; subParamId < arrayParam->size(); subParamId++)
+        {
+            GbxResponseParameter arrayParameter = arrayParam->at(subParamId);
+            PrintParameter(arrayParameter, subParamId, spaces);
+        }
+    }
+    else if(parameter.Type.find("struct") != std::string::npos)
+    {
+        std::cout << spaces << "Parameter #" << paramId << ": struct" << std::endl;
+        spaces += "    ";
+        std::map<std::string, GbxResponseParameter>* structParam = parameter.GetStruct();
+        int subParamId = 0;
+        for(std::map<std::string, GbxResponseParameter>::iterator subParam = structParam->begin(); subParam != structParam->end(); ++subParam)
+        {
+            PrintParameter(subParam->second, subParamId, spaces);
+            subParamId++;
+        }
+    }
+    else
+    {
+        std::cout << spaces << "Parameter #" << paramId << ": " << parameter.GetString() << " (" << parameter.Type << ")" << std::endl;
     }
 }
 
