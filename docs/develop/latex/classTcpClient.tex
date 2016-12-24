@@ -19,7 +19,7 @@ bool \hyperlink{classTcpClient_ac2e9bb63b4e0dc8f4508aa2a85431fe2}{Connect} (std\
 \begin{DoxyCompactList}\small\item\em Creates a socket connection with the server. \end{DoxyCompactList}\item 
 bool \hyperlink{classTcpClient_acac6ca70c9d99e09731181e5239381ae}{Send} (std\-::string data)
 \begin{DoxyCompactList}\small\item\em Sends an X\-M\-L message to the server. \end{DoxyCompactList}\item 
-char $\ast$ \hyperlink{classTcpClient_a83e87c3df7d1a5a27c075f9582c6350e}{Receive} (int size)
+std\-::string \hyperlink{classTcpClient_aa000d653ba13fb447642e81890cdc866}{Receive} (int size)
 \begin{DoxyCompactList}\small\item\em Returns data received from the server. \end{DoxyCompactList}\item 
 bool \hyperlink{classTcpClient_a4df900657b1cb45aced143fe21a81937}{Search\-For\-Call\-Backs} (int timeout)
 \begin{DoxyCompactList}\small\item\em Wait (timeout) for callbacks from the server. \end{DoxyCompactList}\item 
@@ -95,13 +95,13 @@ Returns whether the connection was successfully established.
 {\em port} & X\-M\-L-\/\-R\-P\-C port of the server. \\
 \hline
 \end{DoxyParams}
-\hypertarget{classTcpClient_a83e87c3df7d1a5a27c075f9582c6350e}{\index{Tcp\-Client@{Tcp\-Client}!Receive@{Receive}}
+\hypertarget{classTcpClient_aa000d653ba13fb447642e81890cdc866}{\index{Tcp\-Client@{Tcp\-Client}!Receive@{Receive}}
 \index{Receive@{Receive}!TcpClient@{Tcp\-Client}}
-\subsubsection[{Receive}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Tcp\-Client\-::\-Receive (
+\subsubsection[{Receive}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Tcp\-Client\-::\-Receive (
 \begin{DoxyParamCaption}
 \item[{int}]{size = {\ttfamily 512}}
 \end{DoxyParamCaption}
-)}}\label{classTcpClient_a83e87c3df7d1a5a27c075f9582c6350e}
+)}}\label{classTcpClient_aa000d653ba13fb447642e81890cdc866}
 
 
 Returns data received from the server. 

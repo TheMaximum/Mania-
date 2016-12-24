@@ -35,7 +35,7 @@ var searchData=
   ['getmethodname',['GetMethodName',['../classGbxCallBack.html#aaf01544527ca0559478221780b3f32f6',1,'GbxCallBack']]],
   ['getparameters',['GetParameters',['../classGbxParameters.html#ac980093c86726dd0c71ba46b88885ca1',1,'GbxParameters::GetParameters()'],['../classGbxServerResponse.html#ab791b8d9edb964b909d3c70753549668',1,'GbxServerResponse::GetParameters()']]],
   ['getprotocol',['GetProtocol',['../classGbxRemote.html#ae6e15060920a31482fd14045cfd42803',1,'GbxRemote']]],
-  ['getraw',['GetRaw',['../classGbxServerResponse.html#a3105f299a4f6a0d997f909415a467fd5',1,'GbxServerResponse']]],
+  ['getraw',['GetRaw',['../classGbxServerResponse.html#aa449d9a63899e1d1205e6ab916798ba6',1,'GbxServerResponse']]],
   ['getresponse',['GetResponse',['../classGbxRemote.html#adac67444e391ffcc1dfda8f087eaef0b',1,'GbxRemote']]],
   ['getstring',['GetString',['../classGbxResponseParameter.html#a014af0f74e937d9002cda3e6e791735b',1,'GbxResponseParameter']]],
   ['getstruct',['GetStruct',['../classGbxResponseParameter.html#a11bee88d2b24ed96419b49ec78bbb8fc',1,'GbxResponseParameter']]],

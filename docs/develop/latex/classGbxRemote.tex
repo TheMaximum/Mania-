@@ -25,7 +25,7 @@ bool \hyperlink{classGbxRemote_abf869640136958fc4756b3a60275a285}{Query} (\hyper
 \begin{DoxyCompactList}\small\item\em Sends a \hyperlink{classGbxMessage}{Gbx\-Message} to the server. \end{DoxyCompactList}\item 
 bool \hyperlink{classGbxRemote_ac595861af2f4d7349ce3841f0758507d}{Read\-Call\-Backs} ()
 \begin{DoxyCompactList}\small\item\em Read callbacks from the server. \end{DoxyCompactList}\item 
-void \hyperlink{classGbxRemote_aa46d673f3160aed8d7062c209504a0db}{Handle\-Call\-Back} (char $\ast$data)
+void \hyperlink{classGbxRemote_a5bd6e1dc2118f7e369e72592b3c9322a}{Handle\-Call\-Back} (std\-::string data)
 \begin{DoxyCompactList}\small\item\em Handles callbacks (de-\/\-X\-M\-L-\/fies them). \end{DoxyCompactList}\item 
 std\-::vector$<$ \hyperlink{classGbxCallBack}{Gbx\-Call\-Back} $\ast$ $>$ $\ast$ \hyperlink{classGbxRemote_aaf03cc4c57ec402c91727ee2941814df}{Get\-C\-B\-Responses} ()
 \begin{DoxyCompactList}\small\item\em Returns the callbacks that have been received since last call. \end{DoxyCompactList}\item 
@@ -142,13 +142,13 @@ Returns the current version number of the server protocol (1 or 2).
 
 Returns the response from the server. 
 
-\hypertarget{classGbxRemote_aa46d673f3160aed8d7062c209504a0db}{\index{Gbx\-Remote@{Gbx\-Remote}!Handle\-Call\-Back@{Handle\-Call\-Back}}
+\hypertarget{classGbxRemote_a5bd6e1dc2118f7e369e72592b3c9322a}{\index{Gbx\-Remote@{Gbx\-Remote}!Handle\-Call\-Back@{Handle\-Call\-Back}}
 \index{Handle\-Call\-Back@{Handle\-Call\-Back}!GbxRemote@{Gbx\-Remote}}
 \subsubsection[{Handle\-Call\-Back}]{\setlength{\rightskip}{0pt plus 5cm}void Gbx\-Remote\-::\-Handle\-Call\-Back (
 \begin{DoxyParamCaption}
-\item[{char $\ast$}]{data}
+\item[{std\-::string}]{data}
 \end{DoxyParamCaption}
-)}}\label{classGbxRemote_aa46d673f3160aed8d7062c209504a0db}
+)}}\label{classGbxRemote_a5bd6e1dc2118f7e369e72592b3c9322a}
 
 
 Handles callbacks (de-\/\-X\-M\-L-\/fies them). 

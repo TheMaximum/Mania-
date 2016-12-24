@@ -21,9 +21,9 @@ Inheritance diagram for Gbx\-Response\-:\begin{figure}[H]
 \item 
 \hyperlink{structGbxError}{Gbx\-Error} $\ast$ \hyperlink{classGbxResponse_aaeb8f1ccd18ab88799d93ea78befc0df}{Get\-Fault} ()
 \item 
-void \hyperlink{classGbxResponse_aadd25f4d4c454bb837af9b442742ff70}{Set\-Raw} (char $\ast$response)
+void \hyperlink{classGbxResponse_aaf63a008c45be79f900e1131d0fb5565}{Set\-Raw} (std\-::string response)
 \begin{DoxyCompactList}\small\item\em Sets the raw message value. \end{DoxyCompactList}\item 
-char $\ast$ \hyperlink{classGbxServerResponse_a3105f299a4f6a0d997f909415a467fd5}{Get\-Raw} ()
+std\-::string \hyperlink{classGbxServerResponse_aa449d9a63899e1d1205e6ab916798ba6}{Get\-Raw} ()
 \begin{DoxyCompactList}\small\item\em Returns raw response (X\-M\-L). \end{DoxyCompactList}\item 
 std\-::vector\\*
 $<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ $\ast$ \hyperlink{classGbxServerResponse_ab791b8d9edb964b909d3c70753549668}{Get\-Parameters} ()
@@ -36,7 +36,7 @@ $<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ $\ast$ \
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-char $\ast$ \hyperlink{classGbxServerResponse_aeee1fc539a5881334926e5c6789581bd}{data}
+std\-::string \hyperlink{classGbxServerResponse_a91567866239d733819125c3b3b9948c6}{data}
 \begin{DoxyCompactList}\small\item\em Raw response data. \end{DoxyCompactList}\item 
 std\-::vector\\*
 $<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ $\ast$ \hyperlink{classGbxServerResponse_ad6fef5319c4da9461f4cd0d72d8b5ee8}{parameters} = new std\-::vector$<$\hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter}$>$()
@@ -97,24 +97,24 @@ Returns whether the response is a fault. \hypertarget{classGbxServerResponse_ab7
 
 Returns the extracted parameters. 
 
-\hypertarget{classGbxServerResponse_a3105f299a4f6a0d997f909415a467fd5}{\index{Gbx\-Response@{Gbx\-Response}!Get\-Raw@{Get\-Raw}}
+\hypertarget{classGbxServerResponse_aa449d9a63899e1d1205e6ab916798ba6}{\index{Gbx\-Response@{Gbx\-Response}!Get\-Raw@{Get\-Raw}}
 \index{Get\-Raw@{Get\-Raw}!GbxResponse@{Gbx\-Response}}
-\subsubsection[{Get\-Raw}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Gbx\-Server\-Response\-::\-Get\-Raw (
+\subsubsection[{Get\-Raw}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gbx\-Server\-Response\-::\-Get\-Raw (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inherited]}}}\label{classGbxServerResponse_a3105f299a4f6a0d997f909415a467fd5}
+)\hspace{0.3cm}{\ttfamily [inherited]}}}\label{classGbxServerResponse_aa449d9a63899e1d1205e6ab916798ba6}
 
 
 Returns raw response (X\-M\-L). 
 
-\hypertarget{classGbxResponse_aadd25f4d4c454bb837af9b442742ff70}{\index{Gbx\-Response@{Gbx\-Response}!Set\-Raw@{Set\-Raw}}
+\hypertarget{classGbxResponse_aaf63a008c45be79f900e1131d0fb5565}{\index{Gbx\-Response@{Gbx\-Response}!Set\-Raw@{Set\-Raw}}
 \index{Set\-Raw@{Set\-Raw}!GbxResponse@{Gbx\-Response}}
 \subsubsection[{Set\-Raw}]{\setlength{\rightskip}{0pt plus 5cm}void Gbx\-Response\-::\-Set\-Raw (
 \begin{DoxyParamCaption}
-\item[{char $\ast$}]{response}
+\item[{std\-::string}]{response}
 \end{DoxyParamCaption}
-)}}\label{classGbxResponse_aadd25f4d4c454bb837af9b442742ff70}
+)}}\label{classGbxResponse_aaf63a008c45be79f900e1131d0fb5565}
 
 
 Sets the raw message value. 
@@ -127,9 +127,9 @@ Sets the raw message value.
 
 
 \subsection{Member Data Documentation}
-\hypertarget{classGbxServerResponse_aeee1fc539a5881334926e5c6789581bd}{\index{Gbx\-Response@{Gbx\-Response}!data@{data}}
+\hypertarget{classGbxServerResponse_a91567866239d733819125c3b3b9948c6}{\index{Gbx\-Response@{Gbx\-Response}!data@{data}}
 \index{data@{data}!GbxResponse@{Gbx\-Response}}
-\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Gbx\-Server\-Response\-::data\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classGbxServerResponse_aeee1fc539a5881334926e5c6789581bd}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gbx\-Server\-Response\-::data\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classGbxServerResponse_a91567866239d733819125c3b3b9948c6}
 
 
 Raw response data. 

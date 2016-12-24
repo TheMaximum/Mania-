@@ -23,9 +23,9 @@ Inheritance diagram for Gbx\-Server\-Response\-:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em Empty constructor. \end{DoxyCompactList}\item 
 \hyperlink{classGbxServerResponse_ad2a02192f5389a0fe10ea27cb24adedc}{$\sim$\-Gbx\-Server\-Response} ()
 \item 
-void \hyperlink{classGbxServerResponse_a1896da1a88aa07336829de953abe7364}{Set\-Raw} (char $\ast$response)
+void \hyperlink{classGbxServerResponse_a178871bec787d490f69def87f0242e05}{Set\-Raw} (std\-::string response)
 \begin{DoxyCompactList}\small\item\em Sets the raw message value. \end{DoxyCompactList}\item 
-char $\ast$ \hyperlink{classGbxServerResponse_a3105f299a4f6a0d997f909415a467fd5}{Get\-Raw} ()
+std\-::string \hyperlink{classGbxServerResponse_aa449d9a63899e1d1205e6ab916798ba6}{Get\-Raw} ()
 \begin{DoxyCompactList}\small\item\em Returns raw response (X\-M\-L). \end{DoxyCompactList}\item 
 std\-::vector\\*
 $<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ $\ast$ \hyperlink{classGbxServerResponse_ab791b8d9edb964b909d3c70753549668}{Get\-Parameters} ()
@@ -38,7 +38,7 @@ $<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ $\ast$ \
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-char $\ast$ \hyperlink{classGbxServerResponse_aeee1fc539a5881334926e5c6789581bd}{data}
+std\-::string \hyperlink{classGbxServerResponse_a91567866239d733819125c3b3b9948c6}{data}
 \begin{DoxyCompactList}\small\item\em Raw response data. \end{DoxyCompactList}\item 
 std\-::vector\\*
 $<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ $\ast$ \hyperlink{classGbxServerResponse_ad6fef5319c4da9461f4cd0d72d8b5ee8}{parameters} = new std\-::vector$<$\hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter}$>$()
@@ -92,24 +92,24 @@ Extracts parameters from the raw data (X\-M\-L).
 
 Returns the extracted parameters. 
 
-\hypertarget{classGbxServerResponse_a3105f299a4f6a0d997f909415a467fd5}{\index{Gbx\-Server\-Response@{Gbx\-Server\-Response}!Get\-Raw@{Get\-Raw}}
+\hypertarget{classGbxServerResponse_aa449d9a63899e1d1205e6ab916798ba6}{\index{Gbx\-Server\-Response@{Gbx\-Server\-Response}!Get\-Raw@{Get\-Raw}}
 \index{Get\-Raw@{Get\-Raw}!GbxServerResponse@{Gbx\-Server\-Response}}
-\subsubsection[{Get\-Raw}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Gbx\-Server\-Response\-::\-Get\-Raw (
+\subsubsection[{Get\-Raw}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gbx\-Server\-Response\-::\-Get\-Raw (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classGbxServerResponse_a3105f299a4f6a0d997f909415a467fd5}
+)}}\label{classGbxServerResponse_aa449d9a63899e1d1205e6ab916798ba6}
 
 
 Returns raw response (X\-M\-L). 
 
-\hypertarget{classGbxServerResponse_a1896da1a88aa07336829de953abe7364}{\index{Gbx\-Server\-Response@{Gbx\-Server\-Response}!Set\-Raw@{Set\-Raw}}
+\hypertarget{classGbxServerResponse_a178871bec787d490f69def87f0242e05}{\index{Gbx\-Server\-Response@{Gbx\-Server\-Response}!Set\-Raw@{Set\-Raw}}
 \index{Set\-Raw@{Set\-Raw}!GbxServerResponse@{Gbx\-Server\-Response}}
 \subsubsection[{Set\-Raw}]{\setlength{\rightskip}{0pt plus 5cm}void Gbx\-Server\-Response\-::\-Set\-Raw (
 \begin{DoxyParamCaption}
-\item[{char $\ast$}]{response}
+\item[{std\-::string}]{response}
 \end{DoxyParamCaption}
-)}}\label{classGbxServerResponse_a1896da1a88aa07336829de953abe7364}
+)}}\label{classGbxServerResponse_a178871bec787d490f69def87f0242e05}
 
 
 Sets the raw message value. 
@@ -122,9 +122,9 @@ Sets the raw message value.
 
 
 \subsection{Member Data Documentation}
-\hypertarget{classGbxServerResponse_aeee1fc539a5881334926e5c6789581bd}{\index{Gbx\-Server\-Response@{Gbx\-Server\-Response}!data@{data}}
+\hypertarget{classGbxServerResponse_a91567866239d733819125c3b3b9948c6}{\index{Gbx\-Server\-Response@{Gbx\-Server\-Response}!data@{data}}
 \index{data@{data}!GbxServerResponse@{Gbx\-Server\-Response}}
-\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Gbx\-Server\-Response\-::data\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGbxServerResponse_aeee1fc539a5881334926e5c6789581bd}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gbx\-Server\-Response\-::data\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGbxServerResponse_a91567866239d733819125c3b3b9948c6}
 
 
 Raw response data. 
