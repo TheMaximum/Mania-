@@ -7,6 +7,7 @@
 #include <string>  //string
 #include <sstream>
 #include <vector>
+#include <unistd.h>
 #include <sys/socket.h>    //socket
 #include <arpa/inet.h> //inet_addr
 #include <netdb.h> //hostent
@@ -53,7 +54,7 @@ public:
      *
      * \param size    Size of the message expected.
      */
-    char* Receive(int size);
+    std::string Receive(int size);
 
     /*!
      * \brief Wait (timeout) for callbacks from the server.

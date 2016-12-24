@@ -14,12 +14,12 @@ GbxServerResponse::~GbxServerResponse()
     parameters = NULL;
 }
 
-void GbxServerResponse::SetRaw(char* response)
+void GbxServerResponse::SetRaw(std::string response)
 {
     data = response;
 }
 
-char* GbxServerResponse::GetRaw()
+std::string GbxServerResponse::GetRaw()
 {
     return data;
 }

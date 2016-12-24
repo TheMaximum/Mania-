@@ -66,7 +66,7 @@ public:
      *
      * \param data     Raw response from the server.
      */
-    void HandleCallBack(char* data);
+    void HandleCallBack(std::string data);
 
     /*!
      * \brief Returns the callbacks that have been received since last call.

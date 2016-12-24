@@ -13,7 +13,7 @@ GbxError* GbxResponse::GetFault()
     return fault;
 }
 
-void GbxResponse::SetRaw(char* response)
+void GbxResponse::SetRaw(std::string response)
 {
     data = response;
     extractParameters();
@@ -25,7 +25,7 @@ void GbxResponse::extractParameters()
         return;
 
     pugi::xml_document pugiDoc;
-    pugi::xml_parse_result pugiResult = pugiDoc.load_string(data);
+    pugi::xml_parse_result pugiResult = pugiDoc.load_string(data.c_str());
     pugi::xml_node pugiMethodResponse = pugiDoc.child("methodResponse");
     std::string pugiResponseType(pugiMethodResponse.first_child().name());
     if(pugiResponseType.find("params") != std::string::npos)

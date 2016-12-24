@@ -101,7 +101,7 @@ bool TcpClient::Send(std::string data)
     return true;
 }
 
-char* TcpClient::Receive(int size = 512)
+/*char* TcpClient::Receive(int size = 512)
 {
     char buffer[size];
     char* reply = new char[(size+1)];
@@ -121,6 +121,27 @@ char* TcpClient::Receive(int size = 512)
     memcpy(reply, buffer, sizeof(buffer));
     reply[size] = '\0';
     return reply;
+}*/
+
+std::string TcpClient::Receive(int size = 512)
+{
+    std::string received;
+    received.resize(size);
+    int bytes_received = 0;
+
+    while(bytes_received < size)
+    {
+        int response = read(sock, &received[bytes_received], (size - bytes_received));
+        if(response < 0)
+        {
+            std::cout << "recv failed " << response << std::endl;
+        }
+
+        bytes_received += response;
+    }
+
+    received[bytes_received] = 0;
+    return received;
 }
 
 bool TcpClient::SearchForCallBacks(int timeout)

@@ -20,7 +20,7 @@ public:
      *
      * \param callback Raw callback from server (XML).
      */
-    void SetRaw(char* callback);
+    void SetRaw(std::string callback);
 
 private:
     std::string methodName; /**< \brief Method name. */

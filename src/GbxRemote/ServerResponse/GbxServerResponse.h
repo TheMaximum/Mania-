@@ -86,12 +86,12 @@ public:
      *
      * \param response Raw response from server (XML).
      */
-    void SetRaw(char* response);
+    void SetRaw(std::string response);
 
     /*!
      * \brief Returns raw response (XML).
      */
-    char* GetRaw();
+    std::string GetRaw();
 
     /*!
      * \brief Returns the extracted parameters.
@@ -99,7 +99,7 @@ public:
     std::vector<GbxResponseParameter>* GetParameters();
 
 protected:
-    char* data; /**< \brief Raw response data. */
+    std::string data; /**< \brief Raw response data. */
     std::vector<GbxResponseParameter>* parameters = new std::vector<GbxResponseParameter>(); /**< \brief List of parameters. */
 
     /*!

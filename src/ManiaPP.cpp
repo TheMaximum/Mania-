@@ -25,9 +25,6 @@ bool ManiaPP::ConnectToServer()
 
         if(server->Query(new GbxMessage("Authenticate", params)))
         {
-            GbxResponse* response = server->GetResponse();
-            std::vector<GbxResponseParameter>* responseParams = response->GetParameters();
-
             logging->PrintOKFlush();
 
             params = new GbxParameters();
@@ -42,7 +39,7 @@ bool ManiaPP::ConnectToServer()
                 std::cout << "[         ] Retrieving server methods ... " << '\r' << std::flush;
                 if(server->Query(new GbxMessage("system.listMethods")))
                 {
-                    responseParams = server->GetResponse()->GetParameters();
+                    std::vector<GbxResponseParameter>*responseParams = server->GetResponse()->GetParameters();
                     std::vector<GbxResponseParameter>* methodsArray = responseParams->at(0).GetArray();
                     std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved server methods: " << methodsArray->size() << " found." << std::endl;
 

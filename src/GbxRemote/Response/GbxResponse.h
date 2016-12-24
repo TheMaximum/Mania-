@@ -20,7 +20,7 @@ public:
      *
      * \param response Raw response from server (XML).
      */
-    void SetRaw(char* response);
+    void SetRaw(std::string response);
 
 private:
     GbxError* fault = new GbxError; /**< \brief Current fault (error). */

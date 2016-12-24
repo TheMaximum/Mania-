@@ -8,7 +8,7 @@ std::string GbxCallBack::GetMethodName()
     return methodName;
 }
 
-void GbxCallBack::SetRaw(char* callback)
+void GbxCallBack::SetRaw(std::string callback)
 {
     data = callback;
     extractParameters();
@@ -20,7 +20,7 @@ void GbxCallBack::extractParameters()
         return;
 
     pugi::xml_document pugiDoc;
-    pugi::xml_parse_result pugiResult = pugiDoc.load_string(data);
+    pugi::xml_parse_result pugiResult = pugiDoc.load_string(data.c_str());
     pugi::xml_node pugiMethodResponse = pugiDoc.first_child();
 
     pugi::xml_node methodResponse = pugiDoc.child("methodCall");

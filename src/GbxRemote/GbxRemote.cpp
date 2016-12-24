@@ -19,9 +19,9 @@ bool GbxRemote::InitWithIp(std::string address, int port)
     apiVersion = (char*)"2015-02-10";
     if(server.Connect(address, port))
     {
-        char* data = server.Receive(4);
-        const GbxFirstResponse* response = reinterpret_cast<const GbxFirstResponse*>(data);
-                
+        std::string data = server.Receive(4);
+        const GbxFirstResponse* response = reinterpret_cast<const GbxFirstResponse*>(data.c_str());
+
         int size = (int)response->size;
         if(size > 64)
         {
@@ -32,17 +32,14 @@ bool GbxRemote::InitWithIp(std::string address, int port)
             return false;
         }
 
-        char* protocolRes = server.Receive(size);
-        char protocolResponse[(size+1)];
-        strcpy(protocolResponse, protocolRes);
-
-        if(strcmp(protocolResponse, "GBXRemote 1") == 0)
+        std::string protocolRes = server.Receive(size);
+        if(protocolRes.find("GBXRemote 1") != std::string::npos)
         {
             currentError->number = -32300;
             currentError->message = "transport error - old version of trackmania server detected";
             return false;
         }
-        else if(strcmp(protocolResponse, "GBXRemote 2") == 0)
+        else if(protocolRes.find("GBXRemote 2") != std::string::npos)
         {
             protocol = 2;
         }
@@ -50,7 +47,7 @@ bool GbxRemote::InitWithIp(std::string address, int port)
         {
             currentError->number = -32300;
             std::stringstream messageStream;
-            messageStream << "transport error - wrong lowlevel protocol version (" << protocolResponse << ")";
+            messageStream << "transport error - wrong lowlevel protocol version (" << protocolRes << ")";
             currentError->message = messageStream.str();
             return false;
         }
@@ -72,6 +69,9 @@ void GbxRemote::Terminate()
 
 bool GbxRemote::Query(GbxMessage* query)
 {
+    delete currentError;
+    delete currentResponse;
+
     currentError = new GbxError();
     currentResponse = new GbxResponse();
 
@@ -84,8 +84,8 @@ bool GbxRemote::Query(GbxMessage* query)
 
     while(true)
     {
-        char* data = server.Receive(8);
-        const GbxQueryResponse* message = reinterpret_cast<const GbxQueryResponse*>(data);
+        std::string data = server.Receive(8);
+        const GbxQueryResponse* message = reinterpret_cast<const GbxQueryResponse*>(data.c_str());
 
         if(message->size > (4096*1024))
         {
@@ -98,9 +98,9 @@ bool GbxRemote::Query(GbxMessage* query)
 
         if(message->size > 0)
         {
-            char* rawResponse = server.Receive(message->size);
+            std::string rawResponse = server.Receive(message->size);
 
-            if(std::string(rawResponse).find("methodCall") != std::string::npos)
+            if(rawResponse.find("methodCall") != std::string::npos)
             {
                 HandleCallBack(rawResponse);
                 continue;
@@ -126,8 +126,8 @@ bool GbxRemote::ReadCallBacks()
 {
     if(server.SearchForCallBacks(2000))
     {
-        char* data = server.Receive(8);
-        const GbxQueryResponse* message = reinterpret_cast<const GbxQueryResponse*>(data);
+        std::string data = server.Receive(8);
+        const GbxQueryResponse* message = reinterpret_cast<const GbxQueryResponse*>(data.c_str());
         int size = message->size;
 
         if(size > (4096*1024))
@@ -141,8 +141,8 @@ bool GbxRemote::ReadCallBacks()
 
         if(size > 0)
         {
-            char* callback = server.Receive(size);
-            if(std::string(callback).find("methodCall") != std::string::npos)
+            std::string callback = server.Receive(size);
+            if(callback.find("methodCall") != std::string::npos)
             {
                 HandleCallBack(callback);
                 return true;
@@ -153,7 +153,7 @@ bool GbxRemote::ReadCallBacks()
     return false;
 }
 
-void GbxRemote::HandleCallBack(char* data)
+void GbxRemote::HandleCallBack(std::string data)
 {
     GbxCallBack* callBack = new GbxCallBack();
     callBack->SetRaw(data);
@@ -184,12 +184,10 @@ GbxResponse* GbxRemote::GetResponse()
 {
     if(currentResponse->GetRaw() != "")
     {
-        GbxResponse* returnResponse = currentResponse;
-        currentResponse = new GbxResponse();
-        return returnResponse;
+        return currentResponse;
     }
 
-    return new GbxResponse();
+    return NULL;
 }
 
 int GbxRemote::GetProtocol()
