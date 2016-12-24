@@ -12,11 +12,13 @@ Mania++ and its sources are available under the [GNU General Public License v3](
 
 ## Tested environments ##
 * Ubuntu 16.10 (Linux 4.8.0-30), 64-bit with gcc 6.2.0 (development)
+* Ubuntu 16.04.1 LTS (Linux 4.4.0-31), 32-bit with gcc 5.4.0 (testing)
 * Ubuntu 14.04.5 LTS (Linux 4.4.0-51), 64-bit with gcc 4.8.4 (Travis)
+* Debian 8.6 (Linux 3.16.0-4), 64-bit with gcc 4.9.2 (production)
 
 ## Requirements ##
 * C++11
-* Git
+* Git _(if you want the latest develop)_
 * [CMake](https://cmake.org)
 
 ## Aims and working points ##
