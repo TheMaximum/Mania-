@@ -1,7 +1,7 @@
 #include "GbxMessage.h"
 
-GbxMessage::GbxMessage(std::string method, GbxParameters* parameters)
-    : method(method)
+GbxMessage::GbxMessage(std::string methodName, GbxParameters* parameters)
+    : method(methodName)
 {
     xml  = "<?xml version=\"1.0\" encoding=\"utf-8\" ?>";
     xml += "<methodCall>";
@@ -15,6 +15,8 @@ GbxMessage::GbxMessage(std::string method, GbxParameters* parameters)
             GbxParameter* param = new GbxParameter(parameters->GetParameters()->at(paramId));
             xml += param->GetXml();
             xml += "</value></param>";
+
+            delete param; param = NULL;
         }
     }
     xml += "</params>";

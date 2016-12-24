@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 #include <sstream>
+#include <iostream>
 #include <map>
 #include "../../../lib/pugixml/src/pugixml.hpp"
 #include "../GbxStructs.h"
@@ -18,6 +19,25 @@ class GbxResponseParameter
 public:
     std::string Type;  /**< \brief XML-RPC data type. */
     void* Value;       /**< \brief Data value (in text). */
+
+    ~GbxResponseParameter()
+    {
+        /*std::cout << std::endl << "Deleting a '" << Type << "'" << std::endl;
+        if(Type.find("array") != std::string::npos)
+        {
+            delete (std::vector<GbxResponseParameter>*)Value;
+        }
+        else if(Type.find("struct") != std::string::npos)
+        {
+            delete (std::map<std::string, GbxResponseParameter>*)Value;
+        }
+        else
+        {
+            //delete[] (char*)Value;
+        }
+
+        //Value = NULL;*/
+    }
 
     /*!
      * \brief Gets the value as vector of parameters.

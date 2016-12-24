@@ -23,29 +23,41 @@ bool ManiaPP::ConnectToServer()
         params->Put(&config->Server->username);
         params->Put(&config->Server->password);
 
-        if(server->Query(new GbxMessage("Authenticate", params)))
+        GbxMessage* message = new GbxMessage("Authenticate", params);
+
+        if(server->Query(message))
         {
             logging->PrintOKFlush();
 
+            delete params; params = NULL;
+            delete message; message = NULL;
             params = new GbxParameters();
             std::string apiVersion = server->GetApiVersion();
             params->Put(&apiVersion);
 
             std::cout << "[         ] Setting API version to '" << apiVersion << "' ... " << '\r' << std::flush;
-            if(server->Query(new GbxMessage("SetApiVersion", params)))
+            message = new GbxMessage("SetApiVersion", params);
+            if(server->Query(message))
             {
+                delete params; params = NULL;
+                delete message; message = NULL;
                 logging->PrintOKFlush();
 
                 std::cout << "[         ] Retrieving server methods ... " << '\r' << std::flush;
-                if(server->Query(new GbxMessage("system.listMethods")))
+                message = new GbxMessage("system.listMethods");
+                if(server->Query(message))
                 {
-                    std::vector<GbxResponseParameter>*responseParams = server->GetResponse()->GetParameters();
+                    std::vector<GbxResponseParameter>* responseParams = server->GetResponse()->GetParameters();
                     std::vector<GbxResponseParameter>* methodsArray = responseParams->at(0).GetArray();
                     std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved server methods: " << methodsArray->size() << " found." << std::endl;
+                    delete message; message = NULL;
 
                     std::cout << "[         ] Retrieving server version ... " << '\r' << std::flush;
-                    if(server->Query(new GbxMessage("GetVersion")))
+                    GbxMessage* message = new GbxMessage("GetVersion");
+                    if(server->Query(message))
                     {
+                        delete message; message = NULL;
+
                         responseParams = server->GetResponse()->GetParameters();
                         std::map<std::string, GbxResponseParameter>* versionStruct = responseParams->at(0).GetStruct();
                         server->Build = (std::string)versionStruct->find("Build")->second.GetString();
@@ -56,8 +68,10 @@ bool ManiaPP::ConnectToServer()
                         std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved server version: '" << server->Build << "'." << std::endl;
 
                         std::cout << "[         ] Retrieving system info ... " << '\r' << std::flush;
-                        if(server->Query(new GbxMessage("GetSystemInfo")))
+                        GbxMessage* message = new GbxMessage("GetSystemInfo");
+                        if(server->Query(message))
                         {
+                            delete message; message = NULL;
                             responseParams = server->GetResponse()->GetParameters();
                             std::map<std::string, GbxResponseParameter>* systemStruct = responseParams->at(0).GetStruct();
                             server->Login = (std::string)systemStruct->find("ServerLogin")->second.GetString();
@@ -69,7 +83,11 @@ bool ManiaPP::ConnectToServer()
                             bool enableCallbacks = true;
                             GbxParameters* params = new GbxParameters();
                             params->Put(&enableCallbacks);
-                            server->Query(new GbxMessage("EnableCallbacks", params));
+                            message = new GbxMessage("EnableCallbacks", params);
+                            server->Query(message);
+
+                            delete params; params = NULL;
+                            delete message; message = NULL;
 
                             PrintServerInfo();
 
@@ -190,6 +208,9 @@ void ManiaPP::retrievePlayerList()
     GbxMessage* getPlayerList = new GbxMessage("GetPlayerList", params);
     if(server->Query(getPlayerList))
     {
+        delete getPlayerList; getPlayerList = NULL;
+        delete params; params = NULL;
+
         std::vector<GbxResponseParameter>* responseParams = server->GetResponse()->GetParameters();
         std::vector<GbxResponseParameter>* playerList = responseParams->at(0).GetArray();
 

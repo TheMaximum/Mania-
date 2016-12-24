@@ -10,6 +10,8 @@
 class GbxResponse : public GbxServerResponse
 {
 public:
+    ~GbxResponse();
+    
     /*!
      * Returns whether the response is a fault.
      */

@@ -20,7 +20,7 @@ public:
      * \param method Server method name.
      * \param params Params which belong to the method.
      */
-    GbxMessage(std::string method, GbxParameters* parameters = NULL);
+    GbxMessage(std::string methodName, GbxParameters* parameters = NULL);
 
     /*!
      * \brief Returns the method name.

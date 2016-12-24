@@ -3,6 +3,12 @@
 #include <cstring>
 #include <iostream>
 
+GbxResponse::~GbxResponse()
+{
+    delete fault;
+    fault = NULL;
+}
+
 GbxError* GbxResponse::GetFault()
 {
     if(fault->number == 0)
