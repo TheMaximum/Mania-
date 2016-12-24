@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['gbxmessage',['GbxMessage',['../classGbxMessage.html#ad4a5e5f75787e12229cf03aabc4ad930',1,'GbxMessage']]],
+  ['gbxmessage',['GbxMessage',['../classGbxMessage.html#aa06aa73544aa343e42a5f19434a05928',1,'GbxMessage']]],
   ['gbxparameter',['GbxParameter',['../classGbxParameter.html#a6cfd5c21c176ca6d9d2a1a3d9ad9953c',1,'GbxParameter']]],
   ['gbxserverresponse',['GbxServerResponse',['../classGbxServerResponse.html#a2198b6f6ca6b7da1ffd7bfa9a516d8b2',1,'GbxServerResponse']]],
   ['getapiversion',['GetApiVersion',['../classGbxRemote.html#a6351f71fe649bff2aabfbd9b7c89e3f5',1,'GbxRemote']]],
