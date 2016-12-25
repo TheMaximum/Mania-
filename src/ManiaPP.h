@@ -19,6 +19,9 @@ public:
      */
     ManiaPP();
 
+    /*!
+     * \brief Destructs the pointers in the main class.
+     */
     ~ManiaPP();
 
     /*!
