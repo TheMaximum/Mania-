@@ -12,6 +12,7 @@
 *.so
 *.dylib
 *.dll
+lib/yaml/build/
 
 # Fortran module files
 *.mod
@@ -27,3 +28,14 @@
 *.exe
 *.out
 *.app
+Mania++
+
+# Build directory
+build/
+
+# Documentation directories
+doc/html/
+doc/latex/
+
+# Configuration file
+config.yaml

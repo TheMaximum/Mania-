@@ -1,0 +1,29 @@
+dist: trusty
+sudo: required
+language: cpp
+
+branches:
+    except:
+        - gh-pages
+
+env:
+    global:
+        - GH_REPO_NAME: mania-pp
+        - DOXYFILE: $TRAVIS_BUILD_DIR/doc/Doxyfile
+        - GH_REPO_REF: github.com/TheMaximum/mania-pp.git
+
+addons:
+    apt:
+        packages:
+            - doxygen
+            - doxygen-doc
+            - doxygen-latex
+            - doxygen-gui
+            - graphviz
+
+script:
+    - ./install.sh
+
+after_success:
+    - cd $TRAVIS_BUILD_DIR/doc
+    - ./generate.sh
