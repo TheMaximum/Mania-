@@ -7,5 +7,6 @@ var searchData=
   ['setraw',['SetRaw',['../classGbxCallBack.html#a9382de8d43cae9e7a9acd384146c2900',1,'GbxCallBack::SetRaw()'],['../classGbxResponse.html#aaf63a008c45be79f900e1131d0fb5565',1,'GbxResponse::SetRaw()'],['../classGbxServerResponse.html#a178871bec787d490f69def87f0242e05',1,'GbxServerResponse::SetRaw()']]],
   ['size',['size',['../structGbxFirstResponse.html#ad93a9c67024b28ecddb779457dd001f8',1,'GbxFirstResponse::size()'],['../structGbxQueryResponse.html#ab7d7e30d6beb443cdae8cbf95e4c89f3',1,'GbxQueryResponse::size()']]],
   ['sock',['sock',['../classTcpClient.html#af93f7c8c4d91d93379ba99fd3742c3dc',1,'TcpClient']]],
-  ['spectatorstatus',['SpectatorStatus',['../structPlayer.html#a2037601661fb699454a88b5649485b30',1,'Player']]]
+  ['spectatorstatus',['SpectatorStatus',['../structPlayer.html#a2037601661fb699454a88b5649485b30',1,'Player']]],
+  ['struct',['Struct',['../classGbxResponseParameter.html#acc26f8d64983f92709d1fa38b8f33e66',1,'GbxResponseParameter']]]
 ];

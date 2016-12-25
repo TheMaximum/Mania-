@@ -27,8 +27,7 @@ void \hyperlink{classGbxResponse_aaf63a008c45be79f900e1131d0fb5565}{Set\-Raw} (s
 \begin{DoxyCompactList}\small\item\em Sets the raw message value. \end{DoxyCompactList}\item 
 std\-::string \hyperlink{classGbxServerResponse_aa449d9a63899e1d1205e6ab916798ba6}{Get\-Raw} ()
 \begin{DoxyCompactList}\small\item\em Returns raw response (X\-M\-L). \end{DoxyCompactList}\item 
-std\-::vector\\*
-$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ $\ast$ \hyperlink{classGbxServerResponse_ab791b8d9edb964b909d3c70753549668}{Get\-Parameters} ()
+std\-::vector$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ \hyperlink{classGbxServerResponse_a6d42bdaaeff3368e1fab2984940d2a2c}{Get\-Parameters} ()
 \begin{DoxyCompactList}\small\item\em Returns the extracted parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -40,8 +39,7 @@ $<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ $\ast$ \
 \item 
 std\-::string \hyperlink{classGbxServerResponse_a91567866239d733819125c3b3b9948c6}{data}
 \begin{DoxyCompactList}\small\item\em Raw response data. \end{DoxyCompactList}\item 
-std\-::vector\\*
-$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ $\ast$ \hyperlink{classGbxServerResponse_ad6fef5319c4da9461f4cd0d72d8b5ee8}{parameters} = new std\-::vector$<$\hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter}$>$()
+std\-::vector$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ \hyperlink{classGbxServerResponse_acfd80e7b92cf34e1f0cda88a11a1bed0}{parameters} = std\-::vector$<$\hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter}$>$()
 \begin{DoxyCompactList}\small\item\em List of parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -98,13 +96,13 @@ Extracts parameters from the raw data (X\-M\-L).
 {}
 \end{DoxyParamCaption}
 )}}\label{classGbxResponse_aaeb8f1ccd18ab88799d93ea78befc0df}
-Returns whether the response is a fault. \hypertarget{classGbxServerResponse_ab791b8d9edb964b909d3c70753549668}{\index{Gbx\-Response@{Gbx\-Response}!Get\-Parameters@{Get\-Parameters}}
+Returns whether the response is a fault. \hypertarget{classGbxServerResponse_a6d42bdaaeff3368e1fab2984940d2a2c}{\index{Gbx\-Response@{Gbx\-Response}!Get\-Parameters@{Get\-Parameters}}
 \index{Get\-Parameters@{Get\-Parameters}!GbxResponse@{Gbx\-Response}}
-\subsubsection[{Get\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf Gbx\-Response\-Parameter} $>$ $\ast$ Gbx\-Server\-Response\-::\-Get\-Parameters (
+\subsubsection[{Get\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf Gbx\-Response\-Parameter} $>$ Gbx\-Server\-Response\-::\-Get\-Parameters (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inherited]}}}\label{classGbxServerResponse_ab791b8d9edb964b909d3c70753549668}
+)\hspace{0.3cm}{\ttfamily [inherited]}}}\label{classGbxServerResponse_a6d42bdaaeff3368e1fab2984940d2a2c}
 
 
 Returns the extracted parameters. 
@@ -153,9 +151,9 @@ Raw response data.
 
 Current fault (error). 
 
-\hypertarget{classGbxServerResponse_ad6fef5319c4da9461f4cd0d72d8b5ee8}{\index{Gbx\-Response@{Gbx\-Response}!parameters@{parameters}}
+\hypertarget{classGbxServerResponse_acfd80e7b92cf34e1f0cda88a11a1bed0}{\index{Gbx\-Response@{Gbx\-Response}!parameters@{parameters}}
 \index{parameters@{parameters}!GbxResponse@{Gbx\-Response}}
-\subsubsection[{parameters}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Gbx\-Response\-Parameter}$>$$\ast$ Gbx\-Server\-Response\-::parameters = new std\-::vector$<${\bf Gbx\-Response\-Parameter}$>$()\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classGbxServerResponse_ad6fef5319c4da9461f4cd0d72d8b5ee8}
+\subsubsection[{parameters}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Gbx\-Response\-Parameter}$>$ Gbx\-Server\-Response\-::parameters = std\-::vector$<${\bf Gbx\-Response\-Parameter}$>$()\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classGbxServerResponse_acfd80e7b92cf34e1f0cda88a11a1bed0}
 
 
 List of parameters. 
