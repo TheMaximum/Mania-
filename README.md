@@ -16,12 +16,15 @@ Mania++ and its sources are available under the [GNU General Public License v3](
 * Ubuntu 14.04.5 LTS (Linux 4.4.0-51), 64-bit with gcc 4.8.4 (Travis)
 * Debian 8.6 (Linux 3.16.0-4), 64-bit with gcc 4.9.2 (production)
 
+Mania++ is (currently) not compatible with Windows systems and the ```./install.sh```-script requires a Debian-like system to function (with ```apt-get```).
+
 ## Requirements ##
 * C++11
 * Git _(if you want the latest develop)_
 * [CMake](https://cmake.org)
 
 ## Aims and working points ##
+* Create more usable objects (f.e. `Map`)
 * Working plugin system
    * Plugin interface
    * Callback handling
@@ -34,7 +37,7 @@ Mania++ and its sources are available under the [GNU General Public License v3](
    * Send methods and receive responses
    * Receive callbacks
    * De-XMLify responses and callbacks
-   * Create usable objects (f.e. `Player` or `Map`)
+* Create usable objects (f.e. `Player`)
 * Working configuration system (YAML)
 
 ## Installing for the first time ##
