@@ -1,0 +1,154 @@
+\hypertarget{classGbxCallBack}{\section{Gbx\-Call\-Back Class Reference}
+\label{classGbxCallBack}\index{Gbx\-Call\-Back@{Gbx\-Call\-Back}}
+}
+
+
+Call\-Back from server, de-\/\-X\-M\-L-\/fies the callback.  
+
+
+
+
+{\ttfamily \#include $<$Gbx\-Call\-Back.\-h$>$}
+
+Inheritance diagram for Gbx\-Call\-Back\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGbxCallBack}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{classGbxCallBack_aaf01544527ca0559478221780b3f32f6}{Get\-Method\-Name} ()
+\item 
+void \hyperlink{classGbxCallBack_a9382de8d43cae9e7a9acd384146c2900}{Set\-Raw} (std\-::string callback)
+\begin{DoxyCompactList}\small\item\em Sets the raw message value. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classGbxServerResponse_aa449d9a63899e1d1205e6ab916798ba6}{Get\-Raw} ()
+\begin{DoxyCompactList}\small\item\em Returns raw response (X\-M\-L). \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ \hyperlink{classGbxServerResponse_a6d42bdaaeff3368e1fab2984940d2a2c}{Get\-Parameters} ()
+\begin{DoxyCompactList}\small\item\em Returns the extracted parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} \hyperlink{classGbxServerResponse_a22433a652ce9d4c7e9b834aa60c93c37}{extract\-Param} (pugi\-::xml\-\_\-node param)
+\begin{DoxyCompactList}\small\item\em Extracts parameters from the raw data (X\-M\-L). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{classGbxServerResponse_a91567866239d733819125c3b3b9948c6}{data}
+\begin{DoxyCompactList}\small\item\em Raw response data. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ \hyperlink{classGbxServerResponse_acfd80e7b92cf34e1f0cda88a11a1bed0}{parameters} = std\-::vector$<$\hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter}$>$()
+\begin{DoxyCompactList}\small\item\em List of parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classGbxCallBack_a0a9b9db5ebdc8040058b542fb51283d7}{extract\-Parameters} ()
+\begin{DoxyCompactList}\small\item\em Extracts parameters from the raw data (X\-M\-L). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{classGbxCallBack_a8c793be5cc61e7fecef301ea6932f840}{method\-Name}
+\begin{DoxyCompactList}\small\item\em Method name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Call\-Back from server, de-\/\-X\-M\-L-\/fies the callback. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classGbxServerResponse_a22433a652ce9d4c7e9b834aa60c93c37}{\index{Gbx\-Call\-Back@{Gbx\-Call\-Back}!extract\-Param@{extract\-Param}}
+\index{extract\-Param@{extract\-Param}!GbxCallBack@{Gbx\-Call\-Back}}
+\subsubsection[{extract\-Param}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gbx\-Response\-Parameter} Gbx\-Server\-Response\-::extract\-Param (
+\begin{DoxyParamCaption}
+\item[{pugi\-::xml\-\_\-node}]{param}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classGbxServerResponse_a22433a652ce9d4c7e9b834aa60c93c37}
+
+
+Extracts parameters from the raw data (X\-M\-L). 
+
+\hypertarget{classGbxCallBack_a0a9b9db5ebdc8040058b542fb51283d7}{\index{Gbx\-Call\-Back@{Gbx\-Call\-Back}!extract\-Parameters@{extract\-Parameters}}
+\index{extract\-Parameters@{extract\-Parameters}!GbxCallBack@{Gbx\-Call\-Back}}
+\subsubsection[{extract\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void Gbx\-Call\-Back\-::extract\-Parameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classGbxCallBack_a0a9b9db5ebdc8040058b542fb51283d7}
+
+
+Extracts parameters from the raw data (X\-M\-L). 
+
+\hypertarget{classGbxCallBack_aaf01544527ca0559478221780b3f32f6}{\index{Gbx\-Call\-Back@{Gbx\-Call\-Back}!Get\-Method\-Name@{Get\-Method\-Name}}
+\index{Get\-Method\-Name@{Get\-Method\-Name}!GbxCallBack@{Gbx\-Call\-Back}}
+\subsubsection[{Get\-Method\-Name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gbx\-Call\-Back\-::\-Get\-Method\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGbxCallBack_aaf01544527ca0559478221780b3f32f6}
+Returns the method name. \hypertarget{classGbxServerResponse_a6d42bdaaeff3368e1fab2984940d2a2c}{\index{Gbx\-Call\-Back@{Gbx\-Call\-Back}!Get\-Parameters@{Get\-Parameters}}
+\index{Get\-Parameters@{Get\-Parameters}!GbxCallBack@{Gbx\-Call\-Back}}
+\subsubsection[{Get\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf Gbx\-Response\-Parameter} $>$ Gbx\-Server\-Response\-::\-Get\-Parameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}}\label{classGbxServerResponse_a6d42bdaaeff3368e1fab2984940d2a2c}
+
+
+Returns the extracted parameters. 
+
+\hypertarget{classGbxServerResponse_aa449d9a63899e1d1205e6ab916798ba6}{\index{Gbx\-Call\-Back@{Gbx\-Call\-Back}!Get\-Raw@{Get\-Raw}}
+\index{Get\-Raw@{Get\-Raw}!GbxCallBack@{Gbx\-Call\-Back}}
+\subsubsection[{Get\-Raw}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gbx\-Server\-Response\-::\-Get\-Raw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}}\label{classGbxServerResponse_aa449d9a63899e1d1205e6ab916798ba6}
+
+
+Returns raw response (X\-M\-L). 
+
+\hypertarget{classGbxCallBack_a9382de8d43cae9e7a9acd384146c2900}{\index{Gbx\-Call\-Back@{Gbx\-Call\-Back}!Set\-Raw@{Set\-Raw}}
+\index{Set\-Raw@{Set\-Raw}!GbxCallBack@{Gbx\-Call\-Back}}
+\subsubsection[{Set\-Raw}]{\setlength{\rightskip}{0pt plus 5cm}void Gbx\-Call\-Back\-::\-Set\-Raw (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{callback}
+\end{DoxyParamCaption}
+)}}\label{classGbxCallBack_a9382de8d43cae9e7a9acd384146c2900}
+
+
+Sets the raw message value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & Raw callback from server (X\-M\-L). \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classGbxServerResponse_a91567866239d733819125c3b3b9948c6}{\index{Gbx\-Call\-Back@{Gbx\-Call\-Back}!data@{data}}
+\index{data@{data}!GbxCallBack@{Gbx\-Call\-Back}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gbx\-Server\-Response\-::data\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classGbxServerResponse_a91567866239d733819125c3b3b9948c6}
+
+
+Raw response data. 
+
+\hypertarget{classGbxCallBack_a8c793be5cc61e7fecef301ea6932f840}{\index{Gbx\-Call\-Back@{Gbx\-Call\-Back}!method\-Name@{method\-Name}}
+\index{method\-Name@{method\-Name}!GbxCallBack@{Gbx\-Call\-Back}}
+\subsubsection[{method\-Name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gbx\-Call\-Back\-::method\-Name\hspace{0.3cm}{\ttfamily [private]}}}\label{classGbxCallBack_a8c793be5cc61e7fecef301ea6932f840}
+
+
+Method name. 
+
+\hypertarget{classGbxServerResponse_acfd80e7b92cf34e1f0cda88a11a1bed0}{\index{Gbx\-Call\-Back@{Gbx\-Call\-Back}!parameters@{parameters}}
+\index{parameters@{parameters}!GbxCallBack@{Gbx\-Call\-Back}}
+\subsubsection[{parameters}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Gbx\-Response\-Parameter}$>$ Gbx\-Server\-Response\-::parameters = std\-::vector$<${\bf Gbx\-Response\-Parameter}$>$()\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classGbxServerResponse_acfd80e7b92cf34e1f0cda88a11a1bed0}
+
+
+List of parameters. 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Gbx\-Remote/\-Call\-Back/\hyperlink{GbxCallBack_8h}{Gbx\-Call\-Back.\-h}\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Gbx\-Remote/\-Call\-Back/\hyperlink{GbxCallBack_8cpp}{Gbx\-Call\-Back.\-cpp}\end{DoxyCompactItemize}

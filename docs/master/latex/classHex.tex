@@ -1,0 +1,69 @@
+\hypertarget{classHex}{\section{Hex Class Reference}
+\label{classHex}\index{Hex@{Hex}}
+}
+
+
+Utility to print char arrays/pointers as hexadecimal values.  
+
+
+
+
+{\ttfamily \#include $<$Hex.\-h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classHex_a875b48852fbd0032d85d01286d8653c1}{Print} (char message\mbox{[}$\,$\mbox{]}, int message\-Length)
+\begin{DoxyCompactList}\small\item\em Prints char array as hexadecimal values. \end{DoxyCompactList}\item 
+static void \hyperlink{classHex_a7a955b79027e7bb270b96d0f13e26043}{Print} (char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Prints char pointer as hexadecimal values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Utility to print char arrays/pointers as hexadecimal values. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classHex_a875b48852fbd0032d85d01286d8653c1}{\index{Hex@{Hex}!Print@{Print}}
+\index{Print@{Print}!Hex@{Hex}}
+\subsubsection[{Print}]{\setlength{\rightskip}{0pt plus 5cm}static void Hex\-::\-Print (
+\begin{DoxyParamCaption}
+\item[{char}]{message\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{message\-Length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classHex_a875b48852fbd0032d85d01286d8653c1}
+
+
+Prints char array as hexadecimal values. 
+
+For printing the char array as hexadecimal, it uses the std\-::hex option. The char array is casted and printed char by char.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Char array with message to be displayed. \\
+\hline
+{\em message\-Length} & Length of the char array. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classHex_a7a955b79027e7bb270b96d0f13e26043}{\index{Hex@{Hex}!Print@{Print}}
+\index{Print@{Print}!Hex@{Hex}}
+\subsubsection[{Print}]{\setlength{\rightskip}{0pt plus 5cm}static void Hex\-::\-Print (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classHex_a7a955b79027e7bb270b96d0f13e26043}
+
+
+Prints char pointer as hexadecimal values. 
+
+Casts the pointer to a char array and uses the char array version of the function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Char pointer with message to be displayed. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Utils/\hyperlink{Hex_8h}{Hex.\-h}\end{DoxyCompactItemize}
