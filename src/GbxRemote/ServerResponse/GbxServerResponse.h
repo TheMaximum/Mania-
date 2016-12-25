@@ -18,53 +18,36 @@ class GbxResponseParameter
 {
 public:
     std::string Type;  /**< \brief XML-RPC data type. */
-    void* Value;       /**< \brief Data value (in text). */
-
-    ~GbxResponseParameter()
-    {
-        /*std::cout << std::endl << "Deleting a '" << Type << "'" << std::endl;
-        if(Type.find("array") != std::string::npos)
-        {
-            delete (std::vector<GbxResponseParameter>*)Value;
-        }
-        else if(Type.find("struct") != std::string::npos)
-        {
-            delete (std::map<std::string, GbxResponseParameter>*)Value;
-        }
-        else
-        {
-            //delete[] (char*)Value;
-        }
-
-        //Value = NULL;*/
-    }
+    std::vector<GbxResponseParameter> Array;
+    std::map<std::string, GbxResponseParameter> Struct;
+    std::string Text;
 
     /*!
      * \brief Gets the value as vector of parameters.
      */
-    std::vector<GbxResponseParameter>* GetArray()
+    std::vector<GbxResponseParameter> GetArray()
     {
         if(Type.find("array") != std::string::npos)
         {
-            std::vector<GbxResponseParameter>* vectorPtr = static_cast<std::vector<GbxResponseParameter>*>(Value);
-            return vectorPtr;
+            //std::vector<GbxResponseParameter>* vectorPtr = static_cast<std::vector<GbxResponseParameter>*>(Value);
+            return Array;
         }
 
-        return NULL;
+        return std::vector<GbxResponseParameter>();
     }
 
     /*!
      * \brief Gets the value as map of parameters.
      */
-    std::map<std::string, GbxResponseParameter>* GetStruct()
+    std::map<std::string, GbxResponseParameter> GetStruct()
     {
         if(Type.find("struct") != std::string::npos)
         {
-            std::map<std::string, GbxResponseParameter>* mapPtr = static_cast<std::map<std::string, GbxResponseParameter>*>(Value);
-            return mapPtr;
+            //std::map<std::string, GbxResponseParameter>* mapPtr = static_cast<std::map<std::string, GbxResponseParameter>*>(Value);
+            return Struct;
         }
 
-        return NULL;
+        return std::map<std::string, GbxResponseParameter>();
     }
 
     /*!
@@ -75,9 +58,9 @@ public:
         if(Type.find("array") == std::string::npos &&
            Type.find("struct") == std::string::npos)
         {
-            char* valuePtr = static_cast<char*>(Value);
-            std::string value(valuePtr);
-            return value;
+            //std::string* valuePtr = static_cast<std::string*>(Value);
+            //std::string value(valuePtr);
+            return Text;
         }
 
         return NULL;
@@ -116,11 +99,11 @@ public:
     /*!
      * \brief Returns the extracted parameters.
      */
-    std::vector<GbxResponseParameter>* GetParameters();
+    std::vector<GbxResponseParameter> GetParameters();
 
 protected:
     std::string data; /**< \brief Raw response data. */
-    std::vector<GbxResponseParameter>* parameters = new std::vector<GbxResponseParameter>(); /**< \brief List of parameters. */
+    std::vector<GbxResponseParameter> parameters = std::vector<GbxResponseParameter>(); /**< \brief List of parameters. */
 
     /*!
      * \brief Extracts parameters from the raw data (XML).

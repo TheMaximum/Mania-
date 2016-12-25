@@ -41,12 +41,12 @@ void GbxResponse::extractParameters()
         {
             pugi::xml_node pugiValue = pugiChild.child("value");
             GbxResponseParameter responseParam = extractParam(pugiValue);
-            parameters->push_back(responseParam);
+            parameters.push_back(responseParam);
         }
     }
     else if(pugiResponseType.find("fault") != std::string::npos)
     {
-        std::map<std::string, GbxResponseParameter>* map = new std::map<std::string, GbxResponseParameter>();
+        std::map<std::string, GbxResponseParameter> map = std::map<std::string, GbxResponseParameter>();
 
         pugi::xml_node faultElement = pugiMethodResponse.child("fault").child("value").child("struct");
         for (pugi::xml_node member = faultElement.first_child(); member; member = member.next_sibling())
@@ -55,9 +55,9 @@ void GbxResponse::extractParameters()
             pugi::xml_node value = member.child("value").first_child();
             GbxResponseParameter gbxValue = GbxResponseParameter();
             gbxValue.Type = value.name();
-            gbxValue.Value = (char*)value.child_value();
+            gbxValue.Text = value.child_value();
 
-            map->insert(std::pair<std::string, GbxResponseParameter>(name.child_value(), gbxValue));
+            map.insert(std::pair<std::string, GbxResponseParameter>(name.child_value(), gbxValue));
 
             if(std::string(name.child_value()).find("faultCode") != std::string::npos)
             {
@@ -71,7 +71,7 @@ void GbxResponse::extractParameters()
 
         GbxResponseParameter resParam = GbxResponseParameter();
         resParam.Type = "struct";
-        resParam.Value = map;
-        parameters->push_back(resParam);
+        resParam.Struct = map;
+        parameters.push_back(resParam);
     }
 }

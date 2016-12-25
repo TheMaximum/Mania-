@@ -34,7 +34,7 @@ void GbxCallBack::extractParameters()
         {
             pugi::xml_node value = child.child("value");
             GbxResponseParameter responseParam = extractParam(value);
-            parameters->push_back(responseParam);
+            parameters.push_back(responseParam);
         }
     }
 }

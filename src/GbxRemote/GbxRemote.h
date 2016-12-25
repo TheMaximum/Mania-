@@ -71,7 +71,7 @@ public:
     /*!
      * \brief Returns the callbacks that have been received since last call.
      */
-    std::vector<GbxCallBack*>* GetCBResponses();
+    std::vector<GbxCallBack> GetCBResponses();
 
     /*!
      * \brief Resets list of current callbacks.
@@ -113,7 +113,7 @@ private:
 
     GbxError* currentError = new GbxError;          /**< \brief Current server error. */
     GbxResponse* currentResponse = new GbxResponse; /**< \brief Current server response. */
-    std::vector<GbxCallBack*>* currentCallBacks = new std::vector<GbxCallBack*>; /**< \brief List of currently received callbacks. */
+    std::vector<GbxCallBack> currentCallBacks = std::vector<GbxCallBack>(); /**< \brief List of currently received callbacks. */
 };
 
 #endif // GBXREMOTE_H_

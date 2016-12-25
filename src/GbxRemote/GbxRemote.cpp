@@ -7,6 +7,9 @@ GbxRemote::~GbxRemote()
 
     delete currentResponse;
     currentResponse = NULL;
+
+    //delete currentCallBacks;
+    //currentCallBacks = NULL;
 }
 
 bool GbxRemote::Init(int port)
@@ -155,19 +158,19 @@ bool GbxRemote::ReadCallBacks()
 
 void GbxRemote::HandleCallBack(std::string data)
 {
-    GbxCallBack* callBack = new GbxCallBack();
-    callBack->SetRaw(data);
-    currentCallBacks->push_back(callBack);
+    GbxCallBack callBack = GbxCallBack();
+    callBack.SetRaw(data);
+    currentCallBacks.push_back(callBack);
 }
 
-std::vector<GbxCallBack*>* GbxRemote::GetCBResponses()
+std::vector<GbxCallBack> GbxRemote::GetCBResponses()
 {
     return currentCallBacks;
 }
 
 void GbxRemote::ResetCBResponses()
 {
-    currentCallBacks = new std::vector<GbxCallBack*>;
+    currentCallBacks = std::vector<GbxCallBack>();
 }
 
 GbxError* GbxRemote::GetCurrentError()

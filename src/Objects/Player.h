@@ -25,20 +25,20 @@ struct Player
      *
      * \param serverStruct The struct with player information received from the server.
      */
-    Player(std::map<std::string, GbxResponseParameter>* serverStruct)
+    Player(std::map<std::string, GbxResponseParameter> serverStruct)
     {
-        if(serverStruct->find("Login") != serverStruct->end())
+        if(serverStruct.find("Login") != serverStruct.end())
         {
-            PlayerId = atoi(serverStruct->find("PlayerId")->second.GetString().c_str());
-            TeamId = atoi(serverStruct->find("TeamId")->second.GetString().c_str());
+            PlayerId = atoi(serverStruct.find("PlayerId")->second.GetString().c_str());
+            TeamId = atoi(serverStruct.find("TeamId")->second.GetString().c_str());
 
-            Login = serverStruct->find("Login")->second.GetString();
-            NickName = serverStruct->find("NickName")->second.GetString();
+            Login = serverStruct.find("Login")->second.GetString();
+            NickName = serverStruct.find("NickName")->second.GetString();
 
-            SpectatorStatus = atoi(serverStruct->find("SpectatorStatus")->second.GetString().c_str());
-            Flags = atoi(serverStruct->find("Flags")->second.GetString().c_str());
+            SpectatorStatus = atoi(serverStruct.find("SpectatorStatus")->second.GetString().c_str());
+            Flags = atoi(serverStruct.find("Flags")->second.GetString().c_str());
 
-            LadderRanking = atoi(serverStruct->find("LadderRanking")->second.GetString().c_str());
+            LadderRanking = atoi(serverStruct.find("LadderRanking")->second.GetString().c_str());
         }
     }
 };

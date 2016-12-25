@@ -47,9 +47,9 @@ bool ManiaPP::ConnectToServer()
                 message = new GbxMessage("system.listMethods");
                 if(server->Query(message))
                 {
-                    std::vector<GbxResponseParameter>* responseParams = server->GetResponse()->GetParameters();
-                    std::vector<GbxResponseParameter>* methodsArray = responseParams->at(0).GetArray();
-                    std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved server methods: " << methodsArray->size() << " found." << std::endl;
+                    std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
+                    std::vector<GbxResponseParameter> methodsArray = responseParams.at(0).GetArray();
+                    std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved server methods: " << methodsArray.size() << " found." << std::endl;
                     delete message; message = NULL;
 
                     std::cout << "[         ] Retrieving server version ... " << '\r' << std::flush;
@@ -59,11 +59,11 @@ bool ManiaPP::ConnectToServer()
                         delete message; message = NULL;
 
                         responseParams = server->GetResponse()->GetParameters();
-                        std::map<std::string, GbxResponseParameter>* versionStruct = responseParams->at(0).GetStruct();
-                        server->Build = (std::string)versionStruct->find("Build")->second.GetString();
-                        server->Platform = (std::string)versionStruct->find("Name")->second.GetString();
-                        server->TitleId = (std::string)versionStruct->find("TitleId")->second.GetString();
-                        server->Version = (std::string)versionStruct->find("Version")->second.GetString();
+                        std::map<std::string, GbxResponseParameter> versionStruct = responseParams.at(0).GetStruct();
+                        server->Build = (std::string)versionStruct.find("Build")->second.GetString();
+                        server->Platform = (std::string)versionStruct.find("Name")->second.GetString();
+                        server->TitleId = (std::string)versionStruct.find("TitleId")->second.GetString();
+                        server->Version = (std::string)versionStruct.find("Version")->second.GetString();
 
                         std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved server version: '" << server->Build << "'." << std::endl;
 
@@ -73,8 +73,8 @@ bool ManiaPP::ConnectToServer()
                         {
                             delete message; message = NULL;
                             responseParams = server->GetResponse()->GetParameters();
-                            std::map<std::string, GbxResponseParameter>* systemStruct = responseParams->at(0).GetStruct();
-                            server->Login = (std::string)systemStruct->find("ServerLogin")->second.GetString();
+                            std::map<std::string, GbxResponseParameter> systemStruct = responseParams.at(0).GetStruct();
+                            server->Login = (std::string)systemStruct.find("ServerLogin")->second.GetString();
 
                             std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved system info, server login: '" << server->Login << "'." << std::endl;
 
@@ -120,31 +120,35 @@ void ManiaPP::MainLoop()
     while(true)
     {
         server->ReadCallBacks();
-        std::vector<GbxCallBack*>* callBacks = server->GetCBResponses();
-        if(callBacks->size() > 0)
+        std::vector<GbxCallBack> callBacks = server->GetCBResponses();
+        if(callBacks.size() > 0)
         {
-            for(int callBackId = 0; callBackId < callBacks->size(); callBackId++)
+            for(int callBackId = 0; callBackId < callBacks.size(); callBackId++)
             {
-                GbxCallBack* callBack = callBacks->at(callBackId);
-                std::vector<GbxResponseParameter>* parameters = callBack->GetParameters();
-                std::string methodName = callBack->GetMethodName();
+                GbxCallBack callBack = callBacks.at(callBackId);
+                std::vector<GbxResponseParameter> parameters = callBack.GetParameters();
+                std::string methodName = callBack.GetMethodName();
 
                 if(methodName.find("PlayerConnect") != std::string::npos)
                 {
                     GbxParameters* params = new GbxParameters();
-                    std::string login = parameters->at(0).GetString();
+                    std::string login = parameters.at(0).GetString();
                     params->Put(&login);
 
-                    server->Query(new GbxMessage("GetPlayerInfo", params));
-                    Player newPlayer = Player(server->GetResponse()->GetParameters()->at(0).GetStruct());
+                    GbxMessage* message = new GbxMessage("GetPlayerInfo", params);
+                    server->Query(message);
+                    Player newPlayer = Player(server->GetResponse()->GetParameters().at(0).GetStruct());
                     players->insert(std::pair<std::string, Player>(newPlayer.Login, newPlayer));
 
                     std::cout << "Player connected: " << newPlayer.Login << " (# players: " << players->size() << ")" << std::endl;
+
+                    delete params; params = NULL;
+                    delete message; message = NULL;
                 }
                 else if(methodName.find("PlayerDisconnect") != std::string::npos)
                 {
                     GbxParameters* params = new GbxParameters();
-                    std::string login = parameters->at(0).GetString();
+                    std::string login = parameters.at(0).GetString();
 
                     Player disconnectingPlayer = players->find(login)->second;
                     players->erase(disconnectingPlayer.Login);
@@ -152,10 +156,10 @@ void ManiaPP::MainLoop()
                 }
                 else
                 {
-                    std::cout << "CALLBACK: " << methodName << " (parameters: " << parameters->size() << ")" << std::endl;
-                    for(int paramId = 0; paramId < parameters->size(); paramId++)
+                    std::cout << "CALLBACK: " << methodName << " (parameters: " << parameters.size() << ")" << std::endl;
+                    for(int paramId = 0; paramId < parameters.size(); paramId++)
                     {
-                        GbxResponseParameter parameter = parameters->at(paramId);
+                        GbxResponseParameter parameter = parameters.at(paramId);
                         PrintParameter(parameter, paramId);
                     }
                 }
@@ -172,10 +176,10 @@ void ManiaPP::PrintParameter(GbxResponseParameter parameter, int paramId, std::s
     {
         std::cout << spaces << "Parameter #" << paramId << ": array" << std::endl;
         spaces += "    ";
-        std::vector<GbxResponseParameter>* arrayParam = parameter.GetArray();
-        for(int subParamId = 0; subParamId < arrayParam->size(); subParamId++)
+        std::vector<GbxResponseParameter> arrayParam = parameter.GetArray();
+        for(int subParamId = 0; subParamId < arrayParam.size(); subParamId++)
         {
-            GbxResponseParameter arrayParameter = arrayParam->at(subParamId);
+            GbxResponseParameter arrayParameter = arrayParam.at(subParamId);
             PrintParameter(arrayParameter, subParamId, spaces);
         }
     }
@@ -183,9 +187,9 @@ void ManiaPP::PrintParameter(GbxResponseParameter parameter, int paramId, std::s
     {
         std::cout << spaces << "Parameter #" << paramId << ": struct" << std::endl;
         spaces += "    ";
-        std::map<std::string, GbxResponseParameter>* structParam = parameter.GetStruct();
+        std::map<std::string, GbxResponseParameter> structParam = parameter.GetStruct();
         int subParamId = 0;
-        for(std::map<std::string, GbxResponseParameter>::iterator subParam = structParam->begin(); subParam != structParam->end(); ++subParam)
+        for(std::map<std::string, GbxResponseParameter>::iterator subParam = structParam.begin(); subParam != structParam.end(); ++subParam)
         {
             std::cout << "(" << subParam->first << ") ";
             PrintParameter(subParam->second, subParamId, spaces);
@@ -211,13 +215,13 @@ void ManiaPP::retrievePlayerList()
         delete getPlayerList; getPlayerList = NULL;
         delete params; params = NULL;
 
-        std::vector<GbxResponseParameter>* responseParams = server->GetResponse()->GetParameters();
-        std::vector<GbxResponseParameter>* playerList = responseParams->at(0).GetArray();
+        std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
+        std::vector<GbxResponseParameter> playerList = responseParams.at(0).GetArray();
 
-        for(int playerId = 0; playerId < playerList->size(); playerId++)
+        for(int playerId = 0; playerId < playerList.size(); playerId++)
         {
-            std::map<std::string, GbxResponseParameter>* player = playerList->at(playerId).GetStruct();
-            if(player->find("Login")->second.GetString() != server->Login)
+            std::map<std::string, GbxResponseParameter> player = playerList.at(playerId).GetStruct();
+            if(player.find("Login")->second.GetString() != server->Login)
             {
                 Player newPlayer = Player(player);
                 players->insert(std::pair<std::string, Player>(newPlayer.Login, newPlayer));
