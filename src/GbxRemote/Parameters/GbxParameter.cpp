@@ -20,8 +20,7 @@ void GbxParameter::determineType(const std::type_info* param)
 {
     int status;
     char* realParamName = abi::__cxa_demangle(param->name(), 0, 0, &status);
-    std::string realName(realParamName);
-    type = realName;
+    type = std::string(realParamName);
 
     if(type.find("GbxParameters*") != std::string::npos)
     {
@@ -53,6 +52,8 @@ void GbxParameter::determineType(const std::type_info* param)
     {
         std::cout << "[WARNING] Undefined type, name: " << type << std::endl;
     }
+
+    std::free(realParamName); realParamName = NULL;
 }
 
 void GbxParameter::dereferenceData(void* pointer)

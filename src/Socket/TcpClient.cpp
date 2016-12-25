@@ -30,31 +30,33 @@ bool TcpClient::Connect(std::string address, int port)
     // Setup address structure
     if(inet_addr(address.c_str()) == -1)
     {
-        struct hostent *he;
-        struct in_addr **addr_list;
+        int sockfd;
+        struct addrinfo hints, *servinfo, *p;
+        struct sockaddr_in *h;
+        int rv;
 
-        // Resolve the hostname, its not an ip address
-        if((he = gethostbyname(address.c_str())) == NULL)
+        memset(&hints, 0, sizeof hints);
+        hints.ai_family = AF_INET;
+        hints.ai_socktype = SOCK_STREAM;
+
+        if((rv = getaddrinfo(address.c_str(), NULL, &hints, &servinfo)) != 0)
         {
-            // gethostbyname failed
-            herror("gethostbyname");
+            fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(rv));
+            freeaddrinfo(servinfo);
             return false;
         }
 
-        // Cast the h_addr_list to in_addr , since h_addr_list also has the ip address in long format only
-        addr_list = (struct in_addr **)he->h_addr_list;
-
-        for(int i = 0; addr_list[i] != NULL; i++)
+        // loop through all the results and connect to the first we can
+        for(p = servinfo; p != NULL; p = p->ai_next)
         {
-            server.sin_addr = *addr_list[i];
-            break;
+            h = (struct sockaddr_in *) p->ai_addr;
+            address = inet_ntoa(h->sin_addr);
         }
+
+        freeaddrinfo(servinfo); // all done with this structure
     }
-    else
-    {
-        // Plain ip address
-        server.sin_addr.s_addr = inet_addr(address.c_str());
-    }
+
+    server.sin_addr.s_addr = inet_addr(address.c_str());
 
     server.sin_family = AF_INET;
     server.sin_port = htons(port);
