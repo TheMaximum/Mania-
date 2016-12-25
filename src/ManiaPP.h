@@ -19,6 +19,8 @@ public:
      */
     ManiaPP();
 
+    ~ManiaPP();
+
     /*!
      * \brief Connects and authenticates with the server.
      */

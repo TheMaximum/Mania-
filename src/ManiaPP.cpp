@@ -10,6 +10,14 @@ ManiaPP::ManiaPP()
     players = new std::map<std::string, Player>();
 }
 
+ManiaPP::~ManiaPP()
+{
+    delete config; config = NULL;
+    delete logging; logging = NULL;
+    delete server; server = NULL;
+    delete players; players = NULL;
+}
+
 bool ManiaPP::ConnectToServer()
 {
     std::cout << "[         ] Connecting with server on " << config->Server->address << ":" << config->Server->port << " ... " << '\r' << std::flush;

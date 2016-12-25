@@ -17,8 +17,8 @@ public:
     /*!
      * \brief Builds XML message.
      *
-     * \param method Server method name.
-     * \param params Params which belong to the method.
+     * \param methodName Server method name.
+     * \param params     Params which belong to the method.
      */
     GbxMessage(std::string methodName, GbxParameters* parameters = NULL);
 
