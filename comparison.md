@@ -14,8 +14,8 @@ This is about retrieving the data and convert it to usable arrays/structs (no co
 <table>
   <tr>
     <td></td>
-    <td><strong>PHP (GbxRemote)</strong></td>
     <td><strong>C++ (Mania++)</strong></td>
+    <td><strong>PHP (GbxRemote)</strong></td>
   </tr>
   <tr>
     <td><strong>OS</strong></td>
@@ -27,8 +27,8 @@ This is about retrieving the data and convert it to usable arrays/structs (no co
   </tr>
   <tr>
     <td><strong>Compiler</strong></td>
-    <td>PHP 7.0.8</td>
     <td>GCC 6.2.0</td>
+    <td>PHP 7.0.8</td>
   </tr>
   <tr><td colspan="3"></td></tr>
   <tr>
@@ -80,8 +80,8 @@ Both language/compiler versions are older as this test is executed on a producti
 <table>
   <tr>
     <td></td>
-    <td><strong>PHP (GbxRemote)</strong></td>
     <td><strong>C++ (Mania++)</strong></td>
+    <td><strong>PHP (GbxRemote)</strong></td>
   </tr>
   <tr>
     <td><strong>OS</strong></td>
@@ -93,8 +93,8 @@ Both language/compiler versions are older as this test is executed on a producti
   </tr>
   <tr>
     <td><strong>Compiler</strong></td>
-    <td>PHP 5.6.27</td>
     <td>GCC 4.9.2</td>
+    <td>PHP 5.6.27</td>
   </tr>
   <tr><td colspan="3"></td></tr>
   <tr>
