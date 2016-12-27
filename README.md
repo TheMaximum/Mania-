@@ -5,7 +5,7 @@ Mania++ is an in-development Server Controller for TrackMania 2 (ManiaPlanet) se
 * Master: [![Build Status](https://travis-ci.org/TheMaximum/mania-pp.svg?branch=master)](https://travis-ci.org/TheMaximum/mania-pp)
 * Develop: [![Build Status](https://travis-ci.org/TheMaximum/mania-pp.svg?branch=develop)](https://travis-ci.org/TheMaximum/mania-pp)
 
-Also checkout the [Mania++ versioning system](versioning.html) for more about the software versions and branches.
+Also checkout the [Mania++ versioning system](https://themaximum.github.io/mania-pp/versioning.html) for more about the software versions and branches.
 
 ## License ##
 Mania++ and its sources are available under the [GNU General Public License v3](https://www.gnu.org/licenses/#GPL). This allows users/contributors to make changes to the source code, as long as those changes are made available under the same license as the original. The copyright/license notices should not be removed from the sources/workspace.
@@ -24,6 +24,7 @@ Mania++ is (currently) not compatible with Windows systems and the ```./install.
 * [CMake](https://cmake.org)
 
 ## Aims and working points ##
+* [Be comparable or better than standard PhpRemote](https://themaximum.github.io/mania-pp/comparison.html)
 * Create more usable objects (f.e. `Map`)
 * Working plugin system
    * Plugin interface
