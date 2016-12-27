@@ -39,5 +39,6 @@ var searchData=
   ['getresponse',['GetResponse',['../classGbxRemote.html#adac67444e391ffcc1dfda8f087eaef0b',1,'GbxRemote']]],
   ['getstring',['GetString',['../classGbxResponseParameter.html#a014af0f74e937d9002cda3e6e791735b',1,'GbxResponseParameter']]],
   ['getstruct',['GetStruct',['../classGbxResponseParameter.html#ab6af5e0662d7d832b7606e9e0f461f22',1,'GbxResponseParameter']]],
-  ['getxml',['GetXml',['../classGbxMessage.html#ac81e16efce7da483a696d6653e18c9d8',1,'GbxMessage::GetXml()'],['../classGbxParameter.html#a3c6800bca78c5bb4ed7de62cf552ee35',1,'GbxParameter::GetXml()']]]
+  ['getxml',['GetXml',['../classGbxMessage.html#ac81e16efce7da483a696d6653e18c9d8',1,'GbxMessage::GetXml()'],['../classGbxParameter.html#a3c6800bca78c5bb4ed7de62cf552ee35',1,'GbxParameter::GetXml()']]],
+  ['goldtime',['GoldTime',['../structMap.html#a769a574be92aa024f7804627c167ceff',1,'Map']]]
 ];

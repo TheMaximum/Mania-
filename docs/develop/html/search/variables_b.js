@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['server',['Server',['../classConfig.html#a249a19a298cdcfd4223609142e15e5de',1,'Config::Server()'],['../classGbxRemote.html#a0b0b212b945da4266fb645affdac81cb',1,'GbxRemote::server()'],['../classManiaPP.html#ab81311d6901990cb99a7a30e0cbaab11',1,'ManiaPP::server()'],['../classTcpClient.html#a75a8bd28eca3f1eea17fb430ab14cade',1,'TcpClient::server()']]],
-  ['size',['size',['../structGbxFirstResponse.html#ad93a9c67024b28ecddb779457dd001f8',1,'GbxFirstResponse::size()'],['../structGbxQueryResponse.html#a0633cc01128e5eee2edba3ee503db1c4',1,'GbxQueryResponse::size()']]],
-  ['sock',['sock',['../classTcpClient.html#af93f7c8c4d91d93379ba99fd3742c3dc',1,'TcpClient']]],
-  ['spectatorstatus',['SpectatorStatus',['../structPlayer.html#a2037601661fb699454a88b5649485b30',1,'Player']]],
-  ['struct',['Struct',['../classGbxResponseParameter.html#acc26f8d64983f92709d1fa38b8f33e66',1,'GbxResponseParameter']]]
+  ['parameters',['parameters',['../classGbxParameters.html#af2c27b8d1e5c3884d0e5cc9ba04953cf',1,'GbxParameters::parameters()'],['../classGbxServerResponse.html#acfd80e7b92cf34e1f0cda88a11a1bed0',1,'GbxServerResponse::parameters()']]],
+  ['password',['password',['../structServerConfig.html#a819f5b912feb1fdb68ebd4fe36eb11ea',1,'ServerConfig']]],
+  ['platform',['Platform',['../classGbxRemote.html#a0ce9914944a8f0d35f5d1bb0ddb8d292',1,'GbxRemote']]],
+  ['playerid',['PlayerId',['../structPlayer.html#a6a71d7d9837a0a12e52ca47930965e0f',1,'Player']]],
+  ['players',['players',['../classManiaPP.html#a45712ccfa91b20242b39cb1164d305d8',1,'ManiaPP']]],
+  ['pointer',['pointer',['../structGbxParam.html#a19b53f8dacdd8937e1020775f8615495',1,'GbxParam']]],
+  ['port',['port',['../structServerConfig.html#ae459946703124ef5a1d98dba38a8b493',1,'ServerConfig::port()'],['../classTcpClient.html#aa112ef0470437e790931b3ec9c98a800',1,'TcpClient::port()']]],
+  ['protocol',['protocol',['../classGbxRemote.html#a5ee5c7087085cb6cb2e7bc6135ff0646',1,'GbxRemote']]]
 ];
