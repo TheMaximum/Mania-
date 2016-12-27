@@ -4,8 +4,9 @@ title: Comparison with PHP GbxRemote | Mania++
 [«« Index](index.html)
 
 # Comparison with PHP GbxRemote #
-Most popular controllers use the PHP version of the GbxRemote. This is included in the dedicated server package and most often the starting point of a (new) controller.
-It's up to the C++ controller/library to at least stand up to this library. To check this out, a series of tests have been executed.
+Most popular controllers use the PHP version of the GbxRemote. This is included in the dedicated server package and most often the starting point of a (new) controller. It's up to the C++ controller/library to at least stand up to this library. To check this out, a series of tests have been executed.
+
+The tests are run in the same environment and executed after eachother. It is reasonable to suspect OS or other activity to delay the execution of the tests. Results that were significantly higher than average have been removed for that purpose. The results are not exact science, but only give an indication.
 
 ## Retrieving map list remotely ##
 In this scenario both set-ups create a connection remotely (from inside the development-VM) to the production server the testserver is running on. The connection is 70 Mbps down/60 Mbps up and is stable around 16.3ms ping.
