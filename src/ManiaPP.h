@@ -1,6 +1,8 @@
 #ifndef MANIAPP_H_
 #define MANIAPP_H_
 
+#include <chrono>
+
 #include "Config/Version.h"
 #include "Config/Config.h"
 #include "GbxRemote/GbxRemote.h"
@@ -56,6 +58,11 @@ private:
      * \brief Gets a list of current players from the server.
      */
     void retrievePlayerList();
+
+    /*!
+     * \brief Gets a list of current maps from the server.
+     */
+    void retrieveMapList();
 };
 
 #endif // MANIAPP_H_
