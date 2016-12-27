@@ -25,7 +25,8 @@ Mania++ is (currently) not compatible with Windows systems and the ```./install.
 
 ## Aims and working points ##
 * [Be comparable or better than standard PhpRemote](https://themaximum.github.io/mania-pp/comparison.html)
-* Create more usable objects (f.e. `Map`)
+* Create more usable objects (f.e. `Record`?)
+* Expand usable objects (`Player` and `Map`)
 * Working plugin system
    * Plugin interface
    * Callback handling
@@ -38,7 +39,7 @@ Mania++ is (currently) not compatible with Windows systems and the ```./install.
    * Send methods and receive responses
    * Receive callbacks
    * De-XMLify responses and callbacks
-* Create usable objects (f.e. `Player`)
+* Create usable objects (f.e. `Player` and `Map`)
 * Working configuration system (YAML)
 
 ## Installing for the first time ##
@@ -57,7 +58,7 @@ Mania++ is (currently) not compatible with Windows systems and the ```./install.
 * ```./Mania++```
 
 ## Check documentation of latest develop commit ##
-* Latest master: not yet available
+* Latest master: [Doxygen HTML](https://themaximum.github.io/mania-pp/docs/master/html/)
 * Latest develop: [Doxygen HTML](https://themaximum.github.io/mania-pp/docs/develop/html/)
 
 ## Generate code documentation for current code ##
