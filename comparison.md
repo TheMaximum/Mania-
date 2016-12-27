@@ -138,3 +138,68 @@ Both language/compiler versions are older as this test is executed on a producti
     <td colspan="2">0.16833 sec. in favour of Mania++</td>
   </tr>
 </table>
+
+## Retrieving map list remotely + convert to object ##
+This scenario is simliar to the first one. The maplist is retrieved from a remote server, but is then converted in a vector/array with Map objects. The objects contain the same properties and the same assignments.
+
+<table>
+  <tr>
+    <td></td>
+    <td><strong>C++ (Mania++)</strong></td>
+    <td><strong>PHP (GbxRemote)</strong></td>
+  </tr>
+  <tr>
+    <td><strong>OS</strong></td>
+    <td colspan="2">Ubuntu 16.10 64-bit</td>
+  </tr>
+  <tr>
+    <td><strong>Kernel</strong></td>
+    <td colspan="2">Linux 4.8.0-30</td>
+  </tr>
+  <tr>
+    <td><strong>Compiler</strong></td>
+    <td>GCC 6.2.0</td>
+    <td>PHP 7.0.8</td>
+  </tr>
+  <tr><td colspan="3"></td></tr>
+  <tr>
+    <td><strong>#1</strong></td>
+    <td>1.64491 sec.</td>
+    <td>1.76379 sec.</td>
+  </tr>
+  <tr>
+    <td><strong>#2</strong></td>
+    <td>1.58829 sec.</td>
+    <td>1.70859 sec.</td>
+  </tr>
+  <tr>
+    <td><strong>#3</strong></td>
+    <td>1.63636 sec.</td>
+    <td>1.60899 sec.</td>
+  </tr>
+  <tr>
+    <td><strong>#4</strong></td>
+    <td>1.63550 sec.</td>
+    <td>1.65823 sec.</td>
+  </tr>
+  <tr>
+    <td><strong>#5</strong></td>
+    <td>1.60827 sec.</td>
+    <td>1.71082 sec.</td>
+  </tr>
+  <tr><td colspan="3"></td></tr>
+  <tr>
+    <td><strong>Total</strong></td>
+    <td>8.11333 sec.</td>
+    <td>8.45042 sec.</td>
+  </tr>
+  <tr>
+    <td><strong>Average</strong></td>
+    <td>1.62267 sec.</td>
+    <td>1.69008 sec.</td>
+  </tr>
+  <tr>
+    <td><strong>Difference</strong></td>
+    <td colspan="2">0.06741 sec. in favour of Mania++</td>
+  </tr>
+</table>
