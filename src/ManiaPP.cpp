@@ -8,6 +8,7 @@ ManiaPP::ManiaPP()
     logging = new Logging();
     server = new GbxRemote();
     players = new std::map<std::string, Player>();
+    maps = new std::map<std::string, Map>();
 }
 
 ManiaPP::~ManiaPP()
@@ -16,6 +17,7 @@ ManiaPP::~ManiaPP()
     delete logging; logging = NULL;
     delete server; server = NULL;
     delete players; players = NULL;
+    delete maps; maps = NULL;
 }
 
 bool ManiaPP::ConnectToServer()
@@ -276,40 +278,22 @@ void ManiaPP::retrieveMapList()
         delete getMapList; getMapList = NULL;
         delete params; params = NULL;
 
-        GbxResponse* response = server->GetResponse();
-        std::vector<GbxResponseParameter> responseParams = response->GetParameters();
+        std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::vector<GbxResponseParameter> mapList = responseParams.at(0).GetArray();
 
-        /*for(int playerId = 0; playerId < playerList.size(); playerId++)
+        for(int mapId = 0; mapId < mapList.size(); mapId++)
         {
-            std::map<std::string, GbxResponseParameter> player = playerList.at(playerId).GetStruct();
-            if(player.find("Login")->second.GetString() != server->Login)
-            {
-                Player newPlayer = Player(player);
-                players->insert(std::pair<std::string, Player>(newPlayer.Login, newPlayer));
-            }
-        }*/
+            std::map<std::string, GbxResponseParameter> map = mapList.at(mapId).GetStruct();
+            Map newMap = Map(map);
+            maps->insert(std::pair<std::string, Map>(newMap.UId, newMap));
+        }
 
         std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
 
-        std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved current map list: " << mapList.size() << " found." << std::endl;
+        logging->PrintOKFlush();
+
+        std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved current map list: " << maps->size() << " found." << std::endl;
         std::cout << "Time difference (sec) = " << (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0 << std::endl;
-
-        //std::cout << response->GetRaw() << std::endl;
-
-        //for(int playerInList = 0; playerInList < players->size(); playerInList++)
-        /*std::map<std::string, Player> playerMap = *players;
-        for(std::map<std::string, Player>::iterator it = playerMap.begin(); it != playerMap.end(); ++it)
-        {
-            Player listPlayer = it->second;
-            std::cout << "Player #" << listPlayer.PlayerId << ":" << std::endl;
-            std::cout << "    Team #           : " << listPlayer.TeamId << std::endl;
-            std::cout << "    Login            : " << listPlayer.Login << std::endl;
-            std::cout << "    NickName         : " << listPlayer.NickName << std::endl;
-            std::cout << "    SpectatorStatus  : " << listPlayer.SpectatorStatus << std::endl;
-            std::cout << "    Flags            : " << listPlayer.Flags << std::endl;
-            std::cout << "    LadderRanking    : " << listPlayer.LadderRanking << std::endl;
-        }*/
     }
     else
     {

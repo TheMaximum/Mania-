@@ -6,6 +6,7 @@
 #include "Config/Version.h"
 #include "Config/Config.h"
 #include "GbxRemote/GbxRemote.h"
+#include "Objects/Map.h"
 #include "Objects/Player.h"
 #include "Utils/Logging.h"
 
@@ -53,6 +54,7 @@ private:
     Logging* logging;                       /**< \brief Contains functions to log information. */
     GbxRemote* server;                      /**< \brief Contains the connection with the server and its methods. */
     std::map<std::string, Player>* players; /**< \brief Contains the list of players currently on the server. */
+    std::map<std::string, Map>* maps; /**< \brief Contains the list of players currently on the server. */
 
     /*!
      * \brief Gets a list of current players from the server.
