@@ -1,8 +1,6 @@
 ---
 title: Versioning and Branching | Mania++
 ---
-[«« Index](index.html)
-
 # Versioning #
 The versioning system uses three numbers to define the version of the software:
 
