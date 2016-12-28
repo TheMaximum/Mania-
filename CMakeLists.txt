@@ -29,4 +29,4 @@ file(GLOB_RECURSE SOURCES src/*.cpp)
 
 add_executable(Mania++ ${SOURCES}
                        lib/pugixml/libpugixml.a)
-target_link_libraries(Mania++ yaml-cpp ${EXECUTABLE_OUTPUT_PATH}/lib/pugixml/libpugixml.a)
+target_link_libraries(Mania++ yaml-cpp ${EXECUTABLE_OUTPUT_PATH}/lib/pugixml/libpugixml.a dl)

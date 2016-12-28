@@ -9,6 +9,8 @@ ManiaPP::ManiaPP()
     server = new GbxRemote();
     players = new std::map<std::string, Player>();
     maps = new std::map<std::string, Map>();
+
+    plugins = new PluginManager();
 }
 
 ManiaPP::~ManiaPP()
@@ -18,6 +20,8 @@ ManiaPP::~ManiaPP()
     delete server; server = NULL;
     delete players; players = NULL;
     delete maps; maps = NULL;
+
+    delete plugins; plugins = NULL;
 }
 
 bool ManiaPP::ConnectToServer()
@@ -99,6 +103,8 @@ bool ManiaPP::ConnectToServer()
 
                             delete params; params = NULL;
                             delete message; message = NULL;
+
+                            plugins->LoadPlugins();
 
                             PrintServerInfo();
 
