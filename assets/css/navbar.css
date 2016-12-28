@@ -1,5 +1,5 @@
 .navbar-default {
-    background-color: #000000;
+    background-color: #222222;
     border-bottom: 1px solid #444444;
 }
 
@@ -93,7 +93,7 @@
 .nav > li > a {
     display: block;
     position: relative;
-    padding-bottom: 15px;
+    padding-bottom: 14px;
     padding-top: 14px;
     margin-left: 15px;
     margin-right: 15px;
@@ -114,6 +114,10 @@
 .navbar-header > a.navbar-brand.active {
     color: #CCCCCC;
     text-decoration: none;
+}
+
+.nav > li > a.active {
+    background-color: #080808;
 }
 
 .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
