@@ -106,7 +106,12 @@
     background-color: transparent;
 }
 
-.nav > li > a:hover, .navbar-brand > a:hover, .navbar-header > a.navbar-brand:hover {
+.nav > li > a:hover,
+.navbar-brand > a:hover,
+.navbar-header > a.navbar-brand:hover,
+.nav > li > a.active,
+.navbar-brand > a.active
+.navbar-header > a.active {
     color: #CCCCCC;
     text-decoration: none;
 }
