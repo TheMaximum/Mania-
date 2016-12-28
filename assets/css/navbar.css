@@ -76,3 +76,25 @@
     display: block;
     position: relative;
 }
+
+.navbar-default .navbar-nav > li > a {
+    color: #777;
+}
+.navbar-nav > li > a {
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+.navbar-nav > li > a {
+    line-height: 20px;
+}
+.nav > li > a {
+    display: block;
+    position: relative;
+}
+
+.nav > li > a {
+    text-decoration: none;
+}
+.nav > li > a {
+    background-color: transparent;
+}
