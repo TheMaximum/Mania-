@@ -1,0 +1,78 @@
+.navbar-default {
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+}
+
+.navbar-static-top {
+    border-radius: 0;
+    border-width: 0 0 1px;
+    z-index: 1000;
+}
+
+.navbar {
+    min-height: 50px;
+    position: relative;
+}
+
+.container {
+    max-width: 64rem;
+}
+
+.container > .navbar-collapse, .container > .navbar-header {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse, .navbar-static-top .navbar-collapse {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.navbar-header {
+    float: left;
+}
+
+.navbar-form {
+    border-color: #e7e7e7;
+}
+
+.navbar-collapse.collapse {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding-bottom: 0;
+}
+
+.navbar-collapse {
+    box-shadow: none;
+    width: auto;
+}
+
+.navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.collapse {
+    display: none;
+}
+
+.navbar-nav {
+    float: left;
+    margin: 0;
+}
+
+.nav {
+    list-style: outside none none;
+    padding-left: 0;
+}
+
+.navbar-nav > li {
+    float: left;
+}
+.nav > li {
+    display: block;
+    position: relative;
+}
