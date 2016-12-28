@@ -111,7 +111,7 @@
 .navbar-header > a.navbar-brand:hover,
 .nav > li > a.active,
 .navbar-brand > a.active
-.navbar-header > a.active {
+.navbar-header > a.navbar-brand.active {
     color: #CCCCCC;
     text-decoration: none;
 }
