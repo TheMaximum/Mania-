@@ -88,17 +88,13 @@
     color: #777;
 }
 .navbar-nav > li > a {
-    padding-bottom: 15px;
-    padding-top: 13px;
-}
-.navbar-nav > li > a {
     line-height: 20px;
 }
 .nav > li > a {
     display: block;
     position: relative;
     padding-bottom: 15px;
-    padding-top: 15px;
+    padding-top: 13px;
     margin-left: 15px;
     margin-right: 15px;
 }
@@ -110,7 +106,7 @@
     background-color: transparent;
 }
 
-.nav > li > a:hover, .navbar-header > a:hover {
+.nav > li > a:hover, .navbar-brand:hover {
     color: #CCCCCC;
 }
 
