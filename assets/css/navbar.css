@@ -106,17 +106,17 @@
     background-color: transparent;
 }
 
-.nav > li > a:hover,
+.nav > li:hover,
 .navbar-brand > a:hover,
 .navbar-header > a.navbar-brand:hover,
-.nav > li > a.active,
+.nav > li.active,
 .navbar-brand > a.active
 .navbar-header > a.navbar-brand.active {
     color: #CCCCCC;
     text-decoration: none;
 }
 
-.nav > li > a.active {
+.nav > li.active {
     background-color: #080808;
 }
 
