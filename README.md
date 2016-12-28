@@ -1,6 +1,3 @@
----
-layout: frontpage
----
 # Mania++
 Mania++ is an in-development Server Controller for TrackMania 2 (ManiaPlanet) servers. It is written in C++ and is at this moment basically a hobby-project. You're free to try it and contribute to the system, all ideas and assitance is welcome. No guarantee this makes it to a release-ready state, so be aware of that before using it on your servers.
 
