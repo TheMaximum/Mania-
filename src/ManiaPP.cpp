@@ -181,7 +181,7 @@ void ManiaPP::MainLoop()
     }
 }
 
-void ManiaPP::PrintParameter(GbxResponseParameter parameter, int paramId, std::string spaces)
+void ManiaPP::PrintParameter(GbxResponseParameter parameter, int paramId, std::string spaces, std::string parameterName)
 {
     if(parameter.Type.find("array") != std::string::npos)
     {
@@ -202,14 +202,18 @@ void ManiaPP::PrintParameter(GbxResponseParameter parameter, int paramId, std::s
         int subParamId = 0;
         for(std::map<std::string, GbxResponseParameter>::iterator subParam = structParam.begin(); subParam != structParam.end(); ++subParam)
         {
-            std::cout << "(" << subParam->first << ") ";
-            PrintParameter(subParam->second, subParamId, spaces);
+            PrintParameter(subParam->second, subParamId, spaces, subParam->first);
             subParamId++;
         }
     }
     else
     {
-        std::cout << spaces << "Parameter #" << paramId << ": " << parameter.GetString() << " (" << parameter.Type << ")" << std::endl;
+        std::cout << spaces << "Parameter #" << paramId << ": " << parameter.GetString() << " (" << parameter.Type << ")";
+        if(parameterName != "")
+        {
+            std::cout << " (" << parameterName << ")";
+        }
+        std::cout << std::endl;
     }
 }
 
@@ -241,7 +245,6 @@ void ManiaPP::retrievePlayerList()
 
         std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved current player list: " << players->size() << " found." << std::endl;
 
-        //for(int playerInList = 0; playerInList < players->size(); playerInList++)
         std::map<std::string, Player> playerMap = *players;
         for(std::map<std::string, Player>::iterator it = playerMap.begin(); it != playerMap.end(); ++it)
         {
@@ -266,8 +269,6 @@ void ManiaPP::retrieveMapList()
 {
     std::cout << "[         ] Retrieving current map list ... " << '\r' << std::flush;
 
-    std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
-
     int mapListLimit = 2048; int mapListIndex = 0;
     GbxParameters* params = new GbxParameters();
     params->Put(&mapListLimit);
@@ -288,12 +289,7 @@ void ManiaPP::retrieveMapList()
             maps->insert(std::pair<std::string, Map>(newMap.UId, newMap));
         }
 
-        std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
-
-        logging->PrintOKFlush();
-
         std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved current map list: " << maps->size() << " found." << std::endl;
-        std::cout << "Time difference (sec) = " << (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()) / 1000000.0 << std::endl;
     }
     else
     {

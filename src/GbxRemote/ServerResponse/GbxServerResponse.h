@@ -17,10 +17,10 @@
 class GbxResponseParameter
 {
 public:
-    std::string Type;  /**< \brief XML-RPC data type. */
-    std::vector<GbxResponseParameter> Array;
-    std::map<std::string, GbxResponseParameter> Struct;
-    std::string Text;
+    std::string Type;                                   /**< \brief XML-RPC data type. */
+    std::vector<GbxResponseParameter> Array;            /**< \brief Parameters as array. */
+    std::map<std::string, GbxResponseParameter> Struct; /**< \brief Parameters as struct. */
+    std::string Text;                                   /**< \brief Parameters as text. */
 
     /*!
      * \brief Gets the value as vector of parameters.
@@ -29,7 +29,6 @@ public:
     {
         if(Type.find("array") != std::string::npos)
         {
-            //std::vector<GbxResponseParameter>* vectorPtr = static_cast<std::vector<GbxResponseParameter>*>(Value);
             return Array;
         }
 
@@ -43,7 +42,6 @@ public:
     {
         if(Type.find("struct") != std::string::npos)
         {
-            //std::map<std::string, GbxResponseParameter>* mapPtr = static_cast<std::map<std::string, GbxResponseParameter>*>(Value);
             return Struct;
         }
 
@@ -58,8 +56,6 @@ public:
         if(Type.find("array") == std::string::npos &&
            Type.find("struct") == std::string::npos)
         {
-            //std::string* valuePtr = static_cast<std::string*>(Value);
-            //std::string value(valuePtr);
             return Text;
         }
 
@@ -78,11 +74,6 @@ public:
      * \brief Empty constructor.
      */
     GbxServerResponse();
-
-    /*!
-     * Delets and nullifies the parameters.
-     */
-    ~GbxServerResponse();
 
     /*!
      * \brief Sets the raw message value.

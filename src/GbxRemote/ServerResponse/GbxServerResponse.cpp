@@ -8,12 +8,6 @@ GbxServerResponse::GbxServerResponse()
     data = (char*)"";
 }
 
-GbxServerResponse::~GbxServerResponse()
-{
-    //delete parameters;
-    //parameters = NULL;
-}
-
 void GbxServerResponse::SetRaw(std::string response)
 {
     data = response;
@@ -72,10 +66,6 @@ GbxResponseParameter GbxServerResponse::extractParam(pugi::xml_node param)
                 resParam.Type = "int";
             }
 
-            /*char* paramValue = (char*)sibling.child_value();
-            char* value = (char*)malloc(strlen(paramValue) + 1);
-            strcpy(value, paramValue);
-            resParam.Value = value;*/
             std::string paramValue = (std::string)sibling.child_value();
             resParam.Text = paramValue;
         }

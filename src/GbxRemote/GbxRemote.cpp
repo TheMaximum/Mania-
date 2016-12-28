@@ -7,9 +7,6 @@ GbxRemote::~GbxRemote()
 
     delete currentResponse;
     currentResponse = NULL;
-
-    //delete currentCallBacks;
-    //currentCallBacks = NULL;
 }
 
 bool GbxRemote::Init(int port)

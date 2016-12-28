@@ -47,7 +47,7 @@ public:
      */
     void Terminate();
 
-    void PrintParameter(GbxResponseParameter parameter, int paramId, std::string spaces = "    ");
+    void PrintParameter(GbxResponseParameter parameter, int paramId, std::string spaces = "    ", std::string parameterName = "");
 
 private:
     Config* config;                         /**< \brief Contains the configuration for the software. */

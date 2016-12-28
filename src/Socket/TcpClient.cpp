@@ -63,7 +63,6 @@ bool TcpClient::Connect(std::string address, int port)
 
     if(connect(sock, (struct sockaddr *)&server, sizeof(server)) < 0)
     {
-        //perror("connect failed. Error");
         return false;
     }
 
@@ -81,7 +80,6 @@ bool TcpClient::Send(std::string data)
     memcpy(&message[0], &dataLength, 4);
     memcpy(&message[4], &RequestHandle, 4);
     memcpy(&message[8], messageData, dataLength);
-    //message[7] = 0x80;
 
     int bytes_to_write = messageLength;
     while(bytes_to_write > 0)
@@ -102,28 +100,6 @@ bool TcpClient::Send(std::string data)
 
     return true;
 }
-
-/*char* TcpClient::Receive(int size = 512)
-{
-    char buffer[size];
-    char* reply = new char[(size+1)];
-    int bytes_received = 0;
-
-    while(bytes_received < size)
-    {
-        int response = recv(sock, &buffer[bytes_received], sizeof(buffer) - bytes_received, 0);
-        if(response < 0)
-        {
-            std::cout << "recv failed " << response << std::endl;
-        }
-
-        bytes_received += response;
-    }
-
-    memcpy(reply, buffer, sizeof(buffer));
-    reply[size] = '\0';
-    return reply;
-}*/
 
 std::string TcpClient::Receive(int size = 512)
 {
