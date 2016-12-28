@@ -103,10 +103,10 @@
     margin-right: 10px;
 }
 
-.nav > a {
+.nav > li > a, navbar-header > a {
     text-decoration: none;
 }
-.nav > a {
+.nav > li > a, navbar-header > a {
     background-color: transparent;
 }
 
