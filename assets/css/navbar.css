@@ -18,6 +18,13 @@
     max-width: 64rem;
 }
 
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 .container > .navbar-collapse, .container > .navbar-header {
     margin-left: 0;
     margin-right: 0;
