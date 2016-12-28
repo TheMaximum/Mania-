@@ -1,8 +1,6 @@
 ---
 title: Comparison with PHP GbxRemote | Mania++
 ---
-[«« Index](index.html)
-
 # Comparison with PHP GbxRemote #
 Most popular controllers use the PHP version of the GbxRemote. This is included in the dedicated server package and most often the starting point of a (new) controller. It's up to the C++ controller/library to at least stand up to this library. To check this out, a series of tests have been executed.
 
