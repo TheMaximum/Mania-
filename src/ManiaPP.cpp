@@ -108,6 +108,7 @@ bool ManiaPP::ConnectToServer()
                             delete message; message = NULL;
 
                             plugins->LoadPlugins();
+                            plugins->InitializePlugins();
 
                             PrintServerInfo();
 
@@ -257,19 +258,6 @@ void ManiaPP::retrievePlayerList()
         }
 
         std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved current player list: " << players->size() << " found." << std::endl;
-
-        std::map<std::string, Player> playerMap = *players;
-        for(std::map<std::string, Player>::iterator it = playerMap.begin(); it != playerMap.end(); ++it)
-        {
-            Player listPlayer = it->second;
-            std::cout << "Player #" << listPlayer.PlayerId << ":" << std::endl;
-            std::cout << "    Team #           : " << listPlayer.TeamId << std::endl;
-            std::cout << "    Login            : " << listPlayer.Login << std::endl;
-            std::cout << "    NickName         : " << listPlayer.NickName << std::endl;
-            std::cout << "    SpectatorStatus  : " << listPlayer.SpectatorStatus << std::endl;
-            std::cout << "    Flags            : " << listPlayer.Flags << std::endl;
-            std::cout << "    LadderRanking    : " << listPlayer.LadderRanking << std::endl;
-        }
     }
     else
     {

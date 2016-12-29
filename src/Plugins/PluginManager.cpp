@@ -17,7 +17,7 @@ PluginManager::~PluginManager()
     for(std::map<std::string, PluginInfo>::iterator pluginId = plugins.begin(); pluginId != plugins.end(); ++pluginId)
     {
         PluginInfo pluginInfo = pluginId->second;
-        std::cout << "[         ] Closing plugin '" << pluginInfo.Name << "' ... " << '\r' << std::flush;
+        std::cout << "[         ] Closing plugin '" << pluginId->first << "' ... " << '\r' << std::flush;
         dlclose(pluginInfo.Handle);
         Logging::PrintOKFlush();
     }
@@ -87,12 +87,24 @@ void PluginManager::LoadPlugins(std::string pluginsFolder)
                     std::cout << "[   \033[0;32mOK.\033[0;0m   ] Loaded events for '" << pluginId->first << "': " << eventCount << " found." << std::endl;
                 }
 
-                plugins.insert(std::pair<std::string, PluginInfo>(pluginId->first, { pluginId->first, plugin, pluginHandle }));
+                plugins.insert(std::pair<std::string, PluginInfo>(pluginId->first, { plugin, pluginHandle }));
             }
         }
     }
 
     std::cout << "[ ======= ] Plugins: " << plugins.size() << " loaded." << std::endl;
+}
+
+void PluginManager::InitializePlugins()
+{
+    std::cout << "[ ======= ] Initializing plugins ... " << std::endl;
+    for(std::map<std::string, PluginInfo>::iterator pluginId = plugins.begin(); pluginId != plugins.end(); ++pluginId)
+    {
+        PluginInfo pluginInfo = pluginId->second;
+        Plugin* plugin = pluginInfo.Instance;
+        plugin->Init();
+    }
+    std::cout << "[ ======= ] Plugins initialized." << std::endl;
 }
 
 std::map<std::string, std::string> PluginManager::discoverPlugins(std::string pluginsFolder)

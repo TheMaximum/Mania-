@@ -107,7 +107,7 @@ public:
     std::string Version;    /**< \brief Program version (f.e. 3.3.0). */
 
 private:
-    bool connected = false;
+    bool connected = false;                         /**< \brief Is the client connected with the server? */
 
     int protocol = 0;                               /**< \brief Protocol version (0 = uninitialized, 1 or 2 = version). */
     std::string apiVersion;                         /**< \brief Server API version. */

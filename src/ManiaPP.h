@@ -49,6 +49,14 @@ public:
      */
     void Terminate();
 
+    /*!
+     * \brief Prints a GbxResponseParameter (for DEBUG purposes).
+     *
+     * \param parameter     Parameter to be printed.
+     * \param paramId       Number of the parameter.
+     * \param spaces        Spaces to be put before the parameter information.
+     * \param parameterName Name of the parameter (struct value only).
+     */
     void PrintParameter(GbxResponseParameter parameter, int paramId, std::string spaces = "    ", std::string parameterName = "");
 
 private:
@@ -58,7 +66,7 @@ private:
     std::map<std::string, Player>* players; /**< \brief Contains the list of players currently on the server. */
     std::map<std::string, Map>* maps;       /**< \brief Contains the list of players currently on the server. */
 
-    EventManager* events;
+    EventManager* events;                   /**< \brief Contains the event manager. */
     PluginManager* plugins;                 /**< \brief Contains the plugin manager. */
 
     /*!
