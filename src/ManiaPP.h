@@ -7,6 +7,7 @@
 #include "Config/Config.h"
 #include "Events/EventManager.h"
 #include "GbxRemote/GbxRemote.h"
+#include "Methods/Methods.h"
 #include "Objects/Map.h"
 #include "Objects/Player.h"
 #include "Plugins/PluginManager.h"
@@ -68,6 +69,7 @@ private:
 
     EventManager* events;                   /**< \brief Contains the event manager. */
     PluginManager* plugins;                 /**< \brief Contains the plugin manager. */
+    Methods* methods;                       /**< \brief Server method caller. */
 
     /*!
      * \brief Gets a list of current players from the server.

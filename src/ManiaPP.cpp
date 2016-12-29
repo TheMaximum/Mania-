@@ -13,6 +13,7 @@ ManiaPP::ManiaPP()
     events = new EventManager();
     plugins = new PluginManager(logging, server, players, maps);
     plugins->SetEventManager(events);
+    methods = new Methods(server);
 }
 
 ManiaPP::~ManiaPP()
@@ -25,6 +26,7 @@ ManiaPP::~ManiaPP()
 
     delete plugins; plugins = NULL;
     delete events; events = NULL;
+    delete methods; methods = NULL;
 }
 
 bool ManiaPP::ConnectToServer()
@@ -36,32 +38,18 @@ bool ManiaPP::ConnectToServer()
         std::cout << "[   \033[0;32mOK.\033[0;0m   ] Current protocol: GBXRemote " << server->GetProtocol() << std::endl;
 
         std::cout << "[         ] Authenticating on the server with user '" << config->Server->username << "' ... " << '\r' << std::flush;
-        GbxParameters* params = new GbxParameters();
-        params->Put(&config->Server->username);
-        params->Put(&config->Server->password);
-
-        GbxMessage* message = new GbxMessage("Authenticate", params);
-
-        if(server->Query(message))
+        if(methods->Authenticate(config->Server->username, config->Server->password))
         {
             logging->PrintOKFlush();
 
-            delete params; params = NULL;
-            delete message; message = NULL;
-            params = new GbxParameters();
             std::string apiVersion = server->GetApiVersion();
-            params->Put(&apiVersion);
-
             std::cout << "[         ] Setting API version to '" << apiVersion << "' ... " << '\r' << std::flush;
-            message = new GbxMessage("SetApiVersion", params);
-            if(server->Query(message))
+            if(methods->SetApiVersion(apiVersion))
             {
-                delete params; params = NULL;
-                delete message; message = NULL;
                 logging->PrintOKFlush();
 
                 std::cout << "[         ] Retrieving server methods ... " << '\r' << std::flush;
-                message = new GbxMessage("system.listMethods");
+                GbxMessage* message = new GbxMessage("system.listMethods");
                 if(server->Query(message))
                 {
                     std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
@@ -98,21 +86,18 @@ bool ManiaPP::ConnectToServer()
                             retrievePlayerList();
                             retrieveMapList();
 
-                            bool enableCallbacks = true;
-                            GbxParameters* params = new GbxParameters();
-                            params->Put(&enableCallbacks);
-                            message = new GbxMessage("EnableCallbacks", params);
-                            server->Query(message);
+                            std::cout << "[         ] Enabling CallBacks ... " << '\r' << std::flush;
+                            if(methods->EnableCallbacks(true))
+                            {
+                                logging->PrintOKFlush();
 
-                            delete params; params = NULL;
-                            delete message; message = NULL;
+                                plugins->LoadPlugins();
+                                plugins->InitializePlugins();
 
-                            plugins->LoadPlugins();
-                            plugins->InitializePlugins();
+                                PrintServerInfo();
 
-                            PrintServerInfo();
-
-                            return true;
+                                return true;
+                            }
                         }
                     }
                 }
