@@ -31,7 +31,6 @@ public:
 private:
     std::map<std::string, std::string> discoverPlugins(std::string pluginsFolder);
 
-    //std::map<std::string, Plugin*> plugins;
     std::map<std::string, PluginInfo> plugins;
     EventManager* events;
 

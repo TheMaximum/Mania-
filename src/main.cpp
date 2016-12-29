@@ -24,17 +24,8 @@
 
 ManiaPP* controller;
 
-void terminate(int signal)
-{
-    controller->RunMainLoop = false;
-    std::cout << std::endl;
-    std::cout << "Received SIGINT, shutting down ..." << std::endl;
-}
-
 int main(int argc, char *argv[])
 {
-    signal(SIGINT, terminate);
-
     controller = new ManiaPP();
     if(controller->ConnectToServer())
     {

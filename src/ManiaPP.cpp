@@ -137,7 +137,7 @@ void ManiaPP::PrintServerInfo()
 void ManiaPP::MainLoop()
 {
     std::cout << "Starting our loop ..." << std::endl;
-    while(RunMainLoop)
+    while(true)
     {
         server->ReadCallBacks();
         std::vector<GbxCallBack> callBacks = server->GetCBResponses();

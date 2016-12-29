@@ -90,8 +90,6 @@ void PluginManager::LoadPlugins(std::string pluginsFolder)
                 plugins.insert(std::pair<std::string, PluginInfo>(pluginId->first, { pluginId->first, plugin, pluginHandle }));
             }
         }
-
-        //dlclose(plugin);
     }
 
     std::cout << "[ ======= ] Plugins: " << plugins.size() << " loaded." << std::endl;

@@ -51,8 +51,6 @@ public:
 
     void PrintParameter(GbxResponseParameter parameter, int paramId, std::string spaces = "    ", std::string parameterName = "");
 
-    bool RunMainLoop = true;
-
 private:
     Config* config;                         /**< \brief Contains the configuration for the software. */
     Logging* logging;                       /**< \brief Contains functions to log information. */

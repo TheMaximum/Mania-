@@ -12,6 +12,7 @@ TcpClient::TcpClient()
 void TcpClient::Close()
 {
     shutdown(sock, 2);
+    close(sock);
     sock = -1;
 }
 
