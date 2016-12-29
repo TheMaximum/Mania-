@@ -10,7 +10,9 @@ ManiaPP::ManiaPP()
     players = new std::map<std::string, Player>();
     maps = new std::map<std::string, Map>();
 
-    plugins = new PluginManager();
+    events = new EventManager();
+    plugins = new PluginManager(logging, server, players, maps);
+    plugins->SetEventManager(events);
 }
 
 ManiaPP::~ManiaPP()
@@ -22,6 +24,7 @@ ManiaPP::~ManiaPP()
     delete maps; maps = NULL;
 
     delete plugins; plugins = NULL;
+    delete events; events = NULL;
 }
 
 bool ManiaPP::ConnectToServer()
@@ -134,7 +137,7 @@ void ManiaPP::PrintServerInfo()
 void ManiaPP::MainLoop()
 {
     std::cout << "Starting our loop ..." << std::endl;
-    while(true)
+    while(RunMainLoop)
     {
         server->ReadCallBacks();
         std::vector<GbxCallBack> callBacks = server->GetCBResponses();
@@ -159,6 +162,8 @@ void ManiaPP::MainLoop()
 
                     std::cout << "Player connected: " << newPlayer.Login << " (# players: " << players->size() << ")" << std::endl;
 
+                    events->CallPlayerConnect(newPlayer);
+
                     delete params; params = NULL;
                     delete message; message = NULL;
                 }
@@ -170,6 +175,8 @@ void ManiaPP::MainLoop()
                     Player disconnectingPlayer = players->find(login)->second;
                     players->erase(disconnectingPlayer.Login);
                     std::cout << "Player disconnected: " << disconnectingPlayer.Login << " (# players: " << players->size() << ")" << std::endl;
+
+                    events->CallPlayerDisconnect(disconnectingPlayer);
                 }
                 else
                 {

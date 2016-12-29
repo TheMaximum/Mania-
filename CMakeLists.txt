@@ -6,15 +6,13 @@ add_definitions(-Wno-deprecated)
 
 set (EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR})
 link_directories(${PROJECT_SOURCE_DIR}/lib/yaml/build)
-link_directories(${PROJECT_SOURCE_DIR}/lib/tinyxml)
 include_directories("${PROJECT_SOURCE_DIR}/lib/yaml/include")
-include_directories("${PROJECT_SOURCE_DIR}/lib/tinyxml")
 
 set (PROJECT_SOURCE_DIR ${PROJECT_SOURCE_DIR}/src)
 
 set (VERSION_MAJOR 0)
-set (VERSION_MINOR 1)
-set (VERSION_PATCH 1)
+set (VERSION_MINOR 2)
+set (VERSION_PATCH 0)
 
 # configure a header file to pass some of the CMake settings
 # to the source code

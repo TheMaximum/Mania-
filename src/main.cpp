@@ -1,3 +1,6 @@
+#include <signal.h>
+#include <iostream>
+
 #include "ManiaPP.h"
 #include "../lib/pugixml/src/pugixml.hpp"
 
@@ -19,9 +22,20 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+ManiaPP* controller;
+
+void terminate(int signal)
+{
+    controller->RunMainLoop = false;
+    std::cout << std::endl;
+    std::cout << "Received SIGINT, shutting down ..." << std::endl;
+}
+
 int main(int argc, char *argv[])
 {
-    ManiaPP* controller = new ManiaPP();
+    signal(SIGINT, terminate);
+
+    controller = new ManiaPP();
     if(controller->ConnectToServer())
     {
         controller->MainLoop();

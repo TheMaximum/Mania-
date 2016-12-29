@@ -1,0 +1,145 @@
+#include "PluginManager.h"
+
+PluginManager::PluginManager(Logging* loggingPtr, GbxRemote* serverPtr, std::map<std::string, Player>* playersPtr, std::map<std::string, Map>* mapsPtr)
+{
+    plugins = std::map<std::string, PluginInfo>();
+    events = NULL;
+
+    logging = loggingPtr;
+    server = serverPtr;
+    players = playersPtr;
+    maps = mapsPtr;
+}
+
+PluginManager::~PluginManager()
+{
+    std::cout << "[ ======= ] Closing plugins ... " << std::endl;
+    for(std::map<std::string, PluginInfo>::iterator pluginId = plugins.begin(); pluginId != plugins.end(); ++pluginId)
+    {
+        PluginInfo pluginInfo = pluginId->second;
+        std::cout << "[         ] Closing plugin '" << pluginInfo.Name << "' ... " << '\r' << std::flush;
+        dlclose(pluginInfo.Handle);
+        Logging::PrintOKFlush();
+    }
+    std::cout << "[ ======= ] All plugins closed." << std::endl;
+}
+
+void PluginManager::SetEventManager(EventManager* eventManagerPtr)
+{
+    events = eventManagerPtr;
+}
+
+typedef Plugin* (*startplugin_t)();
+
+void PluginManager::LoadPlugins(std::string pluginsFolder)
+{
+    std::cout << "[         ] Discovering plugins ... " << '\r' << std::flush;
+    std::map<std::string, std::string> pluginFiles = discoverPlugins(pluginsFolder);
+    std::cout << "[   \033[0;32mOK.\033[0;0m   ] Discovered plugins: " << pluginFiles.size() << " found." << std::endl;
+    std::cout << "[ ======= ] Loading plugins ... " << std::endl;
+
+    for(std::map<std::string, std::string>::iterator pluginId = pluginFiles.begin(); pluginId != pluginFiles.end(); ++pluginId)
+    {
+        std::cout << "[         ] Loading plugin '" << pluginId->first << "' ... " << '\r' << std::flush;
+        void* pluginHandle = dlopen(pluginId->second.c_str(), RTLD_NOW);
+        if(pluginHandle == NULL)
+        {
+            Logging::PrintFailedFlush();
+
+            GbxError* error = new GbxError();
+            error->number = -201;
+            std::stringstream message;
+            message << "Could not load '" << pluginId->first << "'...";
+            error->message = message.str();
+            logging->PrintError(error);
+        }
+        else
+        {
+            startplugin_t startPlugin = NULL;
+            startPlugin = (startplugin_t)dlsym(pluginHandle, "startPlugin");
+            if(startPlugin == NULL)
+            {
+                Logging::PrintFailedFlush();
+
+                GbxError* error = new GbxError();
+                error->number = -202;
+                std::stringstream message;
+                message << "Could not call 'startPlugin'-function for '" << pluginId->first << "'...";
+                error->message = message.str();
+                logging->PrintError(error);
+            }
+            else
+            {
+                Logging::PrintOKFlush();
+
+                Plugin* plugin = startPlugin();
+                plugin->SetLogging(logging);
+                plugin->SetServer(server);
+                plugin->SetPlayers(players);
+                plugin->SetMaps(maps);
+
+                if(events != NULL)
+                {
+                    std::cout << "[         ] Loading events for '" << pluginId->first << "' ... " << '\r' << std::flush;
+                    int playerConnects = events->RegisterPlayerConnect(plugin->MethodsPlayerConnect);
+                    int playerDisconnects = events->RegisterPlayerDisconnect(plugin->MethodsPlayerDisconnect);
+                    int eventCount = (playerConnects + playerDisconnects);
+                    std::cout << "[   \033[0;32mOK.\033[0;0m   ] Loaded events for '" << pluginId->first << "': " << eventCount << " found." << std::endl;
+                }
+
+                plugins.insert(std::pair<std::string, PluginInfo>(pluginId->first, { pluginId->first, plugin, pluginHandle }));
+            }
+        }
+
+        //dlclose(plugin);
+    }
+
+    std::cout << "[ ======= ] Plugins: " << plugins.size() << " loaded." << std::endl;
+}
+
+std::map<std::string, std::string> PluginManager::discoverPlugins(std::string pluginsFolder)
+{
+    std::map<std::string, std::string> pluginFiles = std::map<std::string, std::string>();
+
+    DIR* pluginsDirectory = opendir(pluginsFolder.c_str());
+    struct dirent* entry = readdir(pluginsDirectory);
+
+    while(entry != NULL)
+    {
+        if(entry->d_type == DT_DIR)
+        {
+            if(std::string(entry->d_name).find(".") == std::string::npos)
+            {
+                std::string pluginName = entry->d_name;
+
+                std::string pluginFolder = pluginsFolder;
+                pluginFolder.append("/").append(entry->d_name);
+
+                DIR* pluginDirectory = opendir(pluginFolder.c_str());
+                struct dirent* pluginEntry = readdir(pluginDirectory);
+                while(pluginEntry != NULL)
+                {
+                    if(pluginEntry->d_type != DT_DIR)
+                    {
+                        if(std::string(pluginEntry->d_name).find(".so") != std::string::npos)
+                        {
+                            std::string filePath = pluginFolder;
+                            filePath.append("/").append(pluginEntry->d_name);
+                            pluginFiles.insert(std::pair<std::string, std::string>(pluginName, filePath));
+                        }
+                    }
+
+                    pluginEntry = readdir(pluginDirectory);
+                }
+
+                closedir(pluginDirectory);
+            }
+        }
+
+        entry = readdir(pluginsDirectory);
+    }
+
+    closedir(pluginsDirectory);
+
+    return pluginFiles;
+}

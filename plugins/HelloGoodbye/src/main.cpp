@@ -1,4 +1,4 @@
-#include <iostream>
+#include "HelloGoodbyePlugin.h"
 
 /**
  * Mania++ is a Server Controller for TrackMania 2 servers, written in C++.
@@ -18,7 +18,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-int main(int argc, char *argv[])
+extern "C" Plugin* startPlugin()
 {
-    std::cout << "HELLO GOODBYE!" << std::endl;
+    HelloGoodbyePlugin* plugin = new HelloGoodbyePlugin();
+    return (Plugin*)plugin;
 }

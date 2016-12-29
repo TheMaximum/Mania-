@@ -107,6 +107,8 @@ public:
     std::string Version;    /**< \brief Program version (f.e. 3.3.0). */
 
 private:
+    bool connected = false;
+
     int protocol = 0;                               /**< \brief Protocol version (0 = uninitialized, 1 or 2 = version). */
     std::string apiVersion;                         /**< \brief Server API version. */
     TcpClient server;                               /**< \brief Socket connection with the server. */

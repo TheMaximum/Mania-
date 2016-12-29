@@ -2,9 +2,12 @@ cmake_minimum_required (VERSION 2.6)
 project (HelloGoodbyePlugin)
 
 add_definitions(-std=c++11)
+add_definitions(-Wno-deprecated)
 add_definitions(-Wl,--export-dynamic)
 
 set (LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR})
+link_directories(${PROJECT_SOURCE_DIR}/../../lib/yaml/build)
+include_directories("${PROJECT_SOURCE_DIR}/../../lib/yaml/include")
 set (PROJECT_SOURCE_DIR ${PROJECT_SOURCE_DIR}/src)
 
 set (VERSION_MAJOR 0)
@@ -23,3 +26,4 @@ include_directories("${PROJECT_BINARY_DIR}")
 file(GLOB_RECURSE SOURCES src/*.cpp)
 
 add_library(HelloGoodbyePlugin SHARED ${SOURCES})
+target_link_libraries(HelloGoodbyePlugin yaml-cpp)

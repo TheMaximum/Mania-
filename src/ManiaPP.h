@@ -5,10 +5,11 @@
 
 #include "Config/Version.h"
 #include "Config/Config.h"
+#include "Events/EventManager.h"
 #include "GbxRemote/GbxRemote.h"
 #include "Objects/Map.h"
 #include "Objects/Player.h"
-#include "Plugin/PluginManager.h"
+#include "Plugins/PluginManager.h"
 #include "Utils/Logging.h"
 
 //* ManiaPP
@@ -50,6 +51,8 @@ public:
 
     void PrintParameter(GbxResponseParameter parameter, int paramId, std::string spaces = "    ", std::string parameterName = "");
 
+    bool RunMainLoop = true;
+
 private:
     Config* config;                         /**< \brief Contains the configuration for the software. */
     Logging* logging;                       /**< \brief Contains functions to log information. */
@@ -57,6 +60,7 @@ private:
     std::map<std::string, Player>* players; /**< \brief Contains the list of players currently on the server. */
     std::map<std::string, Map>* maps;       /**< \brief Contains the list of players currently on the server. */
 
+    EventManager* events;
     PluginManager* plugins;                 /**< \brief Contains the plugin manager. */
 
     /*!

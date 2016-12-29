@@ -26,7 +26,7 @@ public:
 
         if(spaces > 1)
         {
-            double halfSpaces = (spaces / 2);
+            double halfSpaces = ((double)spaces / 2);
 
             std::stringstream output;
             output << "[\033[0;31m";
