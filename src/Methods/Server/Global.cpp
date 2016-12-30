@@ -149,3 +149,38 @@ SystemInfo Methods::GetSystemInfo()
 
     return systemInfo;
 }
+
+ServerStatus Methods::GetStatus()
+{
+    ServerStatus serverStatus = ServerStatus();
+
+    GbxMessage* message = new GbxMessage("GetStatus");
+    if(server->Query(message))
+    {
+        delete message; message = NULL;
+
+        std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
+        std::map<std::string, GbxResponseParameter> statusStruct = responseParams.at(0).GetStruct();
+
+        serverStatus.Code = atoi(statusStruct.find("Code")->second.GetString().c_str());
+        serverStatus.Name = statusStruct.find("Name")->second.GetString();
+    }
+
+    return serverStatus;
+}
+
+bool Methods::QuitGame()
+{
+    bool response = false;
+
+    GbxMessage* message = new GbxMessage("QuitGame");
+
+    if(server->Query(message))
+    {
+        std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
+        std::istringstream(responseParams.at(0).GetString()) >> response;
+    }
+
+    delete message; message = NULL;
+    return response;
+}

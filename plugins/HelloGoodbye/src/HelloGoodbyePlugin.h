@@ -1,6 +1,8 @@
 #ifndef HELLOGOODBYEPLUGIN_H_
 #define HELLOGOODBYEPLUGIN_H_
 
+#include <sstream>
+
 #include "../../../src/Plugins/Plugin.h"
 #include "../../../src/ManiaPP.h"
 

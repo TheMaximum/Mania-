@@ -2,6 +2,7 @@
 #define METHODS_H_
 
 #include "../GbxRemote/GbxRemote.h"
+#include "../Objects/Player.h"
 #include "Structs.h"
 
 //* Methods
@@ -69,8 +70,81 @@ public:
      */
     SystemInfo GetSystemInfo();
 
-    // GetStatus();
-    // QuitServer();
+    /*!
+     * \brief Returns server status.
+     *
+     * Returns empty struct if no information could be retrieved.
+     */
+    ServerStatus GetStatus();
+
+    /*!
+     * \brief Quit the server.
+     */
+    bool QuitGame();
+
+    /*!
+     * \brief Send chat message to all players.
+     *
+     * \param text        Chat message.
+     */
+    bool ChatSendServerMessage(std::string text);
+
+    /*!
+     * \brief Send chat message to player login.
+     *
+     * \param text        Chat message.
+     * \param login       Player login to which the message should be send.
+     */
+    bool ChatSendServerMessageToLogin(std::string text, std::string login);
+
+    /*!
+     * \brief Send chat message to player.
+     *
+     * \param text        Chat message.
+     * \param login       Player object to which the message should be send.
+     */
+    bool ChatSendServerMessageToPlayer(std::string text, Player player);
+
+    /*!
+     * \brief Get latest chat lines.
+     */
+    std::vector<std::string> GetChatLines();
+
+    /*!
+     * \brief Enable/disable manual chat routing.
+     *
+     * \param enable      Enable routing?
+     * \param autoForward Autoforward?
+     */
+    bool ChatEnableManualRouting(bool enable, bool autoForward);
+
+    /*!
+     * \brief Forwards chat message to player.
+     *
+     * \param text        Chat message.
+     * \param sender      Sending login.
+     * \param destination Destination login (empty for all players).
+     */
+    bool ChatForwardToLogin(std::string text, std::string sender, std::string destination = "");
+
+    /*!
+     * \brief Send notice to all players.
+     *
+     * \param text        Chat message.
+     * \param avatarLogin Avatar login.
+     * \param Variant     Notice variant (0 = normal, 1 = sad, 2 = happy).
+     */
+    bool SendNotice(std::string text, std::string avatarLogin = "", int variant = 0);
+
+    /*!
+     * \brief Send notice to player login.
+     *
+     * \param login       Player login.
+     * \param text        Chat message.
+     * \param avatarLogin Avatar login.
+     * \param Variant     Notice variant (0 = normal, 1 = sad, 2 = happy).
+     */
+    bool SendNoticeToLogin(std::string login, std::string text, std::string avatarLogin = "", int variant = 0);
 
     // bool CallVote(std::string xmlRequest);
     // bool CallVoteEx(std::string xmlRequest, double ratio, int timeout, int whoVotes);
@@ -84,15 +158,6 @@ public:
     // array[ratios] GetCallVoteRatios();
     // bool SetCallVoteRatiosEx(bool replaceAll, array[struct{Command, Param, Ratio}]);
     // array[struct{Command, Param, Ratio}] GetCallVoteRatiosEx();
-
-    bool ChatSendServerMessage(std::string message);
-    bool ChatSendServerMessageToLogin(std::string message, std::string login);
-    // array[std::string] GetChatLines();
-    bool ChatEnableManualRouting(bool enable, bool autoForward);
-    bool ChatForwardToLogin(std::string message, std::string sender, std::string destination = "");
-
-    bool SendNotice(std::string message, std::string avatarLogin = "", int variant = 0);
-    bool SendNoticeToLogin(std::string login, std::string message, std::string avatarLogin = "", int variant = 0);
 
     bool SendDisplayManialinkPage(std::string page, int timeout, bool hideOnClick);
     bool SendDisplayManialinkPageToLogin(std::string login, std::string page, int timeout, bool hideOnClick);

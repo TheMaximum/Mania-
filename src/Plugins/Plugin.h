@@ -10,7 +10,7 @@
 #include <functional>
 
 #include "../Events/Structs.h"
-#include "../GbxRemote/GbxRemote.h"
+#include "../Methods/Methods.h"
 #include "../Objects/Player.h"
 #include "../Objects/Map.h"
 #include "../Utils/Logging.h"
@@ -40,11 +40,11 @@ public:
     /*!
      * \brief Sets the server instance.
      *
-     * \param serverPtr  Pointer to the GbxRemote instance.
+     * \param methodsPtr Pointer to the Methods instance.
      */
-    void SetServer(GbxRemote* serverPtr)
+    void SetMethods(Methods* methodsPtr)
     {
-        server = serverPtr;
+        methods = methodsPtr;
     }
 
     /*!
@@ -75,6 +75,7 @@ public:
     std::vector<std::function<void()>> BeginMatch;                              /**< \brief Vector with functions for the BeginMatch event. */
     std::vector<std::function<void(std::vector<PlayerRanking>, int)>> EndMatch; /**< \brief Vector with functions for the EndMatch event. */
     std::vector<std::function<void(Map)>> BeginMap;                             /**< \brief Vector with functions for the BeginMap event. */
+    std::vector<std::function<void(Map)>> EndMap;                               /**< \brief Vector with functions for the EndMap event. */
     std::vector<std::function<void(int, std::string)>> StatusChanged;           /**< \brief Vector with functions for the StatusChanged event. */
     std::vector<std::function<void(Player, int, int, int)>> PlayerCheckpoint;   /**< \brief Vector with functions for the PlayerCheckpoint event. */
     std::vector<std::function<void(Player, int)>> PlayerFinish;                 /**< \brief Vector with functions for the PlayerFinish event. */
@@ -89,7 +90,7 @@ public:
 
 protected:
     Logging* logging;                       /**< \brief Logging instance. */
-    GbxRemote* server;                      /**< \brief GbxRemote instance. */
+    Methods* methods;                       /**< \brief Methods instance. */
     std::map<std::string, Player>* players; /**< \brief Playerlist instance. */
     std::map<std::string, Map>* maps;       /**< \brief Maplist instance. */
 };

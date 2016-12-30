@@ -18,19 +18,20 @@ void HelloGoodbyePlugin::OnPlayerConnect(Player player)
 {
     std::cout << "PLUGIN Player Connected: " << player.Login << "!" << std::endl;
 
-    GbxParameters* params = new GbxParameters();
-    std::string login = player.Login;
-    params->Put(&login);
+    std::stringstream chatMessage;
+    chatMessage << "Player joins: ";
+    chatMessage << player.NickName;
 
-    GbxMessage* message = new GbxMessage("GetDetailedPlayerInfo", params);
-    if(server->Query(message))
-    {
-        std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
-        std::cout << "PLUGIN Response: " << responseParams.at(0).Type << std::endl;
-    }
+    methods->ChatSendServerMessage(chatMessage.str());
 }
 
 void HelloGoodbyePlugin::OnPlayerDisconnect(Player player)
 {
     std::cout << "PLUGIN Player Disconnected: " << player.Login << "!" << std::endl;
+
+    std::stringstream chatMessage;
+    chatMessage << "Player leaves: ";
+    chatMessage << player.NickName;
+
+    methods->ChatSendServerMessage(chatMessage.str());
 }

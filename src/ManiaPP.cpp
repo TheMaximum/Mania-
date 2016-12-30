@@ -7,14 +7,14 @@ ManiaPP::ManiaPP()
     config = new Config("config.yaml");
     logging = new Logging();
     server = new GbxRemote();
+    methods = new Methods(server);
     players = new std::map<std::string, Player>();
     maps = new std::map<std::string, Map>();
 
     events = new EventManager();
-    plugins = new PluginManager(logging, server, players, maps);
+    plugins = new PluginManager(logging, methods, players, maps);
     plugins->SetEventManager(events);
     callbacks = new CallBackManager(server, events, players, maps);
-    methods = new Methods(server);
 }
 
 ManiaPP::~ManiaPP()
@@ -65,13 +65,15 @@ bool ManiaPP::ConnectToServer()
                         std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved server version: '" << serverVersion.Build << "'." << std::endl;
 
                         std::cout << "[         ] Retrieving system info ... " << '\r' << std::flush;
-                        
+
                         SystemInfo getSystemInfo = methods->GetSystemInfo();
                         if(!getSystemInfo.ServerLogin.empty())
                         {
                             systemInfo = getSystemInfo;
 
                             std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved system info, server login: '" << systemInfo.ServerLogin << "'." << std::endl;
+
+                            methods->GetChatLines();
 
                             retrievePlayerList();
                             retrieveMapList();

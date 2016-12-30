@@ -50,6 +50,10 @@ void CallBackManager::HandleCallBack(std::string methodName, std::vector<GbxResp
     {
         HandleBeginMap(parameters);
     }
+    else if(methodName.find("ManiaPlanet.EndMap") != std::string::npos)
+    {
+        HandleEndMap(parameters);
+    }
     else if(methodName.find("ManiaPlanet.StatusChanged") != std::string::npos)
     {
         HandleStatusChanged(parameters);
@@ -201,6 +205,13 @@ void CallBackManager::HandleBeginMap(std::vector<GbxResponseParameter> parameter
     events->CallBeginMap(map);
 }
 
+void CallBackManager::HandleEndMap(std::vector<GbxResponseParameter> parameters)
+{
+    Map map = Map();
+    map.MapDetailed(parameters.at(0).GetStruct());
+    events->CallEndMap(map);
+}
+
 void CallBackManager::HandleStatusChanged(std::vector<GbxResponseParameter> parameters)
 {
     int statusCode = atoi(parameters.at(0).GetString().c_str());
@@ -226,7 +237,8 @@ void CallBackManager::HandlePlayerFinish(std::vector<GbxResponseParameter> param
     Player player = players->at(login);
     int time = atoi(parameters.at(2).GetString().c_str());
 
-    events->CallPlayerFinish(player, time);
+    if(time > 0)
+        events->CallPlayerFinish(player, time);
 }
 
 void CallBackManager::HandlePlayerIncoherence(std::vector<GbxResponseParameter> parameters)

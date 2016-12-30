@@ -10,6 +10,7 @@ EventManager::EventManager()
     methodsBeginMatch = std::vector<std::function<void()>>();
     methodsEndMatch = std::vector<std::function<void(std::vector<PlayerRanking>, int)>>();
     methodsBeginMap = std::vector<std::function<void(Map)>>();
+    methodsEndMap = std::vector<std::function<void(Map)>>();
     methodsStatusChanged = std::vector<std::function<void(int, std::string)>>();
     methodsPlayerCheckpoint = std::vector<std::function<void(Player, int, int, int)>>();
     methodsPlayerFinish = std::vector<std::function<void(Player, int)>>();
@@ -103,6 +104,18 @@ int EventManager::RegisterBeginMap(std::vector<std::function<void(Map)>> functio
     for(int functionId = 0; functionId < functions.size(); functionId++)
     {
         methodsBeginMap.push_back(functions.at(functionId));
+        functionsAdded++;
+    }
+    return functionsAdded;
+}
+
+
+int EventManager::RegisterEndMap(std::vector<std::function<void(Map)>> functions)
+{
+    int functionsAdded = 0;
+    for(int functionId = 0; functionId < functions.size(); functionId++)
+    {
+        methodsEndMap.push_back(functions.at(functionId));
         functionsAdded++;
     }
     return functionsAdded;
@@ -264,6 +277,15 @@ void EventManager::CallBeginMap(Map map)
     for(int methodId = 0; methodId < methodsBeginMap.size(); methodId++)
     {
         std::function<void(Map)> method = methodsBeginMap.at(methodId);
+        method(map);
+    }
+}
+
+void EventManager::CallEndMap(Map map)
+{
+    for(int methodId = 0; methodId < methodsEndMap.size(); methodId++)
+    {
+        std::function<void(Map)> method = methodsEndMap.at(methodId);
         method(map);
     }
 }

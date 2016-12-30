@@ -93,6 +93,15 @@ public:
     int RegisterBeginMap(std::vector<std::function<void(Map)>> functions);
 
     /*!
+     * \brief Register functions for the EndMap callback.
+     *
+     * Returns how many functions were successfully added.
+     *
+     * \param functions Vector with functions to be added.
+     */
+    int RegisterEndMap(std::vector<std::function<void(Map)>> functions);
+
+    /*!
      * \brief Register functions for the StatusChanged callback.
      *
      * Returns how many functions were successfully added.
@@ -225,6 +234,13 @@ public:
     void CallBeginMap(Map map);
 
     /*!
+     * \brief Calls all functions which are subscribed to the EndMap event.
+     *
+     * \param map                 New current map.
+     */
+    void CallEndMap(Map map);
+
+    /*!
      * \brief Calls all functions which are subscribed to the StatusChanged event.
      *
      * \param statusCode          New status code.
@@ -302,6 +318,7 @@ private:
     std::vector<std::function<void()>> methodsBeginMatch;                              /**< \brief Vector with functions for the BeginMatch event. */
     std::vector<std::function<void(std::vector<PlayerRanking>, int)>> methodsEndMatch; /**< \brief Vector with functions for the EndMatch event. */
     std::vector<std::function<void(Map)>> methodsBeginMap;                             /**< \brief Vector with functions for the BeginMap event. */
+    std::vector<std::function<void(Map)>> methodsEndMap;                               /**< \brief Vector with functions for the EndMap event. */
     std::vector<std::function<void(int, std::string)>> methodsStatusChanged;           /**< \brief Vector with functions for the StatusChanged event. */
     std::vector<std::function<void(Player, int, int, int)>> methodsPlayerCheckpoint;   /**< \brief Vector with functions for the PlayerCheckpoint event. */
     std::vector<std::function<void(Player, int)>> methodsPlayerFinish;                 /**< \brief Vector with functions for the PlayerFinish event. */

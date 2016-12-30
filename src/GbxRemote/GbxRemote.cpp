@@ -3,7 +3,7 @@
 GbxRemote::~GbxRemote()
 {
     Terminate();
-    
+
     delete currentError;
     currentError = NULL;
 

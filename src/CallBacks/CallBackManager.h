@@ -97,6 +97,13 @@ public:
     void HandleBeginMap(std::vector<GbxResponseParameter> parameters);
 
     /*!
+     * \brief Handles EndMap callback.
+     *
+     * \param parameters List with method parameters.
+     */
+    void HandleEndMap(std::vector<GbxResponseParameter> parameters);
+
+    /*!
      * \brief Handles StatusChanged callback.
      *
      * \param parameters List with method parameters.

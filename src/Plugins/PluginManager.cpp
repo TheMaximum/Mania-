@@ -1,12 +1,12 @@
 #include "PluginManager.h"
 
-PluginManager::PluginManager(Logging* loggingPtr, GbxRemote* serverPtr, std::map<std::string, Player>* playersPtr, std::map<std::string, Map>* mapsPtr)
+PluginManager::PluginManager(Logging* loggingPtr, Methods* methodsPtr, std::map<std::string, Player>* playersPtr, std::map<std::string, Map>* mapsPtr)
 {
     plugins = std::map<std::string, PluginInfo>();
     events = NULL;
 
     logging = loggingPtr;
-    server = serverPtr;
+    methods = methodsPtr;
     players = playersPtr;
     maps = mapsPtr;
 }
@@ -72,7 +72,7 @@ void PluginManager::LoadPlugins(std::string pluginsFolder)
             {
                 Plugin* plugin = startPlugin();
                 plugin->SetLogging(logging);
-                plugin->SetServer(server);
+                plugin->SetMethods(methods);
                 plugin->SetPlayers(players);
                 plugin->SetMaps(maps);
 
@@ -90,6 +90,7 @@ void PluginManager::LoadPlugins(std::string pluginsFolder)
                     eventCount += events->RegisterBeginMatch(plugin->BeginMatch);
                     eventCount += events->RegisterEndMatch(plugin->EndMatch);
                     eventCount += events->RegisterBeginMap(plugin->BeginMap);
+                    eventCount += events->RegisterEndMap(plugin->EndMap);
                     eventCount += events->RegisterStatusChanged(plugin->StatusChanged);
                     eventCount += events->RegisterPlayerCheckpoint(plugin->PlayerCheckpoint);
                     eventCount += events->RegisterPlayerFinish(plugin->PlayerFinish);

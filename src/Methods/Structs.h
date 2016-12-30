@@ -32,4 +32,14 @@ struct SystemInfo
     std::string TitleId;        /**< \brief Title identifier. */
 };
 
+//* ServerStatus
+/**
+ * \brief Struct with server status.
+ */
+struct ServerStatus
+{
+    int Code;         /**< \brief Current status code. */
+    std::string Name; /**< \brief Current status name. */
+};
+
 #endif // METHODS_STRUCTS_H_
