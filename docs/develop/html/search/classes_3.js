@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logging',['Logging',['../classLogging.html',1,'']]]
+  ['hex',['Hex',['../classHex.html',1,'']]]
 ];

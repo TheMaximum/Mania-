@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -85,6 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="structMap-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Map Struct Reference</div>  </div>
@@ -98,39 +99,92 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a0f5ad0fd4563497b4214038cbca8b582"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0f5ad0fd4563497b4214038cbca8b582"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#a0f5ad0fd4563497b4214038cbca8b582">Map</a> ()</td></tr>
+<tr class="memdesc:a0f5ad0fd4563497b4214038cbca8b582"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="structMap.html" title="Contains all information about a map in easy-to-use format. ">Map</a> object without input. <br/></td></tr>
+<tr class="separator:a0f5ad0fd4563497b4214038cbca8b582"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95a2cda9b2746b5ba75e811930559c1f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#a95a2cda9b2746b5ba75e811930559c1f">Map</a> (std::map&lt; std::string, <a class="el" href="classGbxResponseParameter.html">GbxResponseParameter</a> &gt; serverStruct)</td></tr>
 <tr class="memdesc:a95a2cda9b2746b5ba75e811930559c1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Formats a server response into a usable form.  <a href="#a95a2cda9b2746b5ba75e811930559c1f">More...</a><br/></td></tr>
 <tr class="separator:a95a2cda9b2746b5ba75e811930559c1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8e78e5d9ba3951db798736fc33e907e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#ac8e78e5d9ba3951db798736fc33e907e">MapDetailed</a> (std::map&lt; std::string, <a class="el" href="classGbxResponseParameter.html">GbxResponseParameter</a> &gt; serverStruct)</td></tr>
+<tr class="memdesc:ac8e78e5d9ba3951db798736fc33e907e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Formats a server response into a usable form.  <a href="#ac8e78e5d9ba3951db798736fc33e907e">More...</a><br/></td></tr>
+<tr class="separator:ac8e78e5d9ba3951db798736fc33e907e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:aeeaed7abcf77e119d5f59c0918183834"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#aeeaed7abcf77e119d5f59c0918183834">UId</a></td></tr>
-<tr class="memdesc:aeeaed7abcf77e119d5f59c0918183834"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique map identifier.  <a href="#aeeaed7abcf77e119d5f59c0918183834">More...</a><br/></td></tr>
+<tr class="memitem:aeeaed7abcf77e119d5f59c0918183834"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeeaed7abcf77e119d5f59c0918183834"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#aeeaed7abcf77e119d5f59c0918183834">UId</a></td></tr>
+<tr class="memdesc:aeeaed7abcf77e119d5f59c0918183834"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique map identifier. <br/></td></tr>
 <tr class="separator:aeeaed7abcf77e119d5f59c0918183834"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1a5bf049a4b74e704128d31e9b53b8c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#ab1a5bf049a4b74e704128d31e9b53b8c">Name</a></td></tr>
-<tr class="memdesc:ab1a5bf049a4b74e704128d31e9b53b8c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structMap.html" title="Contains all information about a map in easy-to-use format. ">Map</a> name.  <a href="#ab1a5bf049a4b74e704128d31e9b53b8c">More...</a><br/></td></tr>
+<tr class="memitem:ab1a5bf049a4b74e704128d31e9b53b8c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab1a5bf049a4b74e704128d31e9b53b8c"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#ab1a5bf049a4b74e704128d31e9b53b8c">Name</a></td></tr>
+<tr class="memdesc:ab1a5bf049a4b74e704128d31e9b53b8c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structMap.html" title="Contains all information about a map in easy-to-use format. ">Map</a> name. <br/></td></tr>
 <tr class="separator:ab1a5bf049a4b74e704128d31e9b53b8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ec301bf4f1d129cd9bc50999581eec9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#a0ec301bf4f1d129cd9bc50999581eec9">FileName</a></td></tr>
-<tr class="memdesc:a0ec301bf4f1d129cd9bc50999581eec9"><td class="mdescLeft">&#160;</td><td class="mdescRight">File name.  <a href="#a0ec301bf4f1d129cd9bc50999581eec9">More...</a><br/></td></tr>
+<tr class="memitem:a0ec301bf4f1d129cd9bc50999581eec9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0ec301bf4f1d129cd9bc50999581eec9"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#a0ec301bf4f1d129cd9bc50999581eec9">FileName</a></td></tr>
+<tr class="memdesc:a0ec301bf4f1d129cd9bc50999581eec9"><td class="mdescLeft">&#160;</td><td class="mdescRight">File name. <br/></td></tr>
 <tr class="separator:a0ec301bf4f1d129cd9bc50999581eec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acbaadf8f635b04a1229fa01f6ec4c4dc"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#acbaadf8f635b04a1229fa01f6ec4c4dc">Environment</a></td></tr>
-<tr class="memdesc:acbaadf8f635b04a1229fa01f6ec4c4dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Game environment.  <a href="#acbaadf8f635b04a1229fa01f6ec4c4dc">More...</a><br/></td></tr>
+<tr class="memitem:acbaadf8f635b04a1229fa01f6ec4c4dc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acbaadf8f635b04a1229fa01f6ec4c4dc"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#acbaadf8f635b04a1229fa01f6ec4c4dc">Environment</a></td></tr>
+<tr class="memdesc:acbaadf8f635b04a1229fa01f6ec4c4dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Game environment. <br/></td></tr>
 <tr class="separator:acbaadf8f635b04a1229fa01f6ec4c4dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1eb246326a4ec70df2dc71887efca5c9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#a1eb246326a4ec70df2dc71887efca5c9">Author</a></td></tr>
-<tr class="memdesc:a1eb246326a4ec70df2dc71887efca5c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Login of the author.  <a href="#a1eb246326a4ec70df2dc71887efca5c9">More...</a><br/></td></tr>
+<tr class="memitem:a1eb246326a4ec70df2dc71887efca5c9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1eb246326a4ec70df2dc71887efca5c9"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#a1eb246326a4ec70df2dc71887efca5c9">Author</a></td></tr>
+<tr class="memdesc:a1eb246326a4ec70df2dc71887efca5c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Login of the author. <br/></td></tr>
 <tr class="separator:a1eb246326a4ec70df2dc71887efca5c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a769a574be92aa024f7804627c167ceff"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#a769a574be92aa024f7804627c167ceff">GoldTime</a></td></tr>
-<tr class="memdesc:a769a574be92aa024f7804627c167ceff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time of the gold medal.  <a href="#a769a574be92aa024f7804627c167ceff">More...</a><br/></td></tr>
+<tr class="memitem:a769a574be92aa024f7804627c167ceff"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a769a574be92aa024f7804627c167ceff"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#a769a574be92aa024f7804627c167ceff">GoldTime</a></td></tr>
+<tr class="memdesc:a769a574be92aa024f7804627c167ceff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time of the gold medal. <br/></td></tr>
 <tr class="separator:a769a574be92aa024f7804627c167ceff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9a7d229fb6b41092fb527bbcc913faf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#aa9a7d229fb6b41092fb527bbcc913faf">CopperPrice</a></td></tr>
-<tr class="memdesc:aa9a7d229fb6b41092fb527bbcc913faf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copper price.  <a href="#aa9a7d229fb6b41092fb527bbcc913faf">More...</a><br/></td></tr>
+<tr class="memitem:aa9a7d229fb6b41092fb527bbcc913faf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa9a7d229fb6b41092fb527bbcc913faf"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#aa9a7d229fb6b41092fb527bbcc913faf">CopperPrice</a></td></tr>
+<tr class="memdesc:aa9a7d229fb6b41092fb527bbcc913faf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copper price. <br/></td></tr>
 <tr class="separator:aa9a7d229fb6b41092fb527bbcc913faf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23d051ee3c7cfa606082e700099563b0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#a23d051ee3c7cfa606082e700099563b0">MapType</a></td></tr>
-<tr class="memdesc:a23d051ee3c7cfa606082e700099563b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of the map.  <a href="#a23d051ee3c7cfa606082e700099563b0">More...</a><br/></td></tr>
+<tr class="memitem:a23d051ee3c7cfa606082e700099563b0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a23d051ee3c7cfa606082e700099563b0"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#a23d051ee3c7cfa606082e700099563b0">MapType</a></td></tr>
+<tr class="memdesc:a23d051ee3c7cfa606082e700099563b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of the map. <br/></td></tr>
 <tr class="separator:a23d051ee3c7cfa606082e700099563b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fe4c64985a8d769e21fe32bab7a879c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#a5fe4c64985a8d769e21fe32bab7a879c">MapStyle</a></td></tr>
-<tr class="memdesc:a5fe4c64985a8d769e21fe32bab7a879c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structMap.html" title="Contains all information about a map in easy-to-use format. ">Map</a> style (self-entered).  <a href="#a5fe4c64985a8d769e21fe32bab7a879c">More...</a><br/></td></tr>
+<tr class="memitem:a5fe4c64985a8d769e21fe32bab7a879c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5fe4c64985a8d769e21fe32bab7a879c"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#a5fe4c64985a8d769e21fe32bab7a879c">MapStyle</a></td></tr>
+<tr class="memdesc:a5fe4c64985a8d769e21fe32bab7a879c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structMap.html" title="Contains all information about a map in easy-to-use format. ">Map</a> style (self-entered). <br/></td></tr>
 <tr class="separator:a5fe4c64985a8d769e21fe32bab7a879c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2eb9a175623dc2077a1f34975641607"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad2eb9a175623dc2077a1f34975641607"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#ad2eb9a175623dc2077a1f34975641607">Mood</a></td></tr>
+<tr class="memdesc:ad2eb9a175623dc2077a1f34975641607"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structMap.html" title="Contains all information about a map in easy-to-use format. ">Map</a> mood (setting). <br/></td></tr>
+<tr class="separator:ad2eb9a175623dc2077a1f34975641607"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18d7e3733c6728b0938193205972be35"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a18d7e3733c6728b0938193205972be35"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#a18d7e3733c6728b0938193205972be35">BronzeTime</a></td></tr>
+<tr class="memdesc:a18d7e3733c6728b0938193205972be35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time of the bronze medal. <br/></td></tr>
+<tr class="separator:a18d7e3733c6728b0938193205972be35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3121edccf9be02843ca91622a88a1a5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad3121edccf9be02843ca91622a88a1a5"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#ad3121edccf9be02843ca91622a88a1a5">SilverTime</a></td></tr>
+<tr class="memdesc:ad3121edccf9be02843ca91622a88a1a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time of the silver medal. <br/></td></tr>
+<tr class="separator:ad3121edccf9be02843ca91622a88a1a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a342a757d471cf664f069c537c7f0ad1a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a342a757d471cf664f069c537c7f0ad1a"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#a342a757d471cf664f069c537c7f0ad1a">AuthorTime</a></td></tr>
+<tr class="memdesc:a342a757d471cf664f069c537c7f0ad1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time set by the author. <br/></td></tr>
+<tr class="separator:a342a757d471cf664f069c537c7f0ad1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b88590574688965bf8b7442f3792000"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0b88590574688965bf8b7442f3792000"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#a0b88590574688965bf8b7442f3792000">LapRace</a></td></tr>
+<tr class="memdesc:a0b88590574688965bf8b7442f3792000"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structMap.html" title="Contains all information about a map in easy-to-use format. ">Map</a> is multi-lap. <br/></td></tr>
+<tr class="separator:a0b88590574688965bf8b7442f3792000"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a06493a298b5ebfae70ecbfb0bca406"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2a06493a298b5ebfae70ecbfb0bca406"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#a2a06493a298b5ebfae70ecbfb0bca406">NbLaps</a></td></tr>
+<tr class="memdesc:a2a06493a298b5ebfae70ecbfb0bca406"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of laps. <br/></td></tr>
+<tr class="separator:a2a06493a298b5ebfae70ecbfb0bca406"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abadd4d6809c065522960a0db897d6c10"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abadd4d6809c065522960a0db897d6c10"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#abadd4d6809c065522960a0db897d6c10">NbCheckpoints</a></td></tr>
+<tr class="memdesc:abadd4d6809c065522960a0db897d6c10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of checkpoints. <br/></td></tr>
+<tr class="separator:abadd4d6809c065522960a0db897d6c10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a5a5864cc5b9e067f4383fae5bf01c381"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#a5a5864cc5b9e067f4383fae5bf01c381">setBasicInfo</a> (std::map&lt; std::string, <a class="el" href="classGbxResponseParameter.html">GbxResponseParameter</a> &gt; serverStruct)</td></tr>
+<tr class="memdesc:a5a5864cc5b9e067f4383fae5bf01c381"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the basic map information from the struct.  <a href="#a5a5864cc5b9e067f4383fae5bf01c381">More...</a><br/></td></tr>
+<tr class="separator:a5a5864cc5b9e067f4383fae5bf01c381"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23ae24725344c494f35da1fb95c521e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMap.html#a23ae24725344c494f35da1fb95c521e8">setDetailedInfo</a> (std::map&lt; std::string, <a class="el" href="classGbxResponseParameter.html">GbxResponseParameter</a> &gt; serverStruct)</td></tr>
+<tr class="memdesc:a23ae24725344c494f35da1fb95c521e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the detailed map information from the struct.  <a href="#a23ae24725344c494f35da1fb95c521e8">More...</a><br/></td></tr>
+<tr class="separator:a23ae24725344c494f35da1fb95c521e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains all information about a map in easy-to-use format. </p>
@@ -167,130 +221,100 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a1eb246326a4ec70df2dc71887efca5c9"></a>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ac8e78e5d9ba3951db798736fc33e907e"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Map::Author</td>
+          <td class="memname">void Map::MapDetailed </td>
+          <td>(</td>
+          <td class="paramtype">std::map&lt; std::string, <a class="el" href="classGbxResponseParameter.html">GbxResponseParameter</a> &gt;&#160;</td>
+          <td class="paramname"><em>serverStruct</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Login of the author. </p>
+<p>Formats a server response into a usable form. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">serverStruct</td><td>The struct with detailed map information received from the server. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a class="anchor" id="aa9a7d229fb6b41092fb527bbcc913faf"></a>
+<a class="anchor" id="a5a5864cc5b9e067f4383fae5bf01c381"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Map::CopperPrice</td>
+          <td class="memname">void Map::setBasicInfo </td>
+          <td>(</td>
+          <td class="paramtype">std::map&lt; std::string, <a class="el" href="classGbxResponseParameter.html">GbxResponseParameter</a> &gt;&#160;</td>
+          <td class="paramname"><em>serverStruct</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Copper price. </p>
+<p>Sets the basic map information from the struct. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">serverStruct</td><td>The struct with map information received from the server. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a class="anchor" id="acbaadf8f635b04a1229fa01f6ec4c4dc"></a>
+<a class="anchor" id="a23ae24725344c494f35da1fb95c521e8"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Map::Environment</td>
+          <td class="memname">void Map::setDetailedInfo </td>
+          <td>(</td>
+          <td class="paramtype">std::map&lt; std::string, <a class="el" href="classGbxResponseParameter.html">GbxResponseParameter</a> &gt;&#160;</td>
+          <td class="paramname"><em>serverStruct</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Game environment. </p>
-
-</div>
-</div>
-<a class="anchor" id="a0ec301bf4f1d129cd9bc50999581eec9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string Map::FileName</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>File name. </p>
-
-</div>
-</div>
-<a class="anchor" id="a769a574be92aa024f7804627c167ceff"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Map::GoldTime</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Time of the gold medal. </p>
-
-</div>
-</div>
-<a class="anchor" id="a5fe4c64985a8d769e21fe32bab7a879c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string Map::MapStyle</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="structMap.html" title="Contains all information about a map in easy-to-use format. ">Map</a> style (self-entered). </p>
-
-</div>
-</div>
-<a class="anchor" id="a23d051ee3c7cfa606082e700099563b0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string Map::MapType</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Type of the map. </p>
-
-</div>
-</div>
-<a class="anchor" id="ab1a5bf049a4b74e704128d31e9b53b8c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string Map::Name</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="structMap.html" title="Contains all information about a map in easy-to-use format. ">Map</a> name. </p>
-
-</div>
-</div>
-<a class="anchor" id="aeeaed7abcf77e119d5f59c0918183834"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string Map::UId</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Unique map identifier. </p>
+<p>Sets the detailed map information from the struct. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">serverStruct</td><td>The struct with detailed map information received from the server. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -300,7 +324,7 @@ Public Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 28 2016 00:52:17 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Dec 30 2016 22:29:46 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

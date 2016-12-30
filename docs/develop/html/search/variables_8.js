@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['ladderranking',['LadderRanking',['../structPlayer.html#a25fe69852f0e38f541ad615cd59877ef',1,'Player']]],
-  ['logging',['logging',['../classManiaPP.html#aa4cea090301bdf0bf652ad377e7b01c0',1,'ManiaPP']]],
-  ['login',['Login',['../classGbxRemote.html#aca6e6ee86b785451d52735daf222cc6d',1,'GbxRemote::Login()'],['../structPlayer.html#a38398818d43e186aa982a788744792d7',1,'Player::Login()']]]
+  ['instance',['Instance',['../structPluginInfo.html#aef49f59681176d6135492b7541ff1138',1,'PluginInfo']]],
+  ['isdedicated',['IsDedicated',['../structSystemInfo.html#acd6f3cbafcee73181edc08dd3eae1599',1,'SystemInfo']]],
+  ['isserver',['IsServer',['../structSystemInfo.html#a13101b94bbf077f73232fa7c374def87',1,'SystemInfo']]]
 ];

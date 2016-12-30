@@ -1,0 +1,200 @@
+\hypertarget{classPlugin}{\section{Plugin Class Reference}
+\label{classPlugin}\index{Plugin@{Plugin}}
+}
+
+
+\hyperlink{classPlugin}{Plugin} interface, inherited by all plugins.  
+
+
+
+
+{\ttfamily \#include $<$Plugin.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classPlugin_a1409a14522799cb9d1a41fabc40133e5}{virtual void \hyperlink{classPlugin_a1409a14522799cb9d1a41fabc40133e5}{Init} ()=0}\label{classPlugin_a1409a14522799cb9d1a41fabc40133e5}
+
+\begin{DoxyCompactList}\small\item\em Initializes plugin (called after loading all plugins). \end{DoxyCompactList}\item 
+void \hyperlink{classPlugin_ae5ceb206ba4ec62f2d8c21b9117ea411}{Set\-Logging} (\hyperlink{classLogging}{Logging} $\ast$logging\-Ptr)
+\begin{DoxyCompactList}\small\item\em Sets the logging instance. \end{DoxyCompactList}\item 
+void \hyperlink{classPlugin_a86c23967641a554f053148ec072e393a}{Set\-Methods} (\hyperlink{classMethods}{Methods} $\ast$methods\-Ptr)
+\begin{DoxyCompactList}\small\item\em Sets the server instance. \end{DoxyCompactList}\item 
+void \hyperlink{classPlugin_ae7061592fc0fe1d22a7d2ad4989f78ae}{Set\-Players} (std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$players\-Ptr)
+\begin{DoxyCompactList}\small\item\em Sets the playerlist instance. \end{DoxyCompactList}\item 
+void \hyperlink{classPlugin_a72ace5f9e59a5cba484f4ec30e36e390}{Set\-Maps} (std\-::map$<$ std\-::string, \hyperlink{structMap}{Map} $>$ $\ast$maps\-Ptr)
+\begin{DoxyCompactList}\small\item\em Sets the maplist instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classPlugin_a02e032f548c5a002496ab6b02788342b}{std\-::vector$<$ std\-::function\\*
+$<$ void(\hyperlink{structPlayer}{Player})$>$ $>$ \hyperlink{classPlugin_a02e032f548c5a002496ab6b02788342b}{Player\-Connect}}\label{classPlugin_a02e032f548c5a002496ab6b02788342b}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Player\-Connect event. \end{DoxyCompactList}\item 
+\hypertarget{classPlugin_a3c8dec90190a888e951268b3727b7573}{std\-::vector$<$ std\-::function\\*
+$<$ void(\hyperlink{structPlayer}{Player})$>$ $>$ \hyperlink{classPlugin_a3c8dec90190a888e951268b3727b7573}{Player\-Disconnect}}\label{classPlugin_a3c8dec90190a888e951268b3727b7573}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Player\-Disconnect event. \end{DoxyCompactList}\item 
+\hypertarget{classPlugin_a17096b73a575eef7c4e8c5380c08f670}{std\-::vector$<$ std\-::function\\*
+$<$ void(\hyperlink{structPlayer}{Player}, std\-::string, \\*
+bool)$>$ $>$ \hyperlink{classPlugin_a17096b73a575eef7c4e8c5380c08f670}{Player\-Chat}}\label{classPlugin_a17096b73a575eef7c4e8c5380c08f670}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Player\-Chat event. \end{DoxyCompactList}\item 
+\hypertarget{classPlugin_aec9eb757d9baae48942b34f28594a2a6}{std\-::vector$<$ std\-::function\\*
+$<$ void(\hyperlink{structPlayer}{Player}, std\-::string, \\*
+std\-::vector$<$ \hyperlink{structEntryVal}{Entry\-Val} $>$)$>$ $>$ \hyperlink{classPlugin_aec9eb757d9baae48942b34f28594a2a6}{Player\-Manialink\-Page\-Answer}}\label{classPlugin_aec9eb757d9baae48942b34f28594a2a6}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Player\-Manialink\-Page\-Answer event. \end{DoxyCompactList}\item 
+\hypertarget{classPlugin_a427a43a87266e448d5543219a9fd26a2}{std\-::vector$<$ std\-::function\\*
+$<$ void(std\-::string, \\*
+std\-::string)$>$ $>$ \hyperlink{classPlugin_a427a43a87266e448d5543219a9fd26a2}{Echo}}\label{classPlugin_a427a43a87266e448d5543219a9fd26a2}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Echo event. \end{DoxyCompactList}\item 
+\hypertarget{classPlugin_a83f8709eb14504c24e44792438fea9f8}{std\-::vector$<$ std\-::function\\*
+$<$ void()$>$ $>$ \hyperlink{classPlugin_a83f8709eb14504c24e44792438fea9f8}{Begin\-Match}}\label{classPlugin_a83f8709eb14504c24e44792438fea9f8}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Begin\-Match event. \end{DoxyCompactList}\item 
+\hypertarget{classPlugin_a772ce957615c12fd06fdf3190b5c85f5}{std\-::vector$<$ std\-::function\\*
+$<$ void(std\-::vector\\*
+$<$ \hyperlink{structPlayerRanking}{Player\-Ranking} $>$, int)$>$ $>$ \hyperlink{classPlugin_a772ce957615c12fd06fdf3190b5c85f5}{End\-Match}}\label{classPlugin_a772ce957615c12fd06fdf3190b5c85f5}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the End\-Match event. \end{DoxyCompactList}\item 
+\hypertarget{classPlugin_a2ba64350d1fcc5269e2f61a0e3725e33}{std\-::vector$<$ std\-::function\\*
+$<$ void(\hyperlink{structMap}{Map})$>$ $>$ \hyperlink{classPlugin_a2ba64350d1fcc5269e2f61a0e3725e33}{Begin\-Map}}\label{classPlugin_a2ba64350d1fcc5269e2f61a0e3725e33}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Begin\-Map event. \end{DoxyCompactList}\item 
+\hypertarget{classPlugin_ad872750ef7512a9961bc7653a5d8056c}{std\-::vector$<$ std\-::function\\*
+$<$ void(\hyperlink{structMap}{Map})$>$ $>$ \hyperlink{classPlugin_ad872750ef7512a9961bc7653a5d8056c}{End\-Map}}\label{classPlugin_ad872750ef7512a9961bc7653a5d8056c}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the End\-Map event. \end{DoxyCompactList}\item 
+\hypertarget{classPlugin_a1d1a7c5ee8f037cc4277225994829902}{std\-::vector$<$ std\-::function\\*
+$<$ void(int, std\-::string)$>$ $>$ \hyperlink{classPlugin_a1d1a7c5ee8f037cc4277225994829902}{Status\-Changed}}\label{classPlugin_a1d1a7c5ee8f037cc4277225994829902}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Status\-Changed event. \end{DoxyCompactList}\item 
+\hypertarget{classPlugin_abc2ce0103b7783a4ff4b3009cb18af7b}{std\-::vector$<$ std\-::function\\*
+$<$ void(\hyperlink{structPlayer}{Player}, int, int, int)$>$ $>$ \hyperlink{classPlugin_abc2ce0103b7783a4ff4b3009cb18af7b}{Player\-Checkpoint}}\label{classPlugin_abc2ce0103b7783a4ff4b3009cb18af7b}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Player\-Checkpoint event. \end{DoxyCompactList}\item 
+\hypertarget{classPlugin_a16aadb48218d18235979314d259699aa}{std\-::vector$<$ std\-::function\\*
+$<$ void(\hyperlink{structPlayer}{Player}, int)$>$ $>$ \hyperlink{classPlugin_a16aadb48218d18235979314d259699aa}{Player\-Finish}}\label{classPlugin_a16aadb48218d18235979314d259699aa}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Player\-Finish event. \end{DoxyCompactList}\item 
+\hypertarget{classPlugin_abcc9fff7f98ac9a872a965f0809b7f53}{std\-::vector$<$ std\-::function\\*
+$<$ void(\hyperlink{structPlayer}{Player})$>$ $>$ \hyperlink{classPlugin_abcc9fff7f98ac9a872a965f0809b7f53}{Player\-Incoherence}}\label{classPlugin_abcc9fff7f98ac9a872a965f0809b7f53}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Player\-Incoherence event. \end{DoxyCompactList}\item 
+\hypertarget{classPlugin_a44ef1f6774366dd3dcc588d7c7afbc8a}{std\-::vector$<$ std\-::function\\*
+$<$ void(int, int, std\-::string, \\*
+int)$>$ $>$ \hyperlink{classPlugin_a44ef1f6774366dd3dcc588d7c7afbc8a}{Bill\-Updated}}\label{classPlugin_a44ef1f6774366dd3dcc588d7c7afbc8a}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Bill\-Updated event. \end{DoxyCompactList}\item 
+\hypertarget{classPlugin_aed57b8e5c978e9de385e165a1668e63e}{std\-::vector$<$ std\-::function\\*
+$<$ void(int, int, bool)$>$ $>$ \hyperlink{classPlugin_aed57b8e5c978e9de385e165a1668e63e}{Map\-List\-Modified}}\label{classPlugin_aed57b8e5c978e9de385e165a1668e63e}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Map\-List\-Modified event. \end{DoxyCompactList}\item 
+\hypertarget{classPlugin_a2836f95c56beafd0fa2b62f7693a9f3c}{std\-::vector$<$ std\-::function\\*
+$<$ void(\hyperlink{structPlayer}{Player})$>$ $>$ \hyperlink{classPlugin_a2836f95c56beafd0fa2b62f7693a9f3c}{Player\-Info\-Changed}}\label{classPlugin_a2836f95c56beafd0fa2b62f7693a9f3c}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Player\-Info\-Changed event. \end{DoxyCompactList}\item 
+\hypertarget{classPlugin_a869a88fc900c8a54c2607774cfa44dbc}{std\-::vector$<$ std\-::function\\*
+$<$ void(std\-::string, \\*
+std\-::string, std\-::string, \\*
+std\-::string)$>$ $>$ \hyperlink{classPlugin_a869a88fc900c8a54c2607774cfa44dbc}{Vote\-Updated}}\label{classPlugin_a869a88fc900c8a54c2607774cfa44dbc}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Vote\-Updated event. \end{DoxyCompactList}\item 
+\hypertarget{classPlugin_a8e332303a494988d2444589ac21c3414}{std\-::string \hyperlink{classPlugin_a8e332303a494988d2444589ac21c3414}{Version}}\label{classPlugin_a8e332303a494988d2444589ac21c3414}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classPlugin}{Plugin} version. \end{DoxyCompactList}\item 
+\hypertarget{classPlugin_a2b51c785a131a581164f2c82e83cb660}{std\-::string \hyperlink{classPlugin_a2b51c785a131a581164f2c82e83cb660}{Author}}\label{classPlugin_a2b51c785a131a581164f2c82e83cb660}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classPlugin}{Plugin} author. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classPlugin_a790b0b546d265519adca0ddac1ff0fec}{\hyperlink{classLogging}{Logging} $\ast$ \hyperlink{classPlugin_a790b0b546d265519adca0ddac1ff0fec}{logging}}\label{classPlugin_a790b0b546d265519adca0ddac1ff0fec}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classLogging}{Logging} instance. \end{DoxyCompactList}\item 
+\hypertarget{classPlugin_afe1621fbf28d04912837a18817170e62}{\hyperlink{classMethods}{Methods} $\ast$ \hyperlink{classPlugin_afe1621fbf28d04912837a18817170e62}{methods}}\label{classPlugin_afe1621fbf28d04912837a18817170e62}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classMethods}{Methods} instance. \end{DoxyCompactList}\item 
+\hypertarget{classPlugin_a5821fc98f348a93156dd76dfb84d3eb3}{std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$ \hyperlink{classPlugin_a5821fc98f348a93156dd76dfb84d3eb3}{players}}\label{classPlugin_a5821fc98f348a93156dd76dfb84d3eb3}
+
+\begin{DoxyCompactList}\small\item\em Playerlist instance. \end{DoxyCompactList}\item 
+\hypertarget{classPlugin_a7f1ac74d4f6512342f229faf7dad27b2}{std\-::map$<$ std\-::string, \hyperlink{structMap}{Map} $>$ $\ast$ \hyperlink{classPlugin_a7f1ac74d4f6512342f229faf7dad27b2}{maps}}\label{classPlugin_a7f1ac74d4f6512342f229faf7dad27b2}
+
+\begin{DoxyCompactList}\small\item\em Maplist instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classPlugin}{Plugin} interface, inherited by all plugins. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classPlugin_ae5ceb206ba4ec62f2d8c21b9117ea411}{\index{Plugin@{Plugin}!Set\-Logging@{Set\-Logging}}
+\index{Set\-Logging@{Set\-Logging}!Plugin@{Plugin}}
+\subsubsection[{Set\-Logging}]{\setlength{\rightskip}{0pt plus 5cm}void Plugin\-::\-Set\-Logging (
+\begin{DoxyParamCaption}
+\item[{{\bf Logging} $\ast$}]{logging\-Ptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPlugin_ae5ceb206ba4ec62f2d8c21b9117ea411}
+
+
+Sets the logging instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em logging\-Ptr} & Pointer to the logging instance. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPlugin_a72ace5f9e59a5cba484f4ec30e36e390}{\index{Plugin@{Plugin}!Set\-Maps@{Set\-Maps}}
+\index{Set\-Maps@{Set\-Maps}!Plugin@{Plugin}}
+\subsubsection[{Set\-Maps}]{\setlength{\rightskip}{0pt plus 5cm}void Plugin\-::\-Set\-Maps (
+\begin{DoxyParamCaption}
+\item[{std\-::map$<$ std\-::string, {\bf Map} $>$ $\ast$}]{maps\-Ptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPlugin_a72ace5f9e59a5cba484f4ec30e36e390}
+
+
+Sets the maplist instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em maps\-Ptr} & Pointer to the maplist instance. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPlugin_a86c23967641a554f053148ec072e393a}{\index{Plugin@{Plugin}!Set\-Methods@{Set\-Methods}}
+\index{Set\-Methods@{Set\-Methods}!Plugin@{Plugin}}
+\subsubsection[{Set\-Methods}]{\setlength{\rightskip}{0pt plus 5cm}void Plugin\-::\-Set\-Methods (
+\begin{DoxyParamCaption}
+\item[{{\bf Methods} $\ast$}]{methods\-Ptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPlugin_a86c23967641a554f053148ec072e393a}
+
+
+Sets the server instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em methods\-Ptr} & Pointer to the \hyperlink{classMethods}{Methods} instance. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPlugin_ae7061592fc0fe1d22a7d2ad4989f78ae}{\index{Plugin@{Plugin}!Set\-Players@{Set\-Players}}
+\index{Set\-Players@{Set\-Players}!Plugin@{Plugin}}
+\subsubsection[{Set\-Players}]{\setlength{\rightskip}{0pt plus 5cm}void Plugin\-::\-Set\-Players (
+\begin{DoxyParamCaption}
+\item[{std\-::map$<$ std\-::string, {\bf Player} $>$ $\ast$}]{players\-Ptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPlugin_ae7061592fc0fe1d22a7d2ad4989f78ae}
+
+
+Sets the playerlist instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em players\-Ptr} & Pointer to the playerlist instance. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Plugins/Plugin.\-h\end{DoxyCompactItemize}

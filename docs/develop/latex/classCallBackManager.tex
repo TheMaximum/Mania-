@@ -1,0 +1,401 @@
+\hypertarget{classCallBackManager}{\section{Call\-Back\-Manager Class Reference}
+\label{classCallBackManager}\index{Call\-Back\-Manager@{Call\-Back\-Manager}}
+}
+
+
+Handles callbacks from the server.  
+
+
+
+
+{\ttfamily \#include $<$Call\-Back\-Manager.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCallBackManager_aaba219c50eef1526a771f1606cf24396}{Call\-Back\-Manager} (\hyperlink{classGbxRemote}{Gbx\-Remote} $\ast$server\-Ptr, \hyperlink{classEventManager}{Event\-Manager} $\ast$event\-Manager\-Ptr, std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$player\-List, std\-::map$<$ std\-::string, \hyperlink{structMap}{Map} $>$ $\ast$map\-List)
+\item 
+void \hyperlink{classCallBackManager_a8af5305f668aae4c563e7039b99015c2}{Handle\-Call\-Back} (std\-::string method\-Name, std\-::vector$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ parameters)
+\begin{DoxyCompactList}\small\item\em Handles callback (updates lists, calls plugin functions). \end{DoxyCompactList}\item 
+void \hyperlink{classCallBackManager_a48e888c80841cf757ebdd69726a8aed5}{Handle\-Player\-Connect} (std\-::vector$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ parameters)
+\begin{DoxyCompactList}\small\item\em Handles Player\-Connect callback. \end{DoxyCompactList}\item 
+void \hyperlink{classCallBackManager_aa762cbece4e59d8395f5dbd857c53f17}{Handle\-Player\-Disconnect} (std\-::vector$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ parameters)
+\begin{DoxyCompactList}\small\item\em Handles Player\-Disconnect callback. \end{DoxyCompactList}\item 
+void \hyperlink{classCallBackManager_a0919197cbeeb3c5a12230d44109a2cdb}{Handle\-Player\-Chat} (std\-::vector$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ parameters)
+\begin{DoxyCompactList}\small\item\em Handles Player\-Chat callback. \end{DoxyCompactList}\item 
+void \hyperlink{classCallBackManager_af4fcbb46d5e88bfdf34185b1d0c7d836}{Handle\-Player\-Manialink\-Page\-Answer} (std\-::vector$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ parameters)
+\begin{DoxyCompactList}\small\item\em Handles Player\-Manialink\-Page\-Answer callback. \end{DoxyCompactList}\item 
+void \hyperlink{classCallBackManager_a75f7f6d423799a89d9988b23a22bed18}{Handle\-Echo} (std\-::vector$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ parameters)
+\begin{DoxyCompactList}\small\item\em Handles Echo callback. \end{DoxyCompactList}\item 
+void \hyperlink{classCallBackManager_ad741782611d10c7a67e6d1a8630cc605}{Handle\-Begin\-Match} (std\-::vector$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ parameters)
+\begin{DoxyCompactList}\small\item\em Handles Begin\-Match callback. \end{DoxyCompactList}\item 
+void \hyperlink{classCallBackManager_a1084f327bacd054c1a8204e3f5e90ccb}{Handle\-End\-Match} (std\-::vector$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ parameters)
+\begin{DoxyCompactList}\small\item\em Handles End\-Match callback. \end{DoxyCompactList}\item 
+void \hyperlink{classCallBackManager_a0a106f538862503a6c5b268a75d18e7a}{Handle\-Begin\-Map} (std\-::vector$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ parameters)
+\begin{DoxyCompactList}\small\item\em Handles Begin\-Map callback. \end{DoxyCompactList}\item 
+void \hyperlink{classCallBackManager_ac31e15ec293f178222e8f73dbce963da}{Handle\-End\-Map} (std\-::vector$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ parameters)
+\begin{DoxyCompactList}\small\item\em Handles End\-Map callback. \end{DoxyCompactList}\item 
+void \hyperlink{classCallBackManager_acadb67344d217a028fe21163bf74e5cd}{Handle\-Status\-Changed} (std\-::vector$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ parameters)
+\begin{DoxyCompactList}\small\item\em Handles Status\-Changed callback. \end{DoxyCompactList}\item 
+void \hyperlink{classCallBackManager_a350cfbe5f81c1039c8db53e0d6fb5ec5}{Handle\-Player\-Checkpoint} (std\-::vector$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ parameters)
+\begin{DoxyCompactList}\small\item\em Handles Player\-Checkpoint callback. \end{DoxyCompactList}\item 
+void \hyperlink{classCallBackManager_aef1c327689b54fa2323ab5508b561c43}{Handle\-Player\-Finish} (std\-::vector$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ parameters)
+\begin{DoxyCompactList}\small\item\em Handles Player\-Finish callback. \end{DoxyCompactList}\item 
+void \hyperlink{classCallBackManager_a8e3a29366a205d0fbeb2bafb4226d0bd}{Handle\-Player\-Incoherence} (std\-::vector$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ parameters)
+\begin{DoxyCompactList}\small\item\em Handles Player\-Incoherence callback. \end{DoxyCompactList}\item 
+void \hyperlink{classCallBackManager_a04ae5c8b9c11709fe19229037f891902}{Handle\-Bill\-Updated} (std\-::vector$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ parameters)
+\begin{DoxyCompactList}\small\item\em Handles Bill\-Updated callback. \end{DoxyCompactList}\item 
+void \hyperlink{classCallBackManager_a5f8553720ce21a9d55dd6e5cce21fcc2}{Handle\-Map\-List\-Modified} (std\-::vector$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ parameters)
+\begin{DoxyCompactList}\small\item\em Handles Map\-List\-Modified callback. \end{DoxyCompactList}\item 
+void \hyperlink{classCallBackManager_a0373533b769d15667a66c1607369cfff}{Handle\-Player\-Info\-Changed} (std\-::vector$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ parameters)
+\begin{DoxyCompactList}\small\item\em Handles Player\-Info\-Changed callback. \end{DoxyCompactList}\item 
+void \hyperlink{classCallBackManager_a7af7f38c8e0994fcbba2de59dee1921f}{Handle\-Vote\-Updated} (std\-::vector$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ parameters)
+\begin{DoxyCompactList}\small\item\em Handles Vote\-Updated callback. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCallBackManager_a27cccc154989a36eb80580f3d9f69c51}{\hyperlink{classGbxRemote}{Gbx\-Remote} $\ast$ \hyperlink{classCallBackManager_a27cccc154989a36eb80580f3d9f69c51}{server}}\label{classCallBackManager_a27cccc154989a36eb80580f3d9f69c51}
+
+\begin{DoxyCompactList}\small\item\em Contains the serverconnection. \end{DoxyCompactList}\item 
+\hypertarget{classCallBackManager_a144945c3b30a7946674393b412746f8f}{\hyperlink{classEventManager}{Event\-Manager} $\ast$ \hyperlink{classCallBackManager_a144945c3b30a7946674393b412746f8f}{events}}\label{classCallBackManager_a144945c3b30a7946674393b412746f8f}
+
+\begin{DoxyCompactList}\small\item\em Contains the event manager. \end{DoxyCompactList}\item 
+\hypertarget{classCallBackManager_a26e135142b37e3b02b72aa7a091ef854}{std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$ \hyperlink{classCallBackManager_a26e135142b37e3b02b72aa7a091ef854}{players}}\label{classCallBackManager_a26e135142b37e3b02b72aa7a091ef854}
+
+\begin{DoxyCompactList}\small\item\em Contains the list of players currently on the server. \end{DoxyCompactList}\item 
+\hypertarget{classCallBackManager_afad9b6092db2e3f98711d8e6ba6ff612}{std\-::map$<$ std\-::string, \hyperlink{structMap}{Map} $>$ $\ast$ \hyperlink{classCallBackManager_afad9b6092db2e3f98711d8e6ba6ff612}{maps}}\label{classCallBackManager_afad9b6092db2e3f98711d8e6ba6ff612}
+
+\begin{DoxyCompactList}\small\item\em Contains the list of players currently on the server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Handles callbacks from the server. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCallBackManager_aaba219c50eef1526a771f1606cf24396}{\index{Call\-Back\-Manager@{Call\-Back\-Manager}!Call\-Back\-Manager@{Call\-Back\-Manager}}
+\index{Call\-Back\-Manager@{Call\-Back\-Manager}!CallBackManager@{Call\-Back\-Manager}}
+\subsubsection[{Call\-Back\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}Call\-Back\-Manager\-::\-Call\-Back\-Manager (
+\begin{DoxyParamCaption}
+\item[{{\bf Gbx\-Remote} $\ast$}]{server\-Ptr, }
+\item[{{\bf Event\-Manager} $\ast$}]{event\-Manager\-Ptr, }
+\item[{std\-::map$<$ std\-::string, {\bf Player} $>$ $\ast$}]{player\-List, }
+\item[{std\-::map$<$ std\-::string, {\bf Map} $>$ $\ast$}]{map\-List}
+\end{DoxyParamCaption}
+)}}\label{classCallBackManager_aaba219c50eef1526a771f1606cf24396}
+Constructor takes pointers to playerlist and maplist to keep them updated.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000001}{Todo}]Replace pointer to \hyperlink{classGbxRemote}{Gbx\-Remote} with pointer to \hyperlink{classMethods}{Methods}.\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em server\-Ptr} & Pointer to the \hyperlink{classGbxRemote}{Gbx\-Remote}. \\
+\hline
+{\em event\-Manager\-Ptr} & Pointer to the \hyperlink{classEventManager}{Event\-Manager}. \\
+\hline
+{\em player\-List} & Pointer to playerlist. \\
+\hline
+{\em map\-List} & Pointer to maplist. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCallBackManager_a0a106f538862503a6c5b268a75d18e7a}{\index{Call\-Back\-Manager@{Call\-Back\-Manager}!Handle\-Begin\-Map@{Handle\-Begin\-Map}}
+\index{Handle\-Begin\-Map@{Handle\-Begin\-Map}!CallBackManager@{Call\-Back\-Manager}}
+\subsubsection[{Handle\-Begin\-Map}]{\setlength{\rightskip}{0pt plus 5cm}void Call\-Back\-Manager\-::\-Handle\-Begin\-Map (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Gbx\-Response\-Parameter} $>$}]{parameters}
+\end{DoxyParamCaption}
+)}}\label{classCallBackManager_a0a106f538862503a6c5b268a75d18e7a}
+
+
+Handles Begin\-Map callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & List with method parameters. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCallBackManager_ad741782611d10c7a67e6d1a8630cc605}{\index{Call\-Back\-Manager@{Call\-Back\-Manager}!Handle\-Begin\-Match@{Handle\-Begin\-Match}}
+\index{Handle\-Begin\-Match@{Handle\-Begin\-Match}!CallBackManager@{Call\-Back\-Manager}}
+\subsubsection[{Handle\-Begin\-Match}]{\setlength{\rightskip}{0pt plus 5cm}void Call\-Back\-Manager\-::\-Handle\-Begin\-Match (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Gbx\-Response\-Parameter} $>$}]{parameters}
+\end{DoxyParamCaption}
+)}}\label{classCallBackManager_ad741782611d10c7a67e6d1a8630cc605}
+
+
+Handles Begin\-Match callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & List with method parameters. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCallBackManager_a04ae5c8b9c11709fe19229037f891902}{\index{Call\-Back\-Manager@{Call\-Back\-Manager}!Handle\-Bill\-Updated@{Handle\-Bill\-Updated}}
+\index{Handle\-Bill\-Updated@{Handle\-Bill\-Updated}!CallBackManager@{Call\-Back\-Manager}}
+\subsubsection[{Handle\-Bill\-Updated}]{\setlength{\rightskip}{0pt plus 5cm}void Call\-Back\-Manager\-::\-Handle\-Bill\-Updated (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Gbx\-Response\-Parameter} $>$}]{parameters}
+\end{DoxyParamCaption}
+)}}\label{classCallBackManager_a04ae5c8b9c11709fe19229037f891902}
+
+
+Handles Bill\-Updated callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & List with method parameters. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCallBackManager_a8af5305f668aae4c563e7039b99015c2}{\index{Call\-Back\-Manager@{Call\-Back\-Manager}!Handle\-Call\-Back@{Handle\-Call\-Back}}
+\index{Handle\-Call\-Back@{Handle\-Call\-Back}!CallBackManager@{Call\-Back\-Manager}}
+\subsubsection[{Handle\-Call\-Back}]{\setlength{\rightskip}{0pt plus 5cm}void Call\-Back\-Manager\-::\-Handle\-Call\-Back (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{method\-Name, }
+\item[{std\-::vector$<$ {\bf Gbx\-Response\-Parameter} $>$}]{parameters}
+\end{DoxyParamCaption}
+)}}\label{classCallBackManager_a8af5305f668aae4c563e7039b99015c2}
+
+
+Handles callback (updates lists, calls plugin functions). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em method\-Name} & Name of the callback method. \\
+\hline
+{\em parameters} & List with method parameters. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCallBackManager_a75f7f6d423799a89d9988b23a22bed18}{\index{Call\-Back\-Manager@{Call\-Back\-Manager}!Handle\-Echo@{Handle\-Echo}}
+\index{Handle\-Echo@{Handle\-Echo}!CallBackManager@{Call\-Back\-Manager}}
+\subsubsection[{Handle\-Echo}]{\setlength{\rightskip}{0pt plus 5cm}void Call\-Back\-Manager\-::\-Handle\-Echo (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Gbx\-Response\-Parameter} $>$}]{parameters}
+\end{DoxyParamCaption}
+)}}\label{classCallBackManager_a75f7f6d423799a89d9988b23a22bed18}
+
+
+Handles Echo callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & List with method parameters. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCallBackManager_ac31e15ec293f178222e8f73dbce963da}{\index{Call\-Back\-Manager@{Call\-Back\-Manager}!Handle\-End\-Map@{Handle\-End\-Map}}
+\index{Handle\-End\-Map@{Handle\-End\-Map}!CallBackManager@{Call\-Back\-Manager}}
+\subsubsection[{Handle\-End\-Map}]{\setlength{\rightskip}{0pt plus 5cm}void Call\-Back\-Manager\-::\-Handle\-End\-Map (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Gbx\-Response\-Parameter} $>$}]{parameters}
+\end{DoxyParamCaption}
+)}}\label{classCallBackManager_ac31e15ec293f178222e8f73dbce963da}
+
+
+Handles End\-Map callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & List with method parameters. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCallBackManager_a1084f327bacd054c1a8204e3f5e90ccb}{\index{Call\-Back\-Manager@{Call\-Back\-Manager}!Handle\-End\-Match@{Handle\-End\-Match}}
+\index{Handle\-End\-Match@{Handle\-End\-Match}!CallBackManager@{Call\-Back\-Manager}}
+\subsubsection[{Handle\-End\-Match}]{\setlength{\rightskip}{0pt plus 5cm}void Call\-Back\-Manager\-::\-Handle\-End\-Match (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Gbx\-Response\-Parameter} $>$}]{parameters}
+\end{DoxyParamCaption}
+)}}\label{classCallBackManager_a1084f327bacd054c1a8204e3f5e90ccb}
+
+
+Handles End\-Match callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & List with method parameters. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCallBackManager_a5f8553720ce21a9d55dd6e5cce21fcc2}{\index{Call\-Back\-Manager@{Call\-Back\-Manager}!Handle\-Map\-List\-Modified@{Handle\-Map\-List\-Modified}}
+\index{Handle\-Map\-List\-Modified@{Handle\-Map\-List\-Modified}!CallBackManager@{Call\-Back\-Manager}}
+\subsubsection[{Handle\-Map\-List\-Modified}]{\setlength{\rightskip}{0pt plus 5cm}void Call\-Back\-Manager\-::\-Handle\-Map\-List\-Modified (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Gbx\-Response\-Parameter} $>$}]{parameters}
+\end{DoxyParamCaption}
+)}}\label{classCallBackManager_a5f8553720ce21a9d55dd6e5cce21fcc2}
+
+
+Handles Map\-List\-Modified callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & List with method parameters. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCallBackManager_a0919197cbeeb3c5a12230d44109a2cdb}{\index{Call\-Back\-Manager@{Call\-Back\-Manager}!Handle\-Player\-Chat@{Handle\-Player\-Chat}}
+\index{Handle\-Player\-Chat@{Handle\-Player\-Chat}!CallBackManager@{Call\-Back\-Manager}}
+\subsubsection[{Handle\-Player\-Chat}]{\setlength{\rightskip}{0pt plus 5cm}void Call\-Back\-Manager\-::\-Handle\-Player\-Chat (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Gbx\-Response\-Parameter} $>$}]{parameters}
+\end{DoxyParamCaption}
+)}}\label{classCallBackManager_a0919197cbeeb3c5a12230d44109a2cdb}
+
+
+Handles Player\-Chat callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & List with method parameters. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCallBackManager_a350cfbe5f81c1039c8db53e0d6fb5ec5}{\index{Call\-Back\-Manager@{Call\-Back\-Manager}!Handle\-Player\-Checkpoint@{Handle\-Player\-Checkpoint}}
+\index{Handle\-Player\-Checkpoint@{Handle\-Player\-Checkpoint}!CallBackManager@{Call\-Back\-Manager}}
+\subsubsection[{Handle\-Player\-Checkpoint}]{\setlength{\rightskip}{0pt plus 5cm}void Call\-Back\-Manager\-::\-Handle\-Player\-Checkpoint (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Gbx\-Response\-Parameter} $>$}]{parameters}
+\end{DoxyParamCaption}
+)}}\label{classCallBackManager_a350cfbe5f81c1039c8db53e0d6fb5ec5}
+
+
+Handles Player\-Checkpoint callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & List with method parameters. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCallBackManager_a48e888c80841cf757ebdd69726a8aed5}{\index{Call\-Back\-Manager@{Call\-Back\-Manager}!Handle\-Player\-Connect@{Handle\-Player\-Connect}}
+\index{Handle\-Player\-Connect@{Handle\-Player\-Connect}!CallBackManager@{Call\-Back\-Manager}}
+\subsubsection[{Handle\-Player\-Connect}]{\setlength{\rightskip}{0pt plus 5cm}void Call\-Back\-Manager\-::\-Handle\-Player\-Connect (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Gbx\-Response\-Parameter} $>$}]{parameters}
+\end{DoxyParamCaption}
+)}}\label{classCallBackManager_a48e888c80841cf757ebdd69726a8aed5}
+
+
+Handles Player\-Connect callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & List with method parameters. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCallBackManager_aa762cbece4e59d8395f5dbd857c53f17}{\index{Call\-Back\-Manager@{Call\-Back\-Manager}!Handle\-Player\-Disconnect@{Handle\-Player\-Disconnect}}
+\index{Handle\-Player\-Disconnect@{Handle\-Player\-Disconnect}!CallBackManager@{Call\-Back\-Manager}}
+\subsubsection[{Handle\-Player\-Disconnect}]{\setlength{\rightskip}{0pt plus 5cm}void Call\-Back\-Manager\-::\-Handle\-Player\-Disconnect (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Gbx\-Response\-Parameter} $>$}]{parameters}
+\end{DoxyParamCaption}
+)}}\label{classCallBackManager_aa762cbece4e59d8395f5dbd857c53f17}
+
+
+Handles Player\-Disconnect callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & List with method parameters. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCallBackManager_aef1c327689b54fa2323ab5508b561c43}{\index{Call\-Back\-Manager@{Call\-Back\-Manager}!Handle\-Player\-Finish@{Handle\-Player\-Finish}}
+\index{Handle\-Player\-Finish@{Handle\-Player\-Finish}!CallBackManager@{Call\-Back\-Manager}}
+\subsubsection[{Handle\-Player\-Finish}]{\setlength{\rightskip}{0pt plus 5cm}void Call\-Back\-Manager\-::\-Handle\-Player\-Finish (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Gbx\-Response\-Parameter} $>$}]{parameters}
+\end{DoxyParamCaption}
+)}}\label{classCallBackManager_aef1c327689b54fa2323ab5508b561c43}
+
+
+Handles Player\-Finish callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & List with method parameters. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCallBackManager_a8e3a29366a205d0fbeb2bafb4226d0bd}{\index{Call\-Back\-Manager@{Call\-Back\-Manager}!Handle\-Player\-Incoherence@{Handle\-Player\-Incoherence}}
+\index{Handle\-Player\-Incoherence@{Handle\-Player\-Incoherence}!CallBackManager@{Call\-Back\-Manager}}
+\subsubsection[{Handle\-Player\-Incoherence}]{\setlength{\rightskip}{0pt plus 5cm}void Call\-Back\-Manager\-::\-Handle\-Player\-Incoherence (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Gbx\-Response\-Parameter} $>$}]{parameters}
+\end{DoxyParamCaption}
+)}}\label{classCallBackManager_a8e3a29366a205d0fbeb2bafb4226d0bd}
+
+
+Handles Player\-Incoherence callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & List with method parameters. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCallBackManager_a0373533b769d15667a66c1607369cfff}{\index{Call\-Back\-Manager@{Call\-Back\-Manager}!Handle\-Player\-Info\-Changed@{Handle\-Player\-Info\-Changed}}
+\index{Handle\-Player\-Info\-Changed@{Handle\-Player\-Info\-Changed}!CallBackManager@{Call\-Back\-Manager}}
+\subsubsection[{Handle\-Player\-Info\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Call\-Back\-Manager\-::\-Handle\-Player\-Info\-Changed (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Gbx\-Response\-Parameter} $>$}]{parameters}
+\end{DoxyParamCaption}
+)}}\label{classCallBackManager_a0373533b769d15667a66c1607369cfff}
+
+
+Handles Player\-Info\-Changed callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & List with method parameters. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCallBackManager_af4fcbb46d5e88bfdf34185b1d0c7d836}{\index{Call\-Back\-Manager@{Call\-Back\-Manager}!Handle\-Player\-Manialink\-Page\-Answer@{Handle\-Player\-Manialink\-Page\-Answer}}
+\index{Handle\-Player\-Manialink\-Page\-Answer@{Handle\-Player\-Manialink\-Page\-Answer}!CallBackManager@{Call\-Back\-Manager}}
+\subsubsection[{Handle\-Player\-Manialink\-Page\-Answer}]{\setlength{\rightskip}{0pt plus 5cm}void Call\-Back\-Manager\-::\-Handle\-Player\-Manialink\-Page\-Answer (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Gbx\-Response\-Parameter} $>$}]{parameters}
+\end{DoxyParamCaption}
+)}}\label{classCallBackManager_af4fcbb46d5e88bfdf34185b1d0c7d836}
+
+
+Handles Player\-Manialink\-Page\-Answer callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & List with method parameters. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCallBackManager_acadb67344d217a028fe21163bf74e5cd}{\index{Call\-Back\-Manager@{Call\-Back\-Manager}!Handle\-Status\-Changed@{Handle\-Status\-Changed}}
+\index{Handle\-Status\-Changed@{Handle\-Status\-Changed}!CallBackManager@{Call\-Back\-Manager}}
+\subsubsection[{Handle\-Status\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Call\-Back\-Manager\-::\-Handle\-Status\-Changed (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Gbx\-Response\-Parameter} $>$}]{parameters}
+\end{DoxyParamCaption}
+)}}\label{classCallBackManager_acadb67344d217a028fe21163bf74e5cd}
+
+
+Handles Status\-Changed callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & List with method parameters. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCallBackManager_a7af7f38c8e0994fcbba2de59dee1921f}{\index{Call\-Back\-Manager@{Call\-Back\-Manager}!Handle\-Vote\-Updated@{Handle\-Vote\-Updated}}
+\index{Handle\-Vote\-Updated@{Handle\-Vote\-Updated}!CallBackManager@{Call\-Back\-Manager}}
+\subsubsection[{Handle\-Vote\-Updated}]{\setlength{\rightskip}{0pt plus 5cm}void Call\-Back\-Manager\-::\-Handle\-Vote\-Updated (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Gbx\-Response\-Parameter} $>$}]{parameters}
+\end{DoxyParamCaption}
+)}}\label{classCallBackManager_a7af7f38c8e0994fcbba2de59dee1921f}
+
+
+Handles Vote\-Updated callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & List with method parameters. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Call\-Backs/Call\-Back\-Manager.\-h\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Call\-Backs/Call\-Back\-Manager.\-cpp\end{DoxyCompactItemize}

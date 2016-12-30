@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -101,20 +101,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa06aa73544aa343e42a5f19434a05928"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxMessage.html#aa06aa73544aa343e42a5f19434a05928">GbxMessage</a> (std::string methodName, <a class="el" href="classGbxParameters.html">GbxParameters</a> *parameters=NULL)</td></tr>
 <tr class="memdesc:aa06aa73544aa343e42a5f19434a05928"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds XML message.  <a href="#aa06aa73544aa343e42a5f19434a05928">More...</a><br/></td></tr>
 <tr class="separator:aa06aa73544aa343e42a5f19434a05928"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53e00a162c293251bef476ad74d0134c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxMessage.html#a53e00a162c293251bef476ad74d0134c">GetMethod</a> ()</td></tr>
-<tr class="memdesc:a53e00a162c293251bef476ad74d0134c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the method name.  <a href="#a53e00a162c293251bef476ad74d0134c">More...</a><br/></td></tr>
+<tr class="memitem:a53e00a162c293251bef476ad74d0134c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a53e00a162c293251bef476ad74d0134c"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxMessage.html#a53e00a162c293251bef476ad74d0134c">GetMethod</a> ()</td></tr>
+<tr class="memdesc:a53e00a162c293251bef476ad74d0134c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the method name. <br/></td></tr>
 <tr class="separator:a53e00a162c293251bef476ad74d0134c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac81e16efce7da483a696d6653e18c9d8"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxMessage.html#ac81e16efce7da483a696d6653e18c9d8">GetXml</a> ()</td></tr>
-<tr class="memdesc:ac81e16efce7da483a696d6653e18c9d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the created XML message.  <a href="#ac81e16efce7da483a696d6653e18c9d8">More...</a><br/></td></tr>
+<tr class="memitem:ac81e16efce7da483a696d6653e18c9d8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac81e16efce7da483a696d6653e18c9d8"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxMessage.html#ac81e16efce7da483a696d6653e18c9d8">GetXml</a> ()</td></tr>
+<tr class="memdesc:ac81e16efce7da483a696d6653e18c9d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the created XML message. <br/></td></tr>
 <tr class="separator:ac81e16efce7da483a696d6653e18c9d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a10b6118916999db98f28e3f495eef6b4"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxMessage.html#a10b6118916999db98f28e3f495eef6b4">method</a></td></tr>
-<tr class="memdesc:a10b6118916999db98f28e3f495eef6b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Server method name.  <a href="#a10b6118916999db98f28e3f495eef6b4">More...</a><br/></td></tr>
+<tr class="memitem:a10b6118916999db98f28e3f495eef6b4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a10b6118916999db98f28e3f495eef6b4"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxMessage.html#a10b6118916999db98f28e3f495eef6b4">method</a></td></tr>
+<tr class="memdesc:a10b6118916999db98f28e3f495eef6b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Server method name. <br/></td></tr>
 <tr class="separator:a10b6118916999db98f28e3f495eef6b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ea9adbeb3f1c104fa08fce0b1a4090d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxMessage.html#a6ea9adbeb3f1c104fa08fce0b1a4090d">xml</a></td></tr>
-<tr class="memdesc:a6ea9adbeb3f1c104fa08fce0b1a4090d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Created XML message.  <a href="#a6ea9adbeb3f1c104fa08fce0b1a4090d">More...</a><br/></td></tr>
+<tr class="memitem:a6ea9adbeb3f1c104fa08fce0b1a4090d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6ea9adbeb3f1c104fa08fce0b1a4090d"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxMessage.html#a6ea9adbeb3f1c104fa08fce0b1a4090d">xml</a></td></tr>
+<tr class="memdesc:a6ea9adbeb3f1c104fa08fce0b1a4090d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Created XML message. <br/></td></tr>
 <tr class="separator:a6ea9adbeb3f1c104fa08fce0b1a4090d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -155,94 +159,14 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a53e00a162c293251bef476ad74d0134c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string GbxMessage::GetMethod </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the method name. </p>
-
-</div>
-</div>
-<a class="anchor" id="ac81e16efce7da483a696d6653e18c9d8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string GbxMessage::GetXml </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the created XML message. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a10b6118916999db98f28e3f495eef6b4"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string GbxMessage::method</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Server method name. </p>
-
-</div>
-</div>
-<a class="anchor" id="a6ea9adbeb3f1c104fa08fce0b1a4090d"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string GbxMessage::xml</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Created XML message. </p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/travis/build/TheMaximum/mania-pp/src/GbxRemote/Message/<a class="el" href="GbxMessage_8h_source.html">GbxMessage.h</a></li>
-<li>/home/travis/build/TheMaximum/mania-pp/src/GbxRemote/Message/<a class="el" href="GbxMessage_8cpp.html">GbxMessage.cpp</a></li>
+<li>/home/travis/build/TheMaximum/mania-pp/src/GbxRemote/Message/GbxMessage.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 28 2016 00:52:17 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Dec 30 2016 22:29:46 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

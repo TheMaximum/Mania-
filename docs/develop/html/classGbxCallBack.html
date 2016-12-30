@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -115,94 +115,50 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9382de8d43cae9e7a9acd384146c2900"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxCallBack.html#a9382de8d43cae9e7a9acd384146c2900">SetRaw</a> (std::string callback)</td></tr>
 <tr class="memdesc:a9382de8d43cae9e7a9acd384146c2900"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the raw message value.  <a href="#a9382de8d43cae9e7a9acd384146c2900">More...</a><br/></td></tr>
 <tr class="separator:a9382de8d43cae9e7a9acd384146c2900"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa449d9a63899e1d1205e6ab916798ba6"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxServerResponse.html#aa449d9a63899e1d1205e6ab916798ba6">GetRaw</a> ()</td></tr>
-<tr class="memdesc:aa449d9a63899e1d1205e6ab916798ba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns raw response (XML).  <a href="#aa449d9a63899e1d1205e6ab916798ba6">More...</a><br/></td></tr>
+<tr class="memitem:aa449d9a63899e1d1205e6ab916798ba6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa449d9a63899e1d1205e6ab916798ba6"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxServerResponse.html#aa449d9a63899e1d1205e6ab916798ba6">GetRaw</a> ()</td></tr>
+<tr class="memdesc:aa449d9a63899e1d1205e6ab916798ba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns raw response (XML). <br/></td></tr>
 <tr class="separator:aa449d9a63899e1d1205e6ab916798ba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d42bdaaeff3368e1fab2984940d2a2c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classGbxResponseParameter.html">GbxResponseParameter</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxServerResponse.html#a6d42bdaaeff3368e1fab2984940d2a2c">GetParameters</a> ()</td></tr>
-<tr class="memdesc:a6d42bdaaeff3368e1fab2984940d2a2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the extracted parameters.  <a href="#a6d42bdaaeff3368e1fab2984940d2a2c">More...</a><br/></td></tr>
+<tr class="memitem:a6d42bdaaeff3368e1fab2984940d2a2c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6d42bdaaeff3368e1fab2984940d2a2c"></a>
+std::vector&lt; <a class="el" href="classGbxResponseParameter.html">GbxResponseParameter</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxServerResponse.html#a6d42bdaaeff3368e1fab2984940d2a2c">GetParameters</a> ()</td></tr>
+<tr class="memdesc:a6d42bdaaeff3368e1fab2984940d2a2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the extracted parameters. <br/></td></tr>
 <tr class="separator:a6d42bdaaeff3368e1fab2984940d2a2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a22433a652ce9d4c7e9b834aa60c93c37"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGbxResponseParameter.html">GbxResponseParameter</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxServerResponse.html#a22433a652ce9d4c7e9b834aa60c93c37">extractParam</a> (pugi::xml_node param)</td></tr>
-<tr class="memdesc:a22433a652ce9d4c7e9b834aa60c93c37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts parameters from the raw data (XML).  <a href="#a22433a652ce9d4c7e9b834aa60c93c37">More...</a><br/></td></tr>
+<tr class="memitem:a22433a652ce9d4c7e9b834aa60c93c37"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a22433a652ce9d4c7e9b834aa60c93c37"></a>
+<a class="el" href="classGbxResponseParameter.html">GbxResponseParameter</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxServerResponse.html#a22433a652ce9d4c7e9b834aa60c93c37">extractParam</a> (pugi::xml_node param)</td></tr>
+<tr class="memdesc:a22433a652ce9d4c7e9b834aa60c93c37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts parameters from the raw data (XML). <br/></td></tr>
 <tr class="separator:a22433a652ce9d4c7e9b834aa60c93c37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a91567866239d733819125c3b3b9948c6"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxServerResponse.html#a91567866239d733819125c3b3b9948c6">data</a></td></tr>
-<tr class="memdesc:a91567866239d733819125c3b3b9948c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw response data.  <a href="#a91567866239d733819125c3b3b9948c6">More...</a><br/></td></tr>
+<tr class="memitem:a91567866239d733819125c3b3b9948c6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a91567866239d733819125c3b3b9948c6"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxServerResponse.html#a91567866239d733819125c3b3b9948c6">data</a></td></tr>
+<tr class="memdesc:a91567866239d733819125c3b3b9948c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw response data. <br/></td></tr>
 <tr class="separator:a91567866239d733819125c3b3b9948c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfd80e7b92cf34e1f0cda88a11a1bed0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classGbxResponseParameter.html">GbxResponseParameter</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxServerResponse.html#acfd80e7b92cf34e1f0cda88a11a1bed0">parameters</a> = std::vector&lt;<a class="el" href="classGbxResponseParameter.html">GbxResponseParameter</a>&gt;()</td></tr>
-<tr class="memdesc:acfd80e7b92cf34e1f0cda88a11a1bed0"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of parameters.  <a href="#acfd80e7b92cf34e1f0cda88a11a1bed0">More...</a><br/></td></tr>
+<tr class="memitem:acfd80e7b92cf34e1f0cda88a11a1bed0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acfd80e7b92cf34e1f0cda88a11a1bed0"></a>
+std::vector&lt; <a class="el" href="classGbxResponseParameter.html">GbxResponseParameter</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxServerResponse.html#acfd80e7b92cf34e1f0cda88a11a1bed0">parameters</a> = std::vector&lt;<a class="el" href="classGbxResponseParameter.html">GbxResponseParameter</a>&gt;()</td></tr>
+<tr class="memdesc:acfd80e7b92cf34e1f0cda88a11a1bed0"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of parameters. <br/></td></tr>
 <tr class="separator:acfd80e7b92cf34e1f0cda88a11a1bed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a0a9b9db5ebdc8040058b542fb51283d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxCallBack.html#a0a9b9db5ebdc8040058b542fb51283d7">extractParameters</a> ()</td></tr>
-<tr class="memdesc:a0a9b9db5ebdc8040058b542fb51283d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts parameters from the raw data (XML).  <a href="#a0a9b9db5ebdc8040058b542fb51283d7">More...</a><br/></td></tr>
+<tr class="memitem:a0a9b9db5ebdc8040058b542fb51283d7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0a9b9db5ebdc8040058b542fb51283d7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxCallBack.html#a0a9b9db5ebdc8040058b542fb51283d7">extractParameters</a> ()</td></tr>
+<tr class="memdesc:a0a9b9db5ebdc8040058b542fb51283d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts parameters from the raw data (XML). <br/></td></tr>
 <tr class="separator:a0a9b9db5ebdc8040058b542fb51283d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a8c793be5cc61e7fecef301ea6932f840"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxCallBack.html#a8c793be5cc61e7fecef301ea6932f840">methodName</a></td></tr>
-<tr class="memdesc:a8c793be5cc61e7fecef301ea6932f840"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method name.  <a href="#a8c793be5cc61e7fecef301ea6932f840">More...</a><br/></td></tr>
+<tr class="memitem:a8c793be5cc61e7fecef301ea6932f840"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8c793be5cc61e7fecef301ea6932f840"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxCallBack.html#a8c793be5cc61e7fecef301ea6932f840">methodName</a></td></tr>
+<tr class="memdesc:a8c793be5cc61e7fecef301ea6932f840"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method name. <br/></td></tr>
 <tr class="separator:a8c793be5cc61e7fecef301ea6932f840"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>CallBack from server, de-XML-fies the callback. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a22433a652ce9d4c7e9b834aa60c93c37"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classGbxResponseParameter.html">GbxResponseParameter</a> GbxServerResponse::extractParam </td>
-          <td>(</td>
-          <td class="paramtype">pugi::xml_node&#160;</td>
-          <td class="paramname"><em>param</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Extracts parameters from the raw data (XML). </p>
-
-</div>
-</div>
-<a class="anchor" id="a0a9b9db5ebdc8040058b542fb51283d7"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GbxCallBack::extractParameters </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Extracts parameters from the raw data (XML). </p>
-
-</div>
-</div>
 <a class="anchor" id="aaf01544527ca0559478221780b3f32f6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -216,56 +172,6 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Returns the method name. </p>
-
-</div>
-</div>
-<a class="anchor" id="a6d42bdaaeff3368e1fab2984940d2a2c"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="classGbxResponseParameter.html">GbxResponseParameter</a> &gt; GbxServerResponse::GetParameters </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the extracted parameters. </p>
-
-</div>
-</div>
-<a class="anchor" id="aa449d9a63899e1d1205e6ab916798ba6"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string GbxServerResponse::GetRaw </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns raw response (XML). </p>
 
 </div>
 </div>
@@ -293,81 +199,14 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a91567866239d733819125c3b3b9948c6"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string GbxServerResponse::data</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Raw response data. </p>
-
-</div>
-</div>
-<a class="anchor" id="a8c793be5cc61e7fecef301ea6932f840"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string GbxCallBack::methodName</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Method name. </p>
-
-</div>
-</div>
-<a class="anchor" id="acfd80e7b92cf34e1f0cda88a11a1bed0"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="classGbxResponseParameter.html">GbxResponseParameter</a>&gt; GbxServerResponse::parameters = std::vector&lt;<a class="el" href="classGbxResponseParameter.html">GbxResponseParameter</a>&gt;()</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>List of parameters. </p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/travis/build/TheMaximum/mania-pp/src/GbxRemote/CallBack/<a class="el" href="GbxCallBack_8h_source.html">GbxCallBack.h</a></li>
-<li>/home/travis/build/TheMaximum/mania-pp/src/GbxRemote/CallBack/<a class="el" href="GbxCallBack_8cpp.html">GbxCallBack.cpp</a></li>
+<li>/home/travis/build/TheMaximum/mania-pp/src/GbxRemote/CallBack/GbxCallBack.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 28 2016 00:52:17 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Dec 30 2016 22:29:46 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

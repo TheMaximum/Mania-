@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>This is the complete list of members for <a class="el" href="classGbxRemote.html">GbxRemote</a>, including all inherited members.</p>
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="classGbxRemote.html#a81d3c0c70ab7f5e585840e9978ee900e">apiVersion</a></td><td class="entry"><a class="el" href="classGbxRemote.html">GbxRemote</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classGbxRemote.html#a144e618f3f124b77054165d2d8519eee">Build</a></td><td class="entry"><a class="el" href="classGbxRemote.html">GbxRemote</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classGbxRemote.html#a56662ea222345c645ae897e056b5c8c8">connected</a></td><td class="entry"><a class="el" href="classGbxRemote.html">GbxRemote</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classGbxRemote.html#a08d047d7e0d4b746fc036c1aa02f0d17">currentCallBacks</a></td><td class="entry"><a class="el" href="classGbxRemote.html">GbxRemote</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr><td class="entry"><a class="el" href="classGbxRemote.html#ae5d44c3729140c1eba5e850cb5e5e7bd">currentError</a></td><td class="entry"><a class="el" href="classGbxRemote.html">GbxRemote</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classGbxRemote.html#a3a3a0af1a692a801a33baa292b877dc2">currentResponse</a></td><td class="entry"><a class="el" href="classGbxRemote.html">GbxRemote</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
@@ -102,21 +102,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <tr class="even"><td class="entry"><a class="el" href="classGbxRemote.html#a5bd6e1dc2118f7e369e72592b3c9322a">HandleCallBack</a>(std::string data)</td><td class="entry"><a class="el" href="classGbxRemote.html">GbxRemote</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classGbxRemote.html#a24d9d0df923ed85010f53dcb43c2b977">Init</a>(int port)</td><td class="entry"><a class="el" href="classGbxRemote.html">GbxRemote</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classGbxRemote.html#aa9a57e73f2f5ebbde90484503bd0d16d">InitWithIp</a>(std::string address, int port)</td><td class="entry"><a class="el" href="classGbxRemote.html">GbxRemote</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classGbxRemote.html#aca6e6ee86b785451d52735daf222cc6d">Login</a></td><td class="entry"><a class="el" href="classGbxRemote.html">GbxRemote</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classGbxRemote.html#a0ce9914944a8f0d35f5d1bb0ddb8d292">Platform</a></td><td class="entry"><a class="el" href="classGbxRemote.html">GbxRemote</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classGbxRemote.html#a5ee5c7087085cb6cb2e7bc6135ff0646">protocol</a></td><td class="entry"><a class="el" href="classGbxRemote.html">GbxRemote</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classGbxRemote.html#abf869640136958fc4756b3a60275a285">Query</a>(GbxMessage *query)</td><td class="entry"><a class="el" href="classGbxRemote.html">GbxRemote</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classGbxRemote.html#ac595861af2f4d7349ce3841f0758507d">ReadCallBacks</a>()</td><td class="entry"><a class="el" href="classGbxRemote.html">GbxRemote</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classGbxRemote.html#a81ba62f042948610a3cf720316e22076">ResetCBResponses</a>()</td><td class="entry"><a class="el" href="classGbxRemote.html">GbxRemote</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classGbxRemote.html#a0b0b212b945da4266fb645affdac81cb">server</a></td><td class="entry"><a class="el" href="classGbxRemote.html">GbxRemote</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classGbxRemote.html#a6fa8ca2d48aae84884cab98a0adf4360">Terminate</a>()</td><td class="entry"><a class="el" href="classGbxRemote.html">GbxRemote</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classGbxRemote.html#a12d98a9add104392142ec8494dd022df">TitleId</a></td><td class="entry"><a class="el" href="classGbxRemote.html">GbxRemote</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classGbxRemote.html#a654b4cae6e4eed717d602700a90fcc27">Version</a></td><td class="entry"><a class="el" href="classGbxRemote.html">GbxRemote</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classGbxRemote.html#a9ac65a51eb6f9127337b4f99841cfe2d">~GbxRemote</a>()</td><td class="entry"><a class="el" href="classGbxRemote.html">GbxRemote</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 28 2016 00:52:17 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Dec 30 2016 22:29:46 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -15,10 +15,14 @@ Utility to print information to the console.
 \item 
 static void \hyperlink{classLogging_a171703bedcbf215f0e6334f29c8281b5}{Print\-Error} (\hyperlink{structGbxError}{Gbx\-Error} $\ast$error)
 \begin{DoxyCompactList}\small\item\em Prints error to console. \end{DoxyCompactList}\item 
-static void \hyperlink{classLogging_a889f2ad8f991afdf0959cb1cad736fa7}{Print\-O\-K\-Flush} ()
+\hypertarget{classLogging_a889f2ad8f991afdf0959cb1cad736fa7}{static void \hyperlink{classLogging_a889f2ad8f991afdf0959cb1cad736fa7}{Print\-O\-K\-Flush} ()}\label{classLogging_a889f2ad8f991afdf0959cb1cad736fa7}
+
 \begin{DoxyCompactList}\small\item\em Prints O\-K. in \mbox{[} \mbox{]}-\/spaces in console. \end{DoxyCompactList}\item 
-static void \hyperlink{classLogging_add0483bd14aef74ec988606cd7dbfc4b}{Print\-Failed\-Flush} ()
-\begin{DoxyCompactList}\small\item\em Prints Failed! in \mbox{[} \mbox{]}-\/spaces in console. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\hypertarget{classLogging_add0483bd14aef74ec988606cd7dbfc4b}{static void \hyperlink{classLogging_add0483bd14aef74ec988606cd7dbfc4b}{Print\-Failed\-Flush} ()}\label{classLogging_add0483bd14aef74ec988606cd7dbfc4b}
+
+\begin{DoxyCompactList}\small\item\em Prints Failed! in \mbox{[} \mbox{]}-\/spaces in console. \end{DoxyCompactList}\item 
+static void \hyperlink{classLogging_a1f8609052e40055fb9ef3ddd40d0620e}{Print\-Parameter} (\hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} parameter, int param\-Id, std\-::string spaces=\char`\"{}    \char`\"{}, std\-::string parameter\-Name=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Prints a \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} (for D\-E\-B\-U\-G purposes). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -41,30 +45,33 @@ Prints error to console.
 {\em error} & Error structure. \\
 \hline
 \end{DoxyParams}
-\hypertarget{classLogging_add0483bd14aef74ec988606cd7dbfc4b}{\index{Logging@{Logging}!Print\-Failed\-Flush@{Print\-Failed\-Flush}}
-\index{Print\-Failed\-Flush@{Print\-Failed\-Flush}!Logging@{Logging}}
-\subsubsection[{Print\-Failed\-Flush}]{\setlength{\rightskip}{0pt plus 5cm}static void Logging\-::\-Print\-Failed\-Flush (
+\hypertarget{classLogging_a1f8609052e40055fb9ef3ddd40d0620e}{\index{Logging@{Logging}!Print\-Parameter@{Print\-Parameter}}
+\index{Print\-Parameter@{Print\-Parameter}!Logging@{Logging}}
+\subsubsection[{Print\-Parameter}]{\setlength{\rightskip}{0pt plus 5cm}static void Logging\-::\-Print\-Parameter (
 \begin{DoxyParamCaption}
-{}
+\item[{{\bf Gbx\-Response\-Parameter}}]{parameter, }
+\item[{int}]{param\-Id, }
+\item[{std\-::string}]{spaces = {\ttfamily \char`\"{}~~~~\char`\"{}}, }
+\item[{std\-::string}]{parameter\-Name = {\ttfamily \char`\"{}\char`\"{}}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classLogging_add0483bd14aef74ec988606cd7dbfc4b}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classLogging_a1f8609052e40055fb9ef3ddd40d0620e}
 
 
-Prints Failed! in \mbox{[} \mbox{]}-\/spaces in console. 
-
-\hypertarget{classLogging_a889f2ad8f991afdf0959cb1cad736fa7}{\index{Logging@{Logging}!Print\-O\-K\-Flush@{Print\-O\-K\-Flush}}
-\index{Print\-O\-K\-Flush@{Print\-O\-K\-Flush}!Logging@{Logging}}
-\subsubsection[{Print\-O\-K\-Flush}]{\setlength{\rightskip}{0pt plus 5cm}static void Logging\-::\-Print\-O\-K\-Flush (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classLogging_a889f2ad8f991afdf0959cb1cad736fa7}
+Prints a \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} (for D\-E\-B\-U\-G purposes). 
 
 
-Prints O\-K. in \mbox{[} \mbox{]}-\/spaces in console. 
-
+\begin{DoxyParams}{Parameters}
+{\em parameter} & Parameter to be printed. \\
+\hline
+{\em param\-Id} & Number of the parameter. \\
+\hline
+{\em spaces} & Spaces to be put before the parameter information. \\
+\hline
+{\em parameter\-Name} & Name of the parameter (struct value only). \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
-/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Utils/\hyperlink{Logging_8h}{Logging.\-h}\end{DoxyCompactItemize}
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Utils/Logging.\-h\end{DoxyCompactItemize}

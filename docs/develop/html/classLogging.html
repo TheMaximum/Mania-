@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -100,12 +100,17 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a171703bedcbf215f0e6334f29c8281b5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogging.html#a171703bedcbf215f0e6334f29c8281b5">PrintError</a> (<a class="el" href="structGbxError.html">GbxError</a> *error)</td></tr>
 <tr class="memdesc:a171703bedcbf215f0e6334f29c8281b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints error to console.  <a href="#a171703bedcbf215f0e6334f29c8281b5">More...</a><br/></td></tr>
 <tr class="separator:a171703bedcbf215f0e6334f29c8281b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a889f2ad8f991afdf0959cb1cad736fa7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogging.html#a889f2ad8f991afdf0959cb1cad736fa7">PrintOKFlush</a> ()</td></tr>
-<tr class="memdesc:a889f2ad8f991afdf0959cb1cad736fa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints OK. in [ ]-spaces in console.  <a href="#a889f2ad8f991afdf0959cb1cad736fa7">More...</a><br/></td></tr>
+<tr class="memitem:a889f2ad8f991afdf0959cb1cad736fa7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a889f2ad8f991afdf0959cb1cad736fa7"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogging.html#a889f2ad8f991afdf0959cb1cad736fa7">PrintOKFlush</a> ()</td></tr>
+<tr class="memdesc:a889f2ad8f991afdf0959cb1cad736fa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints OK. in [ ]-spaces in console. <br/></td></tr>
 <tr class="separator:a889f2ad8f991afdf0959cb1cad736fa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add0483bd14aef74ec988606cd7dbfc4b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogging.html#add0483bd14aef74ec988606cd7dbfc4b">PrintFailedFlush</a> ()</td></tr>
-<tr class="memdesc:add0483bd14aef74ec988606cd7dbfc4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints Failed! in [ ]-spaces in console.  <a href="#add0483bd14aef74ec988606cd7dbfc4b">More...</a><br/></td></tr>
+<tr class="memitem:add0483bd14aef74ec988606cd7dbfc4b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="add0483bd14aef74ec988606cd7dbfc4b"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogging.html#add0483bd14aef74ec988606cd7dbfc4b">PrintFailedFlush</a> ()</td></tr>
+<tr class="memdesc:add0483bd14aef74ec988606cd7dbfc4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints Failed! in [ ]-spaces in console. <br/></td></tr>
 <tr class="separator:add0483bd14aef74ec988606cd7dbfc4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f8609052e40055fb9ef3ddd40d0620e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogging.html#a1f8609052e40055fb9ef3ddd40d0620e">PrintParameter</a> (<a class="el" href="classGbxResponseParameter.html">GbxResponseParameter</a> parameter, int paramId, std::string spaces=&quot;    &quot;, std::string parameterName=&quot;&quot;)</td></tr>
+<tr class="memdesc:a1f8609052e40055fb9ef3ddd40d0620e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a <a class="el" href="classGbxResponseParameter.html" title="Parameter deducted from server response. ">GbxResponseParameter</a> (for DEBUG purposes).  <a href="#a1f8609052e40055fb9ef3ddd40d0620e">More...</a><br/></td></tr>
+<tr class="separator:a1f8609052e40055fb9ef3ddd40d0620e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Utility to print information to the console. </p>
@@ -142,7 +147,7 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="add0483bd14aef74ec988606cd7dbfc4b"></a>
+<a class="anchor" id="a1f8609052e40055fb9ef3ddd40d0620e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -150,10 +155,33 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void Logging::PrintFailedFlush </td>
+          <td class="memname">static void Logging::PrintParameter </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classGbxResponseParameter.html">GbxResponseParameter</a>&#160;</td>
+          <td class="paramname"><em>parameter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>paramId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>spaces</em> = <code>&quot;&#160;&#160;&#160;&#160;&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>parameterName</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -163,32 +191,16 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Prints Failed! in [ ]-spaces in console. </p>
-
-</div>
-</div>
-<a class="anchor" id="a889f2ad8f991afdf0959cb1cad736fa7"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void Logging::PrintOKFlush </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Prints OK. in [ ]-spaces in console. </p>
+<p>Prints a <a class="el" href="classGbxResponseParameter.html" title="Parameter deducted from server response. ">GbxResponseParameter</a> (for DEBUG purposes). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parameter</td><td>Parameter to be printed. </td></tr>
+    <tr><td class="paramname">paramId</td><td>Number of the parameter. </td></tr>
+    <tr><td class="paramname">spaces</td><td>Spaces to be put before the parameter information. </td></tr>
+    <tr><td class="paramname">parameterName</td><td>Name of the parameter (struct value only). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -198,7 +210,7 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 28 2016 00:52:17 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Dec 30 2016 22:29:46 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

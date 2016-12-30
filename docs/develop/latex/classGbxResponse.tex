@@ -19,76 +19,49 @@ Inheritance diagram for Gbx\-Response\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classGbxResponse_a27e6c9c3452f2a0c90a33177af84236b}{$\sim$\-Gbx\-Response} ()
-\item 
 \hyperlink{structGbxError}{Gbx\-Error} $\ast$ \hyperlink{classGbxResponse_aaeb8f1ccd18ab88799d93ea78befc0df}{Get\-Fault} ()
 \item 
 void \hyperlink{classGbxResponse_aaf63a008c45be79f900e1131d0fb5565}{Set\-Raw} (std\-::string response)
 \begin{DoxyCompactList}\small\item\em Sets the raw message value. \end{DoxyCompactList}\item 
-std\-::string \hyperlink{classGbxServerResponse_aa449d9a63899e1d1205e6ab916798ba6}{Get\-Raw} ()
+\hypertarget{classGbxServerResponse_aa449d9a63899e1d1205e6ab916798ba6}{std\-::string \hyperlink{classGbxServerResponse_aa449d9a63899e1d1205e6ab916798ba6}{Get\-Raw} ()}\label{classGbxServerResponse_aa449d9a63899e1d1205e6ab916798ba6}
+
 \begin{DoxyCompactList}\small\item\em Returns raw response (X\-M\-L). \end{DoxyCompactList}\item 
-std\-::vector$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ \hyperlink{classGbxServerResponse_a6d42bdaaeff3368e1fab2984940d2a2c}{Get\-Parameters} ()
+\hypertarget{classGbxServerResponse_a6d42bdaaeff3368e1fab2984940d2a2c}{std\-::vector$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ \hyperlink{classGbxServerResponse_a6d42bdaaeff3368e1fab2984940d2a2c}{Get\-Parameters} ()}\label{classGbxServerResponse_a6d42bdaaeff3368e1fab2984940d2a2c}
+
 \begin{DoxyCompactList}\small\item\em Returns the extracted parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} \hyperlink{classGbxServerResponse_a22433a652ce9d4c7e9b834aa60c93c37}{extract\-Param} (pugi\-::xml\-\_\-node param)
+\hypertarget{classGbxServerResponse_a22433a652ce9d4c7e9b834aa60c93c37}{\hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} \hyperlink{classGbxServerResponse_a22433a652ce9d4c7e9b834aa60c93c37}{extract\-Param} (pugi\-::xml\-\_\-node param)}\label{classGbxServerResponse_a22433a652ce9d4c7e9b834aa60c93c37}
+
 \begin{DoxyCompactList}\small\item\em Extracts parameters from the raw data (X\-M\-L). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-std\-::string \hyperlink{classGbxServerResponse_a91567866239d733819125c3b3b9948c6}{data}
+\hypertarget{classGbxServerResponse_a91567866239d733819125c3b3b9948c6}{std\-::string \hyperlink{classGbxServerResponse_a91567866239d733819125c3b3b9948c6}{data}}\label{classGbxServerResponse_a91567866239d733819125c3b3b9948c6}
+
 \begin{DoxyCompactList}\small\item\em Raw response data. \end{DoxyCompactList}\item 
-std\-::vector$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ \hyperlink{classGbxServerResponse_acfd80e7b92cf34e1f0cda88a11a1bed0}{parameters} = std\-::vector$<$\hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter}$>$()
+\hypertarget{classGbxServerResponse_acfd80e7b92cf34e1f0cda88a11a1bed0}{std\-::vector$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ \hyperlink{classGbxServerResponse_acfd80e7b92cf34e1f0cda88a11a1bed0}{parameters} = std\-::vector$<$\hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter}$>$()}\label{classGbxServerResponse_acfd80e7b92cf34e1f0cda88a11a1bed0}
+
 \begin{DoxyCompactList}\small\item\em List of parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classGbxResponse_a3cd4d6c5458fcd5359b8f5d9921a2a9b}{extract\-Parameters} ()
+\hypertarget{classGbxResponse_a3cd4d6c5458fcd5359b8f5d9921a2a9b}{void \hyperlink{classGbxResponse_a3cd4d6c5458fcd5359b8f5d9921a2a9b}{extract\-Parameters} ()}\label{classGbxResponse_a3cd4d6c5458fcd5359b8f5d9921a2a9b}
+
 \begin{DoxyCompactList}\small\item\em Extracts parameters from the raw data (X\-M\-L). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{structGbxError}{Gbx\-Error} $\ast$ \hyperlink{classGbxResponse_ad896e7447681008320ad9945b57a92ad}{fault} = new \hyperlink{structGbxError}{Gbx\-Error}
+\hypertarget{classGbxResponse_ad896e7447681008320ad9945b57a92ad}{\hyperlink{structGbxError}{Gbx\-Error} $\ast$ \hyperlink{classGbxResponse_ad896e7447681008320ad9945b57a92ad}{fault} = new \hyperlink{structGbxError}{Gbx\-Error}}\label{classGbxResponse_ad896e7447681008320ad9945b57a92ad}
+
 \begin{DoxyCompactList}\small\item\em Current fault (error). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Response from server, de-\/\-X\-M\-L-\/fies the response. 
 
-\subsection{Constructor \& Destructor Documentation}
-\hypertarget{classGbxResponse_a27e6c9c3452f2a0c90a33177af84236b}{\index{Gbx\-Response@{Gbx\-Response}!$\sim$\-Gbx\-Response@{$\sim$\-Gbx\-Response}}
-\index{$\sim$\-Gbx\-Response@{$\sim$\-Gbx\-Response}!GbxResponse@{Gbx\-Response}}
-\subsubsection[{$\sim$\-Gbx\-Response}]{\setlength{\rightskip}{0pt plus 5cm}Gbx\-Response\-::$\sim$\-Gbx\-Response (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{classGbxResponse_a27e6c9c3452f2a0c90a33177af84236b}
-
-
 \subsection{Member Function Documentation}
-\hypertarget{classGbxServerResponse_a22433a652ce9d4c7e9b834aa60c93c37}{\index{Gbx\-Response@{Gbx\-Response}!extract\-Param@{extract\-Param}}
-\index{extract\-Param@{extract\-Param}!GbxResponse@{Gbx\-Response}}
-\subsubsection[{extract\-Param}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gbx\-Response\-Parameter} Gbx\-Server\-Response\-::extract\-Param (
-\begin{DoxyParamCaption}
-\item[{pugi\-::xml\-\_\-node}]{param}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classGbxServerResponse_a22433a652ce9d4c7e9b834aa60c93c37}
-
-
-Extracts parameters from the raw data (X\-M\-L). 
-
-\hypertarget{classGbxResponse_a3cd4d6c5458fcd5359b8f5d9921a2a9b}{\index{Gbx\-Response@{Gbx\-Response}!extract\-Parameters@{extract\-Parameters}}
-\index{extract\-Parameters@{extract\-Parameters}!GbxResponse@{Gbx\-Response}}
-\subsubsection[{extract\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void Gbx\-Response\-::extract\-Parameters (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}}\label{classGbxResponse_a3cd4d6c5458fcd5359b8f5d9921a2a9b}
-
-
-Extracts parameters from the raw data (X\-M\-L). 
-
 \hypertarget{classGbxResponse_aaeb8f1ccd18ab88799d93ea78befc0df}{\index{Gbx\-Response@{Gbx\-Response}!Get\-Fault@{Get\-Fault}}
 \index{Get\-Fault@{Get\-Fault}!GbxResponse@{Gbx\-Response}}
 \subsubsection[{Get\-Fault}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gbx\-Error} $\ast$ Gbx\-Response\-::\-Get\-Fault (
@@ -96,29 +69,7 @@ Extracts parameters from the raw data (X\-M\-L).
 {}
 \end{DoxyParamCaption}
 )}}\label{classGbxResponse_aaeb8f1ccd18ab88799d93ea78befc0df}
-Returns whether the response is a fault. \hypertarget{classGbxServerResponse_a6d42bdaaeff3368e1fab2984940d2a2c}{\index{Gbx\-Response@{Gbx\-Response}!Get\-Parameters@{Get\-Parameters}}
-\index{Get\-Parameters@{Get\-Parameters}!GbxResponse@{Gbx\-Response}}
-\subsubsection[{Get\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf Gbx\-Response\-Parameter} $>$ Gbx\-Server\-Response\-::\-Get\-Parameters (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inherited]}}}\label{classGbxServerResponse_a6d42bdaaeff3368e1fab2984940d2a2c}
-
-
-Returns the extracted parameters. 
-
-\hypertarget{classGbxServerResponse_aa449d9a63899e1d1205e6ab916798ba6}{\index{Gbx\-Response@{Gbx\-Response}!Get\-Raw@{Get\-Raw}}
-\index{Get\-Raw@{Get\-Raw}!GbxResponse@{Gbx\-Response}}
-\subsubsection[{Get\-Raw}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gbx\-Server\-Response\-::\-Get\-Raw (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inherited]}}}\label{classGbxServerResponse_aa449d9a63899e1d1205e6ab916798ba6}
-
-
-Returns raw response (X\-M\-L). 
-
-\hypertarget{classGbxResponse_aaf63a008c45be79f900e1131d0fb5565}{\index{Gbx\-Response@{Gbx\-Response}!Set\-Raw@{Set\-Raw}}
+Returns whether the response is a fault. \hypertarget{classGbxResponse_aaf63a008c45be79f900e1131d0fb5565}{\index{Gbx\-Response@{Gbx\-Response}!Set\-Raw@{Set\-Raw}}
 \index{Set\-Raw@{Set\-Raw}!GbxResponse@{Gbx\-Response}}
 \subsubsection[{Set\-Raw}]{\setlength{\rightskip}{0pt plus 5cm}void Gbx\-Response\-::\-Set\-Raw (
 \begin{DoxyParamCaption}
@@ -136,31 +87,7 @@ Sets the raw message value.
 \end{DoxyParams}
 
 
-\subsection{Member Data Documentation}
-\hypertarget{classGbxServerResponse_a91567866239d733819125c3b3b9948c6}{\index{Gbx\-Response@{Gbx\-Response}!data@{data}}
-\index{data@{data}!GbxResponse@{Gbx\-Response}}
-\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gbx\-Server\-Response\-::data\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classGbxServerResponse_a91567866239d733819125c3b3b9948c6}
-
-
-Raw response data. 
-
-\hypertarget{classGbxResponse_ad896e7447681008320ad9945b57a92ad}{\index{Gbx\-Response@{Gbx\-Response}!fault@{fault}}
-\index{fault@{fault}!GbxResponse@{Gbx\-Response}}
-\subsubsection[{fault}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gbx\-Error}$\ast$ Gbx\-Response\-::fault = new {\bf Gbx\-Error}\hspace{0.3cm}{\ttfamily [private]}}}\label{classGbxResponse_ad896e7447681008320ad9945b57a92ad}
-
-
-Current fault (error). 
-
-\hypertarget{classGbxServerResponse_acfd80e7b92cf34e1f0cda88a11a1bed0}{\index{Gbx\-Response@{Gbx\-Response}!parameters@{parameters}}
-\index{parameters@{parameters}!GbxResponse@{Gbx\-Response}}
-\subsubsection[{parameters}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Gbx\-Response\-Parameter}$>$ Gbx\-Server\-Response\-::parameters = std\-::vector$<${\bf Gbx\-Response\-Parameter}$>$()\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classGbxServerResponse_acfd80e7b92cf34e1f0cda88a11a1bed0}
-
-
-List of parameters. 
-
-
-
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Gbx\-Remote/\-Response/\hyperlink{GbxResponse_8h}{Gbx\-Response.\-h}\item 
-/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Gbx\-Remote/\-Response/\hyperlink{GbxResponse_8cpp}{Gbx\-Response.\-cpp}\end{DoxyCompactItemize}
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Gbx\-Remote/\-Response/Gbx\-Response.\-h\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Gbx\-Remote/\-Response/Gbx\-Response.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,127 @@
+\hypertarget{classPluginManager}{\section{Plugin\-Manager Class Reference}
+\label{classPluginManager}\index{Plugin\-Manager@{Plugin\-Manager}}
+}
+
+
+Manages the plugins.  
+
+
+
+
+{\ttfamily \#include $<$Plugin\-Manager.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPluginManager_a206d856a7ded8cebce7421d09c1da20d}{Plugin\-Manager} (\hyperlink{classLogging}{Logging} $\ast$logging\-Ptr, \hyperlink{classMethods}{Methods} $\ast$methods\-Ptr, std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$players\-Ptr, std\-::map$<$ std\-::string, \hyperlink{structMap}{Map} $>$ $\ast$maps\-Ptr)
+\begin{DoxyCompactList}\small\item\em Initializes the pointers the plugins need. \end{DoxyCompactList}\item 
+\hypertarget{classPluginManager_ab657302ef5af357907ae11ad817f5dfc}{\hyperlink{classPluginManager_ab657302ef5af357907ae11ad817f5dfc}{$\sim$\-Plugin\-Manager} ()}\label{classPluginManager_ab657302ef5af357907ae11ad817f5dfc}
+
+\begin{DoxyCompactList}\small\item\em Destructor closes all open plugins. \end{DoxyCompactList}\item 
+void \hyperlink{classPluginManager_a7ed7485291babeed3109a1a364b6d308}{Set\-Event\-Manager} (\hyperlink{classEventManager}{Event\-Manager} $\ast$event\-Manager\-Ptr)
+\begin{DoxyCompactList}\small\item\em Sets the event manager to be used for callbacks. \end{DoxyCompactList}\item 
+void \hyperlink{classPluginManager_a0ff203ba125f85688fa752bf789418f0}{Load\-Plugins} (std\-::string plugins\-Folder=\char`\"{}./plugins\char`\"{})
+\begin{DoxyCompactList}\small\item\em Loads the plugins in the specified folder. \end{DoxyCompactList}\item 
+\hypertarget{classPluginManager_aba7e19d75b25ca1a91b92d95b173240f}{void \hyperlink{classPluginManager_aba7e19d75b25ca1a91b92d95b173240f}{Initialize\-Plugins} ()}\label{classPluginManager_aba7e19d75b25ca1a91b92d95b173240f}
+
+\begin{DoxyCompactList}\small\item\em Calls all Init() functions in the plugins (called after loading all plugins). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classPluginManager_a6e1d97e5b23f0d8f003a518b8b5fb7a1}{std\-::map$<$ std\-::string, \\*
+std\-::string $>$ \hyperlink{classPluginManager_a6e1d97e5b23f0d8f003a518b8b5fb7a1}{discover\-Plugins} (std\-::string plugins\-Folder)}\label{classPluginManager_a6e1d97e5b23f0d8f003a518b8b5fb7a1}
+
+\begin{DoxyCompactList}\small\item\em Disovers plugin (.so) files in the specified folder. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classPluginManager_a4a7dea3948d652d9a4428a237d5af805}{std\-::map$<$ std\-::string, \hyperlink{structPluginInfo}{Plugin\-Info} $>$ \hyperlink{classPluginManager_a4a7dea3948d652d9a4428a237d5af805}{plugins}}\label{classPluginManager_a4a7dea3948d652d9a4428a237d5af805}
+
+\begin{DoxyCompactList}\small\item\em Vector of loaded plugins. \end{DoxyCompactList}\item 
+\hypertarget{classPluginManager_a7966d86165aaa504ae4dd12f084d4cfa}{\hyperlink{classEventManager}{Event\-Manager} $\ast$ \hyperlink{classPluginManager_a7966d86165aaa504ae4dd12f084d4cfa}{events}}\label{classPluginManager_a7966d86165aaa504ae4dd12f084d4cfa}
+
+\begin{DoxyCompactList}\small\item\em Current instance of the \hyperlink{classEventManager}{Event\-Manager}. \end{DoxyCompactList}\item 
+\hypertarget{classPluginManager_a075528fc6c227b7a9f741d4f01706efc}{\hyperlink{classLogging}{Logging} $\ast$ \hyperlink{classPluginManager_a075528fc6c227b7a9f741d4f01706efc}{logging}}\label{classPluginManager_a075528fc6c227b7a9f741d4f01706efc}
+
+\begin{DoxyCompactList}\small\item\em Current instance of \hyperlink{classLogging}{Logging}. \end{DoxyCompactList}\item 
+\hypertarget{classPluginManager_ab66d35133c5a85b1e8b691452257bd5f}{\hyperlink{classMethods}{Methods} $\ast$ \hyperlink{classPluginManager_ab66d35133c5a85b1e8b691452257bd5f}{methods}}\label{classPluginManager_ab66d35133c5a85b1e8b691452257bd5f}
+
+\begin{DoxyCompactList}\small\item\em Current instance of \hyperlink{classMethods}{Methods}. \end{DoxyCompactList}\item 
+\hypertarget{classPluginManager_a2a01933dca1c7f1f14ac47c57f86b10b}{std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$ \hyperlink{classPluginManager_a2a01933dca1c7f1f14ac47c57f86b10b}{players}}\label{classPluginManager_a2a01933dca1c7f1f14ac47c57f86b10b}
+
+\begin{DoxyCompactList}\small\item\em Current instance of the playerlist. \end{DoxyCompactList}\item 
+\hypertarget{classPluginManager_adf6f47d0657a7eb9041ed8f7e530f0af}{std\-::map$<$ std\-::string, \hyperlink{structMap}{Map} $>$ $\ast$ \hyperlink{classPluginManager_adf6f47d0657a7eb9041ed8f7e530f0af}{maps}}\label{classPluginManager_adf6f47d0657a7eb9041ed8f7e530f0af}
+
+\begin{DoxyCompactList}\small\item\em Current instance of the maplist. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages the plugins. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPluginManager_a206d856a7ded8cebce7421d09c1da20d}{\index{Plugin\-Manager@{Plugin\-Manager}!Plugin\-Manager@{Plugin\-Manager}}
+\index{Plugin\-Manager@{Plugin\-Manager}!PluginManager@{Plugin\-Manager}}
+\subsubsection[{Plugin\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}Plugin\-Manager\-::\-Plugin\-Manager (
+\begin{DoxyParamCaption}
+\item[{{\bf Logging} $\ast$}]{logging\-Ptr, }
+\item[{{\bf Methods} $\ast$}]{methods\-Ptr, }
+\item[{std\-::map$<$ std\-::string, {\bf Player} $>$ $\ast$}]{players\-Ptr, }
+\item[{std\-::map$<$ std\-::string, {\bf Map} $>$ $\ast$}]{maps\-Ptr}
+\end{DoxyParamCaption}
+)}}\label{classPluginManager_a206d856a7ded8cebce7421d09c1da20d}
+
+
+Initializes the pointers the plugins need. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em logging\-Ptr} & Current instance of \hyperlink{classLogging}{Logging}. \\
+\hline
+{\em methods\-Ptr} & Current instance of \hyperlink{classMethods}{Methods}. \\
+\hline
+{\em players\-Ptr} & Current instance of the playerlist. \\
+\hline
+{\em maps\-Ptr} & Current instance of the maplist. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPluginManager_a0ff203ba125f85688fa752bf789418f0}{\index{Plugin\-Manager@{Plugin\-Manager}!Load\-Plugins@{Load\-Plugins}}
+\index{Load\-Plugins@{Load\-Plugins}!PluginManager@{Plugin\-Manager}}
+\subsubsection[{Load\-Plugins}]{\setlength{\rightskip}{0pt plus 5cm}void Plugin\-Manager\-::\-Load\-Plugins (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{plugins\-Folder = {\ttfamily \char`\"{}./plugins\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{classPluginManager_a0ff203ba125f85688fa752bf789418f0}
+
+
+Loads the plugins in the specified folder. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plugins\-Folder} & Relative path to the plugins folder. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPluginManager_a7ed7485291babeed3109a1a364b6d308}{\index{Plugin\-Manager@{Plugin\-Manager}!Set\-Event\-Manager@{Set\-Event\-Manager}}
+\index{Set\-Event\-Manager@{Set\-Event\-Manager}!PluginManager@{Plugin\-Manager}}
+\subsubsection[{Set\-Event\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}void Plugin\-Manager\-::\-Set\-Event\-Manager (
+\begin{DoxyParamCaption}
+\item[{{\bf Event\-Manager} $\ast$}]{event\-Manager\-Ptr}
+\end{DoxyParamCaption}
+)}}\label{classPluginManager_a7ed7485291babeed3109a1a364b6d308}
+
+
+Sets the event manager to be used for callbacks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\-Manager\-Ptr} & Instance of \hyperlink{classEventManager}{Event\-Manager}. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Plugins/Plugin\-Manager.\-h\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Plugins/Plugin\-Manager.\-cpp\end{DoxyCompactItemize}
