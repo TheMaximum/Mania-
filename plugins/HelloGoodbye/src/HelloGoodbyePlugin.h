@@ -2,9 +2,7 @@
 #define HELLOGOODBYEPLUGIN_H_
 
 #include <sstream>
-
-#include "../../../src/Plugins/Plugin.h"
-#include "../../../src/ManiaPP.h"
+#include "Plugins/Plugin.h"
 
 class HelloGoodbyePlugin : public Plugin
 {

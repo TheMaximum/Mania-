@@ -11,6 +11,7 @@ include_directories("${PROJECT_SOURCE_DIR}/../../lib/yaml/include")
 set (PROJECT_SOURCE_DIR ${PROJECT_SOURCE_DIR}/src)
 
 include_directories("${PROJECT_BINARY_DIR}")
+include_directories("${PROJECT_SOURCE_DIR}/../../../src")
 
 file(GLOB_RECURSE SOURCES src/*.cpp)
 
