@@ -61,7 +61,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -69,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -80,7 +79,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_774e17a6745a7fb3c301b1a2a6f3ec95.html">src</a></li><li class="navelem"><a class="el" href="dir_1bbeac1d0fea5f96c18f21ea7234a863.html">GbxRemote</a></li><li class="navelem"><a class="el" href="dir_b466a4a4534156fe597ec55ece662ae3.html">Parameters</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_7a6aeac25269e7cfeca8d7ac7d0d39bd.html">GbxRemote</a></li><li class="navelem"><a class="el" href="dir_4bcbad3a13de8139847dc431bcb5e6ff.html">Parameters</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -88,14 +87,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">GbxParameter.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="GbxParameter_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef GBXPARAMETER_H_</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef GBXPARAMETER_H_</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GBXPARAMETER_H_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;cxxabi.h&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="GbxParameters_8h.html">GbxParameters.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;GbxParameters.h&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//* GbxParameter</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classGbxParameter.html">   14</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classGbxParameter.html">GbxParameter</a></div>
@@ -123,12 +122,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classGbxParameter_html_a8e038bca99e1eb7339567fe1af79586c"><div class="ttname"><a href="classGbxParameter.html#a8e038bca99e1eb7339567fe1af79586c">GbxParameter::dereferenceData</a></div><div class="ttdeci">void dereferenceData(void *param)</div><div class="ttdoc">Converts the void pointer into the type determined in determineType. </div><div class="ttdef"><b>Definition:</b> GbxParameter.cpp:59</div></div>
 <div class="ttc" id="classGbxParameter_html"><div class="ttname"><a href="classGbxParameter.html">GbxParameter</a></div><div class="ttdoc">XML-fies the parameter for communication with the server. </div><div class="ttdef"><b>Definition:</b> GbxParameter.h:14</div></div>
 <div class="ttc" id="classGbxParameter_html_a19d4cab065cb0440c675e97babf45d02"><div class="ttname"><a href="classGbxParameter.html#a19d4cab065cb0440c675e97babf45d02">GbxParameter::type</a></div><div class="ttdeci">std::string type</div><div class="ttdoc">Stringified parameter type for XML. </div><div class="ttdef"><b>Definition:</b> GbxParameter.h:31</div></div>
-<div class="ttc" id="GbxParameters_8h_html"><div class="ttname"><a href="GbxParameters_8h.html">GbxParameters.h</a></div></div>
 <div class="ttc" id="structGbxParam_html"><div class="ttname"><a href="structGbxParam.html">GbxParam</a></div><div class="ttdoc">Pointer and type information of a parameter. </div><div class="ttdef"><b>Definition:</b> GbxParameters.h:12</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Dec 25 2016 21:40:56 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Dec 30 2016 23:33:33 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

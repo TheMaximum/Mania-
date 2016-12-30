@@ -1,0 +1,805 @@
+\hypertarget{classEventManager}{\section{Event\-Manager Class Reference}
+\label{classEventManager}\index{Event\-Manager@{Event\-Manager}}
+}
+
+
+Handles events (callbacks) from server to plugins.  
+
+
+
+
+{\ttfamily \#include $<$Event\-Manager.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classEventManager_a89099b22114f158b5c530edfea52371d}{Event\-Manager} ()
+\item 
+int \hyperlink{classEventManager_a26aec3d9c2cfbdcb62c0f8e432c2fcae}{Register\-Player\-Connect} (std\-::vector$<$ std\-::function$<$ void(\hyperlink{structPlayer}{Player})$>$$>$ functions)
+\begin{DoxyCompactList}\small\item\em Register functions for the Player\-Connect callback. \end{DoxyCompactList}\item 
+int \hyperlink{classEventManager_a56ed11f893eb5beebfbf294a196005e5}{Register\-Player\-Disconnect} (std\-::vector$<$ std\-::function$<$ void(\hyperlink{structPlayer}{Player})$>$$>$ functions)
+\begin{DoxyCompactList}\small\item\em Register functions for the Player\-Disconnect callback. \end{DoxyCompactList}\item 
+int \hyperlink{classEventManager_a42b05790b31a3c4cdbecd3f77a2e5cf0}{Register\-Player\-Chat} (std\-::vector$<$ std\-::function$<$ void(\hyperlink{structPlayer}{Player}, std\-::string, bool)$>$$>$ functions)
+\begin{DoxyCompactList}\small\item\em Register functions for the Player\-Chat callback. \end{DoxyCompactList}\item 
+int \hyperlink{classEventManager_a5213c8526941c4a67b08d080302dc6bc}{Register\-Player\-Manialink\-Page\-Answer} (std\-::vector$<$ std\-::function$<$ void(\hyperlink{structPlayer}{Player}, std\-::string, std\-::vector$<$ \hyperlink{structEntryVal}{Entry\-Val} $>$)$>$$>$ functions)
+\begin{DoxyCompactList}\small\item\em Register functions for the Player\-Manialink\-Page\-Answer callback. \end{DoxyCompactList}\item 
+int \hyperlink{classEventManager_aee6fe2f94e1c86af6ec79735771701d0}{Register\-Echo} (std\-::vector$<$ std\-::function$<$ void(std\-::string, std\-::string)$>$$>$ functions)
+\begin{DoxyCompactList}\small\item\em Register functions for the Echo callback. \end{DoxyCompactList}\item 
+int \hyperlink{classEventManager_afb7b0d6fd646ce3eb0568c95c8a4b89c}{Register\-Begin\-Match} (std\-::vector$<$ std\-::function$<$ void()$>$$>$ functions)
+\begin{DoxyCompactList}\small\item\em Register functions for the Begin\-Match callback. \end{DoxyCompactList}\item 
+int \hyperlink{classEventManager_a3d109b973ec50e1a06475b86f005f345}{Register\-End\-Match} (std\-::vector$<$ std\-::function$<$ void(std\-::vector$<$ \hyperlink{structPlayerRanking}{Player\-Ranking} $>$, int)$>$$>$ functions)
+\begin{DoxyCompactList}\small\item\em Register functions for the End\-Match callback. \end{DoxyCompactList}\item 
+int \hyperlink{classEventManager_ae77dfbbb9640ca9aa5b458d6959676ea}{Register\-Begin\-Map} (std\-::vector$<$ std\-::function$<$ void(\hyperlink{structMap}{Map})$>$$>$ functions)
+\begin{DoxyCompactList}\small\item\em Register functions for the Begin\-Map callback. \end{DoxyCompactList}\item 
+int \hyperlink{classEventManager_aa8cff04bd5efe5933b99e9cd4d2862d3}{Register\-End\-Map} (std\-::vector$<$ std\-::function$<$ void(\hyperlink{structMap}{Map})$>$$>$ functions)
+\begin{DoxyCompactList}\small\item\em Register functions for the End\-Map callback. \end{DoxyCompactList}\item 
+int \hyperlink{classEventManager_ad84c001cc738faa396aaa5948573b682}{Register\-Status\-Changed} (std\-::vector$<$ std\-::function$<$ void(int, std\-::string)$>$$>$ functions)
+\begin{DoxyCompactList}\small\item\em Register functions for the Status\-Changed callback. \end{DoxyCompactList}\item 
+int \hyperlink{classEventManager_ac9a8f0e6f7c4750e476059955042ccad}{Register\-Player\-Checkpoint} (std\-::vector$<$ std\-::function$<$ void(\hyperlink{structPlayer}{Player}, int, int, int)$>$$>$ functions)
+\begin{DoxyCompactList}\small\item\em Register functions for the Player\-Checkpoint callback. \end{DoxyCompactList}\item 
+int \hyperlink{classEventManager_a4f23806f21b01bd408630d604f8cb6a0}{Register\-Player\-Finish} (std\-::vector$<$ std\-::function$<$ void(\hyperlink{structPlayer}{Player}, int)$>$$>$ functions)
+\begin{DoxyCompactList}\small\item\em Register functions for the Player\-Finish callback. \end{DoxyCompactList}\item 
+int \hyperlink{classEventManager_a05fec5b169d8bf0abd1e32908b33c074}{Register\-Player\-Incoherence} (std\-::vector$<$ std\-::function$<$ void(\hyperlink{structPlayer}{Player})$>$$>$ functions)
+\begin{DoxyCompactList}\small\item\em Register functions for the Player\-Incoherence callback. \end{DoxyCompactList}\item 
+int \hyperlink{classEventManager_a8ce3c162bdc0cad5ea03e9bf1233c991}{Register\-Bill\-Updated} (std\-::vector$<$ std\-::function$<$ void(int, int, std\-::string, int)$>$$>$ functions)
+\begin{DoxyCompactList}\small\item\em Register functions for the Bill\-Updated callback. \end{DoxyCompactList}\item 
+int \hyperlink{classEventManager_a2793498f3b1e3bf82c9d8caab49387c0}{Register\-Map\-List\-Modified} (std\-::vector$<$ std\-::function$<$ void(int, int, bool)$>$$>$ functions)
+\begin{DoxyCompactList}\small\item\em Register functions for the Map\-List\-Modified callback. \end{DoxyCompactList}\item 
+int \hyperlink{classEventManager_a1ffe0d4b4a0bdbb8e488bc3bd3a58178}{Register\-Player\-Info\-Changed} (std\-::vector$<$ std\-::function$<$ void(\hyperlink{structPlayer}{Player})$>$$>$ functions)
+\begin{DoxyCompactList}\small\item\em Register functions for the Player\-Info\-Changed callback. \end{DoxyCompactList}\item 
+int \hyperlink{classEventManager_aa8833f57b1732204762c4d64c8546c53}{Register\-Vote\-Updated} (std\-::vector$<$ std\-::function$<$ void(std\-::string, std\-::string, std\-::string, std\-::string)$>$$>$ functions)
+\begin{DoxyCompactList}\small\item\em Register functions for the Vote\-Updated callback. \end{DoxyCompactList}\item 
+void \hyperlink{classEventManager_a8ba57f2276badf2fef783b2480b0fd46}{Call\-Player\-Connect} (\hyperlink{structPlayer}{Player} player)
+\begin{DoxyCompactList}\small\item\em Calls all functions which are subscribed to the Player\-Connect event. \end{DoxyCompactList}\item 
+void \hyperlink{classEventManager_aeef81d4160c3312c098ad72679a07c44}{Call\-Player\-Disconnect} (\hyperlink{structPlayer}{Player} player)
+\begin{DoxyCompactList}\small\item\em Calls all functions which are subscribed to the Player\-Disconnect event. \end{DoxyCompactList}\item 
+void \hyperlink{classEventManager_a3df8918a788166d644ba8aa40b1e07b1}{Call\-Player\-Chat} (\hyperlink{structPlayer}{Player} player, std\-::string text, bool is\-Registered\-Command)
+\begin{DoxyCompactList}\small\item\em Calls all functions which are subscribed to the Player\-Chat event. \end{DoxyCompactList}\item 
+void \hyperlink{classEventManager_a4c2592deef52ebb2c84c83d7116705c8}{Call\-Player\-Manialink\-Page\-Answer} (\hyperlink{structPlayer}{Player} player, std\-::string answer, std\-::vector$<$ \hyperlink{structEntryVal}{Entry\-Val} $>$ entries)
+\begin{DoxyCompactList}\small\item\em Calls all functions which are subscribed to the Player\-Manialink\-Page\-Answer event. \end{DoxyCompactList}\item 
+void \hyperlink{classEventManager_ae48cfdfa5fc3a9492617d48aeef9669b}{Call\-Echo} (std\-::string internal, std\-::string public\-Echo)
+\begin{DoxyCompactList}\small\item\em Calls all functions which are subscribed to the Echo event. \end{DoxyCompactList}\item 
+\hypertarget{classEventManager_a22f3afb58eecc76787530b98e29971e2}{void \hyperlink{classEventManager_a22f3afb58eecc76787530b98e29971e2}{Call\-Begin\-Match} ()}\label{classEventManager_a22f3afb58eecc76787530b98e29971e2}
+
+\begin{DoxyCompactList}\small\item\em Calls all functions which are subscribed to the Begin\-Match event. \end{DoxyCompactList}\item 
+void \hyperlink{classEventManager_adc21931d4388f9b78c3dbd382acfabc9}{Call\-End\-Match} (std\-::vector$<$ \hyperlink{structPlayerRanking}{Player\-Ranking} $>$ rankings, int winner\-Team)
+\begin{DoxyCompactList}\small\item\em Calls all functions which are subscribed to the End\-Match event. \end{DoxyCompactList}\item 
+void \hyperlink{classEventManager_a1bd59c3d511d37863b81d18bd09a7b5a}{Call\-Begin\-Map} (\hyperlink{structMap}{Map} map)
+\begin{DoxyCompactList}\small\item\em Calls all functions which are subscribed to the End\-Match event. \end{DoxyCompactList}\item 
+void \hyperlink{classEventManager_a9f28bea93fdee6cfc07e8a56a81cc62f}{Call\-End\-Map} (\hyperlink{structMap}{Map} map)
+\begin{DoxyCompactList}\small\item\em Calls all functions which are subscribed to the End\-Map event. \end{DoxyCompactList}\item 
+void \hyperlink{classEventManager_aaf340ac134fc52a9b2c87f7db42476b5}{Call\-Status\-Changed} (int status\-Code, std\-::string status\-Name)
+\begin{DoxyCompactList}\small\item\em Calls all functions which are subscribed to the Status\-Changed event. \end{DoxyCompactList}\item 
+void \hyperlink{classEventManager_a8a3c5f621c44b15c560110ab2b25a51f}{Call\-Player\-Checkpoint} (\hyperlink{structPlayer}{Player} player, int time, int current\-Lap, int checkpoint\-Index)
+\begin{DoxyCompactList}\small\item\em Calls all functions which are subscribed to the Player\-Checkpoint event. \end{DoxyCompactList}\item 
+void \hyperlink{classEventManager_afb2a6208c30bc3c1b4a85e39a8f9a9f4}{Call\-Player\-Finish} (\hyperlink{structPlayer}{Player} player, int time)
+\begin{DoxyCompactList}\small\item\em Calls all functions which are subscribed to the Player\-Finish event. \end{DoxyCompactList}\item 
+void \hyperlink{classEventManager_afdd5ead369a6440a6419e0d5269af5bc}{Call\-Player\-Incoherence} (\hyperlink{structPlayer}{Player} player)
+\begin{DoxyCompactList}\small\item\em Calls all functions which are subscribed to the Player\-Incoherence event. \end{DoxyCompactList}\item 
+void \hyperlink{classEventManager_aee53ab1e28714b9cbcd381b23efae623}{Call\-Bill\-Updated} (int bill\-Id, int state, std\-::string state\-Name, int transaction\-Id)
+\begin{DoxyCompactList}\small\item\em Calls all functions which are subscribed to the Bill\-Updated event. \end{DoxyCompactList}\item 
+void \hyperlink{classEventManager_a992d53782e7aacc561ff5348f7905b1b}{Call\-Map\-List\-Modified} (int current\-Map, int next\-Map, bool list\-Modified)
+\begin{DoxyCompactList}\small\item\em Calls all functions which are subscribed to the Map\-List\-Modified event. \end{DoxyCompactList}\item 
+void \hyperlink{classEventManager_a1673fa8c0a40a910cb3ed800e1a2fc11}{Call\-Player\-Info\-Changed} (\hyperlink{structPlayer}{Player} player)
+\begin{DoxyCompactList}\small\item\em Calls all functions which are subscribed to the Player\-Info\-Changed event. \end{DoxyCompactList}\item 
+void \hyperlink{classEventManager_ad9907c7d0fd7a93e336e4a99db008540}{Call\-Vote\-Updated} (std\-::string state\-Name, std\-::string login, std\-::string command\-Name, std\-::string command\-Param)
+\begin{DoxyCompactList}\small\item\em Calls all functions which are subscribed to the Vote\-Updated event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classEventManager_a98c39230b15f7d40fa5d3c87210a5fd9}{std\-::vector$<$ std\-::function\\*
+$<$ void(\hyperlink{structPlayer}{Player})$>$ $>$ \hyperlink{classEventManager_a98c39230b15f7d40fa5d3c87210a5fd9}{methods\-Player\-Connect}}\label{classEventManager_a98c39230b15f7d40fa5d3c87210a5fd9}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Player\-Connect event. \end{DoxyCompactList}\item 
+\hypertarget{classEventManager_a05df9668a34f0dd3d4a9f049d884aea9}{std\-::vector$<$ std\-::function\\*
+$<$ void(\hyperlink{structPlayer}{Player})$>$ $>$ \hyperlink{classEventManager_a05df9668a34f0dd3d4a9f049d884aea9}{methods\-Player\-Disconnect}}\label{classEventManager_a05df9668a34f0dd3d4a9f049d884aea9}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Player\-Disconnect event. \end{DoxyCompactList}\item 
+\hypertarget{classEventManager_af3254e563a2246e9298baf23f31b14eb}{std\-::vector$<$ std\-::function\\*
+$<$ void(\hyperlink{structPlayer}{Player}, std\-::string, \\*
+bool)$>$ $>$ \hyperlink{classEventManager_af3254e563a2246e9298baf23f31b14eb}{methods\-Player\-Chat}}\label{classEventManager_af3254e563a2246e9298baf23f31b14eb}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Player\-Chat event. \end{DoxyCompactList}\item 
+\hypertarget{classEventManager_a28d7fbe547c5177f293208ccf4f98fce}{std\-::vector$<$ std\-::function\\*
+$<$ void(\hyperlink{structPlayer}{Player}, std\-::string, \\*
+std\-::vector$<$ \hyperlink{structEntryVal}{Entry\-Val} $>$)$>$ $>$ \hyperlink{classEventManager_a28d7fbe547c5177f293208ccf4f98fce}{methods\-Player\-Manialink\-Page\-Answer}}\label{classEventManager_a28d7fbe547c5177f293208ccf4f98fce}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Player\-Manialink\-Page\-Answer event. \end{DoxyCompactList}\item 
+\hypertarget{classEventManager_a61180225295324ec1240bb4a8d119866}{std\-::vector$<$ std\-::function\\*
+$<$ void(std\-::string, \\*
+std\-::string)$>$ $>$ \hyperlink{classEventManager_a61180225295324ec1240bb4a8d119866}{methods\-Echo}}\label{classEventManager_a61180225295324ec1240bb4a8d119866}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Echo event. \end{DoxyCompactList}\item 
+\hypertarget{classEventManager_abb7667e9222f00e33d792c733c82f89e}{std\-::vector$<$ std\-::function\\*
+$<$ void()$>$ $>$ \hyperlink{classEventManager_abb7667e9222f00e33d792c733c82f89e}{methods\-Begin\-Match}}\label{classEventManager_abb7667e9222f00e33d792c733c82f89e}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Begin\-Match event. \end{DoxyCompactList}\item 
+\hypertarget{classEventManager_a57c6a54084081b1ea74736e30ad2e7cc}{std\-::vector$<$ std\-::function\\*
+$<$ void(std\-::vector\\*
+$<$ \hyperlink{structPlayerRanking}{Player\-Ranking} $>$, int)$>$ $>$ \hyperlink{classEventManager_a57c6a54084081b1ea74736e30ad2e7cc}{methods\-End\-Match}}\label{classEventManager_a57c6a54084081b1ea74736e30ad2e7cc}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the End\-Match event. \end{DoxyCompactList}\item 
+\hypertarget{classEventManager_a7aa0f06399cd3927d85603b58cfef173}{std\-::vector$<$ std\-::function\\*
+$<$ void(\hyperlink{structMap}{Map})$>$ $>$ \hyperlink{classEventManager_a7aa0f06399cd3927d85603b58cfef173}{methods\-Begin\-Map}}\label{classEventManager_a7aa0f06399cd3927d85603b58cfef173}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Begin\-Map event. \end{DoxyCompactList}\item 
+\hypertarget{classEventManager_abf91c3327317273584e1a60d8a68ca6e}{std\-::vector$<$ std\-::function\\*
+$<$ void(\hyperlink{structMap}{Map})$>$ $>$ \hyperlink{classEventManager_abf91c3327317273584e1a60d8a68ca6e}{methods\-End\-Map}}\label{classEventManager_abf91c3327317273584e1a60d8a68ca6e}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the End\-Map event. \end{DoxyCompactList}\item 
+\hypertarget{classEventManager_affc955af43afb14a3b950a3cd30b4972}{std\-::vector$<$ std\-::function\\*
+$<$ void(int, std\-::string)$>$ $>$ \hyperlink{classEventManager_affc955af43afb14a3b950a3cd30b4972}{methods\-Status\-Changed}}\label{classEventManager_affc955af43afb14a3b950a3cd30b4972}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Status\-Changed event. \end{DoxyCompactList}\item 
+\hypertarget{classEventManager_aec8534b0e9229a761981003a749c8749}{std\-::vector$<$ std\-::function\\*
+$<$ void(\hyperlink{structPlayer}{Player}, int, int, int)$>$ $>$ \hyperlink{classEventManager_aec8534b0e9229a761981003a749c8749}{methods\-Player\-Checkpoint}}\label{classEventManager_aec8534b0e9229a761981003a749c8749}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Player\-Checkpoint event. \end{DoxyCompactList}\item 
+\hypertarget{classEventManager_a3d205a716dd8f5c7380090c026c785db}{std\-::vector$<$ std\-::function\\*
+$<$ void(\hyperlink{structPlayer}{Player}, int)$>$ $>$ \hyperlink{classEventManager_a3d205a716dd8f5c7380090c026c785db}{methods\-Player\-Finish}}\label{classEventManager_a3d205a716dd8f5c7380090c026c785db}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Player\-Finish event. \end{DoxyCompactList}\item 
+\hypertarget{classEventManager_a9c473cd5e559ffd730c95fb6476890a1}{std\-::vector$<$ std\-::function\\*
+$<$ void(\hyperlink{structPlayer}{Player})$>$ $>$ \hyperlink{classEventManager_a9c473cd5e559ffd730c95fb6476890a1}{methods\-Player\-Incoherence}}\label{classEventManager_a9c473cd5e559ffd730c95fb6476890a1}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Player\-Incoherence event. \end{DoxyCompactList}\item 
+\hypertarget{classEventManager_a0497e6be361d83e2c4dc8d0b5e20360a}{std\-::vector$<$ std\-::function\\*
+$<$ void(int, int, std\-::string, \\*
+int)$>$ $>$ \hyperlink{classEventManager_a0497e6be361d83e2c4dc8d0b5e20360a}{methods\-Bill\-Updated}}\label{classEventManager_a0497e6be361d83e2c4dc8d0b5e20360a}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Bill\-Updated event. \end{DoxyCompactList}\item 
+\hypertarget{classEventManager_a9de43e00de48971bd1299a1d77b7b649}{std\-::vector$<$ std\-::function\\*
+$<$ void(int, int, bool)$>$ $>$ \hyperlink{classEventManager_a9de43e00de48971bd1299a1d77b7b649}{methods\-Map\-List\-Modified}}\label{classEventManager_a9de43e00de48971bd1299a1d77b7b649}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Map\-List\-Modified event. \end{DoxyCompactList}\item 
+\hypertarget{classEventManager_a390528d8f1a0f9afc6883b0633905254}{std\-::vector$<$ std\-::function\\*
+$<$ void(\hyperlink{structPlayer}{Player})$>$ $>$ \hyperlink{classEventManager_a390528d8f1a0f9afc6883b0633905254}{methods\-Player\-Info\-Changed}}\label{classEventManager_a390528d8f1a0f9afc6883b0633905254}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Player\-Info\-Changed event. \end{DoxyCompactList}\item 
+\hypertarget{classEventManager_a0b441376e3947a06b84efdc722529ed9}{std\-::vector$<$ std\-::function\\*
+$<$ void(std\-::string, \\*
+std\-::string, std\-::string, \\*
+std\-::string)$>$ $>$ \hyperlink{classEventManager_a0b441376e3947a06b84efdc722529ed9}{methods\-Vote\-Updated}}\label{classEventManager_a0b441376e3947a06b84efdc722529ed9}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Vote\-Updated event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Handles events (callbacks) from server to plugins. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classEventManager_a89099b22114f158b5c530edfea52371d}{\index{Event\-Manager@{Event\-Manager}!Event\-Manager@{Event\-Manager}}
+\index{Event\-Manager@{Event\-Manager}!EventManager@{Event\-Manager}}
+\subsubsection[{Event\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}Event\-Manager\-::\-Event\-Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_a89099b22114f158b5c530edfea52371d}
+Simple constructor. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classEventManager_a1bd59c3d511d37863b81d18bd09a7b5a}{\index{Event\-Manager@{Event\-Manager}!Call\-Begin\-Map@{Call\-Begin\-Map}}
+\index{Call\-Begin\-Map@{Call\-Begin\-Map}!EventManager@{Event\-Manager}}
+\subsubsection[{Call\-Begin\-Map}]{\setlength{\rightskip}{0pt plus 5cm}void Event\-Manager\-::\-Call\-Begin\-Map (
+\begin{DoxyParamCaption}
+\item[{{\bf Map}}]{map}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_a1bd59c3d511d37863b81d18bd09a7b5a}
+
+
+Calls all functions which are subscribed to the End\-Match event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & New current map. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_aee53ab1e28714b9cbcd381b23efae623}{\index{Event\-Manager@{Event\-Manager}!Call\-Bill\-Updated@{Call\-Bill\-Updated}}
+\index{Call\-Bill\-Updated@{Call\-Bill\-Updated}!EventManager@{Event\-Manager}}
+\subsubsection[{Call\-Bill\-Updated}]{\setlength{\rightskip}{0pt plus 5cm}void Event\-Manager\-::\-Call\-Bill\-Updated (
+\begin{DoxyParamCaption}
+\item[{int}]{bill\-Id, }
+\item[{int}]{state, }
+\item[{std\-::string}]{state\-Name, }
+\item[{int}]{transaction\-Id}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_aee53ab1e28714b9cbcd381b23efae623}
+
+
+Calls all functions which are subscribed to the Bill\-Updated event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bill\-Id} & Bill identifier. \\
+\hline
+{\em state} & New bill state. \\
+\hline
+{\em state\-Name} & New bill state name. \\
+\hline
+{\em transaction\-Id} & Transaction identifier. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_ae48cfdfa5fc3a9492617d48aeef9669b}{\index{Event\-Manager@{Event\-Manager}!Call\-Echo@{Call\-Echo}}
+\index{Call\-Echo@{Call\-Echo}!EventManager@{Event\-Manager}}
+\subsubsection[{Call\-Echo}]{\setlength{\rightskip}{0pt plus 5cm}void Event\-Manager\-::\-Call\-Echo (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{internal, }
+\item[{std\-::string}]{public\-Echo}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_ae48cfdfa5fc3a9492617d48aeef9669b}
+
+
+Calls all functions which are subscribed to the Echo event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em internal} & Internal. \\
+\hline
+{\em public\-Echo} & Public. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_a9f28bea93fdee6cfc07e8a56a81cc62f}{\index{Event\-Manager@{Event\-Manager}!Call\-End\-Map@{Call\-End\-Map}}
+\index{Call\-End\-Map@{Call\-End\-Map}!EventManager@{Event\-Manager}}
+\subsubsection[{Call\-End\-Map}]{\setlength{\rightskip}{0pt plus 5cm}void Event\-Manager\-::\-Call\-End\-Map (
+\begin{DoxyParamCaption}
+\item[{{\bf Map}}]{map}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_a9f28bea93fdee6cfc07e8a56a81cc62f}
+
+
+Calls all functions which are subscribed to the End\-Map event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & New current map. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_adc21931d4388f9b78c3dbd382acfabc9}{\index{Event\-Manager@{Event\-Manager}!Call\-End\-Match@{Call\-End\-Match}}
+\index{Call\-End\-Match@{Call\-End\-Match}!EventManager@{Event\-Manager}}
+\subsubsection[{Call\-End\-Match}]{\setlength{\rightskip}{0pt plus 5cm}void Event\-Manager\-::\-Call\-End\-Match (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Player\-Ranking} $>$}]{rankings, }
+\item[{int}]{winner\-Team}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_adc21931d4388f9b78c3dbd382acfabc9}
+
+
+Calls all functions which are subscribed to the End\-Match event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rankings} & \hyperlink{structPlayer}{Player} rankings. \\
+\hline
+{\em winner\-Team} & Winning team. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_a992d53782e7aacc561ff5348f7905b1b}{\index{Event\-Manager@{Event\-Manager}!Call\-Map\-List\-Modified@{Call\-Map\-List\-Modified}}
+\index{Call\-Map\-List\-Modified@{Call\-Map\-List\-Modified}!EventManager@{Event\-Manager}}
+\subsubsection[{Call\-Map\-List\-Modified}]{\setlength{\rightskip}{0pt plus 5cm}void Event\-Manager\-::\-Call\-Map\-List\-Modified (
+\begin{DoxyParamCaption}
+\item[{int}]{current\-Map, }
+\item[{int}]{next\-Map, }
+\item[{bool}]{list\-Modified}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_a992d53782e7aacc561ff5348f7905b1b}
+
+
+Calls all functions which are subscribed to the Map\-List\-Modified event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\-Map} & Current map index. \\
+\hline
+{\em next\-Map} & Next map index. \\
+\hline
+{\em list\-Modified} & Is maplist modified? \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_a3df8918a788166d644ba8aa40b1e07b1}{\index{Event\-Manager@{Event\-Manager}!Call\-Player\-Chat@{Call\-Player\-Chat}}
+\index{Call\-Player\-Chat@{Call\-Player\-Chat}!EventManager@{Event\-Manager}}
+\subsubsection[{Call\-Player\-Chat}]{\setlength{\rightskip}{0pt plus 5cm}void Event\-Manager\-::\-Call\-Player\-Chat (
+\begin{DoxyParamCaption}
+\item[{{\bf Player}}]{player, }
+\item[{std\-::string}]{text, }
+\item[{bool}]{is\-Registered\-Command}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_a3df8918a788166d644ba8aa40b1e07b1}
+
+
+Calls all functions which are subscribed to the Player\-Chat event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & \hyperlink{structPlayer}{Player} that wrote a chat message. \\
+\hline
+{\em text} & Chat message. \\
+\hline
+{\em is\-Registered\-Command} & Is the chat message a registered command? \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_a8a3c5f621c44b15c560110ab2b25a51f}{\index{Event\-Manager@{Event\-Manager}!Call\-Player\-Checkpoint@{Call\-Player\-Checkpoint}}
+\index{Call\-Player\-Checkpoint@{Call\-Player\-Checkpoint}!EventManager@{Event\-Manager}}
+\subsubsection[{Call\-Player\-Checkpoint}]{\setlength{\rightskip}{0pt plus 5cm}void Event\-Manager\-::\-Call\-Player\-Checkpoint (
+\begin{DoxyParamCaption}
+\item[{{\bf Player}}]{player, }
+\item[{int}]{time, }
+\item[{int}]{current\-Lap, }
+\item[{int}]{checkpoint\-Index}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_a8a3c5f621c44b15c560110ab2b25a51f}
+
+
+Calls all functions which are subscribed to the Player\-Checkpoint event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & \hyperlink{structPlayer}{Player} object. \\
+\hline
+{\em time} & Checkpoint time. \\
+\hline
+{\em current\-Lap} & Current lap number. \\
+\hline
+{\em checkpoint\-Index} & Current checkpoint number. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_a8ba57f2276badf2fef783b2480b0fd46}{\index{Event\-Manager@{Event\-Manager}!Call\-Player\-Connect@{Call\-Player\-Connect}}
+\index{Call\-Player\-Connect@{Call\-Player\-Connect}!EventManager@{Event\-Manager}}
+\subsubsection[{Call\-Player\-Connect}]{\setlength{\rightskip}{0pt plus 5cm}void Event\-Manager\-::\-Call\-Player\-Connect (
+\begin{DoxyParamCaption}
+\item[{{\bf Player}}]{player}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_a8ba57f2276badf2fef783b2480b0fd46}
+
+
+Calls all functions which are subscribed to the Player\-Connect event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & \hyperlink{structPlayer}{Player} that connected. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_aeef81d4160c3312c098ad72679a07c44}{\index{Event\-Manager@{Event\-Manager}!Call\-Player\-Disconnect@{Call\-Player\-Disconnect}}
+\index{Call\-Player\-Disconnect@{Call\-Player\-Disconnect}!EventManager@{Event\-Manager}}
+\subsubsection[{Call\-Player\-Disconnect}]{\setlength{\rightskip}{0pt plus 5cm}void Event\-Manager\-::\-Call\-Player\-Disconnect (
+\begin{DoxyParamCaption}
+\item[{{\bf Player}}]{player}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_aeef81d4160c3312c098ad72679a07c44}
+
+
+Calls all functions which are subscribed to the Player\-Disconnect event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & \hyperlink{structPlayer}{Player} that disconnected. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_afb2a6208c30bc3c1b4a85e39a8f9a9f4}{\index{Event\-Manager@{Event\-Manager}!Call\-Player\-Finish@{Call\-Player\-Finish}}
+\index{Call\-Player\-Finish@{Call\-Player\-Finish}!EventManager@{Event\-Manager}}
+\subsubsection[{Call\-Player\-Finish}]{\setlength{\rightskip}{0pt plus 5cm}void Event\-Manager\-::\-Call\-Player\-Finish (
+\begin{DoxyParamCaption}
+\item[{{\bf Player}}]{player, }
+\item[{int}]{time}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_afb2a6208c30bc3c1b4a85e39a8f9a9f4}
+
+
+Calls all functions which are subscribed to the Player\-Finish event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & \hyperlink{structPlayer}{Player} object. \\
+\hline
+{\em time} & Finish time. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_afdd5ead369a6440a6419e0d5269af5bc}{\index{Event\-Manager@{Event\-Manager}!Call\-Player\-Incoherence@{Call\-Player\-Incoherence}}
+\index{Call\-Player\-Incoherence@{Call\-Player\-Incoherence}!EventManager@{Event\-Manager}}
+\subsubsection[{Call\-Player\-Incoherence}]{\setlength{\rightskip}{0pt plus 5cm}void Event\-Manager\-::\-Call\-Player\-Incoherence (
+\begin{DoxyParamCaption}
+\item[{{\bf Player}}]{player}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_afdd5ead369a6440a6419e0d5269af5bc}
+
+
+Calls all functions which are subscribed to the Player\-Incoherence event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & \hyperlink{structPlayer}{Player} object. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_a1673fa8c0a40a910cb3ed800e1a2fc11}{\index{Event\-Manager@{Event\-Manager}!Call\-Player\-Info\-Changed@{Call\-Player\-Info\-Changed}}
+\index{Call\-Player\-Info\-Changed@{Call\-Player\-Info\-Changed}!EventManager@{Event\-Manager}}
+\subsubsection[{Call\-Player\-Info\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Event\-Manager\-::\-Call\-Player\-Info\-Changed (
+\begin{DoxyParamCaption}
+\item[{{\bf Player}}]{player}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_a1673fa8c0a40a910cb3ed800e1a2fc11}
+
+
+Calls all functions which are subscribed to the Player\-Info\-Changed event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & \hyperlink{structPlayer}{Player} object. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_a4c2592deef52ebb2c84c83d7116705c8}{\index{Event\-Manager@{Event\-Manager}!Call\-Player\-Manialink\-Page\-Answer@{Call\-Player\-Manialink\-Page\-Answer}}
+\index{Call\-Player\-Manialink\-Page\-Answer@{Call\-Player\-Manialink\-Page\-Answer}!EventManager@{Event\-Manager}}
+\subsubsection[{Call\-Player\-Manialink\-Page\-Answer}]{\setlength{\rightskip}{0pt plus 5cm}void Event\-Manager\-::\-Call\-Player\-Manialink\-Page\-Answer (
+\begin{DoxyParamCaption}
+\item[{{\bf Player}}]{player, }
+\item[{std\-::string}]{answer, }
+\item[{std\-::vector$<$ {\bf Entry\-Val} $>$}]{entries}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_a4c2592deef52ebb2c84c83d7116705c8}
+
+
+Calls all functions which are subscribed to the Player\-Manialink\-Page\-Answer event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & \hyperlink{structPlayer}{Player} who created the answer. \\
+\hline
+{\em answer} & Mania\-Link answer. \\
+\hline
+{\em entries} & List of entries. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_aaf340ac134fc52a9b2c87f7db42476b5}{\index{Event\-Manager@{Event\-Manager}!Call\-Status\-Changed@{Call\-Status\-Changed}}
+\index{Call\-Status\-Changed@{Call\-Status\-Changed}!EventManager@{Event\-Manager}}
+\subsubsection[{Call\-Status\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Event\-Manager\-::\-Call\-Status\-Changed (
+\begin{DoxyParamCaption}
+\item[{int}]{status\-Code, }
+\item[{std\-::string}]{status\-Name}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_aaf340ac134fc52a9b2c87f7db42476b5}
+
+
+Calls all functions which are subscribed to the Status\-Changed event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status\-Code} & New status code. \\
+\hline
+{\em status\-Name} & New status name. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_ad9907c7d0fd7a93e336e4a99db008540}{\index{Event\-Manager@{Event\-Manager}!Call\-Vote\-Updated@{Call\-Vote\-Updated}}
+\index{Call\-Vote\-Updated@{Call\-Vote\-Updated}!EventManager@{Event\-Manager}}
+\subsubsection[{Call\-Vote\-Updated}]{\setlength{\rightskip}{0pt plus 5cm}void Event\-Manager\-::\-Call\-Vote\-Updated (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{state\-Name, }
+\item[{std\-::string}]{login, }
+\item[{std\-::string}]{command\-Name, }
+\item[{std\-::string}]{command\-Param}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_ad9907c7d0fd7a93e336e4a99db008540}
+
+
+Calls all functions which are subscribed to the Vote\-Updated event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\-Name} & Vote state name. \\
+\hline
+{\em login} & \hyperlink{structPlayer}{Player} login. (?) \\
+\hline
+{\em command\-Name} & Name of command. \\
+\hline
+{\em command\-Param} & Parameter for command. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_ae77dfbbb9640ca9aa5b458d6959676ea}{\index{Event\-Manager@{Event\-Manager}!Register\-Begin\-Map@{Register\-Begin\-Map}}
+\index{Register\-Begin\-Map@{Register\-Begin\-Map}!EventManager@{Event\-Manager}}
+\subsubsection[{Register\-Begin\-Map}]{\setlength{\rightskip}{0pt plus 5cm}int Event\-Manager\-::\-Register\-Begin\-Map (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::function$<$ void({\bf Map})$>$$>$}]{functions}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_ae77dfbbb9640ca9aa5b458d6959676ea}
+
+
+Register functions for the Begin\-Map callback. 
+
+Returns how many functions were successfully added.
+
+
+\begin{DoxyParams}{Parameters}
+{\em functions} & Vector with functions to be added. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_afb7b0d6fd646ce3eb0568c95c8a4b89c}{\index{Event\-Manager@{Event\-Manager}!Register\-Begin\-Match@{Register\-Begin\-Match}}
+\index{Register\-Begin\-Match@{Register\-Begin\-Match}!EventManager@{Event\-Manager}}
+\subsubsection[{Register\-Begin\-Match}]{\setlength{\rightskip}{0pt plus 5cm}int Event\-Manager\-::\-Register\-Begin\-Match (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::function$<$ void()$>$$>$}]{functions}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_afb7b0d6fd646ce3eb0568c95c8a4b89c}
+
+
+Register functions for the Begin\-Match callback. 
+
+Returns how many functions were successfully added.
+
+
+\begin{DoxyParams}{Parameters}
+{\em functions} & Vector with functions to be added. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_a8ce3c162bdc0cad5ea03e9bf1233c991}{\index{Event\-Manager@{Event\-Manager}!Register\-Bill\-Updated@{Register\-Bill\-Updated}}
+\index{Register\-Bill\-Updated@{Register\-Bill\-Updated}!EventManager@{Event\-Manager}}
+\subsubsection[{Register\-Bill\-Updated}]{\setlength{\rightskip}{0pt plus 5cm}int Event\-Manager\-::\-Register\-Bill\-Updated (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::function$<$ void(int, int, std\-::string, int)$>$$>$}]{functions}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_a8ce3c162bdc0cad5ea03e9bf1233c991}
+
+
+Register functions for the Bill\-Updated callback. 
+
+Returns how many functions were successfully added.
+
+
+\begin{DoxyParams}{Parameters}
+{\em functions} & Vector with functions to be added. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_aee6fe2f94e1c86af6ec79735771701d0}{\index{Event\-Manager@{Event\-Manager}!Register\-Echo@{Register\-Echo}}
+\index{Register\-Echo@{Register\-Echo}!EventManager@{Event\-Manager}}
+\subsubsection[{Register\-Echo}]{\setlength{\rightskip}{0pt plus 5cm}int Event\-Manager\-::\-Register\-Echo (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::function$<$ void(std\-::string, std\-::string)$>$$>$}]{functions}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_aee6fe2f94e1c86af6ec79735771701d0}
+
+
+Register functions for the Echo callback. 
+
+Returns how many functions were successfully added.
+
+
+\begin{DoxyParams}{Parameters}
+{\em functions} & Vector with functions to be added. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_aa8cff04bd5efe5933b99e9cd4d2862d3}{\index{Event\-Manager@{Event\-Manager}!Register\-End\-Map@{Register\-End\-Map}}
+\index{Register\-End\-Map@{Register\-End\-Map}!EventManager@{Event\-Manager}}
+\subsubsection[{Register\-End\-Map}]{\setlength{\rightskip}{0pt plus 5cm}int Event\-Manager\-::\-Register\-End\-Map (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::function$<$ void({\bf Map})$>$$>$}]{functions}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_aa8cff04bd5efe5933b99e9cd4d2862d3}
+
+
+Register functions for the End\-Map callback. 
+
+Returns how many functions were successfully added.
+
+
+\begin{DoxyParams}{Parameters}
+{\em functions} & Vector with functions to be added. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_a3d109b973ec50e1a06475b86f005f345}{\index{Event\-Manager@{Event\-Manager}!Register\-End\-Match@{Register\-End\-Match}}
+\index{Register\-End\-Match@{Register\-End\-Match}!EventManager@{Event\-Manager}}
+\subsubsection[{Register\-End\-Match}]{\setlength{\rightskip}{0pt plus 5cm}int Event\-Manager\-::\-Register\-End\-Match (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::function$<$ void(std\-::vector$<$ {\bf Player\-Ranking} $>$, int)$>$$>$}]{functions}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_a3d109b973ec50e1a06475b86f005f345}
+
+
+Register functions for the End\-Match callback. 
+
+Returns how many functions were successfully added.
+
+
+\begin{DoxyParams}{Parameters}
+{\em functions} & Vector with functions to be added. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_a2793498f3b1e3bf82c9d8caab49387c0}{\index{Event\-Manager@{Event\-Manager}!Register\-Map\-List\-Modified@{Register\-Map\-List\-Modified}}
+\index{Register\-Map\-List\-Modified@{Register\-Map\-List\-Modified}!EventManager@{Event\-Manager}}
+\subsubsection[{Register\-Map\-List\-Modified}]{\setlength{\rightskip}{0pt plus 5cm}int Event\-Manager\-::\-Register\-Map\-List\-Modified (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::function$<$ void(int, int, bool)$>$$>$}]{functions}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_a2793498f3b1e3bf82c9d8caab49387c0}
+
+
+Register functions for the Map\-List\-Modified callback. 
+
+Returns how many functions were successfully added.
+
+
+\begin{DoxyParams}{Parameters}
+{\em functions} & Vector with functions to be added. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_a42b05790b31a3c4cdbecd3f77a2e5cf0}{\index{Event\-Manager@{Event\-Manager}!Register\-Player\-Chat@{Register\-Player\-Chat}}
+\index{Register\-Player\-Chat@{Register\-Player\-Chat}!EventManager@{Event\-Manager}}
+\subsubsection[{Register\-Player\-Chat}]{\setlength{\rightskip}{0pt plus 5cm}int Event\-Manager\-::\-Register\-Player\-Chat (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::function$<$ void({\bf Player}, std\-::string, bool)$>$$>$}]{functions}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_a42b05790b31a3c4cdbecd3f77a2e5cf0}
+
+
+Register functions for the Player\-Chat callback. 
+
+Returns how many functions were successfully added.
+
+
+\begin{DoxyParams}{Parameters}
+{\em functions} & Vector with functions to be added. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_ac9a8f0e6f7c4750e476059955042ccad}{\index{Event\-Manager@{Event\-Manager}!Register\-Player\-Checkpoint@{Register\-Player\-Checkpoint}}
+\index{Register\-Player\-Checkpoint@{Register\-Player\-Checkpoint}!EventManager@{Event\-Manager}}
+\subsubsection[{Register\-Player\-Checkpoint}]{\setlength{\rightskip}{0pt plus 5cm}int Event\-Manager\-::\-Register\-Player\-Checkpoint (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::function$<$ void({\bf Player}, int, int, int)$>$$>$}]{functions}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_ac9a8f0e6f7c4750e476059955042ccad}
+
+
+Register functions for the Player\-Checkpoint callback. 
+
+Returns how many functions were successfully added.
+
+
+\begin{DoxyParams}{Parameters}
+{\em functions} & Vector with functions to be added. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_a26aec3d9c2cfbdcb62c0f8e432c2fcae}{\index{Event\-Manager@{Event\-Manager}!Register\-Player\-Connect@{Register\-Player\-Connect}}
+\index{Register\-Player\-Connect@{Register\-Player\-Connect}!EventManager@{Event\-Manager}}
+\subsubsection[{Register\-Player\-Connect}]{\setlength{\rightskip}{0pt plus 5cm}int Event\-Manager\-::\-Register\-Player\-Connect (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::function$<$ void({\bf Player})$>$$>$}]{functions}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_a26aec3d9c2cfbdcb62c0f8e432c2fcae}
+
+
+Register functions for the Player\-Connect callback. 
+
+Returns how many functions were successfully added.
+
+
+\begin{DoxyParams}{Parameters}
+{\em functions} & Vector with functions to be added. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_a56ed11f893eb5beebfbf294a196005e5}{\index{Event\-Manager@{Event\-Manager}!Register\-Player\-Disconnect@{Register\-Player\-Disconnect}}
+\index{Register\-Player\-Disconnect@{Register\-Player\-Disconnect}!EventManager@{Event\-Manager}}
+\subsubsection[{Register\-Player\-Disconnect}]{\setlength{\rightskip}{0pt plus 5cm}int Event\-Manager\-::\-Register\-Player\-Disconnect (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::function$<$ void({\bf Player})$>$$>$}]{functions}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_a56ed11f893eb5beebfbf294a196005e5}
+
+
+Register functions for the Player\-Disconnect callback. 
+
+Returns how many functions were successfully added.
+
+
+\begin{DoxyParams}{Parameters}
+{\em functions} & Vector with functions to be added. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_a4f23806f21b01bd408630d604f8cb6a0}{\index{Event\-Manager@{Event\-Manager}!Register\-Player\-Finish@{Register\-Player\-Finish}}
+\index{Register\-Player\-Finish@{Register\-Player\-Finish}!EventManager@{Event\-Manager}}
+\subsubsection[{Register\-Player\-Finish}]{\setlength{\rightskip}{0pt plus 5cm}int Event\-Manager\-::\-Register\-Player\-Finish (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::function$<$ void({\bf Player}, int)$>$$>$}]{functions}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_a4f23806f21b01bd408630d604f8cb6a0}
+
+
+Register functions for the Player\-Finish callback. 
+
+Returns how many functions were successfully added.
+
+
+\begin{DoxyParams}{Parameters}
+{\em functions} & Vector with functions to be added. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_a05fec5b169d8bf0abd1e32908b33c074}{\index{Event\-Manager@{Event\-Manager}!Register\-Player\-Incoherence@{Register\-Player\-Incoherence}}
+\index{Register\-Player\-Incoherence@{Register\-Player\-Incoherence}!EventManager@{Event\-Manager}}
+\subsubsection[{Register\-Player\-Incoherence}]{\setlength{\rightskip}{0pt plus 5cm}int Event\-Manager\-::\-Register\-Player\-Incoherence (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::function$<$ void({\bf Player})$>$$>$}]{functions}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_a05fec5b169d8bf0abd1e32908b33c074}
+
+
+Register functions for the Player\-Incoherence callback. 
+
+Returns how many functions were successfully added.
+
+
+\begin{DoxyParams}{Parameters}
+{\em functions} & Vector with functions to be added. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_a1ffe0d4b4a0bdbb8e488bc3bd3a58178}{\index{Event\-Manager@{Event\-Manager}!Register\-Player\-Info\-Changed@{Register\-Player\-Info\-Changed}}
+\index{Register\-Player\-Info\-Changed@{Register\-Player\-Info\-Changed}!EventManager@{Event\-Manager}}
+\subsubsection[{Register\-Player\-Info\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}int Event\-Manager\-::\-Register\-Player\-Info\-Changed (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::function$<$ void({\bf Player})$>$$>$}]{functions}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_a1ffe0d4b4a0bdbb8e488bc3bd3a58178}
+
+
+Register functions for the Player\-Info\-Changed callback. 
+
+Returns how many functions were successfully added.
+
+
+\begin{DoxyParams}{Parameters}
+{\em functions} & Vector with functions to be added. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_a5213c8526941c4a67b08d080302dc6bc}{\index{Event\-Manager@{Event\-Manager}!Register\-Player\-Manialink\-Page\-Answer@{Register\-Player\-Manialink\-Page\-Answer}}
+\index{Register\-Player\-Manialink\-Page\-Answer@{Register\-Player\-Manialink\-Page\-Answer}!EventManager@{Event\-Manager}}
+\subsubsection[{Register\-Player\-Manialink\-Page\-Answer}]{\setlength{\rightskip}{0pt plus 5cm}int Event\-Manager\-::\-Register\-Player\-Manialink\-Page\-Answer (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::function$<$ void({\bf Player}, std\-::string, std\-::vector$<$ {\bf Entry\-Val} $>$)$>$$>$}]{functions}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_a5213c8526941c4a67b08d080302dc6bc}
+
+
+Register functions for the Player\-Manialink\-Page\-Answer callback. 
+
+Returns how many functions were successfully added.
+
+
+\begin{DoxyParams}{Parameters}
+{\em functions} & Vector with functions to be added. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_ad84c001cc738faa396aaa5948573b682}{\index{Event\-Manager@{Event\-Manager}!Register\-Status\-Changed@{Register\-Status\-Changed}}
+\index{Register\-Status\-Changed@{Register\-Status\-Changed}!EventManager@{Event\-Manager}}
+\subsubsection[{Register\-Status\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}int Event\-Manager\-::\-Register\-Status\-Changed (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::function$<$ void(int, std\-::string)$>$$>$}]{functions}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_ad84c001cc738faa396aaa5948573b682}
+
+
+Register functions for the Status\-Changed callback. 
+
+Returns how many functions were successfully added.
+
+
+\begin{DoxyParams}{Parameters}
+{\em functions} & Vector with functions to be added. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_aa8833f57b1732204762c4d64c8546c53}{\index{Event\-Manager@{Event\-Manager}!Register\-Vote\-Updated@{Register\-Vote\-Updated}}
+\index{Register\-Vote\-Updated@{Register\-Vote\-Updated}!EventManager@{Event\-Manager}}
+\subsubsection[{Register\-Vote\-Updated}]{\setlength{\rightskip}{0pt plus 5cm}int Event\-Manager\-::\-Register\-Vote\-Updated (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::function$<$ void(std\-::string, std\-::string, std\-::string, std\-::string)$>$$>$}]{functions}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_aa8833f57b1732204762c4d64c8546c53}
+
+
+Register functions for the Vote\-Updated callback. 
+
+Returns how many functions were successfully added.
+
+
+\begin{DoxyParams}{Parameters}
+{\em functions} & Vector with functions to be added. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Events/Event\-Manager.\-h\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Events/Event\-Manager.\-cpp\end{DoxyCompactItemize}

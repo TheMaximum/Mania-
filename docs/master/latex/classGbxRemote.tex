@@ -19,7 +19,8 @@ bool \hyperlink{classGbxRemote_a24d9d0df923ed85010f53dcb43c2b977}{Init} (int por
 \begin{DoxyCompactList}\small\item\em Initializes connection with the local server. \end{DoxyCompactList}\item 
 bool \hyperlink{classGbxRemote_aa9a57e73f2f5ebbde90484503bd0d16d}{Init\-With\-Ip} (std\-::string address, int port)
 \begin{DoxyCompactList}\small\item\em Initializes connection with the server. \end{DoxyCompactList}\item 
-void \hyperlink{classGbxRemote_a6fa8ca2d48aae84884cab98a0adf4360}{Terminate} ()
+\hypertarget{classGbxRemote_a6fa8ca2d48aae84884cab98a0adf4360}{void \hyperlink{classGbxRemote_a6fa8ca2d48aae84884cab98a0adf4360}{Terminate} ()}\label{classGbxRemote_a6fa8ca2d48aae84884cab98a0adf4360}
+
 \begin{DoxyCompactList}\small\item\em Closes the connection with the server. \end{DoxyCompactList}\item 
 bool \hyperlink{classGbxRemote_abf869640136958fc4756b3a60275a285}{Query} (\hyperlink{classGbxMessage}{Gbx\-Message} $\ast$query)
 \begin{DoxyCompactList}\small\item\em Sends a \hyperlink{classGbxMessage}{Gbx\-Message} to the server. \end{DoxyCompactList}\item 
@@ -27,45 +28,46 @@ bool \hyperlink{classGbxRemote_ac595861af2f4d7349ce3841f0758507d}{Read\-Call\-Ba
 \begin{DoxyCompactList}\small\item\em Read callbacks from the server. \end{DoxyCompactList}\item 
 void \hyperlink{classGbxRemote_a5bd6e1dc2118f7e369e72592b3c9322a}{Handle\-Call\-Back} (std\-::string data)
 \begin{DoxyCompactList}\small\item\em Handles callbacks (de-\/\-X\-M\-L-\/fies them). \end{DoxyCompactList}\item 
-std\-::vector$<$ \hyperlink{classGbxCallBack}{Gbx\-Call\-Back} $>$ \hyperlink{classGbxRemote_a1ae6ff7eddcccdeda59af2316d053aae}{Get\-C\-B\-Responses} ()
+\hypertarget{classGbxRemote_a1ae6ff7eddcccdeda59af2316d053aae}{std\-::vector$<$ \hyperlink{classGbxCallBack}{Gbx\-Call\-Back} $>$ \hyperlink{classGbxRemote_a1ae6ff7eddcccdeda59af2316d053aae}{Get\-C\-B\-Responses} ()}\label{classGbxRemote_a1ae6ff7eddcccdeda59af2316d053aae}
+
 \begin{DoxyCompactList}\small\item\em Returns the callbacks that have been received since last call. \end{DoxyCompactList}\item 
-void \hyperlink{classGbxRemote_a81ba62f042948610a3cf720316e22076}{Reset\-C\-B\-Responses} ()
+\hypertarget{classGbxRemote_a81ba62f042948610a3cf720316e22076}{void \hyperlink{classGbxRemote_a81ba62f042948610a3cf720316e22076}{Reset\-C\-B\-Responses} ()}\label{classGbxRemote_a81ba62f042948610a3cf720316e22076}
+
 \begin{DoxyCompactList}\small\item\em Resets list of current callbacks. \end{DoxyCompactList}\item 
-\hyperlink{classGbxResponse}{Gbx\-Response} $\ast$ \hyperlink{classGbxRemote_adac67444e391ffcc1dfda8f087eaef0b}{Get\-Response} ()
+\hypertarget{classGbxRemote_adac67444e391ffcc1dfda8f087eaef0b}{\hyperlink{classGbxResponse}{Gbx\-Response} $\ast$ \hyperlink{classGbxRemote_adac67444e391ffcc1dfda8f087eaef0b}{Get\-Response} ()}\label{classGbxRemote_adac67444e391ffcc1dfda8f087eaef0b}
+
 \begin{DoxyCompactList}\small\item\em Returns the response from the server. \end{DoxyCompactList}\item 
 \hyperlink{structGbxError}{Gbx\-Error} $\ast$ \hyperlink{classGbxRemote_a5467b5400129cd13239f88576aaaa2b4}{Get\-Current\-Error} ()
 \begin{DoxyCompactList}\small\item\em Returns the current server error. \end{DoxyCompactList}\item 
-int \hyperlink{classGbxRemote_ae6e15060920a31482fd14045cfd42803}{Get\-Protocol} ()
+\hypertarget{classGbxRemote_ae6e15060920a31482fd14045cfd42803}{int \hyperlink{classGbxRemote_ae6e15060920a31482fd14045cfd42803}{Get\-Protocol} ()}\label{classGbxRemote_ae6e15060920a31482fd14045cfd42803}
+
 \begin{DoxyCompactList}\small\item\em Returns the current version number of the server protocol (1 or 2). \end{DoxyCompactList}\item 
-std\-::string \hyperlink{classGbxRemote_a6351f71fe649bff2aabfbd9b7c89e3f5}{Get\-Api\-Version} ()
+\hypertarget{classGbxRemote_a6351f71fe649bff2aabfbd9b7c89e3f5}{std\-::string \hyperlink{classGbxRemote_a6351f71fe649bff2aabfbd9b7c89e3f5}{Get\-Api\-Version} ()}\label{classGbxRemote_a6351f71fe649bff2aabfbd9b7c89e3f5}
+
 \begin{DoxyCompactList}\small\item\em Returns the set A\-P\-I version. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-std\-::string \hyperlink{classGbxRemote_aca6e6ee86b785451d52735daf222cc6d}{Login}
-\begin{DoxyCompactList}\small\item\em Server login. \end{DoxyCompactList}\item 
-std\-::string \hyperlink{classGbxRemote_a144e618f3f124b77054165d2d8519eee}{Build}
-\begin{DoxyCompactList}\small\item\em Current server build (f.\-e. 2015-\/06-\/16\-\_\-18\-\_\-00). \end{DoxyCompactList}\item 
-std\-::string \hyperlink{classGbxRemote_a0ce9914944a8f0d35f5d1bb0ddb8d292}{Platform}
-\begin{DoxyCompactList}\small\item\em Program name (Mania\-Planet). \end{DoxyCompactList}\item 
-std\-::string \hyperlink{classGbxRemote_a12d98a9add104392142ec8494dd022df}{Title\-Id}
-\begin{DoxyCompactList}\small\item\em Server title (f.\-e. T\-M\-Canyon). \end{DoxyCompactList}\item 
-std\-::string \hyperlink{classGbxRemote_a654b4cae6e4eed717d602700a90fcc27}{Version}
-\begin{DoxyCompactList}\small\item\em Program version (f.\-e. 3.\-3.\-0). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{classGbxRemote_a5ee5c7087085cb6cb2e7bc6135ff0646}{protocol} = 0
+\hypertarget{classGbxRemote_a56662ea222345c645ae897e056b5c8c8}{bool \hyperlink{classGbxRemote_a56662ea222345c645ae897e056b5c8c8}{connected} = false}\label{classGbxRemote_a56662ea222345c645ae897e056b5c8c8}
+
+\begin{DoxyCompactList}\small\item\em Is the client connected with the server? \end{DoxyCompactList}\item 
+\hypertarget{classGbxRemote_a5ee5c7087085cb6cb2e7bc6135ff0646}{int \hyperlink{classGbxRemote_a5ee5c7087085cb6cb2e7bc6135ff0646}{protocol} = 0}\label{classGbxRemote_a5ee5c7087085cb6cb2e7bc6135ff0646}
+
 \begin{DoxyCompactList}\small\item\em Protocol version (0 = uninitialized, 1 or 2 = version). \end{DoxyCompactList}\item 
-std\-::string \hyperlink{classGbxRemote_a81d3c0c70ab7f5e585840e9978ee900e}{api\-Version}
+\hypertarget{classGbxRemote_a81d3c0c70ab7f5e585840e9978ee900e}{std\-::string \hyperlink{classGbxRemote_a81d3c0c70ab7f5e585840e9978ee900e}{api\-Version}}\label{classGbxRemote_a81d3c0c70ab7f5e585840e9978ee900e}
+
 \begin{DoxyCompactList}\small\item\em Server A\-P\-I version. \end{DoxyCompactList}\item 
-\hyperlink{classTcpClient}{Tcp\-Client} \hyperlink{classGbxRemote_a0b0b212b945da4266fb645affdac81cb}{server}
+\hypertarget{classGbxRemote_a0b0b212b945da4266fb645affdac81cb}{\hyperlink{classTcpClient}{Tcp\-Client} \hyperlink{classGbxRemote_a0b0b212b945da4266fb645affdac81cb}{server}}\label{classGbxRemote_a0b0b212b945da4266fb645affdac81cb}
+
 \begin{DoxyCompactList}\small\item\em Socket connection with the server. \end{DoxyCompactList}\item 
-\hyperlink{structGbxError}{Gbx\-Error} $\ast$ \hyperlink{classGbxRemote_ae5d44c3729140c1eba5e850cb5e5e7bd}{current\-Error} = new \hyperlink{structGbxError}{Gbx\-Error}
+\hypertarget{classGbxRemote_ae5d44c3729140c1eba5e850cb5e5e7bd}{\hyperlink{structGbxError}{Gbx\-Error} $\ast$ \hyperlink{classGbxRemote_ae5d44c3729140c1eba5e850cb5e5e7bd}{current\-Error} = new \hyperlink{structGbxError}{Gbx\-Error}}\label{classGbxRemote_ae5d44c3729140c1eba5e850cb5e5e7bd}
+
 \begin{DoxyCompactList}\small\item\em Current server error. \end{DoxyCompactList}\item 
-\hyperlink{classGbxResponse}{Gbx\-Response} $\ast$ \hyperlink{classGbxRemote_a3a3a0af1a692a801a33baa292b877dc2}{current\-Response} = new \hyperlink{classGbxResponse}{Gbx\-Response}
+\hypertarget{classGbxRemote_a3a3a0af1a692a801a33baa292b877dc2}{\hyperlink{classGbxResponse}{Gbx\-Response} $\ast$ \hyperlink{classGbxRemote_a3a3a0af1a692a801a33baa292b877dc2}{current\-Response} = new \hyperlink{classGbxResponse}{Gbx\-Response}}\label{classGbxRemote_a3a3a0af1a692a801a33baa292b877dc2}
+
 \begin{DoxyCompactList}\small\item\em Current server response. \end{DoxyCompactList}\item 
-std\-::vector$<$ \hyperlink{classGbxCallBack}{Gbx\-Call\-Back} $>$ \hyperlink{classGbxRemote_a08d047d7e0d4b746fc036c1aa02f0d17}{current\-Call\-Backs} = std\-::vector$<$\hyperlink{classGbxCallBack}{Gbx\-Call\-Back}$>$()
+\hypertarget{classGbxRemote_a08d047d7e0d4b746fc036c1aa02f0d17}{std\-::vector$<$ \hyperlink{classGbxCallBack}{Gbx\-Call\-Back} $>$ \hyperlink{classGbxRemote_a08d047d7e0d4b746fc036c1aa02f0d17}{current\-Call\-Backs} = std\-::vector$<$\hyperlink{classGbxCallBack}{Gbx\-Call\-Back}$>$()}\label{classGbxRemote_a08d047d7e0d4b746fc036c1aa02f0d17}
+
 \begin{DoxyCompactList}\small\item\em List of currently received callbacks. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -73,7 +75,7 @@ std\-::vector$<$ \hyperlink{classGbxCallBack}{Gbx\-Call\-Back} $>$ \hyperlink{cl
 Handles communication with the Mania\-Planet server. 
 
 \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000001}{Todo}]Make it possible to set an A\-P\-I version without upsetting Tiny\-X\-M\-L2. \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000002}{Todo}]Make it possible to set an A\-P\-I version without upsetting Tiny\-X\-M\-L2. \end{DoxyRefDesc}
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -87,28 +89,6 @@ Handles communication with the Mania\-Planet server.
 Deletes and nullifies the current\-Error and current\-Response. 
 
 \subsection{Member Function Documentation}
-\hypertarget{classGbxRemote_a6351f71fe649bff2aabfbd9b7c89e3f5}{\index{Gbx\-Remote@{Gbx\-Remote}!Get\-Api\-Version@{Get\-Api\-Version}}
-\index{Get\-Api\-Version@{Get\-Api\-Version}!GbxRemote@{Gbx\-Remote}}
-\subsubsection[{Get\-Api\-Version}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gbx\-Remote\-::\-Get\-Api\-Version (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{classGbxRemote_a6351f71fe649bff2aabfbd9b7c89e3f5}
-
-
-Returns the set A\-P\-I version. 
-
-\hypertarget{classGbxRemote_a1ae6ff7eddcccdeda59af2316d053aae}{\index{Gbx\-Remote@{Gbx\-Remote}!Get\-C\-B\-Responses@{Get\-C\-B\-Responses}}
-\index{Get\-C\-B\-Responses@{Get\-C\-B\-Responses}!GbxRemote@{Gbx\-Remote}}
-\subsubsection[{Get\-C\-B\-Responses}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf Gbx\-Call\-Back} $>$ Gbx\-Remote\-::\-Get\-C\-B\-Responses (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{classGbxRemote_a1ae6ff7eddcccdeda59af2316d053aae}
-
-
-Returns the callbacks that have been received since last call. 
-
 \hypertarget{classGbxRemote_a5467b5400129cd13239f88576aaaa2b4}{\index{Gbx\-Remote@{Gbx\-Remote}!Get\-Current\-Error@{Get\-Current\-Error}}
 \index{Get\-Current\-Error@{Get\-Current\-Error}!GbxRemote@{Gbx\-Remote}}
 \subsubsection[{Get\-Current\-Error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gbx\-Error} $\ast$ Gbx\-Remote\-::\-Get\-Current\-Error (
@@ -120,29 +100,7 @@ Returns the callbacks that have been received since last call.
 
 Returns the current server error. 
 
-Returns N\-U\-L\-L when there currently is no error. \hypertarget{classGbxRemote_ae6e15060920a31482fd14045cfd42803}{\index{Gbx\-Remote@{Gbx\-Remote}!Get\-Protocol@{Get\-Protocol}}
-\index{Get\-Protocol@{Get\-Protocol}!GbxRemote@{Gbx\-Remote}}
-\subsubsection[{Get\-Protocol}]{\setlength{\rightskip}{0pt plus 5cm}int Gbx\-Remote\-::\-Get\-Protocol (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{classGbxRemote_ae6e15060920a31482fd14045cfd42803}
-
-
-Returns the current version number of the server protocol (1 or 2). 
-
-\hypertarget{classGbxRemote_adac67444e391ffcc1dfda8f087eaef0b}{\index{Gbx\-Remote@{Gbx\-Remote}!Get\-Response@{Get\-Response}}
-\index{Get\-Response@{Get\-Response}!GbxRemote@{Gbx\-Remote}}
-\subsubsection[{Get\-Response}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gbx\-Response} $\ast$ Gbx\-Remote\-::\-Get\-Response (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{classGbxRemote_adac67444e391ffcc1dfda8f087eaef0b}
-
-
-Returns the response from the server. 
-
-\hypertarget{classGbxRemote_a5bd6e1dc2118f7e369e72592b3c9322a}{\index{Gbx\-Remote@{Gbx\-Remote}!Handle\-Call\-Back@{Handle\-Call\-Back}}
+Returns N\-U\-L\-L when there currently is no error. \hypertarget{classGbxRemote_a5bd6e1dc2118f7e369e72592b3c9322a}{\index{Gbx\-Remote@{Gbx\-Remote}!Handle\-Call\-Back@{Handle\-Call\-Back}}
 \index{Handle\-Call\-Back@{Handle\-Call\-Back}!GbxRemote@{Gbx\-Remote}}
 \subsubsection[{Handle\-Call\-Back}]{\setlength{\rightskip}{0pt plus 5cm}void Gbx\-Remote\-::\-Handle\-Call\-Back (
 \begin{DoxyParamCaption}
@@ -222,111 +180,9 @@ Returns whether the query was successfully sent.
 
 Read callbacks from the server. 
 
-Returns whether it found a callback. \hypertarget{classGbxRemote_a81ba62f042948610a3cf720316e22076}{\index{Gbx\-Remote@{Gbx\-Remote}!Reset\-C\-B\-Responses@{Reset\-C\-B\-Responses}}
-\index{Reset\-C\-B\-Responses@{Reset\-C\-B\-Responses}!GbxRemote@{Gbx\-Remote}}
-\subsubsection[{Reset\-C\-B\-Responses}]{\setlength{\rightskip}{0pt plus 5cm}void Gbx\-Remote\-::\-Reset\-C\-B\-Responses (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{classGbxRemote_a81ba62f042948610a3cf720316e22076}
-
-
-Resets list of current callbacks. 
-
-\hypertarget{classGbxRemote_a6fa8ca2d48aae84884cab98a0adf4360}{\index{Gbx\-Remote@{Gbx\-Remote}!Terminate@{Terminate}}
-\index{Terminate@{Terminate}!GbxRemote@{Gbx\-Remote}}
-\subsubsection[{Terminate}]{\setlength{\rightskip}{0pt plus 5cm}void Gbx\-Remote\-::\-Terminate (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{classGbxRemote_a6fa8ca2d48aae84884cab98a0adf4360}
-
-
-Closes the connection with the server. 
-
-
-
-\subsection{Member Data Documentation}
-\hypertarget{classGbxRemote_a81d3c0c70ab7f5e585840e9978ee900e}{\index{Gbx\-Remote@{Gbx\-Remote}!api\-Version@{api\-Version}}
-\index{api\-Version@{api\-Version}!GbxRemote@{Gbx\-Remote}}
-\subsubsection[{api\-Version}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gbx\-Remote\-::api\-Version\hspace{0.3cm}{\ttfamily [private]}}}\label{classGbxRemote_a81d3c0c70ab7f5e585840e9978ee900e}
-
-
-Server A\-P\-I version. 
-
-\hypertarget{classGbxRemote_a144e618f3f124b77054165d2d8519eee}{\index{Gbx\-Remote@{Gbx\-Remote}!Build@{Build}}
-\index{Build@{Build}!GbxRemote@{Gbx\-Remote}}
-\subsubsection[{Build}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gbx\-Remote\-::\-Build}}\label{classGbxRemote_a144e618f3f124b77054165d2d8519eee}
-
-
-Current server build (f.\-e. 2015-\/06-\/16\-\_\-18\-\_\-00). 
-
-\hypertarget{classGbxRemote_a08d047d7e0d4b746fc036c1aa02f0d17}{\index{Gbx\-Remote@{Gbx\-Remote}!current\-Call\-Backs@{current\-Call\-Backs}}
-\index{current\-Call\-Backs@{current\-Call\-Backs}!GbxRemote@{Gbx\-Remote}}
-\subsubsection[{current\-Call\-Backs}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Gbx\-Call\-Back}$>$ Gbx\-Remote\-::current\-Call\-Backs = std\-::vector$<${\bf Gbx\-Call\-Back}$>$()\hspace{0.3cm}{\ttfamily [private]}}}\label{classGbxRemote_a08d047d7e0d4b746fc036c1aa02f0d17}
-
-
-List of currently received callbacks. 
-
-\hypertarget{classGbxRemote_ae5d44c3729140c1eba5e850cb5e5e7bd}{\index{Gbx\-Remote@{Gbx\-Remote}!current\-Error@{current\-Error}}
-\index{current\-Error@{current\-Error}!GbxRemote@{Gbx\-Remote}}
-\subsubsection[{current\-Error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gbx\-Error}$\ast$ Gbx\-Remote\-::current\-Error = new {\bf Gbx\-Error}\hspace{0.3cm}{\ttfamily [private]}}}\label{classGbxRemote_ae5d44c3729140c1eba5e850cb5e5e7bd}
-
-
-Current server error. 
-
-\hypertarget{classGbxRemote_a3a3a0af1a692a801a33baa292b877dc2}{\index{Gbx\-Remote@{Gbx\-Remote}!current\-Response@{current\-Response}}
-\index{current\-Response@{current\-Response}!GbxRemote@{Gbx\-Remote}}
-\subsubsection[{current\-Response}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gbx\-Response}$\ast$ Gbx\-Remote\-::current\-Response = new {\bf Gbx\-Response}\hspace{0.3cm}{\ttfamily [private]}}}\label{classGbxRemote_a3a3a0af1a692a801a33baa292b877dc2}
-
-
-Current server response. 
-
-\hypertarget{classGbxRemote_aca6e6ee86b785451d52735daf222cc6d}{\index{Gbx\-Remote@{Gbx\-Remote}!Login@{Login}}
-\index{Login@{Login}!GbxRemote@{Gbx\-Remote}}
-\subsubsection[{Login}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gbx\-Remote\-::\-Login}}\label{classGbxRemote_aca6e6ee86b785451d52735daf222cc6d}
-
-
-Server login. 
-
-\hypertarget{classGbxRemote_a0ce9914944a8f0d35f5d1bb0ddb8d292}{\index{Gbx\-Remote@{Gbx\-Remote}!Platform@{Platform}}
-\index{Platform@{Platform}!GbxRemote@{Gbx\-Remote}}
-\subsubsection[{Platform}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gbx\-Remote\-::\-Platform}}\label{classGbxRemote_a0ce9914944a8f0d35f5d1bb0ddb8d292}
-
-
-Program name (Mania\-Planet). 
-
-\hypertarget{classGbxRemote_a5ee5c7087085cb6cb2e7bc6135ff0646}{\index{Gbx\-Remote@{Gbx\-Remote}!protocol@{protocol}}
-\index{protocol@{protocol}!GbxRemote@{Gbx\-Remote}}
-\subsubsection[{protocol}]{\setlength{\rightskip}{0pt plus 5cm}int Gbx\-Remote\-::protocol = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classGbxRemote_a5ee5c7087085cb6cb2e7bc6135ff0646}
-
-
-Protocol version (0 = uninitialized, 1 or 2 = version). 
-
-\hypertarget{classGbxRemote_a0b0b212b945da4266fb645affdac81cb}{\index{Gbx\-Remote@{Gbx\-Remote}!server@{server}}
-\index{server@{server}!GbxRemote@{Gbx\-Remote}}
-\subsubsection[{server}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tcp\-Client} Gbx\-Remote\-::server\hspace{0.3cm}{\ttfamily [private]}}}\label{classGbxRemote_a0b0b212b945da4266fb645affdac81cb}
-
-
-Socket connection with the server. 
-
-\hypertarget{classGbxRemote_a12d98a9add104392142ec8494dd022df}{\index{Gbx\-Remote@{Gbx\-Remote}!Title\-Id@{Title\-Id}}
-\index{Title\-Id@{Title\-Id}!GbxRemote@{Gbx\-Remote}}
-\subsubsection[{Title\-Id}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gbx\-Remote\-::\-Title\-Id}}\label{classGbxRemote_a12d98a9add104392142ec8494dd022df}
-
-
-Server title (f.\-e. T\-M\-Canyon). 
-
-\hypertarget{classGbxRemote_a654b4cae6e4eed717d602700a90fcc27}{\index{Gbx\-Remote@{Gbx\-Remote}!Version@{Version}}
-\index{Version@{Version}!GbxRemote@{Gbx\-Remote}}
-\subsubsection[{Version}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Gbx\-Remote\-::\-Version}}\label{classGbxRemote_a654b4cae6e4eed717d602700a90fcc27}
-
-
-Program version (f.\-e. 3.\-3.\-0). 
-
-
+Returns whether it found a callback. 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Gbx\-Remote/\hyperlink{GbxRemote_8h}{Gbx\-Remote.\-h}\item 
-/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Gbx\-Remote/\hyperlink{GbxRemote_8cpp}{Gbx\-Remote.\-cpp}\end{DoxyCompactItemize}
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Gbx\-Remote/Gbx\-Remote.\-h\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Gbx\-Remote/Gbx\-Remote.\-cpp\end{DoxyCompactItemize}

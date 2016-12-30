@@ -1,11 +1,8 @@
 var searchData=
 [
-  ['parameters',['parameters',['../classGbxParameters.html#af2c27b8d1e5c3884d0e5cc9ba04953cf',1,'GbxParameters::parameters()'],['../classGbxServerResponse.html#acfd80e7b92cf34e1f0cda88a11a1bed0',1,'GbxServerResponse::parameters()']]],
-  ['password',['password',['../structServerConfig.html#a819f5b912feb1fdb68ebd4fe36eb11ea',1,'ServerConfig']]],
-  ['platform',['Platform',['../classGbxRemote.html#a0ce9914944a8f0d35f5d1bb0ddb8d292',1,'GbxRemote']]],
-  ['playerid',['PlayerId',['../structPlayer.html#a6a71d7d9837a0a12e52ca47930965e0f',1,'Player']]],
-  ['players',['players',['../classManiaPP.html#a45712ccfa91b20242b39cb1164d305d8',1,'ManiaPP']]],
-  ['pointer',['pointer',['../structGbxParam.html#a19b53f8dacdd8937e1020775f8615495',1,'GbxParam']]],
-  ['port',['port',['../structServerConfig.html#ae459946703124ef5a1d98dba38a8b493',1,'ServerConfig::port()'],['../classTcpClient.html#aa112ef0470437e790931b3ec9c98a800',1,'TcpClient::port()']]],
-  ['protocol',['protocol',['../classGbxRemote.html#a5ee5c7087085cb6cb2e7bc6135ff0646',1,'GbxRemote']]]
+  ['ladderranking',['LadderRanking',['../structPlayer.html#a25fe69852f0e38f541ad615cd59877ef',1,'Player']]],
+  ['ladderscore',['LadderScore',['../structPlayerRanking.html#a4b988897c8ab57fe04c3a1adfc908376',1,'PlayerRanking']]],
+  ['laprace',['LapRace',['../structMap.html#a0b88590574688965bf8b7442f3792000',1,'Map']]],
+  ['logging',['logging',['../classManiaPP.html#aa4cea090301bdf0bf652ad377e7b01c0',1,'ManiaPP::logging()'],['../classPlugin.html#a790b0b546d265519adca0ddac1ff0fec',1,'Plugin::logging()'],['../classPluginManager.html#a075528fc6c227b7a9f741d4f01706efc',1,'PluginManager::logging()']]],
+  ['login',['Login',['../structPlayer.html#a38398818d43e186aa982a788744792d7',1,'Player']]]
 ];

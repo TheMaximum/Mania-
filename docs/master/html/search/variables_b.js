@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['server',['Server',['../classConfig.html#a249a19a298cdcfd4223609142e15e5de',1,'Config::Server()'],['../classGbxRemote.html#a0b0b212b945da4266fb645affdac81cb',1,'GbxRemote::server()'],['../classManiaPP.html#ab81311d6901990cb99a7a30e0cbaab11',1,'ManiaPP::server()'],['../classTcpClient.html#a75a8bd28eca3f1eea17fb430ab14cade',1,'TcpClient::server()']]],
-  ['size',['size',['../structGbxFirstResponse.html#ad93a9c67024b28ecddb779457dd001f8',1,'GbxFirstResponse::size()'],['../structGbxQueryResponse.html#ab7d7e30d6beb443cdae8cbf95e4c89f3',1,'GbxQueryResponse::size()']]],
-  ['sock',['sock',['../classTcpClient.html#af93f7c8c4d91d93379ba99fd3742c3dc',1,'TcpClient']]],
-  ['spectatorstatus',['SpectatorStatus',['../structPlayer.html#a2037601661fb699454a88b5649485b30',1,'Player']]],
-  ['struct',['Struct',['../classGbxResponseParameter.html#acc26f8d64983f92709d1fa38b8f33e66',1,'GbxResponseParameter']]]
+  ['name',['Name',['../structEntryVal.html#a3fdfc0956cb158d36bff09687c8f577e',1,'EntryVal::Name()'],['../structServerVersion.html#aadf5d3affd53da46d030cf1a4bc63353',1,'ServerVersion::Name()'],['../structServerStatus.html#a6dd08d54208cd864fd1f384081209e0f',1,'ServerStatus::Name()'],['../structMap.html#ab1a5bf049a4b74e704128d31e9b53b8c',1,'Map::Name()']]],
+  ['nbcheckpoints',['NbCheckpoints',['../structMap.html#abadd4d6809c065522960a0db897d6c10',1,'Map']]],
+  ['nblaps',['NbLaps',['../structMap.html#a2a06493a298b5ebfae70ecbfb0bca406',1,'Map']]],
+  ['nbrlapsfinished',['NbrLapsFinished',['../structPlayerRanking.html#a82c1df4d6ef3d2dbb4ce8f654ef9f8b1',1,'PlayerRanking']]],
+  ['nickname',['NickName',['../structPlayer.html#a553cc1b0aa79108b511ba408210582cf',1,'Player']]],
+  ['number',['number',['../structGbxError.html#ae5627cae63e837beaa75f798e47be50e',1,'GbxError']]]
 ];

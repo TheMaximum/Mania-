@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['close',['Close',['../classTcpClient.html#ae7a96d69db612ef4827ee23c31332a4e',1,'TcpClient']]],
-  ['config',['Config',['../classConfig.html#ae67e338ea42e242cb5b374b6583c8b1c',1,'Config']]],
-  ['connect',['Connect',['../classTcpClient.html#ac2e9bb63b4e0dc8f4508aa2a85431fe2',1,'TcpClient']]],
-  ['connecttoserver',['ConnectToServer',['../classManiaPP.html#a22561171876e54dbf633c70d9924c06a',1,'ManiaPP']]]
+  ['authenticate',['Authenticate',['../classMethods.html#aa1bba4d023f013fedf3edff7c69f5d08',1,'Methods']]]
 ];

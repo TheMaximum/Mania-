@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -84,7 +84,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classGbxRemote-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -107,8 +106,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa9a57e73f2f5ebbde90484503bd0d16d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#aa9a57e73f2f5ebbde90484503bd0d16d">InitWithIp</a> (std::string address, int port)</td></tr>
 <tr class="memdesc:aa9a57e73f2f5ebbde90484503bd0d16d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes connection with the server.  <a href="#aa9a57e73f2f5ebbde90484503bd0d16d">More...</a><br/></td></tr>
 <tr class="separator:aa9a57e73f2f5ebbde90484503bd0d16d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fa8ca2d48aae84884cab98a0adf4360"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a6fa8ca2d48aae84884cab98a0adf4360">Terminate</a> ()</td></tr>
-<tr class="memdesc:a6fa8ca2d48aae84884cab98a0adf4360"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the connection with the server.  <a href="#a6fa8ca2d48aae84884cab98a0adf4360">More...</a><br/></td></tr>
+<tr class="memitem:a6fa8ca2d48aae84884cab98a0adf4360"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6fa8ca2d48aae84884cab98a0adf4360"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a6fa8ca2d48aae84884cab98a0adf4360">Terminate</a> ()</td></tr>
+<tr class="memdesc:a6fa8ca2d48aae84884cab98a0adf4360"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the connection with the server. <br/></td></tr>
 <tr class="separator:a6fa8ca2d48aae84884cab98a0adf4360"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf869640136958fc4756b3a60275a285"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#abf869640136958fc4756b3a60275a285">Query</a> (<a class="el" href="classGbxMessage.html">GbxMessage</a> *query)</td></tr>
 <tr class="memdesc:abf869640136958fc4756b3a60275a285"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a <a class="el" href="classGbxMessage.html" title="XML-fies the message for communication with the server. ">GbxMessage</a> to the server.  <a href="#abf869640136958fc4756b3a60275a285">More...</a><br/></td></tr>
@@ -119,67 +119,64 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5bd6e1dc2118f7e369e72592b3c9322a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a5bd6e1dc2118f7e369e72592b3c9322a">HandleCallBack</a> (std::string data)</td></tr>
 <tr class="memdesc:a5bd6e1dc2118f7e369e72592b3c9322a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles callbacks (de-XML-fies them).  <a href="#a5bd6e1dc2118f7e369e72592b3c9322a">More...</a><br/></td></tr>
 <tr class="separator:a5bd6e1dc2118f7e369e72592b3c9322a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ae6ff7eddcccdeda59af2316d053aae"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classGbxCallBack.html">GbxCallBack</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a1ae6ff7eddcccdeda59af2316d053aae">GetCBResponses</a> ()</td></tr>
-<tr class="memdesc:a1ae6ff7eddcccdeda59af2316d053aae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the callbacks that have been received since last call.  <a href="#a1ae6ff7eddcccdeda59af2316d053aae">More...</a><br/></td></tr>
+<tr class="memitem:a1ae6ff7eddcccdeda59af2316d053aae"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1ae6ff7eddcccdeda59af2316d053aae"></a>
+std::vector&lt; <a class="el" href="classGbxCallBack.html">GbxCallBack</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a1ae6ff7eddcccdeda59af2316d053aae">GetCBResponses</a> ()</td></tr>
+<tr class="memdesc:a1ae6ff7eddcccdeda59af2316d053aae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the callbacks that have been received since last call. <br/></td></tr>
 <tr class="separator:a1ae6ff7eddcccdeda59af2316d053aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81ba62f042948610a3cf720316e22076"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a81ba62f042948610a3cf720316e22076">ResetCBResponses</a> ()</td></tr>
-<tr class="memdesc:a81ba62f042948610a3cf720316e22076"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets list of current callbacks.  <a href="#a81ba62f042948610a3cf720316e22076">More...</a><br/></td></tr>
+<tr class="memitem:a81ba62f042948610a3cf720316e22076"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a81ba62f042948610a3cf720316e22076"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a81ba62f042948610a3cf720316e22076">ResetCBResponses</a> ()</td></tr>
+<tr class="memdesc:a81ba62f042948610a3cf720316e22076"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets list of current callbacks. <br/></td></tr>
 <tr class="separator:a81ba62f042948610a3cf720316e22076"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adac67444e391ffcc1dfda8f087eaef0b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGbxResponse.html">GbxResponse</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#adac67444e391ffcc1dfda8f087eaef0b">GetResponse</a> ()</td></tr>
-<tr class="memdesc:adac67444e391ffcc1dfda8f087eaef0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the response from the server.  <a href="#adac67444e391ffcc1dfda8f087eaef0b">More...</a><br/></td></tr>
+<tr class="memitem:adac67444e391ffcc1dfda8f087eaef0b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adac67444e391ffcc1dfda8f087eaef0b"></a>
+<a class="el" href="classGbxResponse.html">GbxResponse</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#adac67444e391ffcc1dfda8f087eaef0b">GetResponse</a> ()</td></tr>
+<tr class="memdesc:adac67444e391ffcc1dfda8f087eaef0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the response from the server. <br/></td></tr>
 <tr class="separator:adac67444e391ffcc1dfda8f087eaef0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5467b5400129cd13239f88576aaaa2b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGbxError.html">GbxError</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a5467b5400129cd13239f88576aaaa2b4">GetCurrentError</a> ()</td></tr>
 <tr class="memdesc:a5467b5400129cd13239f88576aaaa2b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current server error.  <a href="#a5467b5400129cd13239f88576aaaa2b4">More...</a><br/></td></tr>
 <tr class="separator:a5467b5400129cd13239f88576aaaa2b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6e15060920a31482fd14045cfd42803"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#ae6e15060920a31482fd14045cfd42803">GetProtocol</a> ()</td></tr>
-<tr class="memdesc:ae6e15060920a31482fd14045cfd42803"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current version number of the server protocol (1 or 2).  <a href="#ae6e15060920a31482fd14045cfd42803">More...</a><br/></td></tr>
+<tr class="memitem:ae6e15060920a31482fd14045cfd42803"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae6e15060920a31482fd14045cfd42803"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#ae6e15060920a31482fd14045cfd42803">GetProtocol</a> ()</td></tr>
+<tr class="memdesc:ae6e15060920a31482fd14045cfd42803"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current version number of the server protocol (1 or 2). <br/></td></tr>
 <tr class="separator:ae6e15060920a31482fd14045cfd42803"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6351f71fe649bff2aabfbd9b7c89e3f5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a6351f71fe649bff2aabfbd9b7c89e3f5">GetApiVersion</a> ()</td></tr>
-<tr class="memdesc:a6351f71fe649bff2aabfbd9b7c89e3f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the set API version.  <a href="#a6351f71fe649bff2aabfbd9b7c89e3f5">More...</a><br/></td></tr>
+<tr class="memitem:a6351f71fe649bff2aabfbd9b7c89e3f5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6351f71fe649bff2aabfbd9b7c89e3f5"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a6351f71fe649bff2aabfbd9b7c89e3f5">GetApiVersion</a> ()</td></tr>
+<tr class="memdesc:a6351f71fe649bff2aabfbd9b7c89e3f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the set API version. <br/></td></tr>
 <tr class="separator:a6351f71fe649bff2aabfbd9b7c89e3f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:aca6e6ee86b785451d52735daf222cc6d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#aca6e6ee86b785451d52735daf222cc6d">Login</a></td></tr>
-<tr class="memdesc:aca6e6ee86b785451d52735daf222cc6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Server login.  <a href="#aca6e6ee86b785451d52735daf222cc6d">More...</a><br/></td></tr>
-<tr class="separator:aca6e6ee86b785451d52735daf222cc6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a144e618f3f124b77054165d2d8519eee"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a144e618f3f124b77054165d2d8519eee">Build</a></td></tr>
-<tr class="memdesc:a144e618f3f124b77054165d2d8519eee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current server build (f.e. 2015-06-16_18_00).  <a href="#a144e618f3f124b77054165d2d8519eee">More...</a><br/></td></tr>
-<tr class="separator:a144e618f3f124b77054165d2d8519eee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ce9914944a8f0d35f5d1bb0ddb8d292"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a0ce9914944a8f0d35f5d1bb0ddb8d292">Platform</a></td></tr>
-<tr class="memdesc:a0ce9914944a8f0d35f5d1bb0ddb8d292"><td class="mdescLeft">&#160;</td><td class="mdescRight">Program name (ManiaPlanet).  <a href="#a0ce9914944a8f0d35f5d1bb0ddb8d292">More...</a><br/></td></tr>
-<tr class="separator:a0ce9914944a8f0d35f5d1bb0ddb8d292"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12d98a9add104392142ec8494dd022df"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a12d98a9add104392142ec8494dd022df">TitleId</a></td></tr>
-<tr class="memdesc:a12d98a9add104392142ec8494dd022df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Server title (f.e. TMCanyon).  <a href="#a12d98a9add104392142ec8494dd022df">More...</a><br/></td></tr>
-<tr class="separator:a12d98a9add104392142ec8494dd022df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a654b4cae6e4eed717d602700a90fcc27"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a654b4cae6e4eed717d602700a90fcc27">Version</a></td></tr>
-<tr class="memdesc:a654b4cae6e4eed717d602700a90fcc27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Program version (f.e. 3.3.0).  <a href="#a654b4cae6e4eed717d602700a90fcc27">More...</a><br/></td></tr>
-<tr class="separator:a654b4cae6e4eed717d602700a90fcc27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a5ee5c7087085cb6cb2e7bc6135ff0646"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a5ee5c7087085cb6cb2e7bc6135ff0646">protocol</a> = 0</td></tr>
-<tr class="memdesc:a5ee5c7087085cb6cb2e7bc6135ff0646"><td class="mdescLeft">&#160;</td><td class="mdescRight">Protocol version (0 = uninitialized, 1 or 2 = version).  <a href="#a5ee5c7087085cb6cb2e7bc6135ff0646">More...</a><br/></td></tr>
+<tr class="memitem:a56662ea222345c645ae897e056b5c8c8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a56662ea222345c645ae897e056b5c8c8"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a56662ea222345c645ae897e056b5c8c8">connected</a> = false</td></tr>
+<tr class="memdesc:a56662ea222345c645ae897e056b5c8c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is the client connected with the server? <br/></td></tr>
+<tr class="separator:a56662ea222345c645ae897e056b5c8c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ee5c7087085cb6cb2e7bc6135ff0646"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ee5c7087085cb6cb2e7bc6135ff0646"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a5ee5c7087085cb6cb2e7bc6135ff0646">protocol</a> = 0</td></tr>
+<tr class="memdesc:a5ee5c7087085cb6cb2e7bc6135ff0646"><td class="mdescLeft">&#160;</td><td class="mdescRight">Protocol version (0 = uninitialized, 1 or 2 = version). <br/></td></tr>
 <tr class="separator:a5ee5c7087085cb6cb2e7bc6135ff0646"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81d3c0c70ab7f5e585840e9978ee900e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a81d3c0c70ab7f5e585840e9978ee900e">apiVersion</a></td></tr>
-<tr class="memdesc:a81d3c0c70ab7f5e585840e9978ee900e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Server API version.  <a href="#a81d3c0c70ab7f5e585840e9978ee900e">More...</a><br/></td></tr>
+<tr class="memitem:a81d3c0c70ab7f5e585840e9978ee900e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a81d3c0c70ab7f5e585840e9978ee900e"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a81d3c0c70ab7f5e585840e9978ee900e">apiVersion</a></td></tr>
+<tr class="memdesc:a81d3c0c70ab7f5e585840e9978ee900e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Server API version. <br/></td></tr>
 <tr class="separator:a81d3c0c70ab7f5e585840e9978ee900e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b0b212b945da4266fb645affdac81cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTcpClient.html">TcpClient</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a0b0b212b945da4266fb645affdac81cb">server</a></td></tr>
-<tr class="memdesc:a0b0b212b945da4266fb645affdac81cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Socket connection with the server.  <a href="#a0b0b212b945da4266fb645affdac81cb">More...</a><br/></td></tr>
+<tr class="memitem:a0b0b212b945da4266fb645affdac81cb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0b0b212b945da4266fb645affdac81cb"></a>
+<a class="el" href="classTcpClient.html">TcpClient</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a0b0b212b945da4266fb645affdac81cb">server</a></td></tr>
+<tr class="memdesc:a0b0b212b945da4266fb645affdac81cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Socket connection with the server. <br/></td></tr>
 <tr class="separator:a0b0b212b945da4266fb645affdac81cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5d44c3729140c1eba5e850cb5e5e7bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGbxError.html">GbxError</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#ae5d44c3729140c1eba5e850cb5e5e7bd">currentError</a> = new <a class="el" href="structGbxError.html">GbxError</a></td></tr>
-<tr class="memdesc:ae5d44c3729140c1eba5e850cb5e5e7bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current server error.  <a href="#ae5d44c3729140c1eba5e850cb5e5e7bd">More...</a><br/></td></tr>
+<tr class="memitem:ae5d44c3729140c1eba5e850cb5e5e7bd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae5d44c3729140c1eba5e850cb5e5e7bd"></a>
+<a class="el" href="structGbxError.html">GbxError</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#ae5d44c3729140c1eba5e850cb5e5e7bd">currentError</a> = new <a class="el" href="structGbxError.html">GbxError</a></td></tr>
+<tr class="memdesc:ae5d44c3729140c1eba5e850cb5e5e7bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current server error. <br/></td></tr>
 <tr class="separator:ae5d44c3729140c1eba5e850cb5e5e7bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a3a0af1a692a801a33baa292b877dc2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGbxResponse.html">GbxResponse</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a3a3a0af1a692a801a33baa292b877dc2">currentResponse</a> = new <a class="el" href="classGbxResponse.html">GbxResponse</a></td></tr>
-<tr class="memdesc:a3a3a0af1a692a801a33baa292b877dc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current server response.  <a href="#a3a3a0af1a692a801a33baa292b877dc2">More...</a><br/></td></tr>
+<tr class="memitem:a3a3a0af1a692a801a33baa292b877dc2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3a3a0af1a692a801a33baa292b877dc2"></a>
+<a class="el" href="classGbxResponse.html">GbxResponse</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a3a3a0af1a692a801a33baa292b877dc2">currentResponse</a> = new <a class="el" href="classGbxResponse.html">GbxResponse</a></td></tr>
+<tr class="memdesc:a3a3a0af1a692a801a33baa292b877dc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current server response. <br/></td></tr>
 <tr class="separator:a3a3a0af1a692a801a33baa292b877dc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08d047d7e0d4b746fc036c1aa02f0d17"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classGbxCallBack.html">GbxCallBack</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a08d047d7e0d4b746fc036c1aa02f0d17">currentCallBacks</a> = std::vector&lt;<a class="el" href="classGbxCallBack.html">GbxCallBack</a>&gt;()</td></tr>
-<tr class="memdesc:a08d047d7e0d4b746fc036c1aa02f0d17"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of currently received callbacks.  <a href="#a08d047d7e0d4b746fc036c1aa02f0d17">More...</a><br/></td></tr>
+<tr class="memitem:a08d047d7e0d4b746fc036c1aa02f0d17"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a08d047d7e0d4b746fc036c1aa02f0d17"></a>
+std::vector&lt; <a class="el" href="classGbxCallBack.html">GbxCallBack</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxRemote.html#a08d047d7e0d4b746fc036c1aa02f0d17">currentCallBacks</a> = std::vector&lt;<a class="el" href="classGbxCallBack.html">GbxCallBack</a>&gt;()</td></tr>
+<tr class="memdesc:a08d047d7e0d4b746fc036c1aa02f0d17"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of currently received callbacks. <br/></td></tr>
 <tr class="separator:a08d047d7e0d4b746fc036c1aa02f0d17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Handles communication with the ManiaPlanet server. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>Make it possible to set an API version without upsetting TinyXML2. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>Make it possible to set an API version without upsetting TinyXML2. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a9ac65a51eb6f9127337b4f99841cfe2d"></a>
 <div class="memitem">
@@ -198,40 +195,6 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a6351f71fe649bff2aabfbd9b7c89e3f5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string GbxRemote::GetApiVersion </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the set API version. </p>
-
-</div>
-</div>
-<a class="anchor" id="a1ae6ff7eddcccdeda59af2316d053aae"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="classGbxCallBack.html">GbxCallBack</a> &gt; GbxRemote::GetCBResponses </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the callbacks that have been received since last call. </p>
-
-</div>
-</div>
 <a class="anchor" id="a5467b5400129cd13239f88576aaaa2b4"></a>
 <div class="memitem">
 <div class="memproto">
@@ -247,40 +210,6 @@ Private Attributes</h2></td></tr>
 
 <p>Returns the current server error. </p>
 <p>Returns NULL when there currently is no error. </p>
-
-</div>
-</div>
-<a class="anchor" id="ae6e15060920a31482fd14045cfd42803"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int GbxRemote::GetProtocol </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the current version number of the server protocol (1 or 2). </p>
-
-</div>
-</div>
-<a class="anchor" id="adac67444e391ffcc1dfda8f087eaef0b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classGbxResponse.html">GbxResponse</a> * GbxRemote::GetResponse </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the response from the server. </p>
 
 </div>
 </div>
@@ -410,251 +339,14 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a81ba62f042948610a3cf720316e22076"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GbxRemote::ResetCBResponses </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Resets list of current callbacks. </p>
-
-</div>
-</div>
-<a class="anchor" id="a6fa8ca2d48aae84884cab98a0adf4360"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GbxRemote::Terminate </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Closes the connection with the server. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a81d3c0c70ab7f5e585840e9978ee900e"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string GbxRemote::apiVersion</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Server API version. </p>
-
-</div>
-</div>
-<a class="anchor" id="a144e618f3f124b77054165d2d8519eee"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string GbxRemote::Build</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Current server build (f.e. 2015-06-16_18_00). </p>
-
-</div>
-</div>
-<a class="anchor" id="a08d047d7e0d4b746fc036c1aa02f0d17"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="classGbxCallBack.html">GbxCallBack</a>&gt; GbxRemote::currentCallBacks = std::vector&lt;<a class="el" href="classGbxCallBack.html">GbxCallBack</a>&gt;()</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>List of currently received callbacks. </p>
-
-</div>
-</div>
-<a class="anchor" id="ae5d44c3729140c1eba5e850cb5e5e7bd"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structGbxError.html">GbxError</a>* GbxRemote::currentError = new <a class="el" href="structGbxError.html">GbxError</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Current server error. </p>
-
-</div>
-</div>
-<a class="anchor" id="a3a3a0af1a692a801a33baa292b877dc2"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classGbxResponse.html">GbxResponse</a>* GbxRemote::currentResponse = new <a class="el" href="classGbxResponse.html">GbxResponse</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Current server response. </p>
-
-</div>
-</div>
-<a class="anchor" id="aca6e6ee86b785451d52735daf222cc6d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string GbxRemote::Login</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Server login. </p>
-
-</div>
-</div>
-<a class="anchor" id="a0ce9914944a8f0d35f5d1bb0ddb8d292"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string GbxRemote::Platform</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Program name (ManiaPlanet). </p>
-
-</div>
-</div>
-<a class="anchor" id="a5ee5c7087085cb6cb2e7bc6135ff0646"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int GbxRemote::protocol = 0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Protocol version (0 = uninitialized, 1 or 2 = version). </p>
-
-</div>
-</div>
-<a class="anchor" id="a0b0b212b945da4266fb645affdac81cb"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classTcpClient.html">TcpClient</a> GbxRemote::server</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Socket connection with the server. </p>
-
-</div>
-</div>
-<a class="anchor" id="a12d98a9add104392142ec8494dd022df"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string GbxRemote::TitleId</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Server title (f.e. TMCanyon). </p>
-
-</div>
-</div>
-<a class="anchor" id="a654b4cae6e4eed717d602700a90fcc27"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string GbxRemote::Version</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Program version (f.e. 3.3.0). </p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/travis/build/TheMaximum/mania-pp/src/GbxRemote/<a class="el" href="GbxRemote_8h_source.html">GbxRemote.h</a></li>
-<li>/home/travis/build/TheMaximum/mania-pp/src/GbxRemote/<a class="el" href="GbxRemote_8cpp.html">GbxRemote.cpp</a></li>
+<li>/home/travis/build/TheMaximum/mania-pp/src/GbxRemote/GbxRemote.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Dec 25 2016 21:40:56 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Dec 30 2016 23:33:34 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

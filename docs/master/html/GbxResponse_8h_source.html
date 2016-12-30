@@ -61,7 +61,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -69,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -80,7 +79,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_774e17a6745a7fb3c301b1a2a6f3ec95.html">src</a></li><li class="navelem"><a class="el" href="dir_1bbeac1d0fea5f96c18f21ea7234a863.html">GbxRemote</a></li><li class="navelem"><a class="el" href="dir_346aef31bba6e9d94414311bdf50d260.html">Response</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_7a6aeac25269e7cfeca8d7ac7d0d39bd.html">GbxRemote</a></li><li class="navelem"><a class="el" href="dir_2bd23a8f5507a55c6614b1d61fafdc91.html">Response</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -88,7 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">GbxResponse.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="GbxResponse_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef GBXRESPONSE_H_</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef GBXRESPONSE_H_</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GBXRESPONSE_H_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../ServerResponse/GbxServerResponse.h&quot;</span></div>
@@ -97,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classGbxResponse.html">   10</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classGbxResponse.html">GbxResponse</a> : <span class="keyword">public</span> <a class="code" href="classGbxServerResponse.html">GbxServerResponse</a></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classGbxResponse.html#a27e6c9c3452f2a0c90a33177af84236b">~GbxResponse</a>();</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    ~<a class="code" href="classGbxResponse.html">GbxResponse</a>();</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="structGbxError.html">GbxError</a>* <a class="code" href="classGbxResponse.html#aaeb8f1ccd18ab88799d93ea78befc0df">GetFault</a>();</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
@@ -110,17 +109,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif // GBXRESPONSE_H_</span></div>
 <div class="ttc" id="classGbxResponse_html_aaf63a008c45be79f900e1131d0fb5565"><div class="ttname"><a href="classGbxResponse.html#aaf63a008c45be79f900e1131d0fb5565">GbxResponse::SetRaw</a></div><div class="ttdeci">void SetRaw(std::string response)</div><div class="ttdoc">Sets the raw message value. </div><div class="ttdef"><b>Definition:</b> GbxResponse.cpp:22</div></div>
-<div class="ttc" id="classGbxResponse_html_a27e6c9c3452f2a0c90a33177af84236b"><div class="ttname"><a href="classGbxResponse.html#a27e6c9c3452f2a0c90a33177af84236b">GbxResponse::~GbxResponse</a></div><div class="ttdeci">~GbxResponse()</div><div class="ttdef"><b>Definition:</b> GbxResponse.cpp:6</div></div>
 <div class="ttc" id="classGbxResponse_html"><div class="ttname"><a href="classGbxResponse.html">GbxResponse</a></div><div class="ttdoc">Response from server, de-XML-fies the response. </div><div class="ttdef"><b>Definition:</b> GbxResponse.h:10</div></div>
 <div class="ttc" id="classGbxResponse_html_ad896e7447681008320ad9945b57a92ad"><div class="ttname"><a href="classGbxResponse.html#ad896e7447681008320ad9945b57a92ad">GbxResponse::fault</a></div><div class="ttdeci">GbxError * fault</div><div class="ttdoc">Current fault (error). </div><div class="ttdef"><b>Definition:</b> GbxResponse.h:28</div></div>
-<div class="ttc" id="classGbxServerResponse_html"><div class="ttname"><a href="classGbxServerResponse.html">GbxServerResponse</a></div><div class="ttdoc">Response from server, de-XML-fies the response. </div><div class="ttdef"><b>Definition:</b> GbxServerResponse.h:74</div></div>
+<div class="ttc" id="classGbxServerResponse_html"><div class="ttname"><a href="classGbxServerResponse.html">GbxServerResponse</a></div><div class="ttdoc">Response from server, de-XML-fies the response. </div><div class="ttdef"><b>Definition:</b> GbxServerResponse.h:70</div></div>
 <div class="ttc" id="structGbxError_html"><div class="ttname"><a href="structGbxError.html">GbxError</a></div><div class="ttdoc">Stores error details from the communication with the server. </div><div class="ttdef"><b>Definition:</b> GbxStructs.h:27</div></div>
 <div class="ttc" id="classGbxResponse_html_aaeb8f1ccd18ab88799d93ea78befc0df"><div class="ttname"><a href="classGbxResponse.html#aaeb8f1ccd18ab88799d93ea78befc0df">GbxResponse::GetFault</a></div><div class="ttdeci">GbxError * GetFault()</div><div class="ttdef"><b>Definition:</b> GbxResponse.cpp:12</div></div>
 <div class="ttc" id="classGbxResponse_html_a3cd4d6c5458fcd5359b8f5d9921a2a9b"><div class="ttname"><a href="classGbxResponse.html#a3cd4d6c5458fcd5359b8f5d9921a2a9b">GbxResponse::extractParameters</a></div><div class="ttdeci">void extractParameters()</div><div class="ttdoc">Extracts parameters from the raw data (XML). </div><div class="ttdef"><b>Definition:</b> GbxResponse.cpp:28</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Dec 25 2016 21:40:56 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Dec 30 2016 23:33:33 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

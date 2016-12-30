@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['message',['message',['../structGbxError.html#af52353692b5c160deac99c4285f01a5a',1,'GbxError']]],
-  ['method',['method',['../classGbxMessage.html#a10b6118916999db98f28e3f495eef6b4',1,'GbxMessage']]],
-  ['methodname',['methodName',['../classGbxCallBack.html#a8c793be5cc61e7fecef301ea6932f840',1,'GbxCallBack']]]
+  ['handle',['handle',['../structGbxQueryResponse.html#a0f13a7b1745dcf1f7e17c0bc3a0acecb',1,'GbxQueryResponse::handle()'],['../structPluginInfo.html#a3fc5df25e8b7e3b63bd0e92f270364f2',1,'PluginInfo::Handle()']]]
 ];

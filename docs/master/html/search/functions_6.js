@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['main',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
-  ['mainloop',['MainLoop',['../classManiaPP.html#a8dff9e8e3835c3cac0df105a7bcce43c',1,'ManiaPP']]],
-  ['maniapp',['ManiaPP',['../classManiaPP.html#ae56f6623dc89f2c0b75bec631cfc2d19',1,'ManiaPP']]]
+  ['init',['Init',['../classGbxRemote.html#a24d9d0df923ed85010f53dcb43c2b977',1,'GbxRemote::Init()'],['../classPlugin.html#a1409a14522799cb9d1a41fabc40133e5',1,'Plugin::Init()']]],
+  ['initializeplugins',['InitializePlugins',['../classPluginManager.html#aba7e19d75b25ca1a91b92d95b173240f',1,'PluginManager']]],
+  ['initwithip',['InitWithIp',['../classGbxRemote.html#aa9a57e73f2f5ebbde90484503bd0d16d',1,'GbxRemote']]]
 ];

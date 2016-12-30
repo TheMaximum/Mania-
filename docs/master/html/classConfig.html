@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -108,20 +108,23 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a249a19a298cdcfd4223609142e15e5de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structServerConfig.html">ServerConfig</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfig.html#a249a19a298cdcfd4223609142e15e5de">Server</a></td></tr>
-<tr class="memdesc:a249a19a298cdcfd4223609142e15e5de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instance of <a class="el" href="structServerConfig.html" title="Server connection settings. ">ServerConfig</a> which stores the server connection settings.  <a href="#a249a19a298cdcfd4223609142e15e5de">More...</a><br/></td></tr>
+<tr class="memitem:a249a19a298cdcfd4223609142e15e5de"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a249a19a298cdcfd4223609142e15e5de"></a>
+<a class="el" href="structServerConfig.html">ServerConfig</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfig.html#a249a19a298cdcfd4223609142e15e5de">Server</a></td></tr>
+<tr class="memdesc:a249a19a298cdcfd4223609142e15e5de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instance of <a class="el" href="structServerConfig.html" title="Server connection settings. ">ServerConfig</a> which stores the server connection settings. <br/></td></tr>
 <tr class="separator:a249a19a298cdcfd4223609142e15e5de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a2ddcecec4284da0fb0b53da77e0d217a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfig.html#a2ddcecec4284da0fb0b53da77e0d217a">parseConfig</a> ()</td></tr>
-<tr class="memdesc:a2ddcecec4284da0fb0b53da77e0d217a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads information from YAML file and puts this in configuration struct(s).  <a href="#a2ddcecec4284da0fb0b53da77e0d217a">More...</a><br/></td></tr>
+<tr class="memitem:a2ddcecec4284da0fb0b53da77e0d217a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2ddcecec4284da0fb0b53da77e0d217a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfig.html#a2ddcecec4284da0fb0b53da77e0d217a">parseConfig</a> ()</td></tr>
+<tr class="memdesc:a2ddcecec4284da0fb0b53da77e0d217a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads information from YAML file and puts this in configuration struct(s). <br/></td></tr>
 <tr class="separator:a2ddcecec4284da0fb0b53da77e0d217a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a08b7b2c4eadf7dda51404f76fd6e0280"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfig.html#a08b7b2c4eadf7dda51404f76fd6e0280">configFile</a></td></tr>
-<tr class="memdesc:a08b7b2c4eadf7dda51404f76fd6e0280"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the configuration file, set by constructor.  <a href="#a08b7b2c4eadf7dda51404f76fd6e0280">More...</a><br/></td></tr>
+<tr class="memitem:a08b7b2c4eadf7dda51404f76fd6e0280"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a08b7b2c4eadf7dda51404f76fd6e0280"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfig.html#a08b7b2c4eadf7dda51404f76fd6e0280">configFile</a></td></tr>
+<tr class="memdesc:a08b7b2c4eadf7dda51404f76fd6e0280"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the configuration file, set by constructor. <br/></td></tr>
 <tr class="separator:a08b7b2c4eadf7dda51404f76fd6e0280"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -167,77 +170,14 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a2ddcecec4284da0fb0b53da77e0d217a"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Config::parseConfig </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reads information from YAML file and puts this in configuration struct(s). </p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a08b7b2c4eadf7dda51404f76fd6e0280"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string Config::configFile</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Name of the configuration file, set by constructor. </p>
-
-</div>
-</div>
-<a class="anchor" id="a249a19a298cdcfd4223609142e15e5de"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structServerConfig.html">ServerConfig</a>* Config::Server</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Instance of <a class="el" href="structServerConfig.html" title="Server connection settings. ">ServerConfig</a> which stores the server connection settings. </p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Config/<a class="el" href="Config_8h_source.html">Config.h</a></li>
-<li>/home/travis/build/TheMaximum/mania-pp/src/Config/<a class="el" href="Config_8cpp.html">Config.cpp</a></li>
+<li>/home/travis/build/TheMaximum/mania-pp/src/Config/Config.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Dec 25 2016 21:40:56 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Dec 30 2016 23:33:33 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

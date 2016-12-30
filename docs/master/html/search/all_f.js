@@ -1,12 +1,30 @@
 var searchData=
 [
+  ['score',['Score',['../structPlayerRanking.html#a46cf9dd24b80841e9e21f9fec137bc05',1,'PlayerRanking']]],
   ['searchforcallbacks',['SearchForCallBacks',['../classTcpClient.html#a4df900657b1cb45aced143fe21a81937',1,'TcpClient']]],
   ['send',['Send',['../classTcpClient.html#acac6ca70c9d99e09731181e5239381ae',1,'TcpClient']]],
-  ['server',['Server',['../classConfig.html#a249a19a298cdcfd4223609142e15e5de',1,'Config::Server()'],['../classGbxRemote.html#a0b0b212b945da4266fb645affdac81cb',1,'GbxRemote::server()'],['../classManiaPP.html#ab81311d6901990cb99a7a30e0cbaab11',1,'ManiaPP::server()'],['../classTcpClient.html#a75a8bd28eca3f1eea17fb430ab14cade',1,'TcpClient::server()']]],
+  ['sendnotice',['SendNotice',['../classMethods.html#add538878f839a6a5078fec808e1f064f',1,'Methods']]],
+  ['sendnoticetologin',['SendNoticeToLogin',['../classMethods.html#a7229aacea5b60d1d502c5df39f10a50c',1,'Methods']]],
+  ['server',['Server',['../classConfig.html#a249a19a298cdcfd4223609142e15e5de',1,'Config::Server()'],['../classCallBackManager.html#a27cccc154989a36eb80580f3d9f69c51',1,'CallBackManager::server()'],['../classGbxRemote.html#a0b0b212b945da4266fb645affdac81cb',1,'GbxRemote::server()'],['../classManiaPP.html#ab81311d6901990cb99a7a30e0cbaab11',1,'ManiaPP::server()'],['../classMethods.html#a3236d275d78d0836cb633de4b1ab5dd8',1,'Methods::server()'],['../classTcpClient.html#a75a8bd28eca3f1eea17fb430ab14cade',1,'TcpClient::server()']]],
   ['serverconfig',['ServerConfig',['../structServerConfig.html',1,'']]],
+  ['serverlogin',['ServerLogin',['../structSystemInfo.html#a7ddac6d99bc8a43171cf1feb8d4b4758',1,'SystemInfo']]],
+  ['serverplayerid',['ServerPlayerId',['../structSystemInfo.html#aeb8cb49c244fed751e0dc6e83128aafe',1,'SystemInfo']]],
+  ['serverstatus',['ServerStatus',['../structServerStatus.html',1,'']]],
+  ['serverversion',['ServerVersion',['../structServerVersion.html',1,'ServerVersion'],['../classManiaPP.html#ae5cc5086f09dcdb6b5d5dd4cb9a5476c',1,'ManiaPP::serverVersion()']]],
+  ['setapiversion',['SetApiVersion',['../classMethods.html#ad31d717a19f95d4213d6882a0caff0fa',1,'Methods']]],
+  ['setbasicinfo',['setBasicInfo',['../structMap.html#a5a5864cc5b9e067f4383fae5bf01c381',1,'Map']]],
+  ['setdetailedinfo',['setDetailedInfo',['../structMap.html#a23ae24725344c494f35da1fb95c521e8',1,'Map']]],
+  ['seteventmanager',['SetEventManager',['../classPluginManager.html#a7ed7485291babeed3109a1a364b6d308',1,'PluginManager']]],
+  ['setlogging',['SetLogging',['../classPlugin.html#ae5ceb206ba4ec62f2d8c21b9117ea411',1,'Plugin']]],
+  ['setmaps',['SetMaps',['../classPlugin.html#a72ace5f9e59a5cba484f4ec30e36e390',1,'Plugin']]],
+  ['setmethods',['SetMethods',['../classPlugin.html#a86c23967641a554f053148ec072e393a',1,'Plugin']]],
+  ['setplayers',['SetPlayers',['../classPlugin.html#ae7061592fc0fe1d22a7d2ad4989f78ae',1,'Plugin']]],
   ['setraw',['SetRaw',['../classGbxCallBack.html#a9382de8d43cae9e7a9acd384146c2900',1,'GbxCallBack::SetRaw()'],['../classGbxResponse.html#aaf63a008c45be79f900e1131d0fb5565',1,'GbxResponse::SetRaw()'],['../classGbxServerResponse.html#a178871bec787d490f69def87f0242e05',1,'GbxServerResponse::SetRaw()']]],
-  ['size',['size',['../structGbxFirstResponse.html#ad93a9c67024b28ecddb779457dd001f8',1,'GbxFirstResponse::size()'],['../structGbxQueryResponse.html#ab7d7e30d6beb443cdae8cbf95e4c89f3',1,'GbxQueryResponse::size()']]],
+  ['silvertime',['SilverTime',['../structMap.html#ad3121edccf9be02843ca91622a88a1a5',1,'Map']]],
+  ['size',['size',['../structGbxFirstResponse.html#ad93a9c67024b28ecddb779457dd001f8',1,'GbxFirstResponse::size()'],['../structGbxQueryResponse.html#a0633cc01128e5eee2edba3ee503db1c4',1,'GbxQueryResponse::size()']]],
   ['sock',['sock',['../classTcpClient.html#af93f7c8c4d91d93379ba99fd3742c3dc',1,'TcpClient']]],
   ['spectatorstatus',['SpectatorStatus',['../structPlayer.html#a2037601661fb699454a88b5649485b30',1,'Player']]],
-  ['struct',['Struct',['../classGbxResponseParameter.html#acc26f8d64983f92709d1fa38b8f33e66',1,'GbxResponseParameter']]]
+  ['statuschanged',['StatusChanged',['../classPlugin.html#a1d1a7c5ee8f037cc4277225994829902',1,'Plugin']]],
+  ['struct',['Struct',['../classGbxResponseParameter.html#acc26f8d64983f92709d1fa38b8f33e66',1,'GbxResponseParameter']]],
+  ['systeminfo',['SystemInfo',['../structSystemInfo.html',1,'SystemInfo'],['../classManiaPP.html#aa81f571a6c007f2b7cf26101d9c23a3d',1,'ManiaPP::systemInfo()']]]
 ];

@@ -1,0 +1,349 @@
+\hypertarget{classMethods}{\section{Methods Class Reference}
+\label{classMethods}\index{Methods@{Methods}}
+}
+
+
+Contains all server methods and returns usable data types.  
+
+
+
+
+{\ttfamily \#include $<$Methods.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMethods_a1f18bb4a4d06ccec83f36fa32545015d}{Methods} (\hyperlink{classGbxRemote}{Gbx\-Remote} $\ast$server\-Ptr)
+\begin{DoxyCompactList}\small\item\em Constructor with link to server connection. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_aa1bba4d023f013fedf3edff7c69f5d08}{Authenticate} (std\-::string username, std\-::string password)
+\begin{DoxyCompactList}\small\item\em Authenticates with the server. Returns whether authentication was successful. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_a6bef98053e6d6d4f80557be7ce841e80}{Change\-Auth\-Password} (std\-::string username, std\-::string password)
+\begin{DoxyCompactList}\small\item\em Changes authentication passwordd. Returns whether change was successful. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_a9f47416487f6a825133c2d1e01287956}{Enable\-Callbacks} (bool enable)
+\begin{DoxyCompactList}\small\item\em Enables/disables callbacks. Returns whether change was successful. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_ad31d717a19f95d4213d6882a0caff0fa}{Set\-Api\-Version} (std\-::string version)
+\begin{DoxyCompactList}\small\item\em Sets the A\-P\-I version of the server. Returns whether change was successful. \end{DoxyCompactList}\item 
+std\-::vector$<$ std\-::string $>$ \hyperlink{classMethods_a7833782aa64f9072db30809552f83eef}{List\-Methods} ()
+\begin{DoxyCompactList}\small\item\em Returns list of available server methods. \end{DoxyCompactList}\item 
+\hyperlink{structServerVersion}{Server\-Version} \hyperlink{classMethods_a674b7c1f53296dca78fb14896b374e1e}{Get\-Version} ()
+\begin{DoxyCompactList}\small\item\em Returns server version information. \end{DoxyCompactList}\item 
+\hyperlink{structSystemInfo}{System\-Info} \hyperlink{classMethods_a0030583fdad06ab0f2f589b79c904f09}{Get\-System\-Info} ()
+\begin{DoxyCompactList}\small\item\em Returns system information. \end{DoxyCompactList}\item 
+\hyperlink{structServerStatus}{Server\-Status} \hyperlink{classMethods_af39e05685756a82b5991a2fc25d5e941}{Get\-Status} ()
+\begin{DoxyCompactList}\small\item\em Returns server status. \end{DoxyCompactList}\item 
+\hypertarget{classMethods_aee11e205500b7ad449c025c8e3e4b11b}{bool \hyperlink{classMethods_aee11e205500b7ad449c025c8e3e4b11b}{Quit\-Game} ()}\label{classMethods_aee11e205500b7ad449c025c8e3e4b11b}
+
+\begin{DoxyCompactList}\small\item\em Quit the server. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_a5e639d7a4fa2e2b403dfa5adfbc47ac3}{Chat\-Send\-Server\-Message} (std\-::string text)
+\begin{DoxyCompactList}\small\item\em Send chat message to all players. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_a200065ea89c2694f9d2af3aae686c483}{Chat\-Send\-Server\-Message\-To\-Login} (std\-::string text, std\-::string login)
+\begin{DoxyCompactList}\small\item\em Send chat message to player login. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_a616887260c024c6b7cabcdca9d43fdec}{Chat\-Send\-Server\-Message\-To\-Player} (std\-::string text, \hyperlink{structPlayer}{Player} player)
+\begin{DoxyCompactList}\small\item\em Send chat message to player. \end{DoxyCompactList}\item 
+\hypertarget{classMethods_a8a5de3ccd3e56cba116c5c1159c91c11}{std\-::vector$<$ std\-::string $>$ \hyperlink{classMethods_a8a5de3ccd3e56cba116c5c1159c91c11}{Get\-Chat\-Lines} ()}\label{classMethods_a8a5de3ccd3e56cba116c5c1159c91c11}
+
+\begin{DoxyCompactList}\small\item\em Get latest chat lines. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_aa6aed7b14ccfce003243e7d21fec70b4}{Chat\-Enable\-Manual\-Routing} (bool enable, bool auto\-Forward)
+\begin{DoxyCompactList}\small\item\em Enable/disable manual chat routing. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_ab0a918ef2ae8ba45fa350f023d7174ab}{Chat\-Forward\-To\-Login} (std\-::string text, std\-::string sender, std\-::string destination=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Forwards chat message to player. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_add538878f839a6a5078fec808e1f064f}{Send\-Notice} (std\-::string text, std\-::string avatar\-Login=\char`\"{}\char`\"{}, int variant=0)
+\begin{DoxyCompactList}\small\item\em Send notice to all players. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_a7229aacea5b60d1d502c5df39f10a50c}{Send\-Notice\-To\-Login} (std\-::string login, std\-::string text, std\-::string avatar\-Login=\char`\"{}\char`\"{}, int variant=0)
+\begin{DoxyCompactList}\small\item\em Send notice to player login. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classMethods_a3236d275d78d0836cb633de4b1ab5dd8}{\hyperlink{classGbxRemote}{Gbx\-Remote} $\ast$ \hyperlink{classMethods_a3236d275d78d0836cb633de4b1ab5dd8}{server}}\label{classMethods_a3236d275d78d0836cb633de4b1ab5dd8}
+
+\begin{DoxyCompactList}\small\item\em Pointer to \hyperlink{classGbxRemote}{Gbx\-Remote}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains all server methods and returns usable data types. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMethods_a1f18bb4a4d06ccec83f36fa32545015d}{\index{Methods@{Methods}!Methods@{Methods}}
+\index{Methods@{Methods}!Methods@{Methods}}
+\subsubsection[{Methods}]{\setlength{\rightskip}{0pt plus 5cm}Methods\-::\-Methods (
+\begin{DoxyParamCaption}
+\item[{{\bf Gbx\-Remote} $\ast$}]{server\-Ptr}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a1f18bb4a4d06ccec83f36fa32545015d}
+
+
+Constructor with link to server connection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em server\-Ptr} & Pointer to server connection. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMethods_aa1bba4d023f013fedf3edff7c69f5d08}{\index{Methods@{Methods}!Authenticate@{Authenticate}}
+\index{Authenticate@{Authenticate}!Methods@{Methods}}
+\subsubsection[{Authenticate}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Authenticate (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{username, }
+\item[{std\-::string}]{password}
+\end{DoxyParamCaption}
+)}}\label{classMethods_aa1bba4d023f013fedf3edff7c69f5d08}
+
+
+Authenticates with the server. Returns whether authentication was successful. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Server username (f.\-e. Super\-Admin). \\
+\hline
+{\em password} & Server password. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_a6bef98053e6d6d4f80557be7ce841e80}{\index{Methods@{Methods}!Change\-Auth\-Password@{Change\-Auth\-Password}}
+\index{Change\-Auth\-Password@{Change\-Auth\-Password}!Methods@{Methods}}
+\subsubsection[{Change\-Auth\-Password}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Change\-Auth\-Password (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{username, }
+\item[{std\-::string}]{password}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a6bef98053e6d6d4f80557be7ce841e80}
+
+
+Changes authentication passwordd. Returns whether change was successful. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Server username (f.\-e. Super\-Admin). \\
+\hline
+{\em password} & New password for user. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_aa6aed7b14ccfce003243e7d21fec70b4}{\index{Methods@{Methods}!Chat\-Enable\-Manual\-Routing@{Chat\-Enable\-Manual\-Routing}}
+\index{Chat\-Enable\-Manual\-Routing@{Chat\-Enable\-Manual\-Routing}!Methods@{Methods}}
+\subsubsection[{Chat\-Enable\-Manual\-Routing}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Chat\-Enable\-Manual\-Routing (
+\begin{DoxyParamCaption}
+\item[{bool}]{enable, }
+\item[{bool}]{auto\-Forward}
+\end{DoxyParamCaption}
+)}}\label{classMethods_aa6aed7b14ccfce003243e7d21fec70b4}
+
+
+Enable/disable manual chat routing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enable} & Enable routing? \\
+\hline
+{\em auto\-Forward} & Autoforward? \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_ab0a918ef2ae8ba45fa350f023d7174ab}{\index{Methods@{Methods}!Chat\-Forward\-To\-Login@{Chat\-Forward\-To\-Login}}
+\index{Chat\-Forward\-To\-Login@{Chat\-Forward\-To\-Login}!Methods@{Methods}}
+\subsubsection[{Chat\-Forward\-To\-Login}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Chat\-Forward\-To\-Login (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{text, }
+\item[{std\-::string}]{sender, }
+\item[{std\-::string}]{destination = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{classMethods_ab0a918ef2ae8ba45fa350f023d7174ab}
+
+
+Forwards chat message to player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & Chat message. \\
+\hline
+{\em sender} & Sending login. \\
+\hline
+{\em destination} & Destination login (empty for all players). \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_a5e639d7a4fa2e2b403dfa5adfbc47ac3}{\index{Methods@{Methods}!Chat\-Send\-Server\-Message@{Chat\-Send\-Server\-Message}}
+\index{Chat\-Send\-Server\-Message@{Chat\-Send\-Server\-Message}!Methods@{Methods}}
+\subsubsection[{Chat\-Send\-Server\-Message}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Chat\-Send\-Server\-Message (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{text}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a5e639d7a4fa2e2b403dfa5adfbc47ac3}
+
+
+Send chat message to all players. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & Chat message. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_a200065ea89c2694f9d2af3aae686c483}{\index{Methods@{Methods}!Chat\-Send\-Server\-Message\-To\-Login@{Chat\-Send\-Server\-Message\-To\-Login}}
+\index{Chat\-Send\-Server\-Message\-To\-Login@{Chat\-Send\-Server\-Message\-To\-Login}!Methods@{Methods}}
+\subsubsection[{Chat\-Send\-Server\-Message\-To\-Login}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Chat\-Send\-Server\-Message\-To\-Login (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{text, }
+\item[{std\-::string}]{login}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a200065ea89c2694f9d2af3aae686c483}
+
+
+Send chat message to player login. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & Chat message. \\
+\hline
+{\em login} & \hyperlink{structPlayer}{Player} login to which the message should be send. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_a616887260c024c6b7cabcdca9d43fdec}{\index{Methods@{Methods}!Chat\-Send\-Server\-Message\-To\-Player@{Chat\-Send\-Server\-Message\-To\-Player}}
+\index{Chat\-Send\-Server\-Message\-To\-Player@{Chat\-Send\-Server\-Message\-To\-Player}!Methods@{Methods}}
+\subsubsection[{Chat\-Send\-Server\-Message\-To\-Player}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Chat\-Send\-Server\-Message\-To\-Player (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{text, }
+\item[{{\bf Player}}]{player}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a616887260c024c6b7cabcdca9d43fdec}
+
+
+Send chat message to player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & Chat message. \\
+\hline
+{\em player} & \hyperlink{structPlayer}{Player} object to which the message should be send. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_a9f47416487f6a825133c2d1e01287956}{\index{Methods@{Methods}!Enable\-Callbacks@{Enable\-Callbacks}}
+\index{Enable\-Callbacks@{Enable\-Callbacks}!Methods@{Methods}}
+\subsubsection[{Enable\-Callbacks}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Enable\-Callbacks (
+\begin{DoxyParamCaption}
+\item[{bool}]{enable}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a9f47416487f6a825133c2d1e01287956}
+
+
+Enables/disables callbacks. Returns whether change was successful. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enable} & Enable (true) or disable (false). \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_af39e05685756a82b5991a2fc25d5e941}{\index{Methods@{Methods}!Get\-Status@{Get\-Status}}
+\index{Get\-Status@{Get\-Status}!Methods@{Methods}}
+\subsubsection[{Get\-Status}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Server\-Status} Methods\-::\-Get\-Status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMethods_af39e05685756a82b5991a2fc25d5e941}
+
+
+Returns server status. 
+
+Returns empty struct if no information could be retrieved. \hypertarget{classMethods_a0030583fdad06ab0f2f589b79c904f09}{\index{Methods@{Methods}!Get\-System\-Info@{Get\-System\-Info}}
+\index{Get\-System\-Info@{Get\-System\-Info}!Methods@{Methods}}
+\subsubsection[{Get\-System\-Info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf System\-Info} Methods\-::\-Get\-System\-Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a0030583fdad06ab0f2f589b79c904f09}
+
+
+Returns system information. 
+
+Returns empty struct if no information could be retrieved. \hypertarget{classMethods_a674b7c1f53296dca78fb14896b374e1e}{\index{Methods@{Methods}!Get\-Version@{Get\-Version}}
+\index{Get\-Version@{Get\-Version}!Methods@{Methods}}
+\subsubsection[{Get\-Version}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Server\-Version} Methods\-::\-Get\-Version (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a674b7c1f53296dca78fb14896b374e1e}
+
+
+Returns server version information. 
+
+Returns empty struct if no information could be retrieved. \hypertarget{classMethods_a7833782aa64f9072db30809552f83eef}{\index{Methods@{Methods}!List\-Methods@{List\-Methods}}
+\index{List\-Methods@{List\-Methods}!Methods@{Methods}}
+\subsubsection[{List\-Methods}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ std\-::string $>$ Methods\-::\-List\-Methods (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a7833782aa64f9072db30809552f83eef}
+
+
+Returns list of available server methods. 
+
+Returns empty vector if no methods could be retrieved. \hypertarget{classMethods_add538878f839a6a5078fec808e1f064f}{\index{Methods@{Methods}!Send\-Notice@{Send\-Notice}}
+\index{Send\-Notice@{Send\-Notice}!Methods@{Methods}}
+\subsubsection[{Send\-Notice}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Send\-Notice (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{text, }
+\item[{std\-::string}]{avatar\-Login = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{int}]{variant = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classMethods_add538878f839a6a5078fec808e1f064f}
+
+
+Send notice to all players. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & Chat message. \\
+\hline
+{\em avatar\-Login} & Avatar login. \\
+\hline
+{\em variant} & Notice variant (0 = normal, 1 = sad, 2 = happy). \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_a7229aacea5b60d1d502c5df39f10a50c}{\index{Methods@{Methods}!Send\-Notice\-To\-Login@{Send\-Notice\-To\-Login}}
+\index{Send\-Notice\-To\-Login@{Send\-Notice\-To\-Login}!Methods@{Methods}}
+\subsubsection[{Send\-Notice\-To\-Login}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Send\-Notice\-To\-Login (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{login, }
+\item[{std\-::string}]{text, }
+\item[{std\-::string}]{avatar\-Login = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{int}]{variant = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a7229aacea5b60d1d502c5df39f10a50c}
+
+
+Send notice to player login. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em login} & \hyperlink{structPlayer}{Player} login. \\
+\hline
+{\em text} & Chat message. \\
+\hline
+{\em avatar\-Login} & Avatar login. \\
+\hline
+{\em variant} & Notice variant (0 = normal, 1 = sad, 2 = happy). \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_ad31d717a19f95d4213d6882a0caff0fa}{\index{Methods@{Methods}!Set\-Api\-Version@{Set\-Api\-Version}}
+\index{Set\-Api\-Version@{Set\-Api\-Version}!Methods@{Methods}}
+\subsubsection[{Set\-Api\-Version}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Set\-Api\-Version (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{version}
+\end{DoxyParamCaption}
+)}}\label{classMethods_ad31d717a19f95d4213d6882a0caff0fa}
+
+
+Sets the A\-P\-I version of the server. Returns whether change was successful. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em version} & A\-P\-I version. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/Methods.\-h\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/Methods.\-cpp\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Chat.\-cpp\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Global.\-cpp\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Notice.\-cpp\end{DoxyCompactItemize}
