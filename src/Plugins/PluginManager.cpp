@@ -81,9 +81,9 @@ void PluginManager::LoadPlugins(std::string pluginsFolder)
                 if(events != NULL)
                 {
                     std::cout << "[         ] Loading events for '" << pluginId->first << "' ... " << '\r' << std::flush;
-                    int playerConnects = events->RegisterPlayerConnect(plugin->MethodsPlayerConnect);
-                    int playerDisconnects = events->RegisterPlayerDisconnect(plugin->MethodsPlayerDisconnect);
-                    int eventCount = (playerConnects + playerDisconnects);
+                    int eventCount = 0;
+                    eventCount += events->RegisterPlayerConnect(plugin->MethodsPlayerConnect);
+                    eventCount += events->RegisterPlayerDisconnect(plugin->MethodsPlayerDisconnect);
                     std::cout << "[   \033[0;32mOK.\033[0;0m   ] Loaded events for '" << pluginId->first << "': " << eventCount << " found." << std::endl;
                 }
 

@@ -13,6 +13,7 @@ ManiaPP::ManiaPP()
     events = new EventManager();
     plugins = new PluginManager(logging, server, players, maps);
     plugins->SetEventManager(events);
+    callbacks = new CallBackManager(server, events, players, maps);
     methods = new Methods(server);
 }
 
@@ -26,6 +27,7 @@ ManiaPP::~ManiaPP()
 
     delete plugins; plugins = NULL;
     delete events; events = NULL;
+    delete callbacks; callbacks = NULL;
     delete methods; methods = NULL;
 }
 
@@ -123,84 +125,11 @@ void ManiaPP::MainLoop()
                 std::vector<GbxResponseParameter> parameters = callBack.GetParameters();
                 std::string methodName = callBack.GetMethodName();
 
-                if(methodName.find("PlayerConnect") != std::string::npos)
-                {
-                    GbxParameters* params = new GbxParameters();
-                    std::string login = parameters.at(0).GetString();
-                    params->Put(&login);
-
-                    GbxMessage* message = new GbxMessage("GetPlayerInfo", params);
-                    server->Query(message);
-                    Player newPlayer = Player(server->GetResponse()->GetParameters().at(0).GetStruct());
-                    players->insert(std::pair<std::string, Player>(newPlayer.Login, newPlayer));
-
-                    std::cout << "Player connected: " << newPlayer.Login << " (# players: " << players->size() << ")" << std::endl;
-
-                    events->CallPlayerConnect(newPlayer);
-
-                    delete params; params = NULL;
-                    delete message; message = NULL;
-                }
-                else if(methodName.find("PlayerDisconnect") != std::string::npos)
-                {
-                    GbxParameters* params = new GbxParameters();
-                    std::string login = parameters.at(0).GetString();
-
-                    Player disconnectingPlayer = players->find(login)->second;
-                    players->erase(disconnectingPlayer.Login);
-                    std::cout << "Player disconnected: " << disconnectingPlayer.Login << " (# players: " << players->size() << ")" << std::endl;
-
-                    events->CallPlayerDisconnect(disconnectingPlayer);
-                }
-                else
-                {
-                    std::cout << "CALLBACK: " << methodName << " (parameters: " << parameters.size() << ")" << std::endl;
-                    for(int paramId = 0; paramId < parameters.size(); paramId++)
-                    {
-                        GbxResponseParameter parameter = parameters.at(paramId);
-                        PrintParameter(parameter, paramId);
-                    }
-                }
+                callbacks->HandleCallBack(methodName, parameters);
             }
 
             server->ResetCBResponses();
         }
-    }
-}
-
-void ManiaPP::PrintParameter(GbxResponseParameter parameter, int paramId, std::string spaces, std::string parameterName)
-{
-    if(parameter.Type.find("array") != std::string::npos)
-    {
-        std::cout << spaces << "Parameter #" << paramId << ": array" << std::endl;
-        spaces += "    ";
-        std::vector<GbxResponseParameter> arrayParam = parameter.GetArray();
-        for(int subParamId = 0; subParamId < arrayParam.size(); subParamId++)
-        {
-            GbxResponseParameter arrayParameter = arrayParam.at(subParamId);
-            PrintParameter(arrayParameter, subParamId, spaces);
-        }
-    }
-    else if(parameter.Type.find("struct") != std::string::npos)
-    {
-        std::cout << spaces << "Parameter #" << paramId << ": struct" << std::endl;
-        spaces += "    ";
-        std::map<std::string, GbxResponseParameter> structParam = parameter.GetStruct();
-        int subParamId = 0;
-        for(std::map<std::string, GbxResponseParameter>::iterator subParam = structParam.begin(); subParam != structParam.end(); ++subParam)
-        {
-            PrintParameter(subParam->second, subParamId, spaces, subParam->first);
-            subParamId++;
-        }
-    }
-    else
-    {
-        std::cout << spaces << "Parameter #" << paramId << ": " << parameter.GetString() << " (" << parameter.Type << ")";
-        if(parameterName != "")
-        {
-            std::cout << " (" << parameterName << ")";
-        }
-        std::cout << std::endl;
     }
 }
 

@@ -4,20 +4,71 @@
 #include "../GbxRemote/GbxRemote.h"
 #include "Structs.h"
 
+//* Methods
+/**
+ * \brief Contains all server methods and returns usable data types.
+ */
 class Methods
 {
 public:
+    /*!
+     * \brief Constructor with link to server connection.
+     *
+     * \param serverPtr Pointer to server connection.
+     */
     Methods(GbxRemote* serverPtr);
 
+    /*!
+     * \brief Authenticates with the server. Returns whether authentication was successful.
+     *
+     * \param username Server username (f.e. SuperAdmin).
+     * \param password Server password.
+     */
     bool Authenticate(std::string username, std::string password);
+
+    /*!
+     * \brief Changes authentication passwordd. Returns whether change was successful.
+     *
+     * \param username Server username (f.e. SuperAdmin).
+     * \param password New password for user.
+     */
     bool ChangeAuthPassword(std::string username, std::string password);
+
+    /*!
+     * \brief Enables/disables callbacks. Returns whether change was successful.
+     *
+     * \param enable   Enable (true) or disable (false).
+     */
     bool EnableCallbacks(bool enable);
+
+    /*!
+     * \brief Sets the API version of the server. Returns whether change was successful.
+     *
+     * \param version  API version.
+     */
     bool SetApiVersion(std::string version);
 
+    /*!
+     * \brief Returns list of available server methods.
+     *
+     * Returns empty vector if no methods could be retrieved.
+     */
     std::vector<std::string> ListMethods();
 
+    /*!
+     * \brief Returns server version information.
+     *
+     * Returns empty struct if no information could be retrieved.
+     */
     ServerVersion GetVersion();
+
+    /*!
+     * \brief Returns system information.
+     *
+     * Returns empty struct if no information could be retrieved.
+     */
     SystemInfo GetSystemInfo();
+
     // GetStatus();
     // QuitServer();
 

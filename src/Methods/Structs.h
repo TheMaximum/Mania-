@@ -1,46 +1,35 @@
 #ifndef STRUCTS_H_
 #define STRUCTS_H_
 
+//* ServerInfo
+/**
+ * \brief Struct with server version information.
+ */
 struct ServerVersion
 {
-    /*
-        Parameter #0: 2013-04-16 (string) (ApiVersion)
-        Parameter #1: 2015-06-16_18_00 (string) (Build)
-        Parameter #2: ManiaPlanet (string) (Name)
-        Parameter #3: TMCanyon (string) (TitleId)
-        Parameter #4: 3.3.0 (string) (Version)
-    */
-    std::string ApiVersion;
-    std::string Build;
-    std::string Name;
-    std::string TitleId;
-    std::string Version;
+    std::string ApiVersion; /**< \brief API version (f.e. 2013-04-06). */
+    std::string Build;      /**< \brief Build version (f.e. 2015-06-06_18_00). */
+    std::string Name;       /**< \brief Platform name (f.e. ManiaPlanet). */
+    std::string TitleId;    /**< \brief Title identifier (f.e. TMCanyon). */
+    std::string Version;    /**< \brief Platform version (f.e. 3.3.0). */
 };
 
+//* SystemInfo
+/**
+ * \brief Struct with system information.
+ */
 struct SystemInfo
 {
-    /*
-        Parameter #0: 100000 (int) (ConnectionDownloadRate)
-        Parameter #1: 50000 (int) (ConnectionUploadRate)
-        Parameter #2: 1 (boolean) (IsDedicated)
-        Parameter #3: 1 (boolean) (IsServer)
-        Parameter #4: 3490 (int) (P2PPort)
-        Parameter #5: 2390 (int) (Port)
-        Parameter #6: 178.63.88.110 (string) (PublishedIp)
-        Parameter #7: testsmurfer (string) (ServerLogin)
-        Parameter #8: 0 (int) (ServerPlayerId)
-        Parameter #9: TMCanyon (string) (TitleId)
-    */
-    int ConnectionDownloadRate;
-    int ConnectionUploadRate;
-    bool IsDedicated;
-    bool IsServer;
-    int P2PPort;
-    int Port;
-    std::string PublishedIp;
-    std::string ServerLogin;
-    int ServerPlayerId;
-    std::string TitleId;
+    int ConnectionDownloadRate; /**< \brief Download rate in Kbps. */
+    int ConnectionUploadRate;   /**< \brief Upload rate in Kbps. */
+    bool IsDedicated;           /**< \brief Is dedicated server? */
+    bool IsServer;              /**< \brief Is server? */
+    int P2PPort;                /**< \brief Peer-to-peer serverport. */
+    int Port;                   /**< \brief Game serverport. */
+    std::string PublishedIp;    /**< \brief Server IP Address. */
+    std::string ServerLogin;    /**< \brief Server login. */
+    int ServerPlayerId;         /**< \brief Server player identifier. */
+    std::string TitleId;        /**< \brief Title identifier. */
 };
 
 #endif // STRUCTS_H_
