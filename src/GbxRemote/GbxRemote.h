@@ -100,12 +100,6 @@ public:
      */
     std::string GetApiVersion();
 
-    std::string Login;      /**< \brief Server login. */
-    std::string Build;      /**< \brief Current server build (f.e. 2015-06-16_18_00). */
-    std::string Platform;   /**< \brief Program name (ManiaPlanet). */
-    std::string TitleId;    /**< \brief Server title (f.e. TMCanyon). */
-    std::string Version;    /**< \brief Program version (f.e. 3.3.0). */
-
 private:
     bool connected = false;                         /**< \brief Is the client connected with the server? */
 

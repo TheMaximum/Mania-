@@ -2,6 +2,9 @@
 
 HelloGoodbyePlugin::HelloGoodbyePlugin()
 {
+    Version = "0.1.0";
+    Author = "TheM";
+
     MethodsPlayerConnect.push_back([this](Player player) { OnPlayerConnect(player); });
     MethodsPlayerDisconnect.push_back([this](Player player) { OnPlayerDisconnect(player); });
 }

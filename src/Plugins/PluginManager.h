@@ -17,8 +17,11 @@
  */
 struct PluginInfo
 {
-    Plugin* Instance; /**< \brief Instance of the plugin. */
-    void* Handle;     /**< \brief Handle (from dlopen) of the plugin. */
+    std::string Version; /**< \brief Plugin version (from instance). */
+    std::string Author;  /**< \brief Plugin author (from instance). */
+
+    Plugin* Instance;    /**< \brief Instance of the plugin. */
+    void* Handle;        /**< \brief Handle (from dlopen) of the plugin. */
 };
 
 //* PluginManager

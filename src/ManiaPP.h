@@ -71,6 +71,9 @@ private:
     PluginManager* plugins;                 /**< \brief Contains the plugin manager. */
     Methods* methods;                       /**< \brief Server method caller. */
 
+    ServerVersion serverVersion;            /**< \brief Struct with server version information. */
+    SystemInfo systemInfo;                  /**< \brief Struct with system information. */
+
     /*!
      * \brief Gets a list of current players from the server.
      */

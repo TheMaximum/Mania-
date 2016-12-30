@@ -70,13 +70,13 @@ void PluginManager::LoadPlugins(std::string pluginsFolder)
             }
             else
             {
-                Logging::PrintOKFlush();
-
                 Plugin* plugin = startPlugin();
                 plugin->SetLogging(logging);
                 plugin->SetServer(server);
                 plugin->SetPlayers(players);
                 plugin->SetMaps(maps);
+
+                std::cout << "[   \033[0;32mOK.\033[0;0m   ] Loaded plugin '" << pluginId->first << "': v" << plugin->Version << " by " << plugin->Author << "." << std::endl;
 
                 if(events != NULL)
                 {
@@ -87,7 +87,7 @@ void PluginManager::LoadPlugins(std::string pluginsFolder)
                     std::cout << "[   \033[0;32mOK.\033[0;0m   ] Loaded events for '" << pluginId->first << "': " << eventCount << " found." << std::endl;
                 }
 
-                plugins.insert(std::pair<std::string, PluginInfo>(pluginId->first, { plugin, pluginHandle }));
+                plugins.insert(std::pair<std::string, PluginInfo>(pluginId->first, { plugin->Version, plugin->Author, plugin, pluginHandle }));
             }
         }
     }

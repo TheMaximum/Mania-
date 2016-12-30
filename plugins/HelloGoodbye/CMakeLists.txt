@@ -10,17 +10,6 @@ link_directories(${PROJECT_SOURCE_DIR}/../../lib/yaml/build)
 include_directories("${PROJECT_SOURCE_DIR}/../../lib/yaml/include")
 set (PROJECT_SOURCE_DIR ${PROJECT_SOURCE_DIR}/src)
 
-set (VERSION_MAJOR 0)
-set (VERSION_MINOR 1)
-set (VERSION_PATCH 0)
-
-# configure a header file to pass some of the CMake settings
-# to the source code
-configure_file (
-    "${PROJECT_SOURCE_DIR}/Config/Version.h.in"
-    "${PROJECT_BINARY_DIR}/Config/Version.h"
-)
-
 include_directories("${PROJECT_BINARY_DIR}")
 
 file(GLOB_RECURSE SOURCES src/*.cpp)

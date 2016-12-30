@@ -49,39 +49,27 @@ bool ManiaPP::ConnectToServer()
                 logging->PrintOKFlush();
 
                 std::cout << "[         ] Retrieving server methods ... " << '\r' << std::flush;
-                GbxMessage* message = new GbxMessage("system.listMethods");
-                if(server->Query(message))
+                std::vector<std::string> serverMethods = methods->ListMethods();
+                if(serverMethods.size() > 0)
                 {
-                    std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
-                    std::vector<GbxResponseParameter> methodsArray = responseParams.at(0).GetArray();
-                    std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved server methods: " << methodsArray.size() << " found." << std::endl;
-                    delete message; message = NULL;
+                    std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved server methods: " << serverMethods.size() << " found." << std::endl;
 
                     std::cout << "[         ] Retrieving server version ... " << '\r' << std::flush;
-                    GbxMessage* message = new GbxMessage("GetVersion");
-                    if(server->Query(message))
+                    ServerVersion getServerVersion = methods->GetVersion();
+                    if(!getServerVersion.ApiVersion.empty())
                     {
-                        delete message; message = NULL;
+                        serverVersion = getServerVersion;
 
-                        responseParams = server->GetResponse()->GetParameters();
-                        std::map<std::string, GbxResponseParameter> versionStruct = responseParams.at(0).GetStruct();
-                        server->Build = (std::string)versionStruct.find("Build")->second.GetString();
-                        server->Platform = (std::string)versionStruct.find("Name")->second.GetString();
-                        server->TitleId = (std::string)versionStruct.find("TitleId")->second.GetString();
-                        server->Version = (std::string)versionStruct.find("Version")->second.GetString();
-
-                        std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved server version: '" << server->Build << "'." << std::endl;
+                        std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved server version: '" << serverVersion.Build << "'." << std::endl;
 
                         std::cout << "[         ] Retrieving system info ... " << '\r' << std::flush;
                         GbxMessage* message = new GbxMessage("GetSystemInfo");
-                        if(server->Query(message))
+                        SystemInfo getSystemInfo = methods->GetSystemInfo();
+                        if(!getSystemInfo.ServerLogin.empty())
                         {
-                            delete message; message = NULL;
-                            responseParams = server->GetResponse()->GetParameters();
-                            std::map<std::string, GbxResponseParameter> systemStruct = responseParams.at(0).GetStruct();
-                            server->Login = (std::string)systemStruct.find("ServerLogin")->second.GetString();
+                            systemInfo = getSystemInfo;
 
-                            std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved system info, server login: '" << server->Login << "'." << std::endl;
+                            std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved system info, server login: '" << systemInfo.ServerLogin << "'." << std::endl;
 
                             retrievePlayerList();
                             retrieveMapList();
@@ -115,8 +103,8 @@ void ManiaPP::PrintServerInfo()
 {
     std::cout << "###############################################################################" << std::endl;
     std::cout << "  Mania++ v" << VERSION << " running on " << config->Server->address << ":" << config->Server->port << std::endl;
-    std::cout << "  Game    : " << server->Platform << " / " << server->TitleId << std::endl;
-    std::cout << "  Version : " << server->Version << " / " << server->Build << std::endl;
+    std::cout << "  Game    : " << serverVersion.Name << " / " << serverVersion.TitleId << std::endl;
+    std::cout << "  Version : " << serverVersion.Version << " / " << serverVersion.Build << std::endl;
     std::cout << "###############################################################################" << std::endl;
 }
 
@@ -235,7 +223,7 @@ void ManiaPP::retrievePlayerList()
         for(int playerId = 0; playerId < playerList.size(); playerId++)
         {
             std::map<std::string, GbxResponseParameter> player = playerList.at(playerId).GetStruct();
-            if(player.find("Login")->second.GetString() != server->Login)
+            if(player.find("Login")->second.GetString() != systemInfo.ServerLogin)
             {
                 Player newPlayer = Player(player);
                 players->insert(std::pair<std::string, Player>(newPlayer.Login, newPlayer));

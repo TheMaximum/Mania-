@@ -69,6 +69,9 @@ public:
     std::vector<std::function<void(Player)>> MethodsPlayerConnect;    /**< \brief Vector with functions for the PlayerConnect event. */
     std::vector<std::function<void(Player)>> MethodsPlayerDisconnect; /**< \brief Vector with functions for the PlayerDisconnect event. */
 
+    std::string Version; /**< \brief Plugin version. */
+    std::string Author;  /**< \brief Plugin author. */
+
 protected:
     Logging* logging;                       /**< \brief Logging instance. */
     GbxRemote* server;                      /**< \brief GbxRemote instance. */

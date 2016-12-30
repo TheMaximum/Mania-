@@ -2,6 +2,7 @@
 #define METHODS_H_
 
 #include "../GbxRemote/GbxRemote.h"
+#include "Structs.h"
 
 class Methods
 {
@@ -13,7 +14,10 @@ public:
     bool EnableCallbacks(bool enable);
     bool SetApiVersion(std::string version);
 
-    // GetVersion();
+    std::vector<std::string> ListMethods();
+
+    ServerVersion GetVersion();
+    SystemInfo GetSystemInfo();
     // GetStatus();
     // QuitServer();
 
@@ -129,8 +133,6 @@ public:
     std::string GameDataDirectory();
     std::string GetMapsDirectory();
     std::string GetSkinsDirectory();
-
-
 
 private:
     GbxRemote* server;
