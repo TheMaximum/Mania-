@@ -13,15 +13,19 @@ struct EntryVal
     std::string Value; /**< \brief Entry value. */
 };
 
+//* PlayerRanking
+/**
+ * \brief Struct with player ranking.
+ */
 struct PlayerRanking
 {
-    Player PlayerInfo;
-    int Rank;
-    int BestTime;
-    std::vector<int> BestCheckpoints;
-    int Score;
-    int NbrLapsFinished;
-    double LadderScore;
+    Player PlayerInfo;   /**< \brief Player object. */
+    int Rank;            /**< \brief Player rank. */
+    int BestTime;        /**< \brief Best time this round. */
+    std::vector<int> BestCheckpoints;  /**< \brief List of best checkpoints this round. */
+    int Score;           /**< \brief Round score. */
+    int NbrLapsFinished; /**< \brief Number of laps finished. */
+    double LadderScore;  /**< \brief Ladder score received. */
 };
 
 #endif // EVENTS_STRUCTS_H_

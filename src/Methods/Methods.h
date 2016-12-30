@@ -101,7 +101,7 @@ public:
      * \brief Send chat message to player.
      *
      * \param text        Chat message.
-     * \param login       Player object to which the message should be send.
+     * \param player       Player object to which the message should be send.
      */
     bool ChatSendServerMessageToPlayer(std::string text, Player player);
 
@@ -132,7 +132,7 @@ public:
      *
      * \param text        Chat message.
      * \param avatarLogin Avatar login.
-     * \param Variant     Notice variant (0 = normal, 1 = sad, 2 = happy).
+     * \param variant     Notice variant (0 = normal, 1 = sad, 2 = happy).
      */
     bool SendNotice(std::string text, std::string avatarLogin = "", int variant = 0);
 
@@ -142,7 +142,7 @@ public:
      * \param login       Player login.
      * \param text        Chat message.
      * \param avatarLogin Avatar login.
-     * \param Variant     Notice variant (0 = normal, 1 = sad, 2 = happy).
+     * \param variant     Notice variant (0 = normal, 1 = sad, 2 = happy).
      */
     bool SendNoticeToLogin(std::string login, std::string text, std::string avatarLogin = "", int variant = 0);
 
@@ -159,7 +159,7 @@ public:
     // bool SetCallVoteRatiosEx(bool replaceAll, array[struct{Command, Param, Ratio}]);
     // array[struct{Command, Param, Ratio}] GetCallVoteRatiosEx();
 
-    bool SendDisplayManialinkPage(std::string page, int timeout, bool hideOnClick);
+    /*bool SendDisplayManialinkPage(std::string page, int timeout, bool hideOnClick);
     bool SendDisplayManialinkPageToLogin(std::string login, std::string page, int timeout, bool hideOnClick);
 
     bool SendHideManialinkPage();
@@ -248,10 +248,10 @@ public:
 
     std::string GameDataDirectory();
     std::string GetMapsDirectory();
-    std::string GetSkinsDirectory();
+    std::string GetSkinsDirectory();*/
 
 private:
-    GbxRemote* server;
+    GbxRemote* server; /**< \brief Pointer to GbxRemote. */
 };
 
 #endif // METHODS_H_

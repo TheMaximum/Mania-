@@ -109,7 +109,6 @@ int EventManager::RegisterBeginMap(std::vector<std::function<void(Map)>> functio
     return functionsAdded;
 }
 
-
 int EventManager::RegisterEndMap(std::vector<std::function<void(Map)>> functions)
 {
     int functionsAdded = 0;
