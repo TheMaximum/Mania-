@@ -40,6 +40,10 @@ public:
      */
     void HandleCallBack(std::string methodName, std::vector<GbxResponseParameter> parameters);
 
+    void HandlePlayerConnect(std::vector<GbxResponseParameter> parameters);
+    void HandlePlayerDisconnect(std::vector<GbxResponseParameter> parameters);
+    void HandlePlayerChat(std::vector<GbxResponseParameter> parameters);
+
 private:
     GbxRemote* server;                      /**< \brief Contains the serverconnection. */
     EventManager* events;                   /**< \brief Contains the event manager. */

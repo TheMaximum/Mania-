@@ -65,7 +65,7 @@ bool ManiaPP::ConnectToServer()
                         std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved server version: '" << serverVersion.Build << "'." << std::endl;
 
                         std::cout << "[         ] Retrieving system info ... " << '\r' << std::flush;
-                        GbxMessage* message = new GbxMessage("GetSystemInfo");
+                        
                         SystemInfo getSystemInfo = methods->GetSystemInfo();
                         if(!getSystemInfo.ServerLogin.empty())
                         {

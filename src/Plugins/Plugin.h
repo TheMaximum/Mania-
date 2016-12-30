@@ -9,10 +9,11 @@
 #include <cstdlib>
 #include <functional>
 
-#include "../Utils/Logging.h"
+#include "../Events/Structs.h"
 #include "../GbxRemote/GbxRemote.h"
 #include "../Objects/Player.h"
 #include "../Objects/Map.h"
+#include "../Utils/Logging.h"
 
 //* Plugin
 /**
@@ -66,8 +67,22 @@ public:
         maps = mapsPtr;
     }
 
-    std::vector<std::function<void(Player)>> MethodsPlayerConnect;    /**< \brief Vector with functions for the PlayerConnect event. */
-    std::vector<std::function<void(Player)>> MethodsPlayerDisconnect; /**< \brief Vector with functions for the PlayerDisconnect event. */
+    std::vector<std::function<void(Player)>> PlayerConnect;                     /**< \brief Vector with functions for the PlayerConnect event. */
+    std::vector<std::function<void(Player)>> PlayerDisconnect;                  /**< \brief Vector with functions for the PlayerDisconnect event. */
+    std::vector<std::function<void(Player, std::string, bool)>> PlayerChat;     /**< \brief Vector with functions for the PlayerChat event. */
+    std::vector<std::function<void(Player, std::string, std::vector<EntryVal>)>> PlayerManialinkPageAnswer; /**< \brief Vector with functions for the PlayerManialinkPageAnswer event. */
+    std::vector<std::function<void(std::string, std::string)>> Echo;            /**< \brief Vector with functions for the Echo event. */
+    std::vector<std::function<void()>> BeginMatch;                              /**< \brief Vector with functions for the BeginMatch event. */
+    std::vector<std::function<void(std::vector<PlayerRanking>, int)>> EndMatch; /**< \brief Vector with functions for the EndMatch event. */
+    std::vector<std::function<void(Map)>> BeginMap;                             /**< \brief Vector with functions for the BeginMap event. */
+    std::vector<std::function<void(int, std::string)>> StatusChanged;           /**< \brief Vector with functions for the StatusChanged event. */
+    std::vector<std::function<void(Player, int, int, int)>> PlayerCheckpoint;   /**< \brief Vector with functions for the PlayerCheckpoint event. */
+    std::vector<std::function<void(Player, int)>> PlayerFinish;                 /**< \brief Vector with functions for the PlayerFinish event. */
+    std::vector<std::function<void(Player)>> PlayerIncoherence;                 /**< \brief Vector with functions for the PlayerIncoherence event. */
+    std::vector<std::function<void(int, int, std::string, int)>> BillUpdated;   /**< \brief Vector with functions for the BillUpdated event. */
+    std::vector<std::function<void(int, int, bool)>> MapListModified;           /**< \brief Vector with functions for the MapListModified event. */
+    std::vector<std::function<void(Player)>> PlayerInfoChanged;                 /**< \brief Vector with functions for the PlayerInfoChanged event. */
+    std::vector<std::function<void(std::string, std::string, std::string, std::string)>> VoteUpdated; /**< \brief Vector with functions for the VoteUpdated event. */
 
     std::string Version; /**< \brief Plugin version. */
     std::string Author;  /**< \brief Plugin author. */

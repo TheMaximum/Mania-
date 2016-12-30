@@ -82,8 +82,23 @@ void PluginManager::LoadPlugins(std::string pluginsFolder)
                 {
                     std::cout << "[         ] Loading events for '" << pluginId->first << "' ... " << '\r' << std::flush;
                     int eventCount = 0;
-                    eventCount += events->RegisterPlayerConnect(plugin->MethodsPlayerConnect);
-                    eventCount += events->RegisterPlayerDisconnect(plugin->MethodsPlayerDisconnect);
+                    eventCount += events->RegisterPlayerConnect(plugin->PlayerConnect);
+                    eventCount += events->RegisterPlayerDisconnect(plugin->PlayerDisconnect);
+                    eventCount += events->RegisterPlayerChat(plugin->PlayerChat);
+                    eventCount += events->RegisterPlayerManialinkPageAnswer(plugin->PlayerManialinkPageAnswer);
+                    eventCount += events->RegisterEcho(plugin->Echo);
+                    eventCount += events->RegisterBeginMatch(plugin->BeginMatch);
+                    eventCount += events->RegisterEndMatch(plugin->EndMatch);
+                    eventCount += events->RegisterBeginMap(plugin->BeginMap);
+                    eventCount += events->RegisterStatusChanged(plugin->StatusChanged);
+                    eventCount += events->RegisterPlayerCheckpoint(plugin->PlayerCheckpoint);
+                    eventCount += events->RegisterPlayerFinish(plugin->PlayerFinish);
+                    eventCount += events->RegisterPlayerIncoherence(plugin->PlayerIncoherence);
+                    eventCount += events->RegisterBillUpdated(plugin->BillUpdated);
+                    eventCount += events->RegisterMapListModified(plugin->MapListModified);
+                    eventCount += events->RegisterPlayerInfoChanged(plugin->PlayerInfoChanged);
+                    eventCount += events->RegisterVoteUpdated(plugin->VoteUpdated);
+
                     std::cout << "[   \033[0;32mOK.\033[0;0m   ] Loaded events for '" << pluginId->first << "': " << eventCount << " found." << std::endl;
                 }
 

@@ -1,5 +1,5 @@
-#ifndef STRUCTS_H_
-#define STRUCTS_H_
+#ifndef METHODS_STRUCTS_H_
+#define METHODS_STRUCTS_H_
 
 //* ServerInfo
 /**
@@ -32,4 +32,4 @@ struct SystemInfo
     std::string TitleId;        /**< \brief Title identifier. */
 };
 
-#endif // STRUCTS_H_
+#endif // METHODS_STRUCTS_H_
