@@ -8,6 +8,7 @@ With simple calls, you can add your functions to catch callbacks and call method
 
 ## main.cpp ##
 The ```main.cpp``` file contains just one simple function, namely 'startPlugin':
+
 ```C++
 extern "C" Plugin* startPlugin()
 {
@@ -15,6 +16,7 @@ extern "C" Plugin* startPlugin()
     return (Plugin*)plugin;
 }
 ```
+
 This function is called by the plugin manager to retrieve the plugin class, which is inherited of the class ```Plugin``` in the Mania++ package.
 
 ## Your plugin class ##
@@ -24,17 +26,21 @@ Be aware that your plugin should inherit ```Plugin```, which should be included 
 
 ### Plugin constructor ###
 The constructor should be setting the version and author variables of the ```Plugin``` interface:
+
 ```C++
   Version = "0.1.0";
   Author = "YOU";
 ```
+
 The constructor is also responsible of adding the functions which should be called when a callback comes in from the server.
 You simply add your function to one of the vectors which contains all your plugin's callbackhandlers.
 Only functions added in the constructor are taken into account by the system. Adding functions afterwards will have no effect.
 Because the ```std::function``` doesn't work nicely with class methods, you can do the following:
+
 ```C++
   PlayerConnect.push_back([this](Player player) { OnPlayerConnect(player); });
 ```
+
 In this case, ```OnPlayerConnect``` is the method you want to get called when a ```ManiaPlanet.PlayerConnect``` callback gets fired.
 
 ### Plugin Init() ###
