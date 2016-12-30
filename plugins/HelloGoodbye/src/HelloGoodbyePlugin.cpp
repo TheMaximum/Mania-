@@ -33,7 +33,7 @@ void HelloGoodbyePlugin::OnPlayerDisconnect(Player player)
 
     std::stringstream chatMessage;
     chatMessage << player.NickName;
-    chatMessage << " $s$zhas left the game."
+    chatMessage << " $s$zhas left the game.";
 
     methods->ChatSendServerMessage(chatMessage.str());
 }
