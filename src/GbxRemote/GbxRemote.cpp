@@ -2,6 +2,8 @@
 
 GbxRemote::~GbxRemote()
 {
+    Terminate();
+
     delete currentError;
     currentError = NULL;
 
@@ -52,6 +54,7 @@ bool GbxRemote::InitWithIp(std::string address, int port)
             return false;
         }
 
+        connected = true;
         return true;
     }
     else
@@ -65,12 +68,17 @@ bool GbxRemote::InitWithIp(std::string address, int port)
 void GbxRemote::Terminate()
 {
     server.Close();
+
+    connected = false;
 }
 
 bool GbxRemote::Query(GbxMessage* query)
 {
     delete currentError;
     delete currentResponse;
+
+    if(!connected)
+        return false;
 
     currentError = new GbxError();
     currentResponse = new GbxResponse();
@@ -124,6 +132,9 @@ bool GbxRemote::Query(GbxMessage* query)
 
 bool GbxRemote::ReadCallBacks()
 {
+    if(!connected)
+        return false;
+
     if(server.SearchForCallBacks(2000))
     {
         std::string data = server.Receive(8);

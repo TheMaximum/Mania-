@@ -12,6 +12,8 @@ TcpClient::TcpClient()
 void TcpClient::Close()
 {
     shutdown(sock, 2);
+    close(sock);
+    sock = -1;
 }
 
 bool TcpClient::Connect(std::string address, int port)
@@ -71,6 +73,9 @@ bool TcpClient::Connect(std::string address, int port)
 
 bool TcpClient::Send(std::string data)
 {
+    if(sock == -1)
+        return false;
+
     RequestHandle++;
 
     const char* messageData = data.c_str();
@@ -103,6 +108,9 @@ bool TcpClient::Send(std::string data)
 
 std::string TcpClient::Receive(int size = 512)
 {
+    if(sock == -1)
+        return NULL;
+
     std::string received;
     received.resize(size);
     int bytes_received = 0;
@@ -124,6 +132,9 @@ std::string TcpClient::Receive(int size = 512)
 
 bool TcpClient::SearchForCallBacks(int timeout)
 {
+    if(sock == -1)
+        return false;
+
     fd_set readfds;
     struct timeval tv;
 

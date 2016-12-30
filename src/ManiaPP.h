@@ -3,11 +3,15 @@
 
 #include <chrono>
 
+#include "CallBacks/CallBackManager.h"
 #include "Config/Version.h"
 #include "Config/Config.h"
+#include "Events/EventManager.h"
 #include "GbxRemote/GbxRemote.h"
+#include "Methods/Methods.h"
 #include "Objects/Map.h"
 #include "Objects/Player.h"
+#include "Plugins/PluginManager.h"
 #include "Utils/Logging.h"
 
 //* ManiaPP
@@ -47,14 +51,20 @@ public:
      */
     void Terminate();
 
-    void PrintParameter(GbxResponseParameter parameter, int paramId, std::string spaces = "    ", std::string parameterName = "");
-
 private:
     Config* config;                         /**< \brief Contains the configuration for the software. */
     Logging* logging;                       /**< \brief Contains functions to log information. */
     GbxRemote* server;                      /**< \brief Contains the connection with the server and its methods. */
     std::map<std::string, Player>* players; /**< \brief Contains the list of players currently on the server. */
-    std::map<std::string, Map>* maps; /**< \brief Contains the list of players currently on the server. */
+    std::map<std::string, Map>* maps;       /**< \brief Contains the list of players currently on the server. */
+
+    EventManager* events;                   /**< \brief Contains the event manager. */
+    PluginManager* plugins;                 /**< \brief Contains the plugin manager. */
+    CallBackManager* callbacks;             /**< \brief Contains the callback manager. */
+    Methods* methods;                       /**< \brief Server method caller. */
+
+    ServerVersion serverVersion;            /**< \brief Struct with server version information. */
+    SystemInfo systemInfo;                  /**< \brief Struct with system information. */
 
     /*!
      * \brief Gets a list of current players from the server.

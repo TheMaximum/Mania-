@@ -1,6 +1,7 @@
 #ifndef LOGGING_H_
 #define LOGGING_H_
 
+#include <cstring>
 #include <cmath>
 #include "../GbxRemote/GbxStructs.h"
 
@@ -26,7 +27,7 @@ public:
 
         if(spaces > 1)
         {
-            double halfSpaces = (spaces / 2);
+            double halfSpaces = ((double)spaces / 2);
 
             std::stringstream output;
             output << "[\033[0;31m";
@@ -64,6 +65,50 @@ public:
     static void PrintFailedFlush()
     {
         std::cout << "[ \033[0;31mFAILED!\033[0;0m" << std::endl;
+    }
+
+    /*!
+     * \brief Prints a GbxResponseParameter (for DEBUG purposes).
+     *
+     * \param parameter     Parameter to be printed.
+     * \param paramId       Number of the parameter.
+     * \param spaces        Spaces to be put before the parameter information.
+     * \param parameterName Name of the parameter (struct value only).
+     */
+    static void PrintParameter(GbxResponseParameter parameter, int paramId, std::string spaces = "    ", std::string parameterName = "")
+    {
+        if(parameter.Type.find("array") != std::string::npos)
+        {
+            std::cout << spaces << "Parameter #" << paramId << ": array" << std::endl;
+            spaces += "    ";
+            std::vector<GbxResponseParameter> arrayParam = parameter.GetArray();
+            for(int subParamId = 0; subParamId < arrayParam.size(); subParamId++)
+            {
+                GbxResponseParameter arrayParameter = arrayParam.at(subParamId);
+                PrintParameter(arrayParameter, subParamId, spaces);
+            }
+        }
+        else if(parameter.Type.find("struct") != std::string::npos)
+        {
+            std::cout << spaces << "Parameter #" << paramId << ": struct" << std::endl;
+            spaces += "    ";
+            std::map<std::string, GbxResponseParameter> structParam = parameter.GetStruct();
+            int subParamId = 0;
+            for(std::map<std::string, GbxResponseParameter>::iterator subParam = structParam.begin(); subParam != structParam.end(); ++subParam)
+            {
+                PrintParameter(subParam->second, subParamId, spaces, subParam->first);
+                subParamId++;
+            }
+        }
+        else
+        {
+            std::cout << spaces << "Parameter #" << paramId << ": " << parameter.GetString() << " (" << parameter.Type << ")";
+            if(parameterName != "")
+            {
+                std::cout << " (" << parameterName << ")";
+            }
+            std::cout << std::endl;
+        }
     }
 };
 
