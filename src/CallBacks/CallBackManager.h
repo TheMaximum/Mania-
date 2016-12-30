@@ -1,0 +1,169 @@
+#ifndef CALLBACKMANAGER_H_
+#define CALLBACKMANAGER_H_
+
+#include <string>
+#include <map>
+#include <vector>
+
+#include "../Events/EventManager.h"
+#include "../GbxRemote/GbxRemote.h"
+#include "../GbxRemote/Message/GbxMessage.h"
+#include "../GbxRemote/Parameters/GbxParameters.h"
+#include "../Objects/Map.h"
+#include "../Objects/Player.h"
+#include "../Utils/Logging.h"
+
+//* CallBackManager
+/**
+ * \brief Handles callbacks from the server.
+ */
+class CallBackManager
+{
+public:
+    /*!
+     * Constructor takes pointers to playerlist and maplist to keep them updated.
+     *
+     * \todo Replace pointer to GbxRemote with pointer to Methods.
+     *
+     * \param serverPtr       Pointer to the GbxRemote.
+     * \param eventManagerPtr Pointer to the EventManager.
+     * \param playerList      Pointer to playerlist.
+     * \param mapList         Pointer to maplist.
+     */
+    CallBackManager(GbxRemote* serverPtr, EventManager* eventManagerPtr, std::map<std::string, Player>* playerList, std::map<std::string, Map>* mapList);
+
+    /*!
+     * \brief Handles callback (updates lists, calls plugin functions).
+     *
+     * \param methodName Name of the callback method.
+     * \param parameters List with method parameters.
+     */
+    void HandleCallBack(std::string methodName, std::vector<GbxResponseParameter> parameters);
+
+    /*!
+     * \brief Handles PlayerConnect callback.
+     *
+     * \param parameters List with method parameters.
+     */
+    void HandlePlayerConnect(std::vector<GbxResponseParameter> parameters);
+
+    /*!
+     * \brief Handles PlayerDisconnect callback.
+     *
+     * \param parameters List with method parameters.
+     */
+    void HandlePlayerDisconnect(std::vector<GbxResponseParameter> parameters);
+
+    /*!
+     * \brief Handles PlayerChat callback.
+     *
+     * \param parameters List with method parameters.
+     */
+    void HandlePlayerChat(std::vector<GbxResponseParameter> parameters);
+
+    /*!
+     * \brief Handles PlayerManialinkPageAnswer callback.
+     *
+     * \param parameters List with method parameters.
+     */
+    void HandlePlayerManialinkPageAnswer(std::vector<GbxResponseParameter> parameters);
+
+    /*!
+     * \brief Handles Echo callback.
+     *
+     * \param parameters List with method parameters.
+     */
+    void HandleEcho(std::vector<GbxResponseParameter> parameters);
+
+    /*!
+     * \brief Handles BeginMatch callback.
+     *
+     * \param parameters List with method parameters.
+     */
+    void HandleBeginMatch(std::vector<GbxResponseParameter> parameters);
+
+    /*!
+     * \brief Handles EndMatch callback.
+     *
+     * \param parameters List with method parameters.
+     */
+    void HandleEndMatch(std::vector<GbxResponseParameter> parameters);
+
+    /*!
+     * \brief Handles BeginMap callback.
+     *
+     * \param parameters List with method parameters.
+     */
+    void HandleBeginMap(std::vector<GbxResponseParameter> parameters);
+
+    /*!
+     * \brief Handles EndMap callback.
+     *
+     * \param parameters List with method parameters.
+     */
+    void HandleEndMap(std::vector<GbxResponseParameter> parameters);
+
+    /*!
+     * \brief Handles StatusChanged callback.
+     *
+     * \param parameters List with method parameters.
+     */
+    void HandleStatusChanged(std::vector<GbxResponseParameter> parameters);
+
+    /*!
+     * \brief Handles PlayerCheckpoint callback.
+     *
+     * \param parameters List with method parameters.
+     */
+    void HandlePlayerCheckpoint(std::vector<GbxResponseParameter> parameters);
+
+    /*!
+     * \brief Handles PlayerFinish callback.
+     *
+     * \param parameters List with method parameters.
+     */
+    void HandlePlayerFinish(std::vector<GbxResponseParameter> parameters);
+
+    /*!
+     * \brief Handles PlayerIncoherence callback.
+     *
+     * \param parameters List with method parameters.
+     */
+    void HandlePlayerIncoherence(std::vector<GbxResponseParameter> parameters);
+
+    /*!
+     * \brief Handles BillUpdated callback.
+     *
+     * \param parameters List with method parameters.
+     */
+    void HandleBillUpdated(std::vector<GbxResponseParameter> parameters);
+
+    /*!
+     * \brief Handles MapListModified callback.
+     *
+     * \param parameters List with method parameters.
+     */
+    void HandleMapListModified(std::vector<GbxResponseParameter> parameters);
+
+    /*!
+     * \brief Handles PlayerInfoChanged callback.
+     *
+     * \param parameters List with method parameters.
+     */
+    void HandlePlayerInfoChanged(std::vector<GbxResponseParameter> parameters);
+
+    /*!
+     * \brief Handles VoteUpdated callback.
+     *
+     * \param parameters List with method parameters.
+     */
+    void HandleVoteUpdated(std::vector<GbxResponseParameter> parameters);
+
+private:
+    GbxRemote* server;                      /**< \brief Contains the serverconnection. */
+    EventManager* events;                   /**< \brief Contains the event manager. */
+    std::map<std::string, Player>* players; /**< \brief Contains the list of players currently on the server. */
+    std::map<std::string, Map>* maps;       /**< \brief Contains the list of players currently on the server. */
+};
+
+#endif // CALLBACKMANAGER_H_

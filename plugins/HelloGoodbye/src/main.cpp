@@ -1,8 +1,4 @@
-#include <signal.h>
-#include <iostream>
-
-#include "ManiaPP.h"
-#include "../lib/pugixml/src/pugixml.hpp"
+#include "HelloGoodbyePlugin.h"
 
 /**
  * Mania++ is a Server Controller for TrackMania 2 servers, written in C++.
@@ -22,16 +18,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-ManiaPP* controller;
-
-int main(int argc, char *argv[])
+extern "C" Plugin* startPlugin()
 {
-    controller = new ManiaPP();
-    if(controller->ConnectToServer())
-    {
-        controller->MainLoop();
-        controller->Terminate();
-    }
-
-    delete controller; controller = NULL;
+    HelloGoodbyePlugin* plugin = new HelloGoodbyePlugin();
+    return (Plugin*)plugin;
 }

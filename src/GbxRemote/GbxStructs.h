@@ -16,7 +16,7 @@ struct GbxFirstResponse
  */
 struct GbxQueryResponse
 {
-    short size;  /**< \brief Size in bytes of the query response. */
+    int size;  /**< \brief Size in bytes of the query response. */
     int handle; /**< \brief Handle identifier of response message. */
 };
 
