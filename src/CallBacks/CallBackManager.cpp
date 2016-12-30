@@ -175,7 +175,17 @@ void CallBackManager::HandleEndMatch(std::vector<GbxResponseParameter> parameter
         std::map<std::string, GbxResponseParameter> rankingVal = rankingParams.at(entryId).GetStruct();
 
         std::string login = rankingVal.at("Login").GetString();
-        ranking.PlayerInfo = players->at(login);
+        if(players->find(login) != players->end())
+        {
+            ranking.PlayerInfo = players->at(login);
+        }
+        else
+        {
+            ranking.PlayerInfo = Player();
+            ranking.PlayerInfo.PlayerId = atoi(rankingVal.at("PlayerId").GetString().c_str());
+            ranking.PlayerInfo.Login = rankingVal.at("Login").GetString();
+            ranking.PlayerInfo.NickName = rankingVal.at("NickName").GetString();
+        }
         ranking.Rank = atoi(rankingVal.at("Rank").GetString().c_str());
         ranking.BestTime = atoi(rankingVal.at("BestTime").GetString().c_str());
         ranking.Score = atoi(rankingVal.at("Score").GetString().c_str());
