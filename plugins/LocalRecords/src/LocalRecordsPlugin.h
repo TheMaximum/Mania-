@@ -3,6 +3,7 @@
 
 #include <sstream>
 #include "Plugins/Plugin.h"
+#include "Utils/Time.h"
 
 class LocalRecordsPlugin : public Plugin
 {
