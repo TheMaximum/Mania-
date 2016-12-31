@@ -9,6 +9,12 @@
 #include <cstdlib>
 #include <functional>
 
+#include <cppconn/driver.h>
+#include <cppconn/exception.h>
+#include <cppconn/resultset.h>
+#include <cppconn/statement.h>
+#include <cppconn/prepared_statement.h>
+
 #include "../Events/Structs.h"
 #include "../Methods/Methods.h"
 #include "../Objects/Player.h"
@@ -30,7 +36,7 @@ public:
     /*!
      * \brief Sets the logging instance.
      *
-     * \param loggingPtr Pointer to the logging instance.
+     * \param loggingPtr  Pointer to the logging instance.
      */
     void SetLogging(Logging* loggingPtr)
     {
@@ -40,7 +46,7 @@ public:
     /*!
      * \brief Sets the server instance.
      *
-     * \param methodsPtr Pointer to the Methods instance.
+     * \param methodsPtr  Pointer to the Methods instance.
      */
     void SetMethods(Methods* methodsPtr)
     {
@@ -50,7 +56,7 @@ public:
     /*!
      * \brief Sets the playerlist instance.
      *
-     * \param playersPtr Pointer to the playerlist instance.
+     * \param playersPtr  Pointer to the playerlist instance.
      */
     void SetPlayers(std::map<std::string, Player>* playersPtr)
     {
@@ -60,11 +66,21 @@ public:
     /*!
      * \brief Sets the maplist instance.
      *
-     * \param mapsPtr    Pointer to the maplist instance.
+     * \param mapsPtr     Pointer to the maplist instance.
      */
     void SetMaps(std::map<std::string, Map>* mapsPtr)
     {
         maps = mapsPtr;
+    }
+
+    /*!
+     * \brief Sets the database instance.
+     *
+     * \param databasePtr Pointer to the database instance.
+     */
+    void SetDatabase(sql::Connection* databasePtr)
+    {
+        database = databasePtr;
     }
 
     std::vector<std::function<void(Player)>> PlayerConnect;                     /**< \brief Vector with functions for the PlayerConnect event. */
@@ -93,6 +109,7 @@ protected:
     Methods* methods;                       /**< \brief Methods instance. */
     std::map<std::string, Player>* players; /**< \brief Playerlist instance. */
     std::map<std::string, Map>* maps;       /**< \brief Maplist instance. */
+    sql::Connection* database;              /**< \brief Database instance. */
 };
 
 #endif // PLUGIN_H_

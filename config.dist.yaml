@@ -5,3 +5,11 @@ config:
         authentication:
             username: 'SuperAdmin'
             password: '***'
+
+    database:
+        address: 'localhost'
+        port: 3306
+        authentication:
+            username: '***'
+            password: '***'
+        database: 'maniapp'

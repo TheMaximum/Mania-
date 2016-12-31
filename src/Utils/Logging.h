@@ -52,6 +52,21 @@ public:
     }
 
     /*!
+     * \brief Prints error to console.
+     *
+     * \param error        Error structure.
+     */
+    static void PrintError(int number, std::string message)
+    {
+        GbxError* error = new GbxError();
+        error->number = number;
+        error->message = message;
+        PrintError(error);
+        
+        delete error; error = NULL;
+    }
+
+    /*!
      * \brief Prints OK. in [         ]-spaces in console.
      */
     static void PrintOKFlush()

@@ -1,5 +1,5 @@
-# Install Boost and xerces
-sudo apt-get -y install libboost-dev
+# Install Boost and MySQL
+sudo apt-get -y install libboost-dev libmysqlcppconn-dev
 
 # Go to libraries directory
 cd ./lib/

@@ -6,6 +6,7 @@
 #include "CallBacks/CallBackManager.h"
 #include "Config/Version.h"
 #include "Config/Config.h"
+#include "Database/Database.h"
 #include "Events/EventManager.h"
 #include "GbxRemote/GbxRemote.h"
 #include "Methods/Methods.h"
@@ -37,6 +38,11 @@ public:
     bool ConnectToServer();
 
     /*!
+     * \brief Connects and authenticates with the database server.
+     */
+    bool ConnectToDatabase();
+
+    /*!
      * \brief Prints information about the server.
      */
     void PrintServerInfo();
@@ -62,6 +68,8 @@ private:
     PluginManager* plugins;                 /**< \brief Contains the plugin manager. */
     CallBackManager* callbacks;             /**< \brief Contains the callback manager. */
     Methods* methods;                       /**< \brief Server method caller. */
+
+    sql::Connection* database = NULL;       /**< \brief Contains database driver. */
 
     ServerVersion serverVersion;            /**< \brief Struct with server version information. */
     SystemInfo systemInfo;                  /**< \brief Struct with system information. */

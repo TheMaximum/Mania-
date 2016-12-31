@@ -1,6 +1,6 @@
 #include "PluginManager.h"
 
-PluginManager::PluginManager(Logging* loggingPtr, Methods* methodsPtr, std::map<std::string, Player>* playersPtr, std::map<std::string, Map>* mapsPtr)
+PluginManager::PluginManager(Logging* loggingPtr, Methods* methodsPtr, std::map<std::string, Player>* playersPtr, std::map<std::string, Map>* mapsPtr, sql::Connection* databasePtr)
 {
     plugins = std::map<std::string, PluginInfo>();
     events = NULL;
@@ -9,6 +9,7 @@ PluginManager::PluginManager(Logging* loggingPtr, Methods* methodsPtr, std::map<
     methods = methodsPtr;
     players = playersPtr;
     maps = mapsPtr;
+    database = databasePtr;
 }
 
 PluginManager::~PluginManager()
@@ -75,6 +76,7 @@ void PluginManager::LoadPlugins(std::string pluginsFolder)
                 plugin->SetMethods(methods);
                 plugin->SetPlayers(players);
                 plugin->SetMaps(maps);
+                plugin->SetDatabase(database);
 
                 std::cout << "[   \033[0;32mOK.\033[0;0m   ] Loaded plugin '" << pluginId->first << "': v" << plugin->Version << " by " << plugin->Author << "." << std::endl;
 

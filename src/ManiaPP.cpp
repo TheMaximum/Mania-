@@ -10,11 +10,6 @@ ManiaPP::ManiaPP()
     methods = new Methods(server);
     players = new std::map<std::string, Player>();
     maps = new std::map<std::string, Map>();
-
-    events = new EventManager();
-    plugins = new PluginManager(logging, methods, players, maps);
-    plugins->SetEventManager(events);
-    callbacks = new CallBackManager(server, events, players, maps);
 }
 
 ManiaPP::~ManiaPP()
@@ -83,12 +78,24 @@ bool ManiaPP::ConnectToServer()
                             {
                                 logging->PrintOKFlush();
 
-                                plugins->LoadPlugins();
-                                plugins->InitializePlugins();
+                                if(ConnectToDatabase())
+                                {
+                                    events = new EventManager();
+                                    plugins = new PluginManager(logging, methods, players, maps, database);
+                                    plugins->SetEventManager(events);
+                                    callbacks = new CallBackManager(server, events, players, maps);
+                                    
+                                    plugins->LoadPlugins();
+                                    plugins->InitializePlugins();
 
-                                PrintServerInfo();
+                                    PrintServerInfo();
 
-                                return true;
+                                    return true;
+                                }
+                                else
+                                {
+                                    return false;
+                                }
                             }
                         }
                     }
@@ -100,6 +107,31 @@ bool ManiaPP::ConnectToServer()
     logging->PrintFailedFlush();
     logging->PrintError(server->GetCurrentError());
 
+    return false;
+}
+
+bool ManiaPP::ConnectToDatabase()
+{
+    std::cout << "[         ] Connecting to the database on '" << config->Database->address << ":" << config->Database->port << "' ... " << '\r' << std::flush;
+    try
+    {
+        Database db = Database(config->Database->address, config->Database->port);
+        sql::Connection* dbConnection = db.Connect(config->Database->username, config->Database->password, config->Database->database);
+        if(dbConnection != NULL)
+        {
+            logging->PrintOKFlush();
+            database = dbConnection;
+            return true;
+        }
+    }
+    catch(sql::SQLException &e)
+    {
+        logging->PrintFailedFlush();
+        logging->PrintError(e.getErrorCode(), e.what());
+        return false;
+    }
+
+    logging->PrintFailedFlush();
     return false;
 }
 

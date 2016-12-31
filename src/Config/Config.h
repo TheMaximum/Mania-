@@ -20,6 +20,21 @@ struct ServerConfig
     std::string password; /**< \brief Password with which to authenticate on the server. */
 };
 
+//* DatabaseConfig
+/**
+ * \brief Database connection settings.
+ *
+ * Editing information in this struct will not result in a change in the configuration file.
+ */
+struct DatabaseConfig
+{
+    std::string address;  /**< \brief Database address (either hostname or IP Address). */
+    int port;             /**< \brief Database serverport. */
+    std::string username; /**< \brief Username with which to authenticate on the database server. */
+    std::string password; /**< \brief Password with which to authenticate on the database server. */
+    std::string database; /**< \brief Name of the database that should be used. */
+};
+
 //* Config
 /**
  * \brief Reads and stores configuration information.
@@ -40,6 +55,7 @@ public:
     ~Config();
 
     ServerConfig* Server; /**< \brief Instance of ServerConfig which stores the server connection settings. */
+    DatabaseConfig* Database; /**< \brief Instance of DatabaseConfig which stores the database server connection settings. */
 
 private:
     /*!

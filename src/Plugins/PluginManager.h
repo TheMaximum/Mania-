@@ -40,7 +40,7 @@ public:
      * \param playersPtr      Current instance of the playerlist.
      * \param mapsPtr         Current instance of the maplist.
      */
-    PluginManager(Logging* loggingPtr, Methods* methodsPtr, std::map<std::string, Player>* playersPtr, std::map<std::string, Map>* mapsPtr);
+    PluginManager(Logging* loggingPtr, Methods* methodsPtr, std::map<std::string, Player>* playersPtr, std::map<std::string, Map>* mapsPtr, sql::Connection* databasePtr);
 
     /*!
      * \brief Destructor closes all open plugins.
@@ -76,9 +76,10 @@ private:
     EventManager* events;                      /**< \brief Current instance of the EventManager. */
 
     Logging* logging;                          /**< \brief Current instance of Logging. */
-    Methods* methods;                         /**< \brief Current instance of Methods. */
+    Methods* methods;                          /**< \brief Current instance of Methods. */
     std::map<std::string, Player>* players;    /**< \brief Current instance of the playerlist. */
     std::map<std::string, Map>* maps;          /**< \brief Current instance of the maplist. */
+    sql::Connection* database;                     /**< \brief Current instance of the database. */
 };
 
 #endif // PLUGINMANAGER_H_
