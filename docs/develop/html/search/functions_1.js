@@ -27,5 +27,6 @@ var searchData=
   ['close',['Close',['../classTcpClient.html#ae7a96d69db612ef4827ee23c31332a4e',1,'TcpClient']]],
   ['config',['Config',['../classConfig.html#ae67e338ea42e242cb5b374b6583c8b1c',1,'Config']]],
   ['connect',['Connect',['../classTcpClient.html#ac2e9bb63b4e0dc8f4508aa2a85431fe2',1,'TcpClient']]],
+  ['connecttodatabase',['ConnectToDatabase',['../classManiaPP.html#a943b0ecd20ca8c9235411d16a743e5ac',1,'ManiaPP']]],
   ['connecttoserver',['ConnectToServer',['../classManiaPP.html#a22561171876e54dbf633c70d9924c06a',1,'ManiaPP']]]
 ];

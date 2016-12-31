@@ -23,7 +23,9 @@ void \hyperlink{classPlugin_a86c23967641a554f053148ec072e393a}{Set\-Methods} (\h
 void \hyperlink{classPlugin_ae7061592fc0fe1d22a7d2ad4989f78ae}{Set\-Players} (std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$players\-Ptr)
 \begin{DoxyCompactList}\small\item\em Sets the playerlist instance. \end{DoxyCompactList}\item 
 void \hyperlink{classPlugin_a72ace5f9e59a5cba484f4ec30e36e390}{Set\-Maps} (std\-::map$<$ std\-::string, \hyperlink{structMap}{Map} $>$ $\ast$maps\-Ptr)
-\begin{DoxyCompactList}\small\item\em Sets the maplist instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Sets the maplist instance. \end{DoxyCompactList}\item 
+void \hyperlink{classPlugin_a2bc2dde47699a44792ae9de2ac228456}{Set\-Database} (sql\-::\-Connection $\ast$database\-Ptr)
+\begin{DoxyCompactList}\small\item\em Sets the database instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -122,13 +124,32 @@ std\-::string)$>$ $>$ \hyperlink{classPlugin_a869a88fc900c8a54c2607774cfa44dbc}{
 \begin{DoxyCompactList}\small\item\em Playerlist instance. \end{DoxyCompactList}\item 
 \hypertarget{classPlugin_a7f1ac74d4f6512342f229faf7dad27b2}{std\-::map$<$ std\-::string, \hyperlink{structMap}{Map} $>$ $\ast$ \hyperlink{classPlugin_a7f1ac74d4f6512342f229faf7dad27b2}{maps}}\label{classPlugin_a7f1ac74d4f6512342f229faf7dad27b2}
 
-\begin{DoxyCompactList}\small\item\em Maplist instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Maplist instance. \end{DoxyCompactList}\item 
+\hypertarget{classPlugin_a8b987ba68dcd3d54dfb189ad31e5e3d3}{sql\-::\-Connection $\ast$ \hyperlink{classPlugin_a8b987ba68dcd3d54dfb189ad31e5e3d3}{database}}\label{classPlugin_a8b987ba68dcd3d54dfb189ad31e5e3d3}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classDatabase}{Database} instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 \hyperlink{classPlugin}{Plugin} interface, inherited by all plugins. 
 
 \subsection{Member Function Documentation}
+\hypertarget{classPlugin_a2bc2dde47699a44792ae9de2ac228456}{\index{Plugin@{Plugin}!Set\-Database@{Set\-Database}}
+\index{Set\-Database@{Set\-Database}!Plugin@{Plugin}}
+\subsubsection[{Set\-Database}]{\setlength{\rightskip}{0pt plus 5cm}void Plugin\-::\-Set\-Database (
+\begin{DoxyParamCaption}
+\item[{sql\-::\-Connection $\ast$}]{database\-Ptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPlugin_a2bc2dde47699a44792ae9de2ac228456}
+
+
+Sets the database instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em database\-Ptr} & Pointer to the database instance. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classPlugin_ae5ceb206ba4ec62f2d8c21b9117ea411}{\index{Plugin@{Plugin}!Set\-Logging@{Set\-Logging}}
 \index{Set\-Logging@{Set\-Logging}!Plugin@{Plugin}}
 \subsubsection[{Set\-Logging}]{\setlength{\rightskip}{0pt plus 5cm}void Plugin\-::\-Set\-Logging (

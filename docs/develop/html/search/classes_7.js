@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['serverconfig',['ServerConfig',['../structServerConfig.html',1,'']]],
-  ['serverstatus',['ServerStatus',['../structServerStatus.html',1,'']]],
-  ['serverversion',['ServerVersion',['../structServerVersion.html',1,'']]],
-  ['systeminfo',['SystemInfo',['../structSystemInfo.html',1,'']]]
+  ['player',['Player',['../structPlayer.html',1,'']]],
+  ['playerranking',['PlayerRanking',['../structPlayerRanking.html',1,'']]],
+  ['plugin',['Plugin',['../classPlugin.html',1,'']]],
+  ['plugininfo',['PluginInfo',['../structPluginInfo.html',1,'']]],
+  ['pluginmanager',['PluginManager',['../classPluginManager.html',1,'']]]
 ];

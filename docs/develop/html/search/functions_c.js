@@ -6,6 +6,7 @@ var searchData=
   ['sendnoticetologin',['SendNoticeToLogin',['../classMethods.html#a7229aacea5b60d1d502c5df39f10a50c',1,'Methods']]],
   ['setapiversion',['SetApiVersion',['../classMethods.html#ad31d717a19f95d4213d6882a0caff0fa',1,'Methods']]],
   ['setbasicinfo',['setBasicInfo',['../structMap.html#a5a5864cc5b9e067f4383fae5bf01c381',1,'Map']]],
+  ['setdatabase',['SetDatabase',['../classPlugin.html#a2bc2dde47699a44792ae9de2ac228456',1,'Plugin']]],
   ['setdetailedinfo',['setDetailedInfo',['../structMap.html#a23ae24725344c494f35da1fb95c521e8',1,'Map']]],
   ['seteventmanager',['SetEventManager',['../classPluginManager.html#a7ed7485291babeed3109a1a364b6d308',1,'PluginManager']]],
   ['setlogging',['SetLogging',['../classPlugin.html#ae5ceb206ba4ec62f2d8c21b9117ea411',1,'Plugin']]],

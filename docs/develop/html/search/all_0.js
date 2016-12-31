@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['address',['address',['../structServerConfig.html#a2a4201c0c868ba962a57d75b07ddafaf',1,'ServerConfig::address()'],['../classTcpClient.html#a8bcb24ebf1d8e22e9185f3056fd108c4',1,'TcpClient::address()']]],
+  ['address',['address',['../structServerConfig.html#a2a4201c0c868ba962a57d75b07ddafaf',1,'ServerConfig::address()'],['../structDatabaseConfig.html#a5ab15d9f2af8a31b83b6b95e58a0b67f',1,'DatabaseConfig::address()'],['../classTcpClient.html#a8bcb24ebf1d8e22e9185f3056fd108c4',1,'TcpClient::address()']]],
   ['apiversion',['apiVersion',['../classGbxRemote.html#a81d3c0c70ab7f5e585840e9978ee900e',1,'GbxRemote::apiVersion()'],['../structServerVersion.html#a14472c8764f169f51a39b8c79cb7f029',1,'ServerVersion::ApiVersion()']]],
   ['array',['Array',['../classGbxResponseParameter.html#abd56daae71edf6749b634d0545a85aad',1,'GbxResponseParameter']]],
   ['authenticate',['Authenticate',['../classMethods.html#aa1bba4d023f013fedf3edff7c69f5d08',1,'Methods']]],
