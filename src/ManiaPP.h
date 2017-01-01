@@ -76,11 +76,15 @@ private:
 
     /*!
      * \brief Gets a list of current players from the server.
+     *
+     * \todo Insert player into database if needed.
      */
     void retrievePlayerList();
 
     /*!
      * \brief Gets a list of current maps from the server.
+     *
+     * \todo Insert map into database if needed.
      */
     void retrieveMapList();
 };

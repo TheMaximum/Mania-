@@ -1,9 +1,10 @@
 #include "CallBackManager.h"
 
-CallBackManager::CallBackManager(GbxRemote* serverPtr, EventManager* eventManagerPtr, std::map<std::string, Player>* playerList, std::map<std::string, Map>* mapList)
+CallBackManager::CallBackManager(GbxRemote* serverPtr, EventManager* eventManagerPtr, sql::Connection* databasePtr, std::map<std::string, Player>* playerList, std::map<std::string, Map>* mapList)
 {
     server = serverPtr;
     events = eventManagerPtr;
+    database = databasePtr;
 
     players = playerList;
     maps = mapList;
@@ -99,6 +100,18 @@ void CallBackManager::HandlePlayerConnect(std::vector<GbxResponseParameter> para
     Player newPlayer = Player(server->GetResponse()->GetParameters().at(0).GetStruct());
     message = new GbxMessage("GetDetailedPlayerInfo", params);
     newPlayer.PlayerDetailed(server->GetResponse()->GetParameters().at(0).GetStruct());
+
+    if(database != NULL)
+    {
+        sql::PreparedStatement* pstmt;
+        pstmt = database->prepareStatement("SELECT * FROM `players` WHERE `Login` = ?");
+        pstmt->setString(1, newPlayer.Login);
+        sql::ResultSet* result = pstmt->executeQuery();
+        if(result->next())
+        {
+            newPlayer.SetId(result->getInt("Id"));
+        }
+    }
 
     players->insert(std::pair<std::string, Player>(newPlayer.Login, newPlayer));
 
@@ -213,14 +226,16 @@ void CallBackManager::HandleEndMatch(std::vector<GbxResponseParameter> parameter
 
 void CallBackManager::HandleBeginMap(std::vector<GbxResponseParameter> parameters)
 {
-    Map map = Map();
+    std::map<std::string, GbxResponseParameter> mapStruct = parameters.at(0).GetStruct();
+    Map map = maps->at(mapStruct.at("UId").GetString());
     map.MapDetailed(parameters.at(0).GetStruct());
     events->CallBeginMap(map);
 }
 
 void CallBackManager::HandleEndMap(std::vector<GbxResponseParameter> parameters)
 {
-    Map map = Map();
+    std::map<std::string, GbxResponseParameter> mapStruct = parameters.at(0).GetStruct();
+    Map map = maps->at(mapStruct.at("UId").GetString());
     map.MapDetailed(parameters.at(0).GetStruct());
     events->CallEndMap(map);
 }

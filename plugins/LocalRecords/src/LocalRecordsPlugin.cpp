@@ -15,17 +15,10 @@ void LocalRecordsPlugin::Init()
 
 void LocalRecordsPlugin::OnBeginMap(Map map)
 {
-    sql::PreparedStatement* pstmt;
-    pstmt = database->prepareStatement("SELECT * FROM `maps` WHERE `Uid` = ?");
-    pstmt->setString(1, map.UId);
-    sql::ResultSet* result = pstmt->executeQuery();
-    result->next();
-    int mapId = result->getInt("Id");
-
-    pstmt = database->prepareStatement("SELECT * FROM `records` WHERE `MapId` = ? ORDER BY `Score` ASC LIMIT ?");
-    pstmt->setInt(1, mapId);
+    sql::PreparedStatement* pstmt = database->prepareStatement("SELECT * FROM `records` WHERE `MapId` = ? ORDER BY `Score` ASC LIMIT ?");
+    pstmt->setInt(1, map.Id);
     pstmt->setInt(2, 100);
-    result = pstmt->executeQuery();
+    sql::ResultSet* result = pstmt->executeQuery();
 
     std::cout << "Records for " << map.Name << ":" << std::endl;
     int recordIndex = 1;

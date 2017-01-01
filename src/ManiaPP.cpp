@@ -70,9 +70,6 @@ bool ManiaPP::ConnectToServer()
 
                             methods->GetChatLines();
 
-                            retrievePlayerList();
-                            retrieveMapList();
-
                             std::cout << "[         ] Enabling CallBacks ... " << '\r' << std::flush;
                             if(methods->EnableCallbacks(true))
                             {
@@ -80,10 +77,13 @@ bool ManiaPP::ConnectToServer()
 
                                 if(ConnectToDatabase())
                                 {
+                                    retrievePlayerList();
+                                    retrieveMapList();
+
                                     events = new EventManager();
                                     plugins = new PluginManager(logging, methods, players, maps, database);
                                     plugins->SetEventManager(events);
-                                    callbacks = new CallBackManager(server, events, players, maps);
+                                    callbacks = new CallBackManager(server, events, database, players, maps);
 
                                     plugins->LoadPlugins();
                                     plugins->InitializePlugins();
@@ -170,6 +170,7 @@ void ManiaPP::MainLoop()
 void ManiaPP::retrievePlayerList()
 {
     std::cout << "[         ] Retrieving current player list ... " << '\r' << std::flush;
+
     int playerListLimit = 512; int playerListIndex = 0;
     GbxParameters* params = new GbxParameters();
     params->Put(&playerListLimit);
@@ -196,10 +197,20 @@ void ManiaPP::retrievePlayerList()
                 server->Query(message);
                 Player newPlayer = Player(player);
                 newPlayer.PlayerDetailed(server->GetResponse()->GetParameters().at(0).GetStruct());
-                players->insert(std::pair<std::string, Player>(newPlayer.Login, newPlayer));
 
-                //Player newPlayer = Player(player);
-                //players->insert(std::pair<std::string, Player>(newPlayer.Login, newPlayer));
+                if(database != NULL)
+                {
+                    sql::PreparedStatement* pstmt;
+                    pstmt = database->prepareStatement("SELECT * FROM `players` WHERE `Login` = ?");
+                    pstmt->setString(1, newPlayer.Login);
+                    sql::ResultSet* result = pstmt->executeQuery();
+                    if(result->next())
+                    {
+                        newPlayer.SetId(result->getInt("Id"));
+                    }
+                }
+
+                players->insert(std::pair<std::string, Player>(newPlayer.Login, newPlayer));
             }
         }
 
@@ -233,6 +244,19 @@ void ManiaPP::retrieveMapList()
         {
             std::map<std::string, GbxResponseParameter> map = mapList.at(mapId).GetStruct();
             Map newMap = Map(map);
+
+            if(database != NULL)
+            {
+                sql::PreparedStatement* pstmt;
+                pstmt = database->prepareStatement("SELECT * FROM `maps` WHERE `UId` = ?");
+                pstmt->setString(1, newMap.UId);
+                sql::ResultSet* result = pstmt->executeQuery();
+                if(result->next())
+                {
+                    newMap.SetId(result->getInt("Id"));
+                }
+            }
+
             maps->insert(std::pair<std::string, Map>(newMap.UId, newMap));
         }
 

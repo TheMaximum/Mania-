@@ -5,6 +5,12 @@
 #include <map>
 #include <vector>
 
+#include <cppconn/driver.h>
+#include <cppconn/exception.h>
+#include <cppconn/resultset.h>
+#include <cppconn/statement.h>
+#include <cppconn/prepared_statement.h>
+
 #include "../Events/EventManager.h"
 #include "../GbxRemote/GbxRemote.h"
 #include "../GbxRemote/Message/GbxMessage.h"
@@ -27,10 +33,11 @@ public:
      *
      * \param serverPtr       Pointer to the GbxRemote.
      * \param eventManagerPtr Pointer to the EventManager.
+     * \param databasePtr     Pointer to the database connection.
      * \param playerList      Pointer to playerlist.
      * \param mapList         Pointer to maplist.
      */
-    CallBackManager(GbxRemote* serverPtr, EventManager* eventManagerPtr, std::map<std::string, Player>* playerList, std::map<std::string, Map>* mapList);
+    CallBackManager(GbxRemote* serverPtr, EventManager* eventManagerPtr, sql::Connection* databasePtr, std::map<std::string, Player>* playerList, std::map<std::string, Map>* mapList);
 
     /*!
      * \brief Handles callback (updates lists, calls plugin functions).
@@ -162,6 +169,7 @@ public:
 private:
     GbxRemote* server;                      /**< \brief Contains the serverconnection. */
     EventManager* events;                   /**< \brief Contains the event manager. */
+    sql::Connection* database;              /**< \brief Contains the database connection. */
     std::map<std::string, Player>* players; /**< \brief Contains the list of players currently on the server. */
     std::map<std::string, Map>* maps;       /**< \brief Contains the list of players currently on the server. */
 };

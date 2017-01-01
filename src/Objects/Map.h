@@ -9,6 +9,9 @@
  */
 struct Map
 {
+    // === Mania++ information ===
+    int Id = 0;               /**< \brief Map identifier (on database). */
+
     // === Basic information ===
     std::string UId;          /**< \brief Unique map identifier. */
     std::string Name;         /**< \brief Map name. */
@@ -65,6 +68,16 @@ struct Map
             setBasicInfo(serverStruct);
             setDetailedInfo(serverStruct);
         }
+    }
+
+    /*!
+     * \brief Set database identifier value.
+     *
+     * \param Database ID.
+     */
+    void SetId(int id)
+    {
+        Id = id;
     }
 
 private:

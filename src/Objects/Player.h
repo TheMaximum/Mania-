@@ -9,6 +9,9 @@
  */
 struct Player
 {
+    // === Mania++ information ===
+    int Id = 0;            /**< \brief Player identifier (on database). */
+
     // === Basic information ===
     int PlayerId;          /**< \brief Player identifier (on server). */
     int TeamId;            /**< \brief Team identifier (on server). */
@@ -63,6 +66,16 @@ struct Player
         {
             setDetailedInfo(serverStruct);
         }
+    }
+
+    /*!
+     * \brief Set database identifier value.
+     *
+     * \param Database ID.
+     */
+    void SetId(int id)
+    {
+        Id = id;
     }
 
 private:
