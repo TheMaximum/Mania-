@@ -9,6 +9,7 @@ var searchData=
   ['setdatabase',['SetDatabase',['../classPlugin.html#a2bc2dde47699a44792ae9de2ac228456',1,'Plugin']]],
   ['setdetailedinfo',['setDetailedInfo',['../structMap.html#a23ae24725344c494f35da1fb95c521e8',1,'Map::setDetailedInfo()'],['../structPlayer.html#a179183e86a0b9a4b808593be96d65391',1,'Player::setDetailedInfo()']]],
   ['seteventmanager',['SetEventManager',['../classPluginManager.html#a7ed7485291babeed3109a1a364b6d308',1,'PluginManager']]],
+  ['setid',['SetId',['../structMap.html#af83b3a784e6fa9404c1940a2ca1b68a8',1,'Map::SetId()'],['../structPlayer.html#a8541713f4fceaf4d03745e9407c3c303',1,'Player::SetId()']]],
   ['setlogging',['SetLogging',['../classPlugin.html#ae5ceb206ba4ec62f2d8c21b9117ea411',1,'Plugin']]],
   ['setmaps',['SetMaps',['../classPlugin.html#a72ace5f9e59a5cba484f4ec30e36e390',1,'Plugin']]],
   ['setmethods',['SetMethods',['../classPlugin.html#a86c23967641a554f053148ec072e393a',1,'Plugin']]],

@@ -1,7 +1,7 @@
 var searchData=
 [
   ['score',['Score',['../structPlayerRanking.html#a46cf9dd24b80841e9e21f9fec137bc05',1,'PlayerRanking']]],
-  ['server',['Server',['../classConfig.html#a249a19a298cdcfd4223609142e15e5de',1,'Config::Server()'],['../classCallBackManager.html#a27cccc154989a36eb80580f3d9f69c51',1,'CallBackManager::server()'],['../classGbxRemote.html#a0b0b212b945da4266fb645affdac81cb',1,'GbxRemote::server()'],['../classManiaPP.html#ab81311d6901990cb99a7a30e0cbaab11',1,'ManiaPP::server()'],['../classMethods.html#a3236d275d78d0836cb633de4b1ab5dd8',1,'Methods::server()'],['../classTcpClient.html#a75a8bd28eca3f1eea17fb430ab14cade',1,'TcpClient::server()']]],
+  ['server',['server',['../classCallBackManager.html#a27cccc154989a36eb80580f3d9f69c51',1,'CallBackManager::server()'],['../classGbxRemote.html#a0b0b212b945da4266fb645affdac81cb',1,'GbxRemote::server()'],['../classManiaPP.html#ab81311d6901990cb99a7a30e0cbaab11',1,'ManiaPP::server()'],['../classMethods.html#a3236d275d78d0836cb633de4b1ab5dd8',1,'Methods::server()'],['../classTcpClient.html#a75a8bd28eca3f1eea17fb430ab14cade',1,'TcpClient::server()'],['../classConfig.html#a249a19a298cdcfd4223609142e15e5de',1,'Config::Server()']]],
   ['serverlogin',['ServerLogin',['../structSystemInfo.html#a7ddac6d99bc8a43171cf1feb8d4b4758',1,'SystemInfo']]],
   ['serverplayerid',['ServerPlayerId',['../structSystemInfo.html#aeb8cb49c244fed751e0dc6e83128aafe',1,'SystemInfo']]],
   ['serverversion',['serverVersion',['../classManiaPP.html#ae5cc5086f09dcdb6b5d5dd4cb9a5476c',1,'ManiaPP']]],

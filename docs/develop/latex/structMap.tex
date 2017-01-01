@@ -19,10 +19,15 @@ Contains all information about a map in easy-\/to-\/use format.
 \hyperlink{structMap_a95a2cda9b2746b5ba75e811930559c1f}{Map} (std\-::map$<$ std\-::string, \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ server\-Struct)
 \begin{DoxyCompactList}\small\item\em Formats a server response into a usable form. \end{DoxyCompactList}\item 
 void \hyperlink{structMap_ac8e78e5d9ba3951db798736fc33e907e}{Map\-Detailed} (std\-::map$<$ std\-::string, \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ server\-Struct)
-\begin{DoxyCompactList}\small\item\em Formats a server response into a usable form. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Formats a server response into a usable form. \end{DoxyCompactList}\item 
+void \hyperlink{structMap_af83b3a784e6fa9404c1940a2ca1b68a8}{Set\-Id} (int id)
+\begin{DoxyCompactList}\small\item\em Set database identifier value. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
+\hypertarget{structMap_af718266059246076a208fa4323e187f4}{int \hyperlink{structMap_af718266059246076a208fa4323e187f4}{Id} = 0}\label{structMap_af718266059246076a208fa4323e187f4}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{structMap}{Map} identifier (on database). \end{DoxyCompactList}\item 
 \hypertarget{structMap_aeeaed7abcf77e119d5f59c0918183834}{std\-::string \hyperlink{structMap_aeeaed7abcf77e119d5f59c0918183834}{U\-Id}}\label{structMap_aeeaed7abcf77e119d5f59c0918183834}
 
 \begin{DoxyCompactList}\small\item\em Unique map identifier. \end{DoxyCompactList}\item 
@@ -149,6 +154,22 @@ Sets the detailed map information from the struct.
 
 \begin{DoxyParams}{Parameters}
 {\em server\-Struct} & The struct with detailed map information received from the server. \\
+\hline
+\end{DoxyParams}
+\hypertarget{structMap_af83b3a784e6fa9404c1940a2ca1b68a8}{\index{Map@{Map}!Set\-Id@{Set\-Id}}
+\index{Set\-Id@{Set\-Id}!Map@{Map}}
+\subsubsection[{Set\-Id}]{\setlength{\rightskip}{0pt plus 5cm}void Map\-::\-Set\-Id (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structMap_af83b3a784e6fa9404c1940a2ca1b68a8}
+
+
+Set database identifier value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{classDatabase}{Database}} & I\-D. \\
 \hline
 \end{DoxyParams}
 

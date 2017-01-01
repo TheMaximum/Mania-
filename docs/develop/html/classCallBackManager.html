@@ -98,8 +98,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aaba219c50eef1526a771f1606cf24396"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCallBackManager.html#aaba219c50eef1526a771f1606cf24396">CallBackManager</a> (<a class="el" href="classGbxRemote.html">GbxRemote</a> *serverPtr, <a class="el" href="classEventManager.html">EventManager</a> *eventManagerPtr, std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt; *playerList, std::map&lt; std::string, <a class="el" href="structMap.html">Map</a> &gt; *mapList)</td></tr>
-<tr class="separator:aaba219c50eef1526a771f1606cf24396"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c214dd661d44162a6bcddc900af6402"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCallBackManager.html#a7c214dd661d44162a6bcddc900af6402">CallBackManager</a> (<a class="el" href="classGbxRemote.html">GbxRemote</a> *serverPtr, <a class="el" href="classEventManager.html">EventManager</a> *eventManagerPtr, sql::Connection *databasePtr, std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt; *playerList, std::map&lt; std::string, <a class="el" href="structMap.html">Map</a> &gt; *mapList)</td></tr>
+<tr class="separator:a7c214dd661d44162a6bcddc900af6402"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8af5305f668aae4c563e7039b99015c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCallBackManager.html#a8af5305f668aae4c563e7039b99015c2">HandleCallBack</a> (std::string methodName, std::vector&lt; <a class="el" href="classGbxResponseParameter.html">GbxResponseParameter</a> &gt; parameters)</td></tr>
 <tr class="memdesc:a8af5305f668aae4c563e7039b99015c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles callback (updates lists, calls plugin functions).  <a href="#a8af5305f668aae4c563e7039b99015c2">More...</a><br/></td></tr>
 <tr class="separator:a8af5305f668aae4c563e7039b99015c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -165,6 +165,10 @@ Private Attributes</h2></td></tr>
 <a class="el" href="classEventManager.html">EventManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCallBackManager.html#a144945c3b30a7946674393b412746f8f">events</a></td></tr>
 <tr class="memdesc:a144945c3b30a7946674393b412746f8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the event manager. <br/></td></tr>
 <tr class="separator:a144945c3b30a7946674393b412746f8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64e970ca45d503658879c63c5b5297cd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a64e970ca45d503658879c63c5b5297cd"></a>
+sql::Connection *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCallBackManager.html#a64e970ca45d503658879c63c5b5297cd">database</a></td></tr>
+<tr class="memdesc:a64e970ca45d503658879c63c5b5297cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the database connection. <br/></td></tr>
+<tr class="separator:a64e970ca45d503658879c63c5b5297cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26e135142b37e3b02b72aa7a091ef854"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a26e135142b37e3b02b72aa7a091ef854"></a>
 std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCallBackManager.html#a26e135142b37e3b02b72aa7a091ef854">players</a></td></tr>
 <tr class="memdesc:a26e135142b37e3b02b72aa7a091ef854"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the list of players currently on the server. <br/></td></tr>
@@ -177,7 +181,7 @@ std::map&lt; std::string, <a class="el" href="structMap.html">Map</a> &gt; *&#16
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Handles callbacks from the server. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="aaba219c50eef1526a771f1606cf24396"></a>
+<a class="anchor" id="a7c214dd661d44162a6bcddc900af6402"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -192,6 +196,12 @@ std::map&lt; std::string, <a class="el" href="structMap.html">Map</a> &gt; *&#16
           <td></td>
           <td class="paramtype"><a class="el" href="classEventManager.html">EventManager</a> *&#160;</td>
           <td class="paramname"><em>eventManagerPtr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sql::Connection *&#160;</td>
+          <td class="paramname"><em>databasePtr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -218,6 +228,7 @@ std::map&lt; std::string, <a class="el" href="structMap.html">Map</a> &gt; *&#16
   <table class="params">
     <tr><td class="paramname">serverPtr</td><td>Pointer to the <a class="el" href="classGbxRemote.html" title="Handles communication with the ManiaPlanet server. ">GbxRemote</a>. </td></tr>
     <tr><td class="paramname">eventManagerPtr</td><td>Pointer to the <a class="el" href="classEventManager.html" title="Handles events (callbacks) from server to plugins. ">EventManager</a>. </td></tr>
+    <tr><td class="paramname">databasePtr</td><td>Pointer to the database connection. </td></tr>
     <tr><td class="paramname">playerList</td><td>Pointer to playerlist. </td></tr>
     <tr><td class="paramname">mapList</td><td>Pointer to maplist. </td></tr>
   </table>
@@ -677,7 +688,7 @@ std::map&lt; std::string, <a class="el" href="structMap.html">Map</a> &gt; *&#16
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 1 2017 16:46:05 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jan 1 2017 18:48:44 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

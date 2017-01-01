@@ -190,6 +190,12 @@ G/home/travis/build/TheMaximum/mania-pp/src/Database/Database.h:16: warning: Mem
 /home/travis/build/TheMaximum/mania-pp/src/Utils/Logging.h:55: warning: The following parameters of Logging::PrintError(int number, std::string message) are not documented:
   parameter 'number'
   parameter 'message'
+/home/travis/build/TheMaximum/mania-pp/src/Objects/Map.h:74: warning: argument 'Database' of command @param is not found in the argument list of Map::SetId(int id)
+/home/travis/build/TheMaximum/mania-pp/src/Objects/Map.h:74: warning: The following parameters of Map::SetId(int id) are not documented:
+  parameter 'id'
+/home/travis/build/TheMaximum/mania-pp/src/Objects/Player.h:72: warning: argument 'Database' of command @param is not found in the argument list of Player::SetId(int id)
+/home/travis/build/TheMaximum/mania-pp/src/Objects/Player.h:72: warning: The following parameters of Player::SetId(int id) are not documented:
+  parameter 'id'
 /home/travis/build/TheMaximum/mania-pp/src/Plugins/PluginManager.h:36: warning: The following parameters of PluginManager::PluginManager(Logging *loggingPtr, Methods *methodsPtr, std::map< std::string, Player > *playersPtr, std::map< std::string, Map > *mapsPtr, sql::Connection *databasePtr) are not documented:
   parameter 'databasePtr'
 enerating code for file /home/travis/build/TheMaximum/mania-pp/src/Plugins/PluginManager.h...
@@ -252,5 +258,5 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-lookup cache used 333/65536 hits=1597 misses=358
+lookup cache used 339/65536 hits=1613 misses=364
 finished...
