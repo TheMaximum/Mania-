@@ -95,8 +95,8 @@ private:
      */
     void setDetailedInfo(std::map<std::string, GbxResponseParameter> serverStruct)
     {
-        UId = serverStruct.find("UId")->second.GetString().c_str();
-        Name = serverStruct.find("Name")->second.GetString().c_str();
+        UId = serverStruct.find("UId")->second.GetString();
+        Name = serverStruct.find("Name")->second.GetString();
         FileName = serverStruct.find("FileName")->second.GetString();
         Environment = serverStruct.find("Environnement")->second.GetString();
         Author = serverStruct.find("Author")->second.GetString();
@@ -104,8 +104,8 @@ private:
         GoldTime = atoi(serverStruct.find("GoldTime")->second.GetString().c_str());
         CopperPrice = atoi(serverStruct.find("CopperPrice")->second.GetString().c_str());
 
-        MapType = serverStruct.find("MapType")->second.GetString().c_str();
-        MapStyle = serverStruct.find("MapStyle")->second.GetString().c_str();
+        MapType = serverStruct.find("MapType")->second.GetString();
+        MapStyle = serverStruct.find("MapStyle")->second.GetString();
 
         std::string Mood = serverStruct.find("Mood")->second.GetString();
         int BronzeTime = atoi(serverStruct.find("BronzeTime")->second.GetString().c_str());

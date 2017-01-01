@@ -84,7 +84,7 @@ bool ManiaPP::ConnectToServer()
                                     plugins = new PluginManager(logging, methods, players, maps, database);
                                     plugins->SetEventManager(events);
                                     callbacks = new CallBackManager(server, events, players, maps);
-                                    
+
                                     plugins->LoadPlugins();
                                     plugins->InitializePlugins();
 
@@ -188,8 +188,18 @@ void ManiaPP::retrievePlayerList()
             std::map<std::string, GbxResponseParameter> player = playerList.at(playerId).GetStruct();
             if(player.find("Login")->second.GetString() != systemInfo.ServerLogin)
             {
+                GbxParameters* params = new GbxParameters();
+                std::string login = player.find("Login")->second.GetString();
+                params->Put(&(login));
+
+                GbxMessage* message = new GbxMessage("GetDetailedPlayerInfo", params);
+                server->Query(message);
                 Player newPlayer = Player(player);
+                newPlayer.PlayerDetailed(server->GetResponse()->GetParameters().at(0).GetStruct());
                 players->insert(std::pair<std::string, Player>(newPlayer.Login, newPlayer));
+
+                //Player newPlayer = Player(player);
+                //players->insert(std::pair<std::string, Player>(newPlayer.Login, newPlayer));
             }
         }
 

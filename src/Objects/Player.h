@@ -9,6 +9,7 @@
  */
 struct Player
 {
+    // === Basic information ===
     int PlayerId;          /**< \brief Player identifier (on server). */
     int TeamId;            /**< \brief Team identifier (on server). */
 
@@ -19,6 +20,16 @@ struct Player
     int Flags;             /**< \brief Player flags. */
 
     int LadderRanking;     /**< \brief Current ladder ranking of the player. */
+
+    // === Detailed information ===
+    std::string IPAddress; /**< \brief IP Address of the player. */
+    int DownloadRate;      /**< \brief Download rate in Kbps. */
+    int UploadRate;        /**< \brief Upload rate in Kbps. */
+
+    std::string Language;  /**< \brief Application language. */
+
+    bool IsSpectator;      /**< \brief Is in spectatormode? */
+    bool IsInOfficialMode; /**< \brief Is in official mode? */
 
     /*!
      * \brief Constructs a Player object without input.
@@ -37,17 +48,58 @@ struct Player
     {
         if(serverStruct.find("Login") != serverStruct.end())
         {
-            PlayerId = atoi(serverStruct.find("PlayerId")->second.GetString().c_str());
-            TeamId = atoi(serverStruct.find("TeamId")->second.GetString().c_str());
-
-            Login = serverStruct.find("Login")->second.GetString();
-            NickName = serverStruct.find("NickName")->second.GetString();
-
-            SpectatorStatus = atoi(serverStruct.find("SpectatorStatus")->second.GetString().c_str());
-            Flags = atoi(serverStruct.find("Flags")->second.GetString().c_str());
-
-            LadderRanking = atoi(serverStruct.find("LadderRanking")->second.GetString().c_str());
+            setBasicInfo(serverStruct);
         }
+    }
+
+    /*!
+     * \brief Formats a server response into a usable form.
+     *
+     * \param serverStruct The struct with detailed player information received from the server.
+     */
+    void PlayerDetailed(std::map<std::string, GbxResponseParameter> serverStruct)
+    {
+        if(serverStruct.find("Language") != serverStruct.end())
+        {
+            setDetailedInfo(serverStruct);
+        }
+    }
+
+private:
+    /*!
+     * \brief Sets the basic player information from the struct.
+     *
+     * \param serverStruct The struct with player information received from the server.
+     */
+    void setBasicInfo(std::map<std::string, GbxResponseParameter> serverStruct)
+    {
+        PlayerId = atoi(serverStruct.find("PlayerId")->second.GetString().c_str());
+        TeamId = atoi(serverStruct.find("TeamId")->second.GetString().c_str());
+
+        Login = serverStruct.find("Login")->second.GetString();
+        NickName = serverStruct.find("NickName")->second.GetString();
+
+        SpectatorStatus = atoi(serverStruct.find("SpectatorStatus")->second.GetString().c_str());
+        Flags = atoi(serverStruct.find("Flags")->second.GetString().c_str());
+
+        LadderRanking = atoi(serverStruct.find("LadderRanking")->second.GetString().c_str());
+    }
+
+    /*!
+     * \brief Sets the detailed player information from the struct.
+     *
+     * \param serverStruct The struct with detailed player information received from the server.
+     */
+    void setDetailedInfo(std::map<std::string, GbxResponseParameter> serverStruct)
+    {
+        IPAddress = serverStruct.find("IPAddress")->second.GetString();
+        DownloadRate = atoi(serverStruct.find("DownloadRate")->second.GetString().c_str());
+        UploadRate = atoi(serverStruct.find("UploadRate")->second.GetString().c_str());
+
+        Language = serverStruct.find("Language")->second.GetString();
+
+        std::istringstream(serverStruct.find("IsSpectator")->second.GetString()) >> IsSpectator;
+        std::istringstream(serverStruct.find("IsInOfficialMode")->second.GetString()) >> IsInOfficialMode;
     }
 };
 

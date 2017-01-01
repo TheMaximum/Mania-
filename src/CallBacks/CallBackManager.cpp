@@ -97,6 +97,9 @@ void CallBackManager::HandlePlayerConnect(std::vector<GbxResponseParameter> para
     GbxMessage* message = new GbxMessage("GetPlayerInfo", params);
     server->Query(message);
     Player newPlayer = Player(server->GetResponse()->GetParameters().at(0).GetStruct());
+    message = new GbxMessage("GetDetailedPlayerInfo", params);
+    newPlayer.PlayerDetailed(server->GetResponse()->GetParameters().at(0).GetStruct());
+
     players->insert(std::pair<std::string, Player>(newPlayer.Login, newPlayer));
 
     std::cout << "Player connected: " << newPlayer.Login << " (# players: " << players->size() << ")" << std::endl;
