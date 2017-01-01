@@ -153,8 +153,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
 <div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="structMap.html#a23ae24725344c494f35da1fb95c521e8">   96</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structMap.html#a23ae24725344c494f35da1fb95c521e8">setDetailedInfo</a>(std::map&lt;std::string, GbxResponseParameter&gt; serverStruct)</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="structMap.html#aeeaed7abcf77e119d5f59c0918183834">UId</a> = serverStruct.find(<span class="stringliteral">&quot;UId&quot;</span>)-&gt;second.GetString().c_str();</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="structMap.html#ab1a5bf049a4b74e704128d31e9b53b8c">Name</a> = serverStruct.find(<span class="stringliteral">&quot;Name&quot;</span>)-&gt;second.GetString().c_str();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="structMap.html#aeeaed7abcf77e119d5f59c0918183834">UId</a> = serverStruct.find(<span class="stringliteral">&quot;UId&quot;</span>)-&gt;second.GetString();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="structMap.html#ab1a5bf049a4b74e704128d31e9b53b8c">Name</a> = serverStruct.find(<span class="stringliteral">&quot;Name&quot;</span>)-&gt;second.GetString();</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="structMap.html#a0ec301bf4f1d129cd9bc50999581eec9">FileName</a> = serverStruct.find(<span class="stringliteral">&quot;FileName&quot;</span>)-&gt;second.GetString();</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <a class="code" href="structMap.html#acbaadf8f635b04a1229fa01f6ec4c4dc">Environment</a> = serverStruct.find(<span class="stringliteral">&quot;Environnement&quot;</span>)-&gt;second.GetString();</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="structMap.html#a1eb246326a4ec70df2dc71887efca5c9">Author</a> = serverStruct.find(<span class="stringliteral">&quot;Author&quot;</span>)-&gt;second.GetString();</div>
@@ -162,8 +162,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="structMap.html#a769a574be92aa024f7804627c167ceff">GoldTime</a> = atoi(serverStruct.find(<span class="stringliteral">&quot;GoldTime&quot;</span>)-&gt;second.GetString().c_str());</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="code" href="structMap.html#aa9a7d229fb6b41092fb527bbcc913faf">CopperPrice</a> = atoi(serverStruct.find(<span class="stringliteral">&quot;CopperPrice&quot;</span>)-&gt;second.GetString().c_str());</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <a class="code" href="structMap.html#a23d051ee3c7cfa606082e700099563b0">MapType</a> = serverStruct.find(<span class="stringliteral">&quot;MapType&quot;</span>)-&gt;second.GetString().c_str();</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <a class="code" href="structMap.html#a5fe4c64985a8d769e21fe32bab7a879c">MapStyle</a> = serverStruct.find(<span class="stringliteral">&quot;MapStyle&quot;</span>)-&gt;second.GetString().c_str();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <a class="code" href="structMap.html#a23d051ee3c7cfa606082e700099563b0">MapType</a> = serverStruct.find(<span class="stringliteral">&quot;MapType&quot;</span>)-&gt;second.GetString();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <a class="code" href="structMap.html#a5fe4c64985a8d769e21fe32bab7a879c">MapStyle</a> = serverStruct.find(<span class="stringliteral">&quot;MapStyle&quot;</span>)-&gt;second.GetString();</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        std::string <a class="code" href="structMap.html#ad2eb9a175623dc2077a1f34975641607">Mood</a> = serverStruct.find(<span class="stringliteral">&quot;Mood&quot;</span>)-&gt;second.GetString();</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="structMap.html#a18d7e3733c6728b0938193205972be35">BronzeTime</a> = atoi(serverStruct.find(<span class="stringliteral">&quot;BronzeTime&quot;</span>)-&gt;second.GetString().c_str());</div>
@@ -202,7 +202,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Dec 31 2016 15:43:13 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jan 1 2017 16:46:05 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

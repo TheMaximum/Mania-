@@ -8,6 +8,7 @@ var searchData=
   ['playerchat',['PlayerChat',['../classPlugin.html#a17096b73a575eef7c4e8c5380c08f670',1,'Plugin']]],
   ['playercheckpoint',['PlayerCheckpoint',['../classPlugin.html#abc2ce0103b7783a4ff4b3009cb18af7b',1,'Plugin']]],
   ['playerconnect',['PlayerConnect',['../classPlugin.html#a02e032f548c5a002496ab6b02788342b',1,'Plugin']]],
+  ['playerdetailed',['PlayerDetailed',['../structPlayer.html#a4e7c4a5bfc6fe42e23069a79f495b461',1,'Player']]],
   ['playerdisconnect',['PlayerDisconnect',['../classPlugin.html#a3c8dec90190a888e951268b3727b7573',1,'Plugin']]],
   ['playerfinish',['PlayerFinish',['../classPlugin.html#a16aadb48218d18235979314d259699aa',1,'Plugin']]],
   ['playerid',['PlayerId',['../structPlayer.html#a6a71d7d9837a0a12e52ca47930965e0f',1,'Player']]],

@@ -2,6 +2,7 @@ var searchData=
 [
   ['ladderranking',['LadderRanking',['../structPlayer.html#a25fe69852f0e38f541ad615cd59877ef',1,'Player']]],
   ['ladderscore',['LadderScore',['../structPlayerRanking.html#a4b988897c8ab57fe04c3a1adfc908376',1,'PlayerRanking']]],
+  ['language',['Language',['../structPlayer.html#a583abe4cc5985fc83bfed62362efa358',1,'Player']]],
   ['laprace',['LapRace',['../structMap.html#a0b88590574688965bf8b7442f3792000',1,'Map']]],
   ['listmethods',['ListMethods',['../classMethods.html#a7833782aa64f9072db30809552f83eef',1,'Methods']]],
   ['loadplugins',['LoadPlugins',['../classPluginManager.html#a0ff203ba125f85688fa752bf789418f0',1,'PluginManager']]],
