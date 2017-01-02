@@ -72,6 +72,14 @@ public:
     SystemInfo GetSystemInfo();
 
     /*!
+     * \brief Sets the server connection rates.
+     *
+     * \param downloadRate New download rate.
+     * \param uploadRate   New upload rate.
+     */
+    bool SetConnectionRates(int downloadRate, int uploadRate);
+
+    /*!
      * \brief Returns server status.
      *
      * Returns empty struct if no information could be retrieved.
@@ -147,18 +155,92 @@ public:
      */
     bool SendNoticeToLogin(std::string login, std::string text, std::string avatarLogin = "", int variant = 0);
 
-    // bool CallVote(std::string xmlRequest);
-    // bool CallVoteEx(std::string xmlRequest, double ratio, int timeout, int whoVotes);
-    // bool CancelVote();
-    // struct{CallerLogin, CmdName, CmdParam} GetCurrentCallVote();
-    // bool SetCallVoteTimeOut(int timeout);
-    // array[CurrentValue, NextValue] GetCallVoteTimeOut();
-    // bool SetCallVoteRatio(double ratio);
-    // double GetCallVoteRatio();
-    // bool SetCallVoteRatios(array[ratios]);
-    // array[ratios] GetCallVoteRatios();
-    // bool SetCallVoteRatiosEx(bool replaceAll, array[struct{Command, Param, Ratio}]);
-    // array[struct{Command, Param, Ratio}] GetCallVoteRatiosEx();
+    /*!
+     * \brief Send link to player login.
+     *
+     * \param login       Player login.
+     * \param link        Link address.
+     * \param linkType    Link type (0 = external, 1 = ManiaLink).
+     */
+    bool SendOpenLinkToLogin(std::string login, std::string link, int linkType);
+
+    /*!
+     * \brief Start callvote.
+     *
+     * \param xmlRequest  Callvote request.
+     */
+    bool CallVote(std::string xmlRequest);
+
+    /*!
+     * \brief Start callvote.
+     *
+     * \param xmlRequest  Callvote request.
+     * \param ratio       Passing ratio (between 0 and 1, -1 = default).
+     * \param timeout     Timeout for the callvote (0 = default, 1 = indefinite).
+     * \param whoVotes    Who votes for the callvote (0 = active players, 1 = all players, 2 = everyone, including spectators).
+     */
+    bool CallVoteEx(std::string xmlRequest, double ratio, int timeout, int whoVotes);
+
+    /*!
+     * \brief Cancels the current callvote.
+     */
+    bool CancelVote();
+
+    /*!
+     * \brief Returns the current callvote.
+     */
+    CurrentCallVote GetCurrentCallVote();
+
+    /*!
+     * \brief Sets the default callvote timeout.
+     *
+     * \param timeout     Default timeout.
+     */
+    bool SetCallVoteTimeOut(int timeout);
+
+    /*!
+     * \brief Gets the default callvote timeout.
+     */
+    CurrentNextValue GetCallVoteTimeOut();
+
+    /*!
+     * \brief Sets the default callvote ratio.
+     *
+     * \param ratio       Default timeout.
+     */
+    bool SetCallVoteRatio(double ratio);
+
+    /*!
+     * \brief Gets the default callvote ratio.
+     */
+    double GetCallVoteRatio();
+
+    /*!
+     * \brief Sets the callvote ratios.
+     *
+     * \param ratios      List of callvote ratios.
+     */
+    bool SetCallVoteRatios(std::vector<CallVoteRatio> ratios);
+
+    /*!
+     * \brief Gets the callvote ratios.
+     */
+    std::vector<CallVoteRatio> GetCallVoteRatios();
+
+    /*!
+     * \brief Sets the callvote ratios.
+     *
+     * \param replaceAll  Replace all current callvote ratios?
+     * \param ratios      List of callvote ratios.
+     *
+     * \todo Implement when GbxParameters supports structs.
+     */
+    bool SetCallVoteRatiosEx(bool replaceAll, std::vector<ExtendedCallVoteRatio> ratios);
+
+    /*!
+     * \brief Gets the callvote ratios.
+     */
+    std::vector<ExtendedCallVoteRatio> GetCallVoteRatiosEx();
 
     /*!
      * \brief Displays ManiaLink page to all players.
@@ -234,9 +316,6 @@ public:
     int SendBill(std::string loginFrom, int cost, std::string label, std::string loginTo = "");
     // struct{State, StateName, TransactionId} GetBillState(int billId);
     int GetServerPlanets();
-
-    //struct{?} GetSystemInfo();
-    bool SetConnectionRates(int download, int upload);
 
     //array[struct{Name, Value}] GetServerTags();
     bool SetServerTag(std::string name, std::string value);

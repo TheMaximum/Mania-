@@ -36,3 +36,21 @@ bool Methods::SendNoticeToLogin(std::string login, std::string text, std::string
 
     return response;
 }
+
+bool Methods::SendOpenLinkToLogin(std::string login, std::string link, int linkType)
+{
+    bool response = false;
+
+    GbxParameters params = GbxParameters();
+    params.Put(&login);
+    params.Put(&link);
+    params.Put(&linkType);
+
+    if(server->Query(GbxMessage("SendOpenLinkToLogin", params)))
+    {
+        std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
+        std::istringstream(responseParams.at(0).GetString()) >> response;
+    }
+
+    return response;
+}

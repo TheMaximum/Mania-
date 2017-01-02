@@ -23,15 +23,6 @@ class GbxParameters
 {
 public:
     /*!
-     * \brief Deletes + nullifies parameters pointer.
-     */
-    ~GbxParameters()
-    {
-        //delete parameters;
-        //parameters = NULL;
-    }
-
-    /*!
      * \brief Add parameter to the list.
      *
      * \param pointer Pointer to the parameter.

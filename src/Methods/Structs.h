@@ -52,4 +52,46 @@ struct ManiaLinkPageAnswer
     int Result;             /**< \brief Answering result. */
 };
 
+//* CurrentCallVote
+/**
+ * \brief Struct with a current callvote.
+ */
+struct CurrentCallVote
+{
+    std::string CallerLogin; /**< \brief Player login who created the vote. */
+    std::string CmdName;     /**< \brief Name of the callvote. */
+    std::string CmdParam;    /**< \brief Callvote parameter. */
+};
+
+//* CallVoteRatio
+/**
+ * \brief Struct with a callvote ratio.
+ */
+struct CallVoteRatio
+{
+    std::string Command; /**< \brief Command for the ratio. */
+    double Ratio;        /**< \brief Vote passing ratio (between 0 and 1, -1 for disable). */
+};
+
+//* CallVote
+/**
+ * \brief Struct with a callvote.
+ */
+struct ExtendedCallVoteRatio
+{
+    std::string Command; /**< \brief Name of the callvote. */
+    std::string Param;   /**< \brief Parameter of the callvote. */
+    double Ratio;        /**< \brief Vote passing ratio (between 0 and 1, -1 for disable). */
+};
+
+//* CurrentNextValue
+/**
+ * \brief Struct with a current and next value.
+ */
+struct CurrentNextValue
+{
+    int CurrentValue; /**< \brief Current value of the setting. */
+    int NextValue;    /**< \brief Next value of the setting. */
+};
+
 #endif // METHODS_STRUCTS_H_

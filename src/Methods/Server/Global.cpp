@@ -127,6 +127,23 @@ SystemInfo Methods::GetSystemInfo()
     return systemInfo;
 }
 
+bool Methods::SetConnectionRates(int downloadRate, int uploadRate)
+{
+    bool response = false;
+
+    GbxParameters params = GbxParameters();
+    params.Put(&downloadRate);
+    params.Put(&uploadRate);
+
+    if(server->Query(GbxMessage("SetConnectionRates", params)))
+    {
+        std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
+        std::istringstream(responseParams.at(0).GetString()) >> response;
+    }
+
+    return response;
+}
+
 ServerStatus Methods::GetStatus()
 {
     ServerStatus serverStatus = ServerStatus();

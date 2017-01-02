@@ -99,6 +99,19 @@ bool ManiaPP::ConnectToServer()
 
                                     PrintServerInfo();
 
+                                    std::vector<ExtendedCallVoteRatio> callVoteRatios = std::vector<ExtendedCallVoteRatio>();
+                                    ExtendedCallVoteRatio callVoteRatio = ExtendedCallVoteRatio();
+                                    callVoteRatio.Command = "CommandOne";
+                                    callVoteRatio.Param = "ParamA";
+                                    callVoteRatio.Ratio = 0.5;
+                                    callVoteRatios.push_back(callVoteRatio);
+                                    callVoteRatio = ExtendedCallVoteRatio();
+                                    callVoteRatio.Command = "CommandTwo";
+                                    callVoteRatio.Param = "ParamB";
+                                    callVoteRatio.Ratio = 0.85;
+                                    callVoteRatios.push_back(callVoteRatio);
+                                    methods->SetCallVoteRatiosEx(true, callVoteRatios);
+
                                     return true;
                                 }
                                 else
