@@ -52,15 +52,6 @@ public:
      *
      * \param query    Query to be send.
      */
-    bool Query(GbxMessage* query);
-
-    /*!
-     * \brief Sends a GbxMessage to the server.
-     *
-     * Returns whether the query was successfully sent.
-     *
-     * \param query    Query to be send.
-     */
     bool Query(GbxMessage query);
 
     /*!

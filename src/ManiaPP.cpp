@@ -180,15 +180,12 @@ void ManiaPP::retrievePlayerList()
     std::cout << "[         ] Retrieving current player list ... " << '\r' << std::flush;
 
     int playerListLimit = 512; int playerListIndex = 0;
-    GbxParameters* params = new GbxParameters();
-    params->Put(&playerListLimit);
-    params->Put(&playerListIndex);
-    GbxMessage* getPlayerList = new GbxMessage("GetPlayerList", params);
+    GbxParameters params = GbxParameters();
+    params.Put(&playerListLimit);
+    params.Put(&playerListIndex);
+    GbxMessage getPlayerList = GbxMessage("GetPlayerList", params);
     if(server->Query(getPlayerList))
     {
-        delete getPlayerList; getPlayerList = NULL;
-        delete params; params = NULL;
-
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::vector<GbxResponseParameter> playerList = responseParams.at(0).GetArray();
 
@@ -197,11 +194,11 @@ void ManiaPP::retrievePlayerList()
             std::map<std::string, GbxResponseParameter> player = playerList.at(playerId).GetStruct();
             if(player.find("Login")->second.GetString() != systemInfo.ServerLogin)
             {
-                GbxParameters* params = new GbxParameters();
+                GbxParameters params = GbxParameters();
                 std::string login = player.find("Login")->second.GetString();
-                params->Put(&(login));
+                params.Put(&(login));
 
-                GbxMessage* message = new GbxMessage("GetDetailedPlayerInfo", params);
+                GbxMessage message = GbxMessage("GetDetailedPlayerInfo", params);
                 server->Query(message);
                 Player newPlayer = Player(player);
                 newPlayer.PlayerDetailed(server->GetResponse()->GetParameters().at(0).GetStruct());
@@ -222,9 +219,6 @@ void ManiaPP::retrievePlayerList()
                 }
 
                 players->insert(std::pair<std::string, Player>(newPlayer.Login, newPlayer));
-
-                delete message; message = NULL;
-                delete params; params = NULL;
             }
         }
 

@@ -91,14 +91,14 @@ void CallBackManager::HandleCallBack(std::string methodName, std::vector<GbxResp
 
 void CallBackManager::HandlePlayerConnect(std::vector<GbxResponseParameter> parameters)
 {
-    GbxParameters* params = new GbxParameters();
+    GbxParameters params = GbxParameters();
     std::string login = parameters.at(0).GetString();
-    params->Put(&login);
+    params.Put(&login);
 
-    GbxMessage* message = new GbxMessage("GetPlayerInfo", params);
+    GbxMessage message = GbxMessage("GetPlayerInfo", params);
     server->Query(message);
     Player newPlayer = Player(server->GetResponse()->GetParameters().at(0).GetStruct());
-    message = new GbxMessage("GetDetailedPlayerInfo", params);
+    message = GbxMessage("GetDetailedPlayerInfo", params);
     newPlayer.PlayerDetailed(server->GetResponse()->GetParameters().at(0).GetStruct());
 
     if(database != NULL)
@@ -118,9 +118,6 @@ void CallBackManager::HandlePlayerConnect(std::vector<GbxResponseParameter> para
     std::cout << "Player connected: " << newPlayer.Login << " (# players: " << players->size() << ")" << std::endl;
 
     events->CallPlayerConnect(newPlayer);
-
-    delete params; params = NULL;
-    delete message; message = NULL;
 }
 
 void CallBackManager::HandlePlayerDisconnect(std::vector<GbxResponseParameter> parameters)

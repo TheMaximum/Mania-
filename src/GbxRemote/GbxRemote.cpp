@@ -130,11 +130,6 @@ bool GbxRemote::Query(GbxMessage query)
     }
 }
 
-bool GbxRemote::Query(GbxMessage* query)
-{
-    return Query(*query);
-}
-
 bool GbxRemote::ReadCallBacks()
 {
     if(!connected)
