@@ -1,6 +1,7 @@
 var searchData=
 [
   ['mainloop',['MainLoop',['../classManiaPP.html#a8dff9e8e3835c3cac0df105a7bcce43c',1,'ManiaPP']]],
+  ['manialinkpageanswer',['ManiaLinkPageAnswer',['../structManiaLinkPageAnswer.html',1,'']]],
   ['maniapp',['ManiaPP',['../classManiaPP.html',1,'ManiaPP'],['../classManiaPP.html#ae56f6623dc89f2c0b75bec631cfc2d19',1,'ManiaPP::ManiaPP()']]],
   ['map',['Map',['../structMap.html',1,'Map'],['../structMap.html#a0f5ad0fd4563497b4214038cbca8b582',1,'Map::Map()'],['../structMap.html#a95a2cda9b2746b5ba75e811930559c1f',1,'Map::Map(std::map&lt; std::string, GbxResponseParameter &gt; serverStruct)']]],
   ['mapdetailed',['MapDetailed',['../structMap.html#ac8e78e5d9ba3951db798736fc33e907e',1,'Map']]],
@@ -12,7 +13,7 @@ var searchData=
   ['message',['message',['../structGbxError.html#af52353692b5c160deac99c4285f01a5a',1,'GbxError']]],
   ['method',['method',['../classGbxMessage.html#a10b6118916999db98f28e3f495eef6b4',1,'GbxMessage']]],
   ['methodname',['methodName',['../classGbxCallBack.html#a8c793be5cc61e7fecef301ea6932f840',1,'GbxCallBack']]],
-  ['methods',['Methods',['../classMethods.html',1,'Methods'],['../classManiaPP.html#a48cb1ddf328d18361417986fe8ab069c',1,'ManiaPP::methods()'],['../classMethods.html#a1f18bb4a4d06ccec83f36fa32545015d',1,'Methods::Methods()']]],
+  ['methods',['Methods',['../classMethods.html',1,'Methods'],['../classManiaPP.html#a48cb1ddf328d18361417986fe8ab069c',1,'ManiaPP::methods()'],['../classMethods.html#a6a1eff4e430d47fefa63b0d71a3cc99d',1,'Methods::Methods()']]],
   ['methodsbeginmap',['methodsBeginMap',['../classEventManager.html#a7aa0f06399cd3927d85603b58cfef173',1,'EventManager']]],
   ['methodsbeginmatch',['methodsBeginMatch',['../classEventManager.html#abb7667e9222f00e33d792c733c82f89e',1,'EventManager']]],
   ['methodsbillupdated',['methodsBillUpdated',['../classEventManager.html#a0497e6be361d83e2c4dc8d0b5e20360a',1,'EventManager']]],

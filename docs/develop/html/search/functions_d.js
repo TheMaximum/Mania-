@@ -2,6 +2,10 @@ var searchData=
 [
   ['searchforcallbacks',['SearchForCallBacks',['../classTcpClient.html#a4df900657b1cb45aced143fe21a81937',1,'TcpClient']]],
   ['send',['Send',['../classTcpClient.html#acac6ca70c9d99e09731181e5239381ae',1,'TcpClient']]],
+  ['senddisplaymanialinkpage',['SendDisplayManialinkPage',['../classMethods.html#ab04b0cae6a36c8202cabf1cd9ebc1a38',1,'Methods']]],
+  ['senddisplaymanialinkpagetologin',['SendDisplayManialinkPageToLogin',['../classMethods.html#a39fd4b15b6f18a74fd686308319e5b51',1,'Methods']]],
+  ['sendhidemanialinkpage',['SendHideManialinkPage',['../classMethods.html#aaf09c31b63f1eda2362ca24fd1b328ff',1,'Methods']]],
+  ['sendhidemanialinkpagetologin',['SendHideManialinkPageToLogin',['../classMethods.html#af5ec6746b209afdda796330dab55464a',1,'Methods']]],
   ['sendnotice',['SendNotice',['../classMethods.html#add538878f839a6a5078fec808e1f064f',1,'Methods']]],
   ['sendnoticetologin',['SendNoticeToLogin',['../classMethods.html#a7229aacea5b60d1d502c5df39f10a50c',1,'Methods']]],
   ['setapiversion',['SetApiVersion',['../classMethods.html#ad31d717a19f95d4213d6882a0caff0fa',1,'Methods']]],

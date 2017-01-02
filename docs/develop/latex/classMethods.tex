@@ -13,7 +13,7 @@ Contains all server methods and returns usable data types.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classMethods_a1f18bb4a4d06ccec83f36fa32545015d}{Methods} (\hyperlink{classGbxRemote}{Gbx\-Remote} $\ast$server\-Ptr)
+\hyperlink{classMethods_a6a1eff4e430d47fefa63b0d71a3cc99d}{Methods} (\hyperlink{classGbxRemote}{Gbx\-Remote} $\ast$server\-Ptr, std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$player\-List\-Ptr)
 \begin{DoxyCompactList}\small\item\em Constructor with link to server connection. \end{DoxyCompactList}\item 
 bool \hyperlink{classMethods_aa1bba4d023f013fedf3edff7c69f5d08}{Authenticate} (std\-::string username, std\-::string password)
 \begin{DoxyCompactList}\small\item\em Authenticates with the server. Returns whether authentication was successful. \end{DoxyCompactList}\item 
@@ -51,6 +51,18 @@ bool \hyperlink{classMethods_add538878f839a6a5078fec808e1f064f}{Send\-Notice} (s
 \begin{DoxyCompactList}\small\item\em Send notice to all players. \end{DoxyCompactList}\item 
 bool \hyperlink{classMethods_a7229aacea5b60d1d502c5df39f10a50c}{Send\-Notice\-To\-Login} (std\-::string login, std\-::string text, std\-::string avatar\-Login=\char`\"{}\char`\"{}, int variant=0)
 \begin{DoxyCompactList}\small\item\em Send notice to player login. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_ab04b0cae6a36c8202cabf1cd9ebc1a38}{Send\-Display\-Manialink\-Page} (std\-::string page, int timeout, bool hide\-On\-Click)
+\begin{DoxyCompactList}\small\item\em Displays Mania\-Link page to all players. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_a39fd4b15b6f18a74fd686308319e5b51}{Send\-Display\-Manialink\-Page\-To\-Login} (std\-::string login, std\-::string page, int timeout, bool hide\-On\-Click)
+\begin{DoxyCompactList}\small\item\em Displays Mania\-Link page to a player. \end{DoxyCompactList}\item 
+\hypertarget{classMethods_aaf09c31b63f1eda2362ca24fd1b328ff}{bool \hyperlink{classMethods_aaf09c31b63f1eda2362ca24fd1b328ff}{Send\-Hide\-Manialink\-Page} ()}\label{classMethods_aaf09c31b63f1eda2362ca24fd1b328ff}
+
+\begin{DoxyCompactList}\small\item\em Hides all Mania\-Link pages for all players. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_af5ec6746b209afdda796330dab55464a}{Send\-Hide\-Manialink\-Page\-To\-Login} (std\-::string login)
+\begin{DoxyCompactList}\small\item\em Hides all Mania\-Link pages for a player. \end{DoxyCompactList}\item 
+\hypertarget{classMethods_a43c84e59da7eb37e53bbd8f43299c454}{std\-::vector$<$ \hyperlink{structManiaLinkPageAnswer}{Mania\-Link\-Page\-Answer} $>$ \hyperlink{classMethods_a43c84e59da7eb37e53bbd8f43299c454}{Get\-Manialink\-Page\-Answers} ()}\label{classMethods_a43c84e59da7eb37e53bbd8f43299c454}
+
+\begin{DoxyCompactList}\small\item\em Returns the latest results from the current Mania\-Link page. \end{DoxyCompactList}\item 
 \hypertarget{classMethods_afa0e3e406c14aad10521d4d6c6333a70}{\hyperlink{structMap}{Map} \hyperlink{classMethods_afa0e3e406c14aad10521d4d6c6333a70}{Get\-Next\-Map\-Info} ()}\label{classMethods_afa0e3e406c14aad10521d4d6c6333a70}
 
 \begin{DoxyCompactList}\small\item\em Provides a map object for the map being played next on the server. \end{DoxyCompactList}\item 
@@ -61,26 +73,46 @@ bool \hyperlink{classMethods_a7229aacea5b60d1d502c5df39f10a50c}{Send\-Notice\-To
 bool \hyperlink{classMethods_a93ac30a58c96f2635fef8f05b27a7864}{Check\-Map\-For\-Current\-Server\-Params} (std\-::string file\-Name)
 \begin{DoxyCompactList}\small\item\em Checks if the map matches the current server settings. \end{DoxyCompactList}\item 
 std\-::vector$<$ \hyperlink{structMap}{Map} $>$ \hyperlink{classMethods_ad30f67839b950d23c566535f43afefb4}{Get\-Map\-List} (int limit, int index)
-\begin{DoxyCompactList}\small\item\em Gets the maplist from the server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gets the maplist from the server. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_aac29fafb7a9f491c64c24a5e24754f71}{Add\-Map} (std\-::string file\-Name)
+\begin{DoxyCompactList}\small\item\em Add the map with the specified filename at the end of the current selection. \end{DoxyCompactList}\item 
+int \hyperlink{classMethods_a0b136a5a395e4a50c9f667d9fa495b08}{Add\-Map\-List} (std\-::vector$<$ std\-::string $>$ file\-Names)
+\begin{DoxyCompactList}\small\item\em Add the list of maps with the specified filenames at the end of the current selection. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_a1fd515d35dfc0007303ff75c4f50a678}{Remove\-Map} (std\-::string file\-Name)
+\begin{DoxyCompactList}\small\item\em Remove the map with the specified filename from the current selection. \end{DoxyCompactList}\item 
+int \hyperlink{classMethods_afbac3687bfc17000689598bff14c7610}{Remove\-Map\-List} (std\-::vector$<$ std\-::string $>$ file\-Names)
+\begin{DoxyCompactList}\small\item\em Remove the list of maps with the specified filenames from the current selection. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_a02eb54d04e3ea1970e5312f0aa061d28}{Insert\-Map} (std\-::string file\-Name)
+\begin{DoxyCompactList}\small\item\em Insert the map with the specified filename after the current map. \end{DoxyCompactList}\item 
+int \hyperlink{classMethods_a1b5d820d4715a10ab6dbb6bed1b28ec4}{Insert\-Map\-List} (std\-::vector$<$ std\-::string $>$ file\-Names)
+\begin{DoxyCompactList}\small\item\em Insert the list of maps with the specified filenames after the current map. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_a8feb1efefe49126cf39089ff6a2f0cd9}{Choose\-Next\-Map} (std\-::string file\-Name)
+\begin{DoxyCompactList}\small\item\em Set as next map the one with the specified filename, if it is present in the selection. \end{DoxyCompactList}\item 
+int \hyperlink{classMethods_a7db232616b47d7afa1d3202bf156e624}{Choose\-Next\-Map\-List} (std\-::vector$<$ std\-::string $>$ file\-Names)
+\begin{DoxyCompactList}\small\item\em Set as next maps the list of maps with the specified filenames, if they are present in the selection. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \hypertarget{classMethods_a3236d275d78d0836cb633de4b1ab5dd8}{\hyperlink{classGbxRemote}{Gbx\-Remote} $\ast$ \hyperlink{classMethods_a3236d275d78d0836cb633de4b1ab5dd8}{server}}\label{classMethods_a3236d275d78d0836cb633de4b1ab5dd8}
 
-\begin{DoxyCompactList}\small\item\em Pointer to \hyperlink{classGbxRemote}{Gbx\-Remote}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Pointer to \hyperlink{classGbxRemote}{Gbx\-Remote}. \end{DoxyCompactList}\item 
+\hypertarget{classMethods_a2ffd93eb02b4b3e50359829f6aa229bd}{std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$ \hyperlink{classMethods_a2ffd93eb02b4b3e50359829f6aa229bd}{player\-List}}\label{classMethods_a2ffd93eb02b4b3e50359829f6aa229bd}
+
+\begin{DoxyCompactList}\small\item\em Pointer to the playerlist. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Contains all server methods and returns usable data types. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classMethods_a1f18bb4a4d06ccec83f36fa32545015d}{\index{Methods@{Methods}!Methods@{Methods}}
+\hypertarget{classMethods_a6a1eff4e430d47fefa63b0d71a3cc99d}{\index{Methods@{Methods}!Methods@{Methods}}
 \index{Methods@{Methods}!Methods@{Methods}}
 \subsubsection[{Methods}]{\setlength{\rightskip}{0pt plus 5cm}Methods\-::\-Methods (
 \begin{DoxyParamCaption}
-\item[{{\bf Gbx\-Remote} $\ast$}]{server\-Ptr}
+\item[{{\bf Gbx\-Remote} $\ast$}]{server\-Ptr, }
+\item[{std\-::map$<$ std\-::string, {\bf Player} $>$ $\ast$}]{player\-List\-Ptr}
 \end{DoxyParamCaption}
-)}}\label{classMethods_a1f18bb4a4d06ccec83f36fa32545015d}
+)}}\label{classMethods_a6a1eff4e430d47fefa63b0d71a3cc99d}
 
 
 Constructor with link to server connection. 
@@ -93,6 +125,38 @@ Constructor with link to server connection.
 
 
 \subsection{Member Function Documentation}
+\hypertarget{classMethods_aac29fafb7a9f491c64c24a5e24754f71}{\index{Methods@{Methods}!Add\-Map@{Add\-Map}}
+\index{Add\-Map@{Add\-Map}!Methods@{Methods}}
+\subsubsection[{Add\-Map}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Add\-Map (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{file\-Name}
+\end{DoxyParamCaption}
+)}}\label{classMethods_aac29fafb7a9f491c64c24a5e24754f71}
+
+
+Add the map with the specified filename at the end of the current selection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\-Name} & Filename of the map. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_a0b136a5a395e4a50c9f667d9fa495b08}{\index{Methods@{Methods}!Add\-Map\-List@{Add\-Map\-List}}
+\index{Add\-Map\-List@{Add\-Map\-List}!Methods@{Methods}}
+\subsubsection[{Add\-Map\-List}]{\setlength{\rightskip}{0pt plus 5cm}int Methods\-::\-Add\-Map\-List (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::string $>$}]{file\-Names}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a0b136a5a395e4a50c9f667d9fa495b08}
+
+
+Add the list of maps with the specified filenames at the end of the current selection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\-Names} & List of map filenames. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classMethods_aa1bba4d023f013fedf3edff7c69f5d08}{\index{Methods@{Methods}!Authenticate@{Authenticate}}
 \index{Authenticate@{Authenticate}!Methods@{Methods}}
 \subsubsection[{Authenticate}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Authenticate (
@@ -242,6 +306,38 @@ Checks if the map matches the current server settings.
 {\em file\-Name} & File name of the map. \\
 \hline
 \end{DoxyParams}
+\hypertarget{classMethods_a8feb1efefe49126cf39089ff6a2f0cd9}{\index{Methods@{Methods}!Choose\-Next\-Map@{Choose\-Next\-Map}}
+\index{Choose\-Next\-Map@{Choose\-Next\-Map}!Methods@{Methods}}
+\subsubsection[{Choose\-Next\-Map}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Choose\-Next\-Map (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{file\-Name}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a8feb1efefe49126cf39089ff6a2f0cd9}
+
+
+Set as next map the one with the specified filename, if it is present in the selection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\-Name} & Filename of the map. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_a7db232616b47d7afa1d3202bf156e624}{\index{Methods@{Methods}!Choose\-Next\-Map\-List@{Choose\-Next\-Map\-List}}
+\index{Choose\-Next\-Map\-List@{Choose\-Next\-Map\-List}!Methods@{Methods}}
+\subsubsection[{Choose\-Next\-Map\-List}]{\setlength{\rightskip}{0pt plus 5cm}int Methods\-::\-Choose\-Next\-Map\-List (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::string $>$}]{file\-Names}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a7db232616b47d7afa1d3202bf156e624}
+
+
+Set as next maps the list of maps with the specified filenames, if they are present in the selection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\-Names} & List of map filenames. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classMethods_a9f47416487f6a825133c2d1e01287956}{\index{Methods@{Methods}!Enable\-Callbacks@{Enable\-Callbacks}}
 \index{Enable\-Callbacks@{Enable\-Callbacks}!Methods@{Methods}}
 \subsubsection[{Enable\-Callbacks}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Enable\-Callbacks (
@@ -337,7 +433,39 @@ Returns empty struct if no information could be retrieved. \hypertarget{classMet
 
 Returns server version information. 
 
-Returns empty struct if no information could be retrieved. \hypertarget{classMethods_a7833782aa64f9072db30809552f83eef}{\index{Methods@{Methods}!List\-Methods@{List\-Methods}}
+Returns empty struct if no information could be retrieved. \hypertarget{classMethods_a02eb54d04e3ea1970e5312f0aa061d28}{\index{Methods@{Methods}!Insert\-Map@{Insert\-Map}}
+\index{Insert\-Map@{Insert\-Map}!Methods@{Methods}}
+\subsubsection[{Insert\-Map}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Insert\-Map (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{file\-Name}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a02eb54d04e3ea1970e5312f0aa061d28}
+
+
+Insert the map with the specified filename after the current map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\-Name} & Filename of the map. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_a1b5d820d4715a10ab6dbb6bed1b28ec4}{\index{Methods@{Methods}!Insert\-Map\-List@{Insert\-Map\-List}}
+\index{Insert\-Map\-List@{Insert\-Map\-List}!Methods@{Methods}}
+\subsubsection[{Insert\-Map\-List}]{\setlength{\rightskip}{0pt plus 5cm}int Methods\-::\-Insert\-Map\-List (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::string $>$}]{file\-Names}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a1b5d820d4715a10ab6dbb6bed1b28ec4}
+
+
+Insert the list of maps with the specified filenames after the current map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\-Names} & List of map filenames. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_a7833782aa64f9072db30809552f83eef}{\index{Methods@{Methods}!List\-Methods@{List\-Methods}}
 \index{List\-Methods@{List\-Methods}!Methods@{Methods}}
 \subsubsection[{List\-Methods}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ std\-::string $>$ Methods\-::\-List\-Methods (
 \begin{DoxyParamCaption}
@@ -348,7 +476,102 @@ Returns empty struct if no information could be retrieved. \hypertarget{classMet
 
 Returns list of available server methods. 
 
-Returns empty vector if no methods could be retrieved. \hypertarget{classMethods_add538878f839a6a5078fec808e1f064f}{\index{Methods@{Methods}!Send\-Notice@{Send\-Notice}}
+Returns empty vector if no methods could be retrieved. \hypertarget{classMethods_a1fd515d35dfc0007303ff75c4f50a678}{\index{Methods@{Methods}!Remove\-Map@{Remove\-Map}}
+\index{Remove\-Map@{Remove\-Map}!Methods@{Methods}}
+\subsubsection[{Remove\-Map}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Remove\-Map (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{file\-Name}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a1fd515d35dfc0007303ff75c4f50a678}
+
+
+Remove the map with the specified filename from the current selection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\-Name} & Filename of the map. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_afbac3687bfc17000689598bff14c7610}{\index{Methods@{Methods}!Remove\-Map\-List@{Remove\-Map\-List}}
+\index{Remove\-Map\-List@{Remove\-Map\-List}!Methods@{Methods}}
+\subsubsection[{Remove\-Map\-List}]{\setlength{\rightskip}{0pt plus 5cm}int Methods\-::\-Remove\-Map\-List (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::string $>$}]{file\-Names}
+\end{DoxyParamCaption}
+)}}\label{classMethods_afbac3687bfc17000689598bff14c7610}
+
+
+Remove the list of maps with the specified filenames from the current selection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\-Names} & List of map filenames. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_ab04b0cae6a36c8202cabf1cd9ebc1a38}{\index{Methods@{Methods}!Send\-Display\-Manialink\-Page@{Send\-Display\-Manialink\-Page}}
+\index{Send\-Display\-Manialink\-Page@{Send\-Display\-Manialink\-Page}!Methods@{Methods}}
+\subsubsection[{Send\-Display\-Manialink\-Page}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Send\-Display\-Manialink\-Page (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{page, }
+\item[{int}]{timeout, }
+\item[{bool}]{hide\-On\-Click}
+\end{DoxyParamCaption}
+)}}\label{classMethods_ab04b0cae6a36c8202cabf1cd9ebc1a38}
+
+
+Displays Mania\-Link page to all players. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em page} & X\-M\-L page to be displayed. \\
+\hline
+{\em timeout} & Timeout to autohide (0 = permanent). \\
+\hline
+{\em hide\-On\-Click} & Hide the page if a page option is clicked. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_a39fd4b15b6f18a74fd686308319e5b51}{\index{Methods@{Methods}!Send\-Display\-Manialink\-Page\-To\-Login@{Send\-Display\-Manialink\-Page\-To\-Login}}
+\index{Send\-Display\-Manialink\-Page\-To\-Login@{Send\-Display\-Manialink\-Page\-To\-Login}!Methods@{Methods}}
+\subsubsection[{Send\-Display\-Manialink\-Page\-To\-Login}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Send\-Display\-Manialink\-Page\-To\-Login (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{login, }
+\item[{std\-::string}]{page, }
+\item[{int}]{timeout, }
+\item[{bool}]{hide\-On\-Click}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a39fd4b15b6f18a74fd686308319e5b51}
+
+
+Displays Mania\-Link page to a player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em login} & \hyperlink{structPlayer}{Player} login. \\
+\hline
+{\em page} & X\-M\-L page to be displayed. \\
+\hline
+{\em timeout} & Timeout to autohide (0 = permanent). \\
+\hline
+{\em hide\-On\-Click} & Hide the page if a page option is clicked. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_af5ec6746b209afdda796330dab55464a}{\index{Methods@{Methods}!Send\-Hide\-Manialink\-Page\-To\-Login@{Send\-Hide\-Manialink\-Page\-To\-Login}}
+\index{Send\-Hide\-Manialink\-Page\-To\-Login@{Send\-Hide\-Manialink\-Page\-To\-Login}!Methods@{Methods}}
+\subsubsection[{Send\-Hide\-Manialink\-Page\-To\-Login}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Send\-Hide\-Manialink\-Page\-To\-Login (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{login}
+\end{DoxyParamCaption}
+)}}\label{classMethods_af5ec6746b209afdda796330dab55464a}
+
+
+Hides all Mania\-Link pages for a player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em login} & \hyperlink{structPlayer}{Player} login. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_add538878f839a6a5078fec808e1f064f}{\index{Methods@{Methods}!Send\-Notice@{Send\-Notice}}
 \index{Send\-Notice@{Send\-Notice}!Methods@{Methods}}
 \subsubsection[{Send\-Notice}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Send\-Notice (
 \begin{DoxyParamCaption}
@@ -416,8 +639,10 @@ Sets the A\-P\-I version of the server. Returns whether change was successful.
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/Methods.\-h\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Maps/Map\-Actions.\-cpp\item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Maps/Map\-Info.\-cpp\item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/Methods.\-cpp\item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Chat.\-cpp\item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Global.\-cpp\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Mania\-Link.\-cpp\item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Notice.\-cpp\end{DoxyCompactItemize}

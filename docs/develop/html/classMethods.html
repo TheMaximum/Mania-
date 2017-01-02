@@ -98,9 +98,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1f18bb4a4d06ccec83f36fa32545015d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a1f18bb4a4d06ccec83f36fa32545015d">Methods</a> (<a class="el" href="classGbxRemote.html">GbxRemote</a> *serverPtr)</td></tr>
-<tr class="memdesc:a1f18bb4a4d06ccec83f36fa32545015d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with link to server connection.  <a href="#a1f18bb4a4d06ccec83f36fa32545015d">More...</a><br/></td></tr>
-<tr class="separator:a1f18bb4a4d06ccec83f36fa32545015d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a1eff4e430d47fefa63b0d71a3cc99d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a6a1eff4e430d47fefa63b0d71a3cc99d">Methods</a> (<a class="el" href="classGbxRemote.html">GbxRemote</a> *serverPtr, std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt; *playerListPtr)</td></tr>
+<tr class="memdesc:a6a1eff4e430d47fefa63b0d71a3cc99d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with link to server connection.  <a href="#a6a1eff4e430d47fefa63b0d71a3cc99d">More...</a><br/></td></tr>
+<tr class="separator:a6a1eff4e430d47fefa63b0d71a3cc99d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1bba4d023f013fedf3edff7c69f5d08"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#aa1bba4d023f013fedf3edff7c69f5d08">Authenticate</a> (std::string username, std::string password)</td></tr>
 <tr class="memdesc:aa1bba4d023f013fedf3edff7c69f5d08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Authenticates with the server. Returns whether authentication was successful.  <a href="#aa1bba4d023f013fedf3edff7c69f5d08">More...</a><br/></td></tr>
 <tr class="separator:aa1bba4d023f013fedf3edff7c69f5d08"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -154,6 +154,23 @@ std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bott
 <tr class="memitem:a7229aacea5b60d1d502c5df39f10a50c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a7229aacea5b60d1d502c5df39f10a50c">SendNoticeToLogin</a> (std::string login, std::string text, std::string avatarLogin=&quot;&quot;, int variant=0)</td></tr>
 <tr class="memdesc:a7229aacea5b60d1d502c5df39f10a50c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send notice to player login.  <a href="#a7229aacea5b60d1d502c5df39f10a50c">More...</a><br/></td></tr>
 <tr class="separator:a7229aacea5b60d1d502c5df39f10a50c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab04b0cae6a36c8202cabf1cd9ebc1a38"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#ab04b0cae6a36c8202cabf1cd9ebc1a38">SendDisplayManialinkPage</a> (std::string page, int timeout, bool hideOnClick)</td></tr>
+<tr class="memdesc:ab04b0cae6a36c8202cabf1cd9ebc1a38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays ManiaLink page to all players.  <a href="#ab04b0cae6a36c8202cabf1cd9ebc1a38">More...</a><br/></td></tr>
+<tr class="separator:ab04b0cae6a36c8202cabf1cd9ebc1a38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39fd4b15b6f18a74fd686308319e5b51"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a39fd4b15b6f18a74fd686308319e5b51">SendDisplayManialinkPageToLogin</a> (std::string login, std::string page, int timeout, bool hideOnClick)</td></tr>
+<tr class="memdesc:a39fd4b15b6f18a74fd686308319e5b51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays ManiaLink page to a player.  <a href="#a39fd4b15b6f18a74fd686308319e5b51">More...</a><br/></td></tr>
+<tr class="separator:a39fd4b15b6f18a74fd686308319e5b51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf09c31b63f1eda2362ca24fd1b328ff"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaf09c31b63f1eda2362ca24fd1b328ff"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#aaf09c31b63f1eda2362ca24fd1b328ff">SendHideManialinkPage</a> ()</td></tr>
+<tr class="memdesc:aaf09c31b63f1eda2362ca24fd1b328ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hides all ManiaLink pages for all players. <br/></td></tr>
+<tr class="separator:aaf09c31b63f1eda2362ca24fd1b328ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5ec6746b209afdda796330dab55464a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#af5ec6746b209afdda796330dab55464a">SendHideManialinkPageToLogin</a> (std::string login)</td></tr>
+<tr class="memdesc:af5ec6746b209afdda796330dab55464a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hides all ManiaLink pages for a player.  <a href="#af5ec6746b209afdda796330dab55464a">More...</a><br/></td></tr>
+<tr class="separator:af5ec6746b209afdda796330dab55464a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43c84e59da7eb37e53bbd8f43299c454"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a43c84e59da7eb37e53bbd8f43299c454"></a>
+std::vector&lt; <a class="el" href="structManiaLinkPageAnswer.html">ManiaLinkPageAnswer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a43c84e59da7eb37e53bbd8f43299c454">GetManialinkPageAnswers</a> ()</td></tr>
+<tr class="memdesc:a43c84e59da7eb37e53bbd8f43299c454"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the latest results from the current ManiaLink page. <br/></td></tr>
+<tr class="separator:a43c84e59da7eb37e53bbd8f43299c454"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa0e3e406c14aad10521d4d6c6333a70"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afa0e3e406c14aad10521d4d6c6333a70"></a>
 <a class="el" href="structMap.html">Map</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#afa0e3e406c14aad10521d4d6c6333a70">GetNextMapInfo</a> ()</td></tr>
 <tr class="memdesc:afa0e3e406c14aad10521d4d6c6333a70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a map object for the map being played next on the server. <br/></td></tr>
@@ -170,6 +187,30 @@ std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bott
 <tr class="memitem:ad30f67839b950d23c566535f43afefb4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structMap.html">Map</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#ad30f67839b950d23c566535f43afefb4">GetMapList</a> (int limit, int index)</td></tr>
 <tr class="memdesc:ad30f67839b950d23c566535f43afefb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the maplist from the server.  <a href="#ad30f67839b950d23c566535f43afefb4">More...</a><br/></td></tr>
 <tr class="separator:ad30f67839b950d23c566535f43afefb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac29fafb7a9f491c64c24a5e24754f71"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#aac29fafb7a9f491c64c24a5e24754f71">AddMap</a> (std::string fileName)</td></tr>
+<tr class="memdesc:aac29fafb7a9f491c64c24a5e24754f71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the map with the specified filename at the end of the current selection.  <a href="#aac29fafb7a9f491c64c24a5e24754f71">More...</a><br/></td></tr>
+<tr class="separator:aac29fafb7a9f491c64c24a5e24754f71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b136a5a395e4a50c9f667d9fa495b08"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a0b136a5a395e4a50c9f667d9fa495b08">AddMapList</a> (std::vector&lt; std::string &gt; fileNames)</td></tr>
+<tr class="memdesc:a0b136a5a395e4a50c9f667d9fa495b08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the list of maps with the specified filenames at the end of the current selection.  <a href="#a0b136a5a395e4a50c9f667d9fa495b08">More...</a><br/></td></tr>
+<tr class="separator:a0b136a5a395e4a50c9f667d9fa495b08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fd515d35dfc0007303ff75c4f50a678"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a1fd515d35dfc0007303ff75c4f50a678">RemoveMap</a> (std::string fileName)</td></tr>
+<tr class="memdesc:a1fd515d35dfc0007303ff75c4f50a678"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the map with the specified filename from the current selection.  <a href="#a1fd515d35dfc0007303ff75c4f50a678">More...</a><br/></td></tr>
+<tr class="separator:a1fd515d35dfc0007303ff75c4f50a678"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbac3687bfc17000689598bff14c7610"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#afbac3687bfc17000689598bff14c7610">RemoveMapList</a> (std::vector&lt; std::string &gt; fileNames)</td></tr>
+<tr class="memdesc:afbac3687bfc17000689598bff14c7610"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the list of maps with the specified filenames from the current selection.  <a href="#afbac3687bfc17000689598bff14c7610">More...</a><br/></td></tr>
+<tr class="separator:afbac3687bfc17000689598bff14c7610"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02eb54d04e3ea1970e5312f0aa061d28"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a02eb54d04e3ea1970e5312f0aa061d28">InsertMap</a> (std::string fileName)</td></tr>
+<tr class="memdesc:a02eb54d04e3ea1970e5312f0aa061d28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert the map with the specified filename after the current map.  <a href="#a02eb54d04e3ea1970e5312f0aa061d28">More...</a><br/></td></tr>
+<tr class="separator:a02eb54d04e3ea1970e5312f0aa061d28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b5d820d4715a10ab6dbb6bed1b28ec4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a1b5d820d4715a10ab6dbb6bed1b28ec4">InsertMapList</a> (std::vector&lt; std::string &gt; fileNames)</td></tr>
+<tr class="memdesc:a1b5d820d4715a10ab6dbb6bed1b28ec4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert the list of maps with the specified filenames after the current map.  <a href="#a1b5d820d4715a10ab6dbb6bed1b28ec4">More...</a><br/></td></tr>
+<tr class="separator:a1b5d820d4715a10ab6dbb6bed1b28ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8feb1efefe49126cf39089ff6a2f0cd9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a8feb1efefe49126cf39089ff6a2f0cd9">ChooseNextMap</a> (std::string fileName)</td></tr>
+<tr class="memdesc:a8feb1efefe49126cf39089ff6a2f0cd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set as next map the one with the specified filename, if it is present in the selection.  <a href="#a8feb1efefe49126cf39089ff6a2f0cd9">More...</a><br/></td></tr>
+<tr class="separator:a8feb1efefe49126cf39089ff6a2f0cd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7db232616b47d7afa1d3202bf156e624"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a7db232616b47d7afa1d3202bf156e624">ChooseNextMapList</a> (std::vector&lt; std::string &gt; fileNames)</td></tr>
+<tr class="memdesc:a7db232616b47d7afa1d3202bf156e624"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set as next maps the list of maps with the specified filenames, if they are present in the selection.  <a href="#a7db232616b47d7afa1d3202bf156e624">More...</a><br/></td></tr>
+<tr class="separator:a7db232616b47d7afa1d3202bf156e624"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -177,11 +218,15 @@ Private Attributes</h2></td></tr>
 <a class="el" href="classGbxRemote.html">GbxRemote</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a3236d275d78d0836cb633de4b1ab5dd8">server</a></td></tr>
 <tr class="memdesc:a3236d275d78d0836cb633de4b1ab5dd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to <a class="el" href="classGbxRemote.html" title="Handles communication with the ManiaPlanet server. ">GbxRemote</a>. <br/></td></tr>
 <tr class="separator:a3236d275d78d0836cb633de4b1ab5dd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ffd93eb02b4b3e50359829f6aa229bd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2ffd93eb02b4b3e50359829f6aa229bd"></a>
+std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a2ffd93eb02b4b3e50359829f6aa229bd">playerList</a></td></tr>
+<tr class="memdesc:a2ffd93eb02b4b3e50359829f6aa229bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the playerlist. <br/></td></tr>
+<tr class="separator:a2ffd93eb02b4b3e50359829f6aa229bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains all server methods and returns usable data types. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a1f18bb4a4d06ccec83f36fa32545015d"></a>
+<a class="anchor" id="a6a1eff4e430d47fefa63b0d71a3cc99d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -189,8 +234,18 @@ Private Attributes</h2></td></tr>
           <td class="memname">Methods::Methods </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classGbxRemote.html">GbxRemote</a> *&#160;</td>
-          <td class="paramname"><em>serverPtr</em></td><td>)</td>
+          <td class="paramname"><em>serverPtr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt; *&#160;</td>
+          <td class="paramname"><em>playerListPtr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -206,6 +261,54 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="aac29fafb7a9f491c64c24a5e24754f71"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Methods::AddMap </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add the map with the specified filename at the end of the current selection. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td>Filename of the map. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0b136a5a395e4a50c9f667d9fa495b08"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Methods::AddMapList </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::string &gt;&#160;</td>
+          <td class="paramname"><em>fileNames</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add the list of maps with the specified filenames at the end of the current selection. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileNames</td><td>List of map filenames. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="aa1bba4d023f013fedf3edff7c69f5d08"></a>
 <div class="memitem">
 <div class="memproto">
@@ -471,6 +574,54 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a8feb1efefe49126cf39089ff6a2f0cd9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Methods::ChooseNextMap </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set as next map the one with the specified filename, if it is present in the selection. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td>Filename of the map. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7db232616b47d7afa1d3202bf156e624"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Methods::ChooseNextMapList </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::string &gt;&#160;</td>
+          <td class="paramname"><em>fileNames</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set as next maps the list of maps with the specified filenames, if they are present in the selection. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileNames</td><td>List of map filenames. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a9f47416487f6a825133c2d1e01287956"></a>
 <div class="memitem">
 <div class="memproto">
@@ -626,6 +777,54 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a02eb54d04e3ea1970e5312f0aa061d28"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Methods::InsertMap </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Insert the map with the specified filename after the current map. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td>Filename of the map. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1b5d820d4715a10ab6dbb6bed1b28ec4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Methods::InsertMapList </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::string &gt;&#160;</td>
+          <td class="paramname"><em>fileNames</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Insert the list of maps with the specified filenames after the current map. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileNames</td><td>List of map filenames. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a7833782aa64f9072db30809552f83eef"></a>
 <div class="memitem">
 <div class="memproto">
@@ -641,6 +840,169 @@ Private Attributes</h2></td></tr>
 
 <p>Returns list of available server methods. </p>
 <p>Returns empty vector if no methods could be retrieved. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1fd515d35dfc0007303ff75c4f50a678"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Methods::RemoveMap </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove the map with the specified filename from the current selection. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td>Filename of the map. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="afbac3687bfc17000689598bff14c7610"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Methods::RemoveMapList </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::string &gt;&#160;</td>
+          <td class="paramname"><em>fileNames</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove the list of maps with the specified filenames from the current selection. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileNames</td><td>List of map filenames. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab04b0cae6a36c8202cabf1cd9ebc1a38"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Methods::SendDisplayManialinkPage </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>page</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>timeout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>hideOnClick</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Displays ManiaLink page to all players. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">page</td><td>XML page to be displayed. </td></tr>
+    <tr><td class="paramname">timeout</td><td>Timeout to autohide (0 = permanent). </td></tr>
+    <tr><td class="paramname">hideOnClick</td><td>Hide the page if a page option is clicked. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a39fd4b15b6f18a74fd686308319e5b51"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Methods::SendDisplayManialinkPageToLogin </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>login</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>page</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>timeout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>hideOnClick</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Displays ManiaLink page to a player. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">login</td><td><a class="el" href="structPlayer.html" title="Contains all information about a player in easy-to-use format. ">Player</a> login. </td></tr>
+    <tr><td class="paramname">page</td><td>XML page to be displayed. </td></tr>
+    <tr><td class="paramname">timeout</td><td>Timeout to autohide (0 = permanent). </td></tr>
+    <tr><td class="paramname">hideOnClick</td><td>Hide the page if a page option is clicked. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af5ec6746b209afdda796330dab55464a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Methods::SendHideManialinkPageToLogin </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>login</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Hides all ManiaLink pages for a player. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">login</td><td><a class="el" href="structPlayer.html" title="Contains all information about a player in easy-to-use format. ">Player</a> login. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -761,16 +1123,18 @@ Private Attributes</h2></td></tr>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/<a class="el" href="Methods_8h_source.html">Methods.h</a></li>
+<li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Maps/MapActions.cpp</li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Maps/MapInfo.cpp</li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Methods.cpp</li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Server/Chat.cpp</li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Server/Global.cpp</li>
+<li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Server/ManiaLink.cpp</li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Server/Notice.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 2 2017 12:18:18 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jan 2 2017 15:15:08 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

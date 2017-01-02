@@ -1,7 +1,10 @@
 var searchData=
 [
+  ['addmap',['AddMap',['../classMethods.html#aac29fafb7a9f491c64c24a5e24754f71',1,'Methods']]],
+  ['addmaplist',['AddMapList',['../classMethods.html#a0b136a5a395e4a50c9f667d9fa495b08',1,'Methods']]],
   ['address',['address',['../structServerConfig.html#a2a4201c0c868ba962a57d75b07ddafaf',1,'ServerConfig::address()'],['../structDatabaseConfig.html#a5ab15d9f2af8a31b83b6b95e58a0b67f',1,'DatabaseConfig::address()'],['../classDatabase.html#aaf36450a11d38f6fde645bb8a0d07381',1,'Database::address()'],['../classTcpClient.html#a8bcb24ebf1d8e22e9185f3056fd108c4',1,'TcpClient::address()']]],
-  ['apiversion',['apiVersion',['../classGbxRemote.html#a81d3c0c70ab7f5e585840e9978ee900e',1,'GbxRemote::apiVersion()'],['../structServerVersion.html#a14472c8764f169f51a39b8c79cb7f029',1,'ServerVersion::ApiVersion()']]],
+  ['answeringplayer',['AnsweringPlayer',['../structManiaLinkPageAnswer.html#afb091a6cd4c5879232564816ce18422d',1,'ManiaLinkPageAnswer']]],
+  ['apiversion',['ApiVersion',['../structServerVersion.html#a14472c8764f169f51a39b8c79cb7f029',1,'ServerVersion::ApiVersion()'],['../classGbxRemote.html#a81d3c0c70ab7f5e585840e9978ee900e',1,'GbxRemote::apiVersion()']]],
   ['array',['Array',['../classGbxResponseParameter.html#abd56daae71edf6749b634d0545a85aad',1,'GbxResponseParameter']]],
   ['authenticate',['Authenticate',['../classMethods.html#aa1bba4d023f013fedf3edff7c69f5d08',1,'Methods']]],
   ['author',['Author',['../structMap.html#a1eb246326a4ec70df2dc71887efca5c9',1,'Map::Author()'],['../classPlugin.html#a2b51c785a131a581164f2c82e83cb660',1,'Plugin::Author()'],['../structPluginInfo.html#aae2dacfe0d928e4bf17b44c7356cfd93',1,'PluginInfo::Author()']]],

@@ -10,6 +10,7 @@ var searchData=
   ['getcurrenterror',['GetCurrentError',['../classGbxRemote.html#a5467b5400129cd13239f88576aaaa2b4',1,'GbxRemote']]],
   ['getcurrentmapinfo',['GetCurrentMapInfo',['../classMethods.html#a4c8c8afabea84f839091c2a5a79b477d',1,'Methods']]],
   ['getfault',['GetFault',['../classGbxResponse.html#aaeb8f1ccd18ab88799d93ea78befc0df',1,'GbxResponse']]],
+  ['getmanialinkpageanswers',['GetManialinkPageAnswers',['../classMethods.html#a43c84e59da7eb37e53bbd8f43299c454',1,'Methods']]],
   ['getmapinfo',['GetMapInfo',['../classMethods.html#a3a64508bc62765212bcf0d032b4f47ac',1,'Methods']]],
   ['getmaplist',['GetMapList',['../classMethods.html#ad30f67839b950d23c566535f43afefb4',1,'Methods']]],
   ['getmethod',['GetMethod',['../classGbxMessage.html#a53e00a162c293251bef476ad74d0134c',1,'GbxMessage']]],

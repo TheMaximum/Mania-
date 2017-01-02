@@ -19,6 +19,8 @@ var searchData=
   ['registerplayermanialinkpageanswer',['RegisterPlayerManialinkPageAnswer',['../classEventManager.html#a5213c8526941c4a67b08d080302dc6bc',1,'EventManager']]],
   ['registerstatuschanged',['RegisterStatusChanged',['../classEventManager.html#ad84c001cc738faa396aaa5948573b682',1,'EventManager']]],
   ['registervoteupdated',['RegisterVoteUpdated',['../classEventManager.html#aa8833f57b1732204762c4d64c8546c53',1,'EventManager']]],
+  ['removemap',['RemoveMap',['../classMethods.html#a1fd515d35dfc0007303ff75c4f50a678',1,'Methods']]],
+  ['removemaplist',['RemoveMapList',['../classMethods.html#afbac3687bfc17000689598bff14c7610',1,'Methods']]],
   ['resetcbresponses',['ResetCBResponses',['../classGbxRemote.html#a81ba62f042948610a3cf720316e22076',1,'GbxRemote']]],
   ['retrievemaplist',['retrieveMapList',['../classManiaPP.html#a18582fa28b259c22a8a8d526af62123a',1,'ManiaPP']]],
   ['retrieveplayerlist',['retrievePlayerList',['../classManiaPP.html#aede94c0b982250de19186d447542e479',1,'ManiaPP']]]
