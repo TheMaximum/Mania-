@@ -65,15 +65,34 @@ struct Map
     {
         if(serverStruct.find("Mood") != serverStruct.end())
         {
-            setBasicInfo(serverStruct);
             setDetailedInfo(serverStruct);
+        }
+    }
+
+    /*!
+     * \brief Copies information from map object.
+     *
+     * \param map          Map object to be copied into this.
+     */
+    void CopyDetailedMap(Map map)
+    {
+        if(!map.Mood.empty())
+        {
+            Mood = map.Mood;
+            BronzeTime = map.BronzeTime;
+            SilverTime = map.SilverTime;
+            AuthorTime = map.AuthorTime;
+
+            LapRace = map.LapRace;
+            NbLaps = map.NbLaps;
+            NbCheckpoints = map.NbCheckpoints;
         }
     }
 
     /*!
      * \brief Set database identifier value.
      *
-     * \param Database ID.
+     * \param id           Database ID.
      */
     void SetId(int id)
     {

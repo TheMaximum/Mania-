@@ -10,15 +10,33 @@
 #include <cppconn/resultset.h>
 #include <cppconn/statement.h>
 
+//* Database
+/**
+ * \brief Handles the connection to the database.
+ */
 class Database
 {
 public:
-    Database(std::string serveraddress, int serverport = 3306);
+    /*!
+     * \brief Sets a few settings.
+     *
+     * \param serverAddress IP Address of the database server.
+     * \param serverPort    Port of the database server.
+     */
+    Database(std::string serverAddress, int serverPort = 3306);
+
+    /*!
+     * \brief Connects to the database.
+     *
+     * \param username      Database user name.
+     * \param password      Database user password.
+     * \param database      Database name.
+     */
     sql::Connection* Connect(std::string username, std::string password, std::string database);
 
 private:
-    std::string address;
-    int port;
+    std::string address; /**< \brief IP Address of the database server. */
+    int port;            /**< \brief Port of the database server. */
 };
 
 #endif // DATABASE_H_

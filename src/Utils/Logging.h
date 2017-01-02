@@ -54,7 +54,8 @@ public:
     /*!
      * \brief Prints error to console.
      *
-     * \param error        Error structure.
+     * \param number       Error number.
+     * \param message      Error message.
      */
     static void PrintError(int number, std::string message)
     {
@@ -62,7 +63,7 @@ public:
         error->number = number;
         error->message = message;
         PrintError(error);
-        
+
         delete error; error = NULL;
     }
 

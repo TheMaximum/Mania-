@@ -9,6 +9,7 @@
 #include "Database/Database.h"
 #include "Events/EventManager.h"
 #include "GbxRemote/GbxRemote.h"
+#include "Maps/MapList.h"
 #include "Methods/Methods.h"
 #include "Objects/Map.h"
 #include "Objects/Player.h"
@@ -62,7 +63,7 @@ private:
     Logging* logging;                       /**< \brief Contains functions to log information. */
     GbxRemote* server;                      /**< \brief Contains the connection with the server and its methods. */
     std::map<std::string, Player>* players; /**< \brief Contains the list of players currently on the server. */
-    std::map<std::string, Map>* maps;       /**< \brief Contains the list of players currently on the server. */
+    MapList* maps;                          /**< \brief Contains the list of maps on the server. */
 
     EventManager* events;                   /**< \brief Contains the event manager. */
     PluginManager* plugins;                 /**< \brief Contains the plugin manager. */

@@ -1,9 +1,9 @@
 #include "Database.h"
 
-Database::Database(std::string serveraddress, int serverport)
+Database::Database(std::string serverAddress, int serverPort)
 {
-    address = serveraddress;
-    port = serverport;
+    address = serverAddress;
+    port = serverPort;
 }
 
 sql::Connection* Database::Connect(std::string username, std::string password, std::string database)

@@ -9,7 +9,7 @@ ManiaPP::ManiaPP()
     server = new GbxRemote();
     methods = new Methods(server);
     players = new std::map<std::string, Player>();
-    maps = new std::map<std::string, Map>();
+    maps = new MapList();
 }
 
 ManiaPP::~ManiaPP()
@@ -80,8 +80,12 @@ bool ManiaPP::ConnectToServer()
                                     retrievePlayerList();
                                     retrieveMapList();
 
+                                    Map currentMap = methods->GetCurrentMapInfo();
+                                    maps->SetCurrentMap(currentMap.UId);
+                                    maps->Current->CopyDetailedMap(currentMap);
+
                                     events = new EventManager();
-                                    plugins = new PluginManager(logging, methods, players, maps, database);
+                                    plugins = new PluginManager(methods, players, maps, database);
                                     plugins->SetEventManager(events);
                                     callbacks = new CallBackManager(server, events, database, players, maps);
 
@@ -257,10 +261,10 @@ void ManiaPP::retrieveMapList()
                 }
             }
 
-            maps->insert(std::pair<std::string, Map>(newMap.UId, newMap));
+            maps->List.insert(std::pair<std::string, Map>(newMap.UId, newMap));
         }
 
-        std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved current map list: " << maps->size() << " found." << std::endl;
+        std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved current map list: " << maps->List.size() << " found." << std::endl;
     }
     else
     {

@@ -1,15 +1,18 @@
 #include "PluginManager.h"
 
-PluginManager::PluginManager(Logging* loggingPtr, Methods* methodsPtr, std::map<std::string, Player>* playersPtr, std::map<std::string, Map>* mapsPtr, sql::Connection* databasePtr)
+PluginManager::PluginManager(Methods* methodsPtr,
+                             std::map<std::string, Player>* playersPtr,
+                             MapList* mapsPtr,
+                             sql::Connection* databasePtr)
 {
     plugins = std::map<std::string, PluginInfo>();
     events = NULL;
 
-    logging = loggingPtr;
-    methods = methodsPtr;
-    players = playersPtr;
-    maps = mapsPtr;
-    database = databasePtr;
+    controller = new Controller();
+    controller->Server = methodsPtr;
+    controller->Players = playersPtr;
+    controller->Maps = mapsPtr;
+    controller->Database = databasePtr;
 }
 
 PluginManager::~PluginManager()
@@ -52,7 +55,7 @@ void PluginManager::LoadPlugins(std::string pluginsFolder)
             std::stringstream message;
             message << "Could not load '" << pluginId->first << "'...";
             error->message = message.str();
-            logging->PrintError(error);
+            Logging::PrintError(error);
         }
         else
         {
@@ -67,16 +70,12 @@ void PluginManager::LoadPlugins(std::string pluginsFolder)
                 std::stringstream message;
                 message << "Could not call 'startPlugin'-function for '" << pluginId->first << "'...";
                 error->message = message.str();
-                logging->PrintError(error);
+                Logging::PrintError(error);
             }
             else
             {
                 Plugin* plugin = startPlugin();
-                plugin->SetLogging(logging);
-                plugin->SetMethods(methods);
-                plugin->SetPlayers(players);
-                plugin->SetMaps(maps);
-                plugin->SetDatabase(database);
+                plugin->SetController(controller);
 
                 std::cout << "[   \033[0;32mOK.\033[0;0m   ] Loaded plugin '" << pluginId->first << "': v" << plugin->Version << " by " << plugin->Author << "." << std::endl;
 

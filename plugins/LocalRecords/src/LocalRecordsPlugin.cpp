@@ -10,22 +10,50 @@ LocalRecordsPlugin::LocalRecordsPlugin()
 
 void LocalRecordsPlugin::Init()
 {
+    retrieveRecords(*controller->Maps->Current);
 
+    std::cout << "Records for " << controller->Maps->Current->Name << ":" << std::endl;
+    for(int recordId = 0; recordId < localRecords.size(); recordId++)
+    {
+        LocalRecord record = localRecords.at(recordId);
+        std::cout << "#" << recordId << ": " << record.FormattedTime << " by " << record.Login << std::endl;
+    }
 }
 
 void LocalRecordsPlugin::OnBeginMap(Map map)
 {
-    sql::PreparedStatement* pstmt = database->prepareStatement("SELECT * FROM `records` WHERE `MapId` = ? ORDER BY `Score` ASC LIMIT ?");
+    retrieveRecords(map);
+
+    std::cout << "Records for " << map.Name << ":" << std::endl;
+    for(int recordId = 0; recordId < localRecords.size(); recordId++)
+    {
+        LocalRecord record = localRecords.at(recordId);
+        std::cout << "#" << recordId << ": " << record.FormattedTime << " by " << record.Login << std::endl;
+    }
+}
+
+void LocalRecordsPlugin::retrieveRecords(Map map)
+{
+    localRecords = std::vector<LocalRecord>();
+
+    sql::PreparedStatement* pstmt = controller->Database->prepareStatement("SELECT * FROM `records` WHERE `MapId` = ? ORDER BY `Score` ASC LIMIT ?");
     pstmt->setInt(1, map.Id);
     pstmt->setInt(2, 100);
     sql::ResultSet* result = pstmt->executeQuery();
 
-    std::cout << "Records for " << map.Name << ":" << std::endl;
-    int recordIndex = 1;
     while(result->next())
     {
-        std::cout << "#" << recordIndex << ": " << Time::FormatTime(result->getInt("Score")) << " by " << result->getInt("PlayerId") << std::endl;
-        recordIndex++;
+        LocalRecord localRecord = LocalRecord(result);
+
+        pstmt = controller->Database->prepareStatement("SELECT * FROM `players` WHERE `Id` = ?");
+        pstmt->setInt(1, result->getInt("PlayerId"));
+        sql::ResultSet* playerResult = pstmt->executeQuery();
+        playerResult->next();
+
+        localRecord.Login = playerResult->getString("Login");
+        localRecord.NickName = playerResult->getString("NickName");
+
+        localRecords.push_back(localRecord);
     }
 
     delete pstmt; pstmt = NULL;

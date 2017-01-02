@@ -1,6 +1,6 @@
 #include "CallBackManager.h"
 
-CallBackManager::CallBackManager(GbxRemote* serverPtr, EventManager* eventManagerPtr, sql::Connection* databasePtr, std::map<std::string, Player>* playerList, std::map<std::string, Map>* mapList)
+CallBackManager::CallBackManager(GbxRemote* serverPtr, EventManager* eventManagerPtr, sql::Connection* databasePtr, std::map<std::string, Player>* playerList, MapList* mapList)
 {
     server = serverPtr;
     events = eventManagerPtr;
@@ -227,16 +227,17 @@ void CallBackManager::HandleEndMatch(std::vector<GbxResponseParameter> parameter
 void CallBackManager::HandleBeginMap(std::vector<GbxResponseParameter> parameters)
 {
     std::map<std::string, GbxResponseParameter> mapStruct = parameters.at(0).GetStruct();
-    Map map = maps->at(mapStruct.at("UId").GetString());
-    map.MapDetailed(parameters.at(0).GetStruct());
-    events->CallBeginMap(map);
+    Map* map = &(maps->List.at(mapStruct.at("UId").GetString()));
+    map->MapDetailed(parameters.at(0).GetStruct());
+
+    maps->SetCurrentMap(mapStruct.at("UId").GetString());
+    events->CallBeginMap(*map);
 }
 
 void CallBackManager::HandleEndMap(std::vector<GbxResponseParameter> parameters)
 {
     std::map<std::string, GbxResponseParameter> mapStruct = parameters.at(0).GetStruct();
-    Map map = maps->at(mapStruct.at("UId").GetString());
-    map.MapDetailed(parameters.at(0).GetStruct());
+    Map map = maps->List.at(mapStruct.at("UId").GetString());
     events->CallEndMap(map);
 }
 

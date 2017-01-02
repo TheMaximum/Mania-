@@ -71,7 +71,7 @@ struct Player
     /*!
      * \brief Set database identifier value.
      *
-     * \param Database ID.
+     * \param id           Database ID.
      */
     void SetId(int id)
     {

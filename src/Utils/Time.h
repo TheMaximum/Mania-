@@ -5,6 +5,10 @@
 #include <sstream>
 #include <math.h>
 
+//* Time
+/**
+ * \brief Contains utilities to format map times.
+ */
 class Time
 {
 public:

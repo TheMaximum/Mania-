@@ -16,10 +16,23 @@
 #include <cppconn/prepared_statement.h>
 
 #include "../Events/Structs.h"
+#include "../Maps/MapList.h"
 #include "../Methods/Methods.h"
 #include "../Objects/Player.h"
 #include "../Objects/Map.h"
 #include "../Utils/Logging.h"
+
+//* Controller
+/**
+ * \brief Struct with all instances needed for plugins.
+ */
+struct Controller
+{
+    Methods* Server;                        /**< \brief Methods instance. */
+    std::map<std::string, Player>* Players; /**< \brief Playerlist instance. */
+    MapList* Maps;                          /**< \brief Maplist instance. */
+    sql::Connection* Database;              /**< \brief Database instance. */
+};
 
 //* Plugin
 /**
@@ -34,53 +47,13 @@ public:
     virtual void Init() = 0;
 
     /*!
-     * \brief Sets the logging instance.
+     * \brief Sets the controller instance.
      *
-     * \param loggingPtr  Pointer to the logging instance.
+     * \param controllerPtr Pointer to the controller instance.
      */
-    void SetLogging(Logging* loggingPtr)
+    void SetController(Controller* controllerPtr)
     {
-        logging = loggingPtr;
-    }
-
-    /*!
-     * \brief Sets the server instance.
-     *
-     * \param methodsPtr  Pointer to the Methods instance.
-     */
-    void SetMethods(Methods* methodsPtr)
-    {
-        methods = methodsPtr;
-    }
-
-    /*!
-     * \brief Sets the playerlist instance.
-     *
-     * \param playersPtr  Pointer to the playerlist instance.
-     */
-    void SetPlayers(std::map<std::string, Player>* playersPtr)
-    {
-        players = playersPtr;
-    }
-
-    /*!
-     * \brief Sets the maplist instance.
-     *
-     * \param mapsPtr     Pointer to the maplist instance.
-     */
-    void SetMaps(std::map<std::string, Map>* mapsPtr)
-    {
-        maps = mapsPtr;
-    }
-
-    /*!
-     * \brief Sets the database instance.
-     *
-     * \param databasePtr Pointer to the database instance.
-     */
-    void SetDatabase(sql::Connection* databasePtr)
-    {
-        database = databasePtr;
+        controller = controllerPtr;
     }
 
     std::vector<std::function<void(Player)>> PlayerConnect;                     /**< \brief Vector with functions for the PlayerConnect event. */
@@ -105,11 +78,7 @@ public:
     std::string Author;  /**< \brief Plugin author. */
 
 protected:
-    Logging* logging;                       /**< \brief Logging instance. */
-    Methods* methods;                       /**< \brief Methods instance. */
-    std::map<std::string, Player>* players; /**< \brief Playerlist instance. */
-    std::map<std::string, Map>* maps;       /**< \brief Maplist instance. */
-    sql::Connection* database;              /**< \brief Database instance. */
+    Controller* controller;                  /**< \brief Struct with needed instances. */
 };
 
 #endif // PLUGIN_H_

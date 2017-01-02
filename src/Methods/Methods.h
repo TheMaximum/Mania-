@@ -2,6 +2,7 @@
 #define METHODS_H_
 
 #include "../GbxRemote/GbxRemote.h"
+#include "../Objects/Map.h"
 #include "../Objects/Player.h"
 #include "Structs.h"
 
@@ -249,6 +250,21 @@ public:
     std::string GameDataDirectory();
     std::string GetMapsDirectory();
     std::string GetSkinsDirectory();*/
+
+    /*!
+     * \brief Provides a map object for the map currently being played on the server.
+     *
+     * This is mainly meant for the start-up of the controller.
+     * The current map can always be request via the Current property of MapList.
+     */
+    Map GetCurrentMapInfo();
+
+    /*!
+     * \brief Provides a map object for the map with the specified file name.
+     *
+     * \param fileName File name of the map.
+     */
+    Map GetMapInfo(std::string fileName);
 
 private:
     GbxRemote* server; /**< \brief Pointer to GbxRemote. */
