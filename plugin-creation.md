@@ -12,7 +12,7 @@ The ```main.cpp``` file contains just one simple function, namely 'startPlugin':
 ```C++
 extern "C" Plugin* startPlugin()
 {
-    HelloGoodbyePlugin* plugin = new HelloGoodbyePlugin();
+    ExamplePlugin* plugin = new ExamplePlugin();
     return (Plugin*)plugin;
 }
 ```
@@ -69,6 +69,12 @@ Almost all callbacks from the server are relayed to the plugins. The table indic
 | ManiaPlanet.PlayerInfoChanged | PlayerInfoChanged | ```Player```                                                               |
 | ManiaPlanet.VoteUpdated       | VoteUpdated       | ```std::string```, ```std::string```, ```std::string```, ```std::string``` |
 
-### Calling server methods ###
-Calling methods on the server can be easily done by using the ```Methods``` pointer included in your plugin (```methods->```).
-Almost all server methods can be called via this class, check the full list [in Doxygen](https://themaximum.github.io/mania-pp/docs/develop/html/classMethods.html).
+### Accessing controller features ###
+The controller features are accessible via a ```Controller``` struct, which is included in your plugin as ```controller->```. From here, you can execute queries on the server, access the current playerlist and maplist (and make changes in them) and query the database.
+
+| Controller feature | Variable    | Documentation |
+| ------------------ | ----------- | ------------- |
+| Querying dedicated server | ```Server``` | [Methods](https://themaximum.github.io/mania-pp/docs/develop/html/classMethods.html) |
+| Current player list | ```Players``` | Simple vector with [Player](https://themaximum.github.io/mania-pp/docs/develop/html/structPlayer.html) objects |
+| Current map list | ```Maps``` | [MapList](https://themaximum.github.io/mania-pp/docs/develop/html/classMapList.html) |
+| Database access | ```Database``` | [MySQL C++ Connector](https://dev.mysql.com/doc/connector-cpp/en/connector-cpp-getting-started-examples.html) |
