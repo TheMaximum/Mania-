@@ -1,7 +1,7 @@
 var searchData=
 [
   ['p2pport',['P2PPort',['../structSystemInfo.html#acc041cb71d46ffbbf1ca0f06285b8f14',1,'SystemInfo']]],
-  ['parameters',['parameters',['../classGbxParameters.html#af2c27b8d1e5c3884d0e5cc9ba04953cf',1,'GbxParameters::parameters()'],['../classGbxServerResponse.html#acfd80e7b92cf34e1f0cda88a11a1bed0',1,'GbxServerResponse::parameters()']]],
+  ['parameters',['parameters',['../classGbxParameters.html#aeabcb21396d3198d718c94de23595750',1,'GbxParameters::parameters()'],['../classGbxServerResponse.html#acfd80e7b92cf34e1f0cda88a11a1bed0',1,'GbxServerResponse::parameters()']]],
   ['parseconfig',['parseConfig',['../classConfig.html#a2ddcecec4284da0fb0b53da77e0d217a',1,'Config']]],
   ['password',['password',['../structServerConfig.html#a819f5b912feb1fdb68ebd4fe36eb11ea',1,'ServerConfig::password()'],['../structDatabaseConfig.html#aa17e906c33a2f1c2d1508afa50957b35',1,'DatabaseConfig::password()']]],
   ['player',['Player',['../structPlayer.html',1,'Player'],['../structPlayer.html#affe0cc3cb714f6deb4e62f0c0d3f1fd8',1,'Player::Player()'],['../structPlayer.html#adf15eb006b535a4e1b72b419021f1f11',1,'Player::Player(std::map&lt; std::string, GbxResponseParameter &gt; serverStruct)']]],
