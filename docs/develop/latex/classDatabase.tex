@@ -15,8 +15,19 @@ Handles the connection to the database.
 \item 
 \hyperlink{classDatabase_acebb76b52b5efea89c7417d65bb5980e}{Database} (std\-::string server\-Address, int server\-Port=3306)
 \begin{DoxyCompactList}\small\item\em Sets a few settings. \end{DoxyCompactList}\item 
+\hyperlink{classDatabase_a84d399a2ad58d69daab9b05330e1316d}{$\sim$\-Database} ()
+\item 
 sql\-::\-Connection $\ast$ \hyperlink{classDatabase_a22555b63ce54c0b4a0e1b1aecb5e1bd4}{Connect} (std\-::string username, std\-::string password, std\-::string database)
 \begin{DoxyCompactList}\small\item\em Connects to the database. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classDatabase_af6294bc6951029de6c33c90a7d298541}{sql\-::\-Driver $\ast$ \hyperlink{classDatabase_af6294bc6951029de6c33c90a7d298541}{Driver}}\label{classDatabase_af6294bc6951029de6c33c90a7d298541}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classDatabase}{Database} server driver. \end{DoxyCompactList}\item 
+\hypertarget{classDatabase_a4239c1a10072aacab2c09d2beb0a096e}{sql\-::\-Connection $\ast$ \hyperlink{classDatabase_a4239c1a10072aacab2c09d2beb0a096e}{Connection}}\label{classDatabase_a4239c1a10072aacab2c09d2beb0a096e}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classDatabase}{Database} server driver. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -51,7 +62,14 @@ Sets a few settings.
 {\em server\-Port} & Port of the database server. \\
 \hline
 \end{DoxyParams}
-
+\hypertarget{classDatabase_a84d399a2ad58d69daab9b05330e1316d}{\index{Database@{Database}!$\sim$\-Database@{$\sim$\-Database}}
+\index{$\sim$\-Database@{$\sim$\-Database}!Database@{Database}}
+\subsubsection[{$\sim$\-Database}]{\setlength{\rightskip}{0pt plus 5cm}Database\-::$\sim$\-Database (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDatabase_a84d399a2ad58d69daab9b05330e1316d}
+Deconstructor closes driver thread. 
 
 \subsection{Member Function Documentation}
 \hypertarget{classDatabase_a22555b63ce54c0b4a0e1b1aecb5e1bd4}{\index{Database@{Database}!Connect@{Connect}}

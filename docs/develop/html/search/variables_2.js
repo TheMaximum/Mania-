@@ -5,6 +5,7 @@ var searchData=
   ['config',['config',['../classManiaPP.html#a9a91437fa70afd52c2dce19298888e36',1,'ManiaPP']]],
   ['configfile',['configFile',['../classConfig.html#a08b7b2c4eadf7dda51404f76fd6e0280',1,'Config']]],
   ['connected',['connected',['../classGbxRemote.html#a56662ea222345c645ae897e056b5c8c8',1,'GbxRemote']]],
+  ['connection',['Connection',['../classDatabase.html#a4239c1a10072aacab2c09d2beb0a096e',1,'Database']]],
   ['connectiondownloadrate',['ConnectionDownloadRate',['../structSystemInfo.html#a3d6368c9202c50774197155ff1a6e8e7',1,'SystemInfo']]],
   ['connectionuploadrate',['ConnectionUploadRate',['../structSystemInfo.html#a57b905820121dd13c62026a58a5f9b34',1,'SystemInfo']]],
   ['controller',['controller',['../classPlugin.html#acd252bdd0b4050df6f221032d50acbe4',1,'Plugin::controller()'],['../classPluginManager.html#a3b08105f2c52f52d21d293fe0045ae1f',1,'PluginManager::controller()']]],
