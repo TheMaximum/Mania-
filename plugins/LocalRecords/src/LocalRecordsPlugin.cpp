@@ -43,6 +43,7 @@ void LocalRecordsPlugin::retrieveRecords(Map map)
 
     while(result->next())
     {
+        delete pstmt; pstmt = NULL;
         LocalRecord localRecord = LocalRecord(result);
 
         pstmt = controller->Database->prepareStatement("SELECT * FROM `players` WHERE `Id` = ?");
@@ -54,6 +55,9 @@ void LocalRecordsPlugin::retrieveRecords(Map map)
         localRecord.NickName = playerResult->getString("NickName");
 
         localRecords.push_back(localRecord);
+
+        delete pstmt; pstmt = NULL;
+        delete playerResult; playerResult = NULL;
     }
 
     delete pstmt; pstmt = NULL;

@@ -26,6 +26,11 @@ public:
     Database(std::string serverAddress, int serverPort = 3306);
 
     /*!
+     * Deconstructor closes driver thread.
+     */
+    ~Database();
+
+    /*!
      * \brief Connects to the database.
      *
      * \param username      Database user name.
@@ -34,9 +39,12 @@ public:
      */
     sql::Connection* Connect(std::string username, std::string password, std::string database);
 
+    sql::Driver* Driver;         /**< \brief Database server driver. */
+    sql::Connection* Connection; /**< \brief Database server driver. */
+
 private:
-    std::string address; /**< \brief IP Address of the database server. */
-    int port;            /**< \brief Port of the database server. */
+    std::string address;         /**< \brief IP Address of the database server. */
+    int port;                    /**< \brief Port of the database server. */
 };
 
 #endif // DATABASE_H_

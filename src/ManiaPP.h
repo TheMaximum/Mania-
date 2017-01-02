@@ -70,6 +70,7 @@ private:
     CallBackManager* callbacks;             /**< \brief Contains the callback manager. */
     Methods* methods;                       /**< \brief Server method caller. */
 
+    Database* db = NULL;                    /**< \brief Contains database connection and driver (needed on destruction). */
     sql::Connection* database = NULL;       /**< \brief Contains database driver. */
 
     ServerVersion serverVersion;            /**< \brief Struct with server version information. */

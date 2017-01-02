@@ -24,6 +24,10 @@ ManiaPP::~ManiaPP()
     delete events; events = NULL;
     delete callbacks; callbacks = NULL;
     delete methods; methods = NULL;
+
+    database->close();
+    delete database; database = NULL;
+    delete db; db = NULL;
 }
 
 bool ManiaPP::ConnectToServer()
@@ -119,8 +123,8 @@ bool ManiaPP::ConnectToDatabase()
     std::cout << "[         ] Connecting to the database on '" << config->Database->address << ":" << config->Database->port << "' ... " << '\r' << std::flush;
     try
     {
-        Database db = Database(config->Database->address, config->Database->port);
-        sql::Connection* dbConnection = db.Connect(config->Database->username, config->Database->password, config->Database->database);
+        db = new Database(config->Database->address, config->Database->port);
+        sql::Connection* dbConnection = db->Connect(config->Database->username, config->Database->password, config->Database->database);
         if(dbConnection != NULL)
         {
             logging->PrintOKFlush();
@@ -212,9 +216,15 @@ void ManiaPP::retrievePlayerList()
                     {
                         newPlayer.SetId(result->getInt("Id"));
                     }
+
+                    delete pstmt; pstmt = NULL;
+                    delete result; result = NULL;
                 }
 
                 players->insert(std::pair<std::string, Player>(newPlayer.Login, newPlayer));
+
+                delete message; message = NULL;
+                delete params; params = NULL;
             }
         }
 
@@ -259,6 +269,9 @@ void ManiaPP::retrieveMapList()
                 {
                     newMap.SetId(result->getInt("Id"));
                 }
+
+                delete pstmt; pstmt = NULL;
+                delete result; result = NULL;
             }
 
             maps->List.insert(std::pair<std::string, Map>(newMap.UId, newMap));
