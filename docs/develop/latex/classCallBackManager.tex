@@ -13,7 +13,7 @@ Handles callbacks from the server.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classCallBackManager_a7c214dd661d44162a6bcddc900af6402}{Call\-Back\-Manager} (\hyperlink{classGbxRemote}{Gbx\-Remote} $\ast$server\-Ptr, \hyperlink{classEventManager}{Event\-Manager} $\ast$event\-Manager\-Ptr, sql\-::\-Connection $\ast$database\-Ptr, std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$player\-List, std\-::map$<$ std\-::string, \hyperlink{structMap}{Map} $>$ $\ast$map\-List)
+\hyperlink{classCallBackManager_ab6aeed0451bc44a91651940ded7f892e}{Call\-Back\-Manager} (\hyperlink{classGbxRemote}{Gbx\-Remote} $\ast$server\-Ptr, \hyperlink{classEventManager}{Event\-Manager} $\ast$event\-Manager\-Ptr, sql\-::\-Connection $\ast$database\-Ptr, std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$player\-List, \hyperlink{classMapList}{Map\-List} $\ast$map\-List)
 \item 
 void \hyperlink{classCallBackManager_a8af5305f668aae4c563e7039b99015c2}{Handle\-Call\-Back} (std\-::string method\-Name, std\-::vector$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ parameters)
 \begin{DoxyCompactList}\small\item\em Handles callback (updates lists, calls plugin functions). \end{DoxyCompactList}\item 
@@ -66,7 +66,7 @@ void \hyperlink{classCallBackManager_a7af7f38c8e0994fcbba2de59dee1921f}{Handle\-
 \hypertarget{classCallBackManager_a26e135142b37e3b02b72aa7a091ef854}{std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$ \hyperlink{classCallBackManager_a26e135142b37e3b02b72aa7a091ef854}{players}}\label{classCallBackManager_a26e135142b37e3b02b72aa7a091ef854}
 
 \begin{DoxyCompactList}\small\item\em Contains the list of players currently on the server. \end{DoxyCompactList}\item 
-\hypertarget{classCallBackManager_afad9b6092db2e3f98711d8e6ba6ff612}{std\-::map$<$ std\-::string, \hyperlink{structMap}{Map} $>$ $\ast$ \hyperlink{classCallBackManager_afad9b6092db2e3f98711d8e6ba6ff612}{maps}}\label{classCallBackManager_afad9b6092db2e3f98711d8e6ba6ff612}
+\hypertarget{classCallBackManager_a4b3c557fca85e1ba8ab292fc9df3da7c}{\hyperlink{classMapList}{Map\-List} $\ast$ \hyperlink{classCallBackManager_a4b3c557fca85e1ba8ab292fc9df3da7c}{maps}}\label{classCallBackManager_a4b3c557fca85e1ba8ab292fc9df3da7c}
 
 \begin{DoxyCompactList}\small\item\em Contains the list of players currently on the server. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -75,7 +75,7 @@ void \hyperlink{classCallBackManager_a7af7f38c8e0994fcbba2de59dee1921f}{Handle\-
 Handles callbacks from the server. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classCallBackManager_a7c214dd661d44162a6bcddc900af6402}{\index{Call\-Back\-Manager@{Call\-Back\-Manager}!Call\-Back\-Manager@{Call\-Back\-Manager}}
+\hypertarget{classCallBackManager_ab6aeed0451bc44a91651940ded7f892e}{\index{Call\-Back\-Manager@{Call\-Back\-Manager}!Call\-Back\-Manager@{Call\-Back\-Manager}}
 \index{Call\-Back\-Manager@{Call\-Back\-Manager}!CallBackManager@{Call\-Back\-Manager}}
 \subsubsection[{Call\-Back\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}Call\-Back\-Manager\-::\-Call\-Back\-Manager (
 \begin{DoxyParamCaption}
@@ -83,9 +83,9 @@ Handles callbacks from the server.
 \item[{{\bf Event\-Manager} $\ast$}]{event\-Manager\-Ptr, }
 \item[{sql\-::\-Connection $\ast$}]{database\-Ptr, }
 \item[{std\-::map$<$ std\-::string, {\bf Player} $>$ $\ast$}]{player\-List, }
-\item[{std\-::map$<$ std\-::string, {\bf Map} $>$ $\ast$}]{map\-List}
+\item[{{\bf Map\-List} $\ast$}]{map\-List}
 \end{DoxyParamCaption}
-)}}\label{classCallBackManager_a7c214dd661d44162a6bcddc900af6402}
+)}}\label{classCallBackManager_ab6aeed0451bc44a91651940ded7f892e}
 Constructor takes pointers to playerlist and maplist to keep them updated.
 
 \begin{DoxyRefDesc}{Todo}

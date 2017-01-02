@@ -20,6 +20,8 @@ Contains all information about a map in easy-\/to-\/use format.
 \begin{DoxyCompactList}\small\item\em Formats a server response into a usable form. \end{DoxyCompactList}\item 
 void \hyperlink{structMap_ac8e78e5d9ba3951db798736fc33e907e}{Map\-Detailed} (std\-::map$<$ std\-::string, \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ server\-Struct)
 \begin{DoxyCompactList}\small\item\em Formats a server response into a usable form. \end{DoxyCompactList}\item 
+void \hyperlink{structMap_aceca3c7bca81223e4b54de1cc91f7a31}{Copy\-Detailed\-Map} (\hyperlink{structMap}{Map} map)
+\begin{DoxyCompactList}\small\item\em Copies information from map object. \end{DoxyCompactList}\item 
 void \hyperlink{structMap_af83b3a784e6fa9404c1940a2ca1b68a8}{Set\-Id} (int id)
 \begin{DoxyCompactList}\small\item\em Set database identifier value. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
@@ -108,6 +110,22 @@ Formats a server response into a usable form.
 
 
 \subsection{Member Function Documentation}
+\hypertarget{structMap_aceca3c7bca81223e4b54de1cc91f7a31}{\index{Map@{Map}!Copy\-Detailed\-Map@{Copy\-Detailed\-Map}}
+\index{Copy\-Detailed\-Map@{Copy\-Detailed\-Map}!Map@{Map}}
+\subsubsection[{Copy\-Detailed\-Map}]{\setlength{\rightskip}{0pt plus 5cm}void Map\-::\-Copy\-Detailed\-Map (
+\begin{DoxyParamCaption}
+\item[{{\bf Map}}]{map}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structMap_aceca3c7bca81223e4b54de1cc91f7a31}
+
+
+Copies information from map object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & \hyperlink{structMap}{Map} object to be copied into this. \\
+\hline
+\end{DoxyParams}
 \hypertarget{structMap_ac8e78e5d9ba3951db798736fc33e907e}{\index{Map@{Map}!Map\-Detailed@{Map\-Detailed}}
 \index{Map\-Detailed@{Map\-Detailed}!Map@{Map}}
 \subsubsection[{Map\-Detailed}]{\setlength{\rightskip}{0pt plus 5cm}void Map\-::\-Map\-Detailed (
@@ -169,7 +187,7 @@ Set database identifier value.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \hyperlink{classDatabase}{Database}} & I\-D. \\
+{\em id} & \hyperlink{classDatabase}{Database} I\-D. \\
 \hline
 \end{DoxyParams}
 

@@ -7,7 +7,9 @@ var searchData=
   ['connected',['connected',['../classGbxRemote.html#a56662ea222345c645ae897e056b5c8c8',1,'GbxRemote']]],
   ['connectiondownloadrate',['ConnectionDownloadRate',['../structSystemInfo.html#a3d6368c9202c50774197155ff1a6e8e7',1,'SystemInfo']]],
   ['connectionuploadrate',['ConnectionUploadRate',['../structSystemInfo.html#a57b905820121dd13c62026a58a5f9b34',1,'SystemInfo']]],
+  ['controller',['controller',['../classPlugin.html#acd252bdd0b4050df6f221032d50acbe4',1,'Plugin::controller()'],['../classPluginManager.html#a3b08105f2c52f52d21d293fe0045ae1f',1,'PluginManager::controller()']]],
   ['copperprice',['CopperPrice',['../structMap.html#aa9a7d229fb6b41092fb527bbcc913faf',1,'Map']]],
+  ['current',['Current',['../classMapList.html#a9ff0021f3b08091091e58d3109c41400',1,'MapList']]],
   ['currentcallbacks',['currentCallBacks',['../classGbxRemote.html#a08d047d7e0d4b746fc036c1aa02f0d17',1,'GbxRemote']]],
   ['currenterror',['currentError',['../classGbxRemote.html#ae5d44c3729140c1eba5e850cb5e5e7bd',1,'GbxRemote']]],
   ['currentresponse',['currentResponse',['../classGbxRemote.html#a3a3a0af1a692a801a33baa292b877dc2',1,'GbxRemote']]]

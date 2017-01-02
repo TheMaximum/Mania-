@@ -50,7 +50,11 @@ bool \hyperlink{classMethods_ab0a918ef2ae8ba45fa350f023d7174ab}{Chat\-Forward\-T
 bool \hyperlink{classMethods_add538878f839a6a5078fec808e1f064f}{Send\-Notice} (std\-::string text, std\-::string avatar\-Login=\char`\"{}\char`\"{}, int variant=0)
 \begin{DoxyCompactList}\small\item\em Send notice to all players. \end{DoxyCompactList}\item 
 bool \hyperlink{classMethods_a7229aacea5b60d1d502c5df39f10a50c}{Send\-Notice\-To\-Login} (std\-::string login, std\-::string text, std\-::string avatar\-Login=\char`\"{}\char`\"{}, int variant=0)
-\begin{DoxyCompactList}\small\item\em Send notice to player login. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Send notice to player login. \end{DoxyCompactList}\item 
+\hyperlink{structMap}{Map} \hyperlink{classMethods_a4c8c8afabea84f839091c2a5a79b477d}{Get\-Current\-Map\-Info} ()
+\begin{DoxyCompactList}\small\item\em Provides a map object for the map currently being played on the server. \end{DoxyCompactList}\item 
+\hyperlink{structMap}{Map} \hyperlink{classMethods_a3a64508bc62765212bcf0d032b4f47ac}{Get\-Map\-Info} (std\-::string file\-Name)
+\begin{DoxyCompactList}\small\item\em Provides a map object for the map with the specified file name. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -231,6 +235,33 @@ Enables/disables callbacks. Returns whether change was successful.
 {\em enable} & Enable (true) or disable (false). \\
 \hline
 \end{DoxyParams}
+\hypertarget{classMethods_a4c8c8afabea84f839091c2a5a79b477d}{\index{Methods@{Methods}!Get\-Current\-Map\-Info@{Get\-Current\-Map\-Info}}
+\index{Get\-Current\-Map\-Info@{Get\-Current\-Map\-Info}!Methods@{Methods}}
+\subsubsection[{Get\-Current\-Map\-Info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Map} Methods\-::\-Get\-Current\-Map\-Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a4c8c8afabea84f839091c2a5a79b477d}
+
+
+Provides a map object for the map currently being played on the server. 
+
+This is mainly meant for the start-\/up of the controller. The current map can always be request via the Current property of \hyperlink{classMapList}{Map\-List}. \hypertarget{classMethods_a3a64508bc62765212bcf0d032b4f47ac}{\index{Methods@{Methods}!Get\-Map\-Info@{Get\-Map\-Info}}
+\index{Get\-Map\-Info@{Get\-Map\-Info}!Methods@{Methods}}
+\subsubsection[{Get\-Map\-Info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Map} Methods\-::\-Get\-Map\-Info (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{file\-Name}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a3a64508bc62765212bcf0d032b4f47ac}
+
+
+Provides a map object for the map with the specified file name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\-Name} & File name of the map. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classMethods_af39e05685756a82b5991a2fc25d5e941}{\index{Methods@{Methods}!Get\-Status@{Get\-Status}}
 \index{Get\-Status@{Get\-Status}!Methods@{Methods}}
 \subsubsection[{Get\-Status}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Server\-Status} Methods\-::\-Get\-Status (
@@ -343,6 +374,7 @@ Sets the A\-P\-I version of the server. Returns whether change was successful.
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/Methods.\-h\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Maps/Map\-Info.\-cpp\item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/Methods.\-cpp\item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Chat.\-cpp\item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Global.\-cpp\item 

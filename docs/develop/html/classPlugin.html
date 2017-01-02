@@ -103,21 +103,9 @@ Public Member Functions</h2></td></tr>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlugin.html#a1409a14522799cb9d1a41fabc40133e5">Init</a> ()=0</td></tr>
 <tr class="memdesc:a1409a14522799cb9d1a41fabc40133e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes plugin (called after loading all plugins). <br/></td></tr>
 <tr class="separator:a1409a14522799cb9d1a41fabc40133e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5ceb206ba4ec62f2d8c21b9117ea411"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlugin.html#ae5ceb206ba4ec62f2d8c21b9117ea411">SetLogging</a> (<a class="el" href="classLogging.html">Logging</a> *loggingPtr)</td></tr>
-<tr class="memdesc:ae5ceb206ba4ec62f2d8c21b9117ea411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the logging instance.  <a href="#ae5ceb206ba4ec62f2d8c21b9117ea411">More...</a><br/></td></tr>
-<tr class="separator:ae5ceb206ba4ec62f2d8c21b9117ea411"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86c23967641a554f053148ec072e393a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlugin.html#a86c23967641a554f053148ec072e393a">SetMethods</a> (<a class="el" href="classMethods.html">Methods</a> *methodsPtr)</td></tr>
-<tr class="memdesc:a86c23967641a554f053148ec072e393a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the server instance.  <a href="#a86c23967641a554f053148ec072e393a">More...</a><br/></td></tr>
-<tr class="separator:a86c23967641a554f053148ec072e393a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7061592fc0fe1d22a7d2ad4989f78ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlugin.html#ae7061592fc0fe1d22a7d2ad4989f78ae">SetPlayers</a> (std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt; *playersPtr)</td></tr>
-<tr class="memdesc:ae7061592fc0fe1d22a7d2ad4989f78ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the playerlist instance.  <a href="#ae7061592fc0fe1d22a7d2ad4989f78ae">More...</a><br/></td></tr>
-<tr class="separator:ae7061592fc0fe1d22a7d2ad4989f78ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72ace5f9e59a5cba484f4ec30e36e390"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlugin.html#a72ace5f9e59a5cba484f4ec30e36e390">SetMaps</a> (std::map&lt; std::string, <a class="el" href="structMap.html">Map</a> &gt; *mapsPtr)</td></tr>
-<tr class="memdesc:a72ace5f9e59a5cba484f4ec30e36e390"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the maplist instance.  <a href="#a72ace5f9e59a5cba484f4ec30e36e390">More...</a><br/></td></tr>
-<tr class="separator:a72ace5f9e59a5cba484f4ec30e36e390"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bc2dde47699a44792ae9de2ac228456"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlugin.html#a2bc2dde47699a44792ae9de2ac228456">SetDatabase</a> (sql::Connection *databasePtr)</td></tr>
-<tr class="memdesc:a2bc2dde47699a44792ae9de2ac228456"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the database instance.  <a href="#a2bc2dde47699a44792ae9de2ac228456">More...</a><br/></td></tr>
-<tr class="separator:a2bc2dde47699a44792ae9de2ac228456"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9de17bc24a2f84c533fc1fef9bff3c86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlugin.html#a9de17bc24a2f84c533fc1fef9bff3c86">SetController</a> (<a class="el" href="structController.html">Controller</a> *controllerPtr)</td></tr>
+<tr class="memdesc:a9de17bc24a2f84c533fc1fef9bff3c86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the controller instance.  <a href="#a9de17bc24a2f84c533fc1fef9bff3c86">More...</a><br/></td></tr>
+<tr class="separator:a9de17bc24a2f84c533fc1fef9bff3c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -224,31 +212,15 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a790b0b546d265519adca0ddac1ff0fec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a790b0b546d265519adca0ddac1ff0fec"></a>
-<a class="el" href="classLogging.html">Logging</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlugin.html#a790b0b546d265519adca0ddac1ff0fec">logging</a></td></tr>
-<tr class="memdesc:a790b0b546d265519adca0ddac1ff0fec"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classLogging.html" title="Utility to print information to the console. ">Logging</a> instance. <br/></td></tr>
-<tr class="separator:a790b0b546d265519adca0ddac1ff0fec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe1621fbf28d04912837a18817170e62"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afe1621fbf28d04912837a18817170e62"></a>
-<a class="el" href="classMethods.html">Methods</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlugin.html#afe1621fbf28d04912837a18817170e62">methods</a></td></tr>
-<tr class="memdesc:afe1621fbf28d04912837a18817170e62"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMethods.html" title="Contains all server methods and returns usable data types. ">Methods</a> instance. <br/></td></tr>
-<tr class="separator:afe1621fbf28d04912837a18817170e62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5821fc98f348a93156dd76dfb84d3eb3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5821fc98f348a93156dd76dfb84d3eb3"></a>
-std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlugin.html#a5821fc98f348a93156dd76dfb84d3eb3">players</a></td></tr>
-<tr class="memdesc:a5821fc98f348a93156dd76dfb84d3eb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Playerlist instance. <br/></td></tr>
-<tr class="separator:a5821fc98f348a93156dd76dfb84d3eb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f1ac74d4f6512342f229faf7dad27b2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7f1ac74d4f6512342f229faf7dad27b2"></a>
-std::map&lt; std::string, <a class="el" href="structMap.html">Map</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlugin.html#a7f1ac74d4f6512342f229faf7dad27b2">maps</a></td></tr>
-<tr class="memdesc:a7f1ac74d4f6512342f229faf7dad27b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maplist instance. <br/></td></tr>
-<tr class="separator:a7f1ac74d4f6512342f229faf7dad27b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b987ba68dcd3d54dfb189ad31e5e3d3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b987ba68dcd3d54dfb189ad31e5e3d3"></a>
-sql::Connection *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlugin.html#a8b987ba68dcd3d54dfb189ad31e5e3d3">database</a></td></tr>
-<tr class="memdesc:a8b987ba68dcd3d54dfb189ad31e5e3d3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classDatabase.html">Database</a> instance. <br/></td></tr>
-<tr class="separator:a8b987ba68dcd3d54dfb189ad31e5e3d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd252bdd0b4050df6f221032d50acbe4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd252bdd0b4050df6f221032d50acbe4"></a>
+<a class="el" href="structController.html">Controller</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlugin.html#acd252bdd0b4050df6f221032d50acbe4">controller</a></td></tr>
+<tr class="memdesc:acd252bdd0b4050df6f221032d50acbe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct with needed instances. <br/></td></tr>
+<tr class="separator:acd252bdd0b4050df6f221032d50acbe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classPlugin.html" title="Plugin interface, inherited by all plugins. ">Plugin</a> interface, inherited by all plugins. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a2bc2dde47699a44792ae9de2ac228456"></a>
+<a class="anchor" id="a9de17bc24a2f84c533fc1fef9bff3c86"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -256,10 +228,10 @@ sql::Connection *&#160;</td><td class="memItemRight" valign="bottom"><a class="e
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Plugin::SetDatabase </td>
+          <td class="memname">void Plugin::SetController </td>
           <td>(</td>
-          <td class="paramtype">sql::Connection *&#160;</td>
-          <td class="paramname"><em>databasePtr</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structController.html">Controller</a> *&#160;</td>
+          <td class="paramname"><em>controllerPtr</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -270,138 +242,10 @@ sql::Connection *&#160;</td><td class="memItemRight" valign="bottom"><a class="e
 </table>
 </div><div class="memdoc">
 
-<p>Sets the database instance. </p>
+<p>Sets the controller instance. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">databasePtr</td><td>Pointer to the database instance. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ae5ceb206ba4ec62f2d8c21b9117ea411"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Plugin::SetLogging </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classLogging.html">Logging</a> *&#160;</td>
-          <td class="paramname"><em>loggingPtr</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets the logging instance. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">loggingPtr</td><td>Pointer to the logging instance. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a72ace5f9e59a5cba484f4ec30e36e390"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Plugin::SetMaps </td>
-          <td>(</td>
-          <td class="paramtype">std::map&lt; std::string, <a class="el" href="structMap.html">Map</a> &gt; *&#160;</td>
-          <td class="paramname"><em>mapsPtr</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets the maplist instance. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mapsPtr</td><td>Pointer to the maplist instance. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a86c23967641a554f053148ec072e393a"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Plugin::SetMethods </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classMethods.html">Methods</a> *&#160;</td>
-          <td class="paramname"><em>methodsPtr</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets the server instance. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">methodsPtr</td><td>Pointer to the <a class="el" href="classMethods.html" title="Contains all server methods and returns usable data types. ">Methods</a> instance. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ae7061592fc0fe1d22a7d2ad4989f78ae"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Plugin::SetPlayers </td>
-          <td>(</td>
-          <td class="paramtype">std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt; *&#160;</td>
-          <td class="paramname"><em>playersPtr</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets the playerlist instance. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">playersPtr</td><td>Pointer to the playerlist instance. </td></tr>
+    <tr><td class="paramname">controllerPtr</td><td>Pointer to the controller instance. </td></tr>
   </table>
   </dd>
 </dl>
@@ -414,7 +258,7 @@ sql::Connection *&#160;</td><td class="memItemRight" valign="bottom"><a class="e
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 1 2017 18:48:45 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jan 2 2017 00:23:25 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

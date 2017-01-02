@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['callbackmanager',['CallBackManager',['../classCallBackManager.html',1,'CallBackManager'],['../classCallBackManager.html#a7c214dd661d44162a6bcddc900af6402',1,'CallBackManager::CallBackManager()']]],
+  ['callbackmanager',['CallBackManager',['../classCallBackManager.html',1,'CallBackManager'],['../classCallBackManager.html#ab6aeed0451bc44a91651940ded7f892e',1,'CallBackManager::CallBackManager()']]],
   ['callbacks',['callbacks',['../classManiaPP.html#af468d4b6eea93fd836950551eb7d3a01',1,'ManiaPP']]],
   ['callbeginmap',['CallBeginMap',['../classEventManager.html#a1bd59c3d511d37863b81d18bd09a7b5a',1,'EventManager']]],
   ['callbeginmatch',['CallBeginMatch',['../classEventManager.html#a22f3afb58eecc76787530b98e29971e2',1,'EventManager']]],
@@ -29,13 +29,16 @@ var searchData=
   ['code',['Code',['../structServerStatus.html#ad17b50be8d2cb9c1a62396885b1244cc',1,'ServerStatus']]],
   ['config',['Config',['../classConfig.html',1,'Config'],['../classConfig.html#ae67e338ea42e242cb5b374b6583c8b1c',1,'Config::Config()'],['../classManiaPP.html#a9a91437fa70afd52c2dce19298888e36',1,'ManiaPP::config()']]],
   ['configfile',['configFile',['../classConfig.html#a08b7b2c4eadf7dda51404f76fd6e0280',1,'Config']]],
-  ['connect',['Connect',['../classTcpClient.html#ac2e9bb63b4e0dc8f4508aa2a85431fe2',1,'TcpClient']]],
+  ['connect',['Connect',['../classDatabase.html#a22555b63ce54c0b4a0e1b1aecb5e1bd4',1,'Database::Connect()'],['../classTcpClient.html#ac2e9bb63b4e0dc8f4508aa2a85431fe2',1,'TcpClient::Connect()']]],
   ['connected',['connected',['../classGbxRemote.html#a56662ea222345c645ae897e056b5c8c8',1,'GbxRemote']]],
   ['connectiondownloadrate',['ConnectionDownloadRate',['../structSystemInfo.html#a3d6368c9202c50774197155ff1a6e8e7',1,'SystemInfo']]],
   ['connectionuploadrate',['ConnectionUploadRate',['../structSystemInfo.html#a57b905820121dd13c62026a58a5f9b34',1,'SystemInfo']]],
   ['connecttodatabase',['ConnectToDatabase',['../classManiaPP.html#a943b0ecd20ca8c9235411d16a743e5ac',1,'ManiaPP']]],
   ['connecttoserver',['ConnectToServer',['../classManiaPP.html#a22561171876e54dbf633c70d9924c06a',1,'ManiaPP']]],
+  ['controller',['Controller',['../structController.html',1,'Controller'],['../classPlugin.html#acd252bdd0b4050df6f221032d50acbe4',1,'Plugin::controller()'],['../classPluginManager.html#a3b08105f2c52f52d21d293fe0045ae1f',1,'PluginManager::controller()']]],
   ['copperprice',['CopperPrice',['../structMap.html#aa9a7d229fb6b41092fb527bbcc913faf',1,'Map']]],
+  ['copydetailedmap',['CopyDetailedMap',['../structMap.html#aceca3c7bca81223e4b54de1cc91f7a31',1,'Map']]],
+  ['current',['Current',['../classMapList.html#a9ff0021f3b08091091e58d3109c41400',1,'MapList']]],
   ['currentcallbacks',['currentCallBacks',['../classGbxRemote.html#a08d047d7e0d4b746fc036c1aa02f0d17',1,'GbxRemote']]],
   ['currenterror',['currentError',['../classGbxRemote.html#ae5d44c3729140c1eba5e850cb5e5e7bd',1,'GbxRemote']]],
   ['currentresponse',['currentResponse',['../classGbxRemote.html#a3a3a0af1a692a801a33baa292b877dc2',1,'GbxRemote']]]

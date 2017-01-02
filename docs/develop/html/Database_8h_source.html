@@ -99,23 +99,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;cppconn/resultset.h&gt;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;cppconn/statement.h&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classDatabase.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="classDatabase.html">Database</a></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classDatabase.html">Database</a>(std::string serveraddress, <span class="keywordtype">int</span> serverport = 3306);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    sql::Connection* Connect(std::string username, std::string password, std::string database);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    std::string address;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">int</span> port;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif // DATABASE_H_</span></div>
-<div class="ttc" id="classDatabase_html"><div class="ttname"><a href="classDatabase.html">Database</a></div><div class="ttdef"><b>Definition:</b> Database.h:13</div></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//* Database</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classDatabase.html">   17</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classDatabase.html">Database</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classDatabase.html#acebb76b52b5efea89c7417d65bb5980e">Database</a>(std::string serverAddress, <span class="keywordtype">int</span> serverPort = 3306);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    sql::Connection* <a class="code" href="classDatabase.html#a22555b63ce54c0b4a0e1b1aecb5e1bd4">Connect</a>(std::string username, std::string password, std::string database);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classDatabase.html#aaf36450a11d38f6fde645bb8a0d07381">   38</a></span>&#160;    std::string <a class="code" href="classDatabase.html#aaf36450a11d38f6fde645bb8a0d07381">address</a>; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classDatabase.html#a6557601838cc506cd59638f4c368f5c2">   39</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classDatabase.html#a6557601838cc506cd59638f4c368f5c2">port</a>;            </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif // DATABASE_H_</span></div>
+<div class="ttc" id="classDatabase_html"><div class="ttname"><a href="classDatabase.html">Database</a></div><div class="ttdoc">Handles the connection to the database. </div><div class="ttdef"><b>Definition:</b> Database.h:17</div></div>
+<div class="ttc" id="classDatabase_html_a6557601838cc506cd59638f4c368f5c2"><div class="ttname"><a href="classDatabase.html#a6557601838cc506cd59638f4c368f5c2">Database::port</a></div><div class="ttdeci">int port</div><div class="ttdoc">Port of the database server. </div><div class="ttdef"><b>Definition:</b> Database.h:39</div></div>
+<div class="ttc" id="classDatabase_html_a22555b63ce54c0b4a0e1b1aecb5e1bd4"><div class="ttname"><a href="classDatabase.html#a22555b63ce54c0b4a0e1b1aecb5e1bd4">Database::Connect</a></div><div class="ttdeci">sql::Connection * Connect(std::string username, std::string password, std::string database)</div><div class="ttdoc">Connects to the database. </div><div class="ttdef"><b>Definition:</b> Database.cpp:9</div></div>
+<div class="ttc" id="classDatabase_html_aaf36450a11d38f6fde645bb8a0d07381"><div class="ttname"><a href="classDatabase.html#aaf36450a11d38f6fde645bb8a0d07381">Database::address</a></div><div class="ttdeci">std::string address</div><div class="ttdoc">IP Address of the database server. </div><div class="ttdef"><b>Definition:</b> Database.h:38</div></div>
+<div class="ttc" id="classDatabase_html_acebb76b52b5efea89c7417d65bb5980e"><div class="ttname"><a href="classDatabase.html#acebb76b52b5efea89c7417d65bb5980e">Database::Database</a></div><div class="ttdeci">Database(std::string serverAddress, int serverPort=3306)</div><div class="ttdoc">Sets a few settings. </div><div class="ttdef"><b>Definition:</b> Database.cpp:3</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 1 2017 18:48:44 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jan 2 2017 00:23:24 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

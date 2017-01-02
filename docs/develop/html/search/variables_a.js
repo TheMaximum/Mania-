@@ -1,13 +1,13 @@
 var searchData=
 [
   ['maplistmodified',['MapListModified',['../classPlugin.html#aed57b8e5c978e9de385e165a1668e63e',1,'Plugin']]],
-  ['maps',['maps',['../classCallBackManager.html#afad9b6092db2e3f98711d8e6ba6ff612',1,'CallBackManager::maps()'],['../classManiaPP.html#a903ccf13c65b15c99595cb571214799d',1,'ManiaPP::maps()'],['../classPlugin.html#a7f1ac74d4f6512342f229faf7dad27b2',1,'Plugin::maps()'],['../classPluginManager.html#adf6f47d0657a7eb9041ed8f7e530f0af',1,'PluginManager::maps()']]],
+  ['maps',['maps',['../classCallBackManager.html#a4b3c557fca85e1ba8ab292fc9df3da7c',1,'CallBackManager::maps()'],['../classManiaPP.html#a23c7e0ba8cf5fd45129b6a7a0fbe359b',1,'ManiaPP::maps()'],['../structController.html#ab3ffbfa641bfee42c9440777f194bbb2',1,'Controller::Maps()']]],
   ['mapstyle',['MapStyle',['../structMap.html#a5fe4c64985a8d769e21fe32bab7a879c',1,'Map']]],
   ['maptype',['MapType',['../structMap.html#a23d051ee3c7cfa606082e700099563b0',1,'Map']]],
   ['message',['message',['../structGbxError.html#af52353692b5c160deac99c4285f01a5a',1,'GbxError']]],
   ['method',['method',['../classGbxMessage.html#a10b6118916999db98f28e3f495eef6b4',1,'GbxMessage']]],
   ['methodname',['methodName',['../classGbxCallBack.html#a8c793be5cc61e7fecef301ea6932f840',1,'GbxCallBack']]],
-  ['methods',['methods',['../classManiaPP.html#a48cb1ddf328d18361417986fe8ab069c',1,'ManiaPP::methods()'],['../classPlugin.html#afe1621fbf28d04912837a18817170e62',1,'Plugin::methods()'],['../classPluginManager.html#ab66d35133c5a85b1e8b691452257bd5f',1,'PluginManager::methods()']]],
+  ['methods',['methods',['../classManiaPP.html#a48cb1ddf328d18361417986fe8ab069c',1,'ManiaPP']]],
   ['methodsbeginmap',['methodsBeginMap',['../classEventManager.html#a7aa0f06399cd3927d85603b58cfef173',1,'EventManager']]],
   ['methodsbeginmatch',['methodsBeginMatch',['../classEventManager.html#abb7667e9222f00e33d792c733c82f89e',1,'EventManager']]],
   ['methodsbillupdated',['methodsBillUpdated',['../classEventManager.html#a0497e6be361d83e2c4dc8d0b5e20360a',1,'EventManager']]],

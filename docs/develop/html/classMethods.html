@@ -154,6 +154,12 @@ std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bott
 <tr class="memitem:a7229aacea5b60d1d502c5df39f10a50c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a7229aacea5b60d1d502c5df39f10a50c">SendNoticeToLogin</a> (std::string login, std::string text, std::string avatarLogin=&quot;&quot;, int variant=0)</td></tr>
 <tr class="memdesc:a7229aacea5b60d1d502c5df39f10a50c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send notice to player login.  <a href="#a7229aacea5b60d1d502c5df39f10a50c">More...</a><br/></td></tr>
 <tr class="separator:a7229aacea5b60d1d502c5df39f10a50c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c8c8afabea84f839091c2a5a79b477d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMap.html">Map</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a4c8c8afabea84f839091c2a5a79b477d">GetCurrentMapInfo</a> ()</td></tr>
+<tr class="memdesc:a4c8c8afabea84f839091c2a5a79b477d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a map object for the map currently being played on the server.  <a href="#a4c8c8afabea84f839091c2a5a79b477d">More...</a><br/></td></tr>
+<tr class="separator:a4c8c8afabea84f839091c2a5a79b477d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a64508bc62765212bcf0d032b4f47ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMap.html">Map</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a3a64508bc62765212bcf0d032b4f47ac">GetMapInfo</a> (std::string fileName)</td></tr>
+<tr class="memdesc:a3a64508bc62765212bcf0d032b4f47ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a map object for the map with the specified file name.  <a href="#a3a64508bc62765212bcf0d032b4f47ac">More...</a><br/></td></tr>
+<tr class="separator:a3a64508bc62765212bcf0d032b4f47ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -455,6 +461,48 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a4c8c8afabea84f839091c2a5a79b477d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structMap.html">Map</a> Methods::GetCurrentMapInfo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Provides a map object for the map currently being played on the server. </p>
+<p>This is mainly meant for the start-up of the controller. The current map can always be request via the Current property of <a class="el" href="classMapList.html" title="Contains the maplist and a pointer to the current map. ">MapList</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3a64508bc62765212bcf0d032b4f47ac"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structMap.html">Map</a> Methods::GetMapInfo </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Provides a map object for the map with the specified file name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td>File name of the map. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="af39e05685756a82b5991a2fc25d5e941"></a>
 <div class="memitem">
 <div class="memproto">
@@ -644,6 +692,7 @@ Private Attributes</h2></td></tr>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/<a class="el" href="Methods_8h_source.html">Methods.h</a></li>
+<li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Maps/MapInfo.cpp</li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Methods.cpp</li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Server/Chat.cpp</li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Server/Global.cpp</li>
@@ -652,7 +701,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 1 2017 18:48:45 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jan 2 2017 00:23:25 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
