@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['gbxmessage',['GbxMessage',['../classGbxMessage.html#aa06aa73544aa343e42a5f19434a05928',1,'GbxMessage::GbxMessage(std::string methodName, GbxParameters *parameters=NULL)'],['../classGbxMessage.html#a547920253f296bd68432cfb74684e6c7',1,'GbxMessage::GbxMessage(std::string methodName, GbxParameters parameters)']]],
+  ['gbxmessage',['GbxMessage',['../classGbxMessage.html#a843b7642b48be23073a4b981f80f95b7',1,'GbxMessage']]],
   ['gbxparameter',['GbxParameter',['../classGbxParameter.html#a6cfd5c21c176ca6d9d2a1a3d9ad9953c',1,'GbxParameter']]],
   ['gbxserverresponse',['GbxServerResponse',['../classGbxServerResponse.html#a2198b6f6ca6b7da1ffd7bfa9a516d8b2',1,'GbxServerResponse']]],
   ['getapiversion',['GetApiVersion',['../classGbxRemote.html#a6351f71fe649bff2aabfbd9b7c89e3f5',1,'GbxRemote']]],

@@ -3,7 +3,7 @@ var searchData=
   ['gbxcallback',['GbxCallBack',['../classGbxCallBack.html',1,'']]],
   ['gbxerror',['GbxError',['../structGbxError.html',1,'']]],
   ['gbxfirstresponse',['GbxFirstResponse',['../structGbxFirstResponse.html',1,'']]],
-  ['gbxmessage',['GbxMessage',['../classGbxMessage.html',1,'GbxMessage'],['../classGbxMessage.html#aa06aa73544aa343e42a5f19434a05928',1,'GbxMessage::GbxMessage(std::string methodName, GbxParameters *parameters=NULL)'],['../classGbxMessage.html#a547920253f296bd68432cfb74684e6c7',1,'GbxMessage::GbxMessage(std::string methodName, GbxParameters parameters)']]],
+  ['gbxmessage',['GbxMessage',['../classGbxMessage.html',1,'GbxMessage'],['../classGbxMessage.html#a843b7642b48be23073a4b981f80f95b7',1,'GbxMessage::GbxMessage()']]],
   ['gbxparam',['GbxParam',['../structGbxParam.html',1,'']]],
   ['gbxparameter',['GbxParameter',['../classGbxParameter.html',1,'GbxParameter'],['../classGbxParameter.html#a6cfd5c21c176ca6d9d2a1a3d9ad9953c',1,'GbxParameter::GbxParameter()']]],
   ['gbxparameters',['GbxParameters',['../classGbxParameters.html',1,'']]],
