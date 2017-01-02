@@ -8,9 +8,7 @@ bool Methods::Authenticate(std::string username, std::string password)
     params.Put(&username);
     params.Put(&password);
 
-    GbxMessage message = GbxMessage("Authenticate", params);
-
-    if(server->Query(message))
+    if(server->Query(GbxMessage("Authenticate", params)))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::istringstream(responseParams.at(0).GetString()) >> response;
@@ -27,9 +25,7 @@ bool Methods::ChangeAuthPassword(std::string username, std::string password)
     params.Put(&username);
     params.Put(&password);
 
-    GbxMessage message = GbxMessage("ChangeAuthPassword", params);
-
-    if(server->Query(message))
+    if(server->Query(GbxMessage("ChangeAuthPassword", params)))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::istringstream(responseParams.at(0).GetString()) >> response;
@@ -45,9 +41,7 @@ bool Methods::EnableCallbacks(bool enable)
     GbxParameters params = GbxParameters();
     params.Put(&enable);
 
-    GbxMessage message = GbxMessage("EnableCallbacks", params);
-
-    if(server->Query(message))
+    if(server->Query(GbxMessage("EnableCallbacks", params)))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::istringstream(responseParams.at(0).GetString()) >> response;
@@ -63,9 +57,7 @@ bool Methods::SetApiVersion(std::string version)
     GbxParameters params = GbxParameters();
     params.Put(&version);
 
-    GbxMessage message = GbxMessage("SetApiVersion", params);
-
-    if(server->Query(message))
+    if(server->Query(GbxMessage("SetApiVersion", params)))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::istringstream(responseParams.at(0).GetString()) >> response;
@@ -77,8 +69,8 @@ bool Methods::SetApiVersion(std::string version)
 std::vector<std::string> Methods::ListMethods()
 {
     std::vector<std::string> methods = std::vector<std::string>();
-    GbxMessage message = GbxMessage("system.listMethods");
-    if(server->Query(message))
+
+    if(server->Query(GbxMessage("system.listMethods")))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::vector<GbxResponseParameter> methodsArray = responseParams.at(0).GetArray();
@@ -96,8 +88,7 @@ ServerVersion Methods::GetVersion()
 {
     ServerVersion serverVersion = ServerVersion();
 
-    GbxMessage message = GbxMessage("GetVersion");
-    if(server->Query(message))
+    if(server->Query(GbxMessage("GetVersion")))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::map<std::string, GbxResponseParameter> versionStruct = responseParams.at(0).GetStruct();
@@ -116,8 +107,7 @@ SystemInfo Methods::GetSystemInfo()
 {
     SystemInfo systemInfo = SystemInfo();
 
-    GbxMessage message = GbxMessage("GetSystemInfo");
-    if(server->Query(message))
+    if(server->Query(GbxMessage("GetSystemInfo")))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::map<std::string, GbxResponseParameter> infoStruct = responseParams.at(0).GetStruct();
@@ -141,8 +131,7 @@ ServerStatus Methods::GetStatus()
 {
     ServerStatus serverStatus = ServerStatus();
 
-    GbxMessage message = GbxMessage("GetStatus");
-    if(server->Query(message))
+    if(server->Query(GbxMessage("GetStatus")))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::map<std::string, GbxResponseParameter> statusStruct = responseParams.at(0).GetStruct();
@@ -158,9 +147,7 @@ bool Methods::QuitGame()
 {
     bool response = false;
 
-    GbxMessage message = GbxMessage("QuitGame");
-
-    if(server->Query(message))
+    if(server->Query(GbxMessage("QuitGame")))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::istringstream(responseParams.at(0).GetString()) >> response;

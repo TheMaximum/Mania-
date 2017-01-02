@@ -7,9 +7,10 @@ ManiaPP::ManiaPP()
     config = new Config("config.yaml");
     logging = new Logging();
     server = new GbxRemote();
-    methods = new Methods(server);
     players = new std::map<std::string, Player>();
     maps = new MapList();
+
+    methods = new Methods(server, players);
 }
 
 ManiaPP::~ManiaPP()

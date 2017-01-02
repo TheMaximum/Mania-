@@ -4,8 +4,7 @@ Map Methods::GetCurrentMapInfo()
 {
     Map currentMap = Map();
 
-    GbxMessage message = GbxMessage("GetCurrentMapInfo");
-    if(server->Query(message))
+    if(server->Query(GbxMessage("GetCurrentMapInfo")))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::map<std::string, GbxResponseParameter> mapStruct = responseParams.at(0).GetStruct();
@@ -20,8 +19,7 @@ Map Methods::GetNextMapInfo()
 {
     Map nextMap = Map();
 
-    GbxMessage message = GbxMessage("GetNextMapInfo");
-    if(server->Query(message))
+    if(server->Query(GbxMessage("GetNextMapInfo")))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::map<std::string, GbxResponseParameter> mapStruct = responseParams.at(0).GetStruct();
@@ -39,8 +37,7 @@ Map Methods::GetMapInfo(std::string fileName)
     GbxParameters params = GbxParameters();
     params.Put(&fileName);
 
-    GbxMessage message = GbxMessage("GetMapInfo", params);
-    if(server->Query(message))
+    if(server->Query(GbxMessage("GetMapInfo", params)))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::map<std::string, GbxResponseParameter> mapStruct = responseParams.at(0).GetStruct();
@@ -58,9 +55,7 @@ bool Methods::CheckMapForCurrentServerParams(std::string fileName)
     GbxParameters params = GbxParameters();
     params.Put(&fileName);
 
-    GbxMessage message = GbxMessage("CheckMapForCurrentServerParams", params);
-
-    if(server->Query(message))
+    if(server->Query(GbxMessage("CheckMapForCurrentServerParams", params)))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::istringstream(responseParams.at(0).GetString()) >> response;
@@ -76,8 +71,8 @@ std::vector<Map> Methods::GetMapList(int limit, int index)
     GbxParameters params = GbxParameters();
     params.Put(&limit);
     params.Put(&index);
-    GbxMessage getMapList = GbxMessage("GetMapList", params);
-    if(server->Query(getMapList))
+    
+    if(server->Query(GbxMessage("GetMapList", params)))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::vector<GbxResponseParameter> mapList = responseParams.at(0).GetArray();

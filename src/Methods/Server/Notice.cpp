@@ -9,9 +9,7 @@ bool Methods::SendNotice(std::string text, std::string avatarLogin, int variant)
     params.Put(&avatarLogin);
     params.Put(&variant);
 
-    GbxMessage message = GbxMessage("SendNotice", params);
-
-    if(server->Query(message))
+    if(server->Query(GbxMessage("SendNotice", params)))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::istringstream(responseParams.at(0).GetString()) >> response;
@@ -30,9 +28,7 @@ bool Methods::SendNoticeToLogin(std::string login, std::string text, std::string
     params.Put(&avatarLogin);
     params.Put(&variant);
 
-    GbxMessage message = GbxMessage("SendNoticeToLogin", params);
-
-    if(server->Query(message))
+    if(server->Query(GbxMessage("SendNoticeToLogin", params)))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::istringstream(responseParams.at(0).GetString()) >> response;

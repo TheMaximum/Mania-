@@ -9,9 +9,7 @@ bool Methods::ChatSendServerMessage(std::string text)
     GbxParameters params = GbxParameters();
     params.Put(&sendText);
 
-    GbxMessage message = GbxMessage("ChatSendServerMessage", params);
-
-    if(server->Query(message))
+    if(server->Query(GbxMessage("ChatSendServerMessage", params)))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::istringstream(responseParams.at(0).GetString()) >> response;
@@ -30,9 +28,7 @@ bool Methods::ChatSendServerMessageToLogin(std::string text, std::string login)
     params.Put(&sendText);
     params.Put(&login);
 
-    GbxMessage message = GbxMessage("ChatSendServerMessageToLogin", params);
-
-    if(server->Query(message))
+    if(server->Query(GbxMessage("ChatSendServerMessageToLogin", params)))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::istringstream(responseParams.at(0).GetString()) >> response;
@@ -49,9 +45,8 @@ bool Methods::ChatSendServerMessageToPlayer(std::string text, Player player)
 std::vector<std::string> Methods::GetChatLines()
 {
     std::vector<std::string> chatLines = std::vector<std::string>();
-    GbxMessage message = GbxMessage("GetChatLines");
 
-    if(server->Query(message))
+    if(server->Query(GbxMessage("GetChatLines")))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters().at(0).GetArray();
         for(int paramId = 0; paramId < responseParams.size(); paramId++)
@@ -71,9 +66,7 @@ bool Methods::ChatEnableManualRouting(bool enable, bool autoForward)
     params.Put(&enable);
     params.Put(&autoForward);
 
-    GbxMessage message = GbxMessage("ChatEnableManualRouting", params);
-
-    if(server->Query(message))
+    if(server->Query(GbxMessage("ChatEnableManualRouting", params)))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::istringstream(responseParams.at(0).GetString()) >> response;
@@ -92,9 +85,7 @@ bool Methods::ChatForwardToLogin(std::string text, std::string sender, std::stri
     if(!destination.empty())
         params.Put(&destination);
 
-    GbxMessage message = GbxMessage("ChatForwardToLogin", params);
-
-    if(server->Query(message))
+    if(server->Query(GbxMessage("ChatForwardToLogin", params)))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::istringstream(responseParams.at(0).GetString()) >> response;

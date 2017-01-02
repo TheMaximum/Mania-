@@ -18,7 +18,7 @@ public:
      *
      * \param serverPtr Pointer to server connection.
      */
-    Methods(GbxRemote* serverPtr);
+    Methods(GbxRemote* serverPtr, std::map<std::string, Player>* playerListPtr);
 
     /*!
      * \brief Authenticates with the server. Returns whether authentication was successful.
@@ -160,15 +160,43 @@ public:
     // bool SetCallVoteRatiosEx(bool replaceAll, array[struct{Command, Param, Ratio}]);
     // array[struct{Command, Param, Ratio}] GetCallVoteRatiosEx();
 
-    /*bool SendDisplayManialinkPage(std::string page, int timeout, bool hideOnClick);
+    /*!
+     * \brief Displays ManiaLink page to all players.
+     *
+     * \param page        XML page to be displayed.
+     * \param timeout     Timeout to autohide (0 = permanent).
+     * \param hideOnClick Hide the page if a page option is clicked.
+     */
+    bool SendDisplayManialinkPage(std::string page, int timeout, bool hideOnClick);
+
+    /*!
+     * \brief Displays ManiaLink page to a player.
+     *
+     * \param login       Player login.
+     * \param page        XML page to be displayed.
+     * \param timeout     Timeout to autohide (0 = permanent).
+     * \param hideOnClick Hide the page if a page option is clicked.
+     */
     bool SendDisplayManialinkPageToLogin(std::string login, std::string page, int timeout, bool hideOnClick);
 
+    /*!
+     * \brief Hides all ManiaLink pages for all players.
+     */
     bool SendHideManialinkPage();
+
+    /*!
+     * \brief Hides all ManiaLink pages for a player.
+     *
+     * \param login       Player login.
+     */
     bool SendHideManialinkPageToLogin(std::string login);
 
-    // array[struct{Login,PlayerId,Result}] GetManialinkPageAnswers();
+    /*!
+     * \brief Returns the latest results from the current ManiaLink page.
+     */
+    std::vector<ManiaLinkPageAnswer> GetManialinkPageAnswers();
 
-    bool SendOpenLinkToLogin(std::string login, std::string link, int linkType);
+    /*bool SendOpenLinkToLogin(std::string login, std::string link, int linkType);
 
     bool Kick(std::string login, std::string message = "");
     bool Ban(std::string login, std::string message = "");
@@ -267,27 +295,84 @@ public:
     /*!
      * \brief Provides a map object for the map with the specified file name.
      *
-     * \param fileName File name of the map.
+     * \param fileName  File name of the map.
      */
     Map GetMapInfo(std::string fileName);
 
     /*!
      * \brief Checks if the map matches the current server settings.
      *
-     * \param fileName File name of the map.
+     * \param fileName  File name of the map.
      */
     bool CheckMapForCurrentServerParams(std::string fileName);
 
     /*!
      * \brief Gets the maplist from the server.
      *
-     * \param limit    Maximum amount of maps to be retrieved.
-     * \param index    Map index on which to start the retrieval.
+     * \param limit     Maximum amount of maps to be retrieved.
+     * \param index     Map index on which to start the retrieval.
      */
     std::vector<Map> GetMapList(int limit, int index);
 
+    /*!
+     * \brief Add the map with the specified filename at the end of the current selection.
+     *
+     * \param fileName  Filename of the map.
+     */
+    bool AddMap(std::string fileName);
+
+    /*!
+     * \brief Add the list of maps with the specified filenames at the end of the current selection.
+     *
+     * \param fileNames List of map filenames.
+     */
+    int AddMapList(std::vector<std::string> fileNames);
+
+    /*!
+     * \brief Remove the map with the specified filename from the current selection.
+     *
+     * \param fileName  Filename of the map.
+     */
+    bool RemoveMap(std::string fileName);
+
+    /*!
+     * \brief Remove the list of maps with the specified filenames from the current selection.
+     *
+     * \param fileNames List of map filenames.
+     */
+    int RemoveMapList(std::vector<std::string> fileNames);
+
+    /*!
+     * \brief Insert the map with the specified filename after the current map.
+     *
+     * \param fileName  Filename of the map.
+     */
+    bool InsertMap(std::string fileName);
+
+    /*!
+     * \brief Insert the list of maps with the specified filenames after the current map.
+     *
+     * \param fileNames List of map filenames.
+     */
+    int InsertMapList(std::vector<std::string> fileNames);
+
+    /*!
+     * \brief Set as next map the one with the specified filename, if it is present in the selection.
+     *
+     * \param fileName  Filename of the map.
+     */
+    bool ChooseNextMap(std::string fileName);
+
+    /*!
+     * \brief Set as next maps the list of maps with the specified filenames, if they are present in the selection.
+     *
+     * \param fileNames List of map filenames.
+     */
+    int ChooseNextMapList(std::vector<std::string> fileNames);
+
 private:
-    GbxRemote* server; /**< \brief Pointer to GbxRemote. */
+    GbxRemote* server;                         /**< \brief Pointer to GbxRemote. */
+    std::map<std::string, Player>* playerList; /**< \brief Pointer to the playerlist. */
 };
 
 #endif // METHODS_H_

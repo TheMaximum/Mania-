@@ -42,4 +42,14 @@ struct ServerStatus
     std::string Name; /**< \brief Current status name. */
 };
 
+//* ManiaLinkPageAnswer
+/**
+ * \brief Struct with a ManiaLink page answer.
+ */
+struct ManiaLinkPageAnswer
+{
+    Player AnsweringPlayer; /**< \brief Player answering. */
+    int Result;             /**< \brief Answering result. */
+};
+
 #endif // METHODS_STRUCTS_H_
