@@ -72,7 +72,7 @@ void GbxRemote::Terminate()
     connected = false;
 }
 
-bool GbxRemote::Query(GbxMessage* query)
+bool GbxRemote::Query(GbxMessage query)
 {
     delete currentError;
     delete currentResponse;
@@ -83,7 +83,7 @@ bool GbxRemote::Query(GbxMessage* query)
     currentError = new GbxError();
     currentResponse = new GbxResponse();
 
-    if(!server.Send(query->GetXml()))
+    if(!server.Send(query.GetXml()))
     {
         currentError->number = -32300;
         currentError->message = "transport error - connection interrupted!";
@@ -128,6 +128,11 @@ bool GbxRemote::Query(GbxMessage* query)
             return false;
         }
     }
+}
+
+bool GbxRemote::Query(GbxMessage* query)
+{
+    return Query(*query);
 }
 
 bool GbxRemote::ReadCallBacks()

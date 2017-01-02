@@ -23,6 +23,14 @@ public:
     GbxMessage(std::string methodName, GbxParameters* parameters = NULL);
 
     /*!
+     * \brief Builds XML message.
+     *
+     * \param methodName Server method name.
+     * \param parameters Params which belong to the method.
+     */
+    GbxMessage(std::string methodName, GbxParameters parameters);
+
+    /*!
      * \brief Returns the method name.
      */
     std::string GetMethod();

@@ -63,12 +63,12 @@ void GbxParameter::dereferenceData(void* pointer)
         data += "<data>";
         GbxParameters** paramPtr = static_cast<GbxParameters**>(pointer);
         GbxParameters* parameters = *paramPtr;
-        std::vector<GbxParam>* gbxParams = parameters->GetParameters();
-        for(int paramId = 0; paramId < gbxParams->size(); paramId++)
+        std::vector<GbxParam> gbxParams = parameters->GetParameters();
+        for(int paramId = 0; paramId < gbxParams.size(); paramId++)
         {
             data += "<value>";
-            GbxParameter* param = new GbxParameter(gbxParams->at(paramId));
-            data += param->GetXml();
+            GbxParameter param = GbxParameter(gbxParams.at(paramId));
+            data += param.GetXml();
             data += "</value>";
         }
         data += "</data>";

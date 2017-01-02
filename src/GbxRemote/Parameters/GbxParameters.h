@@ -27,8 +27,8 @@ public:
      */
     ~GbxParameters()
     {
-        delete parameters;
-        parameters = NULL;
+        //delete parameters;
+        //parameters = NULL;
     }
 
     /*!
@@ -40,19 +40,19 @@ public:
     void Put(T* pointer)
     {
         GbxParam paramStruct = { pointer, &typeid(T) };
-        parameters->push_back(paramStruct);
+        parameters.push_back(paramStruct);
     }
 
     /*!
      * \brief Return the current list of parameters.
      */
-    std::vector<GbxParam>* GetParameters()
+    std::vector<GbxParam> GetParameters()
     {
         return parameters;
     }
 
 private:
-    std::vector<GbxParam>* parameters = new std::vector<GbxParam>(); /**< \brief List of parameters. */
+    std::vector<GbxParam> parameters = std::vector<GbxParam>(); /**< \brief List of parameters. */
 };
 
 #endif // GBXPARAMETERS_H_

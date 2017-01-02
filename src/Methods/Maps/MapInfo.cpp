@@ -4,11 +4,9 @@ Map Methods::GetCurrentMapInfo()
 {
     Map currentMap = Map();
 
-    GbxMessage* message = new GbxMessage("GetCurrentMapInfo");
+    GbxMessage message = GbxMessage("GetCurrentMapInfo");
     if(server->Query(message))
     {
-        delete message; message = NULL;
-
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::map<std::string, GbxResponseParameter> mapStruct = responseParams.at(0).GetStruct();
 
@@ -22,11 +20,9 @@ Map Methods::GetNextMapInfo()
 {
     Map nextMap = Map();
 
-    GbxMessage* message = new GbxMessage("GetNextMapInfo");
+    GbxMessage message = GbxMessage("GetNextMapInfo");
     if(server->Query(message))
     {
-        delete message; message = NULL;
-
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::map<std::string, GbxResponseParameter> mapStruct = responseParams.at(0).GetStruct();
 
@@ -40,15 +36,12 @@ Map Methods::GetMapInfo(std::string fileName)
 {
     Map mapInfo = Map();
 
-    GbxParameters* params = new GbxParameters();
-    params->Put(&fileName);
+    GbxParameters params = GbxParameters();
+    params.Put(&fileName);
 
-    GbxMessage* message = new GbxMessage("GetMapInfo", params);
+    GbxMessage message = GbxMessage("GetMapInfo", params);
     if(server->Query(message))
     {
-        delete message; message = NULL;
-        delete params; params = NULL;
-
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::map<std::string, GbxResponseParameter> mapStruct = responseParams.at(0).GetStruct();
 
@@ -62,10 +55,10 @@ bool Methods::CheckMapForCurrentServerParams(std::string fileName)
 {
     bool response = false;
 
-    GbxParameters* params = new GbxParameters();
-    params->Put(&fileName);
+    GbxParameters params = GbxParameters();
+    params.Put(&fileName);
 
-    GbxMessage* message = new GbxMessage("CheckMapForCurrentServerParams", params);
+    GbxMessage message = GbxMessage("CheckMapForCurrentServerParams", params);
 
     if(server->Query(message))
     {
@@ -73,8 +66,6 @@ bool Methods::CheckMapForCurrentServerParams(std::string fileName)
         std::istringstream(responseParams.at(0).GetString()) >> response;
     }
 
-    delete params; params = NULL;
-    delete message; message = NULL;
     return response;
 }
 
@@ -82,15 +73,12 @@ std::vector<Map> Methods::GetMapList(int limit, int index)
 {
     std::vector<Map> list = std::vector<Map>();
 
-    GbxParameters* params = new GbxParameters();
-    params->Put(&limit);
-    params->Put(&index);
-    GbxMessage* getMapList = new GbxMessage("GetMapList", params);
+    GbxParameters params = GbxParameters();
+    params.Put(&limit);
+    params.Put(&index);
+    GbxMessage getMapList = GbxMessage("GetMapList", params);
     if(server->Query(getMapList))
     {
-        delete getMapList; getMapList = NULL;
-        delete params; params = NULL;
-
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::vector<GbxResponseParameter> mapList = responseParams.at(0).GetArray();
 
