@@ -11,7 +11,7 @@ HelloGoodbyePlugin::HelloGoodbyePlugin()
 
 void HelloGoodbyePlugin::Init()
 {
-    std::cout << "[  INFO   ] Current amount of maps: " << controller->Maps->List.size() << std::endl;
+    
 }
 
 void HelloGoodbyePlugin::OnPlayerConnect(Player player)

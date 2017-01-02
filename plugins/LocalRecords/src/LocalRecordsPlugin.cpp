@@ -11,25 +11,13 @@ LocalRecordsPlugin::LocalRecordsPlugin()
 void LocalRecordsPlugin::Init()
 {
     retrieveRecords(*controller->Maps->Current);
-
-    std::cout << "Records for " << controller->Maps->Current->Name << ":" << std::endl;
-    for(int recordId = 0; recordId < localRecords.size(); recordId++)
-    {
-        LocalRecord record = localRecords.at(recordId);
-        std::cout << "#" << recordId << ": " << record.FormattedTime << " by " << record.Login << std::endl;
-    }
+    std::cout << "[  INFO   ] " << localRecords.size() << " records found for " << controller->Maps->Current->Name << "." << std::endl;
 }
 
 void LocalRecordsPlugin::OnBeginMap(Map map)
 {
     retrieveRecords(map);
-
-    std::cout << "Records for " << map.Name << ":" << std::endl;
-    for(int recordId = 0; recordId < localRecords.size(); recordId++)
-    {
-        LocalRecord record = localRecords.at(recordId);
-        std::cout << "#" << recordId << ": " << record.FormattedTime << " by " << record.Login << std::endl;
-    }
+    std::cout << "[  INFO   ] " << localRecords.size() << " records found for " << map.Name << "." << std::endl;
 }
 
 void LocalRecordsPlugin::retrieveRecords(Map map)
