@@ -24,6 +24,7 @@ var searchData=
   ['chatsendservermessage',['ChatSendServerMessage',['../classMethods.html#a5e639d7a4fa2e2b403dfa5adfbc47ac3',1,'Methods']]],
   ['chatsendservermessagetologin',['ChatSendServerMessageToLogin',['../classMethods.html#a200065ea89c2694f9d2af3aae686c483',1,'Methods']]],
   ['chatsendservermessagetoplayer',['ChatSendServerMessageToPlayer',['../classMethods.html#a616887260c024c6b7cabcdca9d43fdec',1,'Methods']]],
+  ['checkmapforcurrentserverparams',['CheckMapForCurrentServerParams',['../classMethods.html#a93ac30a58c96f2635fef8f05b27a7864',1,'Methods']]],
   ['close',['Close',['../classTcpClient.html#ae7a96d69db612ef4827ee23c31332a4e',1,'TcpClient']]],
   ['config',['Config',['../classConfig.html#ae67e338ea42e242cb5b374b6583c8b1c',1,'Config']]],
   ['connect',['Connect',['../classDatabase.html#a22555b63ce54c0b4a0e1b1aecb5e1bd4',1,'Database::Connect()'],['../classTcpClient.html#ac2e9bb63b4e0dc8f4508aa2a85431fe2',1,'TcpClient::Connect()']]],
