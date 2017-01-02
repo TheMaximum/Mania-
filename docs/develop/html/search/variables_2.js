@@ -1,7 +1,11 @@
 var searchData=
 [
   ['callbacks',['callbacks',['../classManiaPP.html#af468d4b6eea93fd836950551eb7d3a01',1,'ManiaPP']]],
+  ['callerlogin',['CallerLogin',['../structCurrentCallVote.html#a113ae06f4c42a20fa09107d480579379',1,'CurrentCallVote']]],
+  ['cmdname',['CmdName',['../structCurrentCallVote.html#aaac826ac8fa0865cb90fd60aa26bb6a9',1,'CurrentCallVote']]],
+  ['cmdparam',['CmdParam',['../structCurrentCallVote.html#a69b91397ee1a0d237db24985c2d2b7ad',1,'CurrentCallVote']]],
   ['code',['Code',['../structServerStatus.html#ad17b50be8d2cb9c1a62396885b1244cc',1,'ServerStatus']]],
+  ['command',['Command',['../structCallVoteRatio.html#a14e3195672c370c5c85ad06287c1d509',1,'CallVoteRatio::Command()'],['../structExtendedCallVoteRatio.html#a8b25c752447c968f2522c2748077b096',1,'ExtendedCallVoteRatio::Command()']]],
   ['config',['config',['../classManiaPP.html#a9a91437fa70afd52c2dce19298888e36',1,'ManiaPP']]],
   ['configfile',['configFile',['../classConfig.html#a08b7b2c4eadf7dda51404f76fd6e0280',1,'Config']]],
   ['connected',['connected',['../classGbxRemote.html#a56662ea222345c645ae897e056b5c8c8',1,'GbxRemote']]],
@@ -13,5 +17,6 @@ var searchData=
   ['current',['Current',['../classMapList.html#a9ff0021f3b08091091e58d3109c41400',1,'MapList']]],
   ['currentcallbacks',['currentCallBacks',['../classGbxRemote.html#a08d047d7e0d4b746fc036c1aa02f0d17',1,'GbxRemote']]],
   ['currenterror',['currentError',['../classGbxRemote.html#ae5d44c3729140c1eba5e850cb5e5e7bd',1,'GbxRemote']]],
-  ['currentresponse',['currentResponse',['../classGbxRemote.html#a3a3a0af1a692a801a33baa292b877dc2',1,'GbxRemote']]]
+  ['currentresponse',['currentResponse',['../classGbxRemote.html#a3a3a0af1a692a801a33baa292b877dc2',1,'GbxRemote']]],
+  ['currentvalue',['CurrentValue',['../structCurrentNextValue.html#adf3172ed773e285e652b49735ae63f8f',1,'CurrentNextValue']]]
 ];

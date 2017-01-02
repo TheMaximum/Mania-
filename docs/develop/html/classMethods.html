@@ -122,6 +122,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0030583fdad06ab0f2f589b79c904f09"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSystemInfo.html">SystemInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a0030583fdad06ab0f2f589b79c904f09">GetSystemInfo</a> ()</td></tr>
 <tr class="memdesc:a0030583fdad06ab0f2f589b79c904f09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns system information.  <a href="#a0030583fdad06ab0f2f589b79c904f09">More...</a><br/></td></tr>
 <tr class="separator:a0030583fdad06ab0f2f589b79c904f09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae87b78f7ee53a98c8bf7494f662c2ad1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#ae87b78f7ee53a98c8bf7494f662c2ad1">SetConnectionRates</a> (int downloadRate, int uploadRate)</td></tr>
+<tr class="memdesc:ae87b78f7ee53a98c8bf7494f662c2ad1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the server connection rates.  <a href="#ae87b78f7ee53a98c8bf7494f662c2ad1">More...</a><br/></td></tr>
+<tr class="separator:ae87b78f7ee53a98c8bf7494f662c2ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af39e05685756a82b5991a2fc25d5e941"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structServerStatus.html">ServerStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#af39e05685756a82b5991a2fc25d5e941">GetStatus</a> ()</td></tr>
 <tr class="memdesc:af39e05685756a82b5991a2fc25d5e941"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns server status.  <a href="#af39e05685756a82b5991a2fc25d5e941">More...</a><br/></td></tr>
 <tr class="separator:af39e05685756a82b5991a2fc25d5e941"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -154,6 +157,52 @@ std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bott
 <tr class="memitem:a7229aacea5b60d1d502c5df39f10a50c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a7229aacea5b60d1d502c5df39f10a50c">SendNoticeToLogin</a> (std::string login, std::string text, std::string avatarLogin=&quot;&quot;, int variant=0)</td></tr>
 <tr class="memdesc:a7229aacea5b60d1d502c5df39f10a50c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send notice to player login.  <a href="#a7229aacea5b60d1d502c5df39f10a50c">More...</a><br/></td></tr>
 <tr class="separator:a7229aacea5b60d1d502c5df39f10a50c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40beaa6cb9c971d8272d4166bde74524"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a40beaa6cb9c971d8272d4166bde74524">SendOpenLinkToLogin</a> (std::string login, std::string link, int linkType)</td></tr>
+<tr class="memdesc:a40beaa6cb9c971d8272d4166bde74524"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send link to player login.  <a href="#a40beaa6cb9c971d8272d4166bde74524">More...</a><br/></td></tr>
+<tr class="separator:a40beaa6cb9c971d8272d4166bde74524"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a189f5fa70efe5470c45ecaa6d9824c0c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a189f5fa70efe5470c45ecaa6d9824c0c">CallVote</a> (std::string xmlRequest)</td></tr>
+<tr class="memdesc:a189f5fa70efe5470c45ecaa6d9824c0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start callvote.  <a href="#a189f5fa70efe5470c45ecaa6d9824c0c">More...</a><br/></td></tr>
+<tr class="separator:a189f5fa70efe5470c45ecaa6d9824c0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55b27e8f8523061c7815ecf577bee604"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a55b27e8f8523061c7815ecf577bee604">CallVoteEx</a> (std::string xmlRequest, double ratio, int timeout, int whoVotes)</td></tr>
+<tr class="memdesc:a55b27e8f8523061c7815ecf577bee604"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start callvote.  <a href="#a55b27e8f8523061c7815ecf577bee604">More...</a><br/></td></tr>
+<tr class="separator:a55b27e8f8523061c7815ecf577bee604"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7584b3c482480bbd2d3321a11e0b3b5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae7584b3c482480bbd2d3321a11e0b3b5"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#ae7584b3c482480bbd2d3321a11e0b3b5">CancelVote</a> ()</td></tr>
+<tr class="memdesc:ae7584b3c482480bbd2d3321a11e0b3b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancels the current callvote. <br/></td></tr>
+<tr class="separator:ae7584b3c482480bbd2d3321a11e0b3b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d457dcbd12a94aaf5d9913210e0862d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8d457dcbd12a94aaf5d9913210e0862d"></a>
+<a class="el" href="structCurrentCallVote.html">CurrentCallVote</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a8d457dcbd12a94aaf5d9913210e0862d">GetCurrentCallVote</a> ()</td></tr>
+<tr class="memdesc:a8d457dcbd12a94aaf5d9913210e0862d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current callvote. <br/></td></tr>
+<tr class="separator:a8d457dcbd12a94aaf5d9913210e0862d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9aaf00756eb3ee0e0a28e0c428bcc92d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a9aaf00756eb3ee0e0a28e0c428bcc92d">SetCallVoteTimeOut</a> (int timeout)</td></tr>
+<tr class="memdesc:a9aaf00756eb3ee0e0a28e0c428bcc92d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the default callvote timeout.  <a href="#a9aaf00756eb3ee0e0a28e0c428bcc92d">More...</a><br/></td></tr>
+<tr class="separator:a9aaf00756eb3ee0e0a28e0c428bcc92d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3ce6c4a44f8848c91395dc17c63a06f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac3ce6c4a44f8848c91395dc17c63a06f"></a>
+<a class="el" href="structCurrentNextValue.html">CurrentNextValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#ac3ce6c4a44f8848c91395dc17c63a06f">GetCallVoteTimeOut</a> ()</td></tr>
+<tr class="memdesc:ac3ce6c4a44f8848c91395dc17c63a06f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the default callvote timeout. <br/></td></tr>
+<tr class="separator:ac3ce6c4a44f8848c91395dc17c63a06f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e74a855649f8d1608fa8d873779189b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a8e74a855649f8d1608fa8d873779189b">SetCallVoteRatio</a> (double ratio)</td></tr>
+<tr class="memdesc:a8e74a855649f8d1608fa8d873779189b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the default callvote ratio.  <a href="#a8e74a855649f8d1608fa8d873779189b">More...</a><br/></td></tr>
+<tr class="separator:a8e74a855649f8d1608fa8d873779189b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2279c611672e3ec5816780d661469d2a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2279c611672e3ec5816780d661469d2a"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a2279c611672e3ec5816780d661469d2a">GetCallVoteRatio</a> ()</td></tr>
+<tr class="memdesc:a2279c611672e3ec5816780d661469d2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the default callvote ratio. <br/></td></tr>
+<tr class="separator:a2279c611672e3ec5816780d661469d2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbc7a7e788ffa66a45809c7e454dabab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#adbc7a7e788ffa66a45809c7e454dabab">SetCallVoteRatios</a> (std::vector&lt; <a class="el" href="structCallVoteRatio.html">CallVoteRatio</a> &gt; ratios)</td></tr>
+<tr class="memdesc:adbc7a7e788ffa66a45809c7e454dabab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the callvote ratios.  <a href="#adbc7a7e788ffa66a45809c7e454dabab">More...</a><br/></td></tr>
+<tr class="separator:adbc7a7e788ffa66a45809c7e454dabab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29e8bd0f4e63f4e9e3a5c91fb49c7a2b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a29e8bd0f4e63f4e9e3a5c91fb49c7a2b"></a>
+std::vector&lt; <a class="el" href="structCallVoteRatio.html">CallVoteRatio</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a29e8bd0f4e63f4e9e3a5c91fb49c7a2b">GetCallVoteRatios</a> ()</td></tr>
+<tr class="memdesc:a29e8bd0f4e63f4e9e3a5c91fb49c7a2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the callvote ratios. <br/></td></tr>
+<tr class="separator:a29e8bd0f4e63f4e9e3a5c91fb49c7a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0572ff430bc8be89035033fe17d8486a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a0572ff430bc8be89035033fe17d8486a">SetCallVoteRatiosEx</a> (bool replaceAll, std::vector&lt; <a class="el" href="structExtendedCallVoteRatio.html">ExtendedCallVoteRatio</a> &gt; ratios)</td></tr>
+<tr class="memdesc:a0572ff430bc8be89035033fe17d8486a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the callvote ratios.  <a href="#a0572ff430bc8be89035033fe17d8486a">More...</a><br/></td></tr>
+<tr class="separator:a0572ff430bc8be89035033fe17d8486a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac50b7bc8afb371954b0ce71fdc21cd49"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac50b7bc8afb371954b0ce71fdc21cd49"></a>
+std::vector<br class="typebreak"/>
+&lt; <a class="el" href="structExtendedCallVoteRatio.html">ExtendedCallVoteRatio</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#ac50b7bc8afb371954b0ce71fdc21cd49">GetCallVoteRatiosEx</a> ()</td></tr>
+<tr class="memdesc:ac50b7bc8afb371954b0ce71fdc21cd49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the callvote ratios. <br/></td></tr>
+<tr class="separator:ac50b7bc8afb371954b0ce71fdc21cd49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab04b0cae6a36c8202cabf1cd9ebc1a38"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#ab04b0cae6a36c8202cabf1cd9ebc1a38">SendDisplayManialinkPage</a> (std::string page, int timeout, bool hideOnClick)</td></tr>
 <tr class="memdesc:ab04b0cae6a36c8202cabf1cd9ebc1a38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays ManiaLink page to all players.  <a href="#ab04b0cae6a36c8202cabf1cd9ebc1a38">More...</a><br/></td></tr>
 <tr class="separator:ab04b0cae6a36c8202cabf1cd9ebc1a38"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -338,6 +387,79 @@ std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt;
   <table class="params">
     <tr><td class="paramname">username</td><td>Server username (f.e. SuperAdmin). </td></tr>
     <tr><td class="paramname">password</td><td>Server password. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a189f5fa70efe5470c45ecaa6d9824c0c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Methods::CallVote </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>xmlRequest</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Start callvote. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xmlRequest</td><td>Callvote request. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a55b27e8f8523061c7815ecf577bee604"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Methods::CallVoteEx </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>xmlRequest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ratio</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>timeout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>whoVotes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Start callvote. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xmlRequest</td><td>Callvote request. </td></tr>
+    <tr><td class="paramname">ratio</td><td>Passing ratio (between 0 and 1, -1 = default). </td></tr>
+    <tr><td class="paramname">timeout</td><td>Timeout for the callvote (0 = default, 1 = indefinite). </td></tr>
+    <tr><td class="paramname">whoVotes</td><td>Who votes for the callvote (0 = active players, 1 = all players, 2 = everyone, including spectators). </td></tr>
   </table>
   </dd>
 </dl>
@@ -1097,6 +1219,48 @@ std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt;
 
 </div>
 </div>
+<a class="anchor" id="a40beaa6cb9c971d8272d4166bde74524"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Methods::SendOpenLinkToLogin </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>login</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>link</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>linkType</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Send link to player login. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">login</td><td><a class="el" href="structPlayer.html" title="Contains all information about a player in easy-to-use format. ">Player</a> login. </td></tr>
+    <tr><td class="paramname">link</td><td>Link address. </td></tr>
+    <tr><td class="paramname">linkType</td><td>Link type (0 = external, 1 = ManiaLink). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="ad31d717a19f95d4213d6882a0caff0fa"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1121,11 +1285,155 @@ std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt;
 
 </div>
 </div>
+<a class="anchor" id="a8e74a855649f8d1608fa8d873779189b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Methods::SetCallVoteRatio </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ratio</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the default callvote ratio. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ratio</td><td>Default timeout. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="adbc7a7e788ffa66a45809c7e454dabab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Methods::SetCallVoteRatios </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="structCallVoteRatio.html">CallVoteRatio</a> &gt;&#160;</td>
+          <td class="paramname"><em>ratios</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the callvote ratios. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ratios</td><td>List of callvote ratios. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0572ff430bc8be89035033fe17d8486a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Methods::SetCallVoteRatiosEx </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>replaceAll</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="structExtendedCallVoteRatio.html">ExtendedCallVoteRatio</a> &gt;&#160;</td>
+          <td class="paramname"><em>ratios</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the callvote ratios. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">replaceAll</td><td>Replace all current callvote ratios? </td></tr>
+    <tr><td class="paramname">ratios</td><td>List of callvote ratios.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">Todo:</a></b></dt><dd>Implement when <a class="el" href="classGbxParameters.html" title="List of parameters. ">GbxParameters</a> supports structs. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9aaf00756eb3ee0e0a28e0c428bcc92d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Methods::SetCallVoteTimeOut </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>timeout</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the default callvote timeout. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeout</td><td>Default timeout. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae87b78f7ee53a98c8bf7494f662c2ad1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Methods::SetConnectionRates </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>downloadRate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>uploadRate</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the server connection rates. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">downloadRate</td><td>New download rate. </td></tr>
+    <tr><td class="paramname">uploadRate</td><td>New upload rate. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/<a class="el" href="Methods_8h_source.html">Methods.h</a></li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Maps/MapActions.cpp</li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Maps/MapInfo.cpp</li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Methods.cpp</li>
+<li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Server/CallVote.cpp</li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Server/Chat.cpp</li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Server/Global.cpp</li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Server/ManiaLink.cpp</li>
@@ -1134,7 +1442,7 @@ std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt;
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 2 2017 15:15:08 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jan 2 2017 16:29:07 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -29,6 +29,8 @@ std\-::vector$<$ std\-::string $>$ \hyperlink{classMethods_a7833782aa64f9072db30
 \begin{DoxyCompactList}\small\item\em Returns server version information. \end{DoxyCompactList}\item 
 \hyperlink{structSystemInfo}{System\-Info} \hyperlink{classMethods_a0030583fdad06ab0f2f589b79c904f09}{Get\-System\-Info} ()
 \begin{DoxyCompactList}\small\item\em Returns system information. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_ae87b78f7ee53a98c8bf7494f662c2ad1}{Set\-Connection\-Rates} (int download\-Rate, int upload\-Rate)
+\begin{DoxyCompactList}\small\item\em Sets the server connection rates. \end{DoxyCompactList}\item 
 \hyperlink{structServerStatus}{Server\-Status} \hyperlink{classMethods_af39e05685756a82b5991a2fc25d5e941}{Get\-Status} ()
 \begin{DoxyCompactList}\small\item\em Returns server status. \end{DoxyCompactList}\item 
 \hypertarget{classMethods_aee11e205500b7ad449c025c8e3e4b11b}{bool \hyperlink{classMethods_aee11e205500b7ad449c025c8e3e4b11b}{Quit\-Game} ()}\label{classMethods_aee11e205500b7ad449c025c8e3e4b11b}
@@ -51,6 +53,39 @@ bool \hyperlink{classMethods_add538878f839a6a5078fec808e1f064f}{Send\-Notice} (s
 \begin{DoxyCompactList}\small\item\em Send notice to all players. \end{DoxyCompactList}\item 
 bool \hyperlink{classMethods_a7229aacea5b60d1d502c5df39f10a50c}{Send\-Notice\-To\-Login} (std\-::string login, std\-::string text, std\-::string avatar\-Login=\char`\"{}\char`\"{}, int variant=0)
 \begin{DoxyCompactList}\small\item\em Send notice to player login. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_a40beaa6cb9c971d8272d4166bde74524}{Send\-Open\-Link\-To\-Login} (std\-::string login, std\-::string link, int link\-Type)
+\begin{DoxyCompactList}\small\item\em Send link to player login. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_a189f5fa70efe5470c45ecaa6d9824c0c}{Call\-Vote} (std\-::string xml\-Request)
+\begin{DoxyCompactList}\small\item\em Start callvote. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_a55b27e8f8523061c7815ecf577bee604}{Call\-Vote\-Ex} (std\-::string xml\-Request, double ratio, int timeout, int who\-Votes)
+\begin{DoxyCompactList}\small\item\em Start callvote. \end{DoxyCompactList}\item 
+\hypertarget{classMethods_ae7584b3c482480bbd2d3321a11e0b3b5}{bool \hyperlink{classMethods_ae7584b3c482480bbd2d3321a11e0b3b5}{Cancel\-Vote} ()}\label{classMethods_ae7584b3c482480bbd2d3321a11e0b3b5}
+
+\begin{DoxyCompactList}\small\item\em Cancels the current callvote. \end{DoxyCompactList}\item 
+\hypertarget{classMethods_a8d457dcbd12a94aaf5d9913210e0862d}{\hyperlink{structCurrentCallVote}{Current\-Call\-Vote} \hyperlink{classMethods_a8d457dcbd12a94aaf5d9913210e0862d}{Get\-Current\-Call\-Vote} ()}\label{classMethods_a8d457dcbd12a94aaf5d9913210e0862d}
+
+\begin{DoxyCompactList}\small\item\em Returns the current callvote. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_a9aaf00756eb3ee0e0a28e0c428bcc92d}{Set\-Call\-Vote\-Time\-Out} (int timeout)
+\begin{DoxyCompactList}\small\item\em Sets the default callvote timeout. \end{DoxyCompactList}\item 
+\hypertarget{classMethods_ac3ce6c4a44f8848c91395dc17c63a06f}{\hyperlink{structCurrentNextValue}{Current\-Next\-Value} \hyperlink{classMethods_ac3ce6c4a44f8848c91395dc17c63a06f}{Get\-Call\-Vote\-Time\-Out} ()}\label{classMethods_ac3ce6c4a44f8848c91395dc17c63a06f}
+
+\begin{DoxyCompactList}\small\item\em Gets the default callvote timeout. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_a8e74a855649f8d1608fa8d873779189b}{Set\-Call\-Vote\-Ratio} (double ratio)
+\begin{DoxyCompactList}\small\item\em Sets the default callvote ratio. \end{DoxyCompactList}\item 
+\hypertarget{classMethods_a2279c611672e3ec5816780d661469d2a}{double \hyperlink{classMethods_a2279c611672e3ec5816780d661469d2a}{Get\-Call\-Vote\-Ratio} ()}\label{classMethods_a2279c611672e3ec5816780d661469d2a}
+
+\begin{DoxyCompactList}\small\item\em Gets the default callvote ratio. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_adbc7a7e788ffa66a45809c7e454dabab}{Set\-Call\-Vote\-Ratios} (std\-::vector$<$ \hyperlink{structCallVoteRatio}{Call\-Vote\-Ratio} $>$ ratios)
+\begin{DoxyCompactList}\small\item\em Sets the callvote ratios. \end{DoxyCompactList}\item 
+\hypertarget{classMethods_a29e8bd0f4e63f4e9e3a5c91fb49c7a2b}{std\-::vector$<$ \hyperlink{structCallVoteRatio}{Call\-Vote\-Ratio} $>$ \hyperlink{classMethods_a29e8bd0f4e63f4e9e3a5c91fb49c7a2b}{Get\-Call\-Vote\-Ratios} ()}\label{classMethods_a29e8bd0f4e63f4e9e3a5c91fb49c7a2b}
+
+\begin{DoxyCompactList}\small\item\em Gets the callvote ratios. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_a0572ff430bc8be89035033fe17d8486a}{Set\-Call\-Vote\-Ratios\-Ex} (bool replace\-All, std\-::vector$<$ \hyperlink{structExtendedCallVoteRatio}{Extended\-Call\-Vote\-Ratio} $>$ ratios)
+\begin{DoxyCompactList}\small\item\em Sets the callvote ratios. \end{DoxyCompactList}\item 
+\hypertarget{classMethods_ac50b7bc8afb371954b0ce71fdc21cd49}{std\-::vector\\*
+$<$ \hyperlink{structExtendedCallVoteRatio}{Extended\-Call\-Vote\-Ratio} $>$ \hyperlink{classMethods_ac50b7bc8afb371954b0ce71fdc21cd49}{Get\-Call\-Vote\-Ratios\-Ex} ()}\label{classMethods_ac50b7bc8afb371954b0ce71fdc21cd49}
+
+\begin{DoxyCompactList}\small\item\em Gets the callvote ratios. \end{DoxyCompactList}\item 
 bool \hyperlink{classMethods_ab04b0cae6a36c8202cabf1cd9ebc1a38}{Send\-Display\-Manialink\-Page} (std\-::string page, int timeout, bool hide\-On\-Click)
 \begin{DoxyCompactList}\small\item\em Displays Mania\-Link page to all players. \end{DoxyCompactList}\item 
 bool \hyperlink{classMethods_a39fd4b15b6f18a74fd686308319e5b51}{Send\-Display\-Manialink\-Page\-To\-Login} (std\-::string login, std\-::string page, int timeout, bool hide\-On\-Click)
@@ -174,6 +209,47 @@ Authenticates with the server. Returns whether authentication was successful.
 {\em username} & Server username (f.\-e. Super\-Admin). \\
 \hline
 {\em password} & Server password. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_a189f5fa70efe5470c45ecaa6d9824c0c}{\index{Methods@{Methods}!Call\-Vote@{Call\-Vote}}
+\index{Call\-Vote@{Call\-Vote}!Methods@{Methods}}
+\subsubsection[{Call\-Vote}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Call\-Vote (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{xml\-Request}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a189f5fa70efe5470c45ecaa6d9824c0c}
+
+
+Start callvote. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xml\-Request} & Callvote request. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_a55b27e8f8523061c7815ecf577bee604}{\index{Methods@{Methods}!Call\-Vote\-Ex@{Call\-Vote\-Ex}}
+\index{Call\-Vote\-Ex@{Call\-Vote\-Ex}!Methods@{Methods}}
+\subsubsection[{Call\-Vote\-Ex}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Call\-Vote\-Ex (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{xml\-Request, }
+\item[{double}]{ratio, }
+\item[{int}]{timeout, }
+\item[{int}]{who\-Votes}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a55b27e8f8523061c7815ecf577bee604}
+
+
+Start callvote. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xml\-Request} & Callvote request. \\
+\hline
+{\em ratio} & Passing ratio (between 0 and 1, -\/1 = default). \\
+\hline
+{\em timeout} & Timeout for the callvote (0 = default, 1 = indefinite). \\
+\hline
+{\em who\-Votes} & Who votes for the callvote (0 = active players, 1 = all players, 2 = everyone, including spectators). \\
 \hline
 \end{DoxyParams}
 \hypertarget{classMethods_a6bef98053e6d6d4f80557be7ce841e80}{\index{Methods@{Methods}!Change\-Auth\-Password@{Change\-Auth\-Password}}
@@ -618,6 +694,28 @@ Send notice to player login.
 {\em variant} & Notice variant (0 = normal, 1 = sad, 2 = happy). \\
 \hline
 \end{DoxyParams}
+\hypertarget{classMethods_a40beaa6cb9c971d8272d4166bde74524}{\index{Methods@{Methods}!Send\-Open\-Link\-To\-Login@{Send\-Open\-Link\-To\-Login}}
+\index{Send\-Open\-Link\-To\-Login@{Send\-Open\-Link\-To\-Login}!Methods@{Methods}}
+\subsubsection[{Send\-Open\-Link\-To\-Login}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Send\-Open\-Link\-To\-Login (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{login, }
+\item[{std\-::string}]{link, }
+\item[{int}]{link\-Type}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a40beaa6cb9c971d8272d4166bde74524}
+
+
+Send link to player login. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em login} & \hyperlink{structPlayer}{Player} login. \\
+\hline
+{\em link} & Link address. \\
+\hline
+{\em link\-Type} & Link type (0 = external, 1 = Mania\-Link). \\
+\hline
+\end{DoxyParams}
 \hypertarget{classMethods_ad31d717a19f95d4213d6882a0caff0fa}{\index{Methods@{Methods}!Set\-Api\-Version@{Set\-Api\-Version}}
 \index{Set\-Api\-Version@{Set\-Api\-Version}!Methods@{Methods}}
 \subsubsection[{Set\-Api\-Version}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Set\-Api\-Version (
@@ -634,6 +732,94 @@ Sets the A\-P\-I version of the server. Returns whether change was successful.
 {\em version} & A\-P\-I version. \\
 \hline
 \end{DoxyParams}
+\hypertarget{classMethods_a8e74a855649f8d1608fa8d873779189b}{\index{Methods@{Methods}!Set\-Call\-Vote\-Ratio@{Set\-Call\-Vote\-Ratio}}
+\index{Set\-Call\-Vote\-Ratio@{Set\-Call\-Vote\-Ratio}!Methods@{Methods}}
+\subsubsection[{Set\-Call\-Vote\-Ratio}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Set\-Call\-Vote\-Ratio (
+\begin{DoxyParamCaption}
+\item[{double}]{ratio}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a8e74a855649f8d1608fa8d873779189b}
+
+
+Sets the default callvote ratio. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ratio} & Default timeout. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_adbc7a7e788ffa66a45809c7e454dabab}{\index{Methods@{Methods}!Set\-Call\-Vote\-Ratios@{Set\-Call\-Vote\-Ratios}}
+\index{Set\-Call\-Vote\-Ratios@{Set\-Call\-Vote\-Ratios}!Methods@{Methods}}
+\subsubsection[{Set\-Call\-Vote\-Ratios}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Set\-Call\-Vote\-Ratios (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Call\-Vote\-Ratio} $>$}]{ratios}
+\end{DoxyParamCaption}
+)}}\label{classMethods_adbc7a7e788ffa66a45809c7e454dabab}
+
+
+Sets the callvote ratios. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ratios} & List of callvote ratios. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_a0572ff430bc8be89035033fe17d8486a}{\index{Methods@{Methods}!Set\-Call\-Vote\-Ratios\-Ex@{Set\-Call\-Vote\-Ratios\-Ex}}
+\index{Set\-Call\-Vote\-Ratios\-Ex@{Set\-Call\-Vote\-Ratios\-Ex}!Methods@{Methods}}
+\subsubsection[{Set\-Call\-Vote\-Ratios\-Ex}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Set\-Call\-Vote\-Ratios\-Ex (
+\begin{DoxyParamCaption}
+\item[{bool}]{replace\-All, }
+\item[{std\-::vector$<$ {\bf Extended\-Call\-Vote\-Ratio} $>$}]{ratios}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a0572ff430bc8be89035033fe17d8486a}
+
+
+Sets the callvote ratios. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em replace\-All} & Replace all current callvote ratios? \\
+\hline
+{\em ratios} & List of callvote ratios.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000006}{Todo}]Implement when \hyperlink{classGbxParameters}{Gbx\-Parameters} supports structs. \end{DoxyRefDesc}
+\hypertarget{classMethods_a9aaf00756eb3ee0e0a28e0c428bcc92d}{\index{Methods@{Methods}!Set\-Call\-Vote\-Time\-Out@{Set\-Call\-Vote\-Time\-Out}}
+\index{Set\-Call\-Vote\-Time\-Out@{Set\-Call\-Vote\-Time\-Out}!Methods@{Methods}}
+\subsubsection[{Set\-Call\-Vote\-Time\-Out}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Set\-Call\-Vote\-Time\-Out (
+\begin{DoxyParamCaption}
+\item[{int}]{timeout}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a9aaf00756eb3ee0e0a28e0c428bcc92d}
+
+
+Sets the default callvote timeout. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timeout} & Default timeout. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_ae87b78f7ee53a98c8bf7494f662c2ad1}{\index{Methods@{Methods}!Set\-Connection\-Rates@{Set\-Connection\-Rates}}
+\index{Set\-Connection\-Rates@{Set\-Connection\-Rates}!Methods@{Methods}}
+\subsubsection[{Set\-Connection\-Rates}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Set\-Connection\-Rates (
+\begin{DoxyParamCaption}
+\item[{int}]{download\-Rate, }
+\item[{int}]{upload\-Rate}
+\end{DoxyParamCaption}
+)}}\label{classMethods_ae87b78f7ee53a98c8bf7494f662c2ad1}
+
+
+Sets the server connection rates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em download\-Rate} & New download rate. \\
+\hline
+{\em upload\-Rate} & New upload rate. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
@@ -642,6 +828,7 @@ The documentation for this class was generated from the following files\-:\begin
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Maps/Map\-Actions.\-cpp\item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Maps/Map\-Info.\-cpp\item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/Methods.\-cpp\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Call\-Vote.\-cpp\item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Chat.\-cpp\item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Global.\-cpp\item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Mania\-Link.\-cpp\item 

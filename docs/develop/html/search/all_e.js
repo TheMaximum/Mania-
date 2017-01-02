@@ -1,6 +1,7 @@
 var searchData=
 [
   ['rank',['Rank',['../structPlayerRanking.html#a2a24769e93ee152b144ee693c60485ee',1,'PlayerRanking']]],
+  ['ratio',['Ratio',['../structCallVoteRatio.html#a117baff727c0bbd5860cd4ed4998ec85',1,'CallVoteRatio::Ratio()'],['../structExtendedCallVoteRatio.html#a45f34354daff068af647554ada33f7f8',1,'ExtendedCallVoteRatio::Ratio()']]],
   ['readcallbacks',['ReadCallBacks',['../classGbxRemote.html#ac595861af2f4d7349ce3841f0758507d',1,'GbxRemote']]],
   ['receive',['Receive',['../classTcpClient.html#aa000d653ba13fb447642e81890cdc866',1,'TcpClient']]],
   ['registerbeginmap',['RegisterBeginMap',['../classEventManager.html#ae77dfbbb9640ca9aa5b458d6959676ea',1,'EventManager']]],

@@ -4,6 +4,7 @@ var searchData=
   ['nbcheckpoints',['NbCheckpoints',['../structMap.html#abadd4d6809c065522960a0db897d6c10',1,'Map']]],
   ['nblaps',['NbLaps',['../structMap.html#a2a06493a298b5ebfae70ecbfb0bca406',1,'Map']]],
   ['nbrlapsfinished',['NbrLapsFinished',['../structPlayerRanking.html#a82c1df4d6ef3d2dbb4ce8f654ef9f8b1',1,'PlayerRanking']]],
+  ['nextvalue',['NextValue',['../structCurrentNextValue.html#a44221ded20d57b79e0a76e3424c511bb',1,'CurrentNextValue']]],
   ['nickname',['NickName',['../structPlayer.html#a553cc1b0aa79108b511ba408210582cf',1,'Player']]],
   ['number',['number',['../structGbxError.html#ae5627cae63e837beaa75f798e47be50e',1,'GbxError']]]
 ];

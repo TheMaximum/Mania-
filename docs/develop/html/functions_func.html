@@ -176,8 +176,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>CallStatusChanged()
 : <a class="el" href="classEventManager.html#aaf340ac134fc52a9b2c87f7db42476b5">EventManager</a>
 </li>
+<li>CallVote()
+: <a class="el" href="classMethods.html#a189f5fa70efe5470c45ecaa6d9824c0c">Methods</a>
+</li>
+<li>CallVoteEx()
+: <a class="el" href="classMethods.html#a55b27e8f8523061c7815ecf577bee604">Methods</a>
+</li>
 <li>CallVoteUpdated()
 : <a class="el" href="classEventManager.html#ad9907c7d0fd7a93e336e4a99db008540">EventManager</a>
+</li>
+<li>CancelVote()
+: <a class="el" href="classMethods.html#ae7584b3c482480bbd2d3321a11e0b3b5">Methods</a>
 </li>
 <li>ChangeAuthPassword()
 : <a class="el" href="classMethods.html#a6bef98053e6d6d4f80557be7ce841e80">Methods</a>
@@ -284,11 +293,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>GetArray()
 : <a class="el" href="classGbxResponseParameter.html#aa27aca1d5084755fe585401617e2549a">GbxResponseParameter</a>
 </li>
+<li>GetCallVoteRatio()
+: <a class="el" href="classMethods.html#a2279c611672e3ec5816780d661469d2a">Methods</a>
+</li>
+<li>GetCallVoteRatios()
+: <a class="el" href="classMethods.html#a29e8bd0f4e63f4e9e3a5c91fb49c7a2b">Methods</a>
+</li>
+<li>GetCallVoteRatiosEx()
+: <a class="el" href="classMethods.html#ac50b7bc8afb371954b0ce71fdc21cd49">Methods</a>
+</li>
+<li>GetCallVoteTimeOut()
+: <a class="el" href="classMethods.html#ac3ce6c4a44f8848c91395dc17c63a06f">Methods</a>
+</li>
 <li>GetCBResponses()
 : <a class="el" href="classGbxRemote.html#a1ae6ff7eddcccdeda59af2316d053aae">GbxRemote</a>
 </li>
 <li>GetChatLines()
 : <a class="el" href="classMethods.html#a8a5de3ccd3e56cba116c5c1159c91c11">Methods</a>
+</li>
+<li>GetCurrentCallVote()
+: <a class="el" href="classMethods.html#a8d457dcbd12a94aaf5d9913210e0862d">Methods</a>
 </li>
 <li>GetCurrentError()
 : <a class="el" href="classGbxRemote.html#a5467b5400129cd13239f88576aaaa2b4">GbxRemote</a>
@@ -608,12 +632,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>SendNoticeToLogin()
 : <a class="el" href="classMethods.html#a7229aacea5b60d1d502c5df39f10a50c">Methods</a>
 </li>
+<li>SendOpenLinkToLogin()
+: <a class="el" href="classMethods.html#a40beaa6cb9c971d8272d4166bde74524">Methods</a>
+</li>
 <li>SetApiVersion()
 : <a class="el" href="classMethods.html#ad31d717a19f95d4213d6882a0caff0fa">Methods</a>
 </li>
 <li>setBasicInfo()
 : <a class="el" href="structMap.html#a5a5864cc5b9e067f4383fae5bf01c381">Map</a>
 , <a class="el" href="structPlayer.html#ac4666bfba77342a37f3ab3628b26acd0">Player</a>
+</li>
+<li>SetCallVoteRatio()
+: <a class="el" href="classMethods.html#a8e74a855649f8d1608fa8d873779189b">Methods</a>
+</li>
+<li>SetCallVoteRatios()
+: <a class="el" href="classMethods.html#adbc7a7e788ffa66a45809c7e454dabab">Methods</a>
+</li>
+<li>SetCallVoteRatiosEx()
+: <a class="el" href="classMethods.html#a0572ff430bc8be89035033fe17d8486a">Methods</a>
+</li>
+<li>SetCallVoteTimeOut()
+: <a class="el" href="classMethods.html#a9aaf00756eb3ee0e0a28e0c428bcc92d">Methods</a>
+</li>
+<li>SetConnectionRates()
+: <a class="el" href="classMethods.html#ae87b78f7ee53a98c8bf7494f662c2ad1">Methods</a>
 </li>
 <li>SetController()
 : <a class="el" href="classPlugin.html#a9de17bc24a2f84c533fc1fef9bff3c86">Plugin</a>
@@ -658,9 +700,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>~Database()
 : <a class="el" href="classDatabase.html#a84d399a2ad58d69daab9b05330e1316d">Database</a>
 </li>
-<li>~GbxParameters()
-: <a class="el" href="classGbxParameters.html#afac5dd05e28a0e7014483317fc83fdf5">GbxParameters</a>
-</li>
 <li>~GbxRemote()
 : <a class="el" href="classGbxRemote.html#a9ac65a51eb6f9127337b4f99841cfe2d">GbxRemote</a>
 </li>
@@ -674,7 +713,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 2 2017 15:15:09 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jan 2 2017 16:29:07 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
