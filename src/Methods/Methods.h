@@ -252,6 +252,11 @@ public:
     std::string GetSkinsDirectory();*/
 
     /*!
+     * \brief Provides a map object for the map being played next on the server.
+     */
+    Map GetNextMapInfo();
+
+    /*!
      * \brief Provides a map object for the map currently being played on the server.
      *
      * This is mainly meant for the start-up of the controller.
@@ -265,6 +270,21 @@ public:
      * \param fileName File name of the map.
      */
     Map GetMapInfo(std::string fileName);
+
+    /*!
+     * \brief Checks if the map matches the current server settings.
+     *
+     * \param fileName File name of the map.
+     */
+    bool CheckMapForCurrentServerParams(std::string fileName);
+
+    /*!
+     * \brief Gets the maplist from the server.
+     *
+     * \param limit    Maximum amount of maps to be retrieved.
+     * \param index    Map index on which to start the retrieval.
+     */
+    std::vector<Map> GetMapList(int limit, int index);
 
 private:
     GbxRemote* server; /**< \brief Pointer to GbxRemote. */

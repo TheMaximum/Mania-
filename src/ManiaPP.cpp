@@ -241,23 +241,12 @@ void ManiaPP::retrieveMapList()
 {
     std::cout << "[         ] Retrieving current map list ... " << '\r' << std::flush;
 
-    int mapListLimit = 2048; int mapListIndex = 0;
-    GbxParameters* params = new GbxParameters();
-    params->Put(&mapListLimit);
-    params->Put(&mapListIndex);
-    GbxMessage* getMapList = new GbxMessage("GetMapList", params);
-    if(server->Query(getMapList))
+    std::vector<Map> list = methods->GetMapList(2048, 0);
+    if(list.size() > 0)
     {
-        delete getMapList; getMapList = NULL;
-        delete params; params = NULL;
-
-        std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
-        std::vector<GbxResponseParameter> mapList = responseParams.at(0).GetArray();
-
-        for(int mapId = 0; mapId < mapList.size(); mapId++)
+        for(int mapId = 0; mapId < list.size(); mapId++)
         {
-            std::map<std::string, GbxResponseParameter> map = mapList.at(mapId).GetStruct();
-            Map newMap = Map(map);
+            Map newMap = list.at(mapId);
 
             if(database != NULL)
             {
