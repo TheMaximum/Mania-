@@ -18,12 +18,13 @@ public:
     void DisplayToAll(std::map<std::string, Player>* players);
     void DisplayToPlayer(Player player);
 
+    std::string ActionId = "OpenLocalRecords";
+
 private:
     Methods* server;
     std::vector<LocalRecord>* records;
 
     std::string manialinkId = "LocalRecords";
-    std::string actionId = "OpenLocalRecords";
     std::string title = "Local Records";
 
     int widgetEntries = 16;

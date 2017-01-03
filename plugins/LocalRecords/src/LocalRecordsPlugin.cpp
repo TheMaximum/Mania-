@@ -6,6 +6,7 @@ LocalRecordsPlugin::LocalRecordsPlugin()
     Author = "TheM";
 
     BeginMap.push_back([this](Map map) { OnBeginMap(map); });
+    PlayerManialinkPageAnswer.push_back([this](Player player, std::string answer, std::vector<EntryVal> entries) { OnPlayerManialinkPageAnswer(player, answer, entries); });
 }
 
 void LocalRecordsPlugin::Init()
@@ -23,6 +24,14 @@ void LocalRecordsPlugin::OnBeginMap(Map map)
     std::cout << "[  INFO   ] " << localRecords.size() << " records found for " << map.Name << "." << std::endl;
 
     widget.DisplayToAll(controller->Players);
+}
+
+void LocalRecordsPlugin::OnPlayerManialinkPageAnswer(Player player, std::string answer, std::vector<EntryVal> entries)
+{
+    if(answer.find(widget.ActionId) != std::string::npos)
+    {
+        std::cout << "Player '" << player.Login << "' has clicked the LocalRecords widget (" << answer << ")!" << std::endl;
+    }
 }
 
 void LocalRecordsPlugin::retrieveRecords(Map map)
