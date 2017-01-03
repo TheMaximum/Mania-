@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['manialinkid',['ManiaLinkId',['../structUIFrame.html#a19acdca83f6f8e83337ee9cbc9af3d29',1,'UIFrame']]],
   ['maplistmodified',['MapListModified',['../classPlugin.html#aed57b8e5c978e9de385e165a1668e63e',1,'Plugin']]],
   ['maps',['Maps',['../structController.html#ab3ffbfa641bfee42c9440777f194bbb2',1,'Controller::Maps()'],['../classCallBackManager.html#a4b3c557fca85e1ba8ab292fc9df3da7c',1,'CallBackManager::maps()'],['../classManiaPP.html#a23c7e0ba8cf5fd45129b6a7a0fbe359b',1,'ManiaPP::maps()']]],
   ['mapstyle',['MapStyle',['../structMap.html#a5fe4c64985a8d769e21fe32bab7a879c',1,'Map']]],
