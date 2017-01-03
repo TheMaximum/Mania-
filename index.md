@@ -30,8 +30,8 @@ The ```./install.sh```-script requires a Debian-like system to function (with ``
 ## Aims and working points ##
 * [Be comparable or better than standard PhpRemote](https://themaximum.github.io/mania-pp/comparison.html)
 * Working plugin system
-   * Access to ManiaLink
-* ManiaLink support
+   * Receive settings from configuration file
+* Create ManiaLink handler (of some sorts)
 
 ## Achieved goals ##
 * Working GbxRemote module
@@ -41,10 +41,11 @@ The ```./install.sh```-script requires a Debian-like system to function (with ``
 * Create usable objects (f.e. `Player` and `Map`)
 * Working configuration system (YAML)
 * Database support
+* ManiaLink support
 * Working plugin system
    * Plugin interface
    * Callback handling
-   * Access to server and database
+   * Access to server, database, playerlist, maplist and ManiaLink
 
 ## Installing for the first time ##
 * ```./install.sh```
