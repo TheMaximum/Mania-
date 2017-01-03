@@ -15,7 +15,7 @@ var searchData=
   ['playerinfochanged',['PlayerInfoChanged',['../classPlugin.html#a2836f95c56beafd0fa2b62f7693a9f3c',1,'Plugin']]],
   ['playerlist',['playerList',['../classMethods.html#a2ffd93eb02b4b3e50359829f6aa229bd',1,'Methods']]],
   ['playermanialinkpageanswer',['PlayerManialinkPageAnswer',['../classPlugin.html#aec9eb757d9baae48942b34f28594a2a6',1,'Plugin']]],
-  ['players',['Players',['../structController.html#ad846e355170df1be5bec2c74cc63bc16',1,'Controller::Players()'],['../classCallBackManager.html#a26e135142b37e3b02b72aa7a091ef854',1,'CallBackManager::players()'],['../classManiaPP.html#a45712ccfa91b20242b39cb1164d305d8',1,'ManiaPP::players()']]],
+  ['players',['players',['../classCallBackManager.html#a26e135142b37e3b02b72aa7a091ef854',1,'CallBackManager::players()'],['../classManiaPP.html#a45712ccfa91b20242b39cb1164d305d8',1,'ManiaPP::players()'],['../structController.html#ad846e355170df1be5bec2c74cc63bc16',1,'Controller::Players()']]],
   ['plugins',['plugins',['../classManiaPP.html#a199f7d80431e7f13e52e6010347f644a',1,'ManiaPP::plugins()'],['../classPluginManager.html#a4a7dea3948d652d9a4428a237d5af805',1,'PluginManager::plugins()']]],
   ['pointer',['pointer',['../structGbxParam.html#a19b53f8dacdd8937e1020775f8615495',1,'GbxParam']]],
   ['port',['port',['../structServerConfig.html#ae459946703124ef5a1d98dba38a8b493',1,'ServerConfig::port()'],['../structDatabaseConfig.html#acbfdca1789c2780268c7d81f16a023f5',1,'DatabaseConfig::port()'],['../classDatabase.html#a6557601838cc506cd59638f4c368f5c2',1,'Database::port()'],['../classTcpClient.html#aa112ef0470437e790931b3ec9c98a800',1,'TcpClient::port()'],['../structSystemInfo.html#a2fedd656ecae9e623482c5b17a2278c6',1,'SystemInfo::Port()']]],

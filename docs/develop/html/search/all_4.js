@@ -6,6 +6,7 @@ var searchData=
   ['endmatch',['EndMatch',['../classPlugin.html#a772ce957615c12fd06fdf3190b5c85f5',1,'Plugin']]],
   ['entryval',['EntryVal',['../structEntryVal.html',1,'']]],
   ['environment',['Environment',['../structMap.html#acbaadf8f635b04a1229fa01f6ec4c4dc',1,'Map']]],
+  ['escapexml',['EscapeXML',['../classText.html#a0909f7eecd8aeb5e2aa7f36af165a4b6',1,'Text']]],
   ['eventmanager',['EventManager',['../classEventManager.html',1,'EventManager'],['../classEventManager.html#a89099b22114f158b5c530edfea52371d',1,'EventManager::EventManager()']]],
   ['events',['events',['../classCallBackManager.html#a144945c3b30a7946674393b412746f8f',1,'CallBackManager::events()'],['../classManiaPP.html#a326ab543ab98eefcba8a4b616e794b96',1,'ManiaPP::events()'],['../classPluginManager.html#a7966d86165aaa504ae4dd12f084d4cfa',1,'PluginManager::events()']]],
   ['extendedcallvoteratio',['ExtendedCallVoteRatio',['../structExtendedCallVoteRatio.html',1,'']]],

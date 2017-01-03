@@ -19,7 +19,7 @@ var searchData=
   ['playerlist',['playerList',['../classMethods.html#a2ffd93eb02b4b3e50359829f6aa229bd',1,'Methods']]],
   ['playermanialinkpageanswer',['PlayerManialinkPageAnswer',['../classPlugin.html#aec9eb757d9baae48942b34f28594a2a6',1,'Plugin']]],
   ['playerranking',['PlayerRanking',['../structPlayerRanking.html',1,'']]],
-  ['players',['Players',['../structController.html#ad846e355170df1be5bec2c74cc63bc16',1,'Controller::Players()'],['../classCallBackManager.html#a26e135142b37e3b02b72aa7a091ef854',1,'CallBackManager::players()'],['../classManiaPP.html#a45712ccfa91b20242b39cb1164d305d8',1,'ManiaPP::players()']]],
+  ['players',['players',['../classCallBackManager.html#a26e135142b37e3b02b72aa7a091ef854',1,'CallBackManager::players()'],['../classManiaPP.html#a45712ccfa91b20242b39cb1164d305d8',1,'ManiaPP::players()'],['../structController.html#ad846e355170df1be5bec2c74cc63bc16',1,'Controller::Players()']]],
   ['plugin',['Plugin',['../classPlugin.html',1,'']]],
   ['plugininfo',['PluginInfo',['../structPluginInfo.html',1,'']]],
   ['pluginmanager',['PluginManager',['../classPluginManager.html',1,'PluginManager'],['../classPluginManager.html#a4ccbf09a5268ce9eb3f78a06e09609fc',1,'PluginManager::PluginManager()']]],

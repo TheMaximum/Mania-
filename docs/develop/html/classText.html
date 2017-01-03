@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Mania++: Hex Class Reference</title>
+<title>Mania++: Text Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -84,30 +84,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="classHex-members.html">List of all members</a>  </div>
+<a href="classText-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Hex Class Reference</div>  </div>
+<div class="title">Text Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Utility to print char arrays/pointers as hexadecimal values.  
- <a href="classHex.html#details">More...</a></p>
+<p>Contains utilities to format text.  
+ <a href="classText.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="Hex_8h_source.html">Hex.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="Text_8h_source.html">Text.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a875b48852fbd0032d85d01286d8653c1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHex.html#a875b48852fbd0032d85d01286d8653c1">Print</a> (char message[], int messageLength)</td></tr>
-<tr class="memdesc:a875b48852fbd0032d85d01286d8653c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints char array as hexadecimal values.  <a href="#a875b48852fbd0032d85d01286d8653c1">More...</a><br/></td></tr>
-<tr class="separator:a875b48852fbd0032d85d01286d8653c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a955b79027e7bb270b96d0f13e26043"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHex.html#a7a955b79027e7bb270b96d0f13e26043">Print</a> (char *data)</td></tr>
-<tr class="memdesc:a7a955b79027e7bb270b96d0f13e26043"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints char pointer as hexadecimal values.  <a href="#a7a955b79027e7bb270b96d0f13e26043">More...</a><br/></td></tr>
-<tr class="separator:a7a955b79027e7bb270b96d0f13e26043"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0909f7eecd8aeb5e2aa7f36af165a4b6"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classText.html#a0909f7eecd8aeb5e2aa7f36af165a4b6">EscapeXML</a> (const std::string &amp;src)</td></tr>
+<tr class="memdesc:a0909f7eecd8aeb5e2aa7f36af165a4b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Escapes XML signs, to send XML strings.  <a href="#a0909f7eecd8aeb5e2aa7f36af165a4b6">More...</a><br/></td></tr>
+<tr class="separator:a0909f7eecd8aeb5e2aa7f36af165a4b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Utility to print char arrays/pointers as hexadecimal values. </p>
+<div class="textblock"><p>Contains utilities to format text. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a875b48852fbd0032d85d01286d8653c1"></a>
+<a class="anchor" id="a0909f7eecd8aeb5e2aa7f36af165a4b6"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -115,54 +112,10 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void Hex::Print </td>
+          <td class="memname">static std::string Text::EscapeXML </td>
           <td>(</td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>message</em>[], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>messageLength</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Prints char array as hexadecimal values. </p>
-<p>For printing the char array as hexadecimal, it uses the std::hex option. The char array is casted and printed char by char.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">message</td><td>Char array with message to be displayed. </td></tr>
-    <tr><td class="paramname">messageLength</td><td>Length of the char array. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a7a955b79027e7bb270b96d0f13e26043"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void Hex::Print </td>
-          <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>data</em></td><td>)</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>src</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -173,11 +126,10 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Prints char pointer as hexadecimal values. </p>
-<p>Casts the pointer to a char array and uses the char array version of the function.</p>
+<p>Escapes XML signs, to send XML strings. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>Char pointer with message to be displayed. </td></tr>
+    <tr><td class="paramname">src</td><td>Source XML to be escaped. </td></tr>
   </table>
   </dd>
 </dl>
@@ -185,7 +137,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/travis/build/TheMaximum/mania-pp/src/Utils/<a class="el" href="Hex_8h_source.html">Hex.h</a></li>
+<li>/home/travis/build/TheMaximum/mania-pp/src/Utils/<a class="el" href="Text_8h_source.html">Text.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
