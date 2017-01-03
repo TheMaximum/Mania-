@@ -2,7 +2,7 @@ var searchData=
 [
   ['p2pport',['P2PPort',['../structSystemInfo.html#acc041cb71d46ffbbf1ca0f06285b8f14',1,'SystemInfo']]],
   ['param',['Param',['../structExtendedCallVoteRatio.html#a2ed6da614783ad4f7e1f4376cc8b3b5a',1,'ExtendedCallVoteRatio']]],
-  ['parameters',['parameters',['../classGbxParameters.html#aeabcb21396d3198d718c94de23595750',1,'GbxParameters::parameters()'],['../classGbxServerResponse.html#acfd80e7b92cf34e1f0cda88a11a1bed0',1,'GbxServerResponse::parameters()']]],
+  ['parameters',['parameters',['../classGbxStructParameters.html#a28bc30c4732e983831d05ac4591a3aec',1,'GbxStructParameters::parameters()'],['../classGbxParameters.html#aeabcb21396d3198d718c94de23595750',1,'GbxParameters::parameters()'],['../classGbxServerResponse.html#acfd80e7b92cf34e1f0cda88a11a1bed0',1,'GbxServerResponse::parameters()']]],
   ['password',['password',['../structServerConfig.html#a819f5b912feb1fdb68ebd4fe36eb11ea',1,'ServerConfig::password()'],['../structDatabaseConfig.html#aa17e906c33a2f1c2d1508afa50957b35',1,'DatabaseConfig::password()']]],
   ['playerchat',['PlayerChat',['../classPlugin.html#a17096b73a575eef7c4e8c5380c08f670',1,'Plugin']]],
   ['playercheckpoint',['PlayerCheckpoint',['../classPlugin.html#abc2ce0103b7783a4ff4b3009cb18af7b',1,'Plugin']]],

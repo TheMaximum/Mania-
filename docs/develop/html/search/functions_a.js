@@ -10,5 +10,5 @@ var searchData=
   ['printokflush',['PrintOKFlush',['../classLogging.html#a889f2ad8f991afdf0959cb1cad736fa7',1,'Logging']]],
   ['printparameter',['PrintParameter',['../classLogging.html#a1f8609052e40055fb9ef3ddd40d0620e',1,'Logging']]],
   ['printserverinfo',['PrintServerInfo',['../classManiaPP.html#a56d2774a29f21b3a164ae1f7ea6bd88b',1,'ManiaPP']]],
-  ['put',['Put',['../classGbxParameters.html#a2cf83794717cf9fdc13e5ff12e259f04',1,'GbxParameters']]]
+  ['put',['Put',['../classGbxStructParameters.html#a1e045e8f50d30cdd810df10f3346bee4',1,'GbxStructParameters::Put()'],['../classGbxParameters.html#a2cf83794717cf9fdc13e5ff12e259f04',1,'GbxParameters::Put()']]]
 ];

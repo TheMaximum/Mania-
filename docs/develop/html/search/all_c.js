@@ -2,7 +2,7 @@ var searchData=
 [
   ['p2pport',['P2PPort',['../structSystemInfo.html#acc041cb71d46ffbbf1ca0f06285b8f14',1,'SystemInfo']]],
   ['param',['Param',['../structExtendedCallVoteRatio.html#a2ed6da614783ad4f7e1f4376cc8b3b5a',1,'ExtendedCallVoteRatio']]],
-  ['parameters',['parameters',['../classGbxParameters.html#aeabcb21396d3198d718c94de23595750',1,'GbxParameters::parameters()'],['../classGbxServerResponse.html#acfd80e7b92cf34e1f0cda88a11a1bed0',1,'GbxServerResponse::parameters()']]],
+  ['parameters',['parameters',['../classGbxStructParameters.html#a28bc30c4732e983831d05ac4591a3aec',1,'GbxStructParameters::parameters()'],['../classGbxParameters.html#aeabcb21396d3198d718c94de23595750',1,'GbxParameters::parameters()'],['../classGbxServerResponse.html#acfd80e7b92cf34e1f0cda88a11a1bed0',1,'GbxServerResponse::parameters()']]],
   ['parseconfig',['parseConfig',['../classConfig.html#a2ddcecec4284da0fb0b53da77e0d217a',1,'Config']]],
   ['password',['password',['../structServerConfig.html#a819f5b912feb1fdb68ebd4fe36eb11ea',1,'ServerConfig::password()'],['../structDatabaseConfig.html#aa17e906c33a2f1c2d1508afa50957b35',1,'DatabaseConfig::password()']]],
   ['player',['Player',['../structPlayer.html',1,'Player'],['../structPlayer.html#affe0cc3cb714f6deb4e62f0c0d3f1fd8',1,'Player::Player()'],['../structPlayer.html#adf15eb006b535a4e1b72b419021f1f11',1,'Player::Player(std::map&lt; std::string, GbxResponseParameter &gt; serverStruct)']]],
@@ -34,5 +34,5 @@ var searchData=
   ['printserverinfo',['PrintServerInfo',['../classManiaPP.html#a56d2774a29f21b3a164ae1f7ea6bd88b',1,'ManiaPP']]],
   ['protocol',['protocol',['../classGbxRemote.html#a5ee5c7087085cb6cb2e7bc6135ff0646',1,'GbxRemote']]],
   ['publishedip',['PublishedIp',['../structSystemInfo.html#a81a7a474ee8b20aa4f73b4bd346c05d7',1,'SystemInfo']]],
-  ['put',['Put',['../classGbxParameters.html#a2cf83794717cf9fdc13e5ff12e259f04',1,'GbxParameters']]]
+  ['put',['Put',['../classGbxStructParameters.html#a1e045e8f50d30cdd810df10f3346bee4',1,'GbxStructParameters::Put()'],['../classGbxParameters.html#a2cf83794717cf9fdc13e5ff12e259f04',1,'GbxParameters::Put()']]]
 ];

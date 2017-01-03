@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Mania++: Member List</title>
+<title>Mania++: GbxStructParameters Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -82,16 +82,76 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="classGbxStructParameters-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">CurrentNextValue Member List</div>  </div>
+<div class="title">GbxStructParameters Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="structCurrentNextValue.html">CurrentNextValue</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="structCurrentNextValue.html#adf3172ed773e285e652b49735ae63f8f">CurrentValue</a></td><td class="entry"><a class="el" href="structCurrentNextValue.html">CurrentNextValue</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="structCurrentNextValue.html#a44221ded20d57b79e0a76e3424c511bb">NextValue</a></td><td class="entry"><a class="el" href="structCurrentNextValue.html">CurrentNextValue</a></td><td class="entry"></td></tr>
-</table></div><!-- contents -->
+<p>List of struct parameters.  
+ <a href="classGbxStructParameters.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="GbxParameters_8h_source.html">GbxParameters.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a1e045e8f50d30cdd810df10f3346bee4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxStructParameters.html#a1e045e8f50d30cdd810df10f3346bee4">Put</a> (std::string text)</td></tr>
+<tr class="memdesc:a1e045e8f50d30cdd810df10f3346bee4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add parameter to the list.  <a href="#a1e045e8f50d30cdd810df10f3346bee4">More...</a><br/></td></tr>
+<tr class="separator:a1e045e8f50d30cdd810df10f3346bee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d496ceb658abca1300ae093d26abedc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5d496ceb658abca1300ae093d26abedc"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxStructParameters.html#a5d496ceb658abca1300ae093d26abedc">GetParameters</a> ()</td></tr>
+<tr class="memdesc:a5d496ceb658abca1300ae093d26abedc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current list of parameters. <br/></td></tr>
+<tr class="separator:a5d496ceb658abca1300ae093d26abedc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a28bc30c4732e983831d05ac4591a3aec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a28bc30c4732e983831d05ac4591a3aec"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGbxStructParameters.html#a28bc30c4732e983831d05ac4591a3aec">parameters</a> = std::vector&lt;std::string&gt;()</td></tr>
+<tr class="memdesc:a28bc30c4732e983831d05ac4591a3aec"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of parameters. <br/></td></tr>
+<tr class="separator:a28bc30c4732e983831d05ac4591a3aec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>List of struct parameters. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a1e045e8f50d30cdd810df10f3346bee4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GbxStructParameters::Put </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add parameter to the list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>Parameter XML. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>/home/travis/build/TheMaximum/mania-pp/src/GbxRemote/Parameters/<a class="el" href="GbxParameters_8h_source.html">GbxParameters.h</a></li>
+</ul>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated on Tue Jan 3 2017 14:57:10 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
