@@ -24,11 +24,9 @@ public:
 
 private:
     UIManager* ui;
-
     UIFrame frame;
 
     std::string manialinkId = "MapInfo";
-    //std::string actionId = "OpenMapInfo";
 
     double widgetWidth = 15.5;
     double widgetHeight = 8.9;
