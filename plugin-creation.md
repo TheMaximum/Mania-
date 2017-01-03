@@ -55,6 +55,7 @@ Almost all callbacks from the server are relayed to the plugins. The table indic
 | ManiaPlanet.PlayerConnect     | PlayerConnect     | ```Player```                                                               |
 | ManiaPlanet.PlayerDisconnect  | PlayerDisconnect  | ```Player```                                                               |
 | ManiaPlanet.PlayerChat        | PlayerChat        | ```Player```, ```std::string```, ```bool```                                |
+| ManiaPlanet.PlayerManialinkPageAnswer        | PlayerManialinkPageAnswer        | ```Player```, ```std::string```, ```std::vector<EntryVal>```                                |
 | ManiaPlanet.Echo              | Echo              | ```std::string```, ```std::string```                                       |
 | ManiaPlanet.BeginMatch        | BeginMatch        |                                                                            |
 | ManiaPlanet.EndMatch          | EndMatch          | ```std::vector<PlayerRanking>```, ```int```                                |
