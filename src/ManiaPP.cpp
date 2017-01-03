@@ -113,7 +113,7 @@ bool ManiaPP::ConnectToServer()
                                     callVoteRatio.Param = "ParamB";
                                     callVoteRatio.Ratio = 0.85;
                                     callVoteRatios.push_back(callVoteRatio);
-                                    methods->SetCallVoteRatiosEx(true, callVoteRatios);
+                                    std::cout << "Test struct response: " << methods->SetCallVoteRatiosEx(true, callVoteRatios) << std::endl;
 
                                     return true;
                                 }

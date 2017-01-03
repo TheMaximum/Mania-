@@ -22,7 +22,11 @@ void GbxParameter::determineType(const std::type_info* param)
     char* realParamName = abi::__cxa_demangle(param->name(), 0, 0, &status);
     type = std::string(realParamName);
 
-    if(type.find("GbxParameters") != std::string::npos)
+    if(type.find("GbxStructParameters") != std::string::npos)
+    {
+        xmlType = "struct";
+    }
+    else if(type.find("GbxParameters") != std::string::npos)
     {
         xmlType = "array";
     }
@@ -58,12 +62,25 @@ void GbxParameter::determineType(const std::type_info* param)
 
 void GbxParameter::dereferenceData(void* pointer)
 {
-    if(type.find("GbxParameters") != std::string::npos)
+    if(type.find("GbxStructParameters") != std::string::npos)
+    {
+        GbxStructParameters* paramPtr = static_cast<GbxStructParameters*>(pointer);
+        GbxStructParameters parameters = *paramPtr;
+        std::vector<std::string> gbxParams = parameters.GetParameters();
+
+        for(int paramId = 0; paramId < gbxParams.size(); paramId++)
+        {
+            if(paramId > 0) data += "</struct></value><value><struct>";
+            data += gbxParams.at(paramId);
+        }
+    }
+    else if(type.find("GbxParameters") != std::string::npos)
     {
         data += "<data>";
         GbxParameters* paramPtr = static_cast<GbxParameters*>(pointer);
         GbxParameters parameters = *paramPtr;
         std::vector<GbxParam> gbxParams = parameters.GetParameters();
+
         for(int paramId = 0; paramId < gbxParams.size(); paramId++)
         {
             data += "<value>";

@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <map>
 #include <typeinfo>
 
 //* GbxParam
@@ -13,6 +14,35 @@ struct GbxParam
 {
     void* pointer;                  /**< \brief Pointer to the parameter. */
     const std::type_info* typeinfo; /**< \brief Type information of the parameter. */
+};
+
+//* GbxStructParameters
+/**
+ * \brief List of struct parameters.
+ */
+class GbxStructParameters
+{
+public:
+    /*!
+     * \brief Add parameter to the list.
+     *
+     * \param text Parameter XML.
+     */
+    void Put(std::string text)
+    {
+        parameters.push_back(text);
+    }
+
+    /*!
+     * \brief Return the current list of parameters.
+     */
+    std::vector<std::string> GetParameters()
+    {
+        return parameters;
+    }
+
+private:
+    std::vector<std::string> parameters = std::vector<std::string>(); /**< \brief List of parameters. */
 };
 
 //* GbxParameters

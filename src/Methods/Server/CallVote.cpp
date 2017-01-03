@@ -165,26 +165,32 @@ std::vector<CallVoteRatio> Methods::GetCallVoteRatios()
 
 bool Methods::SetCallVoteRatiosEx(bool replaceAll, std::vector<ExtendedCallVoteRatio> ratios)
 {
-    return false;
-
-    /*bool response = false;
+    bool response = false;
 
     GbxParameters params = GbxParameters();
     params.Put(&replaceAll);
-    //params.Put(&ratios);
 
-    std::vector<std::map<std::string, GbxR
+    GbxParameters structArray = GbxParameters();
+    GbxStructParameters structRatios = GbxStructParameters();
+    for(int ratioId = 0; ratioId < ratios.size(); ratioId++)
+    {
+        ExtendedCallVoteRatio ratio = ratios.at(ratioId);
+        std::stringstream stringStruct;
+        stringStruct << "<member><name>Command</name><value><string>" << ratio.Command << "</string></value></member>";
+        stringStruct << "<member><name>Param</name><value><string>" << ratio.Param << "</string></value></member>";
+        stringStruct << "<member><name>Ratio</name><value><double>" << ratio.Ratio << "</double></value></member>";
+        structRatios.Put(stringStruct.str());
+    }
+    structArray.Put(&structRatios);
+    params.Put(&structArray);
 
-    GbxMessage message = GbxMessage("SetCallVoteRatiosEx", params);
-    std::cout << std::endl << "CallVote ratios: " << message.GetXml() << std::endl;
-
-    /*if(server->Query(GbxMessage("SetCallVoteRatiosEx", params)))
+    if(server->Query(GbxMessage("SetCallVoteRatiosEx", params)))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::istringstream(responseParams.at(0).GetString()) >> response;
-    }*
+    }
 
-    return response;*/
+    return response;
 }
 
 std::vector<ExtendedCallVoteRatio> Methods::GetCallVoteRatiosEx()
