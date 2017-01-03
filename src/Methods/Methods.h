@@ -22,6 +22,9 @@ public:
      */
     Methods(GbxRemote* serverPtr, std::map<std::string, Player>* playerListPtr);
 
+    /*!
+     * \brief Returns the current server error (from GbxRemote).
+     */
     GbxError* GetCurrentError();
 
     /*!

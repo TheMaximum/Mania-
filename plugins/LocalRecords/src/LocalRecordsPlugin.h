@@ -15,7 +15,7 @@ public:
 
     void Init();
     void OnBeginMap(Map map);
-    void OnPlayerManialinkPageAnswer(Player player, std::string answer, std::vector<EntryVal> entries);
+    void OpenLocalRecords(Player player, std::string answer, std::vector<EntryVal> entries);
 
 private:
     std::vector<LocalRecord> localRecords;

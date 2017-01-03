@@ -6,7 +6,6 @@ LocalRecordsPlugin::LocalRecordsPlugin()
     Author = "TheM";
 
     BeginMap.push_back([this](Map map) { OnBeginMap(map); });
-    PlayerManialinkPageAnswer.push_back([this](Player player, std::string answer, std::vector<EntryVal> entries) { OnPlayerManialinkPageAnswer(player, answer, entries); });
 }
 
 void LocalRecordsPlugin::Init()
@@ -14,8 +13,13 @@ void LocalRecordsPlugin::Init()
     retrieveRecords(*controller->Maps->Current);
     std::cout << "[  INFO   ] " << localRecords.size() << " records found for " << controller->Maps->Current->Name << "." << std::endl;
 
-    widget = LocalRecordsWidget(controller->Server, &localRecords);
-    widget.DisplayToAll(controller->Players);
+    widget = LocalRecordsWidget(controller->UI, &localRecords);
+    controller->UI->AddEvent("OpenLocalRecords", ([this](Player player, std::string answer, std::vector<EntryVal> entries) { OpenLocalRecords(player, answer, entries); }));
+
+    if(!widget.DisplayToAll(controller->Players))
+    {
+        Logging::PrintError(controller->Server->GetCurrentError());
+    }
 }
 
 void LocalRecordsPlugin::OnBeginMap(Map map)
@@ -23,15 +27,15 @@ void LocalRecordsPlugin::OnBeginMap(Map map)
     retrieveRecords(map);
     std::cout << "[  INFO   ] " << localRecords.size() << " records found for " << map.Name << "." << std::endl;
 
-    widget.DisplayToAll(controller->Players);
+    if(!widget.DisplayToAll(controller->Players))
+    {
+        Logging::PrintError(controller->Server->GetCurrentError());
+    }
 }
 
-void LocalRecordsPlugin::OnPlayerManialinkPageAnswer(Player player, std::string answer, std::vector<EntryVal> entries)
+void LocalRecordsPlugin::OpenLocalRecords(Player player, std::string answer, std::vector<EntryVal> entries)
 {
-    if(answer.find(widget.ActionId) != std::string::npos)
-    {
-        std::cout << "Player '" << player.Login << "' has clicked the LocalRecords widget (" << answer << ")!" << std::endl;
-    }
+    std::cout << "Player '" << player.Login << "' has clicked the LocalRecords widget (" << answer << ")!" << std::endl;
 }
 
 void LocalRecordsPlugin::retrieveRecords(Map map)

@@ -14,6 +14,7 @@
 #include "Objects/Map.h"
 #include "Objects/Player.h"
 #include "Plugins/PluginManager.h"
+#include "UI/UIManager.h"
 #include "Utils/Logging.h"
 
 //* ManiaPP
@@ -69,6 +70,7 @@ private:
     PluginManager* plugins;                 /**< \brief Contains the plugin manager. */
     CallBackManager* callbacks;             /**< \brief Contains the callback manager. */
     Methods* methods;                       /**< \brief Server method caller. */
+    UIManager* ui;                          /**< \brief UI manager (ManiaLink). */
 
     Database* db = NULL;                    /**< \brief Contains database connection and driver (needed on destruction). */
     sql::Connection* database = NULL;       /**< \brief Contains database driver. */

@@ -20,6 +20,7 @@
 #include "../Methods/Methods.h"
 #include "../Objects/Player.h"
 #include "../Objects/Map.h"
+#include "../UI/UIManager.h"
 #include "../Utils/Logging.h"
 
 //* Controller
@@ -32,6 +33,7 @@ struct Controller
     std::map<std::string, Player>* Players; /**< \brief Playerlist instance. */
     MapList* Maps;                          /**< \brief Maplist instance. */
     sql::Connection* Database;              /**< \brief Database instance. */
+    UIManager* UI;                          /**< \brief UI manager instance. */
 };
 
 //* Plugin

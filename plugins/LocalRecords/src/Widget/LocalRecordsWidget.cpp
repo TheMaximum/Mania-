@@ -2,30 +2,37 @@
 
 LocalRecordsWidget::LocalRecordsWidget()
 {
-
+    frame = UIFrame();
+    frame.Timeout = 0;
+    frame.CloseOnClick = false;
 }
 
-LocalRecordsWidget::LocalRecordsWidget(Methods* serverMethods, std::vector<LocalRecord>* localRecords)
+LocalRecordsWidget::LocalRecordsWidget(UIManager* uiManager, std::vector<LocalRecord>* localRecords)
 {
-    server = serverMethods;
+    ui = uiManager;
     records = localRecords;
 }
 
-void LocalRecordsWidget::DisplayToAll(std::map<std::string, Player>* players)
+bool LocalRecordsWidget::DisplayToAll(std::map<std::string, Player>* players)
 {
+    bool response = true;
+
     for(std::map<std::string, Player>::iterator player = players->begin(); player != players->end(); ++player)
     {
-        DisplayToPlayer(player->second);
+        if(!DisplayToPlayer(player->second))
+            response = false;
     }
+
+    return response;
 }
 
-void LocalRecordsWidget::DisplayToPlayer(Player player)
+bool LocalRecordsWidget::DisplayToPlayer(Player player)
 {
     std::stringstream widget;
     widget << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
     widget << "<manialink id=\"" << manialinkId << "\">";
     widget << "    <frame posn=\"" << widgetX << " " << widgetY << " 0\" id=\"Widget" << manialinkId << "\">";
-    widget << "        <label posn=\"0.1 -0.1 0\" sizen=\"" << backgroundWidth << " " << backgroundHeight << "\" action=\"" << ActionId << "\" text=\" \" focusareacolor1=\"" << backgroundColor << "\" focusareacolor2=\"" << backgroundFocus << "\"/>";
+    widget << "        <label posn=\"0.1 -0.1 0\" sizen=\"" << backgroundWidth << " " << backgroundHeight << "\" action=\"" << actionId << "\" text=\" \" focusareacolor1=\"" << backgroundColor << "\" focusareacolor2=\"" << backgroundFocus << "\"/>";
     widget << "        <quad posn=\"-0.2 0.3 0.001\" sizen=\"" << borderWidth << " " << borderHeight << "\" style=\"" << borderStyle << "\" substyle=\"" << borderSubstyle << "\"/>";
     widget << "        <quad posn=\"0 0 0.002\" sizen=\"" << backgroundWidth << " " << backgroundHeight << "\" style=\"" << backgroundStyle << "\" substyle=\"" << backgroundSubstyle << "\"/>";
 
@@ -66,8 +73,7 @@ void LocalRecordsWidget::DisplayToPlayer(Player player)
     widget << "    </frame>";
     widget << "</manialink>";
 
-    if(!server->SendDisplayManialinkPageToLogin(player.Login, widget.str(), 0, false))
-    {
-        Logging::PrintError(server->GetCurrentError());
-    }
+    frame.Page = widget.str();
+
+    return ui->Display(frame, player);
 }

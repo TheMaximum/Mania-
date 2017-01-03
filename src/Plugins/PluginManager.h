@@ -39,8 +39,9 @@ public:
      * \param playersPtr      Current instance of the playerlist.
      * \param mapsPtr         Current instance of the maplist.
      * \param databasePtr     Current instance of the database connection.
+     * \param uiPtr           Current instance of the interface manager.
      */
-    PluginManager(Methods* methodsPtr, std::map<std::string, Player>* playersPtr, MapList* mapsPtr, sql::Connection* databasePtr);
+    PluginManager(Methods* methodsPtr, std::map<std::string, Player>* playersPtr, MapList* mapsPtr, sql::Connection* databasePtr, UIManager* uiPtr);
 
     /*!
      * \brief Destructor closes all open plugins.

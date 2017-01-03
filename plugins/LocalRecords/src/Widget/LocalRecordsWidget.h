@@ -8,24 +8,27 @@
 #include "Methods/Methods.h"
 #include "../Objects/LocalRecord.h"
 #include "Objects/Player.h"
+#include "UI/UIManager.h"
 #include "Utils/Logging.h"
 
 class LocalRecordsWidget
 {
 public:
     LocalRecordsWidget();
-    LocalRecordsWidget(Methods* serverMethods, std::vector<LocalRecord>* localRecords);
-    void DisplayToAll(std::map<std::string, Player>* players);
-    void DisplayToPlayer(Player player);
-
-    std::string ActionId = "OpenLocalRecords";
+    LocalRecordsWidget(UIManager* uiManager, std::vector<LocalRecord>* localRecords);
+    void AddEvent(std::string action, std::function<void(Player, std::string, std::vector<EntryVal>)> function);
+    bool DisplayToAll(std::map<std::string, Player>* players);
+    bool DisplayToPlayer(Player player);
 
 private:
-    Methods* server;
+    UIManager* ui;
     std::vector<LocalRecord>* records;
+
+    UIFrame frame;
 
     std::string manialinkId = "LocalRecords";
     std::string title = "Local Records";
+    std::string actionId = "OpenLocalRecords";
 
     int widgetEntries = 16;
     int widgetTopCount = 3;

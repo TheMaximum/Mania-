@@ -3,7 +3,8 @@
 PluginManager::PluginManager(Methods* methodsPtr,
                              std::map<std::string, Player>* playersPtr,
                              MapList* mapsPtr,
-                             sql::Connection* databasePtr)
+                             sql::Connection* databasePtr,
+                             UIManager* uiPtr)
 {
     plugins = std::map<std::string, PluginInfo>();
     events = NULL;
@@ -13,6 +14,7 @@ PluginManager::PluginManager(Methods* methodsPtr,
     controller->Players = playersPtr;
     controller->Maps = mapsPtr;
     controller->Database = databasePtr;
+    controller->UI = uiPtr;
 }
 
 PluginManager::~PluginManager()

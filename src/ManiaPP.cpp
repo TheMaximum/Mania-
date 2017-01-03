@@ -9,8 +9,10 @@ ManiaPP::ManiaPP()
     server = new GbxRemote();
     players = new std::map<std::string, Player>();
     maps = new MapList();
+    events = new EventManager();
 
     methods = new Methods(server, players);
+    ui = new UIManager(methods, events);
 }
 
 ManiaPP::~ManiaPP()
@@ -25,6 +27,8 @@ ManiaPP::~ManiaPP()
     delete events; events = NULL;
     delete callbacks; callbacks = NULL;
     delete methods; methods = NULL;
+
+    delete ui; ui = NULL;
 
     if(database != NULL)
     {
@@ -92,8 +96,7 @@ bool ManiaPP::ConnectToServer()
                                     maps->SetCurrentMap(currentMap.UId);
                                     maps->Current->CopyDetailedMap(currentMap);
 
-                                    events = new EventManager();
-                                    plugins = new PluginManager(methods, players, maps, database);
+                                    plugins = new PluginManager(methods, players, maps, database, ui);
                                     plugins->SetEventManager(events);
                                     callbacks = new CallBackManager(server, events, database, players, maps);
 
