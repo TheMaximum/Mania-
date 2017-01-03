@@ -133,14 +133,18 @@ void CallBackManager::HandlePlayerDisconnect(std::vector<GbxResponseParameter> p
 
 void CallBackManager::HandlePlayerChat(std::vector<GbxResponseParameter> parameters)
 {
-    std::string playerUid = parameters.at(0).GetString();
-    std::string login = parameters.at(1).GetString();
-    std::string text = parameters.at(2).GetString();
-    bool isRegisteredCmd;
-    std::istringstream(parameters.at(3).GetString()) >> isRegisteredCmd;
+    int playerUid = atoi(parameters.at(0).GetString().c_str());
 
-    Player player = players->at(login);
-    events->CallPlayerChat(player, text, isRegisteredCmd);
+    if(playerUid != 0)
+    {
+        std::string login = parameters.at(1).GetString();
+        std::string text = parameters.at(2).GetString();
+        bool isRegisteredCmd;
+        std::istringstream(parameters.at(3).GetString()) >> isRegisteredCmd;
+
+        Player player = players->at(login);
+        events->CallPlayerChat(player, text, isRegisteredCmd);
+    }
 }
 
 void CallBackManager::HandlePlayerManialinkPageAnswer(std::vector<GbxResponseParameter> parameters)
