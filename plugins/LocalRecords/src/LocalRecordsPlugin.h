@@ -2,6 +2,8 @@
 #define LOCALRECORDSPLUGIN_H_
 
 #include <sstream>
+#include <algorithm>
+
 #include "Plugins/Plugin.h"
 #include "Utils/Time.h"
 
@@ -23,6 +25,7 @@ private:
     LocalRecordsWidget widget;
 
     void retrieveRecords(Map map);
+    void displayPersonalRecord(Player player);
 };
 
 #endif // LOCALRECORDSPLUGIN_H_

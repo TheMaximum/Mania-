@@ -10,6 +10,7 @@
 #include "Objects/Player.h"
 #include "UI/UIManager.h"
 #include "Utils/Logging.h"
+#include "Utils/Text.h"
 
 class LocalRecordsWidget
 {
@@ -29,8 +30,8 @@ private:
     std::string title = "Local Records";
     std::string actionId = "OpenLocalRecords";
 
-    int widgetEntries = 16;
-    int widgetTopCount = 3;
+    int widgetEntries = 22;
+    int widgetTopCount = 5;
     double widgetWidth = 15.5;
     double widgetHeight = ((1.8 * widgetEntries) + 3.2);
     double columnHeight = (widgetHeight - 3.1);
@@ -95,6 +96,7 @@ private:
 
     double playerIconBoxX = (widgetX < 0) ? widgetWidth : -2;
     double playerIconX = (widgetX < 0) ? (widgetWidth + 0.2) : -1.8;
+    std::string playerIcon = (widgetX < 0) ? "ShowLeft2" : "ShowRight2";
 };
 
 #endif // LOCALRECORDSWIDGET_H_

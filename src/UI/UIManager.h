@@ -56,6 +56,13 @@ private:
     Methods* server;      /**< \brief Pointer to the server methods. */
     EventManager* events; /**< \brief Pointer to the event manager. */
     std::map<std::string, std::function<void(Player, std::string, std::vector<EntryVal>)>> answers; /**< \brief List with ManiaLink answers to handle. */
+
+    /*!
+     * \brief Formats the page, including custom UI.
+     *
+     * \param frame     Frame to be formatted.
+     */
+    std::string formatPage(UIFrame frame);
 };
 
 #endif // UIMANAGER_H_

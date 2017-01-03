@@ -13,6 +13,7 @@ MapWidget::MapWidget(UIManager* uiManager)
     frame.ManiaLinkId = manialinkId;
     frame.Timeout = 0;
     frame.CloseOnClick = false;
+    frame.CustomUI.insert(std::pair<std::string, bool>("challenge_info", false));
 }
 
 bool MapWidget::DisplayToAll(std::map<std::string, Player>* players, Map* currentMap)

@@ -52,23 +52,86 @@ bool LocalRecordsWidget::DisplayToPlayer(Player player)
 
     double recordY = -3;
 
+    std::string scoreColor = "F00F";
+
     for(int recordId = 0; recordId < records->size(); recordId++)
     {
         LocalRecord record = records->at(recordId);
-        std::string scoreColor = "FF0F";
         if(record.Login == player.Login)
         {
             scoreColor = "0F3F";
             widget << "        <quad posn=\"" << playerIconBoxX << " " << (recordY + 0.35) << " 0.004\" sizen=\"2 1.95\" style=\"BgsPlayerCard\" substyle=\"BgCardSystem\"/>";
-            widget << "        <quad posn=\"" << playerIconX << " " << (recordY + 0.15) << " 0.005\" sizen=\"1.6 1.6\" style=\"Icons64x64_1\" substyle=\"{{playericon}}\"/>";
+            widget << "        <quad posn=\"" << playerIconX << " " << (recordY + 0.15) << " 0.005\" sizen=\"1.6 1.6\" style=\"Icons64x64_1\" substyle=\"" << playerIcon << "\"/>";
         }
 
         widget << "        <label posn=\"2.3 " << recordY << " 0.005\" sizen=\"1.7 1.7\" halign=\"right\" scale=\"0.9\" text=\"" << (recordId + 1) << ".\"/>";
-        widget << "        <label posn=\"6 " << recordY << " 0.005\" sizen=\"3.9 1.7\" halign=\"right\" scale=\"0.9\" textcolor=\"FFFF\" text=\"" << record.FormattedTime << "\"/>";
-        widget << "        <label posn=\"6.2 " << recordY << " 0.005\" sizen=\"9.50 1.7\" scale=\"0.9\" text=\"" << record.NickName << "\"/>";
+        widget << "        <label posn=\"6 " << recordY << " 0.005\" sizen=\"3.9 1.7\" halign=\"right\" scale=\"0.9\" textcolor=\"" << scoreColor << "\" text=\"" << record.FormattedTime << "\"/>";
+        widget << "        <label posn=\"6.2 " << recordY << " 0.005\" sizen=\"9.50 1.7\" scale=\"0.9\" text=\"" << Text::EscapeXML(record.NickName) << "\"/>";
+
+        if(record.Login == player.Login)
+        {
+            scoreColor = "999F";
+        }
 
         recordY -= 1.8;
-        if((recordId + 2) > widgetEntries) break;
+
+        if((recordId + 2) > widgetTopCount) break;
+    }
+
+    int startPoint = (records->size() - (widgetEntries - widgetTopCount));
+    int playerRecord = 0;
+    int recordCount = records->size();
+    for(int recordId = 0; recordId < records->size(); recordId++)
+    {
+        LocalRecord localRecord = records->at(recordId);
+        if(localRecord.Login == player.Login)
+        {
+            playerRecord = (recordId + 1);
+            break;
+        }
+    }
+
+    if(playerRecord > 0)
+    {
+        int recordsToFill = ((widgetEntries - widgetTopCount) - 1);
+        int fillAbove = std::ceil(recordsToFill / 2.0);
+        int fillBelow = std::floor(recordsToFill / 2.0);
+        int roomAbove = (playerRecord - widgetTopCount);
+        int roomBelow = (records->size() - playerRecord);
+
+        if(fillBelow > roomBelow)
+        {
+            fillAbove += (fillBelow - roomBelow);
+        }
+
+        startPoint = ((playerRecord - fillAbove) - 1);
+        if(startPoint < widgetTopCount)
+            startPoint = widgetTopCount;
+    }
+
+    for(int recordId = startPoint; recordId < (startPoint + (widgetEntries - widgetTopCount)); recordId++)
+    {
+        LocalRecord record = records->at(recordId);
+        if(record.Login == player.Login)
+        {
+            scoreColor = "0F3F";
+            widget << "        <quad posn=\"" << playerIconBoxX << " " << (recordY + 0.35) << " 0.004\" sizen=\"2 1.95\" style=\"BgsPlayerCard\" substyle=\"BgCardSystem\"/>";
+            widget << "        <quad posn=\"" << playerIconX << " " << (recordY + 0.15) << " 0.005\" sizen=\"1.6 1.6\" style=\"Icons64x64_1\" substyle=\"" << playerIcon << "\"/>";
+            widget << "        <quad posn=\"0.4 " << (recordY + 0.35) << " 0.004\" sizen=\"" << topWidth << " 1.95\" style=\"" << topStyle << "\" substyle=\"" << topSubstyle << "\"/>";
+        }
+
+        widget << "        <label posn=\"2.3 " << recordY << " 0.005\" sizen=\"1.7 1.7\" halign=\"right\" scale=\"0.9\" text=\"" << (recordId + 1) << ".\"/>";
+        widget << "        <label posn=\"6 " << recordY << " 0.005\" sizen=\"3.9 1.7\" halign=\"right\" scale=\"0.9\" textcolor=\"" << scoreColor << "\" text=\"" << record.FormattedTime << "\"/>";
+        widget << "        <label posn=\"6.2 " << recordY << " 0.005\" sizen=\"9.50 1.7\" scale=\"0.9\" text=\"" << Text::EscapeXML(record.NickName) << "\"/>";
+
+        if(record.Login == player.Login)
+        {
+            scoreColor = "BBBF";
+        }
+
+        recordY -= 1.8;
+
+        if((recordId + 2) > records->size()) break;
     }
 
     widget << "    </frame>";

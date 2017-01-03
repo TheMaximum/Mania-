@@ -17,9 +17,14 @@ void LocalRecordsPlugin::Init()
     widget = LocalRecordsWidget(controller->UI, &localRecords);
     controller->UI->AddEvent("OpenLocalRecords", ([this](Player player, std::string answer, std::vector<EntryVal> entries) { OpenLocalRecords(player, answer, entries); }));
 
-    if(!widget.DisplayToAll(controller->Players))
+    for(std::map<std::string, Player>::iterator player = controller->Players->begin(); player != controller->Players->end(); ++player)
     {
-        Logging::PrintError(controller->Server->GetCurrentError());
+        Player currentPlayer = player->second;
+        displayPersonalRecord(currentPlayer);
+        if(!widget.DisplayToPlayer(currentPlayer))
+        {
+            Logging::PrintError(controller->Server->GetCurrentError());
+        }
     }
 }
 
@@ -28,14 +33,20 @@ void LocalRecordsPlugin::OnBeginMap(Map map)
     retrieveRecords(*controller->Maps->Current);
     std::cout << "[  INFO   ] " << localRecords.size() << " records found for " << controller->Maps->Current->Name << "." << std::endl;
 
-    if(!widget.DisplayToAll(controller->Players))
+    for(std::map<std::string, Player>::iterator player = controller->Players->begin(); player != controller->Players->end(); ++player)
     {
-        Logging::PrintError(controller->Server->GetCurrentError());
+        Player currentPlayer = player->second;
+        displayPersonalRecord(currentPlayer);
+        if(!widget.DisplayToPlayer(currentPlayer))
+        {
+            Logging::PrintError(controller->Server->GetCurrentError());
+        }
     }
 }
 
 void LocalRecordsPlugin::OnPlayerConnect(Player player)
 {
+    displayPersonalRecord(player);
     if(!widget.DisplayToPlayer(player))
     {
         Logging::PrintError(controller->Server->GetCurrentError());
@@ -45,6 +56,25 @@ void LocalRecordsPlugin::OnPlayerConnect(Player player)
 void LocalRecordsPlugin::OpenLocalRecords(Player player, std::string answer, std::vector<EntryVal> entries)
 {
     std::cout << "Player '" << player.Login << "' has clicked the LocalRecords widget (" << answer << ")!" << std::endl;
+}
+
+void LocalRecordsPlugin::displayPersonalRecord(Player player)
+{
+    bool playerFound = false;
+    for(int recordId = 0; recordId < localRecords.size(); recordId++)
+    {
+        LocalRecord localRecord = localRecords.at(recordId);
+        if(localRecord.Login == player.Login)
+        {
+            std::stringstream chatMessage;
+            chatMessage << "$0f3Your current Local Record:$fff " << localRecord.FormattedTime << " $0f3($fff" << (recordId + 1) << ".$0f3)";
+            controller->Server->ChatSendServerMessageToLogin(chatMessage.str(), player.Login);
+            playerFound = true;
+        }
+    }
+
+    if(!playerFound)
+        controller->Server->ChatSendServerMessageToLogin("$0f3You currently don't have a Local Record on this map.", player.Login);
 }
 
 void LocalRecordsPlugin::retrieveRecords(Map map)

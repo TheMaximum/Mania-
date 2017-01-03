@@ -22,22 +22,12 @@ void UIManager::OnPlayerManialinkPageAnswer(Player player, std::string answer, s
 
 bool UIManager::Display(UIFrame frame)
 {
-    std::stringstream page;
-    page << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
-    page << "<manialink id=\"" << frame.ManiaLinkId << "\">";
-    page << frame.Page;
-    page << "</manialink>";
-    return server->SendDisplayManialinkPage(page.str(), frame.Timeout, frame.CloseOnClick);
+    return server->SendDisplayManialinkPage(formatPage(frame), frame.Timeout, frame.CloseOnClick);
 }
 
 bool UIManager::Display(UIFrame frame, Player player)
 {
-    std::stringstream page;
-    page << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
-    page << "<manialink id=\"" << frame.ManiaLinkId << "\">";
-    page << frame.Page;
-    page << "</manialink>";
-    return server->SendDisplayManialinkPageToLogin(player.Login, page.str(), frame.Timeout, frame.CloseOnClick);
+    return server->SendDisplayManialinkPageToLogin(player.Login, formatPage(frame), frame.Timeout, frame.CloseOnClick);
 }
 
 bool UIManager::AddEvent(std::string answer, std::function<void(Player, std::string, std::vector<EntryVal>)> function)
@@ -53,4 +43,26 @@ bool UIManager::AddEvent(std::string answer, std::function<void(Player, std::str
     }
 
     return false;
+}
+
+std::string UIManager::formatPage(UIFrame frame)
+{
+    std::stringstream page;
+    page << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
+    page << "<manialink id=\"" << frame.ManiaLinkId << "\">";
+    page << frame.Page;
+    page << "</manialink>";
+
+    if(frame.CustomUI.size() > 0)
+    {
+        page << "<custom_ui>";
+        for(std::map<std::string, bool>::iterator customUI = frame.CustomUI.begin(); customUI != frame.CustomUI.end(); ++customUI)
+        {
+            std::string uiBool = (customUI->second) ? "true" : "false";
+            page << "    <" << customUI->first << " visible=\"" << uiBool << "\" />";
+        }
+        page << "</custom_ui>";
+    }
+
+    return page.str();
 }

@@ -32,7 +32,7 @@ public:
             int tseconds = atoi(timeAsString.substr((timeAsString.length() - 3)).c_str());
 
             char formattedCharArray[8];
-            sprintf(formattedCharArray, "%d:%02d:%03d", minutes, seconds, tseconds);
+            sprintf(formattedCharArray, "%d:%02d.%03d", minutes, seconds, tseconds);
 
             return std::string(formattedCharArray);
         }
