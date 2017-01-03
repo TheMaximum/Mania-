@@ -18,8 +18,9 @@ Mania++ and its sources are available under the [GNU General Public License v3](
 * Ubuntu 16.04.1 LTS (Linux 4.4.0-31), 32-bit with gcc 5.4.0 (testing)
 * Ubuntu 14.04.5 LTS (Linux 4.4.0-51), 64-bit with gcc 4.8.4 (Travis)
 * Debian 8.6 (Linux 3.16.0-4), 64-bit with gcc 4.9.2 (production)
+* "Back on Ubuntu 14.04.5 LTS on Windows 10" (Linux 4.4.0-51), 64-bit with gcc 4.8.4 (development)
 
-Mania++ is (currently) not compatible with Windows systems and the ```./install.sh```-script requires a Debian-like system to function (with ```apt-get```).
+The ```./install.sh```-script requires a Debian-like system to function (with ```apt-get```).
 
 ## Requirements ##
 * C++11
