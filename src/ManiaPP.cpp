@@ -26,8 +26,11 @@ ManiaPP::~ManiaPP()
     delete callbacks; callbacks = NULL;
     delete methods; methods = NULL;
 
-    database->close();
-    delete database; database = NULL;
+    if(database != NULL)
+    {
+        database->close();
+        delete database; database = NULL;
+    }
     delete db; db = NULL;
 }
 
