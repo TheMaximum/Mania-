@@ -127,26 +127,16 @@ private:
      */
     void setDetailedInfo(std::map<std::string, GbxResponseParameter> serverStruct)
     {
-        UId = serverStruct.find("UId")->second.GetString();
-        Name = serverStruct.find("Name")->second.GetString();
-        FileName = serverStruct.find("FileName")->second.GetString();
-        Environment = serverStruct.find("Environnement")->second.GetString();
-        Author = serverStruct.find("Author")->second.GetString();
+        setBasicInfo(serverStruct);
 
-        GoldTime = atoi(serverStruct.find("GoldTime")->second.GetString().c_str());
-        CopperPrice = atoi(serverStruct.find("CopperPrice")->second.GetString().c_str());
-
-        MapType = serverStruct.find("MapType")->second.GetString();
-        MapStyle = serverStruct.find("MapStyle")->second.GetString();
-
-        std::string Mood = serverStruct.find("Mood")->second.GetString();
-        int BronzeTime = atoi(serverStruct.find("BronzeTime")->second.GetString().c_str());
-        int SilverTime = atoi(serverStruct.find("SilverTime")->second.GetString().c_str());
-        int AuthorTime = atoi(serverStruct.find("AuthorTime")->second.GetString().c_str());
+        Mood = serverStruct.find("Mood")->second.GetString();
+        BronzeTime = atoi(serverStruct.find("BronzeTime")->second.GetString().c_str());
+        SilverTime = atoi(serverStruct.find("SilverTime")->second.GetString().c_str());
+        AuthorTime = atoi(serverStruct.find("AuthorTime")->second.GetString().c_str());
 
         std::istringstream(serverStruct.find("LapRace")->second.GetString()) >> LapRace;
-        int NbLaps = atoi(serverStruct.find("NbLaps")->second.GetString().c_str());
-        int NbCheckpoints = atoi(serverStruct.find("NbCheckpoints")->second.GetString().c_str());
+        NbLaps = atoi(serverStruct.find("NbLaps")->second.GetString().c_str());
+        NbCheckpoints = atoi(serverStruct.find("NbCheckpoints")->second.GetString().c_str());
     }
 };
 

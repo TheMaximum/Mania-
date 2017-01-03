@@ -15,6 +15,7 @@ public:
 
     void Init();
     void OnBeginMap(Map map);
+    void OnPlayerConnect(Player player);
     void OpenLocalRecords(Player player, std::string answer, std::vector<EntryVal> entries);
 
 private:

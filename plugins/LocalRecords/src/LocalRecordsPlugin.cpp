@@ -6,6 +6,7 @@ LocalRecordsPlugin::LocalRecordsPlugin()
     Author = "TheM";
 
     BeginMap.push_back([this](Map map) { OnBeginMap(map); });
+    PlayerConnect.push_back([this](Player player) { OnPlayerConnect(player); });
 }
 
 void LocalRecordsPlugin::Init()
@@ -24,10 +25,18 @@ void LocalRecordsPlugin::Init()
 
 void LocalRecordsPlugin::OnBeginMap(Map map)
 {
-    retrieveRecords(map);
-    std::cout << "[  INFO   ] " << localRecords.size() << " records found for " << map.Name << "." << std::endl;
+    retrieveRecords(*controller->Maps->Current);
+    std::cout << "[  INFO   ] " << localRecords.size() << " records found for " << controller->Maps->Current->Name << "." << std::endl;
 
     if(!widget.DisplayToAll(controller->Players))
+    {
+        Logging::PrintError(controller->Server->GetCurrentError());
+    }
+}
+
+void LocalRecordsPlugin::OnPlayerConnect(Player player)
+{
+    if(!widget.DisplayToPlayer(player))
     {
         Logging::PrintError(controller->Server->GetCurrentError());
     }

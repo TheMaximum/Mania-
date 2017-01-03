@@ -71,7 +71,7 @@ std::vector<Map> Methods::GetMapList(int limit, int index)
     GbxParameters params = GbxParameters();
     params.Put(&limit);
     params.Put(&index);
-    
+
     if(server->Query(GbxMessage("GetMapList", params)))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();

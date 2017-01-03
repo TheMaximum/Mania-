@@ -1,47 +1,45 @@
-#ifndef LOCALRECORDSWIDGET_H_
-#define LOCALRECORDSWIDGET_H_
+#ifndef MAPWIDGET_H_
+#define MAPWIDGET_H_
 
 #include <string>
 #include <vector>
 #include <map>
 
 #include "Methods/Methods.h"
-#include "../Objects/LocalRecord.h"
+#include "Objects/Map.h"
 #include "Objects/Player.h"
 #include "UI/UIManager.h"
 #include "Utils/Logging.h"
+#include "Utils/Time.h"
 
-class LocalRecordsWidget
+class MapWidget
 {
 public:
-    LocalRecordsWidget();
-    LocalRecordsWidget(UIManager* uiManager, std::vector<LocalRecord>* localRecords);
-    bool DisplayToAll(std::map<std::string, Player>* players);
-    bool DisplayToPlayer(Player player);
+    MapWidget();
+    MapWidget(UIManager* uiManager);
+    bool DisplayToAll(std::map<std::string, Player>* players, Map* currentMap);
+    bool DisplayToPlayer(Player player, Map* currentMap);
+
+    std::string Title = "Current Map";
 
 private:
     UIManager* ui;
-    std::vector<LocalRecord>* records;
 
     UIFrame frame;
 
-    std::string manialinkId = "LocalRecords";
-    std::string title = "Local Records";
-    std::string actionId = "OpenLocalRecords";
+    std::string manialinkId = "MapInfo";
+    //std::string actionId = "OpenMapInfo";
 
-    int widgetEntries = 16;
-    int widgetTopCount = 3;
     double widgetWidth = 15.5;
-    double widgetHeight = ((1.8 * widgetEntries) + 3.2);
+    double widgetHeight = 8.9;
     double columnHeight = (widgetHeight - 3.1);
     double backgroundWidth = (widgetWidth - 0.2);
     double backgroundHeight = (widgetHeight - 0.2);
     double borderWidth = (widgetWidth + 0.4);
     double borderHeight = (widgetHeight + 0.6);
-    double columnNameWidth = (widgetWidth - 6.45);
 
     double widgetX = 49.2;
-    double widgetY = 28.2;
+    double widgetY = 48.2;
 
     double left_IconX = 0.6;
     double left_IconY = 0;
@@ -61,9 +59,6 @@ private:
 
     std::string backgroundColor = "3342";
     std::string backgroundFocus = "09F6";
-    std::string backgroundRank = "06F5";
-    std::string backgroundScore = "09F3";
-    std::string backgroundName = "09F1";
 
     std::string backgroundStyle = "Bgs1";
     std::string backgroundSubstyle = "BgTitleGlow";
@@ -83,18 +78,10 @@ private:
 
     double iconX = (widgetX < 0) ? (right_IconX + (widgetWidth - 15.5)) : left_IconX;
     double iconY = (widgetX < 0) ? right_IconY : left_IconY;
-    std::string iconStyle = "BgRaceScore2";
-    std::string iconSubstyle = "LadderRank";
+    std::string iconStyle = "Icons128x128_1";
+    std::string iconSubstyle = "Challenge";
 
     std::string textColor = "FFFF";
-
-    double topWidth = (widgetWidth - 0.8);
-    double topHeight = ((widgetTopCount * 1.8) + 0.2);
-    std::string topStyle = "BgsPlayerCard";
-    std::string topSubstyle = "BgCardSystem";
-
-    double playerIconBoxX = (widgetX < 0) ? widgetWidth : -2;
-    double playerIconX = (widgetX < 0) ? (widgetWidth + 0.2) : -1.8;
 };
 
-#endif // LOCALRECORDSWIDGET_H_
+#endif // MAPWIDGET_H_

@@ -13,11 +13,11 @@ CallBackManager::CallBackManager(GbxRemote* serverPtr, EventManager* eventManage
 void CallBackManager::HandleCallBack(std::string methodName, std::vector<GbxResponseParameter> parameters)
 {
     std::cout << "CALLBACK: " << methodName << " (parameters: " << parameters.size() << ")" << std::endl;
-    for(int paramId = 0; paramId < parameters.size(); paramId++)
+    /*for(int paramId = 0; paramId < parameters.size(); paramId++)
     {
         GbxResponseParameter parameter = parameters.at(paramId);
         Logging::PrintParameter(parameter, paramId);
-    }
+    }*/
 
     if(methodName.find("ManiaPlanet.PlayerConnect") != std::string::npos)
     {

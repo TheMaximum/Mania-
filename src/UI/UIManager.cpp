@@ -22,12 +22,22 @@ void UIManager::OnPlayerManialinkPageAnswer(Player player, std::string answer, s
 
 bool UIManager::Display(UIFrame frame)
 {
-    return server->SendDisplayManialinkPage(frame.Page, frame.Timeout, frame.CloseOnClick);
+    std::stringstream page;
+    page << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
+    page << "<manialink id=\"" << frame.ManiaLinkId << "\">";
+    page << frame.Page;
+    page << "</manialink>";
+    return server->SendDisplayManialinkPage(page.str(), frame.Timeout, frame.CloseOnClick);
 }
 
 bool UIManager::Display(UIFrame frame, Player player)
 {
-    return server->SendDisplayManialinkPageToLogin(player.Login, frame.Page, frame.Timeout, frame.CloseOnClick);
+    std::stringstream page;
+    page << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
+    page << "<manialink id=\"" << frame.ManiaLinkId << "\">";
+    page << frame.Page;
+    page << "</manialink>";
+    return server->SendDisplayManialinkPageToLogin(player.Login, page.str(), frame.Timeout, frame.CloseOnClick);
 }
 
 bool UIManager::AddEvent(std::string answer, std::function<void(Player, std::string, std::vector<EntryVal>)> function)
