@@ -13,7 +13,7 @@ Manages the plugins.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classPluginManager_a4ccbf09a5268ce9eb3f78a06e09609fc}{Plugin\-Manager} (\hyperlink{classMethods}{Methods} $\ast$methods\-Ptr, std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$players\-Ptr, \hyperlink{classMapList}{Map\-List} $\ast$maps\-Ptr, sql\-::\-Connection $\ast$database\-Ptr)
+\hyperlink{classPluginManager_acd184211e8aafdce8207f28baef2757d}{Plugin\-Manager} (\hyperlink{classMethods}{Methods} $\ast$methods\-Ptr, std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$players\-Ptr, \hyperlink{classMapList}{Map\-List} $\ast$maps\-Ptr, sql\-::\-Connection $\ast$database\-Ptr, \hyperlink{classUIManager}{U\-I\-Manager} $\ast$ui\-Ptr)
 \begin{DoxyCompactList}\small\item\em Initializes the pointers the plugins need. \end{DoxyCompactList}\item 
 \hypertarget{classPluginManager_ab657302ef5af357907ae11ad817f5dfc}{\hyperlink{classPluginManager_ab657302ef5af357907ae11ad817f5dfc}{$\sim$\-Plugin\-Manager} ()}\label{classPluginManager_ab657302ef5af357907ae11ad817f5dfc}
 
@@ -50,16 +50,17 @@ std\-::string $>$ \hyperlink{classPluginManager_a6e1d97e5b23f0d8f003a518b8b5fb7a
 Manages the plugins. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classPluginManager_a4ccbf09a5268ce9eb3f78a06e09609fc}{\index{Plugin\-Manager@{Plugin\-Manager}!Plugin\-Manager@{Plugin\-Manager}}
+\hypertarget{classPluginManager_acd184211e8aafdce8207f28baef2757d}{\index{Plugin\-Manager@{Plugin\-Manager}!Plugin\-Manager@{Plugin\-Manager}}
 \index{Plugin\-Manager@{Plugin\-Manager}!PluginManager@{Plugin\-Manager}}
 \subsubsection[{Plugin\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}Plugin\-Manager\-::\-Plugin\-Manager (
 \begin{DoxyParamCaption}
 \item[{{\bf Methods} $\ast$}]{methods\-Ptr, }
 \item[{std\-::map$<$ std\-::string, {\bf Player} $>$ $\ast$}]{players\-Ptr, }
 \item[{{\bf Map\-List} $\ast$}]{maps\-Ptr, }
-\item[{sql\-::\-Connection $\ast$}]{database\-Ptr}
+\item[{sql\-::\-Connection $\ast$}]{database\-Ptr, }
+\item[{{\bf U\-I\-Manager} $\ast$}]{ui\-Ptr}
 \end{DoxyParamCaption}
-)}}\label{classPluginManager_a4ccbf09a5268ce9eb3f78a06e09609fc}
+)}}\label{classPluginManager_acd184211e8aafdce8207f28baef2757d}
 
 
 Initializes the pointers the plugins need. 
@@ -73,6 +74,8 @@ Initializes the pointers the plugins need.
 {\em maps\-Ptr} & Current instance of the maplist. \\
 \hline
 {\em database\-Ptr} & Current instance of the database connection. \\
+\hline
+{\em ui\-Ptr} & Current instance of the interface manager. \\
 \hline
 \end{DoxyParams}
 

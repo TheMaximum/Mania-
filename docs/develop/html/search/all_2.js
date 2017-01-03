@@ -34,6 +34,7 @@ var searchData=
   ['choosenextmap',['ChooseNextMap',['../classMethods.html#a8feb1efefe49126cf39089ff6a2f0cd9',1,'Methods']]],
   ['choosenextmaplist',['ChooseNextMapList',['../classMethods.html#a7db232616b47d7afa1d3202bf156e624',1,'Methods']]],
   ['close',['Close',['../classTcpClient.html#ae7a96d69db612ef4827ee23c31332a4e',1,'TcpClient']]],
+  ['closeonclick',['CloseOnClick',['../structUIFrame.html#a96c8c5d8129595ee565039a84a928ae7',1,'UIFrame']]],
   ['cmdname',['CmdName',['../structCurrentCallVote.html#aaac826ac8fa0865cb90fd60aa26bb6a9',1,'CurrentCallVote']]],
   ['cmdparam',['CmdParam',['../structCurrentCallVote.html#a69b91397ee1a0d237db24985c2d2b7ad',1,'CurrentCallVote']]],
   ['code',['Code',['../structServerStatus.html#ad17b50be8d2cb9c1a62396885b1244cc',1,'ServerStatus']]],

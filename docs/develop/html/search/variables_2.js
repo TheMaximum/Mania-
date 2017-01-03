@@ -2,6 +2,7 @@ var searchData=
 [
   ['callbacks',['callbacks',['../classManiaPP.html#af468d4b6eea93fd836950551eb7d3a01',1,'ManiaPP']]],
   ['callerlogin',['CallerLogin',['../structCurrentCallVote.html#a113ae06f4c42a20fa09107d480579379',1,'CurrentCallVote']]],
+  ['closeonclick',['CloseOnClick',['../structUIFrame.html#a96c8c5d8129595ee565039a84a928ae7',1,'UIFrame']]],
   ['cmdname',['CmdName',['../structCurrentCallVote.html#aaac826ac8fa0865cb90fd60aa26bb6a9',1,'CurrentCallVote']]],
   ['cmdparam',['CmdParam',['../structCurrentCallVote.html#a69b91397ee1a0d237db24985c2d2b7ad',1,'CurrentCallVote']]],
   ['code',['Code',['../structServerStatus.html#ad17b50be8d2cb9c1a62396885b1244cc',1,'ServerStatus']]],

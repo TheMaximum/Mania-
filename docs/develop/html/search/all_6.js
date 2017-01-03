@@ -22,7 +22,7 @@ var searchData=
   ['getcbresponses',['GetCBResponses',['../classGbxRemote.html#a1ae6ff7eddcccdeda59af2316d053aae',1,'GbxRemote']]],
   ['getchatlines',['GetChatLines',['../classMethods.html#a8a5de3ccd3e56cba116c5c1159c91c11',1,'Methods']]],
   ['getcurrentcallvote',['GetCurrentCallVote',['../classMethods.html#a8d457dcbd12a94aaf5d9913210e0862d',1,'Methods']]],
-  ['getcurrenterror',['GetCurrentError',['../classGbxRemote.html#a5467b5400129cd13239f88576aaaa2b4',1,'GbxRemote']]],
+  ['getcurrenterror',['GetCurrentError',['../classGbxRemote.html#a5467b5400129cd13239f88576aaaa2b4',1,'GbxRemote::GetCurrentError()'],['../classMethods.html#a9110ac8e4a4615028aca6fffad10bdef',1,'Methods::GetCurrentError()']]],
   ['getcurrentmapinfo',['GetCurrentMapInfo',['../classMethods.html#a4c8c8afabea84f839091c2a5a79b477d',1,'Methods']]],
   ['getfault',['GetFault',['../classGbxResponse.html#aaeb8f1ccd18ab88799d93ea78befc0df',1,'GbxResponse']]],
   ['getmanialinkpageanswers',['GetManialinkPageAnswers',['../classMethods.html#a43c84e59da7eb37e53bbd8f43299c454',1,'Methods']]],
