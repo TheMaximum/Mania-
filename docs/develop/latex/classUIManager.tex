@@ -23,6 +23,11 @@ bool \hyperlink{classUIManager_a83370680d61bea5a5464127a5f11b9a9}{Display} (\hyp
 \begin{DoxyCompactList}\small\item\em Display frame to player. \end{DoxyCompactList}\item 
 bool \hyperlink{classUIManager_a094c102025f079fed26c67a336938582}{Add\-Event} (std\-::string answer, std\-::function$<$ void(\hyperlink{structPlayer}{Player}, std\-::string, std\-::vector$<$ \hyperlink{structEntryVal}{Entry\-Val} $>$)$>$ function)
 \begin{DoxyCompactList}\small\item\em Add event to be handled on page answer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{classUIManager_a2bfbf770019b05d660ba8f177993c16a}{format\-Page} (\hyperlink{structUIFrame}{U\-I\-Frame} frame)
+\begin{DoxyCompactList}\small\item\em Formats the page, including custom U\-I. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -118,6 +123,22 @@ Display frame to player.
 {\em frame} & Frame to be displayed. \\
 \hline
 {\em player} & \hyperlink{structPlayer}{Player} who should receive the frame. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classUIManager_a2bfbf770019b05d660ba8f177993c16a}{\index{U\-I\-Manager@{U\-I\-Manager}!format\-Page@{format\-Page}}
+\index{format\-Page@{format\-Page}!UIManager@{U\-I\-Manager}}
+\subsubsection[{format\-Page}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string U\-I\-Manager\-::format\-Page (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-I\-Frame}}]{frame}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classUIManager_a2bfbf770019b05d660ba8f177993c16a}
+
+
+Formats the page, including custom U\-I. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & Frame to be formatted. \\
 \hline
 \end{DoxyParams}
 \hypertarget{classUIManager_a79bae5bfa896f37455d10256caa8b95b}{\index{U\-I\-Manager@{U\-I\-Manager}!On\-Player\-Manialink\-Page\-Answer@{On\-Player\-Manialink\-Page\-Answer}}

@@ -97,13 +97,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//* UIFrame</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="structUIFrame.html">   12</a></span>&#160;<span class="comment"></span><span class="keyword">struct </span><a class="code" href="structUIFrame.html">UIFrame</a></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="structUIFrame.html#a19acdca83f6f8e83337ee9cbc9af3d29">   14</a></span>&#160;    std::string <a class="code" href="structUIFrame.html#a19acdca83f6f8e83337ee9cbc9af3d29">ManiaLinkId</a>; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structUIFrame.html#a54d853cff6d85507611f0d43a4956ff9">   15</a></span>&#160;    std::string <a class="code" href="structUIFrame.html#a54d853cff6d85507611f0d43a4956ff9">Page</a>;        </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structUIFrame.html#a5f0ee21f4abbec9a745a2a601e03cd8d">   16</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structUIFrame.html#a5f0ee21f4abbec9a745a2a601e03cd8d">Timeout</a>;             </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structUIFrame.html#a96c8c5d8129595ee565039a84a928ae7">   17</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structUIFrame.html#a96c8c5d8129595ee565039a84a928ae7">CloseOnClick</a>;       </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;};</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif // UIFRAME_H_</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="structUIFrame.html#a19acdca83f6f8e83337ee9cbc9af3d29">   14</a></span>&#160;    std::string <a class="code" href="structUIFrame.html#a19acdca83f6f8e83337ee9cbc9af3d29">ManiaLinkId</a>;              </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structUIFrame.html#a54d853cff6d85507611f0d43a4956ff9">   15</a></span>&#160;    std::string <a class="code" href="structUIFrame.html#a54d853cff6d85507611f0d43a4956ff9">Page</a>;                     </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structUIFrame.html#a5f0ee21f4abbec9a745a2a601e03cd8d">   16</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structUIFrame.html#a5f0ee21f4abbec9a745a2a601e03cd8d">Timeout</a>;                          </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structUIFrame.html#a96c8c5d8129595ee565039a84a928ae7">   17</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structUIFrame.html#a96c8c5d8129595ee565039a84a928ae7">CloseOnClick</a>;                    </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structUIFrame.html#ad7cffba86e4d81aa7a1b7ab475233e08">   18</a></span>&#160;    std::map&lt;std::string, bool&gt; <a class="code" href="structUIFrame.html#ad7cffba86e4d81aa7a1b7ab475233e08">CustomUI</a>; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="structUIFrame.html">UIFrame</a>()</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="structUIFrame.html#ad7cffba86e4d81aa7a1b7ab475233e08">CustomUI</a> = std::map&lt;std::string, bool&gt;();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif // UIFRAME_H_</span></div>
+<div class="ttc" id="structUIFrame_html_ad7cffba86e4d81aa7a1b7ab475233e08"><div class="ttname"><a href="structUIFrame.html#ad7cffba86e4d81aa7a1b7ab475233e08">UIFrame::CustomUI</a></div><div class="ttdeci">std::map&lt; std::string, bool &gt; CustomUI</div><div class="ttdoc">Enable/Disable default game UI. </div><div class="ttdef"><b>Definition:</b> UIFrame.h:18</div></div>
 <div class="ttc" id="structUIFrame_html"><div class="ttname"><a href="structUIFrame.html">UIFrame</a></div><div class="ttdoc">ManiaLink for UI. </div><div class="ttdef"><b>Definition:</b> UIFrame.h:12</div></div>
 <div class="ttc" id="structUIFrame_html_a5f0ee21f4abbec9a745a2a601e03cd8d"><div class="ttname"><a href="structUIFrame.html#a5f0ee21f4abbec9a745a2a601e03cd8d">UIFrame::Timeout</a></div><div class="ttdeci">int Timeout</div><div class="ttdoc">Timeout of the page. </div><div class="ttdef"><b>Definition:</b> UIFrame.h:16</div></div>
 <div class="ttc" id="structUIFrame_html_a54d853cff6d85507611f0d43a4956ff9"><div class="ttname"><a href="structUIFrame.html#a54d853cff6d85507611f0d43a4956ff9">UIFrame::Page</a></div><div class="ttdeci">std::string Page</div><div class="ttdoc">XML ManiaLink page. </div><div class="ttdef"><b>Definition:</b> UIFrame.h:15</div></div>
@@ -112,7 +118,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 3 2017 21:26:27 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jan 3 2017 23:23:36 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
