@@ -12,12 +12,17 @@ void LocalRecordsPlugin::Init()
 {
     retrieveRecords(*controller->Maps->Current);
     std::cout << "[  INFO   ] " << localRecords.size() << " records found for " << controller->Maps->Current->Name << "." << std::endl;
+
+    widget = LocalRecordsWidget(controller->Server, &localRecords);
+    widget.DisplayToAll(controller->Players);
 }
 
 void LocalRecordsPlugin::OnBeginMap(Map map)
 {
     retrieveRecords(map);
     std::cout << "[  INFO   ] " << localRecords.size() << " records found for " << map.Name << "." << std::endl;
+
+    widget.DisplayToAll(controller->Players);
 }
 
 void LocalRecordsPlugin::retrieveRecords(Map map)

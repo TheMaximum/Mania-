@@ -6,6 +6,7 @@
 #include "Utils/Time.h"
 
 #include "Objects/LocalRecord.h"
+#include "Widget/LocalRecordsWidget.h"
 
 class LocalRecordsPlugin : public Plugin
 {
@@ -17,6 +18,7 @@ public:
 
 private:
     std::vector<LocalRecord> localRecords;
+    LocalRecordsWidget widget;
 
     void retrieveRecords(Map map);
 };

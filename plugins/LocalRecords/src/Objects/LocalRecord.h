@@ -1,6 +1,10 @@
 #ifndef LOCALRECORD_H_
 #define LOCALRECORD_H_
 
+#include <cppconn/resultset.h>
+
+#include "Utils/Time.h"
+
 class LocalRecord
 {
 public:

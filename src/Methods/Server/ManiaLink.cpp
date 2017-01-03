@@ -21,10 +21,11 @@ bool Methods::SendDisplayManialinkPage(std::string page, int timeout, bool hideO
 bool Methods::SendDisplayManialinkPageToLogin(std::string login, std::string page, int timeout, bool hideOnClick)
 {
     bool response = false;
+    std::string escapedPage = Text::EscapeXML(page);
 
     GbxParameters params = GbxParameters();
     params.Put(&login);
-    params.Put(&page);
+    params.Put(&escapedPage);
     params.Put(&timeout);
     params.Put(&hideOnClick);
 

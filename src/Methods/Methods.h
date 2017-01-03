@@ -4,6 +4,7 @@
 #include "../GbxRemote/GbxRemote.h"
 #include "../Objects/Map.h"
 #include "../Objects/Player.h"
+#include "../Utils/Text.h"
 #include "Structs.h"
 
 //* Methods
@@ -16,9 +17,12 @@ public:
     /*!
      * \brief Constructor with link to server connection.
      *
-     * \param serverPtr Pointer to server connection.
+     * \param serverPtr     Pointer to server connection.
+     * \param playerListPtr Pointer to the playerlist.
      */
     Methods(GbxRemote* serverPtr, std::map<std::string, Player>* playerListPtr);
+
+    GbxError* GetCurrentError();
 
     /*!
      * \brief Authenticates with the server. Returns whether authentication was successful.

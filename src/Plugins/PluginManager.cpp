@@ -53,7 +53,7 @@ void PluginManager::LoadPlugins(std::string pluginsFolder)
             GbxError* error = new GbxError();
             error->number = -201;
             std::stringstream message;
-            message << "Could not load '" << pluginId->first << "'...";
+            message << "Could not load '" << pluginId->first << "': " << dlerror() << "...";
             error->message = message.str();
             Logging::PrintError(error);
         }

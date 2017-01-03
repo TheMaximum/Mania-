@@ -76,7 +76,7 @@ bool ManiaPP::ConnectToServer()
 
                             std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved system info, server login: '" << systemInfo.ServerLogin << "'." << std::endl;
 
-                            methods->GetChatLines();
+                            methods->SendHideManialinkPage();
 
                             std::cout << "[         ] Enabling CallBacks ... " << '\r' << std::flush;
                             if(methods->EnableCallbacks(true))
@@ -101,19 +101,6 @@ bool ManiaPP::ConnectToServer()
                                     plugins->InitializePlugins();
 
                                     PrintServerInfo();
-
-                                    std::vector<ExtendedCallVoteRatio> callVoteRatios = std::vector<ExtendedCallVoteRatio>();
-                                    ExtendedCallVoteRatio callVoteRatio = ExtendedCallVoteRatio();
-                                    callVoteRatio.Command = "CommandOne";
-                                    callVoteRatio.Param = "ParamA";
-                                    callVoteRatio.Ratio = 0.5;
-                                    callVoteRatios.push_back(callVoteRatio);
-                                    callVoteRatio = ExtendedCallVoteRatio();
-                                    callVoteRatio.Command = "CommandTwo";
-                                    callVoteRatio.Param = "ParamB";
-                                    callVoteRatio.Ratio = 0.85;
-                                    callVoteRatios.push_back(callVoteRatio);
-                                    std::cout << "Test struct response: " << methods->SetCallVoteRatiosEx(true, callVoteRatios) << std::endl;
 
                                     return true;
                                 }

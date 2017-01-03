@@ -5,3 +5,8 @@ Methods::Methods(GbxRemote* serverPtr, std::map<std::string, Player>* playerList
     server = serverPtr;
     playerList = playerListPtr;
 }
+
+GbxError* Methods::GetCurrentError()
+{
+    return server->GetCurrentError();
+}

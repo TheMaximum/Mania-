@@ -4,6 +4,7 @@ project (LocalRecordsPlugin)
 add_definitions(-std=c++11)
 add_definitions(-Wno-deprecated)
 add_definitions(-Wl,--export-dynamic)
+add_definitions(-rdynamic)
 
 set (LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR})
 link_directories(${PROJECT_SOURCE_DIR}/../../lib/yaml/build)
