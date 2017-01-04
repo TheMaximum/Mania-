@@ -4,6 +4,7 @@
 #include <cstring>
 #include <cmath>
 #include "../GbxRemote/GbxStructs.h"
+#include "../GbxRemote/ServerResponse/GbxServerResponse.h"
 
 //* Logging
 /**

@@ -4,6 +4,9 @@ ManiaPP::ManiaPP()
 {
     std::cout << "## Running Mania++ v" << VERSION << " #####################################################" << std::endl;
 
+    VersionChecker versionChecker = VersionChecker();
+    versionChecker.CheckForUpdates("TheMaximum/mania-pp", VERSION);
+
     config = new Config("config.yaml");
     logging = new Logging();
     server = new GbxRemote();

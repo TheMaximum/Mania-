@@ -31,4 +31,5 @@ add_executable(Mania++ ${SOURCES}
 target_link_libraries(Mania++ yaml-cpp
                               ${EXECUTABLE_OUTPUT_PATH}/lib/pugixml/libpugixml.a
                               dl
-                              mysqlcppconn)
+                              mysqlcppconn
+                              curl)

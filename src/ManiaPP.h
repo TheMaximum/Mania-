@@ -16,6 +16,7 @@
 #include "Plugins/PluginManager.h"
 #include "UI/UIManager.h"
 #include "Utils/Logging.h"
+#include "Version/VersionChecker.h"
 
 //* ManiaPP
 /**
