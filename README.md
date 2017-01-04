@@ -13,11 +13,11 @@ Mania++ and its sources are available under the [GNU General Public License v3](
 ## Tested environments ##
 * Ubuntu 16.10 (Linux 4.8.0-30), 64-bit with gcc 6.2.0 (development)
 * Ubuntu 16.04.1 LTS (Linux 4.4.0-31), 32-bit with gcc 5.4.0 (testing)
-* Ubuntu 14.04.5 LTS (Linux 4.4.0-51), 64-bit with gcc [4.9.4](http://askubuntu.com/a/456849) (Travis)
+* Ubuntu 14.04.5 LTS (Linux 4.4.0-51), 64-bit with gcc 4.9.4 (Travis)
 * Debian 8.6 (Linux 3.16.0-4), 64-bit with gcc 4.9.2 (production)
-* "Bash on Ubuntu 14.04.5 LTS on Windows 10" (Linux 4.4.0-51), 64-bit with gcc [4.9.4](http://askubuntu.com/a/456849) (development)
+* "Bash on Ubuntu 14.04.5 LTS on Windows 10" (Linux 4.4.0-51), 64-bit with gcc 4.9.4 (development)
 
-The ```./install.sh```-script requires a Debian-like system to function (with ```apt-get```). The JSON library requires gcc/g++ v4.9+, the 14.04 LTS only comes with 4.8.4, so you will have to upgrade the version by hand and tell the build script that you want to use that version: ```-DCMAKE_CXX_COMPILER=g++-4.9 -DCMAKE_C_COMPILER=gcc-4.9```.
+The ```./install.sh```-script requires a Debian-like system to function (with ```apt-get```). The JSON library requires gcc/g++ v4.9+, the 14.04 LTS only comes with 4.8.4, so you will have to [upgrade the version by hand](http://askubuntu.com/a/456849) and tell the build script that you want to use that version: ```-DCMAKE_CXX_COMPILER=g++-4.9 -DCMAKE_C_COMPILER=gcc-4.9```.
 
 ## Requirements ##
 * C++11
