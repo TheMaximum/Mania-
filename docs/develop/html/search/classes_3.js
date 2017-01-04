@@ -12,5 +12,6 @@ var searchData=
   ['gbxresponse',['GbxResponse',['../classGbxResponse.html',1,'']]],
   ['gbxresponseparameter',['GbxResponseParameter',['../classGbxResponseParameter.html',1,'']]],
   ['gbxserverresponse',['GbxServerResponse',['../classGbxServerResponse.html',1,'']]],
-  ['gbxstructparameters',['GbxStructParameters',['../classGbxStructParameters.html',1,'']]]
+  ['gbxstructparameters',['GbxStructParameters',['../classGbxStructParameters.html',1,'']]],
+  ['gitversion',['GitVersion',['../structGitVersion.html',1,'']]]
 ];

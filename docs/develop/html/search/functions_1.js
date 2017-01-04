@@ -27,6 +27,7 @@ var searchData=
   ['chatsendservermessage',['ChatSendServerMessage',['../classMethods.html#a5e639d7a4fa2e2b403dfa5adfbc47ac3',1,'Methods']]],
   ['chatsendservermessagetologin',['ChatSendServerMessageToLogin',['../classMethods.html#a200065ea89c2694f9d2af3aae686c483',1,'Methods']]],
   ['chatsendservermessagetoplayer',['ChatSendServerMessageToPlayer',['../classMethods.html#a616887260c024c6b7cabcdca9d43fdec',1,'Methods']]],
+  ['checkforupdates',['CheckForUpdates',['../classVersionChecker.html#afb48bf9325d6049baefbe2b8841d061e',1,'VersionChecker']]],
   ['checkmapforcurrentserverparams',['CheckMapForCurrentServerParams',['../classMethods.html#a93ac30a58c96f2635fef8f05b27a7864',1,'Methods']]],
   ['choosenextmap',['ChooseNextMap',['../classMethods.html#a8feb1efefe49126cf39089ff6a2f0cd9',1,'Methods']]],
   ['choosenextmaplist',['ChooseNextMapList',['../classMethods.html#a7db232616b47d7afa1d3202bf156e624',1,'Methods']]],

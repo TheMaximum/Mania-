@@ -41,5 +41,6 @@ var searchData=
   ['getsysteminfo',['GetSystemInfo',['../classMethods.html#a0030583fdad06ab0f2f589b79c904f09',1,'Methods']]],
   ['getversion',['GetVersion',['../classMethods.html#a674b7c1f53296dca78fb14896b374e1e',1,'Methods']]],
   ['getxml',['GetXml',['../classGbxMessage.html#ac81e16efce7da483a696d6653e18c9d8',1,'GbxMessage::GetXml()'],['../classGbxParameter.html#a3c6800bca78c5bb4ed7de62cf552ee35',1,'GbxParameter::GetXml()']]],
+  ['gitversion',['GitVersion',['../structGitVersion.html',1,'']]],
   ['goldtime',['GoldTime',['../structMap.html#a769a574be92aa024f7804627c167ceff',1,'Map']]]
 ];

@@ -1,0 +1,177 @@
+\hypertarget{classVersionChecker}{\section{Version\-Checker Class Reference}
+\label{classVersionChecker}\index{Version\-Checker@{Version\-Checker}}
+}
+
+
+Checks Mania++ version (and possibly plugin versions).  
+
+
+
+
+{\ttfamily \#include $<$Version\-Checker.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classVersionChecker_afb48bf9325d6049baefbe2b8841d061e}{Check\-For\-Updates} (std\-::string repository, std\-::string current\-Version)
+\begin{DoxyCompactList}\small\item\em Returns whether there are updates available. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classVersionChecker_ac758c0752d07f453f11357fac439011d}{retrieve\-Data} (std\-::string url, std\-::string $\ast$data)
+\begin{DoxyCompactList}\small\item\em Retrieves data via c\-U\-R\-L. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{structGitVersion}{Git\-Version} $>$ \hyperlink{classVersionChecker_a9f648fee93cd911d85c34af34c2f1b0a}{retrieve\-Versions} (std\-::string repository)
+\begin{DoxyCompactList}\small\item\em Retrieves versions (tags) of repository. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{structGitVersion}{Git\-Version} $>$ \hyperlink{classVersionChecker_a8dea3d22c0a7ef3928f9da73bebb8295}{decode\-Versions} (std\-::string response)
+\begin{DoxyCompactList}\small\item\em Decodes the J\-S\-O\-N response with versions (tags) of repository. \end{DoxyCompactList}\item 
+void \hyperlink{classVersionChecker_aa993a71dc58cfb6a3840235fe3fa4d27}{retrieve\-Release} (\hyperlink{structGitVersion}{Git\-Version} $\ast$version)
+\begin{DoxyCompactList}\small\item\em Retrieves release information. \end{DoxyCompactList}\item 
+void \hyperlink{classVersionChecker_a5b27ec7321df94dff2876c260c75fea0}{decode\-Release} (\hyperlink{structGitVersion}{Git\-Version} $\ast$version, std\-::string response)
+\begin{DoxyCompactList}\small\item\em Decodes the J\-S\-O\-N response with release and inputs info into version struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static size\-\_\-t \hyperlink{classVersionChecker_a08332369b0012d1fa919471b559a13b1}{receive\-Data} (void $\ast$contents, size\-\_\-t size, size\-\_\-t nmemb, std\-::string $\ast$tags)
+\begin{DoxyCompactList}\small\item\em Receives data from c\-U\-R\-L input. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Checks Mania++ version (and possibly plugin versions). 
+
+\subsection{Member Function Documentation}
+\hypertarget{classVersionChecker_afb48bf9325d6049baefbe2b8841d061e}{\index{Version\-Checker@{Version\-Checker}!Check\-For\-Updates@{Check\-For\-Updates}}
+\index{Check\-For\-Updates@{Check\-For\-Updates}!VersionChecker@{Version\-Checker}}
+\subsubsection[{Check\-For\-Updates}]{\setlength{\rightskip}{0pt plus 5cm}bool Version\-Checker\-::\-Check\-For\-Updates (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{repository, }
+\item[{std\-::string}]{current\-Version}
+\end{DoxyParamCaption}
+)}}\label{classVersionChecker_afb48bf9325d6049baefbe2b8841d061e}
+
+
+Returns whether there are updates available. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em repository} & Name of the Git\-Hub repository. \\
+\hline
+{\em current\-Version} & Version to which the repository to. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classVersionChecker_a5b27ec7321df94dff2876c260c75fea0}{\index{Version\-Checker@{Version\-Checker}!decode\-Release@{decode\-Release}}
+\index{decode\-Release@{decode\-Release}!VersionChecker@{Version\-Checker}}
+\subsubsection[{decode\-Release}]{\setlength{\rightskip}{0pt plus 5cm}void Version\-Checker\-::decode\-Release (
+\begin{DoxyParamCaption}
+\item[{{\bf Git\-Version} $\ast$}]{version, }
+\item[{std\-::string}]{response}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classVersionChecker_a5b27ec7321df94dff2876c260c75fea0}
+
+
+Decodes the J\-S\-O\-N response with release and inputs info into version struct. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em version} & Version struct. \\
+\hline
+{\em response} & Server response (J\-S\-O\-N). \\
+\hline
+\end{DoxyParams}
+\hypertarget{classVersionChecker_a8dea3d22c0a7ef3928f9da73bebb8295}{\index{Version\-Checker@{Version\-Checker}!decode\-Versions@{decode\-Versions}}
+\index{decode\-Versions@{decode\-Versions}!VersionChecker@{Version\-Checker}}
+\subsubsection[{decode\-Versions}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf Git\-Version} $>$ Version\-Checker\-::decode\-Versions (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{response}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classVersionChecker_a8dea3d22c0a7ef3928f9da73bebb8295}
+
+
+Decodes the J\-S\-O\-N response with versions (tags) of repository. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em response} & Server response (J\-S\-O\-N). \\
+\hline
+\end{DoxyParams}
+\hypertarget{classVersionChecker_a08332369b0012d1fa919471b559a13b1}{\index{Version\-Checker@{Version\-Checker}!receive\-Data@{receive\-Data}}
+\index{receive\-Data@{receive\-Data}!VersionChecker@{Version\-Checker}}
+\subsubsection[{receive\-Data}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Version\-Checker\-::receive\-Data (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{contents, }
+\item[{size\-\_\-t}]{size, }
+\item[{size\-\_\-t}]{nmemb, }
+\item[{std\-::string $\ast$}]{tags}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classVersionChecker_a08332369b0012d1fa919471b559a13b1}
+
+
+Receives data from c\-U\-R\-L input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em contents} & Contents from c\-U\-R\-L. \\
+\hline
+{\em size} & Size of contents. \\
+\hline
+{\em nmemb} & Number of members (?). \\
+\hline
+{\em tags} & Output string. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classVersionChecker_ac758c0752d07f453f11357fac439011d}{\index{Version\-Checker@{Version\-Checker}!retrieve\-Data@{retrieve\-Data}}
+\index{retrieve\-Data@{retrieve\-Data}!VersionChecker@{Version\-Checker}}
+\subsubsection[{retrieve\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void Version\-Checker\-::retrieve\-Data (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{url, }
+\item[{std\-::string $\ast$}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classVersionChecker_ac758c0752d07f453f11357fac439011d}
+
+
+Retrieves data via c\-U\-R\-L. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & U\-R\-L to retrieve. \\
+\hline
+{\em data} & Received data (return). \\
+\hline
+\end{DoxyParams}
+\hypertarget{classVersionChecker_aa993a71dc58cfb6a3840235fe3fa4d27}{\index{Version\-Checker@{Version\-Checker}!retrieve\-Release@{retrieve\-Release}}
+\index{retrieve\-Release@{retrieve\-Release}!VersionChecker@{Version\-Checker}}
+\subsubsection[{retrieve\-Release}]{\setlength{\rightskip}{0pt plus 5cm}void Version\-Checker\-::retrieve\-Release (
+\begin{DoxyParamCaption}
+\item[{{\bf Git\-Version} $\ast$}]{version}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classVersionChecker_aa993a71dc58cfb6a3840235fe3fa4d27}
+
+
+Retrieves release information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em version} & Version struct. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classVersionChecker_a9f648fee93cd911d85c34af34c2f1b0a}{\index{Version\-Checker@{Version\-Checker}!retrieve\-Versions@{retrieve\-Versions}}
+\index{retrieve\-Versions@{retrieve\-Versions}!VersionChecker@{Version\-Checker}}
+\subsubsection[{retrieve\-Versions}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf Git\-Version} $>$ Version\-Checker\-::retrieve\-Versions (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{repository}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classVersionChecker_a9f648fee93cd911d85c34af34c2f1b0a}
+
+
+Retrieves versions (tags) of repository. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em repository} & Repository name. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Version/Version\-Checker.\-h\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Version/Version\-Checker.\-cpp\end{DoxyCompactItemize}

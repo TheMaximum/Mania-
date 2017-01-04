@@ -4,6 +4,7 @@ var searchData=
   ['ratio',['Ratio',['../structCallVoteRatio.html#a117baff727c0bbd5860cd4ed4998ec85',1,'CallVoteRatio::Ratio()'],['../structExtendedCallVoteRatio.html#a45f34354daff068af647554ada33f7f8',1,'ExtendedCallVoteRatio::Ratio()']]],
   ['readcallbacks',['ReadCallBacks',['../classGbxRemote.html#ac595861af2f4d7349ce3841f0758507d',1,'GbxRemote']]],
   ['receive',['Receive',['../classTcpClient.html#aa000d653ba13fb447642e81890cdc866',1,'TcpClient']]],
+  ['receivedata',['receiveData',['../classVersionChecker.html#a08332369b0012d1fa919471b559a13b1',1,'VersionChecker']]],
   ['registerbeginmap',['RegisterBeginMap',['../classEventManager.html#ae77dfbbb9640ca9aa5b458d6959676ea',1,'EventManager']]],
   ['registerbeginmatch',['RegisterBeginMatch',['../classEventManager.html#afb7b0d6fd646ce3eb0568c95c8a4b89c',1,'EventManager']]],
   ['registerbillupdated',['RegisterBillUpdated',['../classEventManager.html#a8ce3c162bdc0cad5ea03e9bf1233c991',1,'EventManager']]],
@@ -23,9 +24,13 @@ var searchData=
   ['registervoteupdated',['RegisterVoteUpdated',['../classEventManager.html#aa8833f57b1732204762c4d64c8546c53',1,'EventManager']]],
   ['removemap',['RemoveMap',['../classMethods.html#a1fd515d35dfc0007303ff75c4f50a678',1,'Methods']]],
   ['removemaplist',['RemoveMapList',['../classMethods.html#afbac3687bfc17000689598bff14c7610',1,'Methods']]],
+  ['repository',['Repository',['../structGitVersion.html#ad47dce1972d1058648429996c6ed02b0',1,'GitVersion']]],
   ['requesthandle',['RequestHandle',['../classTcpClient.html#a57ffabce89de6e0f07a3717758f67fe6',1,'TcpClient']]],
   ['resetcbresponses',['ResetCBResponses',['../classGbxRemote.html#a81ba62f042948610a3cf720316e22076',1,'GbxRemote']]],
   ['result',['Result',['../structManiaLinkPageAnswer.html#a270ed5e3cf6a5dd74cca2c6c1d007ae1',1,'ManiaLinkPageAnswer']]],
+  ['retrievedata',['retrieveData',['../classVersionChecker.html#ac758c0752d07f453f11357fac439011d',1,'VersionChecker']]],
   ['retrievemaplist',['retrieveMapList',['../classManiaPP.html#a18582fa28b259c22a8a8d526af62123a',1,'ManiaPP']]],
-  ['retrieveplayerlist',['retrievePlayerList',['../classManiaPP.html#aede94c0b982250de19186d447542e479',1,'ManiaPP']]]
+  ['retrieveplayerlist',['retrievePlayerList',['../classManiaPP.html#aede94c0b982250de19186d447542e479',1,'ManiaPP']]],
+  ['retrieverelease',['retrieveRelease',['../classVersionChecker.html#aa993a71dc58cfb6a3840235fe3fa4d27',1,'VersionChecker']]],
+  ['retrieveversions',['retrieveVersions',['../classVersionChecker.html#a9f648fee93cd911d85c34af34c2f1b0a',1,'VersionChecker']]]
 ];

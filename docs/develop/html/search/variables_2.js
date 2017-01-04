@@ -7,6 +7,7 @@ var searchData=
   ['cmdparam',['CmdParam',['../structCurrentCallVote.html#a69b91397ee1a0d237db24985c2d2b7ad',1,'CurrentCallVote']]],
   ['code',['Code',['../structServerStatus.html#ad17b50be8d2cb9c1a62396885b1244cc',1,'ServerStatus']]],
   ['command',['Command',['../structCallVoteRatio.html#a14e3195672c370c5c85ad06287c1d509',1,'CallVoteRatio::Command()'],['../structExtendedCallVoteRatio.html#a8b25c752447c968f2522c2748077b096',1,'ExtendedCallVoteRatio::Command()']]],
+  ['commit',['Commit',['../structGitVersion.html#a0a7fcfae969cad2cb90dc0353df5bf49',1,'GitVersion']]],
   ['config',['config',['../classManiaPP.html#a9a91437fa70afd52c2dce19298888e36',1,'ManiaPP']]],
   ['configfile',['configFile',['../classConfig.html#a08b7b2c4eadf7dda51404f76fd6e0280',1,'Config']]],
   ['connected',['connected',['../classGbxRemote.html#a56662ea222345c645ae897e056b5c8c8',1,'GbxRemote']]],

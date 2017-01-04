@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['name',['Name',['../structEntryVal.html#a3fdfc0956cb158d36bff09687c8f577e',1,'EntryVal::Name()'],['../structServerVersion.html#aadf5d3affd53da46d030cf1a4bc63353',1,'ServerVersion::Name()'],['../structServerStatus.html#a6dd08d54208cd864fd1f384081209e0f',1,'ServerStatus::Name()'],['../structMap.html#ab1a5bf049a4b74e704128d31e9b53b8c',1,'Map::Name()']]],
+  ['name',['Name',['../structEntryVal.html#a3fdfc0956cb158d36bff09687c8f577e',1,'EntryVal::Name()'],['../structServerVersion.html#aadf5d3affd53da46d030cf1a4bc63353',1,'ServerVersion::Name()'],['../structServerStatus.html#a6dd08d54208cd864fd1f384081209e0f',1,'ServerStatus::Name()'],['../structMap.html#ab1a5bf049a4b74e704128d31e9b53b8c',1,'Map::Name()'],['../structGitVersion.html#a437b0aaee8685d61cccde69ad4ae73ec',1,'GitVersion::Name()']]],
   ['nbcheckpoints',['NbCheckpoints',['../structMap.html#abadd4d6809c065522960a0db897d6c10',1,'Map']]],
   ['nblaps',['NbLaps',['../structMap.html#a2a06493a298b5ebfae70ecbfb0bca406',1,'Map']]],
   ['nbrlapsfinished',['NbrLapsFinished',['../structPlayerRanking.html#a82c1df4d6ef3d2dbb4ce8f654ef9f8b1',1,'PlayerRanking']]],

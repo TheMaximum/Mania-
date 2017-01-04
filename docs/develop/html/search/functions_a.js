@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['onplayermanialinkpageanswer',['OnPlayerManialinkPageAnswer',['../classUIManager.html#a79bae5bfa896f37455d10256caa8b95b',1,'UIManager']]]
+  ['newerthancurrent',['NewerThanCurrent',['../classVersionCompare.html#a237db39cbf335ed106f4fa2dc087cb36',1,'VersionCompare']]]
 ];
