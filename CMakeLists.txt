@@ -7,6 +7,7 @@ add_definitions(-Wno-deprecated)
 set (EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR})
 link_directories(${PROJECT_SOURCE_DIR}/lib/yaml/build)
 include_directories("${PROJECT_SOURCE_DIR}/lib/yaml/include")
+include_directories("${PROJECT_SOURCE_DIR}/lib/json")
 
 set (PROJECT_SOURCE_DIR ${PROJECT_SOURCE_DIR}/src)
 
