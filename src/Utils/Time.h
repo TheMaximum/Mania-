@@ -39,6 +39,18 @@ public:
 
         return formattedTime;
     }
+
+    /*!
+     * \brief Returns the current time in yyyy-mm-dd hh:mm:ss format.
+     */
+    static std::string Current()
+    {
+        char buffer[20];
+        time_t now = time(NULL);
+        strftime(buffer, 20, "%Y-%m-%d %H:%M:%S", localtime(&now));
+
+        return std::string(buffer);
+    }
 };
 
 #endif // TIME_H_

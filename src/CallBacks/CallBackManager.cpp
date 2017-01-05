@@ -268,11 +268,7 @@ void CallBackManager::HandlePlayerFinish(std::vector<GbxResponseParameter> param
     Player* player = &players->at(login);
     int time = atoi(parameters.at(2).GetString().c_str());
 
-    if(time > 0)
-    {
-        events->CallPlayerFinish(*player, time);
-    }
-
+    events->CallPlayerFinish(*player, time);
     player->CurrentCheckpoints.clear();
 }
 

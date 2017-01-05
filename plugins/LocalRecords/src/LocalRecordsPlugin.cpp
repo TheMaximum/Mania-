@@ -8,32 +8,26 @@ LocalRecordsPlugin::LocalRecordsPlugin()
     BeginMap.push_back([this](Map map) { OnBeginMap(map); });
     PlayerConnect.push_back([this](Player player) { OnPlayerConnect(player); });
     PlayerFinish.push_back([this](Player player, int time) { OnPlayerFinish(player, time); });
-    PlayerCheckpoint.push_back([this](Player player, int time, int currentLap, int checkpointIndex) { OnPlayerCheckpoint(player, time, currentLap, checkpointIndex); });
 }
 
 void LocalRecordsPlugin::Init()
 {
     retrieveRecords(*controller->Maps->Current);
-    std::cout << "[  INFO   ] " << localRecords.size() << " records found for " << controller->Maps->Current->Name << "." << std::endl;
+    std::cout << "[  INFO   ] " << localRecords.List.size() << " records found for " << controller->Maps->Current->Name << "." << std::endl;
 
     widget = LocalRecordsWidget(controller->UI, &localRecords);
     controller->UI->AddEvent("OpenLocalRecords", ([this](Player player, std::string answer, std::vector<EntryVal> entries) { OpenLocalRecords(player, answer, entries); }));
 
-    for(std::map<std::string, Player>::iterator player = controller->Players->begin(); player != controller->Players->end(); ++player)
+    if(!widget.DisplayToAll(controller->Players))
     {
-        Player currentPlayer = player->second;
-        displayPersonalRecord(currentPlayer);
-        if(!widget.DisplayToPlayer(currentPlayer))
-        {
-            Logging::PrintError(controller->Server->GetCurrentError());
-        }
+        Logging::PrintError(controller->Server->GetCurrentError());
     }
 }
 
 void LocalRecordsPlugin::OnBeginMap(Map map)
 {
     retrieveRecords(*controller->Maps->Current);
-    std::cout << "[  INFO   ] " << localRecords.size() << " records found for " << controller->Maps->Current->Name << "." << std::endl;
+    std::cout << "[  INFO   ] " << localRecords.List.size() << " records found for " << controller->Maps->Current->Name << "." << std::endl;
 
     for(std::map<std::string, Player>::iterator player = controller->Players->begin(); player != controller->Players->end(); ++player)
     {
@@ -57,24 +51,107 @@ void LocalRecordsPlugin::OnPlayerConnect(Player player)
 
 void LocalRecordsPlugin::OnPlayerFinish(Player player, int time)
 {
-    std::cout << "FINISH! Time " << time << ", checkpoints: ";
-    for(int checkPointId = 0; checkPointId < player.CurrentCheckpoints.size(); checkPointId++)
+    if(time > 0 && player.CurrentCheckpoints.size() == controller->Maps->Current->NbCheckpoints)
     {
-        if(checkPointId > 0) std::cout << ",";
-        std::cout << player.CurrentCheckpoints.at(checkPointId);
-    }
-    std::cout << std::endl;
-}
+        LocalRecord currentLocal = localRecords.GetPlayerRecord(player);
+        int currentLocalIndex = localRecords.GetPlayerRecordIndex(player);
 
-void LocalRecordsPlugin::OnPlayerCheckpoint(Player player, int time, int currentLap, int checkpointIndex)
-{
-    std::cout << "CHECKPOINT! List: ";
-    for(int checkPointId = 0; checkPointId < player.CurrentCheckpoints.size(); checkPointId++)
-    {
-        if(checkPointId > 0) std::cout << ",";
-        std::cout << player.CurrentCheckpoints.at(checkPointId);
+        std::stringstream checkpoints;
+        for(int checkPointId = 0; checkPointId < player.CurrentCheckpoints.size(); checkPointId++)
+        {
+            if(checkPointId > 0) checkpoints << ",";
+            checkpoints << player.CurrentCheckpoints.at(checkPointId);
+        }
+
+        bool recordInserted = false;
+
+        if(currentLocal.Id == 0)
+        {
+            // Player has no local.
+            bool insertNewRecord = false;
+
+            if(localRecords.List.size() == recordLimit)
+            {
+                // Records list is full.
+                LocalRecord lastRecord = localRecords.List.back();
+                if(time < lastRecord.Time)
+                {
+                    // Time is better than last record, so insert in database.
+                    insertNewRecord = true;
+                }
+            }
+            else
+            {
+                // Records list isn't full, so can always be added.
+                insertNewRecord = true;
+            }
+
+            if(insertNewRecord)
+            {
+                sql::PreparedStatement* pstmt = controller->Database->prepareStatement("INSERT INTO `records` (`MapId`, `PlayerId`, `Score`, `Date`, `Checkpoints`) VALUES (?, ?, ?, ?, ?)");
+                pstmt->setInt(1, controller->Maps->Current->Id);
+                pstmt->setInt(2, player.Id);
+                pstmt->setInt(3, time);
+                pstmt->setString(4, Time::Current());
+                pstmt->setString(5, checkpoints.str());
+                pstmt->execute();
+
+                recordInserted = true;
+                delete pstmt; pstmt = NULL;
+            }
+        }
+        else
+        {
+            // Player has a local.
+            if(time < currentLocal.Time)
+            {
+                // Player improved his record.
+                sql::PreparedStatement* pstmt = controller->Database->prepareStatement("UPDATE `records` SET `Score` = ?, `Date` = ?, `Checkpoints` = ? WHERE `Id` = ?");
+                pstmt->setInt(1, time);
+                pstmt->setString(2, Time::Current());
+                pstmt->setString(3, checkpoints.str());
+                pstmt->setInt(4, currentLocal.Id);
+                pstmt->execute();
+
+                recordInserted = true;
+                delete pstmt; pstmt = NULL;
+            }
+            else if(time == currentLocal.Time)
+            {
+                // Player equalled his record.
+                std::stringstream chatMessage;
+                chatMessage << "$fff" << player.NickName << "$s$z$0f3 equalled the $fff" << currentLocalIndex << ".$0f3 record ($fff" << currentLocal.FormattedTime << "$0f3).";
+                controller->Server->ChatSendServerMessage(chatMessage.str());
+            }
+        }
+
+        retrieveRecords(*controller->Maps->Current);
+
+        if(recordInserted)
+        {
+            LocalRecord newLocal = localRecords.GetPlayerRecord(player);
+            int newLocalIndex = localRecords.GetPlayerRecordIndex(player);
+
+            std::stringstream chatMessage;
+            chatMessage << "$fff" << player.NickName << "$s$z$0f3 ";
+            chatMessage << "drove the $fff" << newLocalIndex << ".$0f3 record with a time of: $fff" << newLocal.FormattedTime << "$0f3";
+            if(currentLocal.Id == 0)
+            {
+                chatMessage << "!";
+            }
+            else
+            {
+                chatMessage << " ($fff" << currentLocalIndex << ".$0f3, $fff-" << Time::FormatTime((currentLocal.Time - newLocal.Time)) << "$0f3)!";
+            }
+
+            controller->Server->ChatSendServerMessage(chatMessage.str());
+        }
+
+        if(!widget.DisplayToAll(controller->Players))
+        {
+            Logging::PrintError(controller->Server->GetCurrentError());
+        }
     }
-    std::cout << std::endl;
 }
 
 void LocalRecordsPlugin::OpenLocalRecords(Player player, std::string answer, std::vector<EntryVal> entries)
@@ -85,9 +162,9 @@ void LocalRecordsPlugin::OpenLocalRecords(Player player, std::string answer, std
 void LocalRecordsPlugin::displayPersonalRecord(Player player)
 {
     bool playerFound = false;
-    for(int recordId = 0; recordId < localRecords.size(); recordId++)
+    for(int recordId = 0; recordId < localRecords.List.size(); recordId++)
     {
-        LocalRecord localRecord = localRecords.at(recordId);
+        LocalRecord localRecord = localRecords.List.at(recordId);
         if(localRecord.Login == player.Login)
         {
             std::stringstream chatMessage;
@@ -103,11 +180,11 @@ void LocalRecordsPlugin::displayPersonalRecord(Player player)
 
 void LocalRecordsPlugin::retrieveRecords(Map map)
 {
-    localRecords = std::vector<LocalRecord>();
+    localRecords.List = std::vector<LocalRecord>();
 
     sql::PreparedStatement* pstmt = controller->Database->prepareStatement("SELECT * FROM `records` WHERE `MapId` = ? ORDER BY `Score` ASC LIMIT ?");
     pstmt->setInt(1, map.Id);
-    pstmt->setInt(2, 100);
+    pstmt->setInt(2, recordLimit);
     sql::ResultSet* result = pstmt->executeQuery();
 
     while(result->next())
@@ -123,7 +200,7 @@ void LocalRecordsPlugin::retrieveRecords(Map map)
         localRecord.Login = playerResult->getString("Login");
         localRecord.NickName = playerResult->getString("NickName");
 
-        localRecords.push_back(localRecord);
+        localRecords.List.push_back(localRecord);
 
         delete pstmt; pstmt = NULL;
         delete playerResult; playerResult = NULL;

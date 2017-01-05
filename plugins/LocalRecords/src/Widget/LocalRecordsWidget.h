@@ -6,23 +6,25 @@
 #include <map>
 
 #include "Methods/Methods.h"
-#include "../Objects/LocalRecord.h"
 #include "Objects/Player.h"
 #include "UI/UIManager.h"
 #include "Utils/Logging.h"
 #include "Utils/Text.h"
 
+#include "../Objects/LocalRecord.h"
+#include "../LocalRecordsList.h"
+
 class LocalRecordsWidget
 {
 public:
     LocalRecordsWidget();
-    LocalRecordsWidget(UIManager* uiManager, std::vector<LocalRecord>* localRecords);
+    LocalRecordsWidget(UIManager* uiManager, LocalRecordsList* localRecords);
     bool DisplayToAll(std::map<std::string, Player>* players);
     bool DisplayToPlayer(Player player);
 
 private:
     UIManager* ui;
-    std::vector<LocalRecord>* records;
+    LocalRecordsList* records;
 
     UIFrame frame;
 
@@ -30,7 +32,7 @@ private:
     std::string title = "Local Records";
     std::string actionId = "OpenLocalRecords";
 
-    int widgetEntries = 22;
+    int widgetEntries = 28;
     int widgetTopCount = 5;
     double widgetWidth = 15.5;
     double widgetHeight = ((1.8 * widgetEntries) + 3.2);

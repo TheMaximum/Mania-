@@ -7,6 +7,7 @@
 #include "Utils/Time.h"
 
 #include "Objects/LocalRecord.h"
+#include "LocalRecordsList.h"
 #include "Widget/LocalRecordsWidget.h"
 
 class LocalRecordsPlugin : public Plugin
@@ -23,8 +24,10 @@ public:
     void OpenLocalRecords(Player player, std::string answer, std::vector<EntryVal> entries);
 
 private:
-    std::vector<LocalRecord> localRecords;
+    LocalRecordsList localRecords;
     LocalRecordsWidget widget;
+    
+    int recordLimit = 100;
 
     void retrieveRecords(Map map);
     void displayPersonalRecord(Player player);

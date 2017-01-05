@@ -8,7 +8,7 @@
 class LocalRecord
 {
 public:
-    int Id;
+    int Id = 0;
     Map RecordMap;
     std::string Login;
     std::string NickName;
@@ -18,6 +18,11 @@ public:
     std::vector<int> Checkpoints;
 
     std::string Date;
+
+    LocalRecord()
+    {
+        
+    }
 
     LocalRecord(sql::ResultSet* result)
     {

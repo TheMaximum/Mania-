@@ -5,7 +5,7 @@ LocalRecordsWidget::LocalRecordsWidget()
 
 }
 
-LocalRecordsWidget::LocalRecordsWidget(UIManager* uiManager, std::vector<LocalRecord>* localRecords)
+LocalRecordsWidget::LocalRecordsWidget(UIManager* uiManager, LocalRecordsList* localRecords)
 {
     ui = uiManager;
     records = localRecords;
@@ -54,9 +54,9 @@ bool LocalRecordsWidget::DisplayToPlayer(Player player)
 
     std::string scoreColor = "F00F";
 
-    for(int recordId = 0; recordId < records->size(); recordId++)
+    for(int recordId = 0; recordId < records->List.size(); recordId++)
     {
-        LocalRecord record = records->at(recordId);
+        LocalRecord record = records->List.at(recordId);
         if(record.Login == player.Login)
         {
             scoreColor = "0F3F";
@@ -78,18 +78,11 @@ bool LocalRecordsWidget::DisplayToPlayer(Player player)
         if((recordId + 2) > widgetTopCount) break;
     }
 
-    int startPoint = (records->size() - (widgetEntries - widgetTopCount));
-    int playerRecord = 0;
-    int recordCount = records->size();
-    for(int recordId = 0; recordId < records->size(); recordId++)
-    {
-        LocalRecord localRecord = records->at(recordId);
-        if(localRecord.Login == player.Login)
-        {
-            playerRecord = (recordId + 1);
-            break;
-        }
-    }
+    int recordCount = records->List.size();
+    int startPoint = (recordCount - (widgetEntries - widgetTopCount));
+    if(startPoint < widgetTopCount)
+        startPoint = widgetTopCount;
+    int playerRecord = records->GetPlayerRecordIndex(player);
 
     if(playerRecord > 0)
     {
@@ -97,7 +90,7 @@ bool LocalRecordsWidget::DisplayToPlayer(Player player)
         int fillAbove = std::ceil(recordsToFill / 2.0);
         int fillBelow = std::floor(recordsToFill / 2.0);
         int roomAbove = (playerRecord - widgetTopCount);
-        int roomBelow = (records->size() - playerRecord);
+        int roomBelow = (recordCount - playerRecord);
 
         if(fillBelow > roomBelow)
         {
@@ -111,7 +104,7 @@ bool LocalRecordsWidget::DisplayToPlayer(Player player)
 
     for(int recordId = startPoint; recordId < (startPoint + (widgetEntries - widgetTopCount)); recordId++)
     {
-        LocalRecord record = records->at(recordId);
+        LocalRecord record = records->List.at(recordId);
         if(record.Login == player.Login)
         {
             scoreColor = "0F3F";
@@ -131,7 +124,7 @@ bool LocalRecordsWidget::DisplayToPlayer(Player player)
 
         recordY -= 1.8;
 
-        if((recordId + 2) > records->size()) break;
+        if((recordId + 2) > recordCount) break;
     }
 
     widget << "    </frame>";
