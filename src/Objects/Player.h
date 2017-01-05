@@ -35,6 +35,11 @@ struct Player
     bool IsSpectator;                    /**< \brief Is in spectatormode? */
     bool IsInOfficialMode;               /**< \brief Is in official mode? */
 
+    std::string ClientVersion;           /**< \brief Client version (f.e. 'v2015-06-18_15_10 (3.3.0)'). */
+    std::string ClubLink;                /**< \brief Club URL (website, entered by player). */
+    std::string Path;                    /**< \brief Player location without "world". */
+    std::string Country;                 /**< \brief Path without continent. */
+
     /*!
      * \brief Constructs a Player object without input.
      */
@@ -115,6 +120,23 @@ private:
 
         std::istringstream(serverStruct.find("IsSpectator")->second.GetString()) >> IsSpectator;
         std::istringstream(serverStruct.find("IsInOfficialMode")->second.GetString()) >> IsInOfficialMode;
+
+        ClientVersion = serverStruct.find("ClientVersion")->second.GetString();
+        ClubLink = serverStruct.find("ClubLink")->second.GetString();
+
+        std::string path = serverStruct.find("Path")->second.GetString().substr(6); // Remove World|
+        Path = path; // Remove World|
+
+        std::vector<std::string> continents = { "Europe|", "Africa|", "Asia|", "Middle East|", "North America|", "South America|", "Oceania|" };
+        for(int continentId = 0; continentId < continents.size(); continentId++)
+        {
+            std::string continent = continents.at(continentId);
+            std::string::size_type i = path.find(continent);
+            if (i != std::string::npos)
+               path.erase(i, continent.length());
+        }
+
+        Country = path;
     }
 };
 

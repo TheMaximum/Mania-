@@ -99,7 +99,9 @@ void CallBackManager::HandlePlayerConnect(std::vector<GbxResponseParameter> para
     GbxMessage message = GbxMessage("GetPlayerInfo", params);
     server->Query(message);
     Player newPlayer = Player(server->GetResponse()->GetParameters().at(0).GetStruct());
+    
     message = GbxMessage("GetDetailedPlayerInfo", params);
+    server->Query(message);
     newPlayer.PlayerDetailed(server->GetResponse()->GetParameters().at(0).GetStruct());
 
     if(database != NULL)
