@@ -13,7 +13,7 @@ Handles callbacks from the server.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classCallBackManager_ab6aeed0451bc44a91651940ded7f892e}{Call\-Back\-Manager} (\hyperlink{classGbxRemote}{Gbx\-Remote} $\ast$server\-Ptr, \hyperlink{classEventManager}{Event\-Manager} $\ast$event\-Manager\-Ptr, sql\-::\-Connection $\ast$database\-Ptr, std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$player\-List, \hyperlink{classMapList}{Map\-List} $\ast$map\-List)
+\hyperlink{classCallBackManager_aecf87c2156353eb95b8ca85bebde8b71}{Call\-Back\-Manager} (\hyperlink{classGbxRemote}{Gbx\-Remote} $\ast$server\-Ptr, \hyperlink{classCommandManager}{Command\-Manager} $\ast$command\-Manager\-Ptr, \hyperlink{classEventManager}{Event\-Manager} $\ast$event\-Manager\-Ptr, sql\-::\-Connection $\ast$database\-Ptr, std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$player\-List, \hyperlink{classMapList}{Map\-List} $\ast$map\-List)
 \item 
 void \hyperlink{classCallBackManager_a8af5305f668aae4c563e7039b99015c2}{Handle\-Call\-Back} (std\-::string method\-Name, std\-::vector$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ parameters)
 \begin{DoxyCompactList}\small\item\em Handles callback (updates lists, calls plugin functions). \end{DoxyCompactList}\item 
@@ -57,6 +57,9 @@ void \hyperlink{classCallBackManager_a7af7f38c8e0994fcbba2de59dee1921f}{Handle\-
 \hypertarget{classCallBackManager_a27cccc154989a36eb80580f3d9f69c51}{\hyperlink{classGbxRemote}{Gbx\-Remote} $\ast$ \hyperlink{classCallBackManager_a27cccc154989a36eb80580f3d9f69c51}{server}}\label{classCallBackManager_a27cccc154989a36eb80580f3d9f69c51}
 
 \begin{DoxyCompactList}\small\item\em Contains the serverconnection. \end{DoxyCompactList}\item 
+\hypertarget{classCallBackManager_a29d2d950b831a6ab7194fa3a6951a5ef}{\hyperlink{classCommandManager}{Command\-Manager} $\ast$ \hyperlink{classCallBackManager_a29d2d950b831a6ab7194fa3a6951a5ef}{commands}}\label{classCallBackManager_a29d2d950b831a6ab7194fa3a6951a5ef}
+
+\begin{DoxyCompactList}\small\item\em Contains the command manager. \end{DoxyCompactList}\item 
 \hypertarget{classCallBackManager_a144945c3b30a7946674393b412746f8f}{\hyperlink{classEventManager}{Event\-Manager} $\ast$ \hyperlink{classCallBackManager_a144945c3b30a7946674393b412746f8f}{events}}\label{classCallBackManager_a144945c3b30a7946674393b412746f8f}
 
 \begin{DoxyCompactList}\small\item\em Contains the event manager. \end{DoxyCompactList}\item 
@@ -75,17 +78,18 @@ void \hyperlink{classCallBackManager_a7af7f38c8e0994fcbba2de59dee1921f}{Handle\-
 Handles callbacks from the server. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classCallBackManager_ab6aeed0451bc44a91651940ded7f892e}{\index{Call\-Back\-Manager@{Call\-Back\-Manager}!Call\-Back\-Manager@{Call\-Back\-Manager}}
+\hypertarget{classCallBackManager_aecf87c2156353eb95b8ca85bebde8b71}{\index{Call\-Back\-Manager@{Call\-Back\-Manager}!Call\-Back\-Manager@{Call\-Back\-Manager}}
 \index{Call\-Back\-Manager@{Call\-Back\-Manager}!CallBackManager@{Call\-Back\-Manager}}
 \subsubsection[{Call\-Back\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}Call\-Back\-Manager\-::\-Call\-Back\-Manager (
 \begin{DoxyParamCaption}
 \item[{{\bf Gbx\-Remote} $\ast$}]{server\-Ptr, }
+\item[{{\bf Command\-Manager} $\ast$}]{command\-Manager\-Ptr, }
 \item[{{\bf Event\-Manager} $\ast$}]{event\-Manager\-Ptr, }
 \item[{sql\-::\-Connection $\ast$}]{database\-Ptr, }
 \item[{std\-::map$<$ std\-::string, {\bf Player} $>$ $\ast$}]{player\-List, }
 \item[{{\bf Map\-List} $\ast$}]{map\-List}
 \end{DoxyParamCaption}
-)}}\label{classCallBackManager_ab6aeed0451bc44a91651940ded7f892e}
+)}}\label{classCallBackManager_aecf87c2156353eb95b8ca85bebde8b71}
 Constructor takes pointers to playerlist and maplist to keep them updated.
 
 \begin{DoxyRefDesc}{Todo}
@@ -95,6 +99,8 @@ Constructor takes pointers to playerlist and maplist to keep them updated.
 
 \begin{DoxyParams}{Parameters}
 {\em server\-Ptr} & Pointer to the \hyperlink{classGbxRemote}{Gbx\-Remote}. \\
+\hline
+{\em command\-Manager\-Ptr} & Pointer to the \hyperlink{classCommandManager}{Command\-Manager}. \\
 \hline
 {\em event\-Manager\-Ptr} & Pointer to the \hyperlink{classEventManager}{Event\-Manager}. \\
 \hline

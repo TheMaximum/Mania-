@@ -4,6 +4,7 @@ var searchData=
   ['handlebeginmatch',['HandleBeginMatch',['../classCallBackManager.html#ad741782611d10c7a67e6d1a8630cc605',1,'CallBackManager']]],
   ['handlebillupdated',['HandleBillUpdated',['../classCallBackManager.html#a04ae5c8b9c11709fe19229037f891902',1,'CallBackManager']]],
   ['handlecallback',['HandleCallBack',['../classCallBackManager.html#a8af5305f668aae4c563e7039b99015c2',1,'CallBackManager::HandleCallBack()'],['../classGbxRemote.html#a5bd6e1dc2118f7e369e72592b3c9322a',1,'GbxRemote::HandleCallBack()']]],
+  ['handlecommand',['HandleCommand',['../classCommandManager.html#a42082bb9a76c725e58aa9c327dd41080',1,'CommandManager']]],
   ['handleecho',['HandleEcho',['../classCallBackManager.html#a75f7f6d423799a89d9988b23a22bed18',1,'CallBackManager']]],
   ['handleendmap',['HandleEndMap',['../classCallBackManager.html#ac31e15ec293f178222e8f73dbce963da',1,'CallBackManager']]],
   ['handleendmatch',['HandleEndMatch',['../classCallBackManager.html#a1084f327bacd054c1a8204e3f5e90ccb',1,'CallBackManager']]],

@@ -99,9 +99,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acd184211e8aafdce8207f28baef2757d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPluginManager.html#acd184211e8aafdce8207f28baef2757d">PluginManager</a> (<a class="el" href="classMethods.html">Methods</a> *methodsPtr, std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt; *playersPtr, <a class="el" href="classMapList.html">MapList</a> *mapsPtr, sql::Connection *databasePtr, <a class="el" href="classUIManager.html">UIManager</a> *uiPtr)</td></tr>
-<tr class="memdesc:acd184211e8aafdce8207f28baef2757d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the pointers the plugins need.  <a href="#acd184211e8aafdce8207f28baef2757d">More...</a><br/></td></tr>
-<tr class="separator:acd184211e8aafdce8207f28baef2757d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab726bcc91b05d62ec6e56cbf9478c2d9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPluginManager.html#ab726bcc91b05d62ec6e56cbf9478c2d9">PluginManager</a> (<a class="el" href="classMethods.html">Methods</a> *methodsPtr, <a class="el" href="classCommandManager.html">CommandManager</a> *commandsPtr, std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt; *playersPtr, <a class="el" href="classMapList.html">MapList</a> *mapsPtr, sql::Connection *databasePtr, <a class="el" href="classUIManager.html">UIManager</a> *uiPtr)</td></tr>
+<tr class="memdesc:ab726bcc91b05d62ec6e56cbf9478c2d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the pointers the plugins need.  <a href="#ab726bcc91b05d62ec6e56cbf9478c2d9">More...</a><br/></td></tr>
+<tr class="separator:ab726bcc91b05d62ec6e56cbf9478c2d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab657302ef5af357907ae11ad817f5dfc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab657302ef5af357907ae11ad817f5dfc"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPluginManager.html#ab657302ef5af357907ae11ad817f5dfc">~PluginManager</a> ()</td></tr>
 <tr class="memdesc:ab657302ef5af357907ae11ad817f5dfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor closes all open plugins. <br/></td></tr>
@@ -131,6 +131,10 @@ Private Attributes</h2></td></tr>
 std::map&lt; std::string, <a class="el" href="structPluginInfo.html">PluginInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPluginManager.html#a4a7dea3948d652d9a4428a237d5af805">plugins</a></td></tr>
 <tr class="memdesc:a4a7dea3948d652d9a4428a237d5af805"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of loaded plugins. <br/></td></tr>
 <tr class="separator:a4a7dea3948d652d9a4428a237d5af805"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2759d12d4da860a2c5a1dbb7f76a035a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2759d12d4da860a2c5a1dbb7f76a035a"></a>
+<a class="el" href="classCommandManager.html">CommandManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPluginManager.html#a2759d12d4da860a2c5a1dbb7f76a035a">commands</a></td></tr>
+<tr class="memdesc:a2759d12d4da860a2c5a1dbb7f76a035a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current instance of the <a class="el" href="classCommandManager.html" title="Manages the chat commands. ">CommandManager</a>. <br/></td></tr>
+<tr class="separator:a2759d12d4da860a2c5a1dbb7f76a035a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7966d86165aaa504ae4dd12f084d4cfa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7966d86165aaa504ae4dd12f084d4cfa"></a>
 <a class="el" href="classEventManager.html">EventManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPluginManager.html#a7966d86165aaa504ae4dd12f084d4cfa">events</a></td></tr>
 <tr class="memdesc:a7966d86165aaa504ae4dd12f084d4cfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current instance of the <a class="el" href="classEventManager.html" title="Handles events (callbacks) from server to plugins. ">EventManager</a>. <br/></td></tr>
@@ -143,7 +147,7 @@ std::map&lt; std::string, <a class="el" href="structPluginInfo.html">PluginInfo<
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Manages the plugins. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="acd184211e8aafdce8207f28baef2757d"></a>
+<a class="anchor" id="ab726bcc91b05d62ec6e56cbf9478c2d9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -152,6 +156,12 @@ std::map&lt; std::string, <a class="el" href="structPluginInfo.html">PluginInfo<
           <td>(</td>
           <td class="paramtype"><a class="el" href="classMethods.html">Methods</a> *&#160;</td>
           <td class="paramname"><em>methodsPtr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classCommandManager.html">CommandManager</a> *&#160;</td>
+          <td class="paramname"><em>commandsPtr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -189,6 +199,7 @@ std::map&lt; std::string, <a class="el" href="structPluginInfo.html">PluginInfo<
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">methodsPtr</td><td>Current instance of <a class="el" href="classMethods.html" title="Contains all server methods and returns usable data types. ">Methods</a>. </td></tr>
+    <tr><td class="paramname">commandsPtr</td><td>Current instance of the <a class="el" href="classCommandManager.html" title="Manages the chat commands. ">CommandManager</a>. </td></tr>
     <tr><td class="paramname">playersPtr</td><td>Current instance of the playerlist. </td></tr>
     <tr><td class="paramname">mapsPtr</td><td>Current instance of the maplist. </td></tr>
     <tr><td class="paramname">databasePtr</td><td>Current instance of the database connection. </td></tr>
@@ -255,7 +266,7 @@ std::map&lt; std::string, <a class="el" href="structPluginInfo.html">PluginInfo<
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 5 2017 16:04:29 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jan 5 2017 17:56:45 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

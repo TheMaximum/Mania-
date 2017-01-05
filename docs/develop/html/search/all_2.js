@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['callbackmanager',['CallBackManager',['../classCallBackManager.html',1,'CallBackManager'],['../classCallBackManager.html#ab6aeed0451bc44a91651940ded7f892e',1,'CallBackManager::CallBackManager()']]],
+  ['callbackmanager',['CallBackManager',['../classCallBackManager.html',1,'CallBackManager'],['../classCallBackManager.html#aecf87c2156353eb95b8ca85bebde8b71',1,'CallBackManager::CallBackManager()']]],
   ['callbacks',['callbacks',['../classManiaPP.html#af468d4b6eea93fd836950551eb7d3a01',1,'ManiaPP']]],
   ['callbeginmap',['CallBeginMap',['../classEventManager.html#a1bd59c3d511d37863b81d18bd09a7b5a',1,'EventManager']]],
   ['callbeginmatch',['CallBeginMatch',['../classEventManager.html#a22f3afb58eecc76787530b98e29971e2',1,'EventManager']]],
@@ -40,6 +40,8 @@ var searchData=
   ['cmdparam',['CmdParam',['../structCurrentCallVote.html#a69b91397ee1a0d237db24985c2d2b7ad',1,'CurrentCallVote']]],
   ['code',['Code',['../structServerStatus.html#ad17b50be8d2cb9c1a62396885b1244cc',1,'ServerStatus']]],
   ['command',['Command',['../structCallVoteRatio.html#a14e3195672c370c5c85ad06287c1d509',1,'CallVoteRatio::Command()'],['../structExtendedCallVoteRatio.html#a8b25c752447c968f2522c2748077b096',1,'ExtendedCallVoteRatio::Command()']]],
+  ['commandmanager',['CommandManager',['../classCommandManager.html',1,'CommandManager'],['../classCommandManager.html#a8a13226bf933396a3f35dfb5bee3e813',1,'CommandManager::CommandManager()']]],
+  ['commands',['Commands',['../classPlugin.html#a588dcd49b4fe45b3a401b749795b95fe',1,'Plugin::Commands()'],['../classCallBackManager.html#a29d2d950b831a6ab7194fa3a6951a5ef',1,'CallBackManager::commands()'],['../classCommandManager.html#afe0e49a7ea5ca7bed954e6a120fd8475',1,'CommandManager::commands()'],['../classManiaPP.html#afefa9bf6ecf35fffd4d3229e17e4dd2f',1,'ManiaPP::commands()'],['../classPluginManager.html#a2759d12d4da860a2c5a1dbb7f76a035a',1,'PluginManager::commands()']]],
   ['commit',['Commit',['../structGitVersion.html#a0a7fcfae969cad2cb90dc0353df5bf49',1,'GitVersion']]],
   ['config',['Config',['../classConfig.html',1,'Config'],['../classManiaPP.html#a9a91437fa70afd52c2dce19298888e36',1,'ManiaPP::config()'],['../classConfig.html#ae67e338ea42e242cb5b374b6583c8b1c',1,'Config::Config()']]],
   ['configfile',['configFile',['../classConfig.html#a08b7b2c4eadf7dda51404f76fd6e0280',1,'Config']]],
