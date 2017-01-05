@@ -36,5 +36,6 @@ var searchData=
   ['connect',['Connect',['../classDatabase.html#a22555b63ce54c0b4a0e1b1aecb5e1bd4',1,'Database::Connect()'],['../classTcpClient.html#ac2e9bb63b4e0dc8f4508aa2a85431fe2',1,'TcpClient::Connect()']]],
   ['connecttodatabase',['ConnectToDatabase',['../classManiaPP.html#a943b0ecd20ca8c9235411d16a743e5ac',1,'ManiaPP']]],
   ['connecttoserver',['ConnectToServer',['../classManiaPP.html#a22561171876e54dbf633c70d9924c06a',1,'ManiaPP']]],
-  ['copydetailedmap',['CopyDetailedMap',['../structMap.html#aceca3c7bca81223e4b54de1cc91f7a31',1,'Map']]]
+  ['copydetailedmap',['CopyDetailedMap',['../structMap.html#aceca3c7bca81223e4b54de1cc91f7a31',1,'Map']]],
+  ['current',['Current',['../classTime.html#a77ceda2324c0e82bf2177634b8e9c812',1,'Time']]]
 ];

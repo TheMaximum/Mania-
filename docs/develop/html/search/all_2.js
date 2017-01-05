@@ -53,7 +53,7 @@ var searchData=
   ['controller',['Controller',['../structController.html',1,'Controller'],['../classPlugin.html#acd252bdd0b4050df6f221032d50acbe4',1,'Plugin::controller()'],['../classPluginManager.html#a3b08105f2c52f52d21d293fe0045ae1f',1,'PluginManager::controller()']]],
   ['copperprice',['CopperPrice',['../structMap.html#aa9a7d229fb6b41092fb527bbcc913faf',1,'Map']]],
   ['copydetailedmap',['CopyDetailedMap',['../structMap.html#aceca3c7bca81223e4b54de1cc91f7a31',1,'Map']]],
-  ['current',['Current',['../classMapList.html#a9ff0021f3b08091091e58d3109c41400',1,'MapList']]],
+  ['current',['Current',['../classMapList.html#a9ff0021f3b08091091e58d3109c41400',1,'MapList::Current()'],['../classTime.html#a77ceda2324c0e82bf2177634b8e9c812',1,'Time::Current()']]],
   ['currentcallbacks',['currentCallBacks',['../classGbxRemote.html#a08d047d7e0d4b746fc036c1aa02f0d17',1,'GbxRemote']]],
   ['currentcallvote',['CurrentCallVote',['../structCurrentCallVote.html',1,'']]],
   ['currentcheckpoints',['CurrentCheckpoints',['../structPlayer.html#aa6efdb36b3a3618f26bf85c3a9b216d8',1,'Player']]],
