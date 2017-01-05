@@ -103,13 +103,12 @@ void LocalRecordsPlugin::OnPlayerFinish(Player player, int playerTime)
 
         delete pstmt; pstmt = NULL;
 
+        bool updateRecord = false;
         bool recordInserted = false;
 
         if(currentLocal.Id == 0)
         {
             // Player has no local.
-            bool insertNewRecord = false;
-
             if(localRecords.List.size() == recordLimit)
             {
                 // Records list is full.
@@ -117,27 +116,13 @@ void LocalRecordsPlugin::OnPlayerFinish(Player player, int playerTime)
                 if(playerTime < lastRecord.Time)
                 {
                     // Time is better than last record, so insert in database.
-                    insertNewRecord = true;
+                    updateRecord = true;
                 }
             }
             else
             {
                 // Records list isn't full, so can always be added.
-                insertNewRecord = true;
-            }
-
-            if(insertNewRecord)
-            {
-                sql::PreparedStatement* pstmt = controller->Database->prepareStatement("INSERT INTO `records` (`MapId`, `PlayerId`, `Score`, `Date`, `Checkpoints`) VALUES (?, ?, ?, ?, ?)");
-                pstmt->setInt(1, controller->Maps->Current->Id);
-                pstmt->setInt(2, player.Id);
-                pstmt->setInt(3, playerTime);
-                pstmt->setString(4, Time::Current());
-                pstmt->setString(5, checkpoints.str());
-                pstmt->execute();
-
-                recordInserted = true;
-                delete pstmt; pstmt = NULL;
+                updateRecord = true;
             }
         }
         else
@@ -146,15 +131,7 @@ void LocalRecordsPlugin::OnPlayerFinish(Player player, int playerTime)
             if(playerTime < currentLocal.Time)
             {
                 // Player improved his record.
-                sql::PreparedStatement* pstmt = controller->Database->prepareStatement("UPDATE `records` SET `Score` = ?, `Date` = ?, `Checkpoints` = ? WHERE `Id` = ?");
-                pstmt->setInt(1, playerTime);
-                pstmt->setString(2, Time::Current());
-                pstmt->setString(3, checkpoints.str());
-                pstmt->setInt(4, currentLocal.Id);
-                pstmt->execute();
-
-                recordInserted = true;
-                delete pstmt; pstmt = NULL;
+                updateRecord = true;
             }
             else if(playerTime == currentLocal.Time)
             {
@@ -163,6 +140,20 @@ void LocalRecordsPlugin::OnPlayerFinish(Player player, int playerTime)
                 chatMessage << "$fff" << player.NickName << "$z$s$0f3 equalled the $fff" << currentLocalIndex << ".$0f3 record ($fff" << currentLocal.FormattedTime << "$0f3).";
                 controller->Server->ChatSendServerMessage(chatMessage.str());
             }
+        }
+
+        if(updateRecord)
+        {
+            sql::PreparedStatement* pstmt = controller->Database->prepareStatement("INSERT INTO `records` (`MapId`, `PlayerId`, `Score`, `Date`, `Checkpoints`) VALUES (?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE `Score` = VALUES(`Score`), `Date` = VALUES(`Date`), `Checkpoints` = VALUES(`Checkpoints`)");
+            pstmt->setInt(1, controller->Maps->Current->Id);
+            pstmt->setInt(2, player.Id);
+            pstmt->setInt(3, playerTime);
+            pstmt->setString(4, Time::Current());
+            pstmt->setString(5, checkpoints.str());
+            pstmt->execute();
+
+            recordInserted = true;
+            delete pstmt; pstmt = NULL;
         }
 
         retrieveRecords(*controller->Maps->Current);
