@@ -42,10 +42,12 @@ The ```./install.sh```-script requires a Debian-like system to function (with ``
 * Database support
 * ManiaLink support
    * ManiaLink handler (UIManager)
+* Chat command handling
 * Working plugin system
    * Plugin interface
    * Callback handling
    * Access to server, database, playerlist, maplist and ManiaLink
+   * Chat commands
 
 ## Installing for the first time ##
 * ```./install.sh```
