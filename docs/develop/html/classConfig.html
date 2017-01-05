@@ -116,6 +116,15 @@ Public Attributes</h2></td></tr>
 <a class="el" href="structDatabaseConfig.html">DatabaseConfig</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfig.html#a7c1bdf72973da53666514dbd549cc400">Database</a></td></tr>
 <tr class="memdesc:a7c1bdf72973da53666514dbd549cc400"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instance of <a class="el" href="structDatabaseConfig.html" title="Database connection settings. ">DatabaseConfig</a> which stores the database server connection settings. <br/></td></tr>
 <tr class="separator:a7c1bdf72973da53666514dbd549cc400"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dea7bf45e7c8a8d2461a121b56504b3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2dea7bf45e7c8a8d2461a121b56504b3"></a>
+<a class="el" href="structProgramConfig.html">ProgramConfig</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfig.html#a2dea7bf45e7c8a8d2461a121b56504b3">Program</a></td></tr>
+<tr class="memdesc:a2dea7bf45e7c8a8d2461a121b56504b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instance of <a class="el" href="structProgramConfig.html" title="Program settings. ">ProgramConfig</a> which stores program settings. <br/></td></tr>
+<tr class="separator:a2dea7bf45e7c8a8d2461a121b56504b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af02b6ade87bcdd8368788283e42a6b74"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af02b6ade87bcdd8368788283e42a6b74"></a>
+std::map&lt; std::string, <br class="typebreak"/>
+<a class="el" href="structPluginConfig.html">PluginConfig</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfig.html#af02b6ade87bcdd8368788283e42a6b74">Plugins</a></td></tr>
+<tr class="memdesc:af02b6ade87bcdd8368788283e42a6b74"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of plugin configurations. <br/></td></tr>
+<tr class="separator:af02b6ade87bcdd8368788283e42a6b74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -123,6 +132,9 @@ Private Member Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfig.html#a2ddcecec4284da0fb0b53da77e0d217a">parseConfig</a> ()</td></tr>
 <tr class="memdesc:a2ddcecec4284da0fb0b53da77e0d217a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads information from YAML file and puts this in configuration struct(s). <br/></td></tr>
 <tr class="separator:a2ddcecec4284da0fb0b53da77e0d217a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9bb8a0097656a79ef88fd125d7e5626"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfig.html#ab9bb8a0097656a79ef88fd125d7e5626">parsePlugins</a> (YAML::Node plugins)</td></tr>
+<tr class="memdesc:ab9bb8a0097656a79ef88fd125d7e5626"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads plugin information from YAML file.  <a href="#ab9bb8a0097656a79ef88fd125d7e5626">More...</a><br/></td></tr>
+<tr class="separator:ab9bb8a0097656a79ef88fd125d7e5626"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -174,6 +186,39 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 </div>
 </div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ab9bb8a0097656a79ef88fd125d7e5626"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Config::parsePlugins </td>
+          <td>(</td>
+          <td class="paramtype">YAML::Node&#160;</td>
+          <td class="paramname"><em>plugins</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reads plugin information from YAML file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">plugins</td><td>YAML node that contains the plugin information. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Config/<a class="el" href="Config_8h_source.html">Config.h</a></li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Config/Config.cpp</li>
@@ -181,7 +226,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 5 2017 19:30:10 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jan 5 2017 21:12:53 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

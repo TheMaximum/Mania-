@@ -2,6 +2,7 @@ var searchData=
 [
   ['callbacks',['callbacks',['../classManiaPP.html#af468d4b6eea93fd836950551eb7d3a01',1,'ManiaPP']]],
   ['callerlogin',['CallerLogin',['../structCurrentCallVote.html#a113ae06f4c42a20fa09107d480579379',1,'CurrentCallVote']]],
+  ['checkversion',['checkVersion',['../structProgramConfig.html#a81805b60cf29dde387be6672e4dd49aa',1,'ProgramConfig']]],
   ['clientversion',['ClientVersion',['../structPlayer.html#ae275137c2fe689552ebde4d3b1e5f4ff',1,'Player']]],
   ['closeonclick',['CloseOnClick',['../structUIFrame.html#a96c8c5d8129595ee565039a84a928ae7',1,'UIFrame']]],
   ['clublink',['ClubLink',['../structPlayer.html#af6acb51bf731275d73aa6cc55a8255a8',1,'Player']]],
@@ -11,7 +12,7 @@ var searchData=
   ['command',['Command',['../structCallVoteRatio.html#a14e3195672c370c5c85ad06287c1d509',1,'CallVoteRatio::Command()'],['../structExtendedCallVoteRatio.html#a8b25c752447c968f2522c2748077b096',1,'ExtendedCallVoteRatio::Command()']]],
   ['commands',['Commands',['../classPlugin.html#a588dcd49b4fe45b3a401b749795b95fe',1,'Plugin::Commands()'],['../classCallBackManager.html#a29d2d950b831a6ab7194fa3a6951a5ef',1,'CallBackManager::commands()'],['../classCommandManager.html#afe0e49a7ea5ca7bed954e6a120fd8475',1,'CommandManager::commands()'],['../classManiaPP.html#afefa9bf6ecf35fffd4d3229e17e4dd2f',1,'ManiaPP::commands()'],['../classPluginManager.html#a2759d12d4da860a2c5a1dbb7f76a035a',1,'PluginManager::commands()']]],
   ['commit',['Commit',['../structGitVersion.html#a0a7fcfae969cad2cb90dc0353df5bf49',1,'GitVersion']]],
-  ['config',['config',['../classManiaPP.html#a9a91437fa70afd52c2dce19298888e36',1,'ManiaPP']]],
+  ['config',['config',['../classManiaPP.html#a9a91437fa70afd52c2dce19298888e36',1,'ManiaPP::config()'],['../classPluginManager.html#a185603a6a022cef13ca60454c80ae4c4',1,'PluginManager::config()']]],
   ['configfile',['configFile',['../classConfig.html#a08b7b2c4eadf7dda51404f76fd6e0280',1,'Config']]],
   ['connected',['connected',['../classGbxRemote.html#a56662ea222345c645ae897e056b5c8c8',1,'GbxRemote']]],
   ['connection',['Connection',['../classDatabase.html#a4239c1a10072aacab2c09d2beb0a096e',1,'Database']]],

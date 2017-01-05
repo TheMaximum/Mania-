@@ -25,13 +25,22 @@ Reads and stores configuration information.
 \begin{DoxyCompactList}\small\item\em Instance of \hyperlink{structServerConfig}{Server\-Config} which stores the server connection settings. \end{DoxyCompactList}\item 
 \hypertarget{classConfig_a7c1bdf72973da53666514dbd549cc400}{\hyperlink{structDatabaseConfig}{Database\-Config} $\ast$ \hyperlink{classConfig_a7c1bdf72973da53666514dbd549cc400}{Database}}\label{classConfig_a7c1bdf72973da53666514dbd549cc400}
 
-\begin{DoxyCompactList}\small\item\em Instance of \hyperlink{structDatabaseConfig}{Database\-Config} which stores the database server connection settings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Instance of \hyperlink{structDatabaseConfig}{Database\-Config} which stores the database server connection settings. \end{DoxyCompactList}\item 
+\hypertarget{classConfig_a2dea7bf45e7c8a8d2461a121b56504b3}{\hyperlink{structProgramConfig}{Program\-Config} $\ast$ \hyperlink{classConfig_a2dea7bf45e7c8a8d2461a121b56504b3}{Program}}\label{classConfig_a2dea7bf45e7c8a8d2461a121b56504b3}
+
+\begin{DoxyCompactList}\small\item\em Instance of \hyperlink{structProgramConfig}{Program\-Config} which stores program settings. \end{DoxyCompactList}\item 
+\hypertarget{classConfig_af02b6ade87bcdd8368788283e42a6b74}{std\-::map$<$ std\-::string, \\*
+\hyperlink{structPluginConfig}{Plugin\-Config} $>$ $\ast$ \hyperlink{classConfig_af02b6ade87bcdd8368788283e42a6b74}{Plugins}}\label{classConfig_af02b6ade87bcdd8368788283e42a6b74}
+
+\begin{DoxyCompactList}\small\item\em List of plugin configurations. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hypertarget{classConfig_a2ddcecec4284da0fb0b53da77e0d217a}{void \hyperlink{classConfig_a2ddcecec4284da0fb0b53da77e0d217a}{parse\-Config} ()}\label{classConfig_a2ddcecec4284da0fb0b53da77e0d217a}
 
-\begin{DoxyCompactList}\small\item\em Reads information from Y\-A\-M\-L file and puts this in configuration struct(s). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Reads information from Y\-A\-M\-L file and puts this in configuration struct(s). \end{DoxyCompactList}\item 
+void \hyperlink{classConfig_ab9bb8a0097656a79ef88fd125d7e5626}{parse\-Plugins} (Y\-A\-M\-L\-::\-Node plugins)
+\begin{DoxyCompactList}\small\item\em Reads plugin information from Y\-A\-M\-L file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -68,6 +77,25 @@ Calls parse\-Config to parse the configuration file.
 \end{DoxyParamCaption}
 )}}\label{classConfig_a543dce59b66475c5108088ee4ce1cdfc}
 Deletes and nullifies the serverconfig. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classConfig_ab9bb8a0097656a79ef88fd125d7e5626}{\index{Config@{Config}!parse\-Plugins@{parse\-Plugins}}
+\index{parse\-Plugins@{parse\-Plugins}!Config@{Config}}
+\subsubsection[{parse\-Plugins}]{\setlength{\rightskip}{0pt plus 5cm}void Config\-::parse\-Plugins (
+\begin{DoxyParamCaption}
+\item[{Y\-A\-M\-L\-::\-Node}]{plugins}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classConfig_ab9bb8a0097656a79ef88fd125d7e5626}
+
+
+Reads plugin information from Y\-A\-M\-L file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plugins} & Y\-A\-M\-L node that contains the plugin information. \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 

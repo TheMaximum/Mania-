@@ -13,7 +13,7 @@ Manages the plugins.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classPluginManager_ab726bcc91b05d62ec6e56cbf9478c2d9}{Plugin\-Manager} (\hyperlink{classMethods}{Methods} $\ast$methods\-Ptr, \hyperlink{classCommandManager}{Command\-Manager} $\ast$commands\-Ptr, std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$players\-Ptr, \hyperlink{classMapList}{Map\-List} $\ast$maps\-Ptr, sql\-::\-Connection $\ast$database\-Ptr, \hyperlink{classUIManager}{U\-I\-Manager} $\ast$ui\-Ptr)
+\hyperlink{classPluginManager_a562e6cac47bc8af1bf688cce814a8a27}{Plugin\-Manager} (\hyperlink{classConfig}{Config} $\ast$config\-Ptr, \hyperlink{classMethods}{Methods} $\ast$methods\-Ptr, \hyperlink{classCommandManager}{Command\-Manager} $\ast$commands\-Ptr, std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$players\-Ptr, \hyperlink{classMapList}{Map\-List} $\ast$maps\-Ptr, sql\-::\-Connection $\ast$database\-Ptr, \hyperlink{classUIManager}{U\-I\-Manager} $\ast$ui\-Ptr)
 \begin{DoxyCompactList}\small\item\em Initializes the pointers the plugins need. \end{DoxyCompactList}\item 
 \hypertarget{classPluginManager_ab657302ef5af357907ae11ad817f5dfc}{\hyperlink{classPluginManager_ab657302ef5af357907ae11ad817f5dfc}{$\sim$\-Plugin\-Manager} ()}\label{classPluginManager_ab657302ef5af357907ae11ad817f5dfc}
 
@@ -38,6 +38,9 @@ std\-::string $>$ \hyperlink{classPluginManager_a6e1d97e5b23f0d8f003a518b8b5fb7a
 \hypertarget{classPluginManager_a4a7dea3948d652d9a4428a237d5af805}{std\-::map$<$ std\-::string, \hyperlink{structPluginInfo}{Plugin\-Info} $>$ \hyperlink{classPluginManager_a4a7dea3948d652d9a4428a237d5af805}{plugins}}\label{classPluginManager_a4a7dea3948d652d9a4428a237d5af805}
 
 \begin{DoxyCompactList}\small\item\em Vector of loaded plugins. \end{DoxyCompactList}\item 
+\hypertarget{classPluginManager_a185603a6a022cef13ca60454c80ae4c4}{\hyperlink{classConfig}{Config} $\ast$ \hyperlink{classPluginManager_a185603a6a022cef13ca60454c80ae4c4}{config}}\label{classPluginManager_a185603a6a022cef13ca60454c80ae4c4}
+
+\begin{DoxyCompactList}\small\item\em Current instance of the \hyperlink{classConfig}{Config}. \end{DoxyCompactList}\item 
 \hypertarget{classPluginManager_a2759d12d4da860a2c5a1dbb7f76a035a}{\hyperlink{classCommandManager}{Command\-Manager} $\ast$ \hyperlink{classPluginManager_a2759d12d4da860a2c5a1dbb7f76a035a}{commands}}\label{classPluginManager_a2759d12d4da860a2c5a1dbb7f76a035a}
 
 \begin{DoxyCompactList}\small\item\em Current instance of the \hyperlink{classCommandManager}{Command\-Manager}. \end{DoxyCompactList}\item 
@@ -53,10 +56,11 @@ std\-::string $>$ \hyperlink{classPluginManager_a6e1d97e5b23f0d8f003a518b8b5fb7a
 Manages the plugins. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classPluginManager_ab726bcc91b05d62ec6e56cbf9478c2d9}{\index{Plugin\-Manager@{Plugin\-Manager}!Plugin\-Manager@{Plugin\-Manager}}
+\hypertarget{classPluginManager_a562e6cac47bc8af1bf688cce814a8a27}{\index{Plugin\-Manager@{Plugin\-Manager}!Plugin\-Manager@{Plugin\-Manager}}
 \index{Plugin\-Manager@{Plugin\-Manager}!PluginManager@{Plugin\-Manager}}
 \subsubsection[{Plugin\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}Plugin\-Manager\-::\-Plugin\-Manager (
 \begin{DoxyParamCaption}
+\item[{{\bf Config} $\ast$}]{config\-Ptr, }
 \item[{{\bf Methods} $\ast$}]{methods\-Ptr, }
 \item[{{\bf Command\-Manager} $\ast$}]{commands\-Ptr, }
 \item[{std\-::map$<$ std\-::string, {\bf Player} $>$ $\ast$}]{players\-Ptr, }
@@ -64,13 +68,15 @@ Manages the plugins.
 \item[{sql\-::\-Connection $\ast$}]{database\-Ptr, }
 \item[{{\bf U\-I\-Manager} $\ast$}]{ui\-Ptr}
 \end{DoxyParamCaption}
-)}}\label{classPluginManager_ab726bcc91b05d62ec6e56cbf9478c2d9}
+)}}\label{classPluginManager_a562e6cac47bc8af1bf688cce814a8a27}
 
 
 Initializes the pointers the plugins need. 
 
 
 \begin{DoxyParams}{Parameters}
+{\em config\-Ptr} & Current instance of \hyperlink{classConfig}{Config}. \\
+\hline
 {\em methods\-Ptr} & Current instance of \hyperlink{classMethods}{Methods}. \\
 \hline
 {\em commands\-Ptr} & Current instance of the \hyperlink{classCommandManager}{Command\-Manager}. \\
