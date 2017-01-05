@@ -2,7 +2,9 @@ var searchData=
 [
   ['callbacks',['callbacks',['../classManiaPP.html#af468d4b6eea93fd836950551eb7d3a01',1,'ManiaPP']]],
   ['callerlogin',['CallerLogin',['../structCurrentCallVote.html#a113ae06f4c42a20fa09107d480579379',1,'CurrentCallVote']]],
+  ['clientversion',['ClientVersion',['../structPlayer.html#ae275137c2fe689552ebde4d3b1e5f4ff',1,'Player']]],
   ['closeonclick',['CloseOnClick',['../structUIFrame.html#a96c8c5d8129595ee565039a84a928ae7',1,'UIFrame']]],
+  ['clublink',['ClubLink',['../structPlayer.html#af6acb51bf731275d73aa6cc55a8255a8',1,'Player']]],
   ['cmdname',['CmdName',['../structCurrentCallVote.html#aaac826ac8fa0865cb90fd60aa26bb6a9',1,'CurrentCallVote']]],
   ['cmdparam',['CmdParam',['../structCurrentCallVote.html#a69b91397ee1a0d237db24985c2d2b7ad',1,'CurrentCallVote']]],
   ['code',['Code',['../structServerStatus.html#ad17b50be8d2cb9c1a62396885b1244cc',1,'ServerStatus']]],
@@ -17,6 +19,7 @@ var searchData=
   ['connectionuploadrate',['ConnectionUploadRate',['../structSystemInfo.html#a57b905820121dd13c62026a58a5f9b34',1,'SystemInfo']]],
   ['controller',['controller',['../classPlugin.html#acd252bdd0b4050df6f221032d50acbe4',1,'Plugin::controller()'],['../classPluginManager.html#a3b08105f2c52f52d21d293fe0045ae1f',1,'PluginManager::controller()']]],
   ['copperprice',['CopperPrice',['../structMap.html#aa9a7d229fb6b41092fb527bbcc913faf',1,'Map']]],
+  ['country',['Country',['../structPlayer.html#aa04503994922157165081fa29bf4729d',1,'Player']]],
   ['current',['Current',['../classMapList.html#a9ff0021f3b08091091e58d3109c41400',1,'MapList']]],
   ['currentcallbacks',['currentCallBacks',['../classGbxRemote.html#a08d047d7e0d4b746fc036c1aa02f0d17',1,'GbxRemote']]],
   ['currentcheckpoints',['CurrentCheckpoints',['../structPlayer.html#aa6efdb36b3a3618f26bf85c3a9b216d8',1,'Player']]],
