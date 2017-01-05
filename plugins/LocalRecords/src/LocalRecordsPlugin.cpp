@@ -2,12 +2,14 @@
 
 LocalRecordsPlugin::LocalRecordsPlugin()
 {
-    Version = "0.1.0";
+    Version = "0.2.0";
     Author = "TheM";
 
     BeginMap.push_back([this](Map map) { OnBeginMap(map); });
     PlayerConnect.push_back([this](Player player) { OnPlayerConnect(player); });
     PlayerFinish.push_back([this](Player player, int playerTime) { OnPlayerFinish(player, playerTime); });
+
+    RegisterCommand("records", [this](Player player, std::vector<std::string> parameters) { OpenLocalRecordsCommand(player, parameters); });
 }
 
 void LocalRecordsPlugin::Init()
@@ -16,7 +18,7 @@ void LocalRecordsPlugin::Init()
     std::cout << "[  INFO   ] " << localRecords.List.size() << " records found for " << controller->Maps->Current->Name << "." << std::endl;
 
     widget = LocalRecordsWidget(controller->UI, &localRecords);
-    controller->UI->AddEvent("OpenLocalRecords", ([this](Player player, std::string answer, std::vector<EntryVal> entries) { OpenLocalRecords(player, answer, entries); }));
+    controller->UI->AddEvent("OpenLocalRecords", ([this](Player player, std::string answer, std::vector<EntryVal> entries) { OpenLocalRecordsAnswer(player, answer, entries); }));
 
     if(!widget.DisplayToAll(controller->Players))
     {
@@ -164,9 +166,14 @@ void LocalRecordsPlugin::OnPlayerFinish(Player player, int playerTime)
     }
 }
 
-void LocalRecordsPlugin::OpenLocalRecords(Player player, std::string answer, std::vector<EntryVal> entries)
+void LocalRecordsPlugin::OpenLocalRecordsAnswer(Player player, std::string answer, std::vector<EntryVal> entries)
 {
     std::cout << "Player '" << player.Login << "' has clicked the LocalRecords widget (" << answer << ")!" << std::endl;
+}
+
+void LocalRecordsPlugin::OpenLocalRecordsCommand(Player player, std::vector<std::string> parameters)
+{
+    std::cout << "Player '" << player.Login << "' has called /records." << std::endl;
 }
 
 void LocalRecordsPlugin::displayPersonalRecord(Player player)

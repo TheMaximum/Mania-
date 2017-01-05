@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <cstring>
 #include <string>
+#include <map>
 #include <iostream>
 #include <sstream>
 #include <cstdlib>
@@ -76,11 +77,38 @@ public:
     std::vector<std::function<void(Player)>> PlayerInfoChanged;                 /**< \brief Vector with functions for the PlayerInfoChanged event. */
     std::vector<std::function<void(std::string, std::string, std::string, std::string)>> VoteUpdated; /**< \brief Vector with functions for the VoteUpdated event. */
 
+    std::map<std::string, std::function<void(Player, std::vector<std::string>)>> Commands =
+        std::map<std::string, std::function<void(Player, std::vector<std::string>)>>(); /**< \brief Map with normal chat commands for the plugin. */
+    std::map<std::string, std::function<void(Player, std::vector<std::string>)>> AdminCommands =
+        std::map<std::string, std::function<void(Player, std::vector<std::string>)>>(); /**< \brief Map with admin chat commands for the plugin. */
+
     std::string Version; /**< \brief Plugin version. */
     std::string Author;  /**< \brief Plugin author. */
 
 protected:
     Controller* controller;                  /**< \brief Struct with needed instances. */
+
+    /*!
+     * \brief Register chat command.
+     *
+     * \param name   Chat command name.
+     * \param method Method to be called for the command.
+     */
+    void RegisterCommand(std::string name, std::function<void(Player, std::vector<std::string>)> method)
+    {
+        Commands.insert(std::pair<std::string, std::function<void(Player, std::vector<std::string>)>>(name, method));
+    }
+
+    /*!
+     * \brief Register admin chat command.
+     *
+     * \param name   Admin chat command name.
+     * \param method Method to be called for the command.
+     */
+    void RegisterAdminCommand(std::string name, std::function<void(Player, std::vector<std::string>)> method)
+    {
+        AdminCommands.insert(std::pair<std::string, std::function<void(Player, std::vector<std::string>)>>(name, method));
+    }
 };
 
 #endif // PLUGIN_H_

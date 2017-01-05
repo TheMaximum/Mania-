@@ -6,6 +6,7 @@
 #include "CallBacks/CallBackManager.h"
 #include "Config/Version.h"
 #include "Config/Config.h"
+#include "Commands/CommandManager.h"
 #include "Database/Database.h"
 #include "Events/EventManager.h"
 #include "GbxRemote/GbxRemote.h"
@@ -70,6 +71,7 @@ private:
     EventManager* events;                   /**< \brief Contains the event manager. */
     PluginManager* plugins;                 /**< \brief Contains the plugin manager. */
     CallBackManager* callbacks;             /**< \brief Contains the callback manager. */
+    CommandManager* commands;               /**< \brief Contains the command manager. */
     Methods* methods;                       /**< \brief Server method caller. */
     UIManager* ui;                          /**< \brief UI manager (ManiaLink). */
 

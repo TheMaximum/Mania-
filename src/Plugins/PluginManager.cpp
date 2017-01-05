@@ -1,6 +1,7 @@
 #include "PluginManager.h"
 
 PluginManager::PluginManager(Methods* methodsPtr,
+                             CommandManager* commandsPtr,
                              std::map<std::string, Player>* playersPtr,
                              MapList* mapsPtr,
                              sql::Connection* databasePtr,
@@ -8,6 +9,7 @@ PluginManager::PluginManager(Methods* methodsPtr,
 {
     plugins = std::map<std::string, PluginInfo>();
     events = NULL;
+    commands = commandsPtr;
 
     controller = new Controller();
     controller->Server = methodsPtr;
@@ -105,6 +107,13 @@ void PluginManager::LoadPlugins(std::string pluginsFolder)
 
                     std::cout << "[   \033[0;32mOK.\033[0;0m   ] Loaded events for '" << pluginId->first << "': " << eventCount << " found." << std::endl;
                 }
+
+                std::cout << "[         ] Loading commands for '" << pluginId->first << "' ... " << '\r' << std::flush;
+                int commandCount = 0;
+                commandCount += commands->RegisterCommands(plugin->Commands);
+                commandCount += commands->RegisterAdminCommands(plugin->AdminCommands);
+
+                std::cout << "[   \033[0;32mOK.\033[0;0m   ] Loaded commands for '" << pluginId->first << "': " << commandCount << " found." << std::endl;
 
                 plugins.insert(std::pair<std::string, PluginInfo>(pluginId->first, { plugin->Version, plugin->Author, plugin, pluginHandle }));
             }

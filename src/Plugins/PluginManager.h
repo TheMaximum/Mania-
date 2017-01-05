@@ -10,6 +10,7 @@
 
 #include "../Methods/Methods.h"
 #include "../Events/EventManager.h"
+#include "../Commands/CommandManager.h"
 #include "Plugin.h"
 
 //* PluginInfo
@@ -36,12 +37,13 @@ public:
      * \brief Initializes the pointers the plugins need.
      *
      * \param methodsPtr      Current instance of Methods.
+     * \param commandsPtr     Current instance of the CommandManager.
      * \param playersPtr      Current instance of the playerlist.
      * \param mapsPtr         Current instance of the maplist.
      * \param databasePtr     Current instance of the database connection.
      * \param uiPtr           Current instance of the interface manager.
      */
-    PluginManager(Methods* methodsPtr, std::map<std::string, Player>* playersPtr, MapList* mapsPtr, sql::Connection* databasePtr, UIManager* uiPtr);
+    PluginManager(Methods* methodsPtr, CommandManager* commandsPtr, std::map<std::string, Player>* playersPtr, MapList* mapsPtr, sql::Connection* databasePtr, UIManager* uiPtr);
 
     /*!
      * \brief Destructor closes all open plugins.
@@ -74,6 +76,7 @@ private:
     std::map<std::string, std::string> discoverPlugins(std::string pluginsFolder);
 
     std::map<std::string, PluginInfo> plugins; /**< \brief Vector of loaded plugins. */
+    CommandManager* commands;                  /**< \brief Current instance of the CommandManager. */
     EventManager* events;                      /**< \brief Current instance of the EventManager. */
     Controller* controller;                    /**< \brief Current instance of the controller. */
 };

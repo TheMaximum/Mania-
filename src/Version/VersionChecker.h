@@ -22,6 +22,10 @@ struct GitVersion
     bool PreRelease;        /**< \brief Is pre-release?. */
 };
 
+//* VersionCompare
+/**
+ * \brief Compares string versions.
+ */
 class VersionCompare
 {
 public:

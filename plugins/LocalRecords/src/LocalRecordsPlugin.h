@@ -21,12 +21,13 @@ public:
     void OnPlayerFinish(Player player, int time);
     void OnPlayerCheckpoint(Player player, int time, int currentLap, int checkpointIndex);
 
-    void OpenLocalRecords(Player player, std::string answer, std::vector<EntryVal> entries);
+    void OpenLocalRecordsAnswer(Player player, std::string answer, std::vector<EntryVal> entries);
+    void OpenLocalRecordsCommand(Player player, std::vector<std::string> parameters);
 
 private:
     LocalRecordsList localRecords;
     LocalRecordsWidget widget;
-    
+
     int recordLimit = 100;
 
     void retrieveRecords(Map map);

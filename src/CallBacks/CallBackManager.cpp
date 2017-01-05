@@ -1,8 +1,9 @@
 #include "CallBackManager.h"
 
-CallBackManager::CallBackManager(GbxRemote* serverPtr, EventManager* eventManagerPtr, sql::Connection* databasePtr, std::map<std::string, Player>* playerList, MapList* mapList)
+CallBackManager::CallBackManager(GbxRemote* serverPtr, CommandManager* commandManagerPtr, EventManager* eventManagerPtr, sql::Connection* databasePtr, std::map<std::string, Player>* playerList, MapList* mapList)
 {
     server = serverPtr;
+    commands = commandManagerPtr;
     events = eventManagerPtr;
     database = databasePtr;
 
@@ -143,7 +144,14 @@ void CallBackManager::HandlePlayerChat(std::vector<GbxResponseParameter> paramet
         std::istringstream(parameters.at(3).GetString()) >> isRegisteredCmd;
 
         Player player = players->at(login);
-        events->CallPlayerChat(player, text, isRegisteredCmd);
+        if(isRegisteredCmd)
+        {
+            commands->HandleCommand(player, text);
+        }
+        else
+        {
+            events->CallPlayerChat(player, text, isRegisteredCmd);
+        }
     }
 }
 

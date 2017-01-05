@@ -13,6 +13,7 @@ ManiaPP::ManiaPP()
     players = new std::map<std::string, Player>();
     maps = new MapList();
     events = new EventManager();
+    commands = new CommandManager();
 
     methods = new Methods(server, players);
     ui = new UIManager(methods, events);
@@ -28,6 +29,7 @@ ManiaPP::~ManiaPP()
 
     delete plugins; plugins = NULL;
     delete events; events = NULL;
+    delete commands; commands = NULL;
     delete callbacks; callbacks = NULL;
     delete methods; methods = NULL;
 
@@ -99,9 +101,9 @@ bool ManiaPP::ConnectToServer()
                                     maps->SetCurrentMap(currentMap.UId);
                                     maps->Current->CopyDetailedMap(currentMap);
 
-                                    plugins = new PluginManager(methods, players, maps, database, ui);
+                                    plugins = new PluginManager(methods, commands, players, maps, database, ui);
                                     plugins->SetEventManager(events);
-                                    callbacks = new CallBackManager(server, events, database, players, maps);
+                                    callbacks = new CallBackManager(server, commands, events, database, players, maps);
 
                                     plugins->LoadPlugins();
                                     plugins->InitializePlugins();
