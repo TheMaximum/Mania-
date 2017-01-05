@@ -97,7 +97,6 @@ void PluginManager::LoadPlugins(std::string pluginsFolder)
                     eventCount += events->RegisterPlayerConnect(plugin->PlayerConnect);
                     eventCount += events->RegisterPlayerDisconnect(plugin->PlayerDisconnect);
                     eventCount += events->RegisterPlayerChat(plugin->PlayerChat);
-                    eventCount += events->RegisterPlayerManialinkPageAnswer(plugin->PlayerManialinkPageAnswer);
                     eventCount += events->RegisterEcho(plugin->Echo);
                     eventCount += events->RegisterBeginMatch(plugin->BeginMatch);
                     eventCount += events->RegisterEndMatch(plugin->EndMatch);
