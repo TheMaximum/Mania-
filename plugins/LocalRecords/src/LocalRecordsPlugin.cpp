@@ -7,7 +7,7 @@ LocalRecordsPlugin::LocalRecordsPlugin()
 
     BeginMap.push_back([this](Map map) { OnBeginMap(map); });
     PlayerConnect.push_back([this](Player player) { OnPlayerConnect(player); });
-    PlayerFinish.push_back([this](Player player, int time) { OnPlayerFinish(player, time); });
+    PlayerFinish.push_back([this](Player player, int playerTime) { OnPlayerFinish(player, playerTime); });
 }
 
 void LocalRecordsPlugin::Init()
@@ -49,9 +49,9 @@ void LocalRecordsPlugin::OnPlayerConnect(Player player)
     }
 }
 
-void LocalRecordsPlugin::OnPlayerFinish(Player player, int time)
+void LocalRecordsPlugin::OnPlayerFinish(Player player, int playerTime)
 {
-    if(time > 0 && player.CurrentCheckpoints.size() == controller->Maps->Current->NbCheckpoints)
+    if(playerTime > 0 && player.CurrentCheckpoints.size() == controller->Maps->Current->NbCheckpoints)
     {
         LocalRecord currentLocal = localRecords.GetPlayerRecord(player);
         int currentLocalIndex = localRecords.GetPlayerRecordIndex(player);
@@ -62,6 +62,16 @@ void LocalRecordsPlugin::OnPlayerFinish(Player player, int time)
             if(checkPointId > 0) checkpoints << ",";
             checkpoints << player.CurrentCheckpoints.at(checkPointId);
         }
+
+        sql::PreparedStatement* pstmt = controller->Database->prepareStatement("INSERT INTO `rs_times` (`MapId`, `PlayerId`, `Score`, `Date`, `Checkpoints`) VALUES (?, ?, ?, ?, ?)");
+        pstmt->setInt(1, controller->Maps->Current->Id);
+        pstmt->setInt(2, player.Id);
+        pstmt->setInt(3, playerTime);
+        pstmt->setInt(4, time(NULL));
+        pstmt->setString(5, checkpoints.str());
+        pstmt->execute();
+
+        delete pstmt; pstmt = NULL;
 
         bool recordInserted = false;
 
@@ -74,7 +84,7 @@ void LocalRecordsPlugin::OnPlayerFinish(Player player, int time)
             {
                 // Records list is full.
                 LocalRecord lastRecord = localRecords.List.back();
-                if(time < lastRecord.Time)
+                if(playerTime < lastRecord.Time)
                 {
                     // Time is better than last record, so insert in database.
                     insertNewRecord = true;
@@ -91,7 +101,7 @@ void LocalRecordsPlugin::OnPlayerFinish(Player player, int time)
                 sql::PreparedStatement* pstmt = controller->Database->prepareStatement("INSERT INTO `records` (`MapId`, `PlayerId`, `Score`, `Date`, `Checkpoints`) VALUES (?, ?, ?, ?, ?)");
                 pstmt->setInt(1, controller->Maps->Current->Id);
                 pstmt->setInt(2, player.Id);
-                pstmt->setInt(3, time);
+                pstmt->setInt(3, playerTime);
                 pstmt->setString(4, Time::Current());
                 pstmt->setString(5, checkpoints.str());
                 pstmt->execute();
@@ -103,11 +113,11 @@ void LocalRecordsPlugin::OnPlayerFinish(Player player, int time)
         else
         {
             // Player has a local.
-            if(time < currentLocal.Time)
+            if(playerTime < currentLocal.Time)
             {
                 // Player improved his record.
                 sql::PreparedStatement* pstmt = controller->Database->prepareStatement("UPDATE `records` SET `Score` = ?, `Date` = ?, `Checkpoints` = ? WHERE `Id` = ?");
-                pstmt->setInt(1, time);
+                pstmt->setInt(1, playerTime);
                 pstmt->setString(2, Time::Current());
                 pstmt->setString(3, checkpoints.str());
                 pstmt->setInt(4, currentLocal.Id);
@@ -116,7 +126,7 @@ void LocalRecordsPlugin::OnPlayerFinish(Player player, int time)
                 recordInserted = true;
                 delete pstmt; pstmt = NULL;
             }
-            else if(time == currentLocal.Time)
+            else if(playerTime == currentLocal.Time)
             {
                 // Player equalled his record.
                 std::stringstream chatMessage;
