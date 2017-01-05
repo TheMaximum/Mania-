@@ -4,10 +4,14 @@ ManiaPP::ManiaPP()
 {
     std::cout << "## Running Mania++ v" << VERSION << " #####################################################" << std::endl;
 
-    VersionChecker versionChecker = VersionChecker();
-    versionChecker.CheckForUpdates("TheMaximum/mania-pp", VERSION);
-
     config = new Config("config.yaml");
+
+    if(config->Program->checkVersion)
+    {
+        VersionChecker versionChecker = VersionChecker();
+        versionChecker.CheckForUpdates("TheMaximum/mania-pp", VERSION);
+    }
+
     logging = new Logging();
     server = new GbxRemote();
     players = new std::map<std::string, Player>();
@@ -101,7 +105,7 @@ bool ManiaPP::ConnectToServer()
                                     maps->SetCurrentMap(currentMap.UId);
                                     maps->Current->CopyDetailedMap(currentMap);
 
-                                    plugins = new PluginManager(methods, commands, players, maps, database, ui);
+                                    plugins = new PluginManager(config, methods, commands, players, maps, database, ui);
                                     plugins->SetEventManager(events);
                                     callbacks = new CallBackManager(server, commands, events, database, players, maps);
 

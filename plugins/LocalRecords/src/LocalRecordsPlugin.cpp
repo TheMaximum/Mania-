@@ -14,16 +14,44 @@ LocalRecordsPlugin::LocalRecordsPlugin()
 
 void LocalRecordsPlugin::Init()
 {
+    loadSettings();
     retrieveRecords(*controller->Maps->Current);
     std::cout << "[  INFO   ] " << localRecords.List.size() << " records found for " << controller->Maps->Current->Name << "." << std::endl;
 
     widget = LocalRecordsWidget(controller->UI, &localRecords);
+    widget.WidgetEntries = widgetEntries;
+    widget.WidgetTopCount = widgetTopCount;
+    widget.WidgetX = widgetX;
+    widget.WidgetY = widgetY;
     controller->UI->AddEvent("OpenLocalRecords", ([this](Player player, std::string answer, std::vector<EntryVal> entries) { OpenLocalRecordsAnswer(player, answer, entries); }));
 
     if(!widget.DisplayToAll(controller->Players))
     {
         Logging::PrintError(controller->Server->GetCurrentError());
     }
+}
+
+void LocalRecordsPlugin::loadSettings()
+{
+    std::map<std::string, std::string>::iterator limitIt = Settings.find("limit");
+    if(limitIt != Settings.end())
+        recordLimit = atoi(limitIt->second.c_str());
+
+    std::map<std::string, std::string>::iterator widgetEntriesIt = Settings.find("widgetEntries");
+    if(widgetEntriesIt != Settings.end())
+        widgetEntries = atoi(widgetEntriesIt->second.c_str());
+
+    std::map<std::string, std::string>::iterator widgetTopCountIt = Settings.find("widgetTopCount");
+    if(widgetTopCountIt != Settings.end())
+        widgetTopCount = atoi(widgetTopCountIt->second.c_str());
+
+    std::map<std::string, std::string>::iterator widgetXIt = Settings.find("widgetX");
+    if(widgetXIt != Settings.end())
+        widgetX = atof(widgetXIt->second.c_str());
+
+    std::map<std::string, std::string>::iterator widgetYIt = Settings.find("widgetY");
+    if(widgetYIt != Settings.end())
+        widgetY = atof(widgetYIt->second.c_str());
 }
 
 void LocalRecordsPlugin::OnBeginMap(Map map)

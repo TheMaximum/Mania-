@@ -29,9 +29,14 @@ private:
     LocalRecordsWidget widget;
 
     int recordLimit = 100;
+    int widgetEntries = 28;
+    int widgetTopCount = 5;
+    double widgetX = 49.2;
+    double widgetY = 28.2;
 
     void retrieveRecords(Map map);
     void displayPersonalRecord(Player player);
+    void loadSettings();
 };
 
 #endif // LOCALRECORDSPLUGIN_H_

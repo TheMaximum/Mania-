@@ -8,9 +8,11 @@
 #include <stdio.h>
 #include <dlfcn.h>
 
-#include "../Methods/Methods.h"
+#include "../Config/Config.h"
 #include "../Events/EventManager.h"
 #include "../Commands/CommandManager.h"
+#include "../Methods/Methods.h"
+
 #include "Plugin.h"
 
 //* PluginInfo
@@ -36,6 +38,7 @@ public:
     /*!
      * \brief Initializes the pointers the plugins need.
      *
+     * \param configPtr       Current instance of Config.
      * \param methodsPtr      Current instance of Methods.
      * \param commandsPtr     Current instance of the CommandManager.
      * \param playersPtr      Current instance of the playerlist.
@@ -43,7 +46,7 @@ public:
      * \param databasePtr     Current instance of the database connection.
      * \param uiPtr           Current instance of the interface manager.
      */
-    PluginManager(Methods* methodsPtr, CommandManager* commandsPtr, std::map<std::string, Player>* playersPtr, MapList* mapsPtr, sql::Connection* databasePtr, UIManager* uiPtr);
+    PluginManager(Config* configPtr, Methods* methodsPtr, CommandManager* commandsPtr, std::map<std::string, Player>* playersPtr, MapList* mapsPtr, sql::Connection* databasePtr, UIManager* uiPtr);
 
     /*!
      * \brief Destructor closes all open plugins.
@@ -76,6 +79,7 @@ private:
     std::map<std::string, std::string> discoverPlugins(std::string pluginsFolder);
 
     std::map<std::string, PluginInfo> plugins; /**< \brief Vector of loaded plugins. */
+    Config* config;                            /**< \brief Current instance of the Config. */
     CommandManager* commands;                  /**< \brief Current instance of the CommandManager. */
     EventManager* events;                      /**< \brief Current instance of the EventManager. */
     Controller* controller;                    /**< \brief Current instance of the controller. */

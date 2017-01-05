@@ -59,6 +59,8 @@ public:
         controller = controllerPtr;
     }
 
+    std::map<std::string, std::string> Settings;                                /**< \brief Plugin settings (from the config file). */
+
     std::vector<std::function<void(Player)>> PlayerConnect;                     /**< \brief Vector with functions for the PlayerConnect event. */
     std::vector<std::function<void(Player)>> PlayerDisconnect;                  /**< \brief Vector with functions for the PlayerDisconnect event. */
     std::vector<std::function<void(Player, std::string, bool)>> PlayerChat;     /**< \brief Vector with functions for the PlayerChat event. */

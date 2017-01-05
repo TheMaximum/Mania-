@@ -13,3 +13,16 @@ config:
             username: '***'
             password: '***'
         database: 'maniapp'
+
+    program:
+        checkVersion: false
+        
+plugins:
+    - 'HelloGoodbye'
+    - 'LocalRecords':
+        limit: 100
+        widgetEntries: 22
+        widgetTopCount: 5
+        widgetX: 49.2
+        widgetY: 28.2
+    - 'MapWidget'

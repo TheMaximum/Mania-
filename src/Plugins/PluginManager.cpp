@@ -1,12 +1,14 @@
 #include "PluginManager.h"
 
-PluginManager::PluginManager(Methods* methodsPtr,
+PluginManager::PluginManager(Config* configPtr,
+                             Methods* methodsPtr,
                              CommandManager* commandsPtr,
                              std::map<std::string, Player>* playersPtr,
                              MapList* mapsPtr,
                              sql::Connection* databasePtr,
                              UIManager* uiPtr)
 {
+    config = configPtr;
     plugins = std::map<std::string, PluginInfo>();
     events = NULL;
     commands = commandsPtr;
@@ -46,6 +48,8 @@ void PluginManager::LoadPlugins(std::string pluginsFolder)
     std::cout << "[   \033[0;32mOK.\033[0;0m   ] Discovered plugins: " << pluginFiles.size() << " found." << std::endl;
     std::cout << "[ ======= ] Loading plugins ... " << std::endl;
 
+    std::set<std::string> loadedPlugins = std::set<std::string>();
+
     for(std::map<std::string, std::string>::iterator pluginId = pluginFiles.begin(); pluginId != pluginFiles.end(); ++pluginId)
     {
         std::cout << "[         ] Loading plugin '" << pluginId->first << "' ... " << '\r' << std::flush;
@@ -80,6 +84,9 @@ void PluginManager::LoadPlugins(std::string pluginsFolder)
             {
                 Plugin* plugin = startPlugin();
                 plugin->SetController(controller);
+
+                PluginConfig pluginConfig = config->Plugins->find(pluginId->first)->second;
+                plugin->Settings = pluginConfig.settings;
 
                 std::cout << "[   \033[0;32mOK.\033[0;0m   ] Loaded plugin '" << pluginId->first << "': v" << plugin->Version << " by " << plugin->Author << "." << std::endl;
 
@@ -116,11 +123,23 @@ void PluginManager::LoadPlugins(std::string pluginsFolder)
                 std::cout << "[   \033[0;32mOK.\033[0;0m   ] Loaded commands for '" << pluginId->first << "': " << commandCount << " found." << std::endl;
 
                 plugins.insert(std::pair<std::string, PluginInfo>(pluginId->first, { plugin->Version, plugin->Author, plugin, pluginHandle }));
+
+                loadedPlugins.insert(pluginId->first);
             }
         }
     }
 
-    std::cout << "[ ======= ] Plugins: " << plugins.size() << " loaded." << std::endl;
+    int notFound = 0;
+    for(std::map<std::string, PluginConfig>::iterator configPluginId = config->Plugins->begin(); configPluginId != config->Plugins->end(); ++configPluginId)
+    {
+        if(loadedPlugins.find(configPluginId->first) == loadedPlugins.end())
+        {
+            std::cout << "[ \033[0;31mFAILED!\033[0;0m ] Plugin '" << configPluginId->first << "' does not exist." << std::endl;
+            notFound++;
+        }
+    }
+
+    std::cout << "[ ======= ] Plugins: " << plugins.size() << " loaded, " << notFound << " not found." << std::endl;
 }
 
 void PluginManager::InitializePlugins()
@@ -150,27 +169,30 @@ std::map<std::string, std::string> PluginManager::discoverPlugins(std::string pl
             {
                 std::string pluginName = entry->d_name;
 
-                std::string pluginFolder = pluginsFolder;
-                pluginFolder.append("/").append(entry->d_name);
-
-                DIR* pluginDirectory = opendir(pluginFolder.c_str());
-                struct dirent* pluginEntry = readdir(pluginDirectory);
-                while(pluginEntry != NULL)
+                if(config->Plugins->find(pluginName) != config->Plugins->end())
                 {
-                    if(pluginEntry->d_type != DT_DIR)
+                    std::string pluginFolder = pluginsFolder;
+                    pluginFolder.append("/").append(entry->d_name);
+
+                    DIR* pluginDirectory = opendir(pluginFolder.c_str());
+                    struct dirent* pluginEntry = readdir(pluginDirectory);
+                    while(pluginEntry != NULL)
                     {
-                        if(std::string(pluginEntry->d_name).find(".so") != std::string::npos)
+                        if(pluginEntry->d_type != DT_DIR)
                         {
-                            std::string filePath = pluginFolder;
-                            filePath.append("/").append(pluginEntry->d_name);
-                            pluginFiles.insert(std::pair<std::string, std::string>(pluginName, filePath));
+                            if(std::string(pluginEntry->d_name).find(".so") != std::string::npos)
+                            {
+                                std::string filePath = pluginFolder;
+                                filePath.append("/").append(pluginEntry->d_name);
+                                pluginFiles.insert(std::pair<std::string, std::string>(pluginName, filePath));
+                            }
                         }
+
+                        pluginEntry = readdir(pluginDirectory);
                     }
 
-                    pluginEntry = readdir(pluginDirectory);
+                    closedir(pluginDirectory);
                 }
-
-                closedir(pluginDirectory);
             }
         }
 
