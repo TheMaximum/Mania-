@@ -19,6 +19,11 @@ public:
 
 private:
     MapWidget widget;
+
+    double widgetX = 49.2;
+    double widgetY = 48.2;
+
+    void loadSettings();
 };
 
 #endif // MAPWIDGETPLUGIN_H_

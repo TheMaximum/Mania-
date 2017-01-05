@@ -16,7 +16,7 @@ config:
 
     program:
         checkVersion: false
-        
+
 plugins:
     - 'HelloGoodbye'
     - 'LocalRecords':
@@ -25,4 +25,6 @@ plugins:
         widgetTopCount: 5
         widgetX: 49.2
         widgetY: 28.2
-    - 'MapWidget'
+    - 'MapWidget':
+        widgetX: 49.2
+        widgetY: 48.2

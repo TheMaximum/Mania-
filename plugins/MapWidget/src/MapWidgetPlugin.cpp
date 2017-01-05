@@ -12,12 +12,26 @@ MapWidgetPlugin::MapWidgetPlugin()
 
 void MapWidgetPlugin::Init()
 {
+    loadSettings();
     widget = MapWidget(controller->UI);
+    widget.WidgetX = widgetX;
+    widget.WidgetY = widgetY;
 
     if(!widget.DisplayToAll(controller->Players, controller->Maps->Current))
     {
         Logging::PrintError(controller->Server->GetCurrentError());
     }
+}
+
+void MapWidgetPlugin::loadSettings()
+{
+    std::map<std::string, std::string>::iterator widgetXIt = Settings.find("widgetX");
+    if(widgetXIt != Settings.end())
+        widgetX = atof(widgetXIt->second.c_str());
+
+    std::map<std::string, std::string>::iterator widgetYIt = Settings.find("widgetY");
+    if(widgetYIt != Settings.end())
+        widgetY = atof(widgetYIt->second.c_str());
 }
 
 void MapWidgetPlugin::OnBeginMap(Map map)
