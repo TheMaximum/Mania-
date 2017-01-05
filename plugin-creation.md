@@ -43,6 +43,15 @@ Because the ```std::function``` doesn't work nicely with class methods, you can 
 
 In this case, ```OnPlayerConnect``` is the method you want to get called when a ```ManiaPlanet.PlayerConnect``` callback gets fired.
 
+Adding chat commands also only works in the constructor and is simliar to subscribing on events. You can call the ```RegisterCommand``` (for /xxxx) and ```RegisterAdminCommand``` (for /admin xxxx) methods:
+
+```C++
+RegisterCommand("test", [this](Player player, std::vector<std::string> parameters) { OnTestCommand(player, parameters); });
+RegisterAdminCommand("test", [this](Player player, std::vector<std::string> parameters) { OnAdminTestCommand(player, parameters); });
+```
+
+The parameters you receive in your chat-function are the remaining words (so seperated by spaces) in the chat line.
+
 ### Plugin Init() ###
 The ```Plugin``` interface demands you have an ```Init()``` method in your plugin class. This method is being called after all plugins have been loaded by the system.
 At this moment all needed instances have been set for your plugin and can be called.
@@ -55,7 +64,6 @@ Almost all callbacks from the server are relayed to the plugins. The table indic
 | ManiaPlanet.PlayerConnect     | PlayerConnect     | ```Player```                                                               |
 | ManiaPlanet.PlayerDisconnect  | PlayerDisconnect  | ```Player```                                                               |
 | ManiaPlanet.PlayerChat        | PlayerChat        | ```Player```, ```std::string```, ```bool```                                |
-| ManiaPlanet.PlayerManialinkPageAnswer        | PlayerManialinkPageAnswer        | ```Player```, ```std::string```, ```std::vector<EntryVal>```                                |
 | ManiaPlanet.Echo              | Echo              | ```std::string```, ```std::string```                                       |
 | ManiaPlanet.BeginMatch        | BeginMatch        |                                                                            |
 | ManiaPlanet.EndMatch          | EndMatch          | ```std::vector<PlayerRanking>```, ```int```                                |
@@ -69,6 +77,8 @@ Almost all callbacks from the server are relayed to the plugins. The table indic
 | ManiaPlanet.MapListModified   | MapListModified   | ```int```, ```int```, ```bool```                                           |
 | ManiaPlanet.PlayerInfoChanged | PlayerInfoChanged | ```Player```                                                               |
 | ManiaPlanet.VoteUpdated       | VoteUpdated       | ```std::string```, ```std::string```, ```std::string```, ```std::string``` |
+
+```ManiaPlanet.PlayerManialinkPageAnswer``` callbacks are only available via the ```UIManager```.
 
 ### Accessing controller features ###
 The controller features are accessible via a ```Controller``` struct, which is included in your plugin as ```controller->```. From here, you can execute queries on the server, access the current playerlist and maplist (and make changes in them) and query the database.
