@@ -253,22 +253,27 @@ void CallBackManager::HandleStatusChanged(std::vector<GbxResponseParameter> para
 void CallBackManager::HandlePlayerCheckpoint(std::vector<GbxResponseParameter> parameters)
 {
     std::string login = parameters.at(1).GetString();
-    Player player = players->at(login);
+    Player* player = &players->at(login);
     int time = atoi(parameters.at(2).GetString().c_str());
+    player->CurrentCheckpoints.push_back(time);
     int currentLap = atoi(parameters.at(3).GetString().c_str());
     int checkpointIndex = atoi(parameters.at(4).GetString().c_str());
 
-    events->CallPlayerCheckpoint(player, time, currentLap, checkpointIndex);
+    events->CallPlayerCheckpoint(*player, time, currentLap, checkpointIndex);
 }
 
 void CallBackManager::HandlePlayerFinish(std::vector<GbxResponseParameter> parameters)
 {
     std::string login = parameters.at(1).GetString();
-    Player player = players->at(login);
+    Player* player = &players->at(login);
     int time = atoi(parameters.at(2).GetString().c_str());
 
     if(time > 0)
-        events->CallPlayerFinish(player, time);
+    {
+        events->CallPlayerFinish(*player, time);
+    }
+
+    player->CurrentCheckpoints.clear();
 }
 
 void CallBackManager::HandlePlayerIncoherence(std::vector<GbxResponseParameter> parameters)

@@ -11,9 +11,12 @@ TcpClient::TcpClient()
 
 void TcpClient::Close()
 {
-    shutdown(sock, 2);
-    close(sock);
-    sock = -1;
+    if(sock != -1)
+    {
+        shutdown(sock, 2);
+        close(sock);
+        sock = -1;
+    }
 }
 
 bool TcpClient::Connect(std::string address, int port)

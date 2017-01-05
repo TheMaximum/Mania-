@@ -2,7 +2,6 @@
 #define LOCALRECORDSPLUGIN_H_
 
 #include <sstream>
-#include <algorithm>
 
 #include "Plugins/Plugin.h"
 #include "Utils/Time.h"
@@ -18,6 +17,9 @@ public:
     void Init();
     void OnBeginMap(Map map);
     void OnPlayerConnect(Player player);
+    void OnPlayerFinish(Player player, int time);
+    void OnPlayerCheckpoint(Player player, int time, int currentLap, int checkpointIndex);
+
     void OpenLocalRecords(Player player, std::string answer, std::vector<EntryVal> entries);
 
 private:

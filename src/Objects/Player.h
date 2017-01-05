@@ -10,36 +10,37 @@
 struct Player
 {
     // === Mania++ information ===
-    int Id = 0;            /**< \brief Player identifier (on database). */
+    int Id = 0;                          /**< \brief Player identifier (on database). */
+    std::vector<int> CurrentCheckpoints; /**< \brief Checkpoint passes on current try. */
 
     // === Basic information ===
-    int PlayerId;          /**< \brief Player identifier (on server). */
-    int TeamId;            /**< \brief Team identifier (on server). */
+    int PlayerId;                        /**< \brief Player identifier (on server). */
+    int TeamId;                          /**< \brief Team identifier (on server). */
 
-    std::string Login;     /**< \brief Player login. */
-    std::string NickName;  /**< \brief Player nickname.*/
+    std::string Login;                   /**< \brief Player login. */
+    std::string NickName;                /**< \brief Player nickname.*/
 
-    int SpectatorStatus;   /**< \brief Spectator status of player. */
-    int Flags;             /**< \brief Player flags. */
+    int SpectatorStatus;                 /**< \brief Spectator status of player. */
+    int Flags;                           /**< \brief Player flags. */
 
-    int LadderRanking;     /**< \brief Current ladder ranking of the player. */
+    int LadderRanking;                   /**< \brief Current ladder ranking of the player. */
 
     // === Detailed information ===
-    std::string IPAddress; /**< \brief IP Address of the player. */
-    int DownloadRate;      /**< \brief Download rate in Kbps. */
-    int UploadRate;        /**< \brief Upload rate in Kbps. */
+    std::string IPAddress;               /**< \brief IP Address of the player. */
+    int DownloadRate;                    /**< \brief Download rate in Kbps. */
+    int UploadRate;                      /**< \brief Upload rate in Kbps. */
 
-    std::string Language;  /**< \brief Application language. */
+    std::string Language;                /**< \brief Application language. */
 
-    bool IsSpectator;      /**< \brief Is in spectatormode? */
-    bool IsInOfficialMode; /**< \brief Is in official mode? */
+    bool IsSpectator;                    /**< \brief Is in spectatormode? */
+    bool IsInOfficialMode;               /**< \brief Is in official mode? */
 
     /*!
      * \brief Constructs a Player object without input.
      */
     Player()
     {
-
+        CurrentCheckpoints = std::vector<int>();
     }
 
     /*!
@@ -49,6 +50,7 @@ struct Player
      */
     Player(std::map<std::string, GbxResponseParameter> serverStruct)
     {
+        CurrentCheckpoints = std::vector<int>();
         if(serverStruct.find("Login") != serverStruct.end())
         {
             setBasicInfo(serverStruct);

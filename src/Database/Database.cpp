@@ -8,8 +8,11 @@ Database::Database(std::string serverAddress, int serverPort)
 
 Database::~Database()
 {
-    Driver->threadEnd();
-    Driver = NULL;
+    if(Driver != NULL)
+    {
+        Driver->threadEnd();
+        Driver = NULL;
+    }
 }
 
 sql::Connection* Database::Connect(std::string username, std::string password, std::string database)

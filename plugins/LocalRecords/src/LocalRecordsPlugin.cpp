@@ -7,6 +7,8 @@ LocalRecordsPlugin::LocalRecordsPlugin()
 
     BeginMap.push_back([this](Map map) { OnBeginMap(map); });
     PlayerConnect.push_back([this](Player player) { OnPlayerConnect(player); });
+    PlayerFinish.push_back([this](Player player, int time) { OnPlayerFinish(player, time); });
+    PlayerCheckpoint.push_back([this](Player player, int time, int currentLap, int checkpointIndex) { OnPlayerCheckpoint(player, time, currentLap, checkpointIndex); });
 }
 
 void LocalRecordsPlugin::Init()
@@ -51,6 +53,28 @@ void LocalRecordsPlugin::OnPlayerConnect(Player player)
     {
         Logging::PrintError(controller->Server->GetCurrentError());
     }
+}
+
+void LocalRecordsPlugin::OnPlayerFinish(Player player, int time)
+{
+    std::cout << "FINISH! Time " << time << ", checkpoints: ";
+    for(int checkPointId = 0; checkPointId < player.CurrentCheckpoints.size(); checkPointId++)
+    {
+        if(checkPointId > 0) std::cout << ",";
+        std::cout << player.CurrentCheckpoints.at(checkPointId);
+    }
+    std::cout << std::endl;
+}
+
+void LocalRecordsPlugin::OnPlayerCheckpoint(Player player, int time, int currentLap, int checkpointIndex)
+{
+    std::cout << "CHECKPOINT! List: ";
+    for(int checkPointId = 0; checkPointId < player.CurrentCheckpoints.size(); checkPointId++)
+    {
+        if(checkPointId > 0) std::cout << ",";
+        std::cout << player.CurrentCheckpoints.at(checkPointId);
+    }
+    std::cout << std::endl;
 }
 
 void LocalRecordsPlugin::OpenLocalRecords(Player player, std::string answer, std::vector<EntryVal> entries)
