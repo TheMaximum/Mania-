@@ -63,6 +63,11 @@ bool UIManager::DisplayList(UIList list, Player player, int currentPage)
     {
         currentLists.insert(std::pair<std::string, UIList>(player.Login, list));
     }
+    else if(playerUIList->second.Id != list.Id)
+    {
+        currentLists.erase(player.Login);
+        currentLists.insert(std::pair<std::string, UIList>(player.Login, list));
+    }
 
     UIFrame frame = UIFrame();
     frame.ManiaLinkId = "CenterList";
