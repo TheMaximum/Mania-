@@ -78,7 +78,8 @@ bool UIManager::DisplayList(UIList list, Player player, int currentPage)
     widget << "        <quad posn=\"78.5 -0.5 0.004\" sizen=\"5 5\" style=\"Icons64x64_1\" substyle=\"Close\" action=\"CloseCenterList\"/>";
     widget << "        <quad posn=\"1 -0.8 0.004\" sizen=\"4 4\" style=\"" << list.IconStyle << "\" substyle=\"" << list.IconSubstyle << "\"/>";
 
-    widget << "        <label posn=\"5.5 -2 0.004\" sizen=\"60 3\" halign=\"left\" textsize=\"2.5\" text=\"$o" << list.Title << "\"/>";
+    widget << "        <label posn=\"5.5 -2 0.004\" sizen=\"55 3\" halign=\"left\" textsize=\"2.5\" text=\"$o" << list.Title << "\"/>";
+    widget << "        <label posn=\"78.5 -2.3 0.004\" sizen=\"55 3\" halign=\"right\" textsize=\"1.5\" text=\"$o(" << list.Rows.size() << " entries)\"/>";
 
     widget << "        <frame posn=\"0.5 -6 0\" id=\"ListWhoKarmaList\">";
     widget << "                <quad posn=\"0 0 0.005\" sizen=\"83 53\" style=\"Bgs1InRace\" substyle=\"BgCardList\"/>";
