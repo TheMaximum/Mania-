@@ -156,10 +156,10 @@ void LocalRecordsPlugin::OnPlayerFinish(Player player, int playerTime)
             }
         }
 
-        sql::PreparedStatement* pstmt;
-        try
+        if(updateRecord)
         {
-            if(updateRecord)
+            sql::PreparedStatement* pstmt;
+            try
             {
                 pstmt = controller->Database->prepareStatement("INSERT INTO `records` (`MapId`, `PlayerId`, `Score`, `Date`, `Checkpoints`) VALUES (?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE `Score` = VALUES(`Score`), `Date` = VALUES(`Date`), `Checkpoints` = VALUES(`Checkpoints`)");
                 pstmt->setInt(1, controller->Maps->Current->Id);
@@ -171,44 +171,44 @@ void LocalRecordsPlugin::OnPlayerFinish(Player player, int playerTime)
 
                 recordInserted = true;
             }
-
-            retrieveRecords(*controller->Maps->Current);
-
-            if(recordInserted)
+            catch(sql::SQLException &e)
             {
-                LocalRecord newLocal = localRecords.GetPlayerRecord(player);
-                int newLocalIndex = localRecords.GetPlayerRecordIndex(player);
+                std::cout << "Failed to save record for " << player.Login << " on '" << controller->Maps->Current->Name << "' ..." << std::endl;
+                Logging::PrintError(e.getErrorCode(), e.what());
+            }
 
-                std::stringstream chatMessage;
-                chatMessage << "$fff" << player.NickName << "$z$s$0f3 ";
-                chatMessage << "drove the $fff" << newLocalIndex << ".$0f3 record with a time of: $fff" << newLocal.FormattedTime << "$0f3";
-                if(currentLocal.Id == 0)
-                {
-                    chatMessage << "!";
-                }
-                else
-                {
-                    chatMessage << " ($fff" << currentLocalIndex << ".$0f3, $fff-" << Time::FormatTime((currentLocal.Time - newLocal.Time)) << "$0f3)!";
-                }
-
-                controller->Server->ChatSendServerMessage(chatMessage.str());
+            if(pstmt != NULL)
+            {
+                delete pstmt;
+                pstmt = NULL;
             }
         }
-        catch(sql::SQLException &e)
-        {
-            std::cout << "Failed to save record for " << player.Login << " on '" << controller->Maps->Current->Name << "' ..." << std::endl;
-            Logging::PrintError(e.getErrorCode(), e.what());
-        }
 
-        if(pstmt != NULL)
+        if(recordInserted)
         {
-            delete pstmt;
-            pstmt = NULL;
-        }
+            retrieveRecords(*controller->Maps->Current);
 
-        if(!widget.DisplayToAll(controller->Players))
-        {
-            Logging::PrintError(controller->Server->GetCurrentError());
+            LocalRecord newLocal = localRecords.GetPlayerRecord(player);
+            int newLocalIndex = localRecords.GetPlayerRecordIndex(player);
+
+            std::stringstream chatMessage;
+            chatMessage << "$fff" << player.NickName << "$z$s$0f3 ";
+            chatMessage << "drove the $fff" << newLocalIndex << ".$0f3 record with a time of: $fff" << newLocal.FormattedTime << "$0f3";
+            if(currentLocal.Id == 0)
+            {
+                chatMessage << "!";
+            }
+            else
+            {
+                chatMessage << " ($fff" << currentLocalIndex << ".$0f3, $fff-" << Time::FormatTime((currentLocal.Time - newLocal.Time)) << "$0f3)!";
+            }
+
+            controller->Server->ChatSendServerMessage(chatMessage.str());
+
+            if(!widget.DisplayToAll(controller->Players))
+            {
+                Logging::PrintError(controller->Server->GetCurrentError());
+            }
         }
     }
 }
@@ -270,14 +270,15 @@ void LocalRecordsPlugin::retrieveRecords(Map map)
             {
                 localRecord.Login = playerResult->getString("Login");
                 localRecord.NickName = playerResult->getString("NickName");
-
-                localRecords.List.push_back(localRecord);
             }
             catch(sql::InvalidArgumentException &e)
             {
                 // Player cannot be found in the database.
-                // Just skip the record.
+                localRecord.Login = "";
+                localRecord.NickName = "";
             }
+
+            localRecords.List.push_back(localRecord);
 
             if(playerResult != NULL)
             {
