@@ -37,7 +37,7 @@ void \hyperlink{classGbxRemote_a5bd6e1dc2118f7e369e72592b3c9322a}{Handle\-Call\-
 \hypertarget{classGbxRemote_adac67444e391ffcc1dfda8f087eaef0b}{\hyperlink{classGbxResponse}{Gbx\-Response} $\ast$ \hyperlink{classGbxRemote_adac67444e391ffcc1dfda8f087eaef0b}{Get\-Response} ()}\label{classGbxRemote_adac67444e391ffcc1dfda8f087eaef0b}
 
 \begin{DoxyCompactList}\small\item\em Returns the response from the server. \end{DoxyCompactList}\item 
-\hyperlink{structGbxError}{Gbx\-Error} $\ast$ \hyperlink{classGbxRemote_a5467b5400129cd13239f88576aaaa2b4}{Get\-Current\-Error} ()
+\hyperlink{structGbxError}{Gbx\-Error} \hyperlink{classGbxRemote_aa3f6e467372a23c3a53510d5488bea8a}{Get\-Current\-Error} ()
 \begin{DoxyCompactList}\small\item\em Returns the current server error. \end{DoxyCompactList}\item 
 \hypertarget{classGbxRemote_ae6e15060920a31482fd14045cfd42803}{int \hyperlink{classGbxRemote_ae6e15060920a31482fd14045cfd42803}{Get\-Protocol} ()}\label{classGbxRemote_ae6e15060920a31482fd14045cfd42803}
 
@@ -60,7 +60,7 @@ void \hyperlink{classGbxRemote_a5bd6e1dc2118f7e369e72592b3c9322a}{Handle\-Call\-
 \hypertarget{classGbxRemote_a0b0b212b945da4266fb645affdac81cb}{\hyperlink{classTcpClient}{Tcp\-Client} \hyperlink{classGbxRemote_a0b0b212b945da4266fb645affdac81cb}{server}}\label{classGbxRemote_a0b0b212b945da4266fb645affdac81cb}
 
 \begin{DoxyCompactList}\small\item\em Socket connection with the server. \end{DoxyCompactList}\item 
-\hypertarget{classGbxRemote_ae5d44c3729140c1eba5e850cb5e5e7bd}{\hyperlink{structGbxError}{Gbx\-Error} $\ast$ \hyperlink{classGbxRemote_ae5d44c3729140c1eba5e850cb5e5e7bd}{current\-Error} = new \hyperlink{structGbxError}{Gbx\-Error}}\label{classGbxRemote_ae5d44c3729140c1eba5e850cb5e5e7bd}
+\hypertarget{classGbxRemote_a5c310edc409e31aa12c0c0664b0fd238}{\hyperlink{structGbxError}{Gbx\-Error} \hyperlink{classGbxRemote_a5c310edc409e31aa12c0c0664b0fd238}{current\-Error} = \hyperlink{structGbxError}{Gbx\-Error}()}\label{classGbxRemote_a5c310edc409e31aa12c0c0664b0fd238}
 
 \begin{DoxyCompactList}\small\item\em Current server error. \end{DoxyCompactList}\item 
 \hypertarget{classGbxRemote_a3a3a0af1a692a801a33baa292b877dc2}{\hyperlink{classGbxResponse}{Gbx\-Response} $\ast$ \hyperlink{classGbxRemote_a3a3a0af1a692a801a33baa292b877dc2}{current\-Response} = new \hyperlink{classGbxResponse}{Gbx\-Response}}\label{classGbxRemote_a3a3a0af1a692a801a33baa292b877dc2}
@@ -89,18 +89,18 @@ Handles communication with the Mania\-Planet server.
 Deletes and nullifies the current\-Error and current\-Response. 
 
 \subsection{Member Function Documentation}
-\hypertarget{classGbxRemote_a5467b5400129cd13239f88576aaaa2b4}{\index{Gbx\-Remote@{Gbx\-Remote}!Get\-Current\-Error@{Get\-Current\-Error}}
+\hypertarget{classGbxRemote_aa3f6e467372a23c3a53510d5488bea8a}{\index{Gbx\-Remote@{Gbx\-Remote}!Get\-Current\-Error@{Get\-Current\-Error}}
 \index{Get\-Current\-Error@{Get\-Current\-Error}!GbxRemote@{Gbx\-Remote}}
-\subsubsection[{Get\-Current\-Error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gbx\-Error} $\ast$ Gbx\-Remote\-::\-Get\-Current\-Error (
+\subsubsection[{Get\-Current\-Error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gbx\-Error} Gbx\-Remote\-::\-Get\-Current\-Error (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classGbxRemote_a5467b5400129cd13239f88576aaaa2b4}
+)}}\label{classGbxRemote_aa3f6e467372a23c3a53510d5488bea8a}
 
 
 Returns the current server error. 
 
-Returns N\-U\-L\-L when there currently is no error. \hypertarget{classGbxRemote_a5bd6e1dc2118f7e369e72592b3c9322a}{\index{Gbx\-Remote@{Gbx\-Remote}!Handle\-Call\-Back@{Handle\-Call\-Back}}
+Returns empty \hyperlink{structGbxError}{Gbx\-Error} when there currently is no error. \hypertarget{classGbxRemote_a5bd6e1dc2118f7e369e72592b3c9322a}{\index{Gbx\-Remote@{Gbx\-Remote}!Handle\-Call\-Back@{Handle\-Call\-Back}}
 \index{Handle\-Call\-Back@{Handle\-Call\-Back}!GbxRemote@{Gbx\-Remote}}
 \subsubsection[{Handle\-Call\-Back}]{\setlength{\rightskip}{0pt plus 5cm}void Gbx\-Remote\-::\-Handle\-Call\-Back (
 \begin{DoxyParamCaption}

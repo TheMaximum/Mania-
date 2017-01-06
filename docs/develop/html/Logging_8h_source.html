@@ -99,10 +99,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classLogging.html">   13</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classLogging.html">Logging</a></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classLogging.html#a171703bedcbf215f0e6334f29c8281b5">   21</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classLogging.html#a171703bedcbf215f0e6334f29c8281b5">PrintError</a>(<a class="code" href="structGbxError.html">GbxError</a>* error)</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classLogging.html#a7d4e2168b879a66d322d0b4fb2b298c4">   21</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classLogging.html#a7d4e2168b879a66d322d0b4fb2b298c4">PrintError</a>(<a class="code" href="structGbxError.html">GbxError</a> error)</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        std::stringstream numberString;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        numberString &lt;&lt; error-&gt;<a class="code" href="structGbxError.html#ae5627cae63e837beaa75f798e47be50e">number</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        numberString &lt;&lt; error.<a class="code" href="structGbxError.html#ae5627cae63e837beaa75f798e47be50e">number</a>;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span>* errorNumber = numberString.str().c_str();</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">int</span> errorNumberLength = strlen(errorNumber);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">int</span> spaces = (9 - errorNumberLength);</div>
@@ -117,98 +117,96 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                output &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            output &lt;&lt; error-&gt;<a class="code" href="structGbxError.html#ae5627cae63e837beaa75f798e47be50e">number</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            output &lt;&lt; error.<a class="code" href="structGbxError.html#ae5627cae63e837beaa75f798e47be50e">number</a>;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; floor(halfSpaces); i++)</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                output &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            }</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            output &lt;&lt; <span class="stringliteral">&quot;\033[0;0m] ERROR: &quot;</span> + error-&gt;<a class="code" href="structGbxError.html#af52353692b5c160deac99c4285f01a5a">message</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            output &lt;&lt; <span class="stringliteral">&quot;\033[0;0m] ERROR: &quot;</span> + error.<a class="code" href="structGbxError.html#af52353692b5c160deac99c4285f01a5a">message</a>;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            std::cout &lt;&lt; output.str() &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;[\033[0;31m&quot;</span> &lt;&lt; errorNumber &lt;&lt; <span class="stringliteral">&quot;\033[0;0m] ERROR: &quot;</span> &lt;&lt; error-&gt;<a class="code" href="structGbxError.html#af52353692b5c160deac99c4285f01a5a">message</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;[\033[0;31m&quot;</span> &lt;&lt; errorNumber &lt;&lt; <span class="stringliteral">&quot;\033[0;0m] ERROR: &quot;</span> &lt;&lt; error.<a class="code" href="structGbxError.html#af52353692b5c160deac99c4285f01a5a">message</a> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 <div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classLogging.html#ac1397db1b8ea6625f7dd2616f530cd7d">   61</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classLogging.html#ac1397db1b8ea6625f7dd2616f530cd7d">PrintError</a>(<span class="keywordtype">int</span> number, std::string message)</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="structGbxError.html">GbxError</a>* error = <span class="keyword">new</span> <a class="code" href="structGbxError.html">GbxError</a>();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        error-&gt;<a class="code" href="structGbxError.html#ae5627cae63e837beaa75f798e47be50e">number</a> = number;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        error-&gt;<a class="code" href="structGbxError.html#af52353692b5c160deac99c4285f01a5a">message</a> = message;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="classLogging.html#a171703bedcbf215f0e6334f29c8281b5">PrintError</a>(error);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">delete</span> error; error = NULL;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classLogging.html#a889f2ad8f991afdf0959cb1cad736fa7">   74</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classLogging.html#a889f2ad8f991afdf0959cb1cad736fa7">PrintOKFlush</a>()</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;[   \033[0;32mOK.\033[0;0m&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classLogging.html#add0483bd14aef74ec988606cd7dbfc4b">   82</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classLogging.html#add0483bd14aef74ec988606cd7dbfc4b">PrintFailedFlush</a>()</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;[ \033[0;31mFAILED!\033[0;0m&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classLogging.html#a1f8609052e40055fb9ef3ddd40d0620e">   95</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classLogging.html#a1f8609052e40055fb9ef3ddd40d0620e">PrintParameter</a>(<a class="code" href="classGbxResponseParameter.html">GbxResponseParameter</a> parameter, <span class="keywordtype">int</span> paramId, std::string spaces = <span class="stringliteral">&quot;    &quot;</span>, std::string parameterName = <span class="stringliteral">&quot;&quot;</span>)</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">if</span>(parameter.<a class="code" href="classGbxResponseParameter.html#aa1700ca65fa2526b112be24b5c0bdbf4">Type</a>.find(<span class="stringliteral">&quot;array&quot;</span>) != std::string::npos)</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            std::cout &lt;&lt; spaces &lt;&lt; <span class="stringliteral">&quot;Parameter #&quot;</span> &lt;&lt; paramId &lt;&lt; <span class="stringliteral">&quot;: array&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            spaces += <span class="stringliteral">&quot;    &quot;</span>;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            std::vector&lt;GbxResponseParameter&gt; arrayParam = parameter.<a class="code" href="classGbxResponseParameter.html#aa27aca1d5084755fe585401617e2549a">GetArray</a>();</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> subParamId = 0; subParamId &lt; arrayParam.size(); subParamId++)</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                <a class="code" href="classGbxResponseParameter.html">GbxResponseParameter</a> arrayParameter = arrayParam.at(subParamId);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                <a class="code" href="classLogging.html#a1f8609052e40055fb9ef3ddd40d0620e">PrintParameter</a>(arrayParameter, subParamId, spaces);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(parameter.<a class="code" href="classGbxResponseParameter.html#aa1700ca65fa2526b112be24b5c0bdbf4">Type</a>.find(<span class="stringliteral">&quot;struct&quot;</span>) != std::string::npos)</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        {</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            std::cout &lt;&lt; spaces &lt;&lt; <span class="stringliteral">&quot;Parameter #&quot;</span> &lt;&lt; paramId &lt;&lt; <span class="stringliteral">&quot;: struct&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            spaces += <span class="stringliteral">&quot;    &quot;</span>;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            std::map&lt;std::string, GbxResponseParameter&gt; structParam = parameter.<a class="code" href="classGbxResponseParameter.html#ab6af5e0662d7d832b7606e9e0f461f22">GetStruct</a>();</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keywordtype">int</span> subParamId = 0;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="keywordflow">for</span>(std::map&lt;std::string, GbxResponseParameter&gt;::iterator subParam = structParam.begin(); subParam != structParam.end(); ++subParam)</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                <a class="code" href="classLogging.html#a1f8609052e40055fb9ef3ddd40d0620e">PrintParameter</a>(subParam-&gt;second, subParamId, spaces, subParam-&gt;first);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                subParamId++;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            }</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        }</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        {</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            std::cout &lt;&lt; spaces &lt;&lt; <span class="stringliteral">&quot;Parameter #&quot;</span> &lt;&lt; paramId &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; parameter.<a class="code" href="classGbxResponseParameter.html#a014af0f74e937d9002cda3e6e791735b">GetString</a>() &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; parameter.<a class="code" href="classGbxResponseParameter.html#aa1700ca65fa2526b112be24b5c0bdbf4">Type</a> &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <span class="keywordflow">if</span>(parameterName != <span class="stringliteral">&quot;&quot;</span>)</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                std::cout &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; parameterName &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            }</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            std::cout &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;};</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">#endif // LOGGING_H_</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="structGbxError.html">GbxError</a> error = <a class="code" href="structGbxError.html">GbxError</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        error.<a class="code" href="structGbxError.html#ae5627cae63e837beaa75f798e47be50e">number</a> = number;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        error.<a class="code" href="structGbxError.html#af52353692b5c160deac99c4285f01a5a">message</a> = message;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="classLogging.html#a7d4e2168b879a66d322d0b4fb2b298c4">PrintError</a>(error);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classLogging.html#a889f2ad8f991afdf0959cb1cad736fa7">   72</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classLogging.html#a889f2ad8f991afdf0959cb1cad736fa7">PrintOKFlush</a>()</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;[   \033[0;32mOK.\033[0;0m&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classLogging.html#add0483bd14aef74ec988606cd7dbfc4b">   80</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classLogging.html#add0483bd14aef74ec988606cd7dbfc4b">PrintFailedFlush</a>()</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;[ \033[0;31mFAILED!\033[0;0m&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classLogging.html#a1f8609052e40055fb9ef3ddd40d0620e">   93</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classLogging.html#a1f8609052e40055fb9ef3ddd40d0620e">PrintParameter</a>(<a class="code" href="classGbxResponseParameter.html">GbxResponseParameter</a> parameter, <span class="keywordtype">int</span> paramId, std::string spaces = <span class="stringliteral">&quot;    &quot;</span>, std::string parameterName = <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">if</span>(parameter.<a class="code" href="classGbxResponseParameter.html#aa1700ca65fa2526b112be24b5c0bdbf4">Type</a>.find(<span class="stringliteral">&quot;array&quot;</span>) != std::string::npos)</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            std::cout &lt;&lt; spaces &lt;&lt; <span class="stringliteral">&quot;Parameter #&quot;</span> &lt;&lt; paramId &lt;&lt; <span class="stringliteral">&quot;: array&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            spaces += <span class="stringliteral">&quot;    &quot;</span>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            std::vector&lt;GbxResponseParameter&gt; arrayParam = parameter.<a class="code" href="classGbxResponseParameter.html#aa27aca1d5084755fe585401617e2549a">GetArray</a>();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> subParamId = 0; subParamId &lt; arrayParam.size(); subParamId++)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <a class="code" href="classGbxResponseParameter.html">GbxResponseParameter</a> arrayParameter = arrayParam.at(subParamId);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <a class="code" href="classLogging.html#a1f8609052e40055fb9ef3ddd40d0620e">PrintParameter</a>(arrayParameter, subParamId, spaces);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(parameter.<a class="code" href="classGbxResponseParameter.html#aa1700ca65fa2526b112be24b5c0bdbf4">Type</a>.find(<span class="stringliteral">&quot;struct&quot;</span>) != std::string::npos)</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            std::cout &lt;&lt; spaces &lt;&lt; <span class="stringliteral">&quot;Parameter #&quot;</span> &lt;&lt; paramId &lt;&lt; <span class="stringliteral">&quot;: struct&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            spaces += <span class="stringliteral">&quot;    &quot;</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            std::map&lt;std::string, GbxResponseParameter&gt; structParam = parameter.<a class="code" href="classGbxResponseParameter.html#ab6af5e0662d7d832b7606e9e0f461f22">GetStruct</a>();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordtype">int</span> subParamId = 0;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordflow">for</span>(std::map&lt;std::string, GbxResponseParameter&gt;::iterator subParam = structParam.begin(); subParam != structParam.end(); ++subParam)</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <a class="code" href="classLogging.html#a1f8609052e40055fb9ef3ddd40d0620e">PrintParameter</a>(subParam-&gt;second, subParamId, spaces, subParam-&gt;first);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                subParamId++;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            std::cout &lt;&lt; spaces &lt;&lt; <span class="stringliteral">&quot;Parameter #&quot;</span> &lt;&lt; paramId &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; parameter.<a class="code" href="classGbxResponseParameter.html#a014af0f74e937d9002cda3e6e791735b">GetString</a>() &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; parameter.<a class="code" href="classGbxResponseParameter.html#aa1700ca65fa2526b112be24b5c0bdbf4">Type</a> &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <span class="keywordflow">if</span>(parameterName != <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                std::cout &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; parameterName &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;};</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor">#endif // LOGGING_H_</span></div>
 <div class="ttc" id="classGbxResponseParameter_html_aa27aca1d5084755fe585401617e2549a"><div class="ttname"><a href="classGbxResponseParameter.html#aa27aca1d5084755fe585401617e2549a">GbxResponseParameter::GetArray</a></div><div class="ttdeci">std::vector&lt; GbxResponseParameter &gt; GetArray()</div><div class="ttdoc">Gets the value as vector of parameters. </div><div class="ttdef"><b>Definition:</b> GbxServerResponse.h:28</div></div>
 <div class="ttc" id="classLogging_html"><div class="ttname"><a href="classLogging.html">Logging</a></div><div class="ttdoc">Utility to print information to the console. </div><div class="ttdef"><b>Definition:</b> Logging.h:13</div></div>
 <div class="ttc" id="classGbxResponseParameter_html_a014af0f74e937d9002cda3e6e791735b"><div class="ttname"><a href="classGbxResponseParameter.html#a014af0f74e937d9002cda3e6e791735b">GbxResponseParameter::GetString</a></div><div class="ttdeci">std::string GetString()</div><div class="ttdoc">Gets the value as string. </div><div class="ttdef"><b>Definition:</b> GbxServerResponse.h:54</div></div>
-<div class="ttc" id="classLogging_html_a1f8609052e40055fb9ef3ddd40d0620e"><div class="ttname"><a href="classLogging.html#a1f8609052e40055fb9ef3ddd40d0620e">Logging::PrintParameter</a></div><div class="ttdeci">static void PrintParameter(GbxResponseParameter parameter, int paramId, std::string spaces=&quot;    &quot;, std::string parameterName=&quot;&quot;)</div><div class="ttdoc">Prints a GbxResponseParameter (for DEBUG purposes). </div><div class="ttdef"><b>Definition:</b> Logging.h:95</div></div>
+<div class="ttc" id="classLogging_html_a1f8609052e40055fb9ef3ddd40d0620e"><div class="ttname"><a href="classLogging.html#a1f8609052e40055fb9ef3ddd40d0620e">Logging::PrintParameter</a></div><div class="ttdeci">static void PrintParameter(GbxResponseParameter parameter, int paramId, std::string spaces=&quot;    &quot;, std::string parameterName=&quot;&quot;)</div><div class="ttdoc">Prints a GbxResponseParameter (for DEBUG purposes). </div><div class="ttdef"><b>Definition:</b> Logging.h:93</div></div>
 <div class="ttc" id="structGbxError_html_ae5627cae63e837beaa75f798e47be50e"><div class="ttname"><a href="structGbxError.html#ae5627cae63e837beaa75f798e47be50e">GbxError::number</a></div><div class="ttdeci">int number</div><div class="ttdoc">Number of the error (default: 0, no error). </div><div class="ttdef"><b>Definition:</b> GbxStructs.h:29</div></div>
 <div class="ttc" id="structGbxError_html_af52353692b5c160deac99c4285f01a5a"><div class="ttname"><a href="structGbxError.html#af52353692b5c160deac99c4285f01a5a">GbxError::message</a></div><div class="ttdeci">std::string message</div><div class="ttdoc">Error message. </div><div class="ttdef"><b>Definition:</b> GbxStructs.h:30</div></div>
+<div class="ttc" id="classLogging_html_a7d4e2168b879a66d322d0b4fb2b298c4"><div class="ttname"><a href="classLogging.html#a7d4e2168b879a66d322d0b4fb2b298c4">Logging::PrintError</a></div><div class="ttdeci">static void PrintError(GbxError error)</div><div class="ttdoc">Prints error to console. </div><div class="ttdef"><b>Definition:</b> Logging.h:21</div></div>
 <div class="ttc" id="classGbxResponseParameter_html_aa1700ca65fa2526b112be24b5c0bdbf4"><div class="ttname"><a href="classGbxResponseParameter.html#aa1700ca65fa2526b112be24b5c0bdbf4">GbxResponseParameter::Type</a></div><div class="ttdeci">std::string Type</div><div class="ttdoc">XML-RPC data type. </div><div class="ttdef"><b>Definition:</b> GbxServerResponse.h:20</div></div>
-<div class="ttc" id="classLogging_html_a889f2ad8f991afdf0959cb1cad736fa7"><div class="ttname"><a href="classLogging.html#a889f2ad8f991afdf0959cb1cad736fa7">Logging::PrintOKFlush</a></div><div class="ttdeci">static void PrintOKFlush()</div><div class="ttdoc">Prints OK. in [ ]-spaces in console. </div><div class="ttdef"><b>Definition:</b> Logging.h:74</div></div>
+<div class="ttc" id="classLogging_html_a889f2ad8f991afdf0959cb1cad736fa7"><div class="ttname"><a href="classLogging.html#a889f2ad8f991afdf0959cb1cad736fa7">Logging::PrintOKFlush</a></div><div class="ttdeci">static void PrintOKFlush()</div><div class="ttdoc">Prints OK. in [ ]-spaces in console. </div><div class="ttdef"><b>Definition:</b> Logging.h:72</div></div>
 <div class="ttc" id="structGbxError_html"><div class="ttname"><a href="structGbxError.html">GbxError</a></div><div class="ttdoc">Stores error details from the communication with the server. </div><div class="ttdef"><b>Definition:</b> GbxStructs.h:27</div></div>
 <div class="ttc" id="classGbxResponseParameter_html_ab6af5e0662d7d832b7606e9e0f461f22"><div class="ttname"><a href="classGbxResponseParameter.html#ab6af5e0662d7d832b7606e9e0f461f22">GbxResponseParameter::GetStruct</a></div><div class="ttdeci">std::map&lt; std::string, GbxResponseParameter &gt; GetStruct()</div><div class="ttdoc">Gets the value as map of parameters. </div><div class="ttdef"><b>Definition:</b> GbxServerResponse.h:41</div></div>
-<div class="ttc" id="classLogging_html_add0483bd14aef74ec988606cd7dbfc4b"><div class="ttname"><a href="classLogging.html#add0483bd14aef74ec988606cd7dbfc4b">Logging::PrintFailedFlush</a></div><div class="ttdeci">static void PrintFailedFlush()</div><div class="ttdoc">Prints Failed! in [ ]-spaces in console. </div><div class="ttdef"><b>Definition:</b> Logging.h:82</div></div>
-<div class="ttc" id="classLogging_html_a171703bedcbf215f0e6334f29c8281b5"><div class="ttname"><a href="classLogging.html#a171703bedcbf215f0e6334f29c8281b5">Logging::PrintError</a></div><div class="ttdeci">static void PrintError(GbxError *error)</div><div class="ttdoc">Prints error to console. </div><div class="ttdef"><b>Definition:</b> Logging.h:21</div></div>
+<div class="ttc" id="classLogging_html_add0483bd14aef74ec988606cd7dbfc4b"><div class="ttname"><a href="classLogging.html#add0483bd14aef74ec988606cd7dbfc4b">Logging::PrintFailedFlush</a></div><div class="ttdeci">static void PrintFailedFlush()</div><div class="ttdoc">Prints Failed! in [ ]-spaces in console. </div><div class="ttdef"><b>Definition:</b> Logging.h:80</div></div>
 <div class="ttc" id="classGbxResponseParameter_html"><div class="ttname"><a href="classGbxResponseParameter.html">GbxResponseParameter</a></div><div class="ttdoc">Parameter deducted from server response. </div><div class="ttdef"><b>Definition:</b> GbxServerResponse.h:17</div></div>
 <div class="ttc" id="classLogging_html_ac1397db1b8ea6625f7dd2616f530cd7d"><div class="ttname"><a href="classLogging.html#ac1397db1b8ea6625f7dd2616f530cd7d">Logging::PrintError</a></div><div class="ttdeci">static void PrintError(int number, std::string message)</div><div class="ttdoc">Prints error to console. </div><div class="ttdef"><b>Definition:</b> Logging.h:61</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 5 2017 23:33:58 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jan 6 2017 00:08:00 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

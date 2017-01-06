@@ -24,7 +24,7 @@ var searchData=
   ['current',['Current',['../classMapList.html#a9ff0021f3b08091091e58d3109c41400',1,'MapList']]],
   ['currentcallbacks',['currentCallBacks',['../classGbxRemote.html#a08d047d7e0d4b746fc036c1aa02f0d17',1,'GbxRemote']]],
   ['currentcheckpoints',['CurrentCheckpoints',['../structPlayer.html#aa6efdb36b3a3618f26bf85c3a9b216d8',1,'Player']]],
-  ['currenterror',['currentError',['../classGbxRemote.html#ae5d44c3729140c1eba5e850cb5e5e7bd',1,'GbxRemote']]],
+  ['currenterror',['currentError',['../classGbxRemote.html#a5c310edc409e31aa12c0c0664b0fd238',1,'GbxRemote']]],
   ['currentresponse',['currentResponse',['../classGbxRemote.html#a3a3a0af1a692a801a33baa292b877dc2',1,'GbxRemote']]],
   ['currentvalue',['CurrentValue',['../structCurrentNextValue.html#adf3172ed773e285e652b49735ae63f8f',1,'CurrentNextValue']]],
   ['customui',['CustomUI',['../structUIFrame.html#ad7cffba86e4d81aa7a1b7ab475233e08',1,'UIFrame']]]
