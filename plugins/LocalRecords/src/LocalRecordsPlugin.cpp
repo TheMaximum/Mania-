@@ -93,15 +93,29 @@ void LocalRecordsPlugin::OnPlayerFinish(Player player, int playerTime)
             checkpoints << player.CurrentCheckpoints.at(checkPointId);
         }
 
-        sql::PreparedStatement* pstmt = controller->Database->prepareStatement("INSERT INTO `rs_times` (`MapId`, `PlayerId`, `Score`, `Date`, `Checkpoints`) VALUES (?, ?, ?, ?, ?)");
-        pstmt->setInt(1, controller->Maps->Current->Id);
-        pstmt->setInt(2, player.Id);
-        pstmt->setInt(3, playerTime);
-        pstmt->setInt(4, time(NULL));
-        pstmt->setString(5, checkpoints.str());
-        pstmt->execute();
+        sql::PreparedStatement* pstmtTimes;
 
-        delete pstmt; pstmt = NULL;
+        try
+        {
+            pstmtTimes = controller->Database->prepareStatement("INSERT INTO `rs_times` (`MapId`, `PlayerId`, `Score`, `Date`, `Checkpoints`) VALUES (?, ?, ?, ?, ?)");
+            pstmtTimes->setInt(1, controller->Maps->Current->Id);
+            pstmtTimes->setInt(2, player.Id);
+            pstmtTimes->setInt(3, playerTime);
+            pstmtTimes->setInt(4, time(NULL));
+            pstmtTimes->setString(5, checkpoints.str());
+            pstmtTimes->execute();
+        }
+        catch(sql::SQLException &e)
+        {
+            std::cout << "Failed to save time for " << player.Login << " on '" << controller->Maps->Current->Name << "' ..." << std::endl;
+            Logging::PrintError(e.getErrorCode(), e.what());
+        }
+
+        if(pstmtTimes != NULL)
+        {
+            delete pstmtTimes;
+            pstmtTimes = NULL;
+        }
 
         bool updateRecord = false;
         bool recordInserted = false;
@@ -142,40 +156,54 @@ void LocalRecordsPlugin::OnPlayerFinish(Player player, int playerTime)
             }
         }
 
-        if(updateRecord)
+        sql::PreparedStatement* pstmt;
+        try
         {
-            sql::PreparedStatement* pstmt = controller->Database->prepareStatement("INSERT INTO `records` (`MapId`, `PlayerId`, `Score`, `Date`, `Checkpoints`) VALUES (?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE `Score` = VALUES(`Score`), `Date` = VALUES(`Date`), `Checkpoints` = VALUES(`Checkpoints`)");
-            pstmt->setInt(1, controller->Maps->Current->Id);
-            pstmt->setInt(2, player.Id);
-            pstmt->setInt(3, playerTime);
-            pstmt->setString(4, Time::Current());
-            pstmt->setString(5, checkpoints.str());
-            pstmt->execute();
+            if(updateRecord)
+            {
+                pstmt = controller->Database->prepareStatement("INSERT INTO `records` (`MapId`, `PlayerId`, `Score`, `Date`, `Checkpoints`) VALUES (?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE `Score` = VALUES(`Score`), `Date` = VALUES(`Date`), `Checkpoints` = VALUES(`Checkpoints`)");
+                pstmt->setInt(1, controller->Maps->Current->Id);
+                pstmt->setInt(2, player.Id);
+                pstmt->setInt(3, playerTime);
+                pstmt->setString(4, Time::Current());
+                pstmt->setString(5, checkpoints.str());
+                pstmt->execute();
 
-            recordInserted = true;
-            delete pstmt; pstmt = NULL;
+                recordInserted = true;
+            }
+
+            retrieveRecords(*controller->Maps->Current);
+
+            if(recordInserted)
+            {
+                LocalRecord newLocal = localRecords.GetPlayerRecord(player);
+                int newLocalIndex = localRecords.GetPlayerRecordIndex(player);
+
+                std::stringstream chatMessage;
+                chatMessage << "$fff" << player.NickName << "$z$s$0f3 ";
+                chatMessage << "drove the $fff" << newLocalIndex << ".$0f3 record with a time of: $fff" << newLocal.FormattedTime << "$0f3";
+                if(currentLocal.Id == 0)
+                {
+                    chatMessage << "!";
+                }
+                else
+                {
+                    chatMessage << " ($fff" << currentLocalIndex << ".$0f3, $fff-" << Time::FormatTime((currentLocal.Time - newLocal.Time)) << "$0f3)!";
+                }
+
+                controller->Server->ChatSendServerMessage(chatMessage.str());
+            }
+        }
+        catch(sql::SQLException &e)
+        {
+            std::cout << "Failed to save record for " << player.Login << " on '" << controller->Maps->Current->Name << "' ..." << std::endl;
+            Logging::PrintError(e.getErrorCode(), e.what());
         }
 
-        retrieveRecords(*controller->Maps->Current);
-
-        if(recordInserted)
+        if(pstmt != NULL)
         {
-            LocalRecord newLocal = localRecords.GetPlayerRecord(player);
-            int newLocalIndex = localRecords.GetPlayerRecordIndex(player);
-
-            std::stringstream chatMessage;
-            chatMessage << "$fff" << player.NickName << "$z$s$0f3 ";
-            chatMessage << "drove the $fff" << newLocalIndex << ".$0f3 record with a time of: $fff" << newLocal.FormattedTime << "$0f3";
-            if(currentLocal.Id == 0)
-            {
-                chatMessage << "!";
-            }
-            else
-            {
-                chatMessage << " ($fff" << currentLocalIndex << ".$0f3, $fff-" << Time::FormatTime((currentLocal.Time - newLocal.Time)) << "$0f3)!";
-            }
-
-            controller->Server->ChatSendServerMessage(chatMessage.str());
+            delete pstmt;
+            pstmt = NULL;
         }
 
         if(!widget.DisplayToAll(controller->Players))
@@ -218,30 +246,60 @@ void LocalRecordsPlugin::retrieveRecords(Map map)
 {
     localRecords.List = std::vector<LocalRecord>();
 
-    sql::PreparedStatement* pstmt = controller->Database->prepareStatement("SELECT * FROM `records` WHERE `MapId` = ? ORDER BY `Score` ASC LIMIT ?");
-    pstmt->setInt(1, map.Id);
-    pstmt->setInt(2, recordLimit);
-    sql::ResultSet* result = pstmt->executeQuery();
+    sql::PreparedStatement* pstmt;
+    sql::ResultSet* result;
 
-    while(result->next())
+    try
     {
-        delete pstmt; pstmt = NULL;
-        LocalRecord localRecord = LocalRecord(result);
+        pstmt = controller->Database->prepareStatement("SELECT * FROM `records` WHERE `MapId` = ? ORDER BY `Score` ASC LIMIT ?");
+        pstmt->setInt(1, map.Id);
+        pstmt->setInt(2, recordLimit);
+        result = pstmt->executeQuery();
 
-        pstmt = controller->Database->prepareStatement("SELECT * FROM `players` WHERE `Id` = ?");
-        pstmt->setInt(1, result->getInt("PlayerId"));
-        sql::ResultSet* playerResult = pstmt->executeQuery();
-        playerResult->next();
+        while(result->next())
+        {
+            delete pstmt; pstmt = NULL;
+            LocalRecord localRecord = LocalRecord(result);
 
-        localRecord.Login = playerResult->getString("Login");
-        localRecord.NickName = playerResult->getString("NickName");
+            pstmt = controller->Database->prepareStatement("SELECT * FROM `players` WHERE `Id` = ?");
+            pstmt->setInt(1, result->getInt("PlayerId"));
+            sql::ResultSet* playerResult = pstmt->executeQuery();
+            playerResult->next();
 
-        localRecords.List.push_back(localRecord);
+            try
+            {
+                localRecord.Login = playerResult->getString("Login");
+                localRecord.NickName = playerResult->getString("NickName");
 
-        delete playerResult; playerResult = NULL;
+                localRecords.List.push_back(localRecord);
+            }
+            catch(sql::InvalidArgumentException &e)
+            {
+                // Player cannot be found in the database.
+                // Just skip the record.
+            }
+
+            if(playerResult != NULL)
+            {
+                delete playerResult;
+                playerResult = NULL;
+            }
+        }
+    }
+    catch(sql::SQLException &e)
+    {
+        std::cout << "Failed to retrieve records for '" << map.Name << "' ..." << std::endl;
+        Logging::PrintError(e.getErrorCode(), e.what());
     }
 
     if(pstmt != NULL)
-        delete pstmt; pstmt = NULL;
-    delete result; result = NULL;
+    {
+        delete pstmt;
+        pstmt = NULL;
+    }
+
+    if(result != NULL)
+    {
+        delete result; result = NULL;
+    }
 }

@@ -221,17 +221,56 @@ void ManiaPP::retrievePlayerList()
 
                 if(database != NULL)
                 {
-                    sql::PreparedStatement* pstmt;
-                    pstmt = database->prepareStatement("SELECT * FROM `players` WHERE `Login` = ?");
-                    pstmt->setString(1, newPlayer.Login);
-                    sql::ResultSet* result = pstmt->executeQuery();
-                    if(result->next())
+                    sql::PreparedStatement* insertPstmt;
+                    try
                     {
-                        newPlayer.SetId(result->getInt("Id"));
+                        insertPstmt = database->prepareStatement("INSERT INTO `players` (`Login`, `NickName`, `UpdatedAt`) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE `NickName` = VALUES(`NickName`), `UpdatedAt` = VALUES(`UpdatedAt`)");
+                        insertPstmt->setString(1, newPlayer.Login);
+                        insertPstmt->setString(2, newPlayer.NickName);
+                        insertPstmt->setString(3, Time::Current());
+                        insertPstmt->executeQuery();
+                    }
+                    catch(sql::SQLException &e)
+                    {
+                        std::cout << "Failed to save database information for player '" << newPlayer.Login << "' ..." << std::endl;
+                        Logging::PrintError(e.getErrorCode(), e.what());
                     }
 
-                    delete pstmt; pstmt = NULL;
-                    delete result; result = NULL;
+                    if(insertPstmt != NULL)
+                    {
+                        delete insertPstmt;
+                        insertPstmt = NULL;
+                    }
+
+                    sql::PreparedStatement* pstmt;
+                    sql::ResultSet* result;
+                    try
+                    {
+                        pstmt = database->prepareStatement("SELECT * FROM `players` WHERE `Login` = ?");
+                        pstmt->setString(1, newPlayer.Login);
+                        result = pstmt->executeQuery();
+                        if(result->next())
+                        {
+                            newPlayer.SetId(result->getInt("Id"));
+                        }
+                    }
+                    catch(sql::SQLException &e)
+                    {
+                        std::cout << "Failed to retrieve database information for player '" << newPlayer.Login << "' ..." << std::endl;
+                        Logging::PrintError(e.getErrorCode(), e.what());
+                    }
+
+                    if(pstmt != NULL)
+                    {
+                        delete pstmt;
+                        pstmt = NULL;
+                    }
+
+                    if(result != NULL)
+                    {
+                        delete result;
+                        result = NULL;
+                    }
                 }
 
                 players->insert(std::pair<std::string, Player>(newPlayer.Login, newPlayer));
@@ -260,17 +299,57 @@ void ManiaPP::retrieveMapList()
 
             if(database != NULL)
             {
-                sql::PreparedStatement* pstmt;
-                pstmt = database->prepareStatement("SELECT * FROM `maps` WHERE `UId` = ?");
-                pstmt->setString(1, newMap.UId);
-                sql::ResultSet* result = pstmt->executeQuery();
-                if(result->next())
+                sql::PreparedStatement* insertPstmt;
+                try
                 {
-                    newMap.SetId(result->getInt("Id"));
+                    insertPstmt = database->prepareStatement("INSERT IGNORE INTO `maps` (`Uid`, `Name`, `Author`, `Environment`) VALUES (?, ?, ?, ?)");
+                    insertPstmt->setString(1, newMap.UId);
+                    insertPstmt->setString(2, newMap.Name);
+                    insertPstmt->setString(3, newMap.Author);
+                    insertPstmt->setString(4, newMap.Environment);
+                    insertPstmt->executeQuery();
+                }
+                catch(sql::SQLException &e)
+                {
+                    std::cout << "Failed to save database information for map '" << newMap.Name << "' ..." << std::endl;
+                    Logging::PrintError(e.getErrorCode(), e.what());
                 }
 
-                delete pstmt; pstmt = NULL;
-                delete result; result = NULL;
+                if(insertPstmt != NULL)
+                {
+                    delete insertPstmt;
+                    insertPstmt = NULL;
+                }
+
+                sql::PreparedStatement* pstmt;
+                sql::ResultSet* result;
+                try
+                {
+                    pstmt = database->prepareStatement("SELECT * FROM `maps` WHERE `UId` = ?");
+                    pstmt->setString(1, newMap.UId);
+                    result = pstmt->executeQuery();
+                    if(result->next())
+                    {
+                        newMap.SetId(result->getInt("Id"));
+                    }
+                }
+                catch(sql::SQLException &e)
+                {
+                    std::cout << "Failed to retrieve database information for map '" << newMap.Name << "' ..." << std::endl;
+                    Logging::PrintError(e.getErrorCode(), e.what());
+                }
+
+                if(pstmt != NULL)
+                {
+                    delete pstmt;
+                    pstmt = NULL;
+                }
+
+                if(result != NULL)
+                {
+                    delete result;
+                    result = NULL;
+                }
             }
 
             maps->List.insert(std::pair<std::string, Map>(newMap.UId, newMap));

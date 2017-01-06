@@ -37,7 +37,7 @@ private:
     int voteAfterFinishes = 0;
 
     void loadSettings();
-    void displayToAll(bool chat = false);
+    void displayToAll();
     void retrieveVotes(Map map);
     void displayCurrentKarma(Player player);
 

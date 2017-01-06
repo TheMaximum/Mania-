@@ -99,20 +99,62 @@ void CallBackManager::HandlePlayerConnect(std::vector<GbxResponseParameter> para
     GbxMessage message = GbxMessage("GetPlayerInfo", params);
     server->Query(message);
     Player newPlayer = Player(server->GetResponse()->GetParameters().at(0).GetStruct());
-    
+
     message = GbxMessage("GetDetailedPlayerInfo", params);
     server->Query(message);
     newPlayer.PlayerDetailed(server->GetResponse()->GetParameters().at(0).GetStruct());
 
     if(database != NULL)
     {
-        sql::PreparedStatement* pstmt;
-        pstmt = database->prepareStatement("SELECT * FROM `players` WHERE `Login` = ?");
-        pstmt->setString(1, newPlayer.Login);
-        sql::ResultSet* result = pstmt->executeQuery();
-        if(result->next())
+        sql::PreparedStatement* insertPstmt;
+        try
         {
-            newPlayer.SetId(result->getInt("Id"));
+            insertPstmt = database->prepareStatement("INSERT INTO `players` (`Login`, `NickName`, `UpdatedAt`) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE `NickName` = VALUES(`NickName`), `UpdatedAt` = VALUES(`UpdatedAt`)");
+            insertPstmt->setString(1, newPlayer.Login);
+            insertPstmt->setString(2, newPlayer.NickName);
+            insertPstmt->setString(3, Time::Current());
+            insertPstmt->executeQuery();
+        }
+        catch(sql::SQLException &e)
+        {
+            std::cout << "Failed to save database information for player '" << newPlayer.Login << "' ..." << std::endl;
+            Logging::PrintError(e.getErrorCode(), e.what());
+        }
+
+        if(insertPstmt != NULL)
+        {
+            delete insertPstmt;
+            insertPstmt = NULL;
+        }
+
+        sql::PreparedStatement* pstmt;
+        sql::ResultSet* result;
+        try
+        {
+            pstmt = database->prepareStatement("SELECT * FROM `players` WHERE `Login` = ?");
+            pstmt->setString(1, newPlayer.Login);
+            result = pstmt->executeQuery();
+            if(result->next())
+            {
+                newPlayer.SetId(result->getInt("Id"));
+            }
+        }
+        catch(sql::SQLException &e)
+        {
+            std::cout << "Failed to retrieve database information for player '" << newPlayer.Login << "' ..." << std::endl;
+            Logging::PrintError(e.getErrorCode(), e.what());
+        }
+
+        if(pstmt != NULL)
+        {
+            delete pstmt;
+            pstmt = NULL;
+        }
+
+        if(result != NULL)
+        {
+            delete result;
+            result = NULL;
         }
     }
 

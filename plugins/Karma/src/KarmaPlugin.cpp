@@ -48,7 +48,7 @@ void KarmaPlugin::OnBeginMap(Map map)
 {
     retrieveVotes(*controller->Maps->Current);
     karma.Calculate(votes);
-    displayToAll(true);
+    displayToAll();
 }
 
 void KarmaPlugin::OnPlayerConnect(Player player)
@@ -60,8 +60,6 @@ void KarmaPlugin::OnPlayerConnect(Player player)
 
     if(!widget.DisplayToPlayer(player, &karma, personalVote))
         Logging::PrintError(controller->Server->GetCurrentError());
-
-    displayCurrentKarma(player);
 }
 
 void KarmaPlugin::displayCurrentKarma(Player player)
@@ -153,34 +151,46 @@ void KarmaPlugin::votePositive(Player player)
     if(voteIt != votes.end())
         personalVote = voteIt->second;
 
-    bool displayKarma = true;
-    if(personalVote != 1)
+    sql::PreparedStatement* pstmt;
+    try
     {
-        sql::PreparedStatement* pstmt = controller->Database->prepareStatement("INSERT INTO `rs_karma` (`MapId`, `PlayerId`, `Score`) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE `Score` = VALUES(`Score`)");
-        pstmt->setInt(1, controller->Maps->Current->Id);
-        pstmt->setInt(2, player.Id);
-        pstmt->setInt(3, 1);
-        pstmt->executeQuery();
-        delete pstmt; pstmt = NULL;
+        bool displayKarma = true;
+        if(personalVote != 1)
+        {
+            pstmt = controller->Database->prepareStatement("INSERT INTO `rs_karma` (`MapId`, `PlayerId`, `Score`) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE `Score` = VALUES(`Score`)");
+            pstmt->setInt(1, controller->Maps->Current->Id);
+            pstmt->setInt(2, player.Id);
+            pstmt->setInt(3, 1);
+            pstmt->executeQuery();
 
-        retrieveVotes(*controller->Maps->Current);
-        karma.Calculate(votes);
-        displayToAll();
+            retrieveVotes(*controller->Maps->Current);
+            karma.Calculate(votes);
+            displayToAll();
 
-        if(personalVote == -1)
-            chatMessage << "Successfully voted $fff++$ff0 on this map!";
+            if(personalVote == -1)
+                chatMessage << "Successfully voted $fff++$ff0 on this map!";
+            else
+                chatMessage << "Changed your $fff--$ff0 vote to a $fff++$ff0 vote on this map!";
+        }
         else
-            chatMessage << "Changed your $fff--$ff0 vote to a $fff++$ff0 vote on this map!";
+        {
+            chatMessage << "You already voted $fff++$ff0 on this map!";
+            displayKarma = false;
+        }
+
+        controller->Server->ChatSendServerMessageToLogin(chatMessage.str(), player.Login);
     }
-    else
+    catch(sql::SQLException &e)
     {
-        chatMessage << "You already voted $fff++$ff0 on this map!";
-        displayKarma = false;
+        std::cout << "Failed to save karma for " << player.Login << " on '" << controller->Maps->Current->Name << "' ..." << std::endl;
+        Logging::PrintError(e.getErrorCode(), e.what());
     }
 
-    controller->Server->ChatSendServerMessageToLogin(chatMessage.str(), player.Login);
-    if(displayKarma)
-        displayCurrentKarma(player);
+    if(pstmt != NULL)
+    {
+        delete pstmt;
+        pstmt = NULL;
+    }
 }
 
 void KarmaPlugin::voteNegative(Player player)
@@ -204,37 +214,49 @@ void KarmaPlugin::voteNegative(Player player)
     if(voteIt != votes.end())
         personalVote = voteIt->second;
 
-    bool displayKarma = true;
-    if(personalVote != 0)
+    sql::PreparedStatement* pstmt;
+    try
     {
-        sql::PreparedStatement* pstmt = controller->Database->prepareStatement("INSERT INTO `rs_karma` (`MapId`, `PlayerId`, `Score`) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE `Score` = VALUES(`Score`)");
-        pstmt->setInt(1, controller->Maps->Current->Id);
-        pstmt->setInt(2, player.Id);
-        pstmt->setInt(3, 0);
-        pstmt->executeQuery();
-        delete pstmt; pstmt = NULL;
+        bool displayKarma = true;
+        if(personalVote != 0)
+        {
+            pstmt = controller->Database->prepareStatement("INSERT INTO `rs_karma` (`MapId`, `PlayerId`, `Score`) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE `Score` = VALUES(`Score`)");
+            pstmt->setInt(1, controller->Maps->Current->Id);
+            pstmt->setInt(2, player.Id);
+            pstmt->setInt(3, 0);
+            pstmt->executeQuery();
 
-        retrieveVotes(*controller->Maps->Current);
-        karma.Calculate(votes);
-        displayToAll();
+            retrieveVotes(*controller->Maps->Current);
+            karma.Calculate(votes);
+            displayToAll();
 
-        if(personalVote == -1)
-            chatMessage << "Successfully voted $fff--$ff0 on this map!";
+            if(personalVote == -1)
+                chatMessage << "Successfully voted $fff--$ff0 on this map!";
+            else
+                chatMessage << "Changed your $fff++$ff0 vote to a $fff--$ff0 vote on this map!";
+        }
         else
-            chatMessage << "Changed your $fff++$ff0 vote to a $fff--$ff0 vote on this map!";
+        {
+            chatMessage << "You already voted $fff--$ff0 on this map!";
+            displayKarma = false;
+        }
+
+        controller->Server->ChatSendServerMessageToLogin(chatMessage.str(), player.Login);
     }
-    else
+    catch(sql::SQLException &e)
     {
-        chatMessage << "You already voted $fff--$ff0 on this map!";
-        displayKarma = false;
+        std::cout << "Failed to save karma for " << player.Login << " on '" << controller->Maps->Current->Name << "' ..." << std::endl;
+        Logging::PrintError(e.getErrorCode(), e.what());
     }
 
-    controller->Server->ChatSendServerMessageToLogin(chatMessage.str(), player.Login);
-    if(displayKarma)
-        displayCurrentKarma(player);
+    if(pstmt != NULL)
+    {
+        delete pstmt;
+        pstmt = NULL;
+    }
 }
 
-void KarmaPlugin::displayToAll(bool chat)
+void KarmaPlugin::displayToAll()
 {
     for(std::map<std::string, Player>::iterator player = controller->Players->begin(); player != controller->Players->end(); ++player)
     {
@@ -245,9 +267,6 @@ void KarmaPlugin::displayToAll(bool chat)
 
         if(!widget.DisplayToPlayer(player->second, &karma, personalVote))
             Logging::PrintError(controller->Server->GetCurrentError());
-
-        if(chat)
-            displayCurrentKarma(player->second);
     }
 }
 
@@ -255,44 +274,95 @@ void KarmaPlugin::retrieveVotes(Map map)
 {
     votes = std::map<std::string, int>();
 
-    sql::PreparedStatement* pstmt = controller->Database->prepareStatement("SELECT * FROM `rs_karma` WHERE `MapId` = ?");
-    pstmt->setInt(1, map.Id);
-    sql::ResultSet* result = pstmt->executeQuery();
-
-    while(result->next())
+    sql::PreparedStatement* pstmt;
+    sql::ResultSet* result;
+    try
     {
-        delete pstmt; pstmt = NULL;
+        pstmt = controller->Database->prepareStatement("SELECT * FROM `rs_karma` WHERE `MapId` = ?");
+        pstmt->setInt(1, map.Id);
+        result = pstmt->executeQuery();
 
-        pstmt = controller->Database->prepareStatement("SELECT * FROM `players` WHERE `Id` = ?");
-        pstmt->setInt(1, result->getInt("PlayerId"));
-        sql::ResultSet* playerResult = pstmt->executeQuery();
-        playerResult->next();
+        while(result->next())
+        {
+            delete pstmt; pstmt = NULL;
+            sql::ResultSet* playerResult;
+            try
+            {
+                pstmt = controller->Database->prepareStatement("SELECT * FROM `players` WHERE `Id` = ?");
+                pstmt->setInt(1, result->getInt("PlayerId"));
+                playerResult = pstmt->executeQuery();
+                playerResult->next();
 
-        std::string login = playerResult->getString("Login");
-        int score = result->getInt("Score");
+                std::string login = playerResult->getString("Login");
+                int score = result->getInt("Score");
 
-        votes.insert(std::pair<std::string, int>(login, score));
+                votes.insert(std::pair<std::string, int>(login, score));
+            }
+            catch(sql::InvalidArgumentException &e)
+            {
+                // Player cannot be found in the database.
+                // Just skip the karma vote.
+            }
 
-        delete playerResult; playerResult = NULL;
+            if(playerResult != NULL)
+            {
+                delete playerResult;
+                playerResult = NULL;
+            }
+        }
+    }
+    catch(sql::SQLException &e)
+    {
+        std::cout << "Failed to retrieve karma votes for '" << map.Name << "' ..." << std::endl;
+        Logging::PrintError(e.getErrorCode(), e.what());
     }
 
     if(pstmt != NULL)
-        delete pstmt; pstmt = NULL;
-    delete result; result = NULL;
+    {
+        delete pstmt;
+        pstmt = NULL;
+    }
+
+    if(result != NULL)
+    {
+        delete result;
+        result = NULL;
+    }
 }
 
 int KarmaPlugin::retrieveTimesDriven(Player player)
 {
-    sql::PreparedStatement* pstmt = controller->Database->prepareStatement("SELECT COUNT(*) AS `timesDriven` FROM `rs_times` WHERE `PlayerId` = ? AND `MapId` = ?");
-    pstmt->setInt(1, player.Id);
-    pstmt->setInt(2, controller->Maps->Current->Id);
-    sql::ResultSet* result = pstmt->executeQuery();
-    result->next();
+    int timesDriven = 0;
 
-    int timesDriven = result->getInt("timesDriven");
+    sql::PreparedStatement* pstmt;
+    sql::ResultSet* result;
+    try
+    {
+        pstmt = controller->Database->prepareStatement("SELECT COUNT(*) AS `timesDriven` FROM `rs_times` WHERE `PlayerId` = ? AND `MapId` = ?");
+        pstmt->setInt(1, player.Id);
+        pstmt->setInt(2, controller->Maps->Current->Id);
+        result = pstmt->executeQuery();
+        result->next();
 
-    delete pstmt; pstmt = NULL;
-    delete result; result = NULL;
+        timesDriven = result->getInt("timesDriven");
+    }
+    catch(sql::SQLException &e)
+    {
+        std::cout << "Failed to retrieve # times driven for player " << player.Login << " on map '" << controller->Maps->Current->Name << "' ..." << std::endl;
+        Logging::PrintError(e.getErrorCode(), e.what());
+    }
+
+    if(pstmt != NULL)
+    {
+        delete pstmt;
+        pstmt = NULL;
+    }
+
+    if(result != NULL)
+    {
+        delete result;
+        result = NULL;
+    }
 
     return timesDriven;
 }

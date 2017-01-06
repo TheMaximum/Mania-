@@ -20,6 +20,7 @@
 #include "../Objects/Map.h"
 #include "../Objects/Player.h"
 #include "../Utils/Logging.h"
+#include "../Utils/Time.h"
 
 //* CallBackManager
 /**
