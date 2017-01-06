@@ -24,7 +24,7 @@ bool \hyperlink{classUIManager_a83370680d61bea5a5464127a5f11b9a9}{Display} (\hyp
 bool \hyperlink{classUIManager_aa8187f1c1988d5934adc5c793be85778}{Display\-List} (\hyperlink{structUIList}{U\-I\-List} list, \hyperlink{structPlayer}{Player} player, int current\-Page=1)
 \begin{DoxyCompactList}\small\item\em Display list to player. \end{DoxyCompactList}\item 
 void \hyperlink{classUIManager_af8510d387057f6778b88d5bcd8bd97a6}{Close\-List} (\hyperlink{structPlayer}{Player} player)
-\begin{DoxyCompactList}\small\item\em Close list for player. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Close list for player and removes from memory. \end{DoxyCompactList}\item 
 \hypertarget{classUIManager_af71f25628d303286cd7f54375314e09b}{void \hyperlink{classUIManager_af71f25628d303286cd7f54375314e09b}{On\-End\-Match} ()}\label{classUIManager_af71f25628d303286cd7f54375314e09b}
 
 \begin{DoxyCompactList}\small\item\em Event listener for End\-Match, closes center lists. \end{DoxyCompactList}\item 
@@ -96,11 +96,11 @@ Constructor takes needed controller pointers.
 )}}\label{classUIManager_af8510d387057f6778b88d5bcd8bd97a6}
 
 
-Close list for player. 
+Close list for player and removes from memory. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em player} & \hyperlink{structPlayer}{Player} who should receive the list. \\
+{\em player} & \hyperlink{structPlayer}{Player} which center list should be closed. \\
 \hline
 \end{DoxyParams}
 \hypertarget{classUIManager_a97f069a4a1c54f6e9569a194834e090c}{\index{U\-I\-Manager@{U\-I\-Manager}!Display@{Display}}
