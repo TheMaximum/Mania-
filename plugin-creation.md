@@ -63,7 +63,7 @@ Almost all callbacks from the server are relayed to the plugins. The table indic
 | ----------------------------- | ----------------- | -------------------------------------------------------------------------- |
 | ManiaPlanet.PlayerConnect     | PlayerConnect     | ```Player```                                                               |
 | ManiaPlanet.PlayerDisconnect  | PlayerDisconnect  | ```Player```                                                               |
-| ManiaPlanet.PlayerChat        | PlayerChat        | ```Player```, ```std::string```, ```bool```                                |
+| ManiaPlanet.PlayerChat        | PlayerChat        | ```Player```, ```std::string```                |
 | ManiaPlanet.Echo              | Echo              | ```std::string```, ```std::string```                                       |
 | ManiaPlanet.BeginMatch        | BeginMatch        |                                                                            |
 | ManiaPlanet.EndMatch          | EndMatch          | ```std::vector<PlayerRanking>```, ```int```                                |
@@ -89,3 +89,4 @@ The controller features are accessible via a ```Controller``` struct, which is i
 | Current player list | ```Players``` | Simple vector with [Player](https://themaximum.github.io/mania-pp/docs/develop/html/structPlayer.html) objects |
 | Current map list | ```Maps``` | [MapList](https://themaximum.github.io/mania-pp/docs/develop/html/classMapList.html) |
 | Database access | ```Database``` | [MySQL C++ Connector](https://dev.mysql.com/doc/connector-cpp/en/connector-cpp-getting-started-examples.html) |
+| Interface Manager | ```UI``` | [UIManager](https://themaximum.github.io/mania-pp/docs/develop/html/classUIManager.html) |
