@@ -123,11 +123,19 @@ bool UIManager::DisplayList(UIList list, Player player, int currentPage)
     widget << "        </frame>";
 
     widget << "        <quad posn=\"0.5 -59.5 0.003\" sizen=\"83 3.5\" style=\"Bgs1InRace\" substyle=\"BgCardList\"/>";
+
     if(currentPage > 1)
-        widget << "        <quad posn=\"0.5 -59.5 0.004\" sizen=\"3.5 3.5\" style=\"Icons64x64_1\" substyle=\"ArrowPrev\" action=\"PageCenterList(" << (currentPage - 1) << ")\"/>";
+    {
+        widget << "        <quad posn=\"0.5 -59.5 0.004\" sizen=\"3.5 3.5\" style=\"Icons64x64_1\" substyle=\"ArrowFirst\" action=\"PageCenterList(1)\"/>";
+        widget << "        <quad posn=\"3 -59.5 0.004\" sizen=\"3.5 3.5\" style=\"Icons64x64_1\" substyle=\"ArrowPrev\" action=\"PageCenterList(" << (currentPage - 1) << ")\"/>";
+    }
+
     widget << "        <label posn=\"42 -60.5 0.004\" sizen=\"20 1.5\" halign=\"center\" textsize=\"1.5\" text=\"$oPage " << currentPage << "/" << pages << "\"/>";
     if(currentPage != pages)
-        widget << "        <quad posn=\"80 -59.5 0.004\" sizen=\"3.5 3.5\" style=\"Icons64x64_1\" substyle=\"ArrowNext\" action=\"PageCenterList(" << (currentPage + 1) << ")\"/>";
+    {
+        widget << "        <quad posn=\"77.5 -59.5 0.004\" sizen=\"3.5 3.5\" style=\"Icons64x64_1\" substyle=\"ArrowNext\" action=\"PageCenterList(" << (currentPage + 1) << ")\"/>";
+        widget << "        <quad posn=\"80 -59.5 0.004\" sizen=\"3.5 3.5\" style=\"Icons64x64_1\" substyle=\"ArrowLast\" action=\"PageCenterList(" << pages << ")\"/>";
+    }
 
     widget << "</frame>";
 
