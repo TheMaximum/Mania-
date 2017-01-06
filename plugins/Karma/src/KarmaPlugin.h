@@ -22,6 +22,7 @@ public:
     void VotePositiveAction(Player player, std::string answer, std::vector<EntryVal> entries);
     void VoteNegativeAction(Player player, std::string answer, std::vector<EntryVal> entries);
 
+    void DisplayKarma(Player player, std::vector<std::string> parameters);
     void VotePositiveChat(Player player, std::vector<std::string> parameters);
     void VoteNegativeChat(Player player, std::vector<std::string> parameters);
 
@@ -36,8 +37,9 @@ private:
     int voteAfterFinishes = 0;
 
     void loadSettings();
-    void displayToAll();
+    void displayToAll(bool chat = false);
     void retrieveVotes(Map map);
+    void displayCurrentKarma(Player player);
 
     void voteNegative(Player player);
     void votePositive(Player player);

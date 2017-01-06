@@ -2,7 +2,7 @@
 
 KarmaPlugin::KarmaPlugin()
 {
-    Version = "0.1.0";
+    Version = "0.1.1";
     Author = "TheM";
     karma = MapKarma();
 
@@ -10,6 +10,7 @@ KarmaPlugin::KarmaPlugin()
     PlayerConnect.push_back([this](Player player) { OnPlayerConnect(player); });
     PlayerChat.push_back([this](Player player, std::string text) { OnPlayerChat(player, text); });
 
+    RegisterCommand("karma", [this](Player player, std::vector<std::string> parameters) { DisplayKarma(player, parameters); });
     RegisterCommand("++", [this](Player player, std::vector<std::string> parameters) { VotePositiveChat(player, parameters); });
     RegisterCommand("--", [this](Player player, std::vector<std::string> parameters) { VotePositiveChat(player, parameters); });
 }
@@ -47,7 +48,7 @@ void KarmaPlugin::OnBeginMap(Map map)
 {
     retrieveVotes(*controller->Maps->Current);
     karma.Calculate(votes);
-    displayToAll();
+    displayToAll(true);
 }
 
 void KarmaPlugin::OnPlayerConnect(Player player)
@@ -59,6 +60,39 @@ void KarmaPlugin::OnPlayerConnect(Player player)
 
     if(!widget.DisplayToPlayer(player, &karma, personalVote))
         Logging::PrintError(controller->Server->GetCurrentError());
+
+    displayCurrentKarma(player);
+}
+
+void KarmaPlugin::displayCurrentKarma(Player player)
+{
+    std::stringstream chatMessage;
+    chatMessage << "$ff0Current map karma: $fff" << (karma.PlusVotes - karma.MinVotes) << "$ff0 [";
+    chatMessage << "$fff" << (karma.PlusVotes + karma.MinVotes) << "$ff0 votes,";
+    chatMessage << " ++: $fff" << karma.PlusVotes << "$ff0 ($fff" << karma.Percentage << "%$ff0),";
+    chatMessage << " --: $fff" << karma.MinVotes << "$ff0 ($fff" << karma.MinPercentage << "%$ff0)]";
+
+    int personalVote = -1;
+    std::map<std::string, int>::iterator voteIt = votes.find(player.Login);
+    if(voteIt != votes.end())
+        personalVote = voteIt->second;
+
+    chatMessage << " {Your vote: $fff";
+    switch(personalVote)
+    {
+        case 1:
+            chatMessage << "++";
+            break;
+        case 0:
+            chatMessage << "--";
+            break;
+        default:
+            chatMessage << "none";
+            break;
+    }
+    chatMessage << "$ff0}";
+
+    controller->Server->ChatSendServerMessageToLogin(chatMessage.str(), player.Login);
 }
 
 void KarmaPlugin::OnPlayerChat(Player player, std::string text)
@@ -93,6 +127,11 @@ void KarmaPlugin::VoteNegativeChat(Player player, std::vector<std::string> param
     voteNegative(player);
 }
 
+void KarmaPlugin::DisplayKarma(Player player, std::vector<std::string> parameters)
+{
+    displayCurrentKarma(player);
+}
+
 void KarmaPlugin::votePositive(Player player)
 {
     std::stringstream chatMessage;
@@ -114,6 +153,7 @@ void KarmaPlugin::votePositive(Player player)
     if(voteIt != votes.end())
         personalVote = voteIt->second;
 
+    bool displayKarma = true;
     if(personalVote != 1)
     {
         sql::PreparedStatement* pstmt = controller->Database->prepareStatement("INSERT INTO `rs_karma` (`MapId`, `PlayerId`, `Score`) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE `Score` = VALUES(`Score`)");
@@ -135,9 +175,12 @@ void KarmaPlugin::votePositive(Player player)
     else
     {
         chatMessage << "You already voted $fff++$ff0 on this map!";
+        displayKarma = false;
     }
 
     controller->Server->ChatSendServerMessageToLogin(chatMessage.str(), player.Login);
+    if(displayKarma)
+        displayCurrentKarma(player);
 }
 
 void KarmaPlugin::voteNegative(Player player)
@@ -161,6 +204,7 @@ void KarmaPlugin::voteNegative(Player player)
     if(voteIt != votes.end())
         personalVote = voteIt->second;
 
+    bool displayKarma = true;
     if(personalVote != 0)
     {
         sql::PreparedStatement* pstmt = controller->Database->prepareStatement("INSERT INTO `rs_karma` (`MapId`, `PlayerId`, `Score`) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE `Score` = VALUES(`Score`)");
@@ -182,12 +226,15 @@ void KarmaPlugin::voteNegative(Player player)
     else
     {
         chatMessage << "You already voted $fff--$ff0 on this map!";
+        displayKarma = false;
     }
 
     controller->Server->ChatSendServerMessageToLogin(chatMessage.str(), player.Login);
+    if(displayKarma)
+        displayCurrentKarma(player);
 }
 
-void KarmaPlugin::displayToAll()
+void KarmaPlugin::displayToAll(bool chat)
 {
     for(std::map<std::string, Player>::iterator player = controller->Players->begin(); player != controller->Players->end(); ++player)
     {
@@ -198,6 +245,9 @@ void KarmaPlugin::displayToAll()
 
         if(!widget.DisplayToPlayer(player->second, &karma, personalVote))
             Logging::PrintError(controller->Server->GetCurrentError());
+
+        if(chat)
+            displayCurrentKarma(player->second);
     }
 }
 
@@ -233,8 +283,6 @@ void KarmaPlugin::retrieveVotes(Map map)
 
 int KarmaPlugin::retrieveTimesDriven(Player player)
 {
-    votes = std::map<std::string, int>();
-
     sql::PreparedStatement* pstmt = controller->Database->prepareStatement("SELECT COUNT(*) AS `timesDriven` FROM `rs_times` WHERE `PlayerId` = ? AND `MapId` = ?");
     pstmt->setInt(1, player.Id);
     pstmt->setInt(2, controller->Maps->Current->Id);
