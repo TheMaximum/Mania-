@@ -100,27 +100,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="structUIList.html#a653f1be5fe8e835df46a7068c49ff75e">   14</a></span>&#160;    std::string <a class="code" href="structUIList.html#a653f1be5fe8e835df46a7068c49ff75e">Title</a>;                     </div>
 <div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structUIList.html#a43200f878fb7b0d3575e3ae9181f8dab">   15</a></span>&#160;    std::string <a class="code" href="structUIList.html#a43200f878fb7b0d3575e3ae9181f8dab">IconStyle</a>;                 </div>
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structUIList.html#aa12ecc6bec2a12f1aa3bf9ffba33aa3c">   16</a></span>&#160;    std::string <a class="code" href="structUIList.html#aa12ecc6bec2a12f1aa3bf9ffba33aa3c">IconSubstyle</a>;              </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structUIList.html#a0ae21ef9cca29d0b9b98227520e24ab6">   18</a></span>&#160;    std::map&lt;std::string, int&gt; <a class="code" href="structUIList.html#a0ae21ef9cca29d0b9b98227520e24ab6">Columns</a>; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structUIList.html#a20ea14a5e0714135b877a3684cca4da9">   18</a></span>&#160;    std::vector&lt;std::pair&lt;std::string, int&gt;&gt; <a class="code" href="structUIList.html#a20ea14a5e0714135b877a3684cca4da9">Columns</a>;     </div>
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structUIList.html#a065ea3da2ed6cb0524e9a0daae2be06a">   19</a></span>&#160;    std::vector&lt;std::map&lt;std::string, std::string&gt;&gt; <a class="code" href="structUIList.html#a065ea3da2ed6cb0524e9a0daae2be06a">Rows</a>; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="structUIList.html">UIList</a>()</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="structUIList.html#a0ae21ef9cca29d0b9b98227520e24ab6">Columns</a> = std::map&lt;std::string, int&gt;();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="structUIList.html#a20ea14a5e0714135b877a3684cca4da9">Columns</a> = std::vector&lt;std::pair&lt;std::string, int&gt;&gt;();</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="structUIList.html#a065ea3da2ed6cb0524e9a0daae2be06a">Rows</a> = std::vector&lt;std::map&lt;std::string, std::string&gt;&gt;();</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;};</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif // UILIST_H_</span></div>
 <div class="ttc" id="structUIList_html"><div class="ttname"><a href="structUIList.html">UIList</a></div><div class="ttdoc">ManiaLink for UI list. </div><div class="ttdef"><b>Definition:</b> UIList.h:11</div></div>
+<div class="ttc" id="structUIList_html_a20ea14a5e0714135b877a3684cca4da9"><div class="ttname"><a href="structUIList.html#a20ea14a5e0714135b877a3684cca4da9">UIList::Columns</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; std::string, int &gt; &gt; Columns</div><div class="ttdoc">List columns. </div><div class="ttdef"><b>Definition:</b> UIList.h:18</div></div>
 <div class="ttc" id="structUIList_html_a43200f878fb7b0d3575e3ae9181f8dab"><div class="ttname"><a href="structUIList.html#a43200f878fb7b0d3575e3ae9181f8dab">UIList::IconStyle</a></div><div class="ttdeci">std::string IconStyle</div><div class="ttdoc">Header icon style. </div><div class="ttdef"><b>Definition:</b> UIList.h:15</div></div>
 <div class="ttc" id="structUIList_html_a065ea3da2ed6cb0524e9a0daae2be06a"><div class="ttname"><a href="structUIList.html#a065ea3da2ed6cb0524e9a0daae2be06a">UIList::Rows</a></div><div class="ttdeci">std::vector&lt; std::map&lt; std::string, std::string &gt; &gt; Rows</div><div class="ttdoc">List rows. </div><div class="ttdef"><b>Definition:</b> UIList.h:19</div></div>
-<div class="ttc" id="structUIList_html_a0ae21ef9cca29d0b9b98227520e24ab6"><div class="ttname"><a href="structUIList.html#a0ae21ef9cca29d0b9b98227520e24ab6">UIList::Columns</a></div><div class="ttdeci">std::map&lt; std::string, int &gt; Columns</div><div class="ttdoc">List columns. </div><div class="ttdef"><b>Definition:</b> UIList.h:18</div></div>
 <div class="ttc" id="structUIList_html_aa12ecc6bec2a12f1aa3bf9ffba33aa3c"><div class="ttname"><a href="structUIList.html#aa12ecc6bec2a12f1aa3bf9ffba33aa3c">UIList::IconSubstyle</a></div><div class="ttdeci">std::string IconSubstyle</div><div class="ttdoc">Header icon substyle. </div><div class="ttdef"><b>Definition:</b> UIList.h:16</div></div>
 <div class="ttc" id="structUIList_html_a653f1be5fe8e835df46a7068c49ff75e"><div class="ttname"><a href="structUIList.html#a653f1be5fe8e835df46a7068c49ff75e">UIList::Title</a></div><div class="ttdeci">std::string Title</div><div class="ttdoc">List title. </div><div class="ttdef"><b>Definition:</b> UIList.h:14</div></div>
 <div class="ttc" id="structUIList_html_ae551552dcaae820fe1cc6413c61c8ecc"><div class="ttname"><a href="structUIList.html#ae551552dcaae820fe1cc6413c61c8ecc">UIList::Id</a></div><div class="ttdeci">std::string Id</div><div class="ttdoc">ManiaLink identifier. </div><div class="ttdef"><b>Definition:</b> UIList.h:13</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 6 2017 21:07:28 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jan 6 2017 21:34:32 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
