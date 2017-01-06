@@ -28,3 +28,7 @@ plugins:
     - 'MapWidget':
         widgetX: 49.2
         widgetY: 48.2
+    - 'Karma':
+        widgetX: 49.2
+        widgetY: 39.2
+        voteAfterFinishes: 0
