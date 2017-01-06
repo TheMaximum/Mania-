@@ -63,14 +63,14 @@ bool KarmaWidget::DisplayToPlayer(Player player, MapKarma* karma, int personalSc
     double iconX = (WidgetX < 0) ? (right_IconX + (widgetWidth - 15.5)) : left_IconX;
     double iconY = (WidgetX < 0) ? right_IconY : left_IconY;
     std::string iconStyle = "Icons128x128_1";
-    std::string iconSubstyle = "NewTrack";
+    std::string iconSubstyle = "CustomStars";
 
     std::string textColor = "FFFF";
 
     std::stringstream widget;
     widget << "    <frame posn=\"" << WidgetX << " " << WidgetY << " 0\" id=\"Widget" << manialinkId << "\">";
 
-    widget << "        <label posn=\"0.1 -0.1 0\" sizen=\"" << backgroundWidth << " " << backgroundHeight << "\" text=\" \" action=\"" << actionId << "\" focusareacolor1=\"" << backgroundColor << "\" focusareacolor2=\"" << backgroundFocus << "\"/>";
+    widget << "        <label posn=\"0.1 -0.1 0\" sizen=\"" << backgroundWidth << " " << backgroundHeight << "\" text=\" \" action=\"" << ActionId << "\" focusareacolor1=\"" << backgroundColor << "\" focusareacolor2=\"" << backgroundFocus << "\"/>";
     widget << "        <quad posn=\"-0.2 0.3 0.001\" sizen=\"" << borderWidth << " " << borderHeight << "\" style=\"" << borderStyle << "\" substyle=\"" << borderSubstyle << "\"/>";
     widget << "        <quad posn=\"0 0 0.002\" sizen=\"" << backgroundWidth << " " << backgroundHeight << "\" style=\"" << backgroundStyle << "\" substyle=\"" << backgroundSubstyle << "\"/>";
 
@@ -94,7 +94,21 @@ bool KarmaWidget::DisplayToPlayer(Player player, MapKarma* karma, int personalSc
     widget << "        <label posn=\"11.5 -8.5 1.75\" halign=\"center\" sizen=\"3 1\"  text=\"$0f0" << karma->PlusVotes << "\"/>";
 
     widget << "        <label posn=\"7.5 -8.5 1.75\" halign=\"center\" sizen=\"5 1\" text=\"$fff" << karma->Percentage << "%\"/>";
-    widget << "        <label posn=\"7.5 -6.35 1.75\" halign=\"center\" sizen=\"5 1\" text=\"$fff$o" << (karma->PlusVotes - karma->MinVotes) << "\"/>";
+
+    int mapKarma = (karma->PlusVotes - karma->MinVotes);
+    std::string colour = "$fff";
+    std::string prefix = "";
+    if(mapKarma < 0)
+    {
+        colour = "$f00";
+    }
+    else if(mapKarma > 0)
+    {
+        colour = "$0f0";
+        prefix = "+";
+    }
+
+    widget << "        <label posn=\"7.5 -6.35 1.75\" halign=\"center\" sizen=\"5 1\" text=\"" << colour << "$o" << prefix << mapKarma << "\"/>";
 
     double barX = 1.5;
     if(karma->Percentage == 0)

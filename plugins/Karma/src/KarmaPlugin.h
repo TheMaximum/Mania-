@@ -1,9 +1,12 @@
 #ifndef KARMAPLUGIN_H_
 #define KARMAPLUGIN_H_
 
+#include <algorithm>
 #include <sstream>
 #include <map>
+
 #include "Plugins/Plugin.h"
+#include "UI/UIList.h"
 #include "Utils/Time.h"
 
 #include "Objects/MapKarma.h"
@@ -22,6 +25,7 @@ public:
     void DisplayCurrentKarma(Player player);
     void VoteNegative(Player player);
     void VotePositive(Player player);
+    void DisplayWhoKarma(Player player);
 
 private:
     std::map<std::string, int> votes;

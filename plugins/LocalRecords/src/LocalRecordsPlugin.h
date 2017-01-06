@@ -1,6 +1,7 @@
 #ifndef LOCALRECORDSPLUGIN_H_
 #define LOCALRECORDSPLUGIN_H_
 
+#include <algorithm>
 #include <sstream>
 
 #include "Plugins/Plugin.h"

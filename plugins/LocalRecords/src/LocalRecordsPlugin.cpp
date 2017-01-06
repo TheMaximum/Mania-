@@ -23,7 +23,7 @@ void LocalRecordsPlugin::Init()
     widget.WidgetTopCount = widgetTopCount;
     widget.WidgetX = widgetX;
     widget.WidgetY = widgetY;
-    controller->UI->AddEvent("OpenLocalRecords", ([this](Player player, std::string answer, std::vector<EntryVal> entries) { OpenLocalRecords(player); }));
+    controller->UI->RegisterEvent("OpenLocalRecords", ([this](Player player, std::string answer, std::vector<EntryVal> entries) { OpenLocalRecords(player); }));
 
     if(!widget.DisplayToAll(controller->Players))
     {
@@ -215,7 +215,30 @@ void LocalRecordsPlugin::OnPlayerFinish(Player player, int playerTime)
 
 void LocalRecordsPlugin::OpenLocalRecords(Player player)
 {
-    std::cout << "Player '" << player.Login << "' has called /records (or via ManiaLink)." << std::endl;
+    UIList list = UIList();
+    list.Id = "LocalRecords";
+    list.Title = "Local Records for: $z$s$fff" + controller->Maps->Current->Name;
+    list.IconStyle = "BgRaceScore2";
+    list.IconSubstyle = "LadderRank";
+    list.Columns.insert(std::pair<std::string, int>("#", 5));
+    list.Columns.insert(std::pair<std::string, int>("Player", 40));
+    list.Columns.insert(std::pair<std::string, int>("Time", 20));
+
+    for(int recordId = 0; recordId < localRecords.List.size(); recordId++)
+    {
+        LocalRecord record = localRecords.List.at(recordId);
+
+        std::stringstream index;
+        index << (recordId + 1);
+
+        std::map<std::string, std::string> row = std::map<std::string, std::string>();
+        row.insert(std::pair<std::string, std::string>("#", index.str()));
+        row.insert(std::pair<std::string, std::string>("Player", record.NickName));
+        row.insert(std::pair<std::string, std::string>("Time", record.FormattedTime));
+        list.Rows.push_back(row);
+    }
+
+    controller->UI->DisplayList(list, player);
 }
 
 void LocalRecordsPlugin::displayPersonalRecord(Player player)

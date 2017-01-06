@@ -24,6 +24,7 @@ public:
     double WidgetX = 49.2;
     double WidgetY = 39.2;
 
+    std::string ActionId = "OpenWhoKarma";
     std::string PositiveAction = "KarmaVotePositive";
     std::string NegativeAction = "KarmaVoteNegative";
 
@@ -33,7 +34,6 @@ private:
 
     std::string title = "Karma";
     std::string manialinkId = "Karma";
-    std::string actionId = "OpenWhoKarma";
 };
 
 #endif // MAPWIDGET_H_

@@ -20,7 +20,7 @@ ManiaPP::ManiaPP()
     commands = new CommandManager();
 
     methods = new Methods(server, players);
-    ui = new UIManager(methods, events);
+    ui = new UIManager(methods, events, players);
 }
 
 ManiaPP::~ManiaPP()
