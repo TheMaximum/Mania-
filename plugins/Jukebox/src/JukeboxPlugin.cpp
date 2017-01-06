@@ -29,8 +29,8 @@ void JukeboxPlugin::DisplayMapList(Player player)
     UIList list = UIList();
     list.Id = "MapList";
     list.Title = "Server map list";
-    list.IconStyle = "Icons128x128_1";
-    list.IconSubstyle = "CustomStars";
+    list.IconStyle = "Icons64x64_1";
+    list.IconSubstyle = "Browser";
     list.Columns.push_back(std::pair<std::string, int>("#", 5));
     list.Columns.push_back(std::pair<std::string, int>("Name", 40));
     list.Columns.push_back(std::pair<std::string, int>("Author", 20));
