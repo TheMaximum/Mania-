@@ -32,3 +32,4 @@ plugins:
         widgetX: 49.2
         widgetY: 39.2
         voteAfterFinishes: 0
+    - 'Jukebox'
