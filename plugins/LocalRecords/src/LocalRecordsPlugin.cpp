@@ -220,9 +220,9 @@ void LocalRecordsPlugin::OpenLocalRecords(Player player)
     list.Title = "Local Records for: $z$s$fff" + controller->Maps->Current->Name;
     list.IconStyle = "BgRaceScore2";
     list.IconSubstyle = "LadderRank";
-    list.Columns.insert(std::pair<std::string, int>("#", 5));
-    list.Columns.insert(std::pair<std::string, int>("Player", 40));
-    list.Columns.insert(std::pair<std::string, int>("Time", 20));
+    list.Columns.push_back(std::pair<std::string, int>("#", 5));
+    list.Columns.push_back(std::pair<std::string, int>("Player", 40));
+    list.Columns.push_back(std::pair<std::string, int>("Time", 20));
 
     for(int recordId = 0; recordId < localRecords.List.size(); recordId++)
     {

@@ -15,12 +15,12 @@ struct UIList
     std::string IconStyle;                 /**< \brief Header icon style. */
     std::string IconSubstyle;              /**< \brief Header icon substyle. */
 
-    std::map<std::string, int> Columns; /**< \brief List columns. */
+    std::vector<std::pair<std::string, int>> Columns;     /**< \brief List columns. */
     std::vector<std::map<std::string, std::string>> Rows; /**< \brief List rows. */
 
     UIList()
     {
-        Columns = std::map<std::string, int>();
+        Columns = std::vector<std::pair<std::string, int>>();
         Rows = std::vector<std::map<std::string, std::string>>();
     }
 };

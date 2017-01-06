@@ -85,10 +85,11 @@ bool UIManager::DisplayList(UIList list, Player player, int currentPage)
     widget << "                <quad posn=\"0 0 0.006\" sizen=\"83 3\" style=\"Bgs1InRace\" substyle=\"BgCardList\"/>";
 
     int columnX = 1;
-    for(std::map<std::string, int>::iterator columnIt = list.Columns.begin(); columnIt != list.Columns.end(); ++columnIt)
+    for(int columnId = 0; columnId < list.Columns.size(); columnId++)
     {
-        widget << "                        <label posn=\"" << columnX << " -0.7 0.007\" sizen=\"" << columnIt->second << " 1.5\" halign=\"left\" textsize=\"1.8\" text=\"$o" << Text::EscapeXML(columnIt->first) << "\"/>";
-        columnX += columnIt->second;
+        std::pair<std::string, int> column = list.Columns.at(columnId);
+        widget << "                        <label posn=\"" << columnX << " -0.7 0.007\" sizen=\"" << column.second << " 1.5\" halign=\"left\" textsize=\"1.8\" text=\"$o" << Text::EscapeXML(column.first) << "\"/>";
+        columnX += column.second;
     }
 
     double entryY = -3.5;
@@ -103,13 +104,14 @@ bool UIManager::DisplayList(UIList list, Player player, int currentPage)
             widget << "                <quad posn=\"0.05 " << (entryY + 0.55) << " 0.006\" sizen=\"82.9 2.6\" bgcolor=\"0003\"/>";
 
         int rowColumnX = 1;
-        for(std::map<std::string, int>::iterator columnIt = list.Columns.begin(); columnIt != list.Columns.end(); ++columnIt)
+        for(int columnId = 0; columnId < list.Columns.size(); columnId++)
         {
-            std::map<std::string, std::string>::iterator columnRowIt = currentRow.find(columnIt->first);
+            std::pair<std::string, int> column = list.Columns.at(columnId);
+            std::map<std::string, std::string>::iterator columnRowIt = currentRow.find(column.first);
             if(columnRowIt != currentRow.end())
-                widget << "                        <label posn=\"" << rowColumnX << " " << entryY << " 0.007\" sizen=\"" << columnIt->second <<" 1.5\" halign=\"left\" textsize=\"1.8\" text=\"" << Text::EscapeXML(columnRowIt->second) << "\"/>";
+                widget << "                        <label posn=\"" << rowColumnX << " " << entryY << " 0.007\" sizen=\"" << column.second <<" 1.5\" halign=\"left\" textsize=\"1.8\" text=\"" << Text::EscapeXML(columnRowIt->second) << "\"/>";
 
-            rowColumnX += columnIt->second;
+            rowColumnX += column.second;
         }
 
         entryY -= 2.5;

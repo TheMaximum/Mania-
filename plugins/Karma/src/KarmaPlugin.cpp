@@ -240,9 +240,9 @@ void KarmaPlugin::DisplayWhoKarma(Player player)
     list.Title = "WhoKarma for: $z$s$fff" + controller->Maps->Current->Name;
     list.IconStyle = "Icons128x128_1";
     list.IconSubstyle = "CustomStars";
-    list.Columns.insert(std::pair<std::string, int>("#", 5));
-    list.Columns.insert(std::pair<std::string, int>("Player", 40));
-    list.Columns.insert(std::pair<std::string, int>("Vote", 20));
+    list.Columns.push_back(std::pair<std::string, int>("#", 5));
+    list.Columns.push_back(std::pair<std::string, int>("Player", 40));
+    list.Columns.push_back(std::pair<std::string, int>("Vote", 20));
 
     for(int voteId = 0; voteId < votesVector.size(); voteId++)
     {
