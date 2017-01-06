@@ -29,7 +29,11 @@ public:
 
             int minutes = floor(time / (1000 * 60));
             int seconds = floor((time - (minutes * 60 * 1000)) / 1000);
-            int tseconds = atoi(timeAsString.substr((timeAsString.length() - 3)).c_str());
+            int tseconds = time;
+            if(timeAsString.length() > 3)
+            {
+                tseconds = atoi(timeAsString.substr((timeAsString.length() - 3)).c_str());
+            }
 
             char formattedCharArray[8];
             sprintf(formattedCharArray, "%d:%02d.%03d", minutes, seconds, tseconds);

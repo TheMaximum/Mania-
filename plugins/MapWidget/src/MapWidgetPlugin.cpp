@@ -5,8 +5,9 @@ MapWidgetPlugin::MapWidgetPlugin()
     Version = "0.1.0";
     Author = "TheM";
 
-    BeginMap.push_back([this](Map map) { OnBeginMap(map); });
+    BeginMap.push_back([this](Map map) { OnBeginMap(); });
     PlayerConnect.push_back([this](Player player) { OnPlayerConnect(player); });
+    BeginMatch.push_back([this]() { OnBeginMap(); });
     EndMatch.push_back([this](std::vector<PlayerRanking> rankings, int winnerTeam) { OnEndMatch(rankings, winnerTeam); });
 }
 
@@ -34,7 +35,7 @@ void MapWidgetPlugin::loadSettings()
         widgetY = atof(widgetYIt->second.c_str());
 }
 
-void MapWidgetPlugin::OnBeginMap(Map map)
+void MapWidgetPlugin::OnBeginMap()
 {
     widget.Title = "Current Map";
     if(!widget.DisplayToAll(controller->Players, controller->Maps->Current))

@@ -13,7 +13,7 @@ public:
     MapWidgetPlugin();
 
     void Init();
-    void OnBeginMap(Map map);
+    void OnBeginMap();
     void OnPlayerConnect(Player player);
     void OnEndMatch(std::vector<PlayerRanking> rankings, int winnerTeam);
 
