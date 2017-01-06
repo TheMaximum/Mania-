@@ -15,7 +15,7 @@ config:
         database: 'maniapp'
 
     program:
-        checkVersion: false
+        checkVersion: true
 
 plugins:
     - 'HelloGoodbye'
