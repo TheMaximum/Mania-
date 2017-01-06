@@ -26,8 +26,8 @@ struct GbxQueryResponse
  */
 struct GbxError
 {
-    int number = 0;       /**< \brief Number of the error (default: 0, no error). */
-    std::string message;  /**< \brief Error message. */
+    int number = 0;            /**< \brief Number of the error (default: 0, no error). */
+    std::string message = "";  /**< \brief Error message. */
 };
 
 #endif // GBXSTRUCTS_H_

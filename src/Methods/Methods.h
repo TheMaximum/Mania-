@@ -25,7 +25,7 @@ public:
     /*!
      * \brief Returns the current server error (from GbxRemote).
      */
-    GbxError* GetCurrentError();
+    GbxError GetCurrentError();
 
     /*!
      * \brief Authenticates with the server. Returns whether authentication was successful.

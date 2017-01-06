@@ -5,17 +5,11 @@
 
 GbxResponse::~GbxResponse()
 {
-    delete fault;
-    fault = NULL;
+
 }
 
-GbxError* GbxResponse::GetFault()
+GbxError GbxResponse::GetFault()
 {
-    if(fault->number == 0)
-    {
-        return NULL;
-    }
-
     return fault;
 }
 
@@ -61,11 +55,11 @@ void GbxResponse::extractParameters()
 
             if(std::string(name.child_value()).find("faultCode") != std::string::npos)
             {
-                fault->number = atoi(value.child_value());
+                fault.number = atoi(value.child_value());
             }
             else if(std::string(name.child_value()).find("faultString") != std::string::npos)
             {
-                fault->message = value.child_value();
+                fault.message = value.child_value();
             }
         }
 

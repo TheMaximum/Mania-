@@ -58,11 +58,11 @@ void PluginManager::LoadPlugins(std::string pluginsFolder)
         {
             Logging::PrintFailedFlush();
 
-            GbxError* error = new GbxError();
-            error->number = -201;
+            GbxError error = GbxError();
+            error.number = -201;
             std::stringstream message;
             message << "Could not load '" << pluginId->first << "': " << dlerror() << "...";
-            error->message = message.str();
+            error.message = message.str();
             Logging::PrintError(error);
         }
         else
@@ -73,11 +73,11 @@ void PluginManager::LoadPlugins(std::string pluginsFolder)
             {
                 Logging::PrintFailedFlush();
 
-                GbxError* error = new GbxError();
-                error->number = -202;
+                GbxError error = GbxError();
+                error.number = -202;
                 std::stringstream message;
                 message << "Could not call 'startPlugin'-function for '" << pluginId->first << "'...";
-                error->message = message.str();
+                error.message = message.str();
                 Logging::PrintError(error);
             }
             else
