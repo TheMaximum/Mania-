@@ -16,6 +16,10 @@ UIManager::UIManager(Methods* serverPtr, EventManager* eventsPtr, std::map<std::
     functionsEndMatch.push_back([this](std::vector<PlayerRanking> rankings, int winnerTeam) { OnEndMatch(); });
     events->RegisterEndMatch(functionsEndMatch);
 
+    std::vector<std::function<void(Player)>> functionsPlayerDisconnect = std::vector<std::function<void(Player)>>();
+    functionsPlayerDisconnect.push_back([this](Player player) { CloseList(player); });
+    events->RegisterPlayerDisconnect(functionsPlayerDisconnect);
+
     RegisterEvent("CloseCenterList", ([this](Player player, std::string answer, std::vector<EntryVal> entries) { CloseList(player); }));
 }
 
@@ -131,6 +135,8 @@ bool UIManager::DisplayList(UIList list, Player player, int currentPage)
 
 void UIManager::CloseList(Player player)
 {
+    currentLists.erase(player.Login);
+
     UIFrame frame = UIFrame();
     frame.ManiaLinkId = "CenterList";
     frame.Timeout = 1;

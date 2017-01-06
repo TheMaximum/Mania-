@@ -59,9 +59,9 @@ public:
     bool DisplayList(UIList list, Player player, int currentPage = 1);
 
     /*!
-     * \brief Close list for player.
+     * \brief Close list for player and removes from memory.
      *
-     * \param player     Player who should receive the list.
+     * \param player     Player which center list should be closed.
      */
     void CloseList(Player player);
 
