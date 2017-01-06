@@ -99,9 +99,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6bed011df535971bd1ee0e633219b126"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUIManager.html#a6bed011df535971bd1ee0e633219b126">UIManager</a> (<a class="el" href="classMethods.html">Methods</a> *serverPtr, <a class="el" href="classEventManager.html">EventManager</a> *eventsPtr)</td></tr>
-<tr class="memdesc:a6bed011df535971bd1ee0e633219b126"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor takes needed controller pointers.  <a href="#a6bed011df535971bd1ee0e633219b126">More...</a><br/></td></tr>
-<tr class="separator:a6bed011df535971bd1ee0e633219b126"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d6da1c7d4c1100402fb9384080c3cb2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUIManager.html#a4d6da1c7d4c1100402fb9384080c3cb2">UIManager</a> (<a class="el" href="classMethods.html">Methods</a> *serverPtr, <a class="el" href="classEventManager.html">EventManager</a> *eventsPtr, std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt; *playersPtr)</td></tr>
+<tr class="memdesc:a4d6da1c7d4c1100402fb9384080c3cb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor takes needed controller pointers.  <a href="#a4d6da1c7d4c1100402fb9384080c3cb2">More...</a><br/></td></tr>
+<tr class="separator:a4d6da1c7d4c1100402fb9384080c3cb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79bae5bfa896f37455d10256caa8b95b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUIManager.html#a79bae5bfa896f37455d10256caa8b95b">OnPlayerManialinkPageAnswer</a> (<a class="el" href="structPlayer.html">Player</a> player, std::string answer, std::vector&lt; <a class="el" href="structEntryVal.html">EntryVal</a> &gt; entries)</td></tr>
 <tr class="memdesc:a79bae5bfa896f37455d10256caa8b95b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback handler voor ManiaLink page answers.  <a href="#a79bae5bfa896f37455d10256caa8b95b">More...</a><br/></td></tr>
 <tr class="separator:a79bae5bfa896f37455d10256caa8b95b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -111,9 +111,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a83370680d61bea5a5464127a5f11b9a9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUIManager.html#a83370680d61bea5a5464127a5f11b9a9">Display</a> (<a class="el" href="structUIFrame.html">UIFrame</a> frame, <a class="el" href="structPlayer.html">Player</a> player)</td></tr>
 <tr class="memdesc:a83370680d61bea5a5464127a5f11b9a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display frame to player.  <a href="#a83370680d61bea5a5464127a5f11b9a9">More...</a><br/></td></tr>
 <tr class="separator:a83370680d61bea5a5464127a5f11b9a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a094c102025f079fed26c67a336938582"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUIManager.html#a094c102025f079fed26c67a336938582">AddEvent</a> (std::string answer, std::function&lt; void(<a class="el" href="structPlayer.html">Player</a>, std::string, std::vector&lt; <a class="el" href="structEntryVal.html">EntryVal</a> &gt;)&gt; function)</td></tr>
-<tr class="memdesc:a094c102025f079fed26c67a336938582"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add event to be handled on page answer.  <a href="#a094c102025f079fed26c67a336938582">More...</a><br/></td></tr>
-<tr class="separator:a094c102025f079fed26c67a336938582"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8187f1c1988d5934adc5c793be85778"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUIManager.html#aa8187f1c1988d5934adc5c793be85778">DisplayList</a> (<a class="el" href="structUIList.html">UIList</a> list, <a class="el" href="structPlayer.html">Player</a> player, int currentPage=1)</td></tr>
+<tr class="memdesc:aa8187f1c1988d5934adc5c793be85778"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display list to player.  <a href="#aa8187f1c1988d5934adc5c793be85778">More...</a><br/></td></tr>
+<tr class="separator:aa8187f1c1988d5934adc5c793be85778"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8510d387057f6778b88d5bcd8bd97a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUIManager.html#af8510d387057f6778b88d5bcd8bd97a6">CloseList</a> (<a class="el" href="structPlayer.html">Player</a> player)</td></tr>
+<tr class="memdesc:af8510d387057f6778b88d5bcd8bd97a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close list for player.  <a href="#af8510d387057f6778b88d5bcd8bd97a6">More...</a><br/></td></tr>
+<tr class="separator:af8510d387057f6778b88d5bcd8bd97a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af71f25628d303286cd7f54375314e09b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af71f25628d303286cd7f54375314e09b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUIManager.html#af71f25628d303286cd7f54375314e09b">OnEndMatch</a> ()</td></tr>
+<tr class="memdesc:af71f25628d303286cd7f54375314e09b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event listener for EndMatch, closes center lists. <br/></td></tr>
+<tr class="separator:af71f25628d303286cd7f54375314e09b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8192019b49fa0f4b28174ac7f93910fb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUIManager.html#a8192019b49fa0f4b28174ac7f93910fb">RegisterEvent</a> (std::string answer, std::function&lt; void(<a class="el" href="structPlayer.html">Player</a>, std::string, std::vector&lt; <a class="el" href="structEntryVal.html">EntryVal</a> &gt;)&gt; function)</td></tr>
+<tr class="memdesc:a8192019b49fa0f4b28174ac7f93910fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register event to be handled on page answer.  <a href="#a8192019b49fa0f4b28174ac7f93910fb">More...</a><br/></td></tr>
+<tr class="separator:a8192019b49fa0f4b28174ac7f93910fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -131,6 +141,10 @@ Private Attributes</h2></td></tr>
 <a class="el" href="classEventManager.html">EventManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUIManager.html#aaa87b49b6a0329d8502cfb8e2ca9ab59">events</a></td></tr>
 <tr class="memdesc:aaa87b49b6a0329d8502cfb8e2ca9ab59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the event manager. <br/></td></tr>
 <tr class="separator:aaa87b49b6a0329d8502cfb8e2ca9ab59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33c7380de6a617f3e02526a04c5ce726"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a33c7380de6a617f3e02526a04c5ce726"></a>
+std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUIManager.html#a33c7380de6a617f3e02526a04c5ce726">players</a></td></tr>
+<tr class="memdesc:a33c7380de6a617f3e02526a04c5ce726"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the player list. <br/></td></tr>
+<tr class="separator:a33c7380de6a617f3e02526a04c5ce726"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06f9c65d5f61810311f6e7cd53bce55f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a06f9c65d5f61810311f6e7cd53bce55f"></a>
 std::map&lt; std::string, <br class="typebreak"/>
 std::function&lt; void(<a class="el" href="structPlayer.html">Player</a>, <br class="typebreak"/>
@@ -138,11 +152,15 @@ std::string, std::vector<br class="typebreak"/>
 &lt; <a class="el" href="structEntryVal.html">EntryVal</a> &gt;)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUIManager.html#a06f9c65d5f61810311f6e7cd53bce55f">answers</a></td></tr>
 <tr class="memdesc:a06f9c65d5f61810311f6e7cd53bce55f"><td class="mdescLeft">&#160;</td><td class="mdescRight">List with ManiaLink answers to handle. <br/></td></tr>
 <tr class="separator:a06f9c65d5f61810311f6e7cd53bce55f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94703fac0de8ee6e8116cd5f9a01b7e2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a94703fac0de8ee6e8116cd5f9a01b7e2"></a>
+std::map&lt; std::string, <a class="el" href="structUIList.html">UIList</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUIManager.html#a94703fac0de8ee6e8116cd5f9a01b7e2">currentLists</a></td></tr>
+<tr class="memdesc:a94703fac0de8ee6e8116cd5f9a01b7e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current lists displayed to players. <br/></td></tr>
+<tr class="separator:a94703fac0de8ee6e8116cd5f9a01b7e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Manages the user interface on the server (ManiaLinks). </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a6bed011df535971bd1ee0e633219b126"></a>
+<a class="anchor" id="a4d6da1c7d4c1100402fb9384080c3cb2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -156,7 +174,13 @@ std::string, std::vector<br class="typebreak"/>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classEventManager.html">EventManager</a> *&#160;</td>
-          <td class="paramname"><em>eventsPtr</em>&#160;</td>
+          <td class="paramname"><em>eventsPtr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt; *&#160;</td>
+          <td class="paramname"><em>playersPtr</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -171,6 +195,7 @@ std::string, std::vector<br class="typebreak"/>
   <table class="params">
     <tr><td class="paramname">serverPtr</td><td>Pointer to the server methods. </td></tr>
     <tr><td class="paramname">eventsPtr</td><td>Pointer to the event manager. </td></tr>
+    <tr><td class="paramname">playersPtr</td><td>Pointer to the player list. </td></tr>
   </table>
   </dd>
 </dl>
@@ -178,35 +203,24 @@ std::string, std::vector<br class="typebreak"/>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a094c102025f079fed26c67a336938582"></a>
+<a class="anchor" id="af8510d387057f6778b88d5bcd8bd97a6"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool UIManager::AddEvent </td>
+          <td class="memname">void UIManager::CloseList </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>answer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="structPlayer.html">Player</a>&#160;</td>
+          <td class="paramname"><em>player</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">std::function&lt; void(<a class="el" href="structPlayer.html">Player</a>, std::string, std::vector&lt; <a class="el" href="structEntryVal.html">EntryVal</a> &gt;)&gt;&#160;</td>
-          <td class="paramname"><em>function</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Add event to be handled on page answer. </p>
+<p>Close list for player. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">answer</td><td>Name of the answer. </td></tr>
-    <tr><td class="paramname">function</td><td>Function to be called on callback. </td></tr>
+    <tr><td class="paramname">player</td><td><a class="el" href="structPlayer.html" title="Contains all information about a player in easy-to-use format. ">Player</a> who should receive the list. </td></tr>
   </table>
   </dd>
 </dl>
@@ -266,6 +280,47 @@ std::string, std::vector<br class="typebreak"/>
   <table class="params">
     <tr><td class="paramname">frame</td><td>Frame to be displayed. </td></tr>
     <tr><td class="paramname">player</td><td><a class="el" href="structPlayer.html" title="Contains all information about a player in easy-to-use format. ">Player</a> who should receive the frame. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa8187f1c1988d5934adc5c793be85778"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UIManager::DisplayList </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structUIList.html">UIList</a>&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structPlayer.html">Player</a>&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>currentPage</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Display list to player. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>List to be displayed. </td></tr>
+    <tr><td class="paramname">player</td><td><a class="el" href="structPlayer.html" title="Contains all information about a player in easy-to-use format. ">Player</a> who should receive the list. </td></tr>
   </table>
   </dd>
 </dl>
@@ -346,6 +401,41 @@ std::string, std::vector<br class="typebreak"/>
 
 </div>
 </div>
+<a class="anchor" id="a8192019b49fa0f4b28174ac7f93910fb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UIManager::RegisterEvent </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>answer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; void(<a class="el" href="structPlayer.html">Player</a>, std::string, std::vector&lt; <a class="el" href="structEntryVal.html">EntryVal</a> &gt;)&gt;&#160;</td>
+          <td class="paramname"><em>function</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register event to be handled on page answer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">answer</td><td>Name of the answer. </td></tr>
+    <tr><td class="paramname">function</td><td>Function to be called on callback. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/travis/build/TheMaximum/mania-pp/src/UI/<a class="el" href="UIManager_8h_source.html">UIManager.h</a></li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/UI/UIManager.cpp</li>
@@ -353,7 +443,7 @@ std::string, std::vector<br class="typebreak"/>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 6 2017 15:42:10 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jan 6 2017 20:53:48 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

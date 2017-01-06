@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['id',['Id',['../structMap.html#af718266059246076a208fa4323e187f4',1,'Map::Id()'],['../structPlayer.html#a27cd3355e96dc3842d4f91b859673e0c',1,'Player::Id()']]],
+  ['iconstyle',['IconStyle',['../structUIList.html#a43200f878fb7b0d3575e3ae9181f8dab',1,'UIList']]],
+  ['iconsubstyle',['IconSubstyle',['../structUIList.html#aa12ecc6bec2a12f1aa3bf9ffba33aa3c',1,'UIList']]],
+  ['id',['Id',['../structMap.html#af718266059246076a208fa4323e187f4',1,'Map::Id()'],['../structPlayer.html#a27cd3355e96dc3842d4f91b859673e0c',1,'Player::Id()'],['../structUIList.html#ae551552dcaae820fe1cc6413c61c8ecc',1,'UIList::Id()']]],
   ['init',['Init',['../classGbxRemote.html#a24d9d0df923ed85010f53dcb43c2b977',1,'GbxRemote::Init()'],['../classPlugin.html#a1409a14522799cb9d1a41fabc40133e5',1,'Plugin::Init()']]],
   ['initializeplugins',['InitializePlugins',['../classPluginManager.html#aba7e19d75b25ca1a91b92d95b173240f',1,'PluginManager']]],
   ['initwithip',['InitWithIp',['../classGbxRemote.html#aa9a57e73f2f5ebbde90484503bd0d16d',1,'GbxRemote']]],

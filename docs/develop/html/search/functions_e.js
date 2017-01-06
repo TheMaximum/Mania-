@@ -13,6 +13,7 @@ var searchData=
   ['registerecho',['RegisterEcho',['../classEventManager.html#aee6fe2f94e1c86af6ec79735771701d0',1,'EventManager']]],
   ['registerendmap',['RegisterEndMap',['../classEventManager.html#aa8cff04bd5efe5933b99e9cd4d2862d3',1,'EventManager']]],
   ['registerendmatch',['RegisterEndMatch',['../classEventManager.html#a3d109b973ec50e1a06475b86f005f345',1,'EventManager']]],
+  ['registerevent',['RegisterEvent',['../classUIManager.html#a8192019b49fa0f4b28174ac7f93910fb',1,'UIManager']]],
   ['registermaplistmodified',['RegisterMapListModified',['../classEventManager.html#a2793498f3b1e3bf82c9d8caab49387c0',1,'EventManager']]],
   ['registerplayerchat',['RegisterPlayerChat',['../classEventManager.html#a05a0b5a63f308f3b948b4eaa132825e3',1,'EventManager']]],
   ['registerplayercheckpoint',['RegisterPlayerCheckpoint',['../classEventManager.html#ac9a8f0e6f7c4750e476059955042ccad',1,'EventManager']]],

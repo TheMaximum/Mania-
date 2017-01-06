@@ -10,6 +10,7 @@ var searchData=
   ['determinetype',['determineType',['../classGbxParameter.html#af708857623b85684ede2ae002e53a118',1,'GbxParameter']]],
   ['discoverplugins',['discoverPlugins',['../classPluginManager.html#a6e1d97e5b23f0d8f003a518b8b5fb7a1',1,'PluginManager']]],
   ['display',['Display',['../classUIManager.html#a97f069a4a1c54f6e9569a194834e090c',1,'UIManager::Display(UIFrame frame)'],['../classUIManager.html#a83370680d61bea5a5464127a5f11b9a9',1,'UIManager::Display(UIFrame frame, Player player)']]],
+  ['displaylist',['DisplayList',['../classUIManager.html#aa8187f1c1988d5934adc5c793be85778',1,'UIManager']]],
   ['downloadrate',['DownloadRate',['../structPlayer.html#a7fcee993ceed3c2b737782bc549e11bf',1,'Player']]],
   ['driver',['Driver',['../classDatabase.html#af6294bc6951029de6c33c90a7d298541',1,'Database']]]
 ];

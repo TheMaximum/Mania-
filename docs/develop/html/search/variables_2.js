@@ -9,6 +9,7 @@ var searchData=
   ['cmdname',['CmdName',['../structCurrentCallVote.html#aaac826ac8fa0865cb90fd60aa26bb6a9',1,'CurrentCallVote']]],
   ['cmdparam',['CmdParam',['../structCurrentCallVote.html#a69b91397ee1a0d237db24985c2d2b7ad',1,'CurrentCallVote']]],
   ['code',['Code',['../structServerStatus.html#ad17b50be8d2cb9c1a62396885b1244cc',1,'ServerStatus']]],
+  ['columns',['Columns',['../structUIList.html#a0ae21ef9cca29d0b9b98227520e24ab6',1,'UIList']]],
   ['command',['Command',['../structCallVoteRatio.html#a14e3195672c370c5c85ad06287c1d509',1,'CallVoteRatio::Command()'],['../structExtendedCallVoteRatio.html#a8b25c752447c968f2522c2748077b096',1,'ExtendedCallVoteRatio::Command()']]],
   ['commands',['Commands',['../classPlugin.html#a588dcd49b4fe45b3a401b749795b95fe',1,'Plugin::Commands()'],['../classCallBackManager.html#a29d2d950b831a6ab7194fa3a6951a5ef',1,'CallBackManager::commands()'],['../classCommandManager.html#afe0e49a7ea5ca7bed954e6a120fd8475',1,'CommandManager::commands()'],['../classManiaPP.html#afefa9bf6ecf35fffd4d3229e17e4dd2f',1,'ManiaPP::commands()'],['../classPluginManager.html#a2759d12d4da860a2c5a1dbb7f76a035a',1,'PluginManager::commands()']]],
   ['commit',['Commit',['../structGitVersion.html#a0a7fcfae969cad2cb90dc0353df5bf49',1,'GitVersion']]],
@@ -25,6 +26,7 @@ var searchData=
   ['currentcallbacks',['currentCallBacks',['../classGbxRemote.html#a08d047d7e0d4b746fc036c1aa02f0d17',1,'GbxRemote']]],
   ['currentcheckpoints',['CurrentCheckpoints',['../structPlayer.html#aa6efdb36b3a3618f26bf85c3a9b216d8',1,'Player']]],
   ['currenterror',['currentError',['../classGbxRemote.html#a5c310edc409e31aa12c0c0664b0fd238',1,'GbxRemote']]],
+  ['currentlists',['currentLists',['../classUIManager.html#a94703fac0de8ee6e8116cd5f9a01b7e2',1,'UIManager']]],
   ['currentresponse',['currentResponse',['../classGbxRemote.html#a3a3a0af1a692a801a33baa292b877dc2',1,'GbxRemote']]],
   ['currentvalue',['CurrentValue',['../structCurrentNextValue.html#adf3172ed773e285e652b49735ae63f8f',1,'CurrentNextValue']]],
   ['customui',['CustomUI',['../structUIFrame.html#ad7cffba86e4d81aa7a1b7ab475233e08',1,'UIFrame']]]

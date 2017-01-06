@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['addevent',['AddEvent',['../classUIManager.html#a094c102025f079fed26c67a336938582',1,'UIManager']]],
   ['addmap',['AddMap',['../classMethods.html#aac29fafb7a9f491c64c24a5e24754f71',1,'Methods']]],
   ['addmaplist',['AddMapList',['../classMethods.html#a0b136a5a395e4a50c9f667d9fa495b08',1,'Methods']]],
   ['address',['address',['../structServerConfig.html#a2a4201c0c868ba962a57d75b07ddafaf',1,'ServerConfig::address()'],['../structDatabaseConfig.html#a5ab15d9f2af8a31b83b6b95e58a0b67f',1,'DatabaseConfig::address()'],['../classDatabase.html#aaf36450a11d38f6fde645bb8a0d07381',1,'Database::address()'],['../classTcpClient.html#a8bcb24ebf1d8e22e9185f3056fd108c4',1,'TcpClient::address()']]],

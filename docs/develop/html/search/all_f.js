@@ -15,6 +15,7 @@ var searchData=
   ['registerecho',['RegisterEcho',['../classEventManager.html#aee6fe2f94e1c86af6ec79735771701d0',1,'EventManager']]],
   ['registerendmap',['RegisterEndMap',['../classEventManager.html#aa8cff04bd5efe5933b99e9cd4d2862d3',1,'EventManager']]],
   ['registerendmatch',['RegisterEndMatch',['../classEventManager.html#a3d109b973ec50e1a06475b86f005f345',1,'EventManager']]],
+  ['registerevent',['RegisterEvent',['../classUIManager.html#a8192019b49fa0f4b28174ac7f93910fb',1,'UIManager']]],
   ['registermaplistmodified',['RegisterMapListModified',['../classEventManager.html#a2793498f3b1e3bf82c9d8caab49387c0',1,'EventManager']]],
   ['registerplayerchat',['RegisterPlayerChat',['../classEventManager.html#a05a0b5a63f308f3b948b4eaa132825e3',1,'EventManager']]],
   ['registerplayercheckpoint',['RegisterPlayerCheckpoint',['../classEventManager.html#ac9a8f0e6f7c4750e476059955042ccad',1,'EventManager']]],
@@ -36,5 +37,6 @@ var searchData=
   ['retrievemaplist',['retrieveMapList',['../classManiaPP.html#a18582fa28b259c22a8a8d526af62123a',1,'ManiaPP']]],
   ['retrieveplayerlist',['retrievePlayerList',['../classManiaPP.html#aede94c0b982250de19186d447542e479',1,'ManiaPP']]],
   ['retrieverelease',['retrieveRelease',['../classVersionChecker.html#aa993a71dc58cfb6a3840235fe3fa4d27',1,'VersionChecker']]],
-  ['retrieveversions',['retrieveVersions',['../classVersionChecker.html#a9f648fee93cd911d85c34af34c2f1b0a',1,'VersionChecker']]]
+  ['retrieveversions',['retrieveVersions',['../classVersionChecker.html#a9f648fee93cd911d85c34af34c2f1b0a',1,'VersionChecker']]],
+  ['rows',['Rows',['../structUIList.html#a065ea3da2ed6cb0524e9a0daae2be06a',1,'UIList']]]
 ];
