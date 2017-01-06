@@ -10,7 +10,7 @@ var searchData=
   ['password',['password',['../structServerConfig.html#a819f5b912feb1fdb68ebd4fe36eb11ea',1,'ServerConfig::password()'],['../structDatabaseConfig.html#aa17e906c33a2f1c2d1508afa50957b35',1,'DatabaseConfig::password()']]],
   ['path',['Path',['../structPlayer.html#a3da038886ddd825ebc9612b460ecd008',1,'Player']]],
   ['player',['Player',['../structPlayer.html',1,'Player'],['../structPlayer.html#affe0cc3cb714f6deb4e62f0c0d3f1fd8',1,'Player::Player()'],['../structPlayer.html#adf15eb006b535a4e1b72b419021f1f11',1,'Player::Player(std::map&lt; std::string, GbxResponseParameter &gt; serverStruct)']]],
-  ['playerchat',['PlayerChat',['../classPlugin.html#a17096b73a575eef7c4e8c5380c08f670',1,'Plugin']]],
+  ['playerchat',['PlayerChat',['../classPlugin.html#aa88b75d9b344326bc2ea4ac599f2c501',1,'Plugin']]],
   ['playercheckpoint',['PlayerCheckpoint',['../classPlugin.html#abc2ce0103b7783a4ff4b3009cb18af7b',1,'Plugin']]],
   ['playerconnect',['PlayerConnect',['../classPlugin.html#a02e032f548c5a002496ab6b02788342b',1,'Plugin']]],
   ['playerdetailed',['PlayerDetailed',['../structPlayer.html#a4e7c4a5bfc6fe42e23069a79f495b461',1,'Player']]],

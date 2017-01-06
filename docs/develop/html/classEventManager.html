@@ -106,9 +106,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a56ed11f893eb5beebfbf294a196005e5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a56ed11f893eb5beebfbf294a196005e5">RegisterPlayerDisconnect</a> (std::vector&lt; std::function&lt; void(<a class="el" href="structPlayer.html">Player</a>)&gt;&gt; functions)</td></tr>
 <tr class="memdesc:a56ed11f893eb5beebfbf294a196005e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register functions for the PlayerDisconnect callback.  <a href="#a56ed11f893eb5beebfbf294a196005e5">More...</a><br/></td></tr>
 <tr class="separator:a56ed11f893eb5beebfbf294a196005e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42b05790b31a3c4cdbecd3f77a2e5cf0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a42b05790b31a3c4cdbecd3f77a2e5cf0">RegisterPlayerChat</a> (std::vector&lt; std::function&lt; void(<a class="el" href="structPlayer.html">Player</a>, std::string, bool)&gt;&gt; functions)</td></tr>
-<tr class="memdesc:a42b05790b31a3c4cdbecd3f77a2e5cf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register functions for the PlayerChat callback.  <a href="#a42b05790b31a3c4cdbecd3f77a2e5cf0">More...</a><br/></td></tr>
-<tr class="separator:a42b05790b31a3c4cdbecd3f77a2e5cf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05a0b5a63f308f3b948b4eaa132825e3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a05a0b5a63f308f3b948b4eaa132825e3">RegisterPlayerChat</a> (std::vector&lt; std::function&lt; void(<a class="el" href="structPlayer.html">Player</a>, std::string)&gt;&gt; functions)</td></tr>
+<tr class="memdesc:a05a0b5a63f308f3b948b4eaa132825e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register functions for the PlayerChat callback.  <a href="#a05a0b5a63f308f3b948b4eaa132825e3">More...</a><br/></td></tr>
+<tr class="separator:a05a0b5a63f308f3b948b4eaa132825e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5213c8526941c4a67b08d080302dc6bc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a5213c8526941c4a67b08d080302dc6bc">RegisterPlayerManialinkPageAnswer</a> (std::vector&lt; std::function&lt; void(<a class="el" href="structPlayer.html">Player</a>, std::string, std::vector&lt; <a class="el" href="structEntryVal.html">EntryVal</a> &gt;)&gt;&gt; functions)</td></tr>
 <tr class="memdesc:a5213c8526941c4a67b08d080302dc6bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register functions for the PlayerManialinkPageAnswer callback.  <a href="#a5213c8526941c4a67b08d080302dc6bc">More...</a><br/></td></tr>
 <tr class="separator:a5213c8526941c4a67b08d080302dc6bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -216,12 +216,11 @@ std::vector&lt; std::function<br class="typebreak"/>
 &lt; void(<a class="el" href="structPlayer.html">Player</a>)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a05df9668a34f0dd3d4a9f049d884aea9">methodsPlayerDisconnect</a></td></tr>
 <tr class="memdesc:a05df9668a34f0dd3d4a9f049d884aea9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector with functions for the PlayerDisconnect event. <br/></td></tr>
 <tr class="separator:a05df9668a34f0dd3d4a9f049d884aea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3254e563a2246e9298baf23f31b14eb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af3254e563a2246e9298baf23f31b14eb"></a>
+<tr class="memitem:ae2e1c22386c1ea3397d29cbcf3d2523d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae2e1c22386c1ea3397d29cbcf3d2523d"></a>
 std::vector&lt; std::function<br class="typebreak"/>
-&lt; void(<a class="el" href="structPlayer.html">Player</a>, std::string, <br class="typebreak"/>
-bool)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#af3254e563a2246e9298baf23f31b14eb">methodsPlayerChat</a></td></tr>
-<tr class="memdesc:af3254e563a2246e9298baf23f31b14eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector with functions for the PlayerChat event. <br/></td></tr>
-<tr class="separator:af3254e563a2246e9298baf23f31b14eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+&lt; void(<a class="el" href="structPlayer.html">Player</a>, std::string)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#ae2e1c22386c1ea3397d29cbcf3d2523d">methodsPlayerChat</a></td></tr>
+<tr class="memdesc:ae2e1c22386c1ea3397d29cbcf3d2523d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector with functions for the PlayerChat event. <br/></td></tr>
+<tr class="separator:ae2e1c22386c1ea3397d29cbcf3d2523d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28d7fbe547c5177f293208ccf4f98fce"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a28d7fbe547c5177f293208ccf4f98fce"></a>
 std::vector&lt; std::function<br class="typebreak"/>
 &lt; void(<a class="el" href="structPlayer.html">Player</a>, std::string, <br class="typebreak"/>
@@ -1051,14 +1050,14 @@ std::string)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a clas
 
 </div>
 </div>
-<a class="anchor" id="a42b05790b31a3c4cdbecd3f77a2e5cf0"></a>
+<a class="anchor" id="a05a0b5a63f308f3b948b4eaa132825e3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">int EventManager::RegisterPlayerChat </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; std::function&lt; void(<a class="el" href="structPlayer.html">Player</a>, std::string, bool)&gt;&gt;&#160;</td>
+          <td class="paramtype">std::vector&lt; std::function&lt; void(<a class="el" href="structPlayer.html">Player</a>, std::string)&gt;&gt;&#160;</td>
           <td class="paramname"><em>functions</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1308,7 +1307,7 @@ std::string)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a clas
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 6 2017 00:08:00 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jan 6 2017 00:24:29 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

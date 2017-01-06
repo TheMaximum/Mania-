@@ -14,7 +14,7 @@ var searchData=
   ['registerendmap',['RegisterEndMap',['../classEventManager.html#aa8cff04bd5efe5933b99e9cd4d2862d3',1,'EventManager']]],
   ['registerendmatch',['RegisterEndMatch',['../classEventManager.html#a3d109b973ec50e1a06475b86f005f345',1,'EventManager']]],
   ['registermaplistmodified',['RegisterMapListModified',['../classEventManager.html#a2793498f3b1e3bf82c9d8caab49387c0',1,'EventManager']]],
-  ['registerplayerchat',['RegisterPlayerChat',['../classEventManager.html#a42b05790b31a3c4cdbecd3f77a2e5cf0',1,'EventManager']]],
+  ['registerplayerchat',['RegisterPlayerChat',['../classEventManager.html#a05a0b5a63f308f3b948b4eaa132825e3',1,'EventManager']]],
   ['registerplayercheckpoint',['RegisterPlayerCheckpoint',['../classEventManager.html#ac9a8f0e6f7c4750e476059955042ccad',1,'EventManager']]],
   ['registerplayerconnect',['RegisterPlayerConnect',['../classEventManager.html#a26aec3d9c2cfbdcb62c0f8e432c2fcae',1,'EventManager']]],
   ['registerplayerdisconnect',['RegisterPlayerDisconnect',['../classEventManager.html#a56ed11f893eb5beebfbf294a196005e5',1,'EventManager']]],
