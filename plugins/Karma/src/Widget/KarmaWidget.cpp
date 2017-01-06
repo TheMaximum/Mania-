@@ -85,15 +85,15 @@ bool KarmaWidget::DisplayToPlayer(Player player, MapKarma* karma, int personalSc
         widget << "        <quad posn=\"1.75 -5.25 1.6\" sizen=\"3.5 3.5\" style=\"Icons64x64_1\" substyle=\"LvlRed\"/>";
 
     widget << "        <quad posn=\"2 -5.5 1.75\" sizen=\"3 3\" style=\"Icons64x64_1\" substyle=\"Sub\" action=\"" << NegativeAction << "\" />";
-    widget << "        <label posn=\"3.5 -8.5 1.75\" halign=\"center\" sizen=\"3 1\" text=\"$f00" << karma->MinVotes << "\" />";
+    widget << "        <label posn=\"3.5 -8.5 1.75\" halign=\"center\" sizen=\"3 1\" text=\"$s$f00" << karma->MinVotes << "\" />";
 
     if(personalScore == 1)
         widget << "        <quad posn=\"9.75 -5.25 1.6\" sizen=\"3.5 3.5\" style=\"Icons64x64_1\" substyle=\"LvlGreen\"/>";
 
     widget << "        <quad posn=\"10 -5.5 1.75\" sizen=\"3 3\" style=\"Icons64x64_1\" substyle=\"Add\" action=\"" << PositiveAction << "\" />";
-    widget << "        <label posn=\"11.5 -8.5 1.75\" halign=\"center\" sizen=\"3 1\"  text=\"$0f0" << karma->PlusVotes << "\"/>";
+    widget << "        <label posn=\"11.5 -8.5 1.75\" halign=\"center\" sizen=\"3 1\"  text=\"$s$0f0" << karma->PlusVotes << "\"/>";
 
-    widget << "        <label posn=\"7.5 -8.5 1.75\" halign=\"center\" sizen=\"5 1\" text=\"$fff" << karma->Percentage << "%\"/>";
+    widget << "        <label posn=\"7.5 -8.5 1.75\" halign=\"center\" sizen=\"5 1\" text=\"$s$fff" << karma->Percentage << "%\"/>";
 
     int mapKarma = (karma->PlusVotes - karma->MinVotes);
     std::string colour = "$fff";
@@ -108,7 +108,7 @@ bool KarmaWidget::DisplayToPlayer(Player player, MapKarma* karma, int personalSc
         prefix = "+";
     }
 
-    widget << "        <label posn=\"7.5 -6.35 1.75\" halign=\"center\" sizen=\"5 1\" text=\"" << colour << "$o" << prefix << mapKarma << "\"/>";
+    widget << "        <label posn=\"7.5 -6.35 1.75\" halign=\"center\" sizen=\"5 1\" text=\"" << colour << "$o$s" << prefix << mapKarma << "\"/>";
 
     double barX = 1.5;
     if(karma->Percentage == 0)

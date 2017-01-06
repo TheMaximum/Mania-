@@ -93,7 +93,7 @@ bool LocalRecordsWidget::DisplayToPlayer(Player player)
     double playerIconBoxX = (WidgetX < 0) ? widgetWidth : -2;
     double playerIconX = (WidgetX < 0) ? (widgetWidth + 0.2) : -1.8;
     std::string playerIcon = (WidgetX < 0) ? "ShowLeft2" : "ShowRight2";
-    
+
     std::stringstream widget;
     widget << "    <frame posn=\"" << WidgetX << " " << WidgetY << " 0\" id=\"Widget" << manialinkId << "\">";
     widget << "        <label posn=\"0.1 -0.1 0\" sizen=\"" << backgroundWidth << " " << backgroundHeight << "\" action=\"" << actionId << "\" text=\" \" focusareacolor1=\"" << backgroundColor << "\" focusareacolor2=\"" << backgroundFocus << "\"/>";
@@ -116,6 +116,7 @@ bool LocalRecordsWidget::DisplayToPlayer(Player player)
     double recordY = -3;
 
     std::string scoreColor = "F00F";
+    std::string topColor = "FF0F";
 
     for(int recordId = 0; recordId < records->List.size(); recordId++)
     {
@@ -123,17 +124,19 @@ bool LocalRecordsWidget::DisplayToPlayer(Player player)
         if(record.Login == player.Login)
         {
             scoreColor = "0F3F";
+            topColor = "0F3F";
             widget << "        <quad posn=\"" << playerIconBoxX << " " << (recordY + 0.35) << " 0.004\" sizen=\"2 1.95\" style=\"BgsPlayerCard\" substyle=\"BgCardSystem\"/>";
             widget << "        <quad posn=\"" << playerIconX << " " << (recordY + 0.15) << " 0.005\" sizen=\"1.6 1.6\" style=\"Icons64x64_1\" substyle=\"" << playerIcon << "\"/>";
         }
 
         widget << "        <label posn=\"2.3 " << recordY << " 0.005\" sizen=\"1.7 1.7\" halign=\"right\" scale=\"0.9\" text=\"" << (recordId + 1) << ".\"/>";
-        widget << "        <label posn=\"6 " << recordY << " 0.005\" sizen=\"3.9 1.7\" halign=\"right\" scale=\"0.9\" textcolor=\"" << scoreColor << "\" text=\"" << record.FormattedTime << "\"/>";
+        widget << "        <label posn=\"6 " << recordY << " 0.005\" sizen=\"3.9 1.7\" halign=\"right\" scale=\"0.9\" textcolor=\"" << topColor << "\" text=\"" << record.FormattedTime << "\"/>";
         widget << "        <label posn=\"6.2 " << recordY << " 0.005\" sizen=\"9.50 1.7\" scale=\"0.9\" text=\"" << Text::EscapeXML(record.NickName) << "\"/>";
 
         if(record.Login == player.Login)
         {
             scoreColor = "999F";
+            topColor = "FF0F";
         }
 
         recordY -= 1.8;

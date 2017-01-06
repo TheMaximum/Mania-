@@ -5,7 +5,7 @@ JukeboxPlugin::JukeboxPlugin()
     Version = "0.1.0";
     Author = "TheM";
 
-    RegisterCommand("maps", [this](Player player, std::vector<std::string> parameters) { DisplayMapList(player); });
+    RegisterCommand("list", [this](Player player, std::vector<std::string> parameters) { DisplayMapList(player); });
 }
 
 void JukeboxPlugin::Init()
