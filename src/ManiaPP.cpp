@@ -224,10 +224,11 @@ void ManiaPP::retrievePlayerList()
                     sql::PreparedStatement* insertPstmt;
                     try
                     {
-                        insertPstmt = database->prepareStatement("INSERT INTO `players` (`Login`, `NickName`, `UpdatedAt`) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE `NickName` = VALUES(`NickName`), `UpdatedAt` = VALUES(`UpdatedAt`)");
+                        insertPstmt = database->prepareStatement("INSERT INTO `players` (`Login`, `NickName`, `Nation`, `UpdatedAt`) VALUES (?, ?, ?, ?) ON DUPLICATE KEY UPDATE `NickName` = VALUES(`NickName`), `Nation` = VALUES(`Nation`), `UpdatedAt` = VALUES(`UpdatedAt`)");
                         insertPstmt->setString(1, newPlayer.Login);
                         insertPstmt->setString(2, newPlayer.NickName);
-                        insertPstmt->setString(3, Time::Current());
+                        insertPstmt->setString(3, newPlayer.Country);
+                        insertPstmt->setString(4, Time::Current());
                         insertPstmt->executeQuery();
                     }
                     catch(sql::SQLException &e)

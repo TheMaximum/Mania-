@@ -97,7 +97,7 @@ void LocalRecordsPlugin::OnPlayerFinish(Player player, int playerTime)
 
         try
         {
-            pstmtTimes = controller->Database->prepareStatement("INSERT INTO `rs_times` (`MapId`, `PlayerId`, `Score`, `Date`, `Checkpoints`) VALUES (?, ?, ?, ?, ?)");
+            pstmtTimes = controller->Database->prepareStatement("INSERT INTO `times` (`MapId`, `PlayerId`, `Score`, `Date`, `Checkpoints`) VALUES (?, ?, ?, ?, ?)");
             pstmtTimes->setInt(1, controller->Maps->Current->Id);
             pstmtTimes->setInt(2, player.Id);
             pstmtTimes->setInt(3, playerTime);

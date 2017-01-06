@@ -157,7 +157,7 @@ void KarmaPlugin::votePositive(Player player)
         bool displayKarma = true;
         if(personalVote != 1)
         {
-            pstmt = controller->Database->prepareStatement("INSERT INTO `rs_karma` (`MapId`, `PlayerId`, `Score`) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE `Score` = VALUES(`Score`)");
+            pstmt = controller->Database->prepareStatement("INSERT INTO `karma` (`MapId`, `PlayerId`, `Score`) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE `Score` = VALUES(`Score`)");
             pstmt->setInt(1, controller->Maps->Current->Id);
             pstmt->setInt(2, player.Id);
             pstmt->setInt(3, 1);
@@ -220,7 +220,7 @@ void KarmaPlugin::voteNegative(Player player)
         bool displayKarma = true;
         if(personalVote != 0)
         {
-            pstmt = controller->Database->prepareStatement("INSERT INTO `rs_karma` (`MapId`, `PlayerId`, `Score`) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE `Score` = VALUES(`Score`)");
+            pstmt = controller->Database->prepareStatement("INSERT INTO `karma` (`MapId`, `PlayerId`, `Score`) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE `Score` = VALUES(`Score`)");
             pstmt->setInt(1, controller->Maps->Current->Id);
             pstmt->setInt(2, player.Id);
             pstmt->setInt(3, 0);
@@ -278,7 +278,7 @@ void KarmaPlugin::retrieveVotes(Map map)
     sql::ResultSet* result;
     try
     {
-        pstmt = controller->Database->prepareStatement("SELECT * FROM `rs_karma` WHERE `MapId` = ?");
+        pstmt = controller->Database->prepareStatement("SELECT * FROM `karma` WHERE `MapId` = ?");
         pstmt->setInt(1, map.Id);
         result = pstmt->executeQuery();
 
@@ -338,7 +338,7 @@ int KarmaPlugin::retrieveTimesDriven(Player player)
     sql::ResultSet* result;
     try
     {
-        pstmt = controller->Database->prepareStatement("SELECT COUNT(*) AS `timesDriven` FROM `rs_times` WHERE `PlayerId` = ? AND `MapId` = ?");
+        pstmt = controller->Database->prepareStatement("SELECT COUNT(*) AS `timesDriven` FROM `times` WHERE `PlayerId` = ? AND `MapId` = ?");
         pstmt->setInt(1, player.Id);
         pstmt->setInt(2, controller->Maps->Current->Id);
         result = pstmt->executeQuery();
