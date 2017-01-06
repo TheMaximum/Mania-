@@ -109,7 +109,7 @@ void CallBackManager::HandlePlayerConnect(std::vector<GbxResponseParameter> para
         sql::PreparedStatement* insertPstmt;
         try
         {
-            insertPstmt = database->prepareStatement("INSERT INTO `players` (`Login`, `NickName`, `Nation`, `UpdatedAt`) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE `NickName` = VALUES(`NickName`), `Nation` = VALUES(`Nation`), `UpdatedAt` = VALUES(`UpdatedAt`)");
+            insertPstmt = database->prepareStatement("INSERT INTO `players` (`Login`, `NickName`, `Nation`, `UpdatedAt`) VALUES (?, ?, ?, ?) ON DUPLICATE KEY UPDATE `NickName` = VALUES(`NickName`), `Nation` = VALUES(`Nation`), `UpdatedAt` = VALUES(`UpdatedAt`)");
             insertPstmt->setString(1, newPlayer.Login);
             insertPstmt->setString(2, newPlayer.NickName);
             insertPstmt->setString(3, newPlayer.Country);

@@ -19,12 +19,9 @@ public:
     void OnPlayerConnect(Player player);
     void OnPlayerChat(Player player, std::string text);
 
-    void VotePositiveAction(Player player, std::string answer, std::vector<EntryVal> entries);
-    void VoteNegativeAction(Player player, std::string answer, std::vector<EntryVal> entries);
-
-    void DisplayKarma(Player player, std::vector<std::string> parameters);
-    void VotePositiveChat(Player player, std::vector<std::string> parameters);
-    void VoteNegativeChat(Player player, std::vector<std::string> parameters);
+    void DisplayCurrentKarma(Player player);
+    void VoteNegative(Player player);
+    void VotePositive(Player player);
 
 private:
     std::map<std::string, int> votes;
@@ -39,10 +36,6 @@ private:
     void loadSettings();
     void displayToAll();
     void retrieveVotes(Map map);
-    void displayCurrentKarma(Player player);
-
-    void voteNegative(Player player);
-    void votePositive(Player player);
 
     int retrieveTimesDriven(Player player);
 };

@@ -10,9 +10,9 @@ KarmaPlugin::KarmaPlugin()
     PlayerConnect.push_back([this](Player player) { OnPlayerConnect(player); });
     PlayerChat.push_back([this](Player player, std::string text) { OnPlayerChat(player, text); });
 
-    RegisterCommand("karma", [this](Player player, std::vector<std::string> parameters) { DisplayKarma(player, parameters); });
-    RegisterCommand("++", [this](Player player, std::vector<std::string> parameters) { VotePositiveChat(player, parameters); });
-    RegisterCommand("--", [this](Player player, std::vector<std::string> parameters) { VotePositiveChat(player, parameters); });
+    RegisterCommand("karma", [this](Player player, std::vector<std::string> parameters) { DisplayCurrentKarma(player); });
+    RegisterCommand("++", [this](Player player, std::vector<std::string> parameters) { VotePositive(player); });
+    RegisterCommand("--", [this](Player player, std::vector<std::string> parameters) { VoteNegative(player); });
 }
 
 void KarmaPlugin::Init()
@@ -21,8 +21,8 @@ void KarmaPlugin::Init()
     widget = KarmaWidget(controller->UI);
     widget.WidgetX = widgetX;
     widget.WidgetY = widgetY;
-    controller->UI->AddEvent(widget.PositiveAction, ([this](Player player, std::string answer, std::vector<EntryVal> entries) { VotePositiveAction(player, answer, entries); }));
-    controller->UI->AddEvent(widget.NegativeAction, ([this](Player player, std::string answer, std::vector<EntryVal> entries) { VoteNegativeAction(player, answer, entries); }));
+    controller->UI->AddEvent(widget.PositiveAction, ([this](Player player, std::string answer, std::vector<EntryVal> entries) { VotePositive(player); }));
+    controller->UI->AddEvent(widget.NegativeAction, ([this](Player player, std::string answer, std::vector<EntryVal> entries) { VoteNegative(player); }));
 
     retrieveVotes(*controller->Maps->Current);
     karma.Calculate(votes);
@@ -62,7 +62,7 @@ void KarmaPlugin::OnPlayerConnect(Player player)
         Logging::PrintError(controller->Server->GetCurrentError());
 }
 
-void KarmaPlugin::displayCurrentKarma(Player player)
+void KarmaPlugin::DisplayCurrentKarma(Player player)
 {
     std::stringstream chatMessage;
     chatMessage << "$ff0Current map karma: $fff" << (karma.PlusVotes - karma.MinVotes) << "$ff0 [";
@@ -97,40 +97,15 @@ void KarmaPlugin::OnPlayerChat(Player player, std::string text)
 {
     if(text.find("++") == 0)
     {
-        votePositive(player);
+        VotePositive(player);
     }
     else if(text.find("--") == 0)
     {
-        voteNegative(player);
+        VoteNegative(player);
     }
 }
 
-void KarmaPlugin::VotePositiveAction(Player player, std::string answer, std::vector<EntryVal> entries)
-{
-    votePositive(player);
-}
-
-void KarmaPlugin::VoteNegativeAction(Player player, std::string answer, std::vector<EntryVal> entries)
-{
-    voteNegative(player);
-}
-
-void KarmaPlugin::VotePositiveChat(Player player, std::vector<std::string> parameters)
-{
-    votePositive(player);
-}
-
-void KarmaPlugin::VoteNegativeChat(Player player, std::vector<std::string> parameters)
-{
-    voteNegative(player);
-}
-
-void KarmaPlugin::DisplayKarma(Player player, std::vector<std::string> parameters)
-{
-    displayCurrentKarma(player);
-}
-
-void KarmaPlugin::votePositive(Player player)
+void KarmaPlugin::VotePositive(Player player)
 {
     std::stringstream chatMessage;
     chatMessage << "$ff0";
@@ -151,11 +126,10 @@ void KarmaPlugin::votePositive(Player player)
     if(voteIt != votes.end())
         personalVote = voteIt->second;
 
-    sql::PreparedStatement* pstmt;
-    try
+    if(personalVote != 1)
     {
-        bool displayKarma = true;
-        if(personalVote != 1)
+        sql::PreparedStatement* pstmt;
+        try
         {
             pstmt = controller->Database->prepareStatement("INSERT INTO `karma` (`MapId`, `PlayerId`, `Score`) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE `Score` = VALUES(`Score`)");
             pstmt->setInt(1, controller->Maps->Current->Id);
@@ -172,28 +146,27 @@ void KarmaPlugin::votePositive(Player player)
             else
                 chatMessage << "Changed your $fff--$ff0 vote to a $fff++$ff0 vote on this map!";
         }
-        else
+        catch(sql::SQLException &e)
         {
-            chatMessage << "You already voted $fff++$ff0 on this map!";
-            displayKarma = false;
+            std::cout << "Failed to save karma for " << player.Login << " on '" << controller->Maps->Current->Name << "' ..." << std::endl;
+            Logging::PrintError(e.getErrorCode(), e.what());
         }
 
-        controller->Server->ChatSendServerMessageToLogin(chatMessage.str(), player.Login);
+        if(pstmt != NULL)
+        {
+            delete pstmt;
+            pstmt = NULL;
+        }
     }
-    catch(sql::SQLException &e)
+    else
     {
-        std::cout << "Failed to save karma for " << player.Login << " on '" << controller->Maps->Current->Name << "' ..." << std::endl;
-        Logging::PrintError(e.getErrorCode(), e.what());
+        chatMessage << "You already voted $fff++$ff0 on this map!";
     }
 
-    if(pstmt != NULL)
-    {
-        delete pstmt;
-        pstmt = NULL;
-    }
+    controller->Server->ChatSendServerMessageToLogin(chatMessage.str(), player.Login);
 }
 
-void KarmaPlugin::voteNegative(Player player)
+void KarmaPlugin::VoteNegative(Player player)
 {
     std::stringstream chatMessage;
     chatMessage << "$ff0";
@@ -214,11 +187,10 @@ void KarmaPlugin::voteNegative(Player player)
     if(voteIt != votes.end())
         personalVote = voteIt->second;
 
-    sql::PreparedStatement* pstmt;
-    try
+    if(personalVote != 0)
     {
-        bool displayKarma = true;
-        if(personalVote != 0)
+        sql::PreparedStatement* pstmt;
+        try
         {
             pstmt = controller->Database->prepareStatement("INSERT INTO `karma` (`MapId`, `PlayerId`, `Score`) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE `Score` = VALUES(`Score`)");
             pstmt->setInt(1, controller->Maps->Current->Id);
@@ -235,25 +207,24 @@ void KarmaPlugin::voteNegative(Player player)
             else
                 chatMessage << "Changed your $fff++$ff0 vote to a $fff--$ff0 vote on this map!";
         }
-        else
+        catch(sql::SQLException &e)
         {
-            chatMessage << "You already voted $fff--$ff0 on this map!";
-            displayKarma = false;
+            std::cout << "Failed to save karma for " << player.Login << " on '" << controller->Maps->Current->Name << "' ..." << std::endl;
+            Logging::PrintError(e.getErrorCode(), e.what());
         }
 
-        controller->Server->ChatSendServerMessageToLogin(chatMessage.str(), player.Login);
+        if(pstmt != NULL)
+        {
+            delete pstmt;
+            pstmt = NULL;
+        }
     }
-    catch(sql::SQLException &e)
+    else
     {
-        std::cout << "Failed to save karma for " << player.Login << " on '" << controller->Maps->Current->Name << "' ..." << std::endl;
-        Logging::PrintError(e.getErrorCode(), e.what());
+        chatMessage << "You already voted $fff--$ff0 on this map!";
     }
 
-    if(pstmt != NULL)
-    {
-        delete pstmt;
-        pstmt = NULL;
-    }
+    controller->Server->ChatSendServerMessageToLogin(chatMessage.str(), player.Login);
 }
 
 void KarmaPlugin::displayToAll()

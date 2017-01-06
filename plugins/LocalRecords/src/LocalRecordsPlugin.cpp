@@ -9,7 +9,7 @@ LocalRecordsPlugin::LocalRecordsPlugin()
     PlayerConnect.push_back([this](Player player) { OnPlayerConnect(player); });
     PlayerFinish.push_back([this](Player player, int playerTime) { OnPlayerFinish(player, playerTime); });
 
-    RegisterCommand("records", [this](Player player, std::vector<std::string> parameters) { OpenLocalRecordsCommand(player, parameters); });
+    RegisterCommand("records", [this](Player player, std::vector<std::string> parameters) { OpenLocalRecords(player); });
 }
 
 void LocalRecordsPlugin::Init()
@@ -23,7 +23,7 @@ void LocalRecordsPlugin::Init()
     widget.WidgetTopCount = widgetTopCount;
     widget.WidgetX = widgetX;
     widget.WidgetY = widgetY;
-    controller->UI->AddEvent("OpenLocalRecords", ([this](Player player, std::string answer, std::vector<EntryVal> entries) { OpenLocalRecordsAnswer(player, answer, entries); }));
+    controller->UI->AddEvent("OpenLocalRecords", ([this](Player player, std::string answer, std::vector<EntryVal> entries) { OpenLocalRecords(player); }));
 
     if(!widget.DisplayToAll(controller->Players))
     {
@@ -213,14 +213,9 @@ void LocalRecordsPlugin::OnPlayerFinish(Player player, int playerTime)
     }
 }
 
-void LocalRecordsPlugin::OpenLocalRecordsAnswer(Player player, std::string answer, std::vector<EntryVal> entries)
+void LocalRecordsPlugin::OpenLocalRecords(Player player)
 {
-    std::cout << "Player '" << player.Login << "' has clicked the LocalRecords widget (" << answer << ")!" << std::endl;
-}
-
-void LocalRecordsPlugin::OpenLocalRecordsCommand(Player player, std::vector<std::string> parameters)
-{
-    std::cout << "Player '" << player.Login << "' has called /records." << std::endl;
+    std::cout << "Player '" << player.Login << "' has called /records (or via ManiaLink)." << std::endl;
 }
 
 void LocalRecordsPlugin::displayPersonalRecord(Player player)

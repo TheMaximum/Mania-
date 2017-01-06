@@ -20,9 +20,7 @@ public:
     void OnPlayerConnect(Player player);
     void OnPlayerFinish(Player player, int time);
     void OnPlayerCheckpoint(Player player, int time, int currentLap, int checkpointIndex);
-
-    void OpenLocalRecordsAnswer(Player player, std::string answer, std::vector<EntryVal> entries);
-    void OpenLocalRecordsCommand(Player player, std::vector<std::string> parameters);
+    void OpenLocalRecords(Player player);
 
 private:
     LocalRecordsList localRecords;
