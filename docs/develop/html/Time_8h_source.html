@@ -110,35 +110,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordtype">int</span> minutes = floor(time / (1000 * 60));</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordtype">int</span> seconds = floor((time - (minutes * 60 * 1000)) / 1000);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordtype">int</span> tseconds = atoi(timeAsString.substr((timeAsString.length() - 3)).c_str());</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordtype">char</span> formattedCharArray[8];</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            sprintf(formattedCharArray, <span class="stringliteral">&quot;%d:%02d.%03d&quot;</span>, minutes, seconds, tseconds);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">return</span> std::string(formattedCharArray);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> formattedTime;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classTime.html#a77ceda2324c0e82bf2177634b8e9c812">   46</a></span>&#160;    <span class="keyword">static</span> std::string <a class="code" href="classTime.html#a77ceda2324c0e82bf2177634b8e9c812">Current</a>()</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">char</span> buffer[20];</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        time_t now = time(NULL);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        strftime(buffer, 20, <span class="stringliteral">&quot;%Y-%m-%d %H:%M:%S&quot;</span>, localtime(&amp;now));</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> std::string(buffer);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordtype">int</span> tseconds = time;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keywordflow">if</span>(timeAsString.length() &gt; 3)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                tseconds = atoi(timeAsString.substr((timeAsString.length() - 3)).c_str());</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordtype">char</span> formattedCharArray[8];</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            sprintf(formattedCharArray, <span class="stringliteral">&quot;%d:%02d.%03d&quot;</span>, minutes, seconds, tseconds);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">return</span> std::string(formattedCharArray);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> formattedTime;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classTime.html#a77ceda2324c0e82bf2177634b8e9c812">   50</a></span>&#160;    <span class="keyword">static</span> std::string <a class="code" href="classTime.html#a77ceda2324c0e82bf2177634b8e9c812">Current</a>()</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">char</span> buffer[20];</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        time_t now = time(NULL);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        strftime(buffer, 20, <span class="stringliteral">&quot;%Y-%m-%d %H:%M:%S&quot;</span>, localtime(&amp;now));</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif // TIME_H_</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">return</span> std::string(buffer);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif // TIME_H_</span></div>
 <div class="ttc" id="classTime_html"><div class="ttname"><a href="classTime.html">Time</a></div><div class="ttdoc">Contains utilities to format map times. </div><div class="ttdef"><b>Definition:</b> Time.h:12</div></div>
 <div class="ttc" id="classTime_html_a12af49ccb2dcc55223aa84c1113839c9"><div class="ttname"><a href="classTime.html#a12af49ccb2dcc55223aa84c1113839c9">Time::FormatTime</a></div><div class="ttdeci">static std::string FormatTime(int time)</div><div class="ttdoc">Formats time to 0:00.000 format. </div><div class="ttdef"><b>Definition:</b> Time.h:20</div></div>
-<div class="ttc" id="classTime_html_a77ceda2324c0e82bf2177634b8e9c812"><div class="ttname"><a href="classTime.html#a77ceda2324c0e82bf2177634b8e9c812">Time::Current</a></div><div class="ttdeci">static std::string Current()</div><div class="ttdoc">Returns the current time in yyyy-mm-dd hh:mm:ss format. </div><div class="ttdef"><b>Definition:</b> Time.h:46</div></div>
+<div class="ttc" id="classTime_html_a77ceda2324c0e82bf2177634b8e9c812"><div class="ttname"><a href="classTime.html#a77ceda2324c0e82bf2177634b8e9c812">Time::Current</a></div><div class="ttdeci">static std::string Current()</div><div class="ttdoc">Returns the current time in yyyy-mm-dd hh:mm:ss format. </div><div class="ttdef"><b>Definition:</b> Time.h:50</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 6 2017 22:11:50 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jan 6 2017 22:34:29 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
