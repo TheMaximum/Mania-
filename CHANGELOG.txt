@@ -1,0 +1,33 @@
+0.3.0: Database and ManiaLink support
+ * Database support (MySQL)
+   * Includes: maps, players, records, karma, times
+ * ManiaLink support
+   * Easy action handling
+   * Easy-to-use ManiaLink list (UIList)
+ * Chat command support
+ * Support for plugin configuration via .yaml-file
+ * Improved access from plugins to controller features
+ * Added Jukebox/Map list plugin
+ * Added Karma plugin
+   * Karma widget (Eyepiece-style)
+   * WhoKarma overview
+ * Added Local Records plugin
+   * Local Records widget (Eyepiece-style)
+ * Added Map Widget plugin (Eyepiece-style)
+
+0.2.0: Plugin system
+ * Plugin system
+   * (Dynamically) loading shared object files
+   * CallBack events
+   * Access to methods, playerlist and maplist
+ * Proper CallBack handling
+ * Easy way to call server methods (via Methods)
+
+0.1.0: GbxRemote, request/callback handling
+  * GbxRemote
+    * Socket connection with the server
+    * Send requests and receive responses
+    * Receive callbacks
+  * Handling of callbacks
+  * Keeping playerlist up-to-date
+  * Reading configuration file
