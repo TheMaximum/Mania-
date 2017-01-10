@@ -22,6 +22,9 @@ Main class.
 \hypertarget{classManiaPP_a22561171876e54dbf633c70d9924c06a}{bool \hyperlink{classManiaPP_a22561171876e54dbf633c70d9924c06a}{Connect\-To\-Server} ()}\label{classManiaPP_a22561171876e54dbf633c70d9924c06a}
 
 \begin{DoxyCompactList}\small\item\em Connects and authenticates with the server. \end{DoxyCompactList}\item 
+\hypertarget{classManiaPP_a943b0ecd20ca8c9235411d16a743e5ac}{bool \hyperlink{classManiaPP_a943b0ecd20ca8c9235411d16a743e5ac}{Connect\-To\-Database} ()}\label{classManiaPP_a943b0ecd20ca8c9235411d16a743e5ac}
+
+\begin{DoxyCompactList}\small\item\em Connects and authenticates with the database server. \end{DoxyCompactList}\item 
 \hypertarget{classManiaPP_a56d2774a29f21b3a164ae1f7ea6bd88b}{void \hyperlink{classManiaPP_a56d2774a29f21b3a164ae1f7ea6bd88b}{Print\-Server\-Info} ()}\label{classManiaPP_a56d2774a29f21b3a164ae1f7ea6bd88b}
 
 \begin{DoxyCompactList}\small\item\em Prints information about the server. \end{DoxyCompactList}\item 
@@ -34,11 +37,9 @@ Main class.
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classManiaPP_aede94c0b982250de19186d447542e479}{void \hyperlink{classManiaPP_aede94c0b982250de19186d447542e479}{retrieve\-Player\-List} ()}\label{classManiaPP_aede94c0b982250de19186d447542e479}
-
+void \hyperlink{classManiaPP_aede94c0b982250de19186d447542e479}{retrieve\-Player\-List} ()
 \begin{DoxyCompactList}\small\item\em Gets a list of current players from the server. \end{DoxyCompactList}\item 
-\hypertarget{classManiaPP_a18582fa28b259c22a8a8d526af62123a}{void \hyperlink{classManiaPP_a18582fa28b259c22a8a8d526af62123a}{retrieve\-Map\-List} ()}\label{classManiaPP_a18582fa28b259c22a8a8d526af62123a}
-
+void \hyperlink{classManiaPP_a18582fa28b259c22a8a8d526af62123a}{retrieve\-Map\-List} ()
 \begin{DoxyCompactList}\small\item\em Gets a list of current maps from the server. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -55,9 +56,9 @@ Main class.
 \hypertarget{classManiaPP_a45712ccfa91b20242b39cb1164d305d8}{std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$ \hyperlink{classManiaPP_a45712ccfa91b20242b39cb1164d305d8}{players}}\label{classManiaPP_a45712ccfa91b20242b39cb1164d305d8}
 
 \begin{DoxyCompactList}\small\item\em Contains the list of players currently on the server. \end{DoxyCompactList}\item 
-\hypertarget{classManiaPP_a903ccf13c65b15c99595cb571214799d}{std\-::map$<$ std\-::string, \hyperlink{structMap}{Map} $>$ $\ast$ \hyperlink{classManiaPP_a903ccf13c65b15c99595cb571214799d}{maps}}\label{classManiaPP_a903ccf13c65b15c99595cb571214799d}
+\hypertarget{classManiaPP_a23c7e0ba8cf5fd45129b6a7a0fbe359b}{\hyperlink{classMapList}{Map\-List} $\ast$ \hyperlink{classManiaPP_a23c7e0ba8cf5fd45129b6a7a0fbe359b}{maps}}\label{classManiaPP_a23c7e0ba8cf5fd45129b6a7a0fbe359b}
 
-\begin{DoxyCompactList}\small\item\em Contains the list of players currently on the server. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Contains the list of maps on the server. \end{DoxyCompactList}\item 
 \hypertarget{classManiaPP_a326ab543ab98eefcba8a4b616e794b96}{\hyperlink{classEventManager}{Event\-Manager} $\ast$ \hyperlink{classManiaPP_a326ab543ab98eefcba8a4b616e794b96}{events}}\label{classManiaPP_a326ab543ab98eefcba8a4b616e794b96}
 
 \begin{DoxyCompactList}\small\item\em Contains the event manager. \end{DoxyCompactList}\item 
@@ -67,9 +68,21 @@ Main class.
 \hypertarget{classManiaPP_af468d4b6eea93fd836950551eb7d3a01}{\hyperlink{classCallBackManager}{Call\-Back\-Manager} $\ast$ \hyperlink{classManiaPP_af468d4b6eea93fd836950551eb7d3a01}{callbacks}}\label{classManiaPP_af468d4b6eea93fd836950551eb7d3a01}
 
 \begin{DoxyCompactList}\small\item\em Contains the callback manager. \end{DoxyCompactList}\item 
+\hypertarget{classManiaPP_afefa9bf6ecf35fffd4d3229e17e4dd2f}{\hyperlink{classCommandManager}{Command\-Manager} $\ast$ \hyperlink{classManiaPP_afefa9bf6ecf35fffd4d3229e17e4dd2f}{commands}}\label{classManiaPP_afefa9bf6ecf35fffd4d3229e17e4dd2f}
+
+\begin{DoxyCompactList}\small\item\em Contains the command manager. \end{DoxyCompactList}\item 
 \hypertarget{classManiaPP_a48cb1ddf328d18361417986fe8ab069c}{\hyperlink{classMethods}{Methods} $\ast$ \hyperlink{classManiaPP_a48cb1ddf328d18361417986fe8ab069c}{methods}}\label{classManiaPP_a48cb1ddf328d18361417986fe8ab069c}
 
 \begin{DoxyCompactList}\small\item\em Server method caller. \end{DoxyCompactList}\item 
+\hypertarget{classManiaPP_a961146c15f25d19ffc78b3e79ad4abac}{\hyperlink{classUIManager}{U\-I\-Manager} $\ast$ \hyperlink{classManiaPP_a961146c15f25d19ffc78b3e79ad4abac}{ui}}\label{classManiaPP_a961146c15f25d19ffc78b3e79ad4abac}
+
+\begin{DoxyCompactList}\small\item\em U\-I manager (Mania\-Link). \end{DoxyCompactList}\item 
+\hypertarget{classManiaPP_a4239002fe32663b70f0f875f41b57cbc}{\hyperlink{classDatabase}{Database} $\ast$ \hyperlink{classManiaPP_a4239002fe32663b70f0f875f41b57cbc}{db} = N\-U\-L\-L}\label{classManiaPP_a4239002fe32663b70f0f875f41b57cbc}
+
+\begin{DoxyCompactList}\small\item\em Contains database connection and driver (needed on destruction). \end{DoxyCompactList}\item 
+\hypertarget{classManiaPP_ae2d403d9168ed624d1f877c85b3b38c7}{sql\-::\-Connection $\ast$ \hyperlink{classManiaPP_ae2d403d9168ed624d1f877c85b3b38c7}{database} = N\-U\-L\-L}\label{classManiaPP_ae2d403d9168ed624d1f877c85b3b38c7}
+
+\begin{DoxyCompactList}\small\item\em Contains database driver. \end{DoxyCompactList}\item 
 \hypertarget{classManiaPP_ae5cc5086f09dcdb6b5d5dd4cb9a5476c}{\hyperlink{structServerVersion}{Server\-Version} \hyperlink{classManiaPP_ae5cc5086f09dcdb6b5d5dd4cb9a5476c}{server\-Version}}\label{classManiaPP_ae5cc5086f09dcdb6b5d5dd4cb9a5476c}
 
 \begin{DoxyCompactList}\small\item\em Struct with server version information. \end{DoxyCompactList}\item 
@@ -80,6 +93,35 @@ Main class.
 
 \subsection{Detailed Description}
 Main class. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classManiaPP_a18582fa28b259c22a8a8d526af62123a}{\index{Mania\-P\-P@{Mania\-P\-P}!retrieve\-Map\-List@{retrieve\-Map\-List}}
+\index{retrieve\-Map\-List@{retrieve\-Map\-List}!ManiaPP@{Mania\-P\-P}}
+\subsubsection[{retrieve\-Map\-List}]{\setlength{\rightskip}{0pt plus 5cm}void Mania\-P\-P\-::retrieve\-Map\-List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classManiaPP_a18582fa28b259c22a8a8d526af62123a}
+
+
+Gets a list of current maps from the server. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000005}{Todo}]Insert map into database if needed. \end{DoxyRefDesc}
+\hypertarget{classManiaPP_aede94c0b982250de19186d447542e479}{\index{Mania\-P\-P@{Mania\-P\-P}!retrieve\-Player\-List@{retrieve\-Player\-List}}
+\index{retrieve\-Player\-List@{retrieve\-Player\-List}!ManiaPP@{Mania\-P\-P}}
+\subsubsection[{retrieve\-Player\-List}]{\setlength{\rightskip}{0pt plus 5cm}void Mania\-P\-P\-::retrieve\-Player\-List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classManiaPP_aede94c0b982250de19186d447542e479}
+
+
+Gets a list of current players from the server. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000004}{Todo}]Insert player into database if needed. \end{DoxyRefDesc}
+
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 

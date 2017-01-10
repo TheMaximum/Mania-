@@ -98,8 +98,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aaba219c50eef1526a771f1606cf24396"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCallBackManager.html#aaba219c50eef1526a771f1606cf24396">CallBackManager</a> (<a class="el" href="classGbxRemote.html">GbxRemote</a> *serverPtr, <a class="el" href="classEventManager.html">EventManager</a> *eventManagerPtr, std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt; *playerList, std::map&lt; std::string, <a class="el" href="structMap.html">Map</a> &gt; *mapList)</td></tr>
-<tr class="separator:aaba219c50eef1526a771f1606cf24396"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecf87c2156353eb95b8ca85bebde8b71"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCallBackManager.html#aecf87c2156353eb95b8ca85bebde8b71">CallBackManager</a> (<a class="el" href="classGbxRemote.html">GbxRemote</a> *serverPtr, <a class="el" href="classCommandManager.html">CommandManager</a> *commandManagerPtr, <a class="el" href="classEventManager.html">EventManager</a> *eventManagerPtr, sql::Connection *databasePtr, std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt; *playerList, <a class="el" href="classMapList.html">MapList</a> *mapList)</td></tr>
+<tr class="separator:aecf87c2156353eb95b8ca85bebde8b71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8af5305f668aae4c563e7039b99015c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCallBackManager.html#a8af5305f668aae4c563e7039b99015c2">HandleCallBack</a> (std::string methodName, std::vector&lt; <a class="el" href="classGbxResponseParameter.html">GbxResponseParameter</a> &gt; parameters)</td></tr>
 <tr class="memdesc:a8af5305f668aae4c563e7039b99015c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles callback (updates lists, calls plugin functions).  <a href="#a8af5305f668aae4c563e7039b99015c2">More...</a><br/></td></tr>
 <tr class="separator:a8af5305f668aae4c563e7039b99015c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -161,23 +161,31 @@ Private Attributes</h2></td></tr>
 <a class="el" href="classGbxRemote.html">GbxRemote</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCallBackManager.html#a27cccc154989a36eb80580f3d9f69c51">server</a></td></tr>
 <tr class="memdesc:a27cccc154989a36eb80580f3d9f69c51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the serverconnection. <br/></td></tr>
 <tr class="separator:a27cccc154989a36eb80580f3d9f69c51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29d2d950b831a6ab7194fa3a6951a5ef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a29d2d950b831a6ab7194fa3a6951a5ef"></a>
+<a class="el" href="classCommandManager.html">CommandManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCallBackManager.html#a29d2d950b831a6ab7194fa3a6951a5ef">commands</a></td></tr>
+<tr class="memdesc:a29d2d950b831a6ab7194fa3a6951a5ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the command manager. <br/></td></tr>
+<tr class="separator:a29d2d950b831a6ab7194fa3a6951a5ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a144945c3b30a7946674393b412746f8f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a144945c3b30a7946674393b412746f8f"></a>
 <a class="el" href="classEventManager.html">EventManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCallBackManager.html#a144945c3b30a7946674393b412746f8f">events</a></td></tr>
 <tr class="memdesc:a144945c3b30a7946674393b412746f8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the event manager. <br/></td></tr>
 <tr class="separator:a144945c3b30a7946674393b412746f8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64e970ca45d503658879c63c5b5297cd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a64e970ca45d503658879c63c5b5297cd"></a>
+sql::Connection *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCallBackManager.html#a64e970ca45d503658879c63c5b5297cd">database</a></td></tr>
+<tr class="memdesc:a64e970ca45d503658879c63c5b5297cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the database connection. <br/></td></tr>
+<tr class="separator:a64e970ca45d503658879c63c5b5297cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26e135142b37e3b02b72aa7a091ef854"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a26e135142b37e3b02b72aa7a091ef854"></a>
 std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCallBackManager.html#a26e135142b37e3b02b72aa7a091ef854">players</a></td></tr>
 <tr class="memdesc:a26e135142b37e3b02b72aa7a091ef854"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the list of players currently on the server. <br/></td></tr>
 <tr class="separator:a26e135142b37e3b02b72aa7a091ef854"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afad9b6092db2e3f98711d8e6ba6ff612"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afad9b6092db2e3f98711d8e6ba6ff612"></a>
-std::map&lt; std::string, <a class="el" href="structMap.html">Map</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCallBackManager.html#afad9b6092db2e3f98711d8e6ba6ff612">maps</a></td></tr>
-<tr class="memdesc:afad9b6092db2e3f98711d8e6ba6ff612"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the list of players currently on the server. <br/></td></tr>
-<tr class="separator:afad9b6092db2e3f98711d8e6ba6ff612"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b3c557fca85e1ba8ab292fc9df3da7c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4b3c557fca85e1ba8ab292fc9df3da7c"></a>
+<a class="el" href="classMapList.html">MapList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCallBackManager.html#a4b3c557fca85e1ba8ab292fc9df3da7c">maps</a></td></tr>
+<tr class="memdesc:a4b3c557fca85e1ba8ab292fc9df3da7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the list of players currently on the server. <br/></td></tr>
+<tr class="separator:a4b3c557fca85e1ba8ab292fc9df3da7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Handles callbacks from the server. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="aaba219c50eef1526a771f1606cf24396"></a>
+<a class="anchor" id="aecf87c2156353eb95b8ca85bebde8b71"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -190,8 +198,20 @@ std::map&lt; std::string, <a class="el" href="structMap.html">Map</a> &gt; *&#16
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="classCommandManager.html">CommandManager</a> *&#160;</td>
+          <td class="paramname"><em>commandManagerPtr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype"><a class="el" href="classEventManager.html">EventManager</a> *&#160;</td>
           <td class="paramname"><em>eventManagerPtr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sql::Connection *&#160;</td>
+          <td class="paramname"><em>databasePtr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -202,7 +222,7 @@ std::map&lt; std::string, <a class="el" href="structMap.html">Map</a> &gt; *&#16
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::map&lt; std::string, <a class="el" href="structMap.html">Map</a> &gt; *&#160;</td>
+          <td class="paramtype"><a class="el" href="classMapList.html">MapList</a> *&#160;</td>
           <td class="paramname"><em>mapList</em>&#160;</td>
         </tr>
         <tr>
@@ -217,7 +237,9 @@ std::map&lt; std::string, <a class="el" href="structMap.html">Map</a> &gt; *&#16
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">serverPtr</td><td>Pointer to the <a class="el" href="classGbxRemote.html" title="Handles communication with the ManiaPlanet server. ">GbxRemote</a>. </td></tr>
+    <tr><td class="paramname">commandManagerPtr</td><td>Pointer to the <a class="el" href="classCommandManager.html" title="Manages the chat commands. ">CommandManager</a>. </td></tr>
     <tr><td class="paramname">eventManagerPtr</td><td>Pointer to the <a class="el" href="classEventManager.html" title="Handles events (callbacks) from server to plugins. ">EventManager</a>. </td></tr>
+    <tr><td class="paramname">databasePtr</td><td>Pointer to the database connection. </td></tr>
     <tr><td class="paramname">playerList</td><td>Pointer to playerlist. </td></tr>
     <tr><td class="paramname">mapList</td><td>Pointer to maplist. </td></tr>
   </table>
@@ -677,7 +699,7 @@ std::map&lt; std::string, <a class="el" href="structMap.html">Map</a> &gt; *&#16
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Dec 30 2016 23:36:56 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jan 10 2017 21:33:49 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

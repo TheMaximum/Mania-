@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['callbackmanager',['CallBackManager',['../classCallBackManager.html#aaba219c50eef1526a771f1606cf24396',1,'CallBackManager']]],
+  ['callbackmanager',['CallBackManager',['../classCallBackManager.html#aecf87c2156353eb95b8ca85bebde8b71',1,'CallBackManager']]],
   ['callbeginmap',['CallBeginMap',['../classEventManager.html#a1bd59c3d511d37863b81d18bd09a7b5a',1,'EventManager']]],
   ['callbeginmatch',['CallBeginMatch',['../classEventManager.html#a22f3afb58eecc76787530b98e29971e2',1,'EventManager']]],
   ['callbillupdated',['CallBillUpdated',['../classEventManager.html#aee53ab1e28714b9cbcd381b23efae623',1,'EventManager']]],
@@ -17,15 +17,27 @@ var searchData=
   ['callplayerinfochanged',['CallPlayerInfoChanged',['../classEventManager.html#a1673fa8c0a40a910cb3ed800e1a2fc11',1,'EventManager']]],
   ['callplayermanialinkpageanswer',['CallPlayerManialinkPageAnswer',['../classEventManager.html#a4c2592deef52ebb2c84c83d7116705c8',1,'EventManager']]],
   ['callstatuschanged',['CallStatusChanged',['../classEventManager.html#aaf340ac134fc52a9b2c87f7db42476b5',1,'EventManager']]],
+  ['callvote',['CallVote',['../classMethods.html#a189f5fa70efe5470c45ecaa6d9824c0c',1,'Methods']]],
+  ['callvoteex',['CallVoteEx',['../classMethods.html#a55b27e8f8523061c7815ecf577bee604',1,'Methods']]],
   ['callvoteupdated',['CallVoteUpdated',['../classEventManager.html#ad9907c7d0fd7a93e336e4a99db008540',1,'EventManager']]],
+  ['cancelvote',['CancelVote',['../classMethods.html#ae7584b3c482480bbd2d3321a11e0b3b5',1,'Methods']]],
   ['changeauthpassword',['ChangeAuthPassword',['../classMethods.html#a6bef98053e6d6d4f80557be7ce841e80',1,'Methods']]],
   ['chatenablemanualrouting',['ChatEnableManualRouting',['../classMethods.html#aa6aed7b14ccfce003243e7d21fec70b4',1,'Methods']]],
   ['chatforwardtologin',['ChatForwardToLogin',['../classMethods.html#ab0a918ef2ae8ba45fa350f023d7174ab',1,'Methods']]],
   ['chatsendservermessage',['ChatSendServerMessage',['../classMethods.html#a5e639d7a4fa2e2b403dfa5adfbc47ac3',1,'Methods']]],
   ['chatsendservermessagetologin',['ChatSendServerMessageToLogin',['../classMethods.html#a200065ea89c2694f9d2af3aae686c483',1,'Methods']]],
   ['chatsendservermessagetoplayer',['ChatSendServerMessageToPlayer',['../classMethods.html#a616887260c024c6b7cabcdca9d43fdec',1,'Methods']]],
+  ['checkforupdates',['CheckForUpdates',['../classVersionChecker.html#afb48bf9325d6049baefbe2b8841d061e',1,'VersionChecker']]],
+  ['checkmapforcurrentserverparams',['CheckMapForCurrentServerParams',['../classMethods.html#a93ac30a58c96f2635fef8f05b27a7864',1,'Methods']]],
+  ['choosenextmap',['ChooseNextMap',['../classMethods.html#a8feb1efefe49126cf39089ff6a2f0cd9',1,'Methods']]],
+  ['choosenextmaplist',['ChooseNextMapList',['../classMethods.html#a7db232616b47d7afa1d3202bf156e624',1,'Methods']]],
   ['close',['Close',['../classTcpClient.html#ae7a96d69db612ef4827ee23c31332a4e',1,'TcpClient']]],
+  ['closelist',['CloseList',['../classUIManager.html#af8510d387057f6778b88d5bcd8bd97a6',1,'UIManager']]],
+  ['commandmanager',['CommandManager',['../classCommandManager.html#a8a13226bf933396a3f35dfb5bee3e813',1,'CommandManager']]],
   ['config',['Config',['../classConfig.html#ae67e338ea42e242cb5b374b6583c8b1c',1,'Config']]],
-  ['connect',['Connect',['../classTcpClient.html#ac2e9bb63b4e0dc8f4508aa2a85431fe2',1,'TcpClient']]],
-  ['connecttoserver',['ConnectToServer',['../classManiaPP.html#a22561171876e54dbf633c70d9924c06a',1,'ManiaPP']]]
+  ['connect',['Connect',['../classDatabase.html#a22555b63ce54c0b4a0e1b1aecb5e1bd4',1,'Database::Connect()'],['../classTcpClient.html#ac2e9bb63b4e0dc8f4508aa2a85431fe2',1,'TcpClient::Connect()']]],
+  ['connecttodatabase',['ConnectToDatabase',['../classManiaPP.html#a943b0ecd20ca8c9235411d16a743e5ac',1,'ManiaPP']]],
+  ['connecttoserver',['ConnectToServer',['../classManiaPP.html#a22561171876e54dbf633c70d9924c06a',1,'ManiaPP']]],
+  ['copydetailedmap',['CopyDetailedMap',['../structMap.html#aceca3c7bca81223e4b54de1cc91f7a31',1,'Map']]],
+  ['current',['Current',['../classTime.html#a77ceda2324c0e82bf2177634b8e9c812',1,'Time']]]
 ];

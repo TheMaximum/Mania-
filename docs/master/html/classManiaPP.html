@@ -111,6 +111,10 @@ Public Member Functions</h2></td></tr>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classManiaPP.html#a22561171876e54dbf633c70d9924c06a">ConnectToServer</a> ()</td></tr>
 <tr class="memdesc:a22561171876e54dbf633c70d9924c06a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connects and authenticates with the server. <br/></td></tr>
 <tr class="separator:a22561171876e54dbf633c70d9924c06a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a943b0ecd20ca8c9235411d16a743e5ac"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a943b0ecd20ca8c9235411d16a743e5ac"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classManiaPP.html#a943b0ecd20ca8c9235411d16a743e5ac">ConnectToDatabase</a> ()</td></tr>
+<tr class="memdesc:a943b0ecd20ca8c9235411d16a743e5ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connects and authenticates with the database server. <br/></td></tr>
+<tr class="separator:a943b0ecd20ca8c9235411d16a743e5ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56d2774a29f21b3a164ae1f7ea6bd88b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a56d2774a29f21b3a164ae1f7ea6bd88b"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classManiaPP.html#a56d2774a29f21b3a164ae1f7ea6bd88b">PrintServerInfo</a> ()</td></tr>
 <tr class="memdesc:a56d2774a29f21b3a164ae1f7ea6bd88b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints information about the server. <br/></td></tr>
@@ -126,13 +130,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:aede94c0b982250de19186d447542e479"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aede94c0b982250de19186d447542e479"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classManiaPP.html#aede94c0b982250de19186d447542e479">retrievePlayerList</a> ()</td></tr>
-<tr class="memdesc:aede94c0b982250de19186d447542e479"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a list of current players from the server. <br/></td></tr>
+<tr class="memitem:aede94c0b982250de19186d447542e479"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classManiaPP.html#aede94c0b982250de19186d447542e479">retrievePlayerList</a> ()</td></tr>
+<tr class="memdesc:aede94c0b982250de19186d447542e479"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a list of current players from the server.  <a href="#aede94c0b982250de19186d447542e479">More...</a><br/></td></tr>
 <tr class="separator:aede94c0b982250de19186d447542e479"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18582fa28b259c22a8a8d526af62123a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a18582fa28b259c22a8a8d526af62123a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classManiaPP.html#a18582fa28b259c22a8a8d526af62123a">retrieveMapList</a> ()</td></tr>
-<tr class="memdesc:a18582fa28b259c22a8a8d526af62123a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a list of current maps from the server. <br/></td></tr>
+<tr class="memitem:a18582fa28b259c22a8a8d526af62123a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classManiaPP.html#a18582fa28b259c22a8a8d526af62123a">retrieveMapList</a> ()</td></tr>
+<tr class="memdesc:a18582fa28b259c22a8a8d526af62123a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a list of current maps from the server.  <a href="#a18582fa28b259c22a8a8d526af62123a">More...</a><br/></td></tr>
 <tr class="separator:a18582fa28b259c22a8a8d526af62123a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -153,10 +155,10 @@ Private Attributes</h2></td></tr>
 std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classManiaPP.html#a45712ccfa91b20242b39cb1164d305d8">players</a></td></tr>
 <tr class="memdesc:a45712ccfa91b20242b39cb1164d305d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the list of players currently on the server. <br/></td></tr>
 <tr class="separator:a45712ccfa91b20242b39cb1164d305d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a903ccf13c65b15c99595cb571214799d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a903ccf13c65b15c99595cb571214799d"></a>
-std::map&lt; std::string, <a class="el" href="structMap.html">Map</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classManiaPP.html#a903ccf13c65b15c99595cb571214799d">maps</a></td></tr>
-<tr class="memdesc:a903ccf13c65b15c99595cb571214799d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the list of players currently on the server. <br/></td></tr>
-<tr class="separator:a903ccf13c65b15c99595cb571214799d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23c7e0ba8cf5fd45129b6a7a0fbe359b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a23c7e0ba8cf5fd45129b6a7a0fbe359b"></a>
+<a class="el" href="classMapList.html">MapList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classManiaPP.html#a23c7e0ba8cf5fd45129b6a7a0fbe359b">maps</a></td></tr>
+<tr class="memdesc:a23c7e0ba8cf5fd45129b6a7a0fbe359b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the list of maps on the server. <br/></td></tr>
+<tr class="separator:a23c7e0ba8cf5fd45129b6a7a0fbe359b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a326ab543ab98eefcba8a4b616e794b96"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a326ab543ab98eefcba8a4b616e794b96"></a>
 <a class="el" href="classEventManager.html">EventManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classManiaPP.html#a326ab543ab98eefcba8a4b616e794b96">events</a></td></tr>
 <tr class="memdesc:a326ab543ab98eefcba8a4b616e794b96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the event manager. <br/></td></tr>
@@ -169,10 +171,26 @@ std::map&lt; std::string, <a class="el" href="structMap.html">Map</a> &gt; *&#16
 <a class="el" href="classCallBackManager.html">CallBackManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classManiaPP.html#af468d4b6eea93fd836950551eb7d3a01">callbacks</a></td></tr>
 <tr class="memdesc:af468d4b6eea93fd836950551eb7d3a01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the callback manager. <br/></td></tr>
 <tr class="separator:af468d4b6eea93fd836950551eb7d3a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afefa9bf6ecf35fffd4d3229e17e4dd2f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afefa9bf6ecf35fffd4d3229e17e4dd2f"></a>
+<a class="el" href="classCommandManager.html">CommandManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classManiaPP.html#afefa9bf6ecf35fffd4d3229e17e4dd2f">commands</a></td></tr>
+<tr class="memdesc:afefa9bf6ecf35fffd4d3229e17e4dd2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the command manager. <br/></td></tr>
+<tr class="separator:afefa9bf6ecf35fffd4d3229e17e4dd2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48cb1ddf328d18361417986fe8ab069c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a48cb1ddf328d18361417986fe8ab069c"></a>
 <a class="el" href="classMethods.html">Methods</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classManiaPP.html#a48cb1ddf328d18361417986fe8ab069c">methods</a></td></tr>
 <tr class="memdesc:a48cb1ddf328d18361417986fe8ab069c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Server method caller. <br/></td></tr>
 <tr class="separator:a48cb1ddf328d18361417986fe8ab069c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a961146c15f25d19ffc78b3e79ad4abac"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a961146c15f25d19ffc78b3e79ad4abac"></a>
+<a class="el" href="classUIManager.html">UIManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classManiaPP.html#a961146c15f25d19ffc78b3e79ad4abac">ui</a></td></tr>
+<tr class="memdesc:a961146c15f25d19ffc78b3e79ad4abac"><td class="mdescLeft">&#160;</td><td class="mdescRight">UI manager (ManiaLink). <br/></td></tr>
+<tr class="separator:a961146c15f25d19ffc78b3e79ad4abac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4239002fe32663b70f0f875f41b57cbc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4239002fe32663b70f0f875f41b57cbc"></a>
+<a class="el" href="classDatabase.html">Database</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classManiaPP.html#a4239002fe32663b70f0f875f41b57cbc">db</a> = NULL</td></tr>
+<tr class="memdesc:a4239002fe32663b70f0f875f41b57cbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains database connection and driver (needed on destruction). <br/></td></tr>
+<tr class="separator:a4239002fe32663b70f0f875f41b57cbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2d403d9168ed624d1f877c85b3b38c7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae2d403d9168ed624d1f877c85b3b38c7"></a>
+sql::Connection *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classManiaPP.html#ae2d403d9168ed624d1f877c85b3b38c7">database</a> = NULL</td></tr>
+<tr class="memdesc:ae2d403d9168ed624d1f877c85b3b38c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains database driver. <br/></td></tr>
+<tr class="separator:ae2d403d9168ed624d1f877c85b3b38c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5cc5086f09dcdb6b5d5dd4cb9a5476c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae5cc5086f09dcdb6b5d5dd4cb9a5476c"></a>
 <a class="el" href="structServerVersion.html">ServerVersion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classManiaPP.html#ae5cc5086f09dcdb6b5d5dd4cb9a5476c">serverVersion</a></td></tr>
 <tr class="memdesc:ae5cc5086f09dcdb6b5d5dd4cb9a5476c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct with server version information. <br/></td></tr>
@@ -184,14 +202,67 @@ std::map&lt; std::string, <a class="el" href="structMap.html">Map</a> &gt; *&#16
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Main class. </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a18582fa28b259c22a8a8d526af62123a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ManiaPP::retrieveMapList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a list of current maps from the server. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">Todo:</a></b></dt><dd>Insert map into database if needed. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aede94c0b982250de19186d447542e479"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ManiaPP::retrievePlayerList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a list of current players from the server. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo:</a></b></dt><dd>Insert player into database if needed. </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/travis/build/TheMaximum/mania-pp/src/<a class="el" href="ManiaPP_8h_source.html">ManiaPP.h</a></li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/ManiaPP.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Dec 30 2016 23:36:57 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jan 10 2017 21:33:50 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['_7econfig',['~Config',['../classConfig.html#a543dce59b66475c5108088ee4ce1cdfc',1,'Config']]],
-  ['_7egbxparameters',['~GbxParameters',['../classGbxParameters.html#afac5dd05e28a0e7014483317fc83fdf5',1,'GbxParameters']]],
-  ['_7egbxremote',['~GbxRemote',['../classGbxRemote.html#a9ac65a51eb6f9127337b4f99841cfe2d',1,'GbxRemote']]],
-  ['_7emaniapp',['~ManiaPP',['../classManiaPP.html#a1c78c3b51db550609011fb6fdcb26ec8',1,'ManiaPP']]],
-  ['_7epluginmanager',['~PluginManager',['../classPluginManager.html#ab657302ef5af357907ae11ad817f5dfc',1,'PluginManager']]]
+  ['xml',['xml',['../classGbxMessage.html#a6ea9adbeb3f1c104fa08fce0b1a4090d',1,'GbxMessage']]],
+  ['xmltype',['xmlType',['../classGbxParameter.html#ad5182c3df0c77e011c61e00e182f8a49',1,'GbxParameter']]]
 ];

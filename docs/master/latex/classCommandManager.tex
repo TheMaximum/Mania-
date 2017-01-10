@@ -1,0 +1,100 @@
+\hypertarget{classCommandManager}{\section{Command\-Manager Class Reference}
+\label{classCommandManager}\index{Command\-Manager@{Command\-Manager}}
+}
+
+
+Manages the chat commands.  
+
+
+
+
+{\ttfamily \#include $<$Command\-Manager.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCommandManager_a8a13226bf933396a3f35dfb5bee3e813}{\hyperlink{classCommandManager_a8a13226bf933396a3f35dfb5bee3e813}{Command\-Manager} ()}\label{classCommandManager_a8a13226bf933396a3f35dfb5bee3e813}
+
+\begin{DoxyCompactList}\small\item\em Initializes the command-\/maps. \end{DoxyCompactList}\item 
+int \hyperlink{classCommandManager_a777c8b1861f5439013c9b8583cf2c0dc}{Register\-Commands} (std\-::map$<$ std\-::string, std\-::function$<$ void(\hyperlink{structPlayer}{Player}, std\-::vector$<$ std\-::string $>$)$>$$>$ methods)
+\begin{DoxyCompactList}\small\item\em Registers the chat commands (from the plugins). \end{DoxyCompactList}\item 
+int \hyperlink{classCommandManager_af21873775c4c38a9257e27b28c0f0054}{Register\-Admin\-Commands} (std\-::map$<$ std\-::string, std\-::function$<$ void(\hyperlink{structPlayer}{Player}, std\-::vector$<$ std\-::string $>$)$>$$>$ methods)
+\begin{DoxyCompactList}\small\item\em Registers the admin chat commands (from the plugins). \end{DoxyCompactList}\item 
+void \hyperlink{classCommandManager_a42082bb9a76c725e58aa9c327dd41080}{Handle\-Command} (\hyperlink{structPlayer}{Player} player, std\-::string text)
+\begin{DoxyCompactList}\small\item\em Handles chat commands (from Player\-Chat callback). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCommandManager_afe0e49a7ea5ca7bed954e6a120fd8475}{std\-::map$<$ std\-::string, \\*
+std\-::function$<$ void(\hyperlink{structPlayer}{Player}, \\*
+std\-::vector$<$ std\-::string $>$)$>$ $>$ \hyperlink{classCommandManager_afe0e49a7ea5ca7bed954e6a120fd8475}{commands}}\label{classCommandManager_afe0e49a7ea5ca7bed954e6a120fd8475}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{structMap}{Map} with normal chat commands. \end{DoxyCompactList}\item 
+\hypertarget{classCommandManager_a6e3f6e976eae418ffa3063482e210fda}{std\-::map$<$ std\-::string, \\*
+std\-::function$<$ void(\hyperlink{structPlayer}{Player}, \\*
+std\-::vector$<$ std\-::string $>$)$>$ $>$ \hyperlink{classCommandManager_a6e3f6e976eae418ffa3063482e210fda}{admin\-Commands}}\label{classCommandManager_a6e3f6e976eae418ffa3063482e210fda}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{structMap}{Map} with admin chat commands. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages the chat commands. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classCommandManager_a42082bb9a76c725e58aa9c327dd41080}{\index{Command\-Manager@{Command\-Manager}!Handle\-Command@{Handle\-Command}}
+\index{Handle\-Command@{Handle\-Command}!CommandManager@{Command\-Manager}}
+\subsubsection[{Handle\-Command}]{\setlength{\rightskip}{0pt plus 5cm}void Command\-Manager\-::\-Handle\-Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Player}}]{player, }
+\item[{std\-::string}]{text}
+\end{DoxyParamCaption}
+)}}\label{classCommandManager_a42082bb9a76c725e58aa9c327dd41080}
+
+
+Handles chat commands (from Player\-Chat callback). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Author of the command request. \\
+\hline
+{\em text} & Chat message. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCommandManager_af21873775c4c38a9257e27b28c0f0054}{\index{Command\-Manager@{Command\-Manager}!Register\-Admin\-Commands@{Register\-Admin\-Commands}}
+\index{Register\-Admin\-Commands@{Register\-Admin\-Commands}!CommandManager@{Command\-Manager}}
+\subsubsection[{Register\-Admin\-Commands}]{\setlength{\rightskip}{0pt plus 5cm}int Command\-Manager\-::\-Register\-Admin\-Commands (
+\begin{DoxyParamCaption}
+\item[{std\-::map$<$ std\-::string, std\-::function$<$ void({\bf Player}, std\-::vector$<$ std\-::string $>$)$>$$>$}]{methods}
+\end{DoxyParamCaption}
+)}}\label{classCommandManager_af21873775c4c38a9257e27b28c0f0054}
+
+
+Registers the admin chat commands (from the plugins). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em methods} & \hyperlink{classPlugin}{Plugin} methods with admin command name. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCommandManager_a777c8b1861f5439013c9b8583cf2c0dc}{\index{Command\-Manager@{Command\-Manager}!Register\-Commands@{Register\-Commands}}
+\index{Register\-Commands@{Register\-Commands}!CommandManager@{Command\-Manager}}
+\subsubsection[{Register\-Commands}]{\setlength{\rightskip}{0pt plus 5cm}int Command\-Manager\-::\-Register\-Commands (
+\begin{DoxyParamCaption}
+\item[{std\-::map$<$ std\-::string, std\-::function$<$ void({\bf Player}, std\-::vector$<$ std\-::string $>$)$>$$>$}]{methods}
+\end{DoxyParamCaption}
+)}}\label{classCommandManager_a777c8b1861f5439013c9b8583cf2c0dc}
+
+
+Registers the chat commands (from the plugins). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em methods} & \hyperlink{classPlugin}{Plugin} methods with command name. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Commands/Command\-Manager.\-h\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Commands/Command\-Manager.\-cpp\end{DoxyCompactItemize}

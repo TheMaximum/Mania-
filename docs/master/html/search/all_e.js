@@ -1,27 +1,5 @@
 var searchData=
 [
-  ['rank',['Rank',['../structPlayerRanking.html#a2a24769e93ee152b144ee693c60485ee',1,'PlayerRanking']]],
-  ['readcallbacks',['ReadCallBacks',['../classGbxRemote.html#ac595861af2f4d7349ce3841f0758507d',1,'GbxRemote']]],
-  ['receive',['Receive',['../classTcpClient.html#aa000d653ba13fb447642e81890cdc866',1,'TcpClient']]],
-  ['registerbeginmap',['RegisterBeginMap',['../classEventManager.html#ae77dfbbb9640ca9aa5b458d6959676ea',1,'EventManager']]],
-  ['registerbeginmatch',['RegisterBeginMatch',['../classEventManager.html#afb7b0d6fd646ce3eb0568c95c8a4b89c',1,'EventManager']]],
-  ['registerbillupdated',['RegisterBillUpdated',['../classEventManager.html#a8ce3c162bdc0cad5ea03e9bf1233c991',1,'EventManager']]],
-  ['registerecho',['RegisterEcho',['../classEventManager.html#aee6fe2f94e1c86af6ec79735771701d0',1,'EventManager']]],
-  ['registerendmap',['RegisterEndMap',['../classEventManager.html#aa8cff04bd5efe5933b99e9cd4d2862d3',1,'EventManager']]],
-  ['registerendmatch',['RegisterEndMatch',['../classEventManager.html#a3d109b973ec50e1a06475b86f005f345',1,'EventManager']]],
-  ['registermaplistmodified',['RegisterMapListModified',['../classEventManager.html#a2793498f3b1e3bf82c9d8caab49387c0',1,'EventManager']]],
-  ['registerplayerchat',['RegisterPlayerChat',['../classEventManager.html#a42b05790b31a3c4cdbecd3f77a2e5cf0',1,'EventManager']]],
-  ['registerplayercheckpoint',['RegisterPlayerCheckpoint',['../classEventManager.html#ac9a8f0e6f7c4750e476059955042ccad',1,'EventManager']]],
-  ['registerplayerconnect',['RegisterPlayerConnect',['../classEventManager.html#a26aec3d9c2cfbdcb62c0f8e432c2fcae',1,'EventManager']]],
-  ['registerplayerdisconnect',['RegisterPlayerDisconnect',['../classEventManager.html#a56ed11f893eb5beebfbf294a196005e5',1,'EventManager']]],
-  ['registerplayerfinish',['RegisterPlayerFinish',['../classEventManager.html#a4f23806f21b01bd408630d604f8cb6a0',1,'EventManager']]],
-  ['registerplayerincoherence',['RegisterPlayerIncoherence',['../classEventManager.html#a05fec5b169d8bf0abd1e32908b33c074',1,'EventManager']]],
-  ['registerplayerinfochanged',['RegisterPlayerInfoChanged',['../classEventManager.html#a1ffe0d4b4a0bdbb8e488bc3bd3a58178',1,'EventManager']]],
-  ['registerplayermanialinkpageanswer',['RegisterPlayerManialinkPageAnswer',['../classEventManager.html#a5213c8526941c4a67b08d080302dc6bc',1,'EventManager']]],
-  ['registerstatuschanged',['RegisterStatusChanged',['../classEventManager.html#ad84c001cc738faa396aaa5948573b682',1,'EventManager']]],
-  ['registervoteupdated',['RegisterVoteUpdated',['../classEventManager.html#aa8833f57b1732204762c4d64c8546c53',1,'EventManager']]],
-  ['requesthandle',['RequestHandle',['../classTcpClient.html#a57ffabce89de6e0f07a3717758f67fe6',1,'TcpClient']]],
-  ['resetcbresponses',['ResetCBResponses',['../classGbxRemote.html#a81ba62f042948610a3cf720316e22076',1,'GbxRemote']]],
-  ['retrievemaplist',['retrieveMapList',['../classManiaPP.html#a18582fa28b259c22a8a8d526af62123a',1,'ManiaPP']]],
-  ['retrieveplayerlist',['retrievePlayerList',['../classManiaPP.html#aede94c0b982250de19186d447542e479',1,'ManiaPP']]]
+  ['query',['Query',['../classGbxRemote.html#a8ecc0e0625a8dca310cebd78bd2b3c7e',1,'GbxRemote']]],
+  ['quitgame',['QuitGame',['../classMethods.html#aee11e205500b7ad449c025c8e3e4b11b',1,'Methods']]]
 ];

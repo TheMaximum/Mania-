@@ -79,15 +79,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><dl class="reflist">
-<dt><a class="anchor" id="_todo000001"></a>Member <a class="el" href="classCallBackManager.html#aaba219c50eef1526a771f1606cf24396">CallBackManager::CallBackManager</a>  (<a class="el" href="classGbxRemote.html" title="Handles communication with the ManiaPlanet server. ">GbxRemote</a> *serverPtr, <a class="el" href="classEventManager.html" title="Handles events (callbacks) from server to plugins. ">EventManager</a> *eventManagerPtr, std::map&lt; std::string, Player &gt; *playerList, std::map&lt; std::string, Map &gt; *mapList)</dt>
+<dt><a class="anchor" id="_todo000001"></a>Member <a class="el" href="classCallBackManager.html#aecf87c2156353eb95b8ca85bebde8b71">CallBackManager::CallBackManager</a>  (<a class="el" href="classGbxRemote.html" title="Handles communication with the ManiaPlanet server. ">GbxRemote</a> *serverPtr, <a class="el" href="classCommandManager.html" title="Manages the chat commands. ">CommandManager</a> *commandManagerPtr, <a class="el" href="classEventManager.html" title="Handles events (callbacks) from server to plugins. ">EventManager</a> *eventManagerPtr, sql::Connection *databasePtr, std::map&lt; std::string, Player &gt; *playerList, <a class="el" href="classMapList.html" title="Contains the maplist and a pointer to the current map. ">MapList</a> *mapList)</dt>
 <dd>Replace pointer to <a class="el" href="classGbxRemote.html" title="Handles communication with the ManiaPlanet server. ">GbxRemote</a> with pointer to <a class="el" href="classMethods.html" title="Contains all server methods and returns usable data types. ">Methods</a>. </dd>
+<dt><a class="anchor" id="_todo000003"></a>Class <a class="el" href="classGbxParameter.html">GbxParameter</a>  </dt>
+<dd>Handle structs.  </dd>
 <dt><a class="anchor" id="_todo000002"></a>Class <a class="el" href="classGbxRemote.html">GbxRemote</a>  </dt>
-<dd>Make it possible to set an API version without upsetting TinyXML2. </dd>
+<dd>Make it possible to set an API version without upsetting TinyXML2.  </dd>
+<dt><a class="anchor" id="_todo000005"></a>Member <a class="el" href="classManiaPP.html#a18582fa28b259c22a8a8d526af62123a">ManiaPP::retrieveMapList</a>  ()</dt>
+<dd>Insert map into database if needed.  </dd>
+<dt><a class="anchor" id="_todo000004"></a>Member <a class="el" href="classManiaPP.html#aede94c0b982250de19186d447542e479">ManiaPP::retrievePlayerList</a>  ()</dt>
+<dd>Insert player into database if needed.  </dd>
+<dt><a class="anchor" id="_todo000006"></a>Member <a class="el" href="classMethods.html#a0572ff430bc8be89035033fe17d8486a">Methods::SetCallVoteRatiosEx</a>  (bool replaceAll, std::vector&lt; ExtendedCallVoteRatio &gt; ratios)</dt>
+<dd>Implement when <a class="el" href="classGbxParameters.html" title="List of parameters. ">GbxParameters</a> supports structs. </dd>
 </dl>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Dec 30 2016 23:36:56 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jan 10 2017 21:33:49 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

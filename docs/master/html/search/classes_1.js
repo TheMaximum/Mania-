@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['entryval',['EntryVal',['../structEntryVal.html',1,'']]],
-  ['eventmanager',['EventManager',['../classEventManager.html',1,'']]]
+  ['database',['Database',['../classDatabase.html',1,'']]],
+  ['databaseconfig',['DatabaseConfig',['../structDatabaseConfig.html',1,'']]]
 ];

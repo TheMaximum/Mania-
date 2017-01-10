@@ -1,0 +1,102 @@
+\hypertarget{classDatabase}{\section{Database Class Reference}
+\label{classDatabase}\index{Database@{Database}}
+}
+
+
+Handles the connection to the database.  
+
+
+
+
+{\ttfamily \#include $<$Database.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDatabase_acebb76b52b5efea89c7417d65bb5980e}{Database} (std\-::string server\-Address, int server\-Port=3306)
+\begin{DoxyCompactList}\small\item\em Sets a few settings. \end{DoxyCompactList}\item 
+\hyperlink{classDatabase_a84d399a2ad58d69daab9b05330e1316d}{$\sim$\-Database} ()
+\item 
+sql\-::\-Connection $\ast$ \hyperlink{classDatabase_a22555b63ce54c0b4a0e1b1aecb5e1bd4}{Connect} (std\-::string username, std\-::string password, std\-::string database)
+\begin{DoxyCompactList}\small\item\em Connects to the database. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classDatabase_af6294bc6951029de6c33c90a7d298541}{sql\-::\-Driver $\ast$ \hyperlink{classDatabase_af6294bc6951029de6c33c90a7d298541}{Driver}}\label{classDatabase_af6294bc6951029de6c33c90a7d298541}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classDatabase}{Database} server driver. \end{DoxyCompactList}\item 
+\hypertarget{classDatabase_a4239c1a10072aacab2c09d2beb0a096e}{sql\-::\-Connection $\ast$ \hyperlink{classDatabase_a4239c1a10072aacab2c09d2beb0a096e}{Connection}}\label{classDatabase_a4239c1a10072aacab2c09d2beb0a096e}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classDatabase}{Database} server driver. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classDatabase_aaf36450a11d38f6fde645bb8a0d07381}{std\-::string \hyperlink{classDatabase_aaf36450a11d38f6fde645bb8a0d07381}{address}}\label{classDatabase_aaf36450a11d38f6fde645bb8a0d07381}
+
+\begin{DoxyCompactList}\small\item\em I\-P Address of the database server. \end{DoxyCompactList}\item 
+\hypertarget{classDatabase_a6557601838cc506cd59638f4c368f5c2}{int \hyperlink{classDatabase_a6557601838cc506cd59638f4c368f5c2}{port}}\label{classDatabase_a6557601838cc506cd59638f4c368f5c2}
+
+\begin{DoxyCompactList}\small\item\em Port of the database server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Handles the connection to the database. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDatabase_acebb76b52b5efea89c7417d65bb5980e}{\index{Database@{Database}!Database@{Database}}
+\index{Database@{Database}!Database@{Database}}
+\subsubsection[{Database}]{\setlength{\rightskip}{0pt plus 5cm}Database\-::\-Database (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{server\-Address, }
+\item[{int}]{server\-Port = {\ttfamily 3306}}
+\end{DoxyParamCaption}
+)}}\label{classDatabase_acebb76b52b5efea89c7417d65bb5980e}
+
+
+Sets a few settings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em server\-Address} & I\-P Address of the database server. \\
+\hline
+{\em server\-Port} & Port of the database server. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDatabase_a84d399a2ad58d69daab9b05330e1316d}{\index{Database@{Database}!$\sim$\-Database@{$\sim$\-Database}}
+\index{$\sim$\-Database@{$\sim$\-Database}!Database@{Database}}
+\subsubsection[{$\sim$\-Database}]{\setlength{\rightskip}{0pt plus 5cm}Database\-::$\sim$\-Database (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDatabase_a84d399a2ad58d69daab9b05330e1316d}
+Deconstructor closes driver thread. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classDatabase_a22555b63ce54c0b4a0e1b1aecb5e1bd4}{\index{Database@{Database}!Connect@{Connect}}
+\index{Connect@{Connect}!Database@{Database}}
+\subsubsection[{Connect}]{\setlength{\rightskip}{0pt plus 5cm}sql\-::\-Connection $\ast$ Database\-::\-Connect (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{username, }
+\item[{std\-::string}]{password, }
+\item[{std\-::string}]{database}
+\end{DoxyParamCaption}
+)}}\label{classDatabase_a22555b63ce54c0b4a0e1b1aecb5e1bd4}
+
+
+Connects to the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & \hyperlink{classDatabase}{Database} user name. \\
+\hline
+{\em password} & \hyperlink{classDatabase}{Database} user password. \\
+\hline
+{\em database} & \hyperlink{classDatabase}{Database} name. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Database/Database.\-h\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Database/Database.\-cpp\end{DoxyCompactItemize}

@@ -19,7 +19,7 @@ int \hyperlink{classEventManager_a26aec3d9c2cfbdcb62c0f8e432c2fcae}{Register\-Pl
 \begin{DoxyCompactList}\small\item\em Register functions for the Player\-Connect callback. \end{DoxyCompactList}\item 
 int \hyperlink{classEventManager_a56ed11f893eb5beebfbf294a196005e5}{Register\-Player\-Disconnect} (std\-::vector$<$ std\-::function$<$ void(\hyperlink{structPlayer}{Player})$>$$>$ functions)
 \begin{DoxyCompactList}\small\item\em Register functions for the Player\-Disconnect callback. \end{DoxyCompactList}\item 
-int \hyperlink{classEventManager_a42b05790b31a3c4cdbecd3f77a2e5cf0}{Register\-Player\-Chat} (std\-::vector$<$ std\-::function$<$ void(\hyperlink{structPlayer}{Player}, std\-::string, bool)$>$$>$ functions)
+int \hyperlink{classEventManager_a05a0b5a63f308f3b948b4eaa132825e3}{Register\-Player\-Chat} (std\-::vector$<$ std\-::function$<$ void(\hyperlink{structPlayer}{Player}, std\-::string)$>$$>$ functions)
 \begin{DoxyCompactList}\small\item\em Register functions for the Player\-Chat callback. \end{DoxyCompactList}\item 
 int \hyperlink{classEventManager_a5213c8526941c4a67b08d080302dc6bc}{Register\-Player\-Manialink\-Page\-Answer} (std\-::vector$<$ std\-::function$<$ void(\hyperlink{structPlayer}{Player}, std\-::string, std\-::vector$<$ \hyperlink{structEntryVal}{Entry\-Val} $>$)$>$$>$ functions)
 \begin{DoxyCompactList}\small\item\em Register functions for the Player\-Manialink\-Page\-Answer callback. \end{DoxyCompactList}\item 
@@ -95,9 +95,8 @@ $<$ void(\hyperlink{structPlayer}{Player})$>$ $>$ \hyperlink{classEventManager_a
 $<$ void(\hyperlink{structPlayer}{Player})$>$ $>$ \hyperlink{classEventManager_a05df9668a34f0dd3d4a9f049d884aea9}{methods\-Player\-Disconnect}}\label{classEventManager_a05df9668a34f0dd3d4a9f049d884aea9}
 
 \begin{DoxyCompactList}\small\item\em Vector with functions for the Player\-Disconnect event. \end{DoxyCompactList}\item 
-\hypertarget{classEventManager_af3254e563a2246e9298baf23f31b14eb}{std\-::vector$<$ std\-::function\\*
-$<$ void(\hyperlink{structPlayer}{Player}, std\-::string, \\*
-bool)$>$ $>$ \hyperlink{classEventManager_af3254e563a2246e9298baf23f31b14eb}{methods\-Player\-Chat}}\label{classEventManager_af3254e563a2246e9298baf23f31b14eb}
+\hypertarget{classEventManager_ae2e1c22386c1ea3397d29cbcf3d2523d}{std\-::vector$<$ std\-::function\\*
+$<$ void(\hyperlink{structPlayer}{Player}, std\-::string)$>$ $>$ \hyperlink{classEventManager_ae2e1c22386c1ea3397d29cbcf3d2523d}{methods\-Player\-Chat}}\label{classEventManager_ae2e1c22386c1ea3397d29cbcf3d2523d}
 
 \begin{DoxyCompactList}\small\item\em Vector with functions for the Player\-Chat event. \end{DoxyCompactList}\item 
 \hypertarget{classEventManager_a28d7fbe547c5177f293208ccf4f98fce}{std\-::vector$<$ std\-::function\\*
@@ -617,13 +616,13 @@ Returns how many functions were successfully added.
 {\em functions} & Vector with functions to be added. \\
 \hline
 \end{DoxyParams}
-\hypertarget{classEventManager_a42b05790b31a3c4cdbecd3f77a2e5cf0}{\index{Event\-Manager@{Event\-Manager}!Register\-Player\-Chat@{Register\-Player\-Chat}}
+\hypertarget{classEventManager_a05a0b5a63f308f3b948b4eaa132825e3}{\index{Event\-Manager@{Event\-Manager}!Register\-Player\-Chat@{Register\-Player\-Chat}}
 \index{Register\-Player\-Chat@{Register\-Player\-Chat}!EventManager@{Event\-Manager}}
 \subsubsection[{Register\-Player\-Chat}]{\setlength{\rightskip}{0pt plus 5cm}int Event\-Manager\-::\-Register\-Player\-Chat (
 \begin{DoxyParamCaption}
-\item[{std\-::vector$<$ std\-::function$<$ void({\bf Player}, std\-::string, bool)$>$$>$}]{functions}
+\item[{std\-::vector$<$ std\-::function$<$ void({\bf Player}, std\-::string)$>$$>$}]{functions}
 \end{DoxyParamCaption}
-)}}\label{classEventManager_a42b05790b31a3c4cdbecd3f77a2e5cf0}
+)}}\label{classEventManager_a05a0b5a63f308f3b948b4eaa132825e3}
 
 
 Register functions for the Player\-Chat callback. 

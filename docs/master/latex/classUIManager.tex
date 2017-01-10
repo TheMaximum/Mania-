@@ -1,0 +1,223 @@
+\hypertarget{classUIManager}{\section{U\-I\-Manager Class Reference}
+\label{classUIManager}\index{U\-I\-Manager@{U\-I\-Manager}}
+}
+
+
+Manages the user interface on the server (Mania\-Links).  
+
+
+
+
+{\ttfamily \#include $<$U\-I\-Manager.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUIManager_a4d6da1c7d4c1100402fb9384080c3cb2}{U\-I\-Manager} (\hyperlink{classMethods}{Methods} $\ast$server\-Ptr, \hyperlink{classEventManager}{Event\-Manager} $\ast$events\-Ptr, std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$players\-Ptr)
+\begin{DoxyCompactList}\small\item\em Constructor takes needed controller pointers. \end{DoxyCompactList}\item 
+void \hyperlink{classUIManager_a79bae5bfa896f37455d10256caa8b95b}{On\-Player\-Manialink\-Page\-Answer} (\hyperlink{structPlayer}{Player} player, std\-::string answer, std\-::vector$<$ \hyperlink{structEntryVal}{Entry\-Val} $>$ entries)
+\begin{DoxyCompactList}\small\item\em Callback handler voor Mania\-Link page answers. \end{DoxyCompactList}\item 
+bool \hyperlink{classUIManager_a97f069a4a1c54f6e9569a194834e090c}{Display} (\hyperlink{structUIFrame}{U\-I\-Frame} frame)
+\begin{DoxyCompactList}\small\item\em Display frame. \end{DoxyCompactList}\item 
+bool \hyperlink{classUIManager_a83370680d61bea5a5464127a5f11b9a9}{Display} (\hyperlink{structUIFrame}{U\-I\-Frame} frame, \hyperlink{structPlayer}{Player} player)
+\begin{DoxyCompactList}\small\item\em Display frame to player. \end{DoxyCompactList}\item 
+bool \hyperlink{classUIManager_aa8187f1c1988d5934adc5c793be85778}{Display\-List} (\hyperlink{structUIList}{U\-I\-List} list, \hyperlink{structPlayer}{Player} player, int current\-Page=1)
+\begin{DoxyCompactList}\small\item\em Display list to player. \end{DoxyCompactList}\item 
+void \hyperlink{classUIManager_af8510d387057f6778b88d5bcd8bd97a6}{Close\-List} (\hyperlink{structPlayer}{Player} player)
+\begin{DoxyCompactList}\small\item\em Close list for player and removes from memory. \end{DoxyCompactList}\item 
+\hypertarget{classUIManager_af71f25628d303286cd7f54375314e09b}{void \hyperlink{classUIManager_af71f25628d303286cd7f54375314e09b}{On\-End\-Match} ()}\label{classUIManager_af71f25628d303286cd7f54375314e09b}
+
+\begin{DoxyCompactList}\small\item\em Event listener for End\-Match, closes center lists. \end{DoxyCompactList}\item 
+bool \hyperlink{classUIManager_a8192019b49fa0f4b28174ac7f93910fb}{Register\-Event} (std\-::string answer, std\-::function$<$ void(\hyperlink{structPlayer}{Player}, std\-::string, std\-::vector$<$ \hyperlink{structEntryVal}{Entry\-Val} $>$)$>$ function)
+\begin{DoxyCompactList}\small\item\em Register event to be handled on page answer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{classUIManager_a2bfbf770019b05d660ba8f177993c16a}{format\-Page} (\hyperlink{structUIFrame}{U\-I\-Frame} frame)
+\begin{DoxyCompactList}\small\item\em Formats the page, including custom U\-I. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classUIManager_a33db2c26db770d39d59625138097cf4b}{\hyperlink{classMethods}{Methods} $\ast$ \hyperlink{classUIManager_a33db2c26db770d39d59625138097cf4b}{server}}\label{classUIManager_a33db2c26db770d39d59625138097cf4b}
+
+\begin{DoxyCompactList}\small\item\em Pointer to the server methods. \end{DoxyCompactList}\item 
+\hypertarget{classUIManager_aaa87b49b6a0329d8502cfb8e2ca9ab59}{\hyperlink{classEventManager}{Event\-Manager} $\ast$ \hyperlink{classUIManager_aaa87b49b6a0329d8502cfb8e2ca9ab59}{events}}\label{classUIManager_aaa87b49b6a0329d8502cfb8e2ca9ab59}
+
+\begin{DoxyCompactList}\small\item\em Pointer to the event manager. \end{DoxyCompactList}\item 
+\hypertarget{classUIManager_a33c7380de6a617f3e02526a04c5ce726}{std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$ \hyperlink{classUIManager_a33c7380de6a617f3e02526a04c5ce726}{players}}\label{classUIManager_a33c7380de6a617f3e02526a04c5ce726}
+
+\begin{DoxyCompactList}\small\item\em Pointer to the player list. \end{DoxyCompactList}\item 
+\hypertarget{classUIManager_a06f9c65d5f61810311f6e7cd53bce55f}{std\-::map$<$ std\-::string, \\*
+std\-::function$<$ void(\hyperlink{structPlayer}{Player}, \\*
+std\-::string, std\-::vector\\*
+$<$ \hyperlink{structEntryVal}{Entry\-Val} $>$)$>$ $>$ \hyperlink{classUIManager_a06f9c65d5f61810311f6e7cd53bce55f}{answers}}\label{classUIManager_a06f9c65d5f61810311f6e7cd53bce55f}
+
+\begin{DoxyCompactList}\small\item\em List with Mania\-Link answers to handle. \end{DoxyCompactList}\item 
+\hypertarget{classUIManager_a94703fac0de8ee6e8116cd5f9a01b7e2}{std\-::map$<$ std\-::string, \hyperlink{structUIList}{U\-I\-List} $>$ \hyperlink{classUIManager_a94703fac0de8ee6e8116cd5f9a01b7e2}{current\-Lists}}\label{classUIManager_a94703fac0de8ee6e8116cd5f9a01b7e2}
+
+\begin{DoxyCompactList}\small\item\em Current lists displayed to players. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages the user interface on the server (Mania\-Links). 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classUIManager_a4d6da1c7d4c1100402fb9384080c3cb2}{\index{U\-I\-Manager@{U\-I\-Manager}!U\-I\-Manager@{U\-I\-Manager}}
+\index{U\-I\-Manager@{U\-I\-Manager}!UIManager@{U\-I\-Manager}}
+\subsubsection[{U\-I\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}U\-I\-Manager\-::\-U\-I\-Manager (
+\begin{DoxyParamCaption}
+\item[{{\bf Methods} $\ast$}]{server\-Ptr, }
+\item[{{\bf Event\-Manager} $\ast$}]{events\-Ptr, }
+\item[{std\-::map$<$ std\-::string, {\bf Player} $>$ $\ast$}]{players\-Ptr}
+\end{DoxyParamCaption}
+)}}\label{classUIManager_a4d6da1c7d4c1100402fb9384080c3cb2}
+
+
+Constructor takes needed controller pointers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em server\-Ptr} & Pointer to the server methods. \\
+\hline
+{\em events\-Ptr} & Pointer to the event manager. \\
+\hline
+{\em players\-Ptr} & Pointer to the player list. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classUIManager_af8510d387057f6778b88d5bcd8bd97a6}{\index{U\-I\-Manager@{U\-I\-Manager}!Close\-List@{Close\-List}}
+\index{Close\-List@{Close\-List}!UIManager@{U\-I\-Manager}}
+\subsubsection[{Close\-List}]{\setlength{\rightskip}{0pt plus 5cm}void U\-I\-Manager\-::\-Close\-List (
+\begin{DoxyParamCaption}
+\item[{{\bf Player}}]{player}
+\end{DoxyParamCaption}
+)}}\label{classUIManager_af8510d387057f6778b88d5bcd8bd97a6}
+
+
+Close list for player and removes from memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & \hyperlink{structPlayer}{Player} which center list should be closed. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classUIManager_a97f069a4a1c54f6e9569a194834e090c}{\index{U\-I\-Manager@{U\-I\-Manager}!Display@{Display}}
+\index{Display@{Display}!UIManager@{U\-I\-Manager}}
+\subsubsection[{Display}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-I\-Manager\-::\-Display (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-I\-Frame}}]{frame}
+\end{DoxyParamCaption}
+)}}\label{classUIManager_a97f069a4a1c54f6e9569a194834e090c}
+
+
+Display frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & Frame to be displayed. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classUIManager_a83370680d61bea5a5464127a5f11b9a9}{\index{U\-I\-Manager@{U\-I\-Manager}!Display@{Display}}
+\index{Display@{Display}!UIManager@{U\-I\-Manager}}
+\subsubsection[{Display}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-I\-Manager\-::\-Display (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-I\-Frame}}]{frame, }
+\item[{{\bf Player}}]{player}
+\end{DoxyParamCaption}
+)}}\label{classUIManager_a83370680d61bea5a5464127a5f11b9a9}
+
+
+Display frame to player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & Frame to be displayed. \\
+\hline
+{\em player} & \hyperlink{structPlayer}{Player} who should receive the frame. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classUIManager_aa8187f1c1988d5934adc5c793be85778}{\index{U\-I\-Manager@{U\-I\-Manager}!Display\-List@{Display\-List}}
+\index{Display\-List@{Display\-List}!UIManager@{U\-I\-Manager}}
+\subsubsection[{Display\-List}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-I\-Manager\-::\-Display\-List (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-I\-List}}]{list, }
+\item[{{\bf Player}}]{player, }
+\item[{int}]{current\-Page = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)}}\label{classUIManager_aa8187f1c1988d5934adc5c793be85778}
+
+
+Display list to player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & List to be displayed. \\
+\hline
+{\em player} & \hyperlink{structPlayer}{Player} who should receive the list. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classUIManager_a2bfbf770019b05d660ba8f177993c16a}{\index{U\-I\-Manager@{U\-I\-Manager}!format\-Page@{format\-Page}}
+\index{format\-Page@{format\-Page}!UIManager@{U\-I\-Manager}}
+\subsubsection[{format\-Page}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string U\-I\-Manager\-::format\-Page (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-I\-Frame}}]{frame}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classUIManager_a2bfbf770019b05d660ba8f177993c16a}
+
+
+Formats the page, including custom U\-I. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & Frame to be formatted. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classUIManager_a79bae5bfa896f37455d10256caa8b95b}{\index{U\-I\-Manager@{U\-I\-Manager}!On\-Player\-Manialink\-Page\-Answer@{On\-Player\-Manialink\-Page\-Answer}}
+\index{On\-Player\-Manialink\-Page\-Answer@{On\-Player\-Manialink\-Page\-Answer}!UIManager@{U\-I\-Manager}}
+\subsubsection[{On\-Player\-Manialink\-Page\-Answer}]{\setlength{\rightskip}{0pt plus 5cm}void U\-I\-Manager\-::\-On\-Player\-Manialink\-Page\-Answer (
+\begin{DoxyParamCaption}
+\item[{{\bf Player}}]{player, }
+\item[{std\-::string}]{answer, }
+\item[{std\-::vector$<$ {\bf Entry\-Val} $>$}]{entries}
+\end{DoxyParamCaption}
+)}}\label{classUIManager_a79bae5bfa896f37455d10256caa8b95b}
+
+
+Callback handler voor Mania\-Link page answers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & \hyperlink{structPlayer}{Player} who interacted with the page. \\
+\hline
+{\em answer} & Page answer. \\
+\hline
+{\em entries} & Entries. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classUIManager_a8192019b49fa0f4b28174ac7f93910fb}{\index{U\-I\-Manager@{U\-I\-Manager}!Register\-Event@{Register\-Event}}
+\index{Register\-Event@{Register\-Event}!UIManager@{U\-I\-Manager}}
+\subsubsection[{Register\-Event}]{\setlength{\rightskip}{0pt plus 5cm}bool U\-I\-Manager\-::\-Register\-Event (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{answer, }
+\item[{std\-::function$<$ void({\bf Player}, std\-::string, std\-::vector$<$ {\bf Entry\-Val} $>$)$>$}]{function}
+\end{DoxyParamCaption}
+)}}\label{classUIManager_a8192019b49fa0f4b28174ac7f93910fb}
+
+
+Register event to be handled on page answer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em answer} & Name of the answer. \\
+\hline
+{\em function} & Function to be called on callback. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-U\-I/U\-I\-Manager.\-h\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-U\-I/U\-I\-Manager.\-cpp\end{DoxyCompactItemize}

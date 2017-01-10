@@ -13,7 +13,7 @@ Manages the plugins.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classPluginManager_a206d856a7ded8cebce7421d09c1da20d}{Plugin\-Manager} (\hyperlink{classLogging}{Logging} $\ast$logging\-Ptr, \hyperlink{classMethods}{Methods} $\ast$methods\-Ptr, std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$players\-Ptr, std\-::map$<$ std\-::string, \hyperlink{structMap}{Map} $>$ $\ast$maps\-Ptr)
+\hyperlink{classPluginManager_a562e6cac47bc8af1bf688cce814a8a27}{Plugin\-Manager} (\hyperlink{classConfig}{Config} $\ast$config\-Ptr, \hyperlink{classMethods}{Methods} $\ast$methods\-Ptr, \hyperlink{classCommandManager}{Command\-Manager} $\ast$commands\-Ptr, std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$players\-Ptr, \hyperlink{classMapList}{Map\-List} $\ast$maps\-Ptr, sql\-::\-Connection $\ast$database\-Ptr, \hyperlink{classUIManager}{U\-I\-Manager} $\ast$ui\-Ptr)
 \begin{DoxyCompactList}\small\item\em Initializes the pointers the plugins need. \end{DoxyCompactList}\item 
 \hypertarget{classPluginManager_ab657302ef5af357907ae11ad817f5dfc}{\hyperlink{classPluginManager_ab657302ef5af357907ae11ad817f5dfc}{$\sim$\-Plugin\-Manager} ()}\label{classPluginManager_ab657302ef5af357907ae11ad817f5dfc}
 
@@ -38,50 +38,56 @@ std\-::string $>$ \hyperlink{classPluginManager_a6e1d97e5b23f0d8f003a518b8b5fb7a
 \hypertarget{classPluginManager_a4a7dea3948d652d9a4428a237d5af805}{std\-::map$<$ std\-::string, \hyperlink{structPluginInfo}{Plugin\-Info} $>$ \hyperlink{classPluginManager_a4a7dea3948d652d9a4428a237d5af805}{plugins}}\label{classPluginManager_a4a7dea3948d652d9a4428a237d5af805}
 
 \begin{DoxyCompactList}\small\item\em Vector of loaded plugins. \end{DoxyCompactList}\item 
+\hypertarget{classPluginManager_a185603a6a022cef13ca60454c80ae4c4}{\hyperlink{classConfig}{Config} $\ast$ \hyperlink{classPluginManager_a185603a6a022cef13ca60454c80ae4c4}{config}}\label{classPluginManager_a185603a6a022cef13ca60454c80ae4c4}
+
+\begin{DoxyCompactList}\small\item\em Current instance of the \hyperlink{classConfig}{Config}. \end{DoxyCompactList}\item 
+\hypertarget{classPluginManager_a2759d12d4da860a2c5a1dbb7f76a035a}{\hyperlink{classCommandManager}{Command\-Manager} $\ast$ \hyperlink{classPluginManager_a2759d12d4da860a2c5a1dbb7f76a035a}{commands}}\label{classPluginManager_a2759d12d4da860a2c5a1dbb7f76a035a}
+
+\begin{DoxyCompactList}\small\item\em Current instance of the \hyperlink{classCommandManager}{Command\-Manager}. \end{DoxyCompactList}\item 
 \hypertarget{classPluginManager_a7966d86165aaa504ae4dd12f084d4cfa}{\hyperlink{classEventManager}{Event\-Manager} $\ast$ \hyperlink{classPluginManager_a7966d86165aaa504ae4dd12f084d4cfa}{events}}\label{classPluginManager_a7966d86165aaa504ae4dd12f084d4cfa}
 
 \begin{DoxyCompactList}\small\item\em Current instance of the \hyperlink{classEventManager}{Event\-Manager}. \end{DoxyCompactList}\item 
-\hypertarget{classPluginManager_a075528fc6c227b7a9f741d4f01706efc}{\hyperlink{classLogging}{Logging} $\ast$ \hyperlink{classPluginManager_a075528fc6c227b7a9f741d4f01706efc}{logging}}\label{classPluginManager_a075528fc6c227b7a9f741d4f01706efc}
+\hypertarget{classPluginManager_a3b08105f2c52f52d21d293fe0045ae1f}{\hyperlink{structController}{Controller} $\ast$ \hyperlink{classPluginManager_a3b08105f2c52f52d21d293fe0045ae1f}{controller}}\label{classPluginManager_a3b08105f2c52f52d21d293fe0045ae1f}
 
-\begin{DoxyCompactList}\small\item\em Current instance of \hyperlink{classLogging}{Logging}. \end{DoxyCompactList}\item 
-\hypertarget{classPluginManager_ab66d35133c5a85b1e8b691452257bd5f}{\hyperlink{classMethods}{Methods} $\ast$ \hyperlink{classPluginManager_ab66d35133c5a85b1e8b691452257bd5f}{methods}}\label{classPluginManager_ab66d35133c5a85b1e8b691452257bd5f}
-
-\begin{DoxyCompactList}\small\item\em Current instance of \hyperlink{classMethods}{Methods}. \end{DoxyCompactList}\item 
-\hypertarget{classPluginManager_a2a01933dca1c7f1f14ac47c57f86b10b}{std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$ \hyperlink{classPluginManager_a2a01933dca1c7f1f14ac47c57f86b10b}{players}}\label{classPluginManager_a2a01933dca1c7f1f14ac47c57f86b10b}
-
-\begin{DoxyCompactList}\small\item\em Current instance of the playerlist. \end{DoxyCompactList}\item 
-\hypertarget{classPluginManager_adf6f47d0657a7eb9041ed8f7e530f0af}{std\-::map$<$ std\-::string, \hyperlink{structMap}{Map} $>$ $\ast$ \hyperlink{classPluginManager_adf6f47d0657a7eb9041ed8f7e530f0af}{maps}}\label{classPluginManager_adf6f47d0657a7eb9041ed8f7e530f0af}
-
-\begin{DoxyCompactList}\small\item\em Current instance of the maplist. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Current instance of the controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Manages the plugins. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classPluginManager_a206d856a7ded8cebce7421d09c1da20d}{\index{Plugin\-Manager@{Plugin\-Manager}!Plugin\-Manager@{Plugin\-Manager}}
+\hypertarget{classPluginManager_a562e6cac47bc8af1bf688cce814a8a27}{\index{Plugin\-Manager@{Plugin\-Manager}!Plugin\-Manager@{Plugin\-Manager}}
 \index{Plugin\-Manager@{Plugin\-Manager}!PluginManager@{Plugin\-Manager}}
 \subsubsection[{Plugin\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}Plugin\-Manager\-::\-Plugin\-Manager (
 \begin{DoxyParamCaption}
-\item[{{\bf Logging} $\ast$}]{logging\-Ptr, }
+\item[{{\bf Config} $\ast$}]{config\-Ptr, }
 \item[{{\bf Methods} $\ast$}]{methods\-Ptr, }
+\item[{{\bf Command\-Manager} $\ast$}]{commands\-Ptr, }
 \item[{std\-::map$<$ std\-::string, {\bf Player} $>$ $\ast$}]{players\-Ptr, }
-\item[{std\-::map$<$ std\-::string, {\bf Map} $>$ $\ast$}]{maps\-Ptr}
+\item[{{\bf Map\-List} $\ast$}]{maps\-Ptr, }
+\item[{sql\-::\-Connection $\ast$}]{database\-Ptr, }
+\item[{{\bf U\-I\-Manager} $\ast$}]{ui\-Ptr}
 \end{DoxyParamCaption}
-)}}\label{classPluginManager_a206d856a7ded8cebce7421d09c1da20d}
+)}}\label{classPluginManager_a562e6cac47bc8af1bf688cce814a8a27}
 
 
 Initializes the pointers the plugins need. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em logging\-Ptr} & Current instance of \hyperlink{classLogging}{Logging}. \\
+{\em config\-Ptr} & Current instance of \hyperlink{classConfig}{Config}. \\
 \hline
 {\em methods\-Ptr} & Current instance of \hyperlink{classMethods}{Methods}. \\
+\hline
+{\em commands\-Ptr} & Current instance of the \hyperlink{classCommandManager}{Command\-Manager}. \\
 \hline
 {\em players\-Ptr} & Current instance of the playerlist. \\
 \hline
 {\em maps\-Ptr} & Current instance of the maplist. \\
+\hline
+{\em database\-Ptr} & Current instance of the database connection. \\
+\hline
+{\em ui\-Ptr} & Current instance of the interface manager. \\
 \hline
 \end{DoxyParams}
 

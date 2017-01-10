@@ -92,54 +92,70 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;typeinfo&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//* GbxParam</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="structGbxParam.html">   12</a></span>&#160;<span class="comment"></span><span class="keyword">struct </span><a class="code" href="structGbxParam.html">GbxParam</a></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="structGbxParam.html#a19b53f8dacdd8937e1020775f8615495">   14</a></span>&#160;    <span class="keywordtype">void</span>* <a class="code" href="structGbxParam.html#a19b53f8dacdd8937e1020775f8615495">pointer</a>;                  </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structGbxParam.html#afb3596a5ba95fda1e27a5c6b4ed517b5">   15</a></span>&#160;    <span class="keyword">const</span> std::type_info* <a class="code" href="structGbxParam.html#afb3596a5ba95fda1e27a5c6b4ed517b5">typeinfo</a>; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;};</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//* GbxParameters</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classGbxParameters.html">   22</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classGbxParameters.html">GbxParameters</a></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classGbxParameters.html#afac5dd05e28a0e7014483317fc83fdf5">   28</a></span>&#160;    <a class="code" href="classGbxParameters.html#afac5dd05e28a0e7014483317fc83fdf5">~GbxParameters</a>()</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">delete</span> <a class="code" href="classGbxParameters.html#af2c27b8d1e5c3884d0e5cc9ba04953cf">parameters</a>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="classGbxParameters.html#af2c27b8d1e5c3884d0e5cc9ba04953cf">parameters</a> = NULL;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classGbxParameters.html#a2cf83794717cf9fdc13e5ff12e259f04">   40</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGbxParameters.html#a2cf83794717cf9fdc13e5ff12e259f04">Put</a>(T* pointer)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="structGbxParam.html">GbxParam</a> paramStruct = { pointer, &amp;<span class="keyword">typeid</span>(T) };</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="classGbxParameters.html#af2c27b8d1e5c3884d0e5cc9ba04953cf">parameters</a>-&gt;push_back(paramStruct);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classGbxParameters.html#ac980093c86726dd0c71ba46b88885ca1">   49</a></span>&#160;    std::vector&lt;GbxParam&gt;* <a class="code" href="classGbxParameters.html#ac980093c86726dd0c71ba46b88885ca1">GetParameters</a>()</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classGbxParameters.html#af2c27b8d1e5c3884d0e5cc9ba04953cf">parameters</a>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classGbxParameters.html#af2c27b8d1e5c3884d0e5cc9ba04953cf">   55</a></span>&#160;    std::vector&lt;GbxParam&gt;* <a class="code" href="classGbxParameters.html#af2c27b8d1e5c3884d0e5cc9ba04953cf">parameters</a> = <span class="keyword">new</span> std::vector&lt;GbxParam&gt;(); </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif // GBXPARAMETERS_H_</span></div>
-<div class="ttc" id="classGbxParameters_html"><div class="ttname"><a href="classGbxParameters.html">GbxParameters</a></div><div class="ttdoc">List of parameters. </div><div class="ttdef"><b>Definition:</b> GbxParameters.h:22</div></div>
-<div class="ttc" id="structGbxParam_html_a19b53f8dacdd8937e1020775f8615495"><div class="ttname"><a href="structGbxParam.html#a19b53f8dacdd8937e1020775f8615495">GbxParam::pointer</a></div><div class="ttdeci">void * pointer</div><div class="ttdoc">Pointer to the parameter. </div><div class="ttdef"><b>Definition:</b> GbxParameters.h:14</div></div>
-<div class="ttc" id="classGbxParameters_html_af2c27b8d1e5c3884d0e5cc9ba04953cf"><div class="ttname"><a href="classGbxParameters.html#af2c27b8d1e5c3884d0e5cc9ba04953cf">GbxParameters::parameters</a></div><div class="ttdeci">std::vector&lt; GbxParam &gt; * parameters</div><div class="ttdoc">List of parameters. </div><div class="ttdef"><b>Definition:</b> GbxParameters.h:55</div></div>
-<div class="ttc" id="classGbxParameters_html_ac980093c86726dd0c71ba46b88885ca1"><div class="ttname"><a href="classGbxParameters.html#ac980093c86726dd0c71ba46b88885ca1">GbxParameters::GetParameters</a></div><div class="ttdeci">std::vector&lt; GbxParam &gt; * GetParameters()</div><div class="ttdoc">Return the current list of parameters. </div><div class="ttdef"><b>Definition:</b> GbxParameters.h:49</div></div>
-<div class="ttc" id="structGbxParam_html_afb3596a5ba95fda1e27a5c6b4ed517b5"><div class="ttname"><a href="structGbxParam.html#afb3596a5ba95fda1e27a5c6b4ed517b5">GbxParam::typeinfo</a></div><div class="ttdeci">const std::type_info * typeinfo</div><div class="ttdoc">Type information of the parameter. </div><div class="ttdef"><b>Definition:</b> GbxParameters.h:15</div></div>
-<div class="ttc" id="classGbxParameters_html_afac5dd05e28a0e7014483317fc83fdf5"><div class="ttname"><a href="classGbxParameters.html#afac5dd05e28a0e7014483317fc83fdf5">GbxParameters::~GbxParameters</a></div><div class="ttdeci">~GbxParameters()</div><div class="ttdoc">Deletes + nullifies parameters pointer. </div><div class="ttdef"><b>Definition:</b> GbxParameters.h:28</div></div>
-<div class="ttc" id="structGbxParam_html"><div class="ttname"><a href="structGbxParam.html">GbxParam</a></div><div class="ttdoc">Pointer and type information of a parameter. </div><div class="ttdef"><b>Definition:</b> GbxParameters.h:12</div></div>
-<div class="ttc" id="classGbxParameters_html_a2cf83794717cf9fdc13e5ff12e259f04"><div class="ttname"><a href="classGbxParameters.html#a2cf83794717cf9fdc13e5ff12e259f04">GbxParameters::Put</a></div><div class="ttdeci">void Put(T *pointer)</div><div class="ttdoc">Add parameter to the list. </div><div class="ttdef"><b>Definition:</b> GbxParameters.h:40</div></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;typeinfo&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//* GbxParam</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="structGbxParam.html">   13</a></span>&#160;<span class="comment"></span><span class="keyword">struct </span><a class="code" href="structGbxParam.html">GbxParam</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structGbxParam.html#a19b53f8dacdd8937e1020775f8615495">   15</a></span>&#160;    <span class="keywordtype">void</span>* <a class="code" href="structGbxParam.html#a19b53f8dacdd8937e1020775f8615495">pointer</a>;                  </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structGbxParam.html#afb3596a5ba95fda1e27a5c6b4ed517b5">   16</a></span>&#160;    <span class="keyword">const</span> std::type_info* <a class="code" href="structGbxParam.html#afb3596a5ba95fda1e27a5c6b4ed517b5">typeinfo</a>; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;};</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//* GbxStructParameters</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classGbxStructParameters.html">   23</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classGbxStructParameters.html">GbxStructParameters</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classGbxStructParameters.html#a1e045e8f50d30cdd810df10f3346bee4">   31</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGbxStructParameters.html#a1e045e8f50d30cdd810df10f3346bee4">Put</a>(std::string text)</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="classGbxStructParameters.html#a28bc30c4732e983831d05ac4591a3aec">parameters</a>.push_back(text);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classGbxStructParameters.html#a5d496ceb658abca1300ae093d26abedc">   39</a></span>&#160;    std::vector&lt;std::string&gt; <a class="code" href="classGbxStructParameters.html#a5d496ceb658abca1300ae093d26abedc">GetParameters</a>()</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classGbxStructParameters.html#a28bc30c4732e983831d05ac4591a3aec">parameters</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classGbxStructParameters.html#a28bc30c4732e983831d05ac4591a3aec">   45</a></span>&#160;    std::vector&lt;std::string&gt; <a class="code" href="classGbxStructParameters.html#a28bc30c4732e983831d05ac4591a3aec">parameters</a> = std::vector&lt;std::string&gt;(); </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//* GbxParameters</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classGbxParameters.html">   52</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classGbxParameters.html">GbxParameters</a></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classGbxParameters.html#a2cf83794717cf9fdc13e5ff12e259f04">   61</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGbxParameters.html#a2cf83794717cf9fdc13e5ff12e259f04">Put</a>(T* pointer)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="structGbxParam.html">GbxParam</a> paramStruct = { pointer, &amp;<span class="keyword">typeid</span>(T) };</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="classGbxParameters.html#aeabcb21396d3198d718c94de23595750">parameters</a>.push_back(paramStruct);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classGbxParameters.html#a09302bc40359205cd294b8bcf2ab1c2e">   70</a></span>&#160;    std::vector&lt;GbxParam&gt; <a class="code" href="classGbxParameters.html#a09302bc40359205cd294b8bcf2ab1c2e">GetParameters</a>()</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classGbxParameters.html#aeabcb21396d3198d718c94de23595750">parameters</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classGbxParameters.html#aeabcb21396d3198d718c94de23595750">   76</a></span>&#160;    std::vector&lt;GbxParam&gt; <a class="code" href="classGbxParameters.html#aeabcb21396d3198d718c94de23595750">parameters</a> = std::vector&lt;GbxParam&gt;(); </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif // GBXPARAMETERS_H_</span></div>
+<div class="ttc" id="classGbxParameters_html"><div class="ttname"><a href="classGbxParameters.html">GbxParameters</a></div><div class="ttdoc">List of parameters. </div><div class="ttdef"><b>Definition:</b> GbxParameters.h:52</div></div>
+<div class="ttc" id="classGbxStructParameters_html_a28bc30c4732e983831d05ac4591a3aec"><div class="ttname"><a href="classGbxStructParameters.html#a28bc30c4732e983831d05ac4591a3aec">GbxStructParameters::parameters</a></div><div class="ttdeci">std::vector&lt; std::string &gt; parameters</div><div class="ttdoc">List of parameters. </div><div class="ttdef"><b>Definition:</b> GbxParameters.h:45</div></div>
+<div class="ttc" id="structGbxParam_html_a19b53f8dacdd8937e1020775f8615495"><div class="ttname"><a href="structGbxParam.html#a19b53f8dacdd8937e1020775f8615495">GbxParam::pointer</a></div><div class="ttdeci">void * pointer</div><div class="ttdoc">Pointer to the parameter. </div><div class="ttdef"><b>Definition:</b> GbxParameters.h:15</div></div>
+<div class="ttc" id="classGbxStructParameters_html_a5d496ceb658abca1300ae093d26abedc"><div class="ttname"><a href="classGbxStructParameters.html#a5d496ceb658abca1300ae093d26abedc">GbxStructParameters::GetParameters</a></div><div class="ttdeci">std::vector&lt; std::string &gt; GetParameters()</div><div class="ttdoc">Return the current list of parameters. </div><div class="ttdef"><b>Definition:</b> GbxParameters.h:39</div></div>
+<div class="ttc" id="classGbxStructParameters_html"><div class="ttname"><a href="classGbxStructParameters.html">GbxStructParameters</a></div><div class="ttdoc">List of struct parameters. </div><div class="ttdef"><b>Definition:</b> GbxParameters.h:23</div></div>
+<div class="ttc" id="classGbxParameters_html_a09302bc40359205cd294b8bcf2ab1c2e"><div class="ttname"><a href="classGbxParameters.html#a09302bc40359205cd294b8bcf2ab1c2e">GbxParameters::GetParameters</a></div><div class="ttdeci">std::vector&lt; GbxParam &gt; GetParameters()</div><div class="ttdoc">Return the current list of parameters. </div><div class="ttdef"><b>Definition:</b> GbxParameters.h:70</div></div>
+<div class="ttc" id="classGbxParameters_html_aeabcb21396d3198d718c94de23595750"><div class="ttname"><a href="classGbxParameters.html#aeabcb21396d3198d718c94de23595750">GbxParameters::parameters</a></div><div class="ttdeci">std::vector&lt; GbxParam &gt; parameters</div><div class="ttdoc">List of parameters. </div><div class="ttdef"><b>Definition:</b> GbxParameters.h:76</div></div>
+<div class="ttc" id="structGbxParam_html_afb3596a5ba95fda1e27a5c6b4ed517b5"><div class="ttname"><a href="structGbxParam.html#afb3596a5ba95fda1e27a5c6b4ed517b5">GbxParam::typeinfo</a></div><div class="ttdeci">const std::type_info * typeinfo</div><div class="ttdoc">Type information of the parameter. </div><div class="ttdef"><b>Definition:</b> GbxParameters.h:16</div></div>
+<div class="ttc" id="classGbxStructParameters_html_a1e045e8f50d30cdd810df10f3346bee4"><div class="ttname"><a href="classGbxStructParameters.html#a1e045e8f50d30cdd810df10f3346bee4">GbxStructParameters::Put</a></div><div class="ttdeci">void Put(std::string text)</div><div class="ttdoc">Add parameter to the list. </div><div class="ttdef"><b>Definition:</b> GbxParameters.h:31</div></div>
+<div class="ttc" id="structGbxParam_html"><div class="ttname"><a href="structGbxParam.html">GbxParam</a></div><div class="ttdoc">Pointer and type information of a parameter. </div><div class="ttdef"><b>Definition:</b> GbxParameters.h:13</div></div>
+<div class="ttc" id="classGbxParameters_html_a2cf83794717cf9fdc13e5ff12e259f04"><div class="ttname"><a href="classGbxParameters.html#a2cf83794717cf9fdc13e5ff12e259f04">GbxParameters::Put</a></div><div class="ttdeci">void Put(T *pointer)</div><div class="ttdoc">Add parameter to the list. </div><div class="ttdef"><b>Definition:</b> GbxParameters.h:61</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Dec 30 2016 23:36:56 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jan 10 2017 21:33:49 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
