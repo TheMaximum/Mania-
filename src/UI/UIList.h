@@ -17,11 +17,13 @@ struct UIList
 
     std::vector<std::pair<std::string, int>> Columns;     /**< \brief List columns. */
     std::vector<std::map<std::string, std::string>> Rows; /**< \brief List rows. */
+    std::map<std::string, std::pair<std::string, std::string>> Actions; /**< \brief List of column/row actions.  */
 
     UIList()
     {
         Columns = std::vector<std::pair<std::string, int>>();
         Rows = std::vector<std::map<std::string, std::string>>();
+        Actions = std::map<std::string, std::pair<std::string, std::string>>();
     }
 };
 

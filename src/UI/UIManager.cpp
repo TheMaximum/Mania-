@@ -43,6 +43,19 @@ void UIManager::OnPlayerManialinkPageAnswer(Player player, std::string answer, s
             std::function<void(Player, std::string, std::vector<EntryVal>)> method = answers.find(answer)->second;
             method(player, answer, entries);
         }
+        else
+        {
+            size_t positionParam = answer.find('(');
+            if(positionParam != std::string::npos)
+            {
+                std::string answerWithoutParam = answer.substr(0, positionParam);
+                if(answers.find(answerWithoutParam) != answers.end())
+                {
+                    std::function<void(Player, std::string, std::vector<EntryVal>)> method = answers.find(answerWithoutParam)->second;
+                    method(player, answer, entries);
+                }
+            }
+        }
     }
 }
 
@@ -75,6 +88,7 @@ bool UIManager::DisplayList(UIList list, Player player, int currentPage)
     frame.CloseOnClick = false;
 
     int pages = std::ceil((list.Rows.size() / 20.0));
+    if(pages == 0) pages = 1;
 
     std::stringstream widget;
     widget << "<frame posn=\"-42 38 0\" id=\"List" << list.Id << "\">";
@@ -114,8 +128,22 @@ bool UIManager::DisplayList(UIList list, Player player, int currentPage)
         {
             std::pair<std::string, int> column = list.Columns.at(columnId);
             std::map<std::string, std::string>::iterator columnRowIt = currentRow.find(column.first);
+            std::string labelAction = "";
             if(columnRowIt != currentRow.end())
-                widget << "                        <label posn=\"" << rowColumnX << " " << entryY << " 0.007\" sizen=\"" << column.second <<" 1.5\" halign=\"left\" textsize=\"1.8\" text=\"" << Text::EscapeXML(columnRowIt->second) << "\"/>";
+            {
+                std::map<std::string, std::pair<std::string, std::string>>::iterator actionColumnIt = list.Actions.find(column.first);
+                if(actionColumnIt != list.Actions.end())
+                {
+                    std::pair<std::string, std::string> actionInfo = actionColumnIt->second;
+                    std::map<std::string, std::string>::iterator actionRowIt = currentRow.find(actionInfo.second);
+                    if(actionRowIt != currentRow.end())
+                    {
+                        labelAction = " action=\"" + actionInfo.first + "(" + actionRowIt->second + ")\" focusareacolor1=\"0000\" focusareacolor2=\"0000\"";
+                    }
+                }
+
+                widget << "                        <label posn=\"" << rowColumnX << " " << (entryY - 0.65) << " 0.007\" sizen=\"" << (column.second - 0.5) <<" 2.47\" halign=\"left\" valign=\"center\" textsize=\"1.8\"" << labelAction << " text=\" " << Text::EscapeXML(columnRowIt->second) << "\"/>";
+            }
 
             rowColumnX += column.second;
         }

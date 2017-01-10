@@ -10,16 +10,28 @@
 #include "UI/UIList.h"
 #include "Utils/Time.h"
 
+struct JukeboxItem
+{
+    Map map;
+    Player player;
+};
+
 class JukeboxPlugin : public Plugin
 {
 public:
     JukeboxPlugin();
 
     void Init();
+    void OnEndMatch();
+    void ChatJukebox(Player player, std::vector<std::string> parameters);
+    void JukeboxMap(Player player, std::string answer);
     void DisplayMapList(Player player);
 
 private:
     void loadSettings();
+
+    std::vector<JukeboxItem> jukebox;
+    bool skipMapWhenLeft = true;
 };
 
 #endif // KARMAPLUGIN_H_

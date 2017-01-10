@@ -34,6 +34,11 @@ void CallBackManager::HandleCallBack(std::string methodName, std::vector<GbxResp
     }
     else if(methodName.find("ManiaPlanet.PlayerManialinkPageAnswer") != std::string::npos)
     {
+        for(int paramId = 0; paramId < parameters.size(); paramId++)
+        {
+            GbxResponseParameter parameter = parameters.at(paramId);
+            Logging::PrintParameter(parameter, paramId);
+        }
         HandlePlayerManialinkPageAnswer(parameters);
     }
     else if(methodName.find("ManiaPlanet.Echo") != std::string::npos)
