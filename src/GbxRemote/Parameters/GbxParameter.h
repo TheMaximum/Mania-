@@ -10,6 +10,8 @@
 //* GbxParameter
 /**
  * \brief XML-fies the parameter for communication with the server.
+ *
+ * \todo Handle structs.
  */
 class GbxParameter
 {

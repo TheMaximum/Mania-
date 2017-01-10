@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <map>
 #include <typeinfo>
 
 //* GbxParam
@@ -15,6 +16,35 @@ struct GbxParam
     const std::type_info* typeinfo; /**< \brief Type information of the parameter. */
 };
 
+//* GbxStructParameters
+/**
+ * \brief List of struct parameters.
+ */
+class GbxStructParameters
+{
+public:
+    /*!
+     * \brief Add parameter to the list.
+     *
+     * \param text Parameter XML.
+     */
+    void Put(std::string text)
+    {
+        parameters.push_back(text);
+    }
+
+    /*!
+     * \brief Return the current list of parameters.
+     */
+    std::vector<std::string> GetParameters()
+    {
+        return parameters;
+    }
+
+private:
+    std::vector<std::string> parameters = std::vector<std::string>(); /**< \brief List of parameters. */
+};
+
 //* GbxParameters
 /**
  * \brief List of parameters.
@@ -22,15 +52,6 @@ struct GbxParam
 class GbxParameters
 {
 public:
-    /*!
-     * \brief Deletes + nullifies parameters pointer.
-     */
-    ~GbxParameters()
-    {
-        delete parameters;
-        parameters = NULL;
-    }
-
     /*!
      * \brief Add parameter to the list.
      *
@@ -40,19 +61,19 @@ public:
     void Put(T* pointer)
     {
         GbxParam paramStruct = { pointer, &typeid(T) };
-        parameters->push_back(paramStruct);
+        parameters.push_back(paramStruct);
     }
 
     /*!
      * \brief Return the current list of parameters.
      */
-    std::vector<GbxParam>* GetParameters()
+    std::vector<GbxParam> GetParameters()
     {
         return parameters;
     }
 
 private:
-    std::vector<GbxParam>* parameters = new std::vector<GbxParam>(); /**< \brief List of parameters. */
+    std::vector<GbxParam> parameters = std::vector<GbxParam>(); /**< \brief List of parameters. */
 };
 
 #endif // GBXPARAMETERS_H_

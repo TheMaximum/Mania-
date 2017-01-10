@@ -39,3 +39,7 @@ doc/latex/
 
 # Configuration file
 config.yaml
+
+# Local build script
+localbuild.sh
+localmake.sh

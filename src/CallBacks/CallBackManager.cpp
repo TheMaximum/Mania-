@@ -1,9 +1,11 @@
 #include "CallBackManager.h"
 
-CallBackManager::CallBackManager(GbxRemote* serverPtr, EventManager* eventManagerPtr, std::map<std::string, Player>* playerList, std::map<std::string, Map>* mapList)
+CallBackManager::CallBackManager(GbxRemote* serverPtr, CommandManager* commandManagerPtr, EventManager* eventManagerPtr, sql::Connection* databasePtr, std::map<std::string, Player>* playerList, MapList* mapList)
 {
     server = serverPtr;
+    commands = commandManagerPtr;
     events = eventManagerPtr;
+    database = databasePtr;
 
     players = playerList;
     maps = mapList;
@@ -12,11 +14,11 @@ CallBackManager::CallBackManager(GbxRemote* serverPtr, EventManager* eventManage
 void CallBackManager::HandleCallBack(std::string methodName, std::vector<GbxResponseParameter> parameters)
 {
     std::cout << "CALLBACK: " << methodName << " (parameters: " << parameters.size() << ")" << std::endl;
-    for(int paramId = 0; paramId < parameters.size(); paramId++)
+    /*for(int paramId = 0; paramId < parameters.size(); paramId++)
     {
         GbxResponseParameter parameter = parameters.at(paramId);
         Logging::PrintParameter(parameter, paramId);
-    }
+    }*/
 
     if(methodName.find("ManiaPlanet.PlayerConnect") != std::string::npos)
     {
@@ -32,6 +34,11 @@ void CallBackManager::HandleCallBack(std::string methodName, std::vector<GbxResp
     }
     else if(methodName.find("ManiaPlanet.PlayerManialinkPageAnswer") != std::string::npos)
     {
+        for(int paramId = 0; paramId < parameters.size(); paramId++)
+        {
+            GbxResponseParameter parameter = parameters.at(paramId);
+            Logging::PrintParameter(parameter, paramId);
+        }
         HandlePlayerManialinkPageAnswer(parameters);
     }
     else if(methodName.find("ManiaPlanet.Echo") != std::string::npos)
@@ -90,21 +97,78 @@ void CallBackManager::HandleCallBack(std::string methodName, std::vector<GbxResp
 
 void CallBackManager::HandlePlayerConnect(std::vector<GbxResponseParameter> parameters)
 {
-    GbxParameters* params = new GbxParameters();
+    GbxParameters params = GbxParameters();
     std::string login = parameters.at(0).GetString();
-    params->Put(&login);
+    params.Put(&login);
 
-    GbxMessage* message = new GbxMessage("GetPlayerInfo", params);
+    GbxMessage message = GbxMessage("GetPlayerInfo", params);
     server->Query(message);
     Player newPlayer = Player(server->GetResponse()->GetParameters().at(0).GetStruct());
+
+    message = GbxMessage("GetDetailedPlayerInfo", params);
+    server->Query(message);
+    newPlayer.PlayerDetailed(server->GetResponse()->GetParameters().at(0).GetStruct());
+
+    if(database != NULL)
+    {
+        sql::PreparedStatement* insertPstmt;
+        try
+        {
+            insertPstmt = database->prepareStatement("INSERT INTO `players` (`Login`, `NickName`, `Nation`, `UpdatedAt`) VALUES (?, ?, ?, ?) ON DUPLICATE KEY UPDATE `NickName` = VALUES(`NickName`), `Nation` = VALUES(`Nation`), `UpdatedAt` = VALUES(`UpdatedAt`)");
+            insertPstmt->setString(1, newPlayer.Login);
+            insertPstmt->setString(2, newPlayer.NickName);
+            insertPstmt->setString(3, newPlayer.Country);
+            insertPstmt->setString(4, Time::Current());
+            insertPstmt->executeQuery();
+        }
+        catch(sql::SQLException &e)
+        {
+            std::cout << "Failed to save database information for player '" << newPlayer.Login << "' ..." << std::endl;
+            Logging::PrintError(e.getErrorCode(), e.what());
+        }
+
+        if(insertPstmt != NULL)
+        {
+            delete insertPstmt;
+            insertPstmt = NULL;
+        }
+
+        sql::PreparedStatement* pstmt;
+        sql::ResultSet* result;
+        try
+        {
+            pstmt = database->prepareStatement("SELECT * FROM `players` WHERE `Login` = ?");
+            pstmt->setString(1, newPlayer.Login);
+            result = pstmt->executeQuery();
+            if(result->next())
+            {
+                newPlayer.SetId(result->getInt("Id"));
+            }
+        }
+        catch(sql::SQLException &e)
+        {
+            std::cout << "Failed to retrieve database information for player '" << newPlayer.Login << "' ..." << std::endl;
+            Logging::PrintError(e.getErrorCode(), e.what());
+        }
+
+        if(pstmt != NULL)
+        {
+            delete pstmt;
+            pstmt = NULL;
+        }
+
+        if(result != NULL)
+        {
+            delete result;
+            result = NULL;
+        }
+    }
+
     players->insert(std::pair<std::string, Player>(newPlayer.Login, newPlayer));
 
     std::cout << "Player connected: " << newPlayer.Login << " (# players: " << players->size() << ")" << std::endl;
 
     events->CallPlayerConnect(newPlayer);
-
-    delete params; params = NULL;
-    delete message; message = NULL;
 }
 
 void CallBackManager::HandlePlayerDisconnect(std::vector<GbxResponseParameter> parameters)
@@ -120,14 +184,25 @@ void CallBackManager::HandlePlayerDisconnect(std::vector<GbxResponseParameter> p
 
 void CallBackManager::HandlePlayerChat(std::vector<GbxResponseParameter> parameters)
 {
-    std::string playerUid = parameters.at(0).GetString();
-    std::string login = parameters.at(1).GetString();
-    std::string text = parameters.at(2).GetString();
-    bool isRegisteredCmd;
-    std::istringstream(parameters.at(3).GetString()) >> isRegisteredCmd;
+    int playerUid = atoi(parameters.at(0).GetString().c_str());
 
-    Player player = players->at(login);
-    events->CallPlayerChat(player, text, isRegisteredCmd);
+    if(playerUid != 0)
+    {
+        std::string login = parameters.at(1).GetString();
+        std::string text = parameters.at(2).GetString();
+        bool isRegisteredCmd;
+        std::istringstream(parameters.at(3).GetString()) >> isRegisteredCmd;
+
+        Player player = players->at(login);
+        if(isRegisteredCmd)
+        {
+            commands->HandleCommand(player, text);
+        }
+        else
+        {
+            events->CallPlayerChat(player, text, isRegisteredCmd);
+        }
+    }
 }
 
 void CallBackManager::HandlePlayerManialinkPageAnswer(std::vector<GbxResponseParameter> parameters)
@@ -210,15 +285,18 @@ void CallBackManager::HandleEndMatch(std::vector<GbxResponseParameter> parameter
 
 void CallBackManager::HandleBeginMap(std::vector<GbxResponseParameter> parameters)
 {
-    Map map = Map();
-    map.MapDetailed(parameters.at(0).GetStruct());
-    events->CallBeginMap(map);
+    std::map<std::string, GbxResponseParameter> mapStruct = parameters.at(0).GetStruct();
+    Map* map = &(maps->List.at(mapStruct.at("UId").GetString()));
+    map->MapDetailed(parameters.at(0).GetStruct());
+
+    maps->SetCurrentMap(mapStruct.at("UId").GetString());
+    events->CallBeginMap(*map);
 }
 
 void CallBackManager::HandleEndMap(std::vector<GbxResponseParameter> parameters)
 {
-    Map map = Map();
-    map.MapDetailed(parameters.at(0).GetStruct());
+    std::map<std::string, GbxResponseParameter> mapStruct = parameters.at(0).GetStruct();
+    Map map = maps->List.at(mapStruct.at("UId").GetString());
     events->CallEndMap(map);
 }
 
@@ -233,22 +311,23 @@ void CallBackManager::HandleStatusChanged(std::vector<GbxResponseParameter> para
 void CallBackManager::HandlePlayerCheckpoint(std::vector<GbxResponseParameter> parameters)
 {
     std::string login = parameters.at(1).GetString();
-    Player player = players->at(login);
+    Player* player = &players->at(login);
     int time = atoi(parameters.at(2).GetString().c_str());
+    player->CurrentCheckpoints.push_back(time);
     int currentLap = atoi(parameters.at(3).GetString().c_str());
     int checkpointIndex = atoi(parameters.at(4).GetString().c_str());
 
-    events->CallPlayerCheckpoint(player, time, currentLap, checkpointIndex);
+    events->CallPlayerCheckpoint(*player, time, currentLap, checkpointIndex);
 }
 
 void CallBackManager::HandlePlayerFinish(std::vector<GbxResponseParameter> parameters)
 {
     std::string login = parameters.at(1).GetString();
-    Player player = players->at(login);
+    Player* player = &players->at(login);
     int time = atoi(parameters.at(2).GetString().c_str());
 
-    if(time > 0)
-        events->CallPlayerFinish(player, time);
+    events->CallPlayerFinish(*player, time);
+    player->CurrentCheckpoints.clear();
 }
 
 void CallBackManager::HandlePlayerIncoherence(std::vector<GbxResponseParameter> parameters)

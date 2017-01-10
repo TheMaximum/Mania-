@@ -11,11 +11,11 @@ class GbxResponse : public GbxServerResponse
 {
 public:
     ~GbxResponse();
-    
+
     /*!
      * Returns whether the response is a fault.
      */
-    GbxError* GetFault();
+    GbxError GetFault();
 
     /*!
      * \brief Sets the raw message value.
@@ -25,7 +25,7 @@ public:
     void SetRaw(std::string response);
 
 private:
-    GbxError* fault = new GbxError; /**< \brief Current fault (error). */
+    GbxError fault = GbxError(); /**< \brief Current fault (error). */
 
     /*!
      * \brief Extracts parameters from the raw data (XML).

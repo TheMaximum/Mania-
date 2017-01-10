@@ -5,16 +5,22 @@ ManiaPP::ManiaPP()
     std::cout << "## Running Mania++ v" << VERSION << " #####################################################" << std::endl;
 
     config = new Config("config.yaml");
+
+    if(config->Program->checkVersion)
+    {
+        VersionChecker versionChecker = VersionChecker();
+        versionChecker.CheckForUpdates("TheMaximum/mania-pp", VERSION);
+    }
+
     logging = new Logging();
     server = new GbxRemote();
-    methods = new Methods(server);
     players = new std::map<std::string, Player>();
-    maps = new std::map<std::string, Map>();
-
+    maps = new MapList();
     events = new EventManager();
-    plugins = new PluginManager(logging, methods, players, maps);
-    plugins->SetEventManager(events);
-    callbacks = new CallBackManager(server, events, players, maps);
+    commands = new CommandManager();
+
+    methods = new Methods(server, players);
+    ui = new UIManager(methods, events, players);
 }
 
 ManiaPP::~ManiaPP()
@@ -27,8 +33,18 @@ ManiaPP::~ManiaPP()
 
     delete plugins; plugins = NULL;
     delete events; events = NULL;
+    delete commands; commands = NULL;
     delete callbacks; callbacks = NULL;
     delete methods; methods = NULL;
+
+    delete ui; ui = NULL;
+
+    if(database != NULL)
+    {
+        database->close();
+        delete database; database = NULL;
+    }
+    delete db; db = NULL;
 }
 
 bool ManiaPP::ConnectToServer()
@@ -73,22 +89,37 @@ bool ManiaPP::ConnectToServer()
 
                             std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved system info, server login: '" << systemInfo.ServerLogin << "'." << std::endl;
 
-                            methods->GetChatLines();
-
-                            retrievePlayerList();
-                            retrieveMapList();
+                            methods->SendHideManialinkPage();
 
                             std::cout << "[         ] Enabling CallBacks ... " << '\r' << std::flush;
                             if(methods->EnableCallbacks(true))
                             {
                                 logging->PrintOKFlush();
 
-                                plugins->LoadPlugins();
-                                plugins->InitializePlugins();
+                                if(ConnectToDatabase())
+                                {
+                                    retrievePlayerList();
+                                    retrieveMapList();
 
-                                PrintServerInfo();
+                                    Map currentMap = methods->GetCurrentMapInfo();
+                                    maps->SetCurrentMap(currentMap.UId);
+                                    maps->Current->CopyDetailedMap(currentMap);
 
-                                return true;
+                                    plugins = new PluginManager(config, methods, commands, players, maps, database, ui);
+                                    plugins->SetEventManager(events);
+                                    callbacks = new CallBackManager(server, commands, events, database, players, maps);
+
+                                    plugins->LoadPlugins();
+                                    plugins->InitializePlugins();
+
+                                    PrintServerInfo();
+
+                                    return true;
+                                }
+                                else
+                                {
+                                    return false;
+                                }
                             }
                         }
                     }
@@ -100,6 +131,31 @@ bool ManiaPP::ConnectToServer()
     logging->PrintFailedFlush();
     logging->PrintError(server->GetCurrentError());
 
+    return false;
+}
+
+bool ManiaPP::ConnectToDatabase()
+{
+    std::cout << "[         ] Connecting to the database on '" << config->Database->address << ":" << config->Database->port << "' ... " << '\r' << std::flush;
+    try
+    {
+        db = new Database(config->Database->address, config->Database->port);
+        sql::Connection* dbConnection = db->Connect(config->Database->username, config->Database->password, config->Database->database);
+        if(dbConnection != NULL)
+        {
+            logging->PrintOKFlush();
+            database = dbConnection;
+            return true;
+        }
+    }
+    catch(sql::SQLException &e)
+    {
+        logging->PrintFailedFlush();
+        logging->PrintError(e.getErrorCode(), e.what());
+        return false;
+    }
+
+    logging->PrintFailedFlush();
     return false;
 }
 
@@ -138,16 +194,14 @@ void ManiaPP::MainLoop()
 void ManiaPP::retrievePlayerList()
 {
     std::cout << "[         ] Retrieving current player list ... " << '\r' << std::flush;
+
     int playerListLimit = 512; int playerListIndex = 0;
-    GbxParameters* params = new GbxParameters();
-    params->Put(&playerListLimit);
-    params->Put(&playerListIndex);
-    GbxMessage* getPlayerList = new GbxMessage("GetPlayerList", params);
+    GbxParameters params = GbxParameters();
+    params.Put(&playerListLimit);
+    params.Put(&playerListIndex);
+    GbxMessage getPlayerList = GbxMessage("GetPlayerList", params);
     if(server->Query(getPlayerList))
     {
-        delete getPlayerList; getPlayerList = NULL;
-        delete params; params = NULL;
-
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::vector<GbxResponseParameter> playerList = responseParams.at(0).GetArray();
 
@@ -156,7 +210,70 @@ void ManiaPP::retrievePlayerList()
             std::map<std::string, GbxResponseParameter> player = playerList.at(playerId).GetStruct();
             if(player.find("Login")->second.GetString() != systemInfo.ServerLogin)
             {
+                GbxParameters params = GbxParameters();
+                std::string login = player.find("Login")->second.GetString();
+                params.Put(&(login));
+
+                GbxMessage message = GbxMessage("GetDetailedPlayerInfo", params);
+                server->Query(message);
                 Player newPlayer = Player(player);
+                newPlayer.PlayerDetailed(server->GetResponse()->GetParameters().at(0).GetStruct());
+
+                if(database != NULL)
+                {
+                    sql::PreparedStatement* insertPstmt;
+                    try
+                    {
+                        insertPstmt = database->prepareStatement("INSERT INTO `players` (`Login`, `NickName`, `Nation`, `UpdatedAt`) VALUES (?, ?, ?, ?) ON DUPLICATE KEY UPDATE `NickName` = VALUES(`NickName`), `Nation` = VALUES(`Nation`), `UpdatedAt` = VALUES(`UpdatedAt`)");
+                        insertPstmt->setString(1, newPlayer.Login);
+                        insertPstmt->setString(2, newPlayer.NickName);
+                        insertPstmt->setString(3, newPlayer.Country);
+                        insertPstmt->setString(4, Time::Current());
+                        insertPstmt->executeQuery();
+                    }
+                    catch(sql::SQLException &e)
+                    {
+                        std::cout << "Failed to save database information for player '" << newPlayer.Login << "' ..." << std::endl;
+                        Logging::PrintError(e.getErrorCode(), e.what());
+                    }
+
+                    if(insertPstmt != NULL)
+                    {
+                        delete insertPstmt;
+                        insertPstmt = NULL;
+                    }
+
+                    sql::PreparedStatement* pstmt;
+                    sql::ResultSet* result;
+                    try
+                    {
+                        pstmt = database->prepareStatement("SELECT * FROM `players` WHERE `Login` = ?");
+                        pstmt->setString(1, newPlayer.Login);
+                        result = pstmt->executeQuery();
+                        if(result->next())
+                        {
+                            newPlayer.SetId(result->getInt("Id"));
+                        }
+                    }
+                    catch(sql::SQLException &e)
+                    {
+                        std::cout << "Failed to retrieve database information for player '" << newPlayer.Login << "' ..." << std::endl;
+                        Logging::PrintError(e.getErrorCode(), e.what());
+                    }
+
+                    if(pstmt != NULL)
+                    {
+                        delete pstmt;
+                        pstmt = NULL;
+                    }
+
+                    if(result != NULL)
+                    {
+                        delete result;
+                        result = NULL;
+                    }
+                }
+
                 players->insert(std::pair<std::string, Player>(newPlayer.Login, newPlayer));
             }
         }
@@ -174,27 +291,72 @@ void ManiaPP::retrieveMapList()
 {
     std::cout << "[         ] Retrieving current map list ... " << '\r' << std::flush;
 
-    int mapListLimit = 2048; int mapListIndex = 0;
-    GbxParameters* params = new GbxParameters();
-    params->Put(&mapListLimit);
-    params->Put(&mapListIndex);
-    GbxMessage* getMapList = new GbxMessage("GetMapList", params);
-    if(server->Query(getMapList))
+    std::vector<Map> list = methods->GetMapList(2048, 0);
+    if(list.size() > 0)
     {
-        delete getMapList; getMapList = NULL;
-        delete params; params = NULL;
-
-        std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
-        std::vector<GbxResponseParameter> mapList = responseParams.at(0).GetArray();
-
-        for(int mapId = 0; mapId < mapList.size(); mapId++)
+        for(int mapId = 0; mapId < list.size(); mapId++)
         {
-            std::map<std::string, GbxResponseParameter> map = mapList.at(mapId).GetStruct();
-            Map newMap = Map(map);
-            maps->insert(std::pair<std::string, Map>(newMap.UId, newMap));
+            Map newMap = list.at(mapId);
+
+            if(database != NULL)
+            {
+                sql::PreparedStatement* insertPstmt;
+                try
+                {
+                    insertPstmt = database->prepareStatement("INSERT IGNORE INTO `maps` (`Uid`, `Name`, `Author`, `Environment`) VALUES (?, ?, ?, ?)");
+                    insertPstmt->setString(1, newMap.UId);
+                    insertPstmt->setString(2, newMap.Name);
+                    insertPstmt->setString(3, newMap.Author);
+                    insertPstmt->setString(4, newMap.Environment);
+                    insertPstmt->executeQuery();
+                }
+                catch(sql::SQLException &e)
+                {
+                    std::cout << "Failed to save database information for map '" << newMap.Name << "' ..." << std::endl;
+                    Logging::PrintError(e.getErrorCode(), e.what());
+                }
+
+                if(insertPstmt != NULL)
+                {
+                    delete insertPstmt;
+                    insertPstmt = NULL;
+                }
+
+                sql::PreparedStatement* pstmt;
+                sql::ResultSet* result;
+                try
+                {
+                    pstmt = database->prepareStatement("SELECT * FROM `maps` WHERE `UId` = ?");
+                    pstmt->setString(1, newMap.UId);
+                    result = pstmt->executeQuery();
+                    if(result->next())
+                    {
+                        newMap.SetId(result->getInt("Id"));
+                    }
+                }
+                catch(sql::SQLException &e)
+                {
+                    std::cout << "Failed to retrieve database information for map '" << newMap.Name << "' ..." << std::endl;
+                    Logging::PrintError(e.getErrorCode(), e.what());
+                }
+
+                if(pstmt != NULL)
+                {
+                    delete pstmt;
+                    pstmt = NULL;
+                }
+
+                if(result != NULL)
+                {
+                    delete result;
+                    result = NULL;
+                }
+            }
+
+            maps->List.insert(std::pair<std::string, Map>(newMap.UId, newMap));
         }
 
-        std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved current map list: " << maps->size() << " found." << std::endl;
+        std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved current map list: " << maps->List.size() << " found." << std::endl;
     }
     else
     {

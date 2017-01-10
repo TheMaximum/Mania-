@@ -1,5 +1,5 @@
-# Install Boost and xerces
-sudo apt-get -y install libboost-dev
+# Install Git, Boost and MySQL
+sudo apt-get -y install git libboost-dev libmysqlcppconn-dev libcurl4-openssl-dev
 
 # Go to libraries directory
 cd ./lib/
@@ -18,6 +18,17 @@ make yaml-cpp
 # Return to lib directory
 cd ../../
 
+# Create and go to JSON directory
+mkdir json
+cd ./json
+
+# Download version 2.0.10 of the JSON library (remove older/existing version)
+rm ./json.hpp
+wget https://github.com/nlohmann/json/releases/download/v2.0.10/json.hpp
+
+# Return to lib directory
+cd ../
+
 # Download version 1.8.1 of the PugiXML library
 git clone https://github.com/zeux/pugixml.git pugixml/
 cd pugixml/
@@ -29,6 +40,3 @@ make
 
 # Return to root directory
 cd ../../
-
-# Build project as normal
-./build.sh

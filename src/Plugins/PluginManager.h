@@ -8,8 +8,11 @@
 #include <stdio.h>
 #include <dlfcn.h>
 
-#include "../Methods/Methods.h"
+#include "../Config/Config.h"
 #include "../Events/EventManager.h"
+#include "../Commands/CommandManager.h"
+#include "../Methods/Methods.h"
+
 #include "Plugin.h"
 
 //* PluginInfo
@@ -35,12 +38,15 @@ public:
     /*!
      * \brief Initializes the pointers the plugins need.
      *
-     * \param loggingPtr      Current instance of Logging.
+     * \param configPtr       Current instance of Config.
      * \param methodsPtr      Current instance of Methods.
+     * \param commandsPtr     Current instance of the CommandManager.
      * \param playersPtr      Current instance of the playerlist.
      * \param mapsPtr         Current instance of the maplist.
+     * \param databasePtr     Current instance of the database connection.
+     * \param uiPtr           Current instance of the interface manager.
      */
-    PluginManager(Logging* loggingPtr, Methods* methodsPtr, std::map<std::string, Player>* playersPtr, std::map<std::string, Map>* mapsPtr);
+    PluginManager(Config* configPtr, Methods* methodsPtr, CommandManager* commandsPtr, std::map<std::string, Player>* playersPtr, MapList* mapsPtr, sql::Connection* databasePtr, UIManager* uiPtr);
 
     /*!
      * \brief Destructor closes all open plugins.
@@ -73,12 +79,10 @@ private:
     std::map<std::string, std::string> discoverPlugins(std::string pluginsFolder);
 
     std::map<std::string, PluginInfo> plugins; /**< \brief Vector of loaded plugins. */
+    Config* config;                            /**< \brief Current instance of the Config. */
+    CommandManager* commands;                  /**< \brief Current instance of the CommandManager. */
     EventManager* events;                      /**< \brief Current instance of the EventManager. */
-
-    Logging* logging;                          /**< \brief Current instance of Logging. */
-    Methods* methods;                         /**< \brief Current instance of Methods. */
-    std::map<std::string, Player>* players;    /**< \brief Current instance of the playerlist. */
-    std::map<std::string, Map>* maps;          /**< \brief Current instance of the maplist. */
+    Controller* controller;                    /**< \brief Current instance of the controller. */
 };
 
 #endif // PLUGINMANAGER_H_

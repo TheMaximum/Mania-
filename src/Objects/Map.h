@@ -9,6 +9,9 @@
  */
 struct Map
 {
+    // === Mania++ information ===
+    int Id = 0;               /**< \brief Map identifier (on database). */
+
     // === Basic information ===
     std::string UId;          /**< \brief Unique map identifier. */
     std::string Name;         /**< \brief Map name. */
@@ -62,9 +65,38 @@ struct Map
     {
         if(serverStruct.find("Mood") != serverStruct.end())
         {
-            setBasicInfo(serverStruct);
             setDetailedInfo(serverStruct);
         }
+    }
+
+    /*!
+     * \brief Copies information from map object.
+     *
+     * \param map          Map object to be copied into this.
+     */
+    void CopyDetailedMap(Map map)
+    {
+        if(!map.Mood.empty())
+        {
+            Mood = map.Mood;
+            BronzeTime = map.BronzeTime;
+            SilverTime = map.SilverTime;
+            AuthorTime = map.AuthorTime;
+
+            LapRace = map.LapRace;
+            NbLaps = map.NbLaps;
+            NbCheckpoints = map.NbCheckpoints;
+        }
+    }
+
+    /*!
+     * \brief Set database identifier value.
+     *
+     * \param id           Database ID.
+     */
+    void SetId(int id)
+    {
+        Id = id;
     }
 
 private:
@@ -95,26 +127,16 @@ private:
      */
     void setDetailedInfo(std::map<std::string, GbxResponseParameter> serverStruct)
     {
-        UId = serverStruct.find("UId")->second.GetString().c_str();
-        Name = serverStruct.find("Name")->second.GetString().c_str();
-        FileName = serverStruct.find("FileName")->second.GetString();
-        Environment = serverStruct.find("Environnement")->second.GetString();
-        Author = serverStruct.find("Author")->second.GetString();
+        setBasicInfo(serverStruct);
 
-        GoldTime = atoi(serverStruct.find("GoldTime")->second.GetString().c_str());
-        CopperPrice = atoi(serverStruct.find("CopperPrice")->second.GetString().c_str());
-
-        MapType = serverStruct.find("MapType")->second.GetString().c_str();
-        MapStyle = serverStruct.find("MapStyle")->second.GetString().c_str();
-
-        std::string Mood = serverStruct.find("Mood")->second.GetString();
-        int BronzeTime = atoi(serverStruct.find("BronzeTime")->second.GetString().c_str());
-        int SilverTime = atoi(serverStruct.find("SilverTime")->second.GetString().c_str());
-        int AuthorTime = atoi(serverStruct.find("AuthorTime")->second.GetString().c_str());
+        Mood = serverStruct.find("Mood")->second.GetString();
+        BronzeTime = atoi(serverStruct.find("BronzeTime")->second.GetString().c_str());
+        SilverTime = atoi(serverStruct.find("SilverTime")->second.GetString().c_str());
+        AuthorTime = atoi(serverStruct.find("AuthorTime")->second.GetString().c_str());
 
         std::istringstream(serverStruct.find("LapRace")->second.GetString()) >> LapRace;
-        int NbLaps = atoi(serverStruct.find("NbLaps")->second.GetString().c_str());
-        int NbCheckpoints = atoi(serverStruct.find("NbCheckpoints")->second.GetString().c_str());
+        NbLaps = atoi(serverStruct.find("NbLaps")->second.GetString().c_str());
+        NbCheckpoints = atoi(serverStruct.find("NbCheckpoints")->second.GetString().c_str());
     }
 };
 

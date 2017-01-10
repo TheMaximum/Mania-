@@ -11,7 +11,7 @@ HelloGoodbyePlugin::HelloGoodbyePlugin()
 
 void HelloGoodbyePlugin::Init()
 {
-    std::cout << "[  INFO   ] Current amount of maps: " << maps->size() << std::endl;
+
 }
 
 void HelloGoodbyePlugin::OnPlayerConnect(Player player)
@@ -19,12 +19,14 @@ void HelloGoodbyePlugin::OnPlayerConnect(Player player)
     std::cout << "PLUGIN Player Connected: " << player.Login << "!" << std::endl;
 
     std::stringstream chatMessage;
-    chatMessage << "Player joins: ";
+    chatMessage << "$39fPlayer joins: ";
     chatMessage << player.NickName;
-    chatMessage << " $s$Ladder: ";
+    chatMessage << " $z$s$39fNation: $fff";
+    chatMessage << player.Country;
+    chatMessage << " $z$s$39fLadder: $fff";
     chatMessage << player.LadderRanking;
 
-    methods->ChatSendServerMessage(chatMessage.str());
+    controller->Server->ChatSendServerMessage(chatMessage.str());
 }
 
 void HelloGoodbyePlugin::OnPlayerDisconnect(Player player)
@@ -33,7 +35,7 @@ void HelloGoodbyePlugin::OnPlayerDisconnect(Player player)
 
     std::stringstream chatMessage;
     chatMessage << player.NickName;
-    chatMessage << " $s$zhas left the game.";
+    chatMessage << " $z$s$39fhas left the game.";
 
-    methods->ChatSendServerMessage(chatMessage.str());
+    controller->Server->ChatSendServerMessage(chatMessage.str());
 }

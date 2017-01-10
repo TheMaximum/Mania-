@@ -4,20 +4,16 @@ bool Methods::Authenticate(std::string username, std::string password)
 {
     bool response = false;
 
-    GbxParameters* params = new GbxParameters();
-    params->Put(&username);
-    params->Put(&password);
+    GbxParameters params = GbxParameters();
+    params.Put(&username);
+    params.Put(&password);
 
-    GbxMessage* message = new GbxMessage("Authenticate", params);
-
-    if(server->Query(message))
+    if(server->Query(GbxMessage("Authenticate", params)))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::istringstream(responseParams.at(0).GetString()) >> response;
     }
 
-    delete params; params = NULL;
-    delete message; message = NULL;
     return response;
 }
 
@@ -25,20 +21,16 @@ bool Methods::ChangeAuthPassword(std::string username, std::string password)
 {
     bool response = false;
 
-    GbxParameters* params = new GbxParameters();
-    params->Put(&username);
-    params->Put(&password);
+    GbxParameters params = GbxParameters();
+    params.Put(&username);
+    params.Put(&password);
 
-    GbxMessage* message = new GbxMessage("ChangeAuthPassword", params);
-
-    if(server->Query(message))
+    if(server->Query(GbxMessage("ChangeAuthPassword", params)))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::istringstream(responseParams.at(0).GetString()) >> response;
     }
 
-    delete params; params = NULL;
-    delete message; message = NULL;
     return response;
 }
 
@@ -46,19 +38,15 @@ bool Methods::EnableCallbacks(bool enable)
 {
     bool response = false;
 
-    GbxParameters* params = new GbxParameters();
-    params->Put(&enable);
+    GbxParameters params = GbxParameters();
+    params.Put(&enable);
 
-    GbxMessage* message = new GbxMessage("EnableCallbacks", params);
-
-    if(server->Query(message))
+    if(server->Query(GbxMessage("EnableCallbacks", params)))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::istringstream(responseParams.at(0).GetString()) >> response;
     }
 
-    delete params; params = NULL;
-    delete message; message = NULL;
     return response;
 }
 
@@ -66,27 +54,23 @@ bool Methods::SetApiVersion(std::string version)
 {
     bool response = false;
 
-    GbxParameters* params = new GbxParameters();
-    params->Put(&version);
+    GbxParameters params = GbxParameters();
+    params.Put(&version);
 
-    GbxMessage* message = new GbxMessage("SetApiVersion", params);
-
-    if(server->Query(message))
+    if(server->Query(GbxMessage("SetApiVersion", params)))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::istringstream(responseParams.at(0).GetString()) >> response;
     }
 
-    delete params; params = NULL;
-    delete message; message = NULL;
     return response;
 }
 
 std::vector<std::string> Methods::ListMethods()
 {
     std::vector<std::string> methods = std::vector<std::string>();
-    GbxMessage* message = new GbxMessage("system.listMethods");
-    if(server->Query(message))
+
+    if(server->Query(GbxMessage("system.listMethods")))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::vector<GbxResponseParameter> methodsArray = responseParams.at(0).GetArray();
@@ -97,7 +81,6 @@ std::vector<std::string> Methods::ListMethods()
         }
     }
 
-    delete message; message = NULL;
     return methods;
 }
 
@@ -105,11 +88,8 @@ ServerVersion Methods::GetVersion()
 {
     ServerVersion serverVersion = ServerVersion();
 
-    GbxMessage* message = new GbxMessage("GetVersion");
-    if(server->Query(message))
+    if(server->Query(GbxMessage("GetVersion")))
     {
-        delete message; message = NULL;
-
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::map<std::string, GbxResponseParameter> versionStruct = responseParams.at(0).GetStruct();
 
@@ -127,11 +107,8 @@ SystemInfo Methods::GetSystemInfo()
 {
     SystemInfo systemInfo = SystemInfo();
 
-    GbxMessage* message = new GbxMessage("GetSystemInfo");
-    if(server->Query(message))
+    if(server->Query(GbxMessage("GetSystemInfo")))
     {
-        delete message; message = NULL;
-
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::map<std::string, GbxResponseParameter> infoStruct = responseParams.at(0).GetStruct();
 
@@ -150,15 +127,29 @@ SystemInfo Methods::GetSystemInfo()
     return systemInfo;
 }
 
+bool Methods::SetConnectionRates(int downloadRate, int uploadRate)
+{
+    bool response = false;
+
+    GbxParameters params = GbxParameters();
+    params.Put(&downloadRate);
+    params.Put(&uploadRate);
+
+    if(server->Query(GbxMessage("SetConnectionRates", params)))
+    {
+        std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
+        std::istringstream(responseParams.at(0).GetString()) >> response;
+    }
+
+    return response;
+}
+
 ServerStatus Methods::GetStatus()
 {
     ServerStatus serverStatus = ServerStatus();
 
-    GbxMessage* message = new GbxMessage("GetStatus");
-    if(server->Query(message))
+    if(server->Query(GbxMessage("GetStatus")))
     {
-        delete message; message = NULL;
-
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::map<std::string, GbxResponseParameter> statusStruct = responseParams.at(0).GetStruct();
 
@@ -173,14 +164,11 @@ bool Methods::QuitGame()
 {
     bool response = false;
 
-    GbxMessage* message = new GbxMessage("QuitGame");
-
-    if(server->Query(message))
+    if(server->Query(GbxMessage("QuitGame")))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::istringstream(responseParams.at(0).GetString()) >> response;
     }
 
-    delete message; message = NULL;
     return response;
 }

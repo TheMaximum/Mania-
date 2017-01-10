@@ -4,7 +4,7 @@ EventManager::EventManager()
 {
     methodsPlayerConnect = std::vector<std::function<void(Player)>>();
     methodsPlayerDisconnect = std::vector<std::function<void(Player)>>();
-    methodsPlayerChat = std::vector<std::function<void(Player, std::string, bool)>>();
+    methodsPlayerChat = std::vector<std::function<void(Player, std::string)>>();
     methodsPlayerManialinkPageAnswer = std::vector<std::function<void(Player, std::string, std::vector<EntryVal>)>>();
     methodsEcho = std::vector<std::function<void(std::string, std::string)>> ();
     methodsBeginMatch = std::vector<std::function<void()>>();
@@ -43,7 +43,7 @@ int EventManager::RegisterPlayerDisconnect(std::vector<std::function<void(Player
     return functionsAdded;
 }
 
-int EventManager::RegisterPlayerChat(std::vector<std::function<void(Player, std::string, bool)>> functions)
+int EventManager::RegisterPlayerChat(std::vector<std::function<void(Player, std::string)>> functions)
 {
     int functionsAdded = 0;
     for(int functionId = 0; functionId < functions.size(); functionId++)
@@ -230,8 +230,8 @@ void EventManager::CallPlayerChat(Player player, std::string text, bool isRegist
 {
     for(int methodId = 0; methodId < methodsPlayerChat.size(); methodId++)
     {
-        std::function<void(Player, std::string, bool)> method = methodsPlayerChat.at(methodId);
-        method(player, text, isRegisteredCommand);
+        std::function<void(Player, std::string)> method = methodsPlayerChat.at(methodId);
+        method(player, text);
     }
 }
 

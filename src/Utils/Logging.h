@@ -4,6 +4,7 @@
 #include <cstring>
 #include <cmath>
 #include "../GbxRemote/GbxStructs.h"
+#include "../GbxRemote/ServerResponse/GbxServerResponse.h"
 
 //* Logging
 /**
@@ -17,10 +18,10 @@ public:
      *
      * \param error        Error structure.
      */
-    static void PrintError(GbxError* error)
+    static void PrintError(GbxError error)
     {
         std::stringstream numberString;
-        numberString << error->number;
+        numberString << error.number;
         const char* errorNumber = numberString.str().c_str();
         int errorNumberLength = strlen(errorNumber);
         int spaces = (9 - errorNumberLength);
@@ -35,20 +36,34 @@ public:
             {
                 output << " ";
             }
-            output << error->number;
+            output << error.number;
             for(int i = 0; i < floor(halfSpaces); i++)
             {
                 output << " ";
             }
 
-            output << "\033[0;0m] ERROR: " + error->message;
+            output << "\033[0;0m] ERROR: " + error.message;
 
             std::cout << output.str() << std::endl;
         }
         else
         {
-            std::cout << "[\033[0;31m" << errorNumber << "\033[0;0m] ERROR: " << error->message << std::endl;
+            std::cout << "[\033[0;31m" << errorNumber << "\033[0;0m] ERROR: " << error.message << std::endl;
         }
+    }
+
+    /*!
+     * \brief Prints error to console.
+     *
+     * \param number       Error number.
+     * \param message      Error message.
+     */
+    static void PrintError(int number, std::string message)
+    {
+        GbxError error = GbxError();
+        error.number = number;
+        error.message = message;
+        PrintError(error);
     }
 
     /*!

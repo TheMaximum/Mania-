@@ -52,7 +52,7 @@ public:
      *
      * \param query    Query to be send.
      */
-    bool Query(GbxMessage* query);
+    bool Query(GbxMessage query);
 
     /*!
      * \brief Read callbacks from the server.
@@ -86,9 +86,9 @@ public:
     /*!
      * \brief Returns the current server error.
      *
-     * Returns NULL when there currently is no error.
+     * Returns empty GbxError when there currently is no error.
      */
-    GbxError* GetCurrentError();
+    GbxError GetCurrentError();
 
     /*!
      * \brief Returns the current version number of the server protocol (1 or 2).
@@ -107,7 +107,7 @@ private:
     std::string apiVersion;                         /**< \brief Server API version. */
     TcpClient server;                               /**< \brief Socket connection with the server. */
 
-    GbxError* currentError = new GbxError;          /**< \brief Current server error. */
+    GbxError currentError = GbxError();          /**< \brief Current server error. */
     GbxResponse* currentResponse = new GbxResponse; /**< \brief Current server response. */
     std::vector<GbxCallBack> currentCallBacks = std::vector<GbxCallBack>(); /**< \brief List of currently received callbacks. */
 };

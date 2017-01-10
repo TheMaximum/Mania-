@@ -7,11 +7,12 @@ add_definitions(-Wno-deprecated)
 set (EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR})
 link_directories(${PROJECT_SOURCE_DIR}/lib/yaml/build)
 include_directories("${PROJECT_SOURCE_DIR}/lib/yaml/include")
+include_directories("${PROJECT_SOURCE_DIR}/lib/json")
 
 set (PROJECT_SOURCE_DIR ${PROJECT_SOURCE_DIR}/src)
 
 set (VERSION_MAJOR 0)
-set (VERSION_MINOR 2)
+set (VERSION_MINOR 3)
 set (VERSION_PATCH 0)
 
 # configure a header file to pass some of the CMake settings
@@ -27,4 +28,8 @@ file(GLOB_RECURSE SOURCES src/*.cpp)
 
 add_executable(Mania++ ${SOURCES}
                        lib/pugixml/libpugixml.a)
-target_link_libraries(Mania++ yaml-cpp ${EXECUTABLE_OUTPUT_PATH}/lib/pugixml/libpugixml.a dl)
+target_link_libraries(Mania++ yaml-cpp
+                              ${EXECUTABLE_OUTPUT_PATH}/lib/pugixml/libpugixml.a
+                              dl
+                              mysqlcppconn
+                              curl)

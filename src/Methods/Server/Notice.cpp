@@ -4,21 +4,17 @@ bool Methods::SendNotice(std::string text, std::string avatarLogin, int variant)
 {
     bool response = false;
 
-    GbxParameters* params = new GbxParameters();
-    params->Put(&text);
-    params->Put(&avatarLogin);
-    params->Put(&variant);
+    GbxParameters params = GbxParameters();
+    params.Put(&text);
+    params.Put(&avatarLogin);
+    params.Put(&variant);
 
-    GbxMessage* message = new GbxMessage("SendNotice", params);
-
-    if(server->Query(message))
+    if(server->Query(GbxMessage("SendNotice", params)))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::istringstream(responseParams.at(0).GetString()) >> response;
     }
 
-    delete params; params = NULL;
-    delete message; message = NULL;
     return response;
 }
 
@@ -26,21 +22,35 @@ bool Methods::SendNoticeToLogin(std::string login, std::string text, std::string
 {
     bool response = false;
 
-    GbxParameters* params = new GbxParameters();
-    params->Put(&login);
-    params->Put(&text);
-    params->Put(&avatarLogin);
-    params->Put(&variant);
+    GbxParameters params = GbxParameters();
+    params.Put(&login);
+    params.Put(&text);
+    params.Put(&avatarLogin);
+    params.Put(&variant);
 
-    GbxMessage* message = new GbxMessage("SendNoticeToLogin", params);
-
-    if(server->Query(message))
+    if(server->Query(GbxMessage("SendNoticeToLogin", params)))
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::istringstream(responseParams.at(0).GetString()) >> response;
     }
 
-    delete params; params = NULL;
-    delete message; message = NULL;
+    return response;
+}
+
+bool Methods::SendOpenLinkToLogin(std::string login, std::string link, int linkType)
+{
+    bool response = false;
+
+    GbxParameters params = GbxParameters();
+    params.Put(&login);
+    params.Put(&link);
+    params.Put(&linkType);
+
+    if(server->Query(GbxMessage("SendOpenLinkToLogin", params)))
+    {
+        std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
+        std::istringstream(responseParams.at(0).GetString()) >> response;
+    }
+
     return response;
 }

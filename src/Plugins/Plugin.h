@@ -4,16 +4,38 @@
 #include <stdio.h>
 #include <cstring>
 #include <string>
+#include <map>
 #include <iostream>
 #include <sstream>
 #include <cstdlib>
 #include <functional>
 
+#include <cppconn/driver.h>
+#include <cppconn/exception.h>
+#include <cppconn/resultset.h>
+#include <cppconn/statement.h>
+#include <cppconn/prepared_statement.h>
+
 #include "../Events/Structs.h"
+#include "../Maps/MapList.h"
 #include "../Methods/Methods.h"
 #include "../Objects/Player.h"
 #include "../Objects/Map.h"
+#include "../UI/UIManager.h"
 #include "../Utils/Logging.h"
+
+//* Controller
+/**
+ * \brief Struct with all instances needed for plugins.
+ */
+struct Controller
+{
+    Methods* Server;                        /**< \brief Methods instance. */
+    std::map<std::string, Player>* Players; /**< \brief Playerlist instance. */
+    MapList* Maps;                          /**< \brief Maplist instance. */
+    sql::Connection* Database;              /**< \brief Database instance. */
+    UIManager* UI;                          /**< \brief UI manager instance. */
+};
 
 //* Plugin
 /**
@@ -28,49 +50,20 @@ public:
     virtual void Init() = 0;
 
     /*!
-     * \brief Sets the logging instance.
+     * \brief Sets the controller instance.
      *
-     * \param loggingPtr Pointer to the logging instance.
+     * \param controllerPtr Pointer to the controller instance.
      */
-    void SetLogging(Logging* loggingPtr)
+    void SetController(Controller* controllerPtr)
     {
-        logging = loggingPtr;
+        controller = controllerPtr;
     }
 
-    /*!
-     * \brief Sets the server instance.
-     *
-     * \param methodsPtr Pointer to the Methods instance.
-     */
-    void SetMethods(Methods* methodsPtr)
-    {
-        methods = methodsPtr;
-    }
-
-    /*!
-     * \brief Sets the playerlist instance.
-     *
-     * \param playersPtr Pointer to the playerlist instance.
-     */
-    void SetPlayers(std::map<std::string, Player>* playersPtr)
-    {
-        players = playersPtr;
-    }
-
-    /*!
-     * \brief Sets the maplist instance.
-     *
-     * \param mapsPtr    Pointer to the maplist instance.
-     */
-    void SetMaps(std::map<std::string, Map>* mapsPtr)
-    {
-        maps = mapsPtr;
-    }
+    std::map<std::string, std::string> Settings;                                /**< \brief Plugin settings (from the config file). */
 
     std::vector<std::function<void(Player)>> PlayerConnect;                     /**< \brief Vector with functions for the PlayerConnect event. */
     std::vector<std::function<void(Player)>> PlayerDisconnect;                  /**< \brief Vector with functions for the PlayerDisconnect event. */
-    std::vector<std::function<void(Player, std::string, bool)>> PlayerChat;     /**< \brief Vector with functions for the PlayerChat event. */
-    std::vector<std::function<void(Player, std::string, std::vector<EntryVal>)>> PlayerManialinkPageAnswer; /**< \brief Vector with functions for the PlayerManialinkPageAnswer event. */
+    std::vector<std::function<void(Player, std::string)>> PlayerChat;           /**< \brief Vector with functions for the PlayerChat event. */
     std::vector<std::function<void(std::string, std::string)>> Echo;            /**< \brief Vector with functions for the Echo event. */
     std::vector<std::function<void()>> BeginMatch;                              /**< \brief Vector with functions for the BeginMatch event. */
     std::vector<std::function<void(std::vector<PlayerRanking>, int)>> EndMatch; /**< \brief Vector with functions for the EndMatch event. */
@@ -85,14 +78,38 @@ public:
     std::vector<std::function<void(Player)>> PlayerInfoChanged;                 /**< \brief Vector with functions for the PlayerInfoChanged event. */
     std::vector<std::function<void(std::string, std::string, std::string, std::string)>> VoteUpdated; /**< \brief Vector with functions for the VoteUpdated event. */
 
+    std::map<std::string, std::function<void(Player, std::vector<std::string>)>> Commands =
+        std::map<std::string, std::function<void(Player, std::vector<std::string>)>>(); /**< \brief Map with normal chat commands for the plugin. */
+    std::map<std::string, std::function<void(Player, std::vector<std::string>)>> AdminCommands =
+        std::map<std::string, std::function<void(Player, std::vector<std::string>)>>(); /**< \brief Map with admin chat commands for the plugin. */
+
     std::string Version; /**< \brief Plugin version. */
     std::string Author;  /**< \brief Plugin author. */
 
 protected:
-    Logging* logging;                       /**< \brief Logging instance. */
-    Methods* methods;                       /**< \brief Methods instance. */
-    std::map<std::string, Player>* players; /**< \brief Playerlist instance. */
-    std::map<std::string, Map>* maps;       /**< \brief Maplist instance. */
+    Controller* controller;                  /**< \brief Struct with needed instances. */
+
+    /*!
+     * \brief Register chat command.
+     *
+     * \param name   Chat command name.
+     * \param method Method to be called for the command.
+     */
+    void RegisterCommand(std::string name, std::function<void(Player, std::vector<std::string>)> method)
+    {
+        Commands.insert(std::pair<std::string, std::function<void(Player, std::vector<std::string>)>>(name, method));
+    }
+
+    /*!
+     * \brief Register admin chat command.
+     *
+     * \param name   Admin chat command name.
+     * \param method Method to be called for the command.
+     */
+    void RegisterAdminCommand(std::string name, std::function<void(Player, std::vector<std::string>)> method)
+    {
+        AdminCommands.insert(std::pair<std::string, std::function<void(Player, std::vector<std::string>)>>(name, method));
+    }
 };
 
 #endif // PLUGIN_H_

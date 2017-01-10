@@ -5,3 +5,32 @@ config:
         authentication:
             username: 'SuperAdmin'
             password: '***'
+
+    database:
+        address: 'localhost'
+        port: 3306
+        authentication:
+            username: '***'
+            password: '***'
+        database: 'maniapp'
+
+    program:
+        checkVersion: true
+
+plugins:
+    - 'HelloGoodbye'
+    - 'Jukebox':
+        skipMapWhenLeft: true
+    - 'LocalRecords':
+        limit: 100
+        widgetEntries: 22
+        widgetTopCount: 5
+        widgetX: 49.2
+        widgetY: 28.2
+    - 'Karma':
+        widgetX: 49.2
+        widgetY: 39.2
+        voteAfterFinishes: 0
+    - 'MapWidget':
+        widgetX: 49.2
+        widgetY: 48.2

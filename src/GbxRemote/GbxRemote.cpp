@@ -4,9 +4,6 @@ GbxRemote::~GbxRemote()
 {
     Terminate();
 
-    delete currentError;
-    currentError = NULL;
-
     delete currentResponse;
     currentResponse = NULL;
 }
@@ -27,18 +24,18 @@ bool GbxRemote::InitWithIp(std::string address, int port)
         int size = (int)response->size;
         if(size > 64)
         {
-            currentError->number = -32300;
+            currentError.number = -32300;
             std::stringstream messageStream;
             messageStream << "transport error - wrong lowlevel protocol header (" << size << ")";
-            currentError->message = messageStream.str();
+            currentError.message = messageStream.str();
             return false;
         }
 
         std::string protocolRes = server.Receive(size);
         if(protocolRes.find("GBXRemote 1") != std::string::npos)
         {
-            currentError->number = -32300;
-            currentError->message = "transport error - old version of trackmania server detected";
+            currentError.number = -32300;
+            currentError.message = "transport error - old version of trackmania server detected";
             return false;
         }
         else if(protocolRes.find("GBXRemote 2") != std::string::npos)
@@ -47,10 +44,10 @@ bool GbxRemote::InitWithIp(std::string address, int port)
         }
         else
         {
-            currentError->number = -32300;
+            currentError.number = -32300;
             std::stringstream messageStream;
             messageStream << "transport error - wrong lowlevel protocol version (" << protocolRes << ")";
-            currentError->message = messageStream.str();
+            currentError.message = messageStream.str();
             return false;
         }
 
@@ -59,8 +56,8 @@ bool GbxRemote::InitWithIp(std::string address, int port)
     }
     else
     {
-        currentError->number = -10;
-        currentError->message = "connection error - could not establish connection";
+        currentError.number = -10;
+        currentError.message = "connection error - could not establish connection";
         return false;
     }
 }
@@ -72,21 +69,23 @@ void GbxRemote::Terminate()
     connected = false;
 }
 
-bool GbxRemote::Query(GbxMessage* query)
+bool GbxRemote::Query(GbxMessage query)
 {
-    delete currentError;
-    delete currentResponse;
+    if(currentResponse != NULL)
+    {
+        delete currentResponse; currentResponse = NULL;
+    }
 
     if(!connected)
         return false;
 
-    currentError = new GbxError();
+    currentError = GbxError();
     currentResponse = new GbxResponse();
 
-    if(!server.Send(query->GetXml()))
+    if(!server.Send(query.GetXml()))
     {
-        currentError->number = -32300;
-        currentError->message = "transport error - connection interrupted!";
+        currentError.number = -32300;
+        currentError.message = "transport error - connection interrupted!";
         return false;
     }
 
@@ -97,10 +96,10 @@ bool GbxRemote::Query(GbxMessage* query)
 
         if(message->size > (4096*1024))
         {
-            currentError->number = -32300;
+            currentError.number = -32300;
             std::stringstream errorMessage;
             errorMessage << "transport error - response too large " << message->size;
-            currentError->message = errorMessage.str();
+            currentError.message = errorMessage.str();
             return false;
         }
 
@@ -115,7 +114,7 @@ bool GbxRemote::Query(GbxMessage* query)
             }
 
             currentResponse->SetRaw(rawResponse);
-            if(currentResponse->GetFault() != NULL)
+            if(currentResponse->GetFault().number != 0)
             {
                 currentError = currentResponse->GetFault();
                 return false;
@@ -143,10 +142,10 @@ bool GbxRemote::ReadCallBacks()
 
         if(size > (4096*1024))
         {
-            currentError->number = -32300;
+            currentError.number = -32300;
             std::stringstream errorMessage;
             errorMessage << "transport error - response too large " << size;
-            currentError->message = errorMessage.str();
+            currentError.message = errorMessage.str();
             return false;
         }
 
@@ -181,13 +180,8 @@ void GbxRemote::ResetCBResponses()
     currentCallBacks = std::vector<GbxCallBack>();
 }
 
-GbxError* GbxRemote::GetCurrentError()
+GbxError GbxRemote::GetCurrentError()
 {
-    if(currentError->number == 0)
-    {
-        return NULL;
-    }
-
     return currentError;
 }
 

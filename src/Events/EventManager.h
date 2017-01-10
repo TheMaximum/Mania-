@@ -45,7 +45,7 @@ public:
      *
      * \param functions Vector with functions to be added.
      */
-    int RegisterPlayerChat(std::vector<std::function<void(Player, std::string, bool)>> functions);
+    int RegisterPlayerChat(std::vector<std::function<void(Player, std::string)>> functions);
 
     /*!
      * \brief Register functions for the PlayerManialinkPageAnswer callback.
@@ -312,7 +312,7 @@ public:
 private:
     std::vector<std::function<void(Player)>> methodsPlayerConnect;                     /**< \brief Vector with functions for the PlayerConnect event. */
     std::vector<std::function<void(Player)>> methodsPlayerDisconnect;                  /**< \brief Vector with functions for the PlayerDisconnect event. */
-    std::vector<std::function<void(Player, std::string, bool)>> methodsPlayerChat;     /**< \brief Vector with functions for the PlayerChat event. */
+    std::vector<std::function<void(Player, std::string)>> methodsPlayerChat;           /**< \brief Vector with functions for the PlayerChat event. */
     std::vector<std::function<void(Player, std::string, std::vector<EntryVal>)>> methodsPlayerManialinkPageAnswer; /**< \brief Vector with functions for the PlayerManialinkPageAnswer event. */
     std::vector<std::function<void(std::string, std::string)>> methodsEcho;            /**< \brief Vector with functions for the Echo event. */
     std::vector<std::function<void()>> methodsBeginMatch;                              /**< \brief Vector with functions for the BeginMatch event. */
