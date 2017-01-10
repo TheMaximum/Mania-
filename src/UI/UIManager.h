@@ -20,48 +20,49 @@ public:
     /*!
      * \brief Constructor takes needed controller pointers.
      *
-     * \param serverPtr  Pointer to the server methods.
-     * \param eventsPtr  Pointer to the event manager.
-     * \param playersPtr Pointer to the player list.
+     * \param serverPtr   Pointer to the server methods.
+     * \param eventsPtr   Pointer to the event manager.
+     * \param playersPtr  Pointer to the player list.
      */
     UIManager(Methods* serverPtr, EventManager* eventsPtr, std::map<std::string, Player>* playersPtr);
 
     /*!
      * \brief Callback handler voor ManiaLink page answers.
      *
-     * \param player     Player who interacted with the page.
-     * \param answer     Page answer.
-     * \param entries    Entries.
+     * \param player      Player who interacted with the page.
+     * \param answer      Page answer.
+     * \param entries     Entries.
      */
     void OnPlayerManialinkPageAnswer(Player player, std::string answer, std::vector<EntryVal> entries);
 
     /*!
      * \brief Display frame.
      *
-     * \param frame      Frame to be displayed.
+     * \param frame       Frame to be displayed.
      */
     bool Display(UIFrame frame);
 
     /*!
      * \brief Display frame to player.
      *
-     * \param frame      Frame to be displayed.
-     * \param player     Player who should receive the frame.
+     * \param frame       Frame to be displayed.
+     * \param player      Player who should receive the frame.
      */
     bool Display(UIFrame frame, Player player);
 
     /*!
      * \brief Display list to player.
      *
-     * \param list       List to be displayed.
-     * \param player     Player who should receive the list.
+     * \param list        List to be displayed.
+     * \param player      Player who should receive the list.
+     * \param currentPage Page number to be displayed.
      */
     bool DisplayList(UIList list, Player player, int currentPage = 1);
 
     /*!
      * \brief Close list for player and removes from memory.
      *
-     * \param player     Player which center list should be closed.
+     * \param player      Player which center list should be closed.
      */
     void CloseList(Player player);
 
@@ -73,8 +74,8 @@ public:
     /*!
      * \brief Register event to be handled on page answer.
      *
-     * \param answer     Name of the answer.
-     * \param function   Function to be called on callback.
+     * \param answer      Name of the answer.
+     * \param function    Function to be called on callback.
      */
     bool RegisterEvent(std::string answer, std::function<void(Player, std::string, std::vector<EntryVal>)> function);
 
@@ -89,7 +90,7 @@ private:
     /*!
      * \brief Formats the page, including custom UI.
      *
-     * \param frame     Frame to be formatted.
+     * \param frame       Frame to be formatted.
      */
     std::string formatPage(UIFrame frame);
 };
