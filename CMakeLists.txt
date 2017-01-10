@@ -12,7 +12,7 @@ include_directories("${PROJECT_SOURCE_DIR}/lib/json")
 set (PROJECT_SOURCE_DIR ${PROJECT_SOURCE_DIR}/src)
 
 set (VERSION_MAJOR 0)
-set (VERSION_MINOR 2)
+set (VERSION_MINOR 3)
 set (VERSION_PATCH 0)
 
 # configure a header file to pass some of the CMake settings
