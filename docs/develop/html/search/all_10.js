@@ -29,7 +29,7 @@ var searchData=
   ['seteventmanager',['SetEventManager',['../classPluginManager.html#a7ed7485291babeed3109a1a364b6d308',1,'PluginManager']]],
   ['setid',['SetId',['../structMap.html#af83b3a784e6fa9404c1940a2ca1b68a8',1,'Map::SetId()'],['../structPlayer.html#a8541713f4fceaf4d03745e9407c3c303',1,'Player::SetId()']]],
   ['setraw',['SetRaw',['../classGbxCallBack.html#a9382de8d43cae9e7a9acd384146c2900',1,'GbxCallBack::SetRaw()'],['../classGbxResponse.html#aaf63a008c45be79f900e1131d0fb5565',1,'GbxResponse::SetRaw()'],['../classGbxServerResponse.html#a178871bec787d490f69def87f0242e05',1,'GbxServerResponse::SetRaw()']]],
-  ['settings',['settings',['../structPluginConfig.html#a16711457d0b98557f4a55f7514ae2706',1,'PluginConfig::settings()'],['../classPlugin.html#a3ebbb5535520c01fb815ba2f1a7a14e3',1,'Plugin::Settings()']]],
+  ['settings',['Settings',['../classPlugin.html#a3ebbb5535520c01fb815ba2f1a7a14e3',1,'Plugin::Settings()'],['../structPluginConfig.html#a16711457d0b98557f4a55f7514ae2706',1,'PluginConfig::settings()']]],
   ['silvertime',['SilverTime',['../structMap.html#ad3121edccf9be02843ca91622a88a1a5',1,'Map']]],
   ['size',['size',['../structGbxFirstResponse.html#ad93a9c67024b28ecddb779457dd001f8',1,'GbxFirstResponse::size()'],['../structGbxQueryResponse.html#a0633cc01128e5eee2edba3ee503db1c4',1,'GbxQueryResponse::size()']]],
   ['sock',['sock',['../classTcpClient.html#af93f7c8c4d91d93379ba99fd3742c3dc',1,'TcpClient']]],
