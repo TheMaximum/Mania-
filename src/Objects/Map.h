@@ -105,6 +105,24 @@ struct Map
         Id = id;
     }
 
+    /*!
+     * \brief Updates (or inserts) key with value.
+     *
+     * \param key          Additionals key.
+     * \param value        Additionals value.
+     */
+    void UpdateAdditional(std::string key, boost::any value)
+    {
+        if(Additionals.find(key) != Additionals.end())
+        {
+            Additionals[key] = value;
+        }
+        else
+        {
+            Additionals.insert(std::pair<std::string, boost::any>(key, value));
+        }
+    }
+
 private:
     /*!
      * \brief Sets the basic map information from the struct.

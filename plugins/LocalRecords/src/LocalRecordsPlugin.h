@@ -23,6 +23,8 @@ public:
     void OnPlayerCheckpoint(Player player, int time, int currentLap, int checkpointIndex);
     void OpenLocalRecords(Player player);
 
+    boost::any GetLocalByMapId(boost::any parameters);
+
 private:
     LocalRecordsList localRecords;
     LocalRecordsWidget widget;
@@ -36,6 +38,7 @@ private:
     void retrieveRecords(Map map);
     void displayPersonalRecord(Player player);
     void loadSettings();
+    void updateAllMapLocals();
 };
 
 #endif // LOCALRECORDSPLUGIN_H_

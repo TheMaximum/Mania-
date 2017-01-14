@@ -28,7 +28,7 @@ public:
     void VotePositive(Player player);
     void DisplayWhoKarma(Player player);
 
-    boost::any GetKarmaByUid(boost::any parameters);
+    boost::any GetKarmaByMapId(boost::any parameters);
 
 private:
     std::map<std::string, int> votes;
@@ -43,7 +43,6 @@ private:
     void loadSettings();
     void displayToAll();
     void updateAllMapKarma();
-    void updateMapKarma(Map* map, int mapKarma);
     std::map<std::string, int> retrieveVotes(Map map);
 
     int retrieveTimesDriven(Player player);

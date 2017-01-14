@@ -14,7 +14,7 @@ KarmaPlugin::KarmaPlugin()
     RegisterCommand("whokarma", [this](Player player, std::vector<std::string> parameters) { DisplayWhoKarma(player); });
     RegisterCommand("++", [this](Player player, std::vector<std::string> parameters) { VotePositive(player); });
     RegisterCommand("--", [this](Player player, std::vector<std::string> parameters) { VoteNegative(player); });
-    RegisterCallableMethod("GetKarmaByUid", [this](boost::any parameters) { return GetKarmaByUid(parameters); });
+    RegisterCallableMethod("GetKarmaByMapId", [this](boost::any parameters) { return GetKarmaByMapId(parameters); });
 }
 
 void KarmaPlugin::Init()
@@ -31,7 +31,6 @@ void KarmaPlugin::Init()
 
     votes = retrieveVotes(*controller->Maps->Current);
     karma.Calculate(votes);
-    updateMapKarma(controller->Maps->Current, karma.Karma);
     displayToAll();
 }
 
@@ -54,7 +53,7 @@ void KarmaPlugin::OnBeginMap(Map map)
 {
     votes = retrieveVotes(*controller->Maps->Current);
     karma.Calculate(votes);
-    updateMapKarma(controller->Maps->Current, karma.Karma);
+    controller->Maps->Current->UpdateAdditional("Karma", karma.Karma);
     displayToAll();
 }
 
@@ -146,7 +145,7 @@ void KarmaPlugin::VotePositive(Player player)
 
             votes = retrieveVotes(*controller->Maps->Current);
             karma.Calculate(votes);
-            updateMapKarma(controller->Maps->Current, karma.Karma);
+            controller->Maps->Current->UpdateAdditional("Karma", karma.Karma);
             displayToAll();
 
             if(personalVote == -1)
@@ -208,7 +207,7 @@ void KarmaPlugin::VoteNegative(Player player)
 
             votes = retrieveVotes(*controller->Maps->Current);
             karma.Calculate(votes);
-            updateMapKarma(controller->Maps->Current, karma.Karma);
+            controller->Maps->Current->UpdateAdditional("Karma", karma.Karma);
             displayToAll();
 
             if(personalVote == -1)
@@ -291,18 +290,38 @@ void KarmaPlugin::DisplayWhoKarma(Player player)
     controller->UI->DisplayList(list, player);
 }
 
-boost::any KarmaPlugin::GetKarmaByUid(boost::any parameters)
+boost::any KarmaPlugin::GetKarmaByMapId(boost::any parameters)
 {
-    boost::any result = NULL;
-    std::string uid = boost::any_cast<std::string>(parameters);
-    Map* requestedMap = controller->Maps->GetByUid(uid);
-    if(requestedMap->Id != 0)
+    boost::any result = 0;
+    int mapId = boost::any_cast<int>(parameters);
+    if(mapId != 0)
     {
-        MapKarma mapKarma = MapKarma();
-        mapKarma.Calculate(retrieveVotes(*requestedMap));
+        sql::PreparedStatement* pstmt;
+        sql::ResultSet* dbResult;
+        try
+        {
+            pstmt = controller->Database->prepareStatement("SELECT SUM(Score) as Karma FROM `karma` WHERE `MapId` = ?");
+            pstmt->setInt(1, mapId);
+            dbResult = pstmt->executeQuery();
+            dbResult->next();
+            result = dbResult->getInt("Karma");
+        }
+        catch(sql::SQLException &e)
+        {
+            
+        }
 
-        int requestedKarma = mapKarma.Karma;
-        updateMapKarma(requestedMap, requestedKarma);
+        if(pstmt != NULL)
+        {
+            delete pstmt;
+            pstmt = NULL;
+        }
+
+        if(dbResult != NULL)
+        {
+            delete dbResult;
+            dbResult = NULL;
+        }
     }
 
     return result;
@@ -313,21 +332,9 @@ void KarmaPlugin::updateAllMapKarma()
     std::cout << "[         ] Retrieving karma for all maps ... " << '\r' << std::flush;
     for(std::map<std::string, Map>::iterator mapIt = controller->Maps->List.begin(); mapIt != controller->Maps->List.end(); ++mapIt)
     {
-        GetKarmaByUid(mapIt->second.UId);
+        mapIt->second.UpdateAdditional("Karma", GetKarmaByMapId(mapIt->second.Id));
     }
     Logging::PrintOKFlush();
-}
-
-void KarmaPlugin::updateMapKarma(Map* map, int mapKarma)
-{
-    if(map->Additionals.find("Karma") != map->Additionals.end())
-    {
-        map->Additionals["Karma"] = mapKarma;
-    }
-    else
-    {
-        map->Additionals.insert(std::pair<std::string, boost::any>("Karma", mapKarma));
-    }
 }
 
 void KarmaPlugin::displayToAll()

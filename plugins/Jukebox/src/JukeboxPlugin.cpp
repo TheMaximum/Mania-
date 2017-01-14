@@ -175,6 +175,11 @@ void JukeboxPlugin::DisplayMapList(Player player)
     {
         list.Columns.push_back(std::pair<std::string, int>("Karma", 10));
     }
+    if(controller->Plugins->IsLoaded("LocalRecords", "0.2.0"))
+    {
+        list.Columns.push_back(std::pair<std::string, int>("Local", 10));
+    }
+
     list.Actions.insert(std::pair<std::string, std::pair<std::string, std::string>>("Name", std::pair<std::string, std::string>("JukeboxMap", "UId")));
     list.Actions.insert(std::pair<std::string, std::pair<std::string, std::string>>("Author", std::pair<std::string, std::string>("ListAuthor", "Author")));
 
@@ -190,6 +195,7 @@ void JukeboxPlugin::DisplayMapList(Player player)
         row.insert(std::pair<std::string, std::string>("UId", mapInList.UId));
         row.insert(std::pair<std::string, std::string>("Name", mapInList.Name));
         row.insert(std::pair<std::string, std::string>("Author", mapInList.Author));
+
         if(controller->Plugins->IsLoaded("Karma", "0.2.0"))
         {
             int karma = 0;
@@ -203,7 +209,7 @@ void JukeboxPlugin::DisplayMapList(Player player)
             }
             else
             {
-                boost::any mapKarma = controller->Plugins->CallMethod("Karma", "GetKarmaByUid", mapInList.UId);
+                boost::any mapKarma = controller->Plugins->CallMethod("Karma", "GetKarmaByMapId", mapInList.Id);
                 if(mapKarma.type() == typeid(int))
                 {
                     karma = boost::any_cast<int>(mapKarma);
@@ -212,6 +218,30 @@ void JukeboxPlugin::DisplayMapList(Player player)
 
             row.insert(std::pair<std::string, std::string>("Karma", std::to_string(karma)));
         }
+
+        if(controller->Plugins->IsLoaded("LocalRecords", "0.2.0"))
+        {
+            int local = 0;
+            if(mapInList.Additionals.find("Local") != mapInList.Additionals.end())
+            {
+                boost::any mapRecord = mapInList.Additionals.at("Local");
+                if(mapRecord.type() == typeid(int))
+                {
+                    local = boost::any_cast<int>(mapRecord);
+                }
+            }
+            else
+            {
+                boost::any mapRecord = controller->Plugins->CallMethod("LocalRecords", "GetLocalByMapId", mapInList.Id);
+                if(mapRecord.type() == typeid(int))
+                {
+                    local = boost::any_cast<int>(mapRecord);
+                }
+            }
+
+            row.insert(std::pair<std::string, std::string>("Local", Time::FormatTime(local)));
+        }
+
         list.Rows.push_back(row);
     }
 

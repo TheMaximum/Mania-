@@ -96,17 +96,14 @@ bool UIManager::DisplayList(UIList list, Player player, int currentPage)
         totalSize += list.Columns.at(columnId).second;
     }
 
-    if(totalSize > 80)
+    std::vector<std::pair<std::string, int>> updatedColumns;
+    for(int columnId = 0; columnId < list.Columns.size(); columnId++)
     {
-        std::vector<std::pair<std::string, int>> updatedColumns;
-        for(int columnId = 0; columnId < list.Columns.size(); columnId++)
-        {
-            std::pair<std::string, int> column = list.Columns.at(columnId);
-            updatedColumns.push_back(std::pair<std::string, int>(column.first, std::round((column.second / (double)totalSize) * 80.0)));
-        }
-
-        list.Columns = updatedColumns;
+        std::pair<std::string, int> column = list.Columns.at(columnId);
+        updatedColumns.push_back(std::pair<std::string, int>(column.first, std::round((column.second / (double)totalSize) * 80.0)));
     }
+
+    list.Columns = updatedColumns;
 
     std::stringstream widget;
     widget << "<frame posn=\"-42 38 0\" id=\"List" << list.Id << "\">";

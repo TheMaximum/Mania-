@@ -10,6 +10,7 @@ LocalRecordsPlugin::LocalRecordsPlugin()
     PlayerFinish.push_back([this](Player player, int playerTime) { OnPlayerFinish(player, playerTime); });
 
     RegisterCommand("records", [this](Player player, std::vector<std::string> parameters) { OpenLocalRecords(player); });
+    RegisterCallableMethod("GetLocalByMapId", [this](boost::any parameters) { return GetLocalByMapId(parameters); });
 }
 
 void LocalRecordsPlugin::Init()
@@ -24,6 +25,8 @@ void LocalRecordsPlugin::Init()
     widget.WidgetX = widgetX;
     widget.WidgetY = widgetY;
     controller->UI->RegisterEvent("OpenLocalRecords", ([this](Player player, std::string answer, std::vector<EntryVal> entries) { OpenLocalRecords(player); }));
+
+    updateAllMapLocals();
 
     if(!widget.DisplayToAll(controller->Players))
     {
@@ -205,6 +208,11 @@ void LocalRecordsPlugin::OnPlayerFinish(Player player, int playerTime)
 
             controller->Server->ChatSendServerMessage(chatMessage.str());
 
+            if(newLocalIndex == 1)
+            {
+                controller->Maps->Current->UpdateAdditional("Local", newLocal.Time);
+            }
+
             if(!widget.DisplayToAll(controller->Players))
             {
                 Logging::PrintError(controller->Server->GetCurrentError());
@@ -239,6 +247,53 @@ void LocalRecordsPlugin::OpenLocalRecords(Player player)
     }
 
     controller->UI->DisplayList(list, player);
+}
+
+boost::any LocalRecordsPlugin::GetLocalByMapId(boost::any parameters)
+{
+    boost::any result = 0;
+    int mapId = boost::any_cast<int>(parameters);
+    if(mapId != 0)
+    {
+        sql::PreparedStatement* pstmt;
+        sql::ResultSet* dbResult;
+        try
+        {
+            pstmt = controller->Database->prepareStatement("SELECT Score FROM `records` WHERE `MapId` = ? ORDER BY Score ASC LIMIT 1");
+            pstmt->setInt(1, mapId);
+            dbResult = pstmt->executeQuery();
+            dbResult->next();
+            result = dbResult->getInt("Score");
+        }
+        catch(sql::SQLException &e)
+        {
+            // No record.
+        }
+
+        if(pstmt != NULL)
+        {
+            delete pstmt;
+            pstmt = NULL;
+        }
+
+        if(dbResult != NULL)
+        {
+            delete dbResult;
+            dbResult = NULL;
+        }
+    }
+
+    return result;
+}
+
+void LocalRecordsPlugin::updateAllMapLocals()
+{
+    std::cout << "[         ] Retrieving locals for all maps ... " << '\r' << std::flush;
+    for(std::map<std::string, Map>::iterator mapIt = controller->Maps->List.begin(); mapIt != controller->Maps->List.end(); ++mapIt)
+    {
+        mapIt->second.UpdateAdditional("Local", GetLocalByMapId(mapIt->second.Id));
+    }
+    Logging::PrintOKFlush();
 }
 
 void LocalRecordsPlugin::displayPersonalRecord(Player player)
