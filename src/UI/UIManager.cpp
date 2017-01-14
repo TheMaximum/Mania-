@@ -90,6 +90,24 @@ bool UIManager::DisplayList(UIList list, Player player, int currentPage)
     int pages = std::ceil((list.Rows.size() / 20.0));
     if(pages == 0) pages = 1;
 
+    int totalSize = 0;
+    for(int columnId = 0; columnId < list.Columns.size(); columnId++)
+    {
+        totalSize += list.Columns.at(columnId).second;
+    }
+
+    if(totalSize > 80)
+    {
+        std::vector<std::pair<std::string, int>> updatedColumns;
+        for(int columnId = 0; columnId < list.Columns.size(); columnId++)
+        {
+            std::pair<std::string, int> column = list.Columns.at(columnId);
+            updatedColumns.push_back(std::pair<std::string, int>(column.first, std::round((column.second / (double)totalSize) * 80.0)));
+        }
+
+        list.Columns = updatedColumns;
+    }
+
     std::stringstream widget;
     widget << "<frame posn=\"-42 38 0\" id=\"List" << list.Id << "\">";
     widget << "        <quad posn=\"0 0 0.002\" sizen=\"84 63.5\" style=\"Bgs1InRace\" substyle=\"BgCardList\"/>";
