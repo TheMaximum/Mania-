@@ -102,6 +102,9 @@ std\-::map$<$ std\-::string, \\*
 std\-::function$<$ void(\hyperlink{structPlayer}{Player}, \\*
 std\-::vector$<$ std\-::string $>$)$>$ $>$ \hyperlink{classPlugin_a7a1ba3ed5e3c0c23eb1ea2e33cc61c1a}{Admin\-Commands}
 \begin{DoxyCompactList}\small\item\em \hyperlink{structMap}{Map} with admin chat commands for the plugin. \end{DoxyCompactList}\item 
+std\-::map$<$ std\-::string, \\*
+std\-::function$<$ boost\-::any(boost\-::any)$>$ $>$ \hyperlink{classPlugin_a4a8030e2fa113265d123aa6178c64318}{Methods}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structMap}{Map} with callable methods for the plugin. \end{DoxyCompactList}\item 
 \hypertarget{classPlugin_a8e332303a494988d2444589ac21c3414}{std\-::string \hyperlink{classPlugin_a8e332303a494988d2444589ac21c3414}{Version}}\label{classPlugin_a8e332303a494988d2444589ac21c3414}
 
 \begin{DoxyCompactList}\small\item\em \hyperlink{classPlugin}{Plugin} version. \end{DoxyCompactList}\item 
@@ -114,7 +117,9 @@ std\-::vector$<$ std\-::string $>$)$>$ $>$ \hyperlink{classPlugin_a7a1ba3ed5e3c0
 void \hyperlink{classPlugin_a1f1b16c36188ef19f2f8d3a2fdc42578}{Register\-Command} (std\-::string name, std\-::function$<$ void(\hyperlink{structPlayer}{Player}, std\-::vector$<$ std\-::string $>$)$>$ method)
 \begin{DoxyCompactList}\small\item\em Register chat command. \end{DoxyCompactList}\item 
 void \hyperlink{classPlugin_a99eca8fe24acb076090e76a502f4c1ed}{Register\-Admin\-Command} (std\-::string name, std\-::function$<$ void(\hyperlink{structPlayer}{Player}, std\-::vector$<$ std\-::string $>$)$>$ method)
-\begin{DoxyCompactList}\small\item\em Register admin chat command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Register admin chat command. \end{DoxyCompactList}\item 
+void \hyperlink{classPlugin_a3c053c7efbed950494f16fc91228e7fd}{Register\-Callable\-Method} (std\-::string name, std\-::function$<$ boost\-::any(boost\-::any)$>$ method)
+\begin{DoxyCompactList}\small\item\em Register callable method. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -144,6 +149,25 @@ Register admin chat command.
 {\em name} & Admin chat command name. \\
 \hline
 {\em method} & Method to be called for the command. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPlugin_a3c053c7efbed950494f16fc91228e7fd}{\index{Plugin@{Plugin}!Register\-Callable\-Method@{Register\-Callable\-Method}}
+\index{Register\-Callable\-Method@{Register\-Callable\-Method}!Plugin@{Plugin}}
+\subsubsection[{Register\-Callable\-Method}]{\setlength{\rightskip}{0pt plus 5cm}void Plugin\-::\-Register\-Callable\-Method (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name, }
+\item[{std\-::function$<$ boost\-::any(boost\-::any)$>$}]{method}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classPlugin_a3c053c7efbed950494f16fc91228e7fd}
+
+
+Register callable method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Method name. \\
+\hline
+{\em method} & Callable method. \\
 \hline
 \end{DoxyParams}
 \hypertarget{classPlugin_a1f1b16c36188ef19f2f8d3a2fdc42578}{\index{Plugin@{Plugin}!Register\-Command@{Register\-Command}}
@@ -207,6 +231,18 @@ Sets the controller instance.
 
 
 \hyperlink{structMap}{Map} with normal chat commands for the plugin. 
+
+\hypertarget{classPlugin_a4a8030e2fa113265d123aa6178c64318}{\index{Plugin@{Plugin}!Methods@{Methods}}
+\index{Methods@{Methods}!Plugin@{Plugin}}
+\subsubsection[{Methods}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$std\-::string, std\-::function$<$boost\-::any(boost\-::any)$>$ $>$ Plugin\-::\-Methods}}\label{classPlugin_a4a8030e2fa113265d123aa6178c64318}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+        std::map<std::string, std::function<boost::any(boost::any)>>()
+\end{DoxyCode}
+
+
+\hyperlink{structMap}{Map} with callable methods for the plugin. 
 
 
 

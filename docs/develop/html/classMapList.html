@@ -101,6 +101,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8202d99b60adc444fb42f0ce2d2b3dbd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapList.html#a8202d99b60adc444fb42f0ce2d2b3dbd">SetCurrentMap</a> (std::string uid)</td></tr>
 <tr class="memdesc:a8202d99b60adc444fb42f0ce2d2b3dbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current map to the one belonging to the unique identifier.  <a href="#a8202d99b60adc444fb42f0ce2d2b3dbd">More...</a><br/></td></tr>
 <tr class="separator:a8202d99b60adc444fb42f0ce2d2b3dbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada7a7c8b0a9b7e1ba41d0678b86d4b61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMap.html">Map</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapList.html#ada7a7c8b0a9b7e1ba41d0678b86d4b61">GetByUid</a> (std::string uid)</td></tr>
+<tr class="memdesc:ada7a7c8b0a9b7e1ba41d0678b86d4b61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets map for unique identifier.  <a href="#ada7a7c8b0a9b7e1ba41d0678b86d4b61">More...</a><br/></td></tr>
+<tr class="separator:ada7a7c8b0a9b7e1ba41d0678b86d4b61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -116,6 +119,30 @@ std::map&lt; std::string, <a class="el" href="structMap.html">Map</a> &gt;&#160;
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains the maplist and a pointer to the current map. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ada7a7c8b0a9b7e1ba41d0678b86d4b61"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structMap.html">Map</a> * MapList::GetByUid </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>uid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets map for unique identifier. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uid</td><td><a class="el" href="structMap.html" title="Contains all information about a map in easy-to-use format. ">Map</a> identifier (from game/server). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a8202d99b60adc444fb42f0ce2d2b3dbd"></a>
 <div class="memitem">
 <div class="memproto">
@@ -147,7 +174,7 @@ std::map&lt; std::string, <a class="el" href="structMap.html">Map</a> &gt;&#160;
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 10 2017 21:45:43 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jan 14 2017 00:14:44 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

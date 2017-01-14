@@ -14,7 +14,9 @@ Contains the maplist and a pointer to the current map.
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classMapList_a8202d99b60adc444fb42f0ce2d2b3dbd}{Set\-Current\-Map} (std\-::string uid)
-\begin{DoxyCompactList}\small\item\em Sets the current map to the one belonging to the unique identifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Sets the current map to the one belonging to the unique identifier. \end{DoxyCompactList}\item 
+\hyperlink{structMap}{Map} $\ast$ \hyperlink{classMapList_ada7a7c8b0a9b7e1ba41d0678b86d4b61}{Get\-By\-Uid} (std\-::string uid)
+\begin{DoxyCompactList}\small\item\em Gets map for unique identifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -30,6 +32,22 @@ void \hyperlink{classMapList_a8202d99b60adc444fb42f0ce2d2b3dbd}{Set\-Current\-Ma
 Contains the maplist and a pointer to the current map. 
 
 \subsection{Member Function Documentation}
+\hypertarget{classMapList_ada7a7c8b0a9b7e1ba41d0678b86d4b61}{\index{Map\-List@{Map\-List}!Get\-By\-Uid@{Get\-By\-Uid}}
+\index{Get\-By\-Uid@{Get\-By\-Uid}!MapList@{Map\-List}}
+\subsubsection[{Get\-By\-Uid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Map} $\ast$ Map\-List\-::\-Get\-By\-Uid (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{uid}
+\end{DoxyParamCaption}
+)}}\label{classMapList_ada7a7c8b0a9b7e1ba41d0678b86d4b61}
+
+
+Gets map for unique identifier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uid} & \hyperlink{structMap}{Map} identifier (from game/server). \\
+\hline
+\end{DoxyParams}
 \hypertarget{classMapList_a8202d99b60adc444fb42f0ce2d2b3dbd}{\index{Map\-List@{Map\-List}!Set\-Current\-Map@{Set\-Current\-Map}}
 \index{Set\-Current\-Map@{Set\-Current\-Map}!MapList@{Map\-List}}
 \subsubsection[{Set\-Current\-Map}]{\setlength{\rightskip}{0pt plus 5cm}void Map\-List\-::\-Set\-Current\-Map (

@@ -99,10 +99,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classMapList.html#a02d028e30cdaf96170b885237b34990c">   13</a></span>&#160;    std::map&lt;std::string, Map&gt; <a class="code" href="classMapList.html#a02d028e30cdaf96170b885237b34990c">List</a>; </div>
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classMapList.html#a9ff0021f3b08091091e58d3109c41400">   14</a></span>&#160;    <a class="code" href="structMap.html">Map</a>* <a class="code" href="classMapList.html#a9ff0021f3b08091091e58d3109c41400">Current</a> = NULL;             </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMapList.html#a8202d99b60adc444fb42f0ce2d2b3dbd">SetCurrentMap</a>(std::string uid);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif // MAPLIST_H_</span></div>
-<div class="ttc" id="structMap_html"><div class="ttname"><a href="structMap.html">Map</a></div><div class="ttdoc">Contains all information about a map in easy-to-use format. </div><div class="ttdef"><b>Definition:</b> Map.h:10</div></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="structMap.html">Map</a>* <a class="code" href="classMapList.html#ada7a7c8b0a9b7e1ba41d0678b86d4b61">GetByUid</a>(std::string uid);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif // MAPLIST_H_</span></div>
+<div class="ttc" id="classMapList_html_ada7a7c8b0a9b7e1ba41d0678b86d4b61"><div class="ttname"><a href="classMapList.html#ada7a7c8b0a9b7e1ba41d0678b86d4b61">MapList::GetByUid</a></div><div class="ttdeci">Map * GetByUid(std::string uid)</div><div class="ttdoc">Gets map for unique identifier. </div><div class="ttdef"><b>Definition:</b> MapList.cpp:9</div></div>
+<div class="ttc" id="structMap_html"><div class="ttname"><a href="structMap.html">Map</a></div><div class="ttdoc">Contains all information about a map in easy-to-use format. </div><div class="ttdef"><b>Definition:</b> Map.h:14</div></div>
 <div class="ttc" id="classMapList_html"><div class="ttname"><a href="classMapList.html">MapList</a></div><div class="ttdoc">Contains the maplist and a pointer to the current map. </div><div class="ttdef"><b>Definition:</b> MapList.h:10</div></div>
 <div class="ttc" id="classMapList_html_a9ff0021f3b08091091e58d3109c41400"><div class="ttname"><a href="classMapList.html#a9ff0021f3b08091091e58d3109c41400">MapList::Current</a></div><div class="ttdeci">Map * Current</div><div class="ttdoc">Pointer to the current map (in the list). </div><div class="ttdef"><b>Definition:</b> MapList.h:14</div></div>
 <div class="ttc" id="classMapList_html_a8202d99b60adc444fb42f0ce2d2b3dbd"><div class="ttname"><a href="classMapList.html#a8202d99b60adc444fb42f0ce2d2b3dbd">MapList::SetCurrentMap</a></div><div class="ttdeci">void SetCurrentMap(std::string uid)</div><div class="ttdoc">Sets the current map to the one belonging to the unique identifier. </div><div class="ttdef"><b>Definition:</b> MapList.cpp:3</div></div>
@@ -110,7 +113,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 10 2017 21:45:43 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jan 14 2017 00:14:43 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

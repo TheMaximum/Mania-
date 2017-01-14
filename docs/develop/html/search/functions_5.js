@@ -1,10 +1,11 @@
 var searchData=
 [
   ['gbxmessage',['GbxMessage',['../classGbxMessage.html#a843b7642b48be23073a4b981f80f95b7',1,'GbxMessage']]],
-  ['gbxparameter',['GbxParameter',['../classGbxParameter.html#a6cfd5c21c176ca6d9d2a1a3d9ad9953c',1,'GbxParameter']]],
+  ['gbxparameter',['GbxParameter',['../classGbxParameter.html#a3a341208c5af115d80553213b156dbdd',1,'GbxParameter']]],
   ['gbxserverresponse',['GbxServerResponse',['../classGbxServerResponse.html#a2198b6f6ca6b7da1ffd7bfa9a516d8b2',1,'GbxServerResponse']]],
   ['getapiversion',['GetApiVersion',['../classGbxRemote.html#a6351f71fe649bff2aabfbd9b7c89e3f5',1,'GbxRemote']]],
   ['getarray',['GetArray',['../classGbxResponseParameter.html#aa27aca1d5084755fe585401617e2549a',1,'GbxResponseParameter']]],
+  ['getbyuid',['GetByUid',['../classMapList.html#ada7a7c8b0a9b7e1ba41d0678b86d4b61',1,'MapList']]],
   ['getcallvoteratio',['GetCallVoteRatio',['../classMethods.html#a2279c611672e3ec5816780d661469d2a',1,'Methods']]],
   ['getcallvoteratios',['GetCallVoteRatios',['../classMethods.html#a29e8bd0f4e63f4e9e3a5c91fb49c7a2b',1,'Methods']]],
   ['getcallvoteratiosex',['GetCallVoteRatiosEx',['../classMethods.html#af0d500880106e39f8e6d57751b4f2abe',1,'Methods']]],
@@ -21,7 +22,7 @@ var searchData=
   ['getmethod',['GetMethod',['../classGbxMessage.html#a53e00a162c293251bef476ad74d0134c',1,'GbxMessage']]],
   ['getmethodname',['GetMethodName',['../classGbxCallBack.html#aaf01544527ca0559478221780b3f32f6',1,'GbxCallBack']]],
   ['getnextmapinfo',['GetNextMapInfo',['../classMethods.html#afa0e3e406c14aad10521d4d6c6333a70',1,'Methods']]],
-  ['getparameters',['GetParameters',['../classGbxStructParameters.html#a5d496ceb658abca1300ae093d26abedc',1,'GbxStructParameters::GetParameters()'],['../classGbxParameters.html#a09302bc40359205cd294b8bcf2ab1c2e',1,'GbxParameters::GetParameters()'],['../classGbxServerResponse.html#a6d42bdaaeff3368e1fab2984940d2a2c',1,'GbxServerResponse::GetParameters()']]],
+  ['getparameters',['GetParameters',['../classGbxStructParameters.html#a5d496ceb658abca1300ae093d26abedc',1,'GbxStructParameters::GetParameters()'],['../classGbxParameters.html#a0b80a76f2af231b5cd315c8a0af7770e',1,'GbxParameters::GetParameters()'],['../classGbxServerResponse.html#a6d42bdaaeff3368e1fab2984940d2a2c',1,'GbxServerResponse::GetParameters()']]],
   ['getprotocol',['GetProtocol',['../classGbxRemote.html#ae6e15060920a31482fd14045cfd42803',1,'GbxRemote']]],
   ['getraw',['GetRaw',['../classGbxServerResponse.html#aa449d9a63899e1d1205e6ab916798ba6',1,'GbxServerResponse']]],
   ['getresponse',['GetResponse',['../classGbxRemote.html#adac67444e391ffcc1dfda8f087eaef0b',1,'GbxRemote']]],

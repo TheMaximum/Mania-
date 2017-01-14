@@ -8,6 +8,7 @@ var searchData=
   ['registerbeginmap',['RegisterBeginMap',['../classEventManager.html#ae77dfbbb9640ca9aa5b458d6959676ea',1,'EventManager']]],
   ['registerbeginmatch',['RegisterBeginMatch',['../classEventManager.html#afb7b0d6fd646ce3eb0568c95c8a4b89c',1,'EventManager']]],
   ['registerbillupdated',['RegisterBillUpdated',['../classEventManager.html#a8ce3c162bdc0cad5ea03e9bf1233c991',1,'EventManager']]],
+  ['registercallablemethod',['RegisterCallableMethod',['../classPlugin.html#a3c053c7efbed950494f16fc91228e7fd',1,'Plugin']]],
   ['registercommand',['RegisterCommand',['../classPlugin.html#a1f1b16c36188ef19f2f8d3a2fdc42578',1,'Plugin']]],
   ['registercommands',['RegisterCommands',['../classCommandManager.html#a777c8b1861f5439013c9b8583cf2c0dc',1,'CommandManager']]],
   ['registerecho',['RegisterEcho',['../classEventManager.html#aee6fe2f94e1c86af6ec79735771701d0',1,'EventManager']]],

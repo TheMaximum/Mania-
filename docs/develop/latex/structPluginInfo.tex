@@ -8,7 +8,7 @@ Struct with information about a plugin.
 
 
 
-{\ttfamily \#include $<$Plugin\-Manager.\-h$>$}
+{\ttfamily \#include $<$Plugin\-Handler.\-h$>$}
 
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -19,12 +19,16 @@ Struct with information about a plugin.
 \hypertarget{structPluginInfo_aae2dacfe0d928e4bf17b44c7356cfd93}{std\-::string \hyperlink{structPluginInfo_aae2dacfe0d928e4bf17b44c7356cfd93}{Author}}\label{structPluginInfo_aae2dacfe0d928e4bf17b44c7356cfd93}
 
 \begin{DoxyCompactList}\small\item\em \hyperlink{classPlugin}{Plugin} author (from instance). \end{DoxyCompactList}\item 
-\hypertarget{structPluginInfo_aef49f59681176d6135492b7541ff1138}{\hyperlink{classPlugin}{Plugin} $\ast$ \hyperlink{structPluginInfo_aef49f59681176d6135492b7541ff1138}{Instance}}\label{structPluginInfo_aef49f59681176d6135492b7541ff1138}
+\hypertarget{structPluginInfo_ad14fb40088de7f45f5cb6c9985124c78}{void $\ast$ \hyperlink{structPluginInfo_ad14fb40088de7f45f5cb6c9985124c78}{Instance}}\label{structPluginInfo_ad14fb40088de7f45f5cb6c9985124c78}
 
 \begin{DoxyCompactList}\small\item\em Instance of the plugin. \end{DoxyCompactList}\item 
 \hypertarget{structPluginInfo_a3fc5df25e8b7e3b63bd0e92f270364f2}{void $\ast$ \hyperlink{structPluginInfo_a3fc5df25e8b7e3b63bd0e92f270364f2}{Handle}}\label{structPluginInfo_a3fc5df25e8b7e3b63bd0e92f270364f2}
 
-\begin{DoxyCompactList}\small\item\em Handle (from dlopen) of the plugin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Handle (from dlopen) of the plugin. \end{DoxyCompactList}\item 
+\hypertarget{structPluginInfo_a4fda3e831fda01ac915ce3a5dbcefcfd}{std\-::map$<$ std\-::string, \\*
+std\-::function$<$ boost\-::any(boost\-::any)$>$ $>$ \hyperlink{structPluginInfo_a4fda3e831fda01ac915ce3a5dbcefcfd}{Methods}}\label{structPluginInfo_a4fda3e831fda01ac915ce3a5dbcefcfd}
+
+\begin{DoxyCompactList}\small\item\em Callable methods of the plugin. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -32,4 +36,4 @@ Struct with information about a plugin.
 
 The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
-/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Plugins/Plugin\-Manager.\-h\end{DoxyCompactItemize}
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Plugins/Plugin\-Handler.\-h\end{DoxyCompactItemize}

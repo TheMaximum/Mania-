@@ -95,86 +95,59 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;Config/Version.h&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;../Utils/Logging.h&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using</span> json = nlohmann::json;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">//* GitVersion</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structGitVersion.html">   16</a></span>&#160;<span class="comment"></span><span class="keyword">struct </span><a class="code" href="structGitVersion.html">GitVersion</a></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structGitVersion.html#ad47dce1972d1058648429996c6ed02b0">   18</a></span>&#160;    std::string <a class="code" href="structGitVersion.html#ad47dce1972d1058648429996c6ed02b0">Repository</a>; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structGitVersion.html#ad436b796df94381fe3af70559868ed55">   19</a></span>&#160;    std::string <a class="code" href="structGitVersion.html#ad436b796df94381fe3af70559868ed55">Tag</a>;        </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structGitVersion.html#a437b0aaee8685d61cccde69ad4ae73ec">   20</a></span>&#160;    std::string <a class="code" href="structGitVersion.html#a437b0aaee8685d61cccde69ad4ae73ec">Name</a>;       </div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structGitVersion.html#a0a7fcfae969cad2cb90dc0353df5bf49">   21</a></span>&#160;    std::string <a class="code" href="structGitVersion.html#a0a7fcfae969cad2cb90dc0353df5bf49">Commit</a>;     </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structGitVersion.html#a632eaf068f15348c372389d86b310525">   22</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structGitVersion.html#a632eaf068f15348c372389d86b310525">PreRelease</a>;        </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//* VersionCompare</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classVersionCompare.html">   29</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classVersionCompare.html">VersionCompare</a></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classVersionCompare.html#a237db39cbf335ed106f4fa2dc087cb36">   38</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classVersionCompare.html#a237db39cbf335ed106f4fa2dc087cb36">NewerThanCurrent</a>(<span class="keyword">const</span> std::string&amp; current, <span class="keyword">const</span> std::string&amp; other)</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">int</span> parsedCurrent[3], parsedOther[3];</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="classVersionCompare.html#a1fdc3833968e1579942fc420daed6dd9">parseVersion</a>(parsedCurrent, current);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="classVersionCompare.html#a1fdc3833968e1579942fc420daed6dd9">parseVersion</a>(parsedOther, other);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span> std::lexicographical_compare(parsedCurrent, parsedCurrent + 3, parsedOther, parsedOther + 3);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classVersionCompare.html#a1fdc3833968e1579942fc420daed6dd9">   53</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classVersionCompare.html#a1fdc3833968e1579942fc420daed6dd9">parseVersion</a>(<span class="keywordtype">int</span> result[3], <span class="keyword">const</span> std::string&amp; input)</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        std::istringstream parser(input);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        parser &gt;&gt; result[0];</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> idx = 1; idx &lt; 3; idx++)</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            parser.get();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            parser &gt;&gt; result[idx];</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">//* VersionChecker</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classVersionChecker.html">   69</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classVersionChecker.html">VersionChecker</a></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classVersionChecker.html#afb48bf9325d6049baefbe2b8841d061e">CheckForUpdates</a>(std::string repository, std::string currentVersion);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code" href="classVersionChecker.html#a08332369b0012d1fa919471b559a13b1">receiveData</a>(<span class="keywordtype">void</span>* contents, <span class="keywordtype">size_t</span> size, <span class="keywordtype">size_t</span> nmemb, std::string* tags);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVersionChecker.html#ac758c0752d07f453f11357fac439011d">retrieveData</a>(std::string url, std::string* data);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    std::vector&lt;GitVersion&gt; <a class="code" href="classVersionChecker.html#a9f648fee93cd911d85c34af34c2f1b0a">retrieveVersions</a>(std::string repository);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    std::vector&lt;GitVersion&gt; <a class="code" href="classVersionChecker.html#a8dea3d22c0a7ef3928f9da73bebb8295">decodeVersions</a>(std::string response);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVersionChecker.html#aa993a71dc58cfb6a3840235fe3fa4d27">retrieveRelease</a>(<a class="code" href="structGitVersion.html">GitVersion</a>* version);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVersionChecker.html#a5b27ec7321df94dff2876c260c75fea0">decodeRelease</a>(<a class="code" href="structGitVersion.html">GitVersion</a>* version, std::string response);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;};</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor">#endif // VERSIONCHECKER_H_</span></div>
-<div class="ttc" id="classVersionCompare_html"><div class="ttname"><a href="classVersionCompare.html">VersionCompare</a></div><div class="ttdoc">Compares string versions. </div><div class="ttdef"><b>Definition:</b> VersionChecker.h:29</div></div>
-<div class="ttc" id="structGitVersion_html_a632eaf068f15348c372389d86b310525"><div class="ttname"><a href="structGitVersion.html#a632eaf068f15348c372389d86b310525">GitVersion::PreRelease</a></div><div class="ttdeci">bool PreRelease</div><div class="ttdoc">Is pre-release?. </div><div class="ttdef"><b>Definition:</b> VersionChecker.h:22</div></div>
-<div class="ttc" id="classVersionCompare_html_a1fdc3833968e1579942fc420daed6dd9"><div class="ttname"><a href="classVersionCompare.html#a1fdc3833968e1579942fc420daed6dd9">VersionCompare::parseVersion</a></div><div class="ttdeci">static void parseVersion(int result[3], const std::string &amp;input)</div><div class="ttdef"><b>Definition:</b> VersionChecker.h:53</div></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;../Utils/VersionCompare.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using</span> json = nlohmann::json;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//* GitVersion</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structGitVersion.html">   17</a></span>&#160;<span class="comment"></span><span class="keyword">struct </span><a class="code" href="structGitVersion.html">GitVersion</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structGitVersion.html#ad47dce1972d1058648429996c6ed02b0">   19</a></span>&#160;    std::string <a class="code" href="structGitVersion.html#ad47dce1972d1058648429996c6ed02b0">Repository</a>; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structGitVersion.html#ad436b796df94381fe3af70559868ed55">   20</a></span>&#160;    std::string <a class="code" href="structGitVersion.html#ad436b796df94381fe3af70559868ed55">Tag</a>;        </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structGitVersion.html#a437b0aaee8685d61cccde69ad4ae73ec">   21</a></span>&#160;    std::string <a class="code" href="structGitVersion.html#a437b0aaee8685d61cccde69ad4ae73ec">Name</a>;       </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structGitVersion.html#a0a7fcfae969cad2cb90dc0353df5bf49">   22</a></span>&#160;    std::string <a class="code" href="structGitVersion.html#a0a7fcfae969cad2cb90dc0353df5bf49">Commit</a>;     </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structGitVersion.html#a632eaf068f15348c372389d86b310525">   23</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structGitVersion.html#a632eaf068f15348c372389d86b310525">PreRelease</a>;        </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//* VersionChecker</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classVersionChecker.html">   30</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classVersionChecker.html">VersionChecker</a></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classVersionChecker.html#afb48bf9325d6049baefbe2b8841d061e">CheckForUpdates</a>(std::string repository, std::string currentVersion);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code" href="classVersionChecker.html#a08332369b0012d1fa919471b559a13b1">receiveData</a>(<span class="keywordtype">void</span>* contents, <span class="keywordtype">size_t</span> size, <span class="keywordtype">size_t</span> nmemb, std::string* tags);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVersionChecker.html#ac758c0752d07f453f11357fac439011d">retrieveData</a>(std::string url, std::string* data);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    std::vector&lt;GitVersion&gt; <a class="code" href="classVersionChecker.html#a9f648fee93cd911d85c34af34c2f1b0a">retrieveVersions</a>(std::string repository);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    std::vector&lt;GitVersion&gt; <a class="code" href="classVersionChecker.html#a8dea3d22c0a7ef3928f9da73bebb8295">decodeVersions</a>(std::string response);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVersionChecker.html#aa993a71dc58cfb6a3840235fe3fa4d27">retrieveRelease</a>(<a class="code" href="structGitVersion.html">GitVersion</a>* version);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVersionChecker.html#a5b27ec7321df94dff2876c260c75fea0">decodeRelease</a>(<a class="code" href="structGitVersion.html">GitVersion</a>* version, std::string response);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;};</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#endif // VERSIONCHECKER_H_</span></div>
+<div class="ttc" id="structGitVersion_html_a632eaf068f15348c372389d86b310525"><div class="ttname"><a href="structGitVersion.html#a632eaf068f15348c372389d86b310525">GitVersion::PreRelease</a></div><div class="ttdeci">bool PreRelease</div><div class="ttdoc">Is pre-release?. </div><div class="ttdef"><b>Definition:</b> VersionChecker.h:23</div></div>
 <div class="ttc" id="classVersionChecker_html_afb48bf9325d6049baefbe2b8841d061e"><div class="ttname"><a href="classVersionChecker.html#afb48bf9325d6049baefbe2b8841d061e">VersionChecker::CheckForUpdates</a></div><div class="ttdeci">bool CheckForUpdates(std::string repository, std::string currentVersion)</div><div class="ttdoc">Returns whether there are updates available. </div><div class="ttdef"><b>Definition:</b> VersionChecker.cpp:3</div></div>
-<div class="ttc" id="classVersionChecker_html"><div class="ttname"><a href="classVersionChecker.html">VersionChecker</a></div><div class="ttdoc">Checks Mania++ version (and possibly plugin versions). </div><div class="ttdef"><b>Definition:</b> VersionChecker.h:69</div></div>
+<div class="ttc" id="classVersionChecker_html"><div class="ttname"><a href="classVersionChecker.html">VersionChecker</a></div><div class="ttdoc">Checks Mania++ version (and possibly plugin versions). </div><div class="ttdef"><b>Definition:</b> VersionChecker.h:30</div></div>
 <div class="ttc" id="classVersionChecker_html_ac758c0752d07f453f11357fac439011d"><div class="ttname"><a href="classVersionChecker.html#ac758c0752d07f453f11357fac439011d">VersionChecker::retrieveData</a></div><div class="ttdeci">void retrieveData(std::string url, std::string *data)</div><div class="ttdoc">Retrieves data via cURL. </div><div class="ttdef"><b>Definition:</b> VersionChecker.cpp:96</div></div>
 <div class="ttc" id="classVersionChecker_html_a5b27ec7321df94dff2876c260c75fea0"><div class="ttname"><a href="classVersionChecker.html#a5b27ec7321df94dff2876c260c75fea0">VersionChecker::decodeRelease</a></div><div class="ttdeci">void decodeRelease(GitVersion *version, std::string response)</div><div class="ttdoc">Decodes the JSON response with release and inputs info into version struct. </div><div class="ttdef"><b>Definition:</b> VersionChecker.cpp:157</div></div>
-<div class="ttc" id="structGitVersion_html_ad436b796df94381fe3af70559868ed55"><div class="ttname"><a href="structGitVersion.html#ad436b796df94381fe3af70559868ed55">GitVersion::Tag</a></div><div class="ttdeci">std::string Tag</div><div class="ttdoc">Tag version. </div><div class="ttdef"><b>Definition:</b> VersionChecker.h:19</div></div>
+<div class="ttc" id="structGitVersion_html_ad436b796df94381fe3af70559868ed55"><div class="ttname"><a href="structGitVersion.html#ad436b796df94381fe3af70559868ed55">GitVersion::Tag</a></div><div class="ttdeci">std::string Tag</div><div class="ttdoc">Tag version. </div><div class="ttdef"><b>Definition:</b> VersionChecker.h:20</div></div>
 <div class="ttc" id="classVersionChecker_html_a9f648fee93cd911d85c34af34c2f1b0a"><div class="ttname"><a href="classVersionChecker.html#a9f648fee93cd911d85c34af34c2f1b0a">VersionChecker::retrieveVersions</a></div><div class="ttdeci">std::vector&lt; GitVersion &gt; retrieveVersions(std::string repository)</div><div class="ttdoc">Retrieves versions (tags) of repository. </div><div class="ttdef"><b>Definition:</b> VersionChecker.cpp:120</div></div>
-<div class="ttc" id="classVersionCompare_html_a237db39cbf335ed106f4fa2dc087cb36"><div class="ttname"><a href="classVersionCompare.html#a237db39cbf335ed106f4fa2dc087cb36">VersionCompare::NewerThanCurrent</a></div><div class="ttdeci">static bool NewerThanCurrent(const std::string &amp;current, const std::string &amp;other)</div><div class="ttdef"><b>Definition:</b> VersionChecker.h:38</div></div>
 <div class="ttc" id="classVersionChecker_html_a08332369b0012d1fa919471b559a13b1"><div class="ttname"><a href="classVersionChecker.html#a08332369b0012d1fa919471b559a13b1">VersionChecker::receiveData</a></div><div class="ttdeci">static size_t receiveData(void *contents, size_t size, size_t nmemb, std::string *tags)</div><div class="ttdoc">Receives data from cURL input. </div><div class="ttdef"><b>Definition:</b> VersionChecker.cpp:78</div></div>
 <div class="ttc" id="classVersionChecker_html_a8dea3d22c0a7ef3928f9da73bebb8295"><div class="ttname"><a href="classVersionChecker.html#a8dea3d22c0a7ef3928f9da73bebb8295">VersionChecker::decodeVersions</a></div><div class="ttdeci">std::vector&lt; GitVersion &gt; decodeVersions(std::string response)</div><div class="ttdoc">Decodes the JSON response with versions (tags) of repository. </div><div class="ttdef"><b>Definition:</b> VersionChecker.cpp:128</div></div>
 <div class="ttc" id="classVersionChecker_html_aa993a71dc58cfb6a3840235fe3fa4d27"><div class="ttname"><a href="classVersionChecker.html#aa993a71dc58cfb6a3840235fe3fa4d27">VersionChecker::retrieveRelease</a></div><div class="ttdeci">void retrieveRelease(GitVersion *version)</div><div class="ttdoc">Retrieves release information. </div><div class="ttdef"><b>Definition:</b> VersionChecker.cpp:149</div></div>
-<div class="ttc" id="structGitVersion_html_ad47dce1972d1058648429996c6ed02b0"><div class="ttname"><a href="structGitVersion.html#ad47dce1972d1058648429996c6ed02b0">GitVersion::Repository</a></div><div class="ttdeci">std::string Repository</div><div class="ttdoc">Name of the GitHub repository. </div><div class="ttdef"><b>Definition:</b> VersionChecker.h:18</div></div>
-<div class="ttc" id="structGitVersion_html"><div class="ttname"><a href="structGitVersion.html">GitVersion</a></div><div class="ttdoc">Contains information about a Git release (version). </div><div class="ttdef"><b>Definition:</b> VersionChecker.h:16</div></div>
-<div class="ttc" id="structGitVersion_html_a0a7fcfae969cad2cb90dc0353df5bf49"><div class="ttname"><a href="structGitVersion.html#a0a7fcfae969cad2cb90dc0353df5bf49">GitVersion::Commit</a></div><div class="ttdeci">std::string Commit</div><div class="ttdoc">SHA commit. </div><div class="ttdef"><b>Definition:</b> VersionChecker.h:21</div></div>
-<div class="ttc" id="structGitVersion_html_a437b0aaee8685d61cccde69ad4ae73ec"><div class="ttname"><a href="structGitVersion.html#a437b0aaee8685d61cccde69ad4ae73ec">GitVersion::Name</a></div><div class="ttdeci">std::string Name</div><div class="ttdoc">Tag name (description). </div><div class="ttdef"><b>Definition:</b> VersionChecker.h:20</div></div>
+<div class="ttc" id="structGitVersion_html_ad47dce1972d1058648429996c6ed02b0"><div class="ttname"><a href="structGitVersion.html#ad47dce1972d1058648429996c6ed02b0">GitVersion::Repository</a></div><div class="ttdeci">std::string Repository</div><div class="ttdoc">Name of the GitHub repository. </div><div class="ttdef"><b>Definition:</b> VersionChecker.h:19</div></div>
+<div class="ttc" id="structGitVersion_html"><div class="ttname"><a href="structGitVersion.html">GitVersion</a></div><div class="ttdoc">Contains information about a Git release (version). </div><div class="ttdef"><b>Definition:</b> VersionChecker.h:17</div></div>
+<div class="ttc" id="structGitVersion_html_a0a7fcfae969cad2cb90dc0353df5bf49"><div class="ttname"><a href="structGitVersion.html#a0a7fcfae969cad2cb90dc0353df5bf49">GitVersion::Commit</a></div><div class="ttdeci">std::string Commit</div><div class="ttdoc">SHA commit. </div><div class="ttdef"><b>Definition:</b> VersionChecker.h:22</div></div>
+<div class="ttc" id="structGitVersion_html_a437b0aaee8685d61cccde69ad4ae73ec"><div class="ttname"><a href="structGitVersion.html#a437b0aaee8685d61cccde69ad4ae73ec">GitVersion::Name</a></div><div class="ttdeci">std::string Name</div><div class="ttdoc">Tag name (description). </div><div class="ttdef"><b>Definition:</b> VersionChecker.h:21</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 10 2017 21:45:43 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jan 14 2017 00:14:43 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

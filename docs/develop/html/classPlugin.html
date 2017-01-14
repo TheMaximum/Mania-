@@ -210,6 +210,10 @@ std::function&lt; void(<a class="el" href="structPlayer.html">Player</a>, <br cl
 std::vector&lt; std::string &gt;)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlugin.html#a7a1ba3ed5e3c0c23eb1ea2e33cc61c1a">AdminCommands</a></td></tr>
 <tr class="memdesc:a7a1ba3ed5e3c0c23eb1ea2e33cc61c1a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structMap.html" title="Contains all information about a map in easy-to-use format. ">Map</a> with admin chat commands for the plugin.  <a href="#a7a1ba3ed5e3c0c23eb1ea2e33cc61c1a">More...</a><br/></td></tr>
 <tr class="separator:a7a1ba3ed5e3c0c23eb1ea2e33cc61c1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a8030e2fa113265d123aa6178c64318"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, <br class="typebreak"/>
+std::function&lt; boost::any(boost::any)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlugin.html#a4a8030e2fa113265d123aa6178c64318">Methods</a></td></tr>
+<tr class="memdesc:a4a8030e2fa113265d123aa6178c64318"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structMap.html" title="Contains all information about a map in easy-to-use format. ">Map</a> with callable methods for the plugin.  <a href="#a4a8030e2fa113265d123aa6178c64318">More...</a><br/></td></tr>
+<tr class="separator:a4a8030e2fa113265d123aa6178c64318"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e332303a494988d2444589ac21c3414"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8e332303a494988d2444589ac21c3414"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlugin.html#a8e332303a494988d2444589ac21c3414">Version</a></td></tr>
 <tr class="memdesc:a8e332303a494988d2444589ac21c3414"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classPlugin.html" title="Plugin interface, inherited by all plugins. ">Plugin</a> version. <br/></td></tr>
@@ -227,6 +231,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a99eca8fe24acb076090e76a502f4c1ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlugin.html#a99eca8fe24acb076090e76a502f4c1ed">RegisterAdminCommand</a> (std::string name, std::function&lt; void(<a class="el" href="structPlayer.html">Player</a>, std::vector&lt; std::string &gt;)&gt; method)</td></tr>
 <tr class="memdesc:a99eca8fe24acb076090e76a502f4c1ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register admin chat command.  <a href="#a99eca8fe24acb076090e76a502f4c1ed">More...</a><br/></td></tr>
 <tr class="separator:a99eca8fe24acb076090e76a502f4c1ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c053c7efbed950494f16fc91228e7fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlugin.html#a3c053c7efbed950494f16fc91228e7fd">RegisterCallableMethod</a> (std::string name, std::function&lt; boost::any(boost::any)&gt; method)</td></tr>
+<tr class="memdesc:a3c053c7efbed950494f16fc91228e7fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register callable method.  <a href="#a3c053c7efbed950494f16fc91228e7fd">More...</a><br/></td></tr>
+<tr class="separator:a3c053c7efbed950494f16fc91228e7fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -275,6 +282,49 @@ Protected Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">name</td><td>Admin chat command name. </td></tr>
     <tr><td class="paramname">method</td><td>Method to be called for the command. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a3c053c7efbed950494f16fc91228e7fd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Plugin::RegisterCallableMethod </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; boost::any(boost::any)&gt;&#160;</td>
+          <td class="paramname"><em>method</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Register callable method. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Method name. </td></tr>
+    <tr><td class="paramname">method</td><td>Callable method. </td></tr>
   </table>
   </dd>
 </dl>
@@ -389,13 +439,29 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a4a8030e2fa113265d123aa6178c64318"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::string, std::function&lt;boost::any(boost::any)&gt; &gt; Plugin::Methods</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">        std::map&lt;std::string, std::function&lt;boost::any(boost::any)&gt;&gt;()</div>
+</div><!-- fragment -->
+<p><a class="el" href="structMap.html" title="Contains all information about a map in easy-to-use format. ">Map</a> with callable methods for the plugin. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Plugins/<a class="el" href="Plugin_8h_source.html">Plugin.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 10 2017 21:45:43 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jan 14 2017 00:14:44 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

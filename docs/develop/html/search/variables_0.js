@@ -1,6 +1,7 @@
 var searchData=
 [
   ['actions',['Actions',['../structUIList.html#aefc14c8b15732c34a99a27330e1f7691',1,'UIList']]],
+  ['additionals',['Additionals',['../structMap.html#a82524d649b33d280a49773629345b0bc',1,'Map']]],
   ['address',['address',['../structServerConfig.html#a2a4201c0c868ba962a57d75b07ddafaf',1,'ServerConfig::address()'],['../structDatabaseConfig.html#a5ab15d9f2af8a31b83b6b95e58a0b67f',1,'DatabaseConfig::address()'],['../classDatabase.html#aaf36450a11d38f6fde645bb8a0d07381',1,'Database::address()'],['../classTcpClient.html#a8bcb24ebf1d8e22e9185f3056fd108c4',1,'TcpClient::address()']]],
   ['admincommands',['adminCommands',['../classCommandManager.html#a6e3f6e976eae418ffa3063482e210fda',1,'CommandManager::adminCommands()'],['../classPlugin.html#a7a1ba3ed5e3c0c23eb1ea2e33cc61c1a',1,'Plugin::AdminCommands()']]],
   ['answeringplayer',['AnsweringPlayer',['../structManiaLinkPageAnswer.html#afb091a6cd4c5879232564816ce18422d',1,'ManiaLinkPageAnswer']]],

@@ -8,12 +8,14 @@ Compares string versions.
 
 
 
-{\ttfamily \#include $<$Version\-Checker.\-h$>$}
+{\ttfamily \#include $<$Version\-Compare.\-h$>$}
 
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static bool \hyperlink{classVersionCompare_a237db39cbf335ed106f4fa2dc087cb36}{Newer\-Than\-Current} (const std\-::string \&current, const std\-::string \&other)
+\item 
+static bool \hyperlink{classVersionCompare_af38a74d5e52e5f862c9d3c0f3a96cb6b}{Not\-Older\-Than} (const std\-::string \&base, const std\-::string \&comp)
 \end{DoxyCompactItemize}
 \subsection*{Static Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -43,6 +45,23 @@ Compares two string versions.
 {\em other} & String version to compare. \\
 \hline
 \end{DoxyParams}
+\hypertarget{classVersionCompare_af38a74d5e52e5f862c9d3c0f3a96cb6b}{\index{Version\-Compare@{Version\-Compare}!Not\-Older\-Than@{Not\-Older\-Than}}
+\index{Not\-Older\-Than@{Not\-Older\-Than}!VersionCompare@{Version\-Compare}}
+\subsubsection[{Not\-Older\-Than}]{\setlength{\rightskip}{0pt plus 5cm}static bool Version\-Compare\-::\-Not\-Older\-Than (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{base, }
+\item[{const std\-::string \&}]{comp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classVersionCompare_af38a74d5e52e5f862c9d3c0f3a96cb6b}
+Compares two string versions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em base} & Base string version. \\
+\hline
+{\em comp} & String version to compare. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classVersionCompare_a1fdc3833968e1579942fc420daed6dd9}{\index{Version\-Compare@{Version\-Compare}!parse\-Version@{parse\-Version}}
 \index{parse\-Version@{parse\-Version}!VersionCompare@{Version\-Compare}}
 \subsubsection[{parse\-Version}]{\setlength{\rightskip}{0pt plus 5cm}static void Version\-Compare\-::parse\-Version (
@@ -64,4 +83,4 @@ Converts version string into comparable integer array.
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
-/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Version/Version\-Checker.\-h\end{DoxyCompactItemize}
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Utils/Version\-Compare.\-h\end{DoxyCompactItemize}

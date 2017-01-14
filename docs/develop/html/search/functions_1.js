@@ -8,6 +8,7 @@ var searchData=
   ['callendmap',['CallEndMap',['../classEventManager.html#a9f28bea93fdee6cfc07e8a56a81cc62f',1,'EventManager']]],
   ['callendmatch',['CallEndMatch',['../classEventManager.html#adc21931d4388f9b78c3dbd382acfabc9',1,'EventManager']]],
   ['callmaplistmodified',['CallMapListModified',['../classEventManager.html#a992d53782e7aacc561ff5348f7905b1b',1,'EventManager']]],
+  ['callmethod',['CallMethod',['../classPluginHandler.html#a7649e38de7dac286adcdf4658e93bf8d',1,'PluginHandler']]],
   ['callplayerchat',['CallPlayerChat',['../classEventManager.html#a3df8918a788166d644ba8aa40b1e07b1',1,'EventManager']]],
   ['callplayercheckpoint',['CallPlayerCheckpoint',['../classEventManager.html#a8a3c5f621c44b15c560110ab2b25a51f',1,'EventManager']]],
   ['callplayerconnect',['CallPlayerConnect',['../classEventManager.html#a8ba57f2276badf2fef783b2480b0fd46',1,'EventManager']]],

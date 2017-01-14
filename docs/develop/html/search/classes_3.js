@@ -4,7 +4,6 @@ var searchData=
   ['gbxerror',['GbxError',['../structGbxError.html',1,'']]],
   ['gbxfirstresponse',['GbxFirstResponse',['../structGbxFirstResponse.html',1,'']]],
   ['gbxmessage',['GbxMessage',['../classGbxMessage.html',1,'']]],
-  ['gbxparam',['GbxParam',['../structGbxParam.html',1,'']]],
   ['gbxparameter',['GbxParameter',['../classGbxParameter.html',1,'']]],
   ['gbxparameters',['GbxParameters',['../classGbxParameters.html',1,'']]],
   ['gbxqueryresponse',['GbxQueryResponse',['../structGbxQueryResponse.html',1,'']]],

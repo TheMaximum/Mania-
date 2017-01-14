@@ -7,5 +7,6 @@ var searchData=
   ['newerthancurrent',['NewerThanCurrent',['../classVersionCompare.html#a237db39cbf335ed106f4fa2dc087cb36',1,'VersionCompare']]],
   ['nextvalue',['NextValue',['../structCurrentNextValue.html#a44221ded20d57b79e0a76e3424c511bb',1,'CurrentNextValue']]],
   ['nickname',['NickName',['../structPlayer.html#a553cc1b0aa79108b511ba408210582cf',1,'Player']]],
+  ['notolderthan',['NotOlderThan',['../classVersionCompare.html#af38a74d5e52e5f862c9d3c0f3a96cb6b',1,'VersionCompare']]],
   ['number',['number',['../structGbxError.html#ae5627cae63e837beaa75f798e47be50e',1,'GbxError']]]
 ];

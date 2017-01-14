@@ -1,0 +1,88 @@
+\hypertarget{classPluginHandler}{\section{Plugin\-Handler Class Reference}
+\label{classPluginHandler}\index{Plugin\-Handler@{Plugin\-Handler}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPluginHandler_a3c6d5584880752aed8f9179c43f43a1a}{Plugin\-Handler} (std\-::map$<$ std\-::string, \hyperlink{structPluginInfo}{Plugin\-Info} $>$ $\ast$plugin\-List)
+\begin{DoxyCompactList}\small\item\em Handler constructor. \end{DoxyCompactList}\item 
+bool \hyperlink{classPluginHandler_a594d629d4905880d708ee265b9e48396}{Is\-Loaded} (std\-::string plugin\-Name, std\-::string min\-Version=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Checks if plugin is loaded (and is proper version). \end{DoxyCompactList}\item 
+boost\-::any \hyperlink{classPluginHandler_a7649e38de7dac286adcdf4658e93bf8d}{Call\-Method} (std\-::string plugin\-Name, std\-::string method\-Name, boost\-::any params)
+\begin{DoxyCompactList}\small\item\em Calls method on a different plugin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classPluginHandler_a9eab5a7ae8084d335a06ea5826746899}{std\-::map$<$ std\-::string, \\*
+\hyperlink{structPluginInfo}{Plugin\-Info} $>$ $\ast$ \hyperlink{classPluginHandler_a9eab5a7ae8084d335a06ea5826746899}{plugins}}\label{classPluginHandler_a9eab5a7ae8084d335a06ea5826746899}
+
+\begin{DoxyCompactList}\small\item\em Pointer to the plugin list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPluginHandler_a3c6d5584880752aed8f9179c43f43a1a}{\index{Plugin\-Handler@{Plugin\-Handler}!Plugin\-Handler@{Plugin\-Handler}}
+\index{Plugin\-Handler@{Plugin\-Handler}!PluginHandler@{Plugin\-Handler}}
+\subsubsection[{Plugin\-Handler}]{\setlength{\rightskip}{0pt plus 5cm}Plugin\-Handler\-::\-Plugin\-Handler (
+\begin{DoxyParamCaption}
+\item[{std\-::map$<$ std\-::string, {\bf Plugin\-Info} $>$ $\ast$}]{plugin\-List}
+\end{DoxyParamCaption}
+)}}\label{classPluginHandler_a3c6d5584880752aed8f9179c43f43a1a}
+
+
+Handler constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plugin\-List} & Pointer to the controllers pluginlist. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPluginHandler_a7649e38de7dac286adcdf4658e93bf8d}{\index{Plugin\-Handler@{Plugin\-Handler}!Call\-Method@{Call\-Method}}
+\index{Call\-Method@{Call\-Method}!PluginHandler@{Plugin\-Handler}}
+\subsubsection[{Call\-Method}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::any Plugin\-Handler\-::\-Call\-Method (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{plugin\-Name, }
+\item[{std\-::string}]{method\-Name, }
+\item[{boost\-::any}]{params}
+\end{DoxyParamCaption}
+)}}\label{classPluginHandler_a7649e38de7dac286adcdf4658e93bf8d}
+
+
+Calls method on a different plugin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plugin\-Name} & Name of the plugin. \\
+\hline
+{\em method\-Name} & Name of the method. \\
+\hline
+{\em params} & Parameters for the method. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPluginHandler_a594d629d4905880d708ee265b9e48396}{\index{Plugin\-Handler@{Plugin\-Handler}!Is\-Loaded@{Is\-Loaded}}
+\index{Is\-Loaded@{Is\-Loaded}!PluginHandler@{Plugin\-Handler}}
+\subsubsection[{Is\-Loaded}]{\setlength{\rightskip}{0pt plus 5cm}bool Plugin\-Handler\-::\-Is\-Loaded (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{plugin\-Name, }
+\item[{std\-::string}]{min\-Version = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{classPluginHandler_a594d629d4905880d708ee265b9e48396}
+
+
+Checks if plugin is loaded (and is proper version). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plugin\-Name} & Name of the plugin. \\
+\hline
+{\em min\-Version} & Minimum version of the plugin (optional). \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Plugins/Plugin\-Handler.\-h\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Plugins/Plugin\-Handler.\-cpp\end{DoxyCompactItemize}

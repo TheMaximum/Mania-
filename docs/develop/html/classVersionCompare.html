@@ -94,12 +94,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Compares string versions.  
  <a href="classVersionCompare.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="VersionChecker_8h_source.html">VersionChecker.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="VersionCompare_8h_source.html">VersionCompare.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a237db39cbf335ed106f4fa2dc087cb36"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVersionCompare.html#a237db39cbf335ed106f4fa2dc087cb36">NewerThanCurrent</a> (const std::string &amp;current, const std::string &amp;other)</td></tr>
 <tr class="separator:a237db39cbf335ed106f4fa2dc087cb36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af38a74d5e52e5f862c9d3c0f3a96cb6b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVersionCompare.html#af38a74d5e52e5f862c9d3c0f3a96cb6b">NotOlderThan</a> (const std::string &amp;base, const std::string &amp;comp)</td></tr>
+<tr class="separator:af38a74d5e52e5f862c9d3c0f3a96cb6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
@@ -151,6 +153,48 @@ Static Private Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="af38a74d5e52e5f862c9d3c0f3a96cb6b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool VersionCompare::NotOlderThan </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>base</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>comp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Compares two string versions.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">base</td><td>Base string version. </td></tr>
+    <tr><td class="paramname">comp</td><td>String version to compare. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a1fdc3833968e1579942fc420daed6dd9"></a>
 <div class="memitem">
 <div class="memproto">
@@ -194,12 +238,12 @@ Static Private Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/travis/build/TheMaximum/mania-pp/src/Version/<a class="el" href="VersionChecker_8h_source.html">VersionChecker.h</a></li>
+<li>/home/travis/build/TheMaximum/mania-pp/src/Utils/<a class="el" href="VersionCompare_8h_source.html">VersionCompare.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 10 2017 21:45:43 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jan 14 2017 00:14:44 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -10,6 +10,7 @@ var searchData=
   ['callendmatch',['CallEndMatch',['../classEventManager.html#adc21931d4388f9b78c3dbd382acfabc9',1,'EventManager']]],
   ['callerlogin',['CallerLogin',['../structCurrentCallVote.html#a113ae06f4c42a20fa09107d480579379',1,'CurrentCallVote']]],
   ['callmaplistmodified',['CallMapListModified',['../classEventManager.html#a992d53782e7aacc561ff5348f7905b1b',1,'EventManager']]],
+  ['callmethod',['CallMethod',['../classPluginHandler.html#a7649e38de7dac286adcdf4658e93bf8d',1,'PluginHandler']]],
   ['callplayerchat',['CallPlayerChat',['../classEventManager.html#a3df8918a788166d644ba8aa40b1e07b1',1,'EventManager']]],
   ['callplayercheckpoint',['CallPlayerCheckpoint',['../classEventManager.html#a8a3c5f621c44b15c560110ab2b25a51f',1,'EventManager']]],
   ['callplayerconnect',['CallPlayerConnect',['../classEventManager.html#a8ba57f2276badf2fef783b2480b0fd46',1,'EventManager']]],
