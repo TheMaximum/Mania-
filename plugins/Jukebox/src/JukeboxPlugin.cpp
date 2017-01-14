@@ -2,7 +2,7 @@
 
 JukeboxPlugin::JukeboxPlugin()
 {
-    Version = "0.1.0";
+    Version = "0.2.0";
     Author = "TheM";
 
     EndMatch.push_back([this](std::vector<PlayerRanking> rankings, int winnerTeam) { OnEndMatch(); });
@@ -147,6 +147,21 @@ void JukeboxPlugin::DisplayMapList(Player player)
     std::vector<std::pair<std::string, Map>> mapsVector;
     std::copy(controller->Maps->List.begin(), controller->Maps->List.end(), back_inserter(mapsVector));
     std::sort(mapsVector.begin(), mapsVector.end(), [=](const std::pair<std::string, Map>& a, const std::pair<std::string, Map>& b) { return a.second.Id > b.second.Id; });
+    if(controller->Plugins->IsLoaded("Karma", "0.2.0"))
+    {
+        std::sort(mapsVector.begin(), mapsVector.end(), [=](const std::pair<std::string, Map>& a, const std::pair<std::string, Map>& b) {
+            int karmaA = 0;
+            int karmaB = 0;
+
+            if(a.second.Additionals.find("Karma") != a.second.Additionals.end())
+                karmaA = boost::any_cast<int>(a.second.Additionals.at("Karma"));
+
+            if(b.second.Additionals.find("Karma") != b.second.Additionals.end())
+                karmaB = boost::any_cast<int>(b.second.Additionals.at("Karma"));
+
+            return karmaA > karmaB;
+        });
+}
 
     UIList list = UIList();
     list.Id = "MapList";
@@ -156,6 +171,10 @@ void JukeboxPlugin::DisplayMapList(Player player)
     list.Columns.push_back(std::pair<std::string, int>("#", 5));
     list.Columns.push_back(std::pair<std::string, int>("Name", 40));
     list.Columns.push_back(std::pair<std::string, int>("Author", 20));
+    if(controller->Plugins->IsLoaded("Karma", "0.2.0"))
+    {
+        list.Columns.push_back(std::pair<std::string, int>("Karma", 10));
+    }
     list.Actions.insert(std::pair<std::string, std::pair<std::string, std::string>>("Name", std::pair<std::string, std::string>("JukeboxMap", "UId")));
 
     for(int mapId = 0; mapId < mapsVector.size(); mapId++)
@@ -170,6 +189,28 @@ void JukeboxPlugin::DisplayMapList(Player player)
         row.insert(std::pair<std::string, std::string>("UId", mapInList.UId));
         row.insert(std::pair<std::string, std::string>("Name", mapInList.Name));
         row.insert(std::pair<std::string, std::string>("Author", mapInList.Author));
+        if(controller->Plugins->IsLoaded("Karma", "0.2.0"))
+        {
+            int karma = 0;
+            if(mapInList.Additionals.find("Karma") != mapInList.Additionals.end())
+            {
+                boost::any mapKarma = mapInList.Additionals.at("Karma");
+                if(mapKarma.type() == typeid(int))
+                {
+                    karma = boost::any_cast<int>(mapKarma);
+                }
+            }
+            else
+            {
+                boost::any mapKarma = controller->Plugins->CallMethod("Karma", "GetKarmaByUid", mapInList.UId);
+                if(mapKarma.type() == typeid(int))
+                {
+                    karma = boost::any_cast<int>(mapKarma);
+                }
+            }
+
+            row.insert(std::pair<std::string, std::string>("Karma", std::to_string(karma)));
+        }
         list.Rows.push_back(row);
     }
 

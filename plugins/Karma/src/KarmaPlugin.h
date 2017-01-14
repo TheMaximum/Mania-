@@ -7,6 +7,7 @@
 
 #include "Plugins/Plugin.h"
 #include "UI/UIList.h"
+#include "Utils/Logging.h"
 #include "Utils/Time.h"
 
 #include "Objects/MapKarma.h"
@@ -27,6 +28,8 @@ public:
     void VotePositive(Player player);
     void DisplayWhoKarma(Player player);
 
+    boost::any GetKarmaByUid(boost::any parameters);
+
 private:
     std::map<std::string, int> votes;
     MapKarma karma;
@@ -39,7 +42,9 @@ private:
 
     void loadSettings();
     void displayToAll();
-    void retrieveVotes(Map map);
+    void updateAllMapKarma();
+    void updateMapKarma(Map* map, int mapKarma);
+    std::map<std::string, int> retrieveVotes(Map map);
 
     int retrieveTimesDriven(Player player);
 };

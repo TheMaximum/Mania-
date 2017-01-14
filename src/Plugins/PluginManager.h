@@ -13,20 +13,8 @@
 #include "../Commands/CommandManager.h"
 #include "../Methods/Methods.h"
 
+#include "PluginHandler.h"
 #include "Plugin.h"
-
-//* PluginInfo
-/**
- * \brief Struct with information about a plugin.
- */
-struct PluginInfo
-{
-    std::string Version; /**< \brief Plugin version (from instance). */
-    std::string Author;  /**< \brief Plugin author (from instance). */
-
-    Plugin* Instance;    /**< \brief Instance of the plugin. */
-    void* Handle;        /**< \brief Handle (from dlopen) of the plugin. */
-};
 
 //* PluginManager
 /**
@@ -83,6 +71,7 @@ private:
     CommandManager* commands;                  /**< \brief Current instance of the CommandManager. */
     EventManager* events;                      /**< \brief Current instance of the EventManager. */
     Controller* controller;                    /**< \brief Current instance of the controller. */
+    PluginHandler* pluginHandler;              /**< \brief Current plugin handler. */
 };
 
 #endif // PLUGINMANAGER_H_

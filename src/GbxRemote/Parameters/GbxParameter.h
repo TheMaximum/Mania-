@@ -6,6 +6,7 @@
 #include <cxxabi.h>
 
 #include "GbxParameters.h"
+#include "../../Utils/Parameter.h"
 
 //* GbxParameter
 /**
@@ -21,7 +22,7 @@ public:
      *
      * \param param Parameter to be xml-fied.
      */
-    GbxParameter(GbxParam param);
+    GbxParameter(Parameter param);
 
     /*!
      * \brief Returns xml-fied parameter.

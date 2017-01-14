@@ -6,6 +6,7 @@
 
 #include "Config/Version.h"
 #include "../Utils/Logging.h"
+#include "../Utils/VersionCompare.h"
 
 using json = nlohmann::json;
 
@@ -20,46 +21,6 @@ struct GitVersion
     std::string Name;       /**< \brief Tag name (description). */
     std::string Commit;     /**< \brief SHA commit. */
     bool PreRelease;        /**< \brief Is pre-release?. */
-};
-
-//* VersionCompare
-/**
- * \brief Compares string versions.
- */
-class VersionCompare
-{
-public:
-    /*!
-     * Compares two string versions.
-     *
-     * \param current Current string version.
-     * \param other   String version to compare.
-     */
-    static bool NewerThanCurrent(const std::string& current, const std::string& other)
-    {
-        int parsedCurrent[3], parsedOther[3];
-        parseVersion(parsedCurrent, current);
-        parseVersion(parsedOther, other);
-        return std::lexicographical_compare(parsedCurrent, parsedCurrent + 3, parsedOther, parsedOther + 3);
-    }
-
-private:
-    /*!
-     * Converts version string into comparable integer array.
-     *
-     * \param result  Integer array for the comparable result.
-     * \param input   String input to be parsed.
-     */
-    static void parseVersion(int result[3], const std::string& input)
-    {
-        std::istringstream parser(input);
-        parser >> result[0];
-        for(int idx = 1; idx < 3; idx++)
-        {
-            parser.get();
-            parser >> result[idx];
-        }
-    }
 };
 
 //* VersionChecker

@@ -19,6 +19,13 @@ public:
      * \param uid Map identifier (from game/server).
      */
     void SetCurrentMap(std::string uid);
+
+    /*!
+     * \brief Gets map for unique identifier.
+     *
+     * \param uid Map identifier (from game/server).
+     */
+    Map* GetByUid(std::string uid);
 };
 
 #endif // MAPLIST_H_

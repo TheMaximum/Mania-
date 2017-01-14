@@ -4,6 +4,7 @@
 struct MapKarma
 {
 public:
+    int Karma = 0;
     int MinVotes = 0;
     int PlusVotes = 0;
     double Percentage = 0.0;
@@ -30,6 +31,7 @@ public:
 
         Percentage = std::round(((double)PlusVotes / (double)(PlusVotes + MinVotes)) * 1000) / 10;
         MinPercentage = std::round((100 - Percentage) * 10) / 10;
+        Karma = (PlusVotes - MinVotes);
     }
 };
 

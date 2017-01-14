@@ -95,20 +95,19 @@ bool KarmaWidget::DisplayToPlayer(Player player, MapKarma* karma, int personalSc
 
     widget << "        <label posn=\"7.5 -8.5 1.75\" halign=\"center\" sizen=\"5 1\" text=\"$s$fff" << karma->Percentage << "%\"/>";
 
-    int mapKarma = (karma->PlusVotes - karma->MinVotes);
     std::string colour = "$fff";
     std::string prefix = "";
-    if(mapKarma < 0)
+    if(karma->Karma < 0)
     {
         colour = "$f00";
     }
-    else if(mapKarma > 0)
+    else if(karma->Karma > 0)
     {
         colour = "$0f0";
         prefix = "+";
     }
 
-    widget << "        <label posn=\"7.5 -6.35 1.75\" halign=\"center\" sizen=\"5 1\" text=\"" << colour << "$o$s" << prefix << mapKarma << "\"/>";
+    widget << "        <label posn=\"7.5 -6.35 1.75\" halign=\"center\" sizen=\"5 1\" text=\"" << colour << "$o$s" << prefix << karma->Karma << "\"/>";
 
     double barX = 1.5;
     if(karma->Percentage == 0)

@@ -2,7 +2,7 @@
 
 KarmaPlugin::KarmaPlugin()
 {
-    Version = "0.1.1";
+    Version = "0.2.0";
     Author = "TheM";
     karma = MapKarma();
 
@@ -14,6 +14,7 @@ KarmaPlugin::KarmaPlugin()
     RegisterCommand("whokarma", [this](Player player, std::vector<std::string> parameters) { DisplayWhoKarma(player); });
     RegisterCommand("++", [this](Player player, std::vector<std::string> parameters) { VotePositive(player); });
     RegisterCommand("--", [this](Player player, std::vector<std::string> parameters) { VoteNegative(player); });
+    RegisterCallableMethod("GetKarmaByUid", [this](boost::any parameters) { return GetKarmaByUid(parameters); });
 }
 
 void KarmaPlugin::Init()
@@ -26,8 +27,11 @@ void KarmaPlugin::Init()
     controller->UI->RegisterEvent(widget.PositiveAction, ([this](Player player, std::string answer, std::vector<EntryVal> entries) { VotePositive(player); }));
     controller->UI->RegisterEvent(widget.NegativeAction, ([this](Player player, std::string answer, std::vector<EntryVal> entries) { VoteNegative(player); }));
 
-    retrieveVotes(*controller->Maps->Current);
+    updateAllMapKarma();
+
+    votes = retrieveVotes(*controller->Maps->Current);
     karma.Calculate(votes);
+    updateMapKarma(controller->Maps->Current, karma.Karma);
     displayToAll();
 }
 
@@ -48,8 +52,9 @@ void KarmaPlugin::loadSettings()
 
 void KarmaPlugin::OnBeginMap(Map map)
 {
-    retrieveVotes(*controller->Maps->Current);
+    votes = retrieveVotes(*controller->Maps->Current);
     karma.Calculate(votes);
+    updateMapKarma(controller->Maps->Current, karma.Karma);
     displayToAll();
 }
 
@@ -67,7 +72,7 @@ void KarmaPlugin::OnPlayerConnect(Player player)
 void KarmaPlugin::DisplayCurrentKarma(Player player)
 {
     std::stringstream chatMessage;
-    chatMessage << "$ff0Current map karma: $fff" << (karma.PlusVotes - karma.MinVotes) << "$ff0 [";
+    chatMessage << "$ff0Current map karma: $fff" << karma.Karma << "$ff0 [";
     chatMessage << "$fff" << (karma.PlusVotes + karma.MinVotes) << "$ff0 votes,";
     chatMessage << " ++: $fff" << karma.PlusVotes << "$ff0 ($fff" << karma.Percentage << "%$ff0),";
     chatMessage << " --: $fff" << karma.MinVotes << "$ff0 ($fff" << karma.MinPercentage << "%$ff0)]";
@@ -139,8 +144,9 @@ void KarmaPlugin::VotePositive(Player player)
             pstmt->setInt(3, 1);
             pstmt->executeQuery();
 
-            retrieveVotes(*controller->Maps->Current);
+            votes = retrieveVotes(*controller->Maps->Current);
             karma.Calculate(votes);
+            updateMapKarma(controller->Maps->Current, karma.Karma);
             displayToAll();
 
             if(personalVote == -1)
@@ -200,8 +206,9 @@ void KarmaPlugin::VoteNegative(Player player)
             pstmt->setInt(3, 0);
             pstmt->executeQuery();
 
-            retrieveVotes(*controller->Maps->Current);
+            votes = retrieveVotes(*controller->Maps->Current);
             karma.Calculate(votes);
+            updateMapKarma(controller->Maps->Current, karma.Karma);
             displayToAll();
 
             if(personalVote == -1)
@@ -284,6 +291,45 @@ void KarmaPlugin::DisplayWhoKarma(Player player)
     controller->UI->DisplayList(list, player);
 }
 
+boost::any KarmaPlugin::GetKarmaByUid(boost::any parameters)
+{
+    boost::any result = NULL;
+    std::string uid = boost::any_cast<std::string>(parameters);
+    Map* requestedMap = controller->Maps->GetByUid(uid);
+    if(requestedMap->Id != 0)
+    {
+        MapKarma mapKarma = MapKarma();
+        mapKarma.Calculate(retrieveVotes(*requestedMap));
+
+        int requestedKarma = mapKarma.Karma;
+        updateMapKarma(requestedMap, requestedKarma);
+    }
+
+    return result;
+}
+
+void KarmaPlugin::updateAllMapKarma()
+{
+    std::cout << "[         ] Retrieving karma for all maps ... " << '\r' << std::flush;
+    for(std::map<std::string, Map>::iterator mapIt = controller->Maps->List.begin(); mapIt != controller->Maps->List.end(); ++mapIt)
+    {
+        GetKarmaByUid(mapIt->second.UId);
+    }
+    Logging::PrintOKFlush();
+}
+
+void KarmaPlugin::updateMapKarma(Map* map, int mapKarma)
+{
+    if(map->Additionals.find("Karma") != map->Additionals.end())
+    {
+        map->Additionals["Karma"] = mapKarma;
+    }
+    else
+    {
+        map->Additionals.insert(std::pair<std::string, boost::any>("Karma", mapKarma));
+    }
+}
+
 void KarmaPlugin::displayToAll()
 {
     for(std::map<std::string, Player>::iterator player = controller->Players->begin(); player != controller->Players->end(); ++player)
@@ -298,9 +344,9 @@ void KarmaPlugin::displayToAll()
     }
 }
 
-void KarmaPlugin::retrieveVotes(Map map)
+std::map<std::string, int> KarmaPlugin::retrieveVotes(Map map)
 {
-    votes = std::map<std::string, int>();
+    std::map<std::string, int> mapVotes = std::map<std::string, int>();
 
     sql::PreparedStatement* pstmt;
     sql::ResultSet* result;
@@ -324,7 +370,7 @@ void KarmaPlugin::retrieveVotes(Map map)
                 std::string login = playerResult->getString("Login");
                 int score = result->getInt("Score");
 
-                votes.insert(std::pair<std::string, int>(login, score));
+                mapVotes.insert(std::pair<std::string, int>(login, score));
             }
             catch(sql::InvalidArgumentException &e)
             {
@@ -356,6 +402,8 @@ void KarmaPlugin::retrieveVotes(Map map)
         delete result;
         result = NULL;
     }
+
+    return mapVotes;
 }
 
 int KarmaPlugin::retrieveTimesDriven(Player player)

@@ -13,12 +13,15 @@ PluginManager::PluginManager(Config* configPtr,
     events = NULL;
     commands = commandsPtr;
 
+    pluginHandler = new PluginHandler(&plugins);
+
     controller = new Controller();
     controller->Server = methodsPtr;
     controller->Players = playersPtr;
     controller->Maps = mapsPtr;
     controller->Database = databasePtr;
     controller->UI = uiPtr;
+    controller->Plugins = pluginHandler;
 }
 
 PluginManager::~PluginManager()
@@ -32,6 +35,12 @@ PluginManager::~PluginManager()
         Logging::PrintOKFlush();
     }
     std::cout << "[ ======= ] All plugins closed." << std::endl;
+
+    if(pluginHandler != NULL)
+    {
+        delete pluginHandler;
+        pluginHandler = NULL;
+    }
 }
 
 void PluginManager::SetEventManager(EventManager* eventManagerPtr)
@@ -121,7 +130,7 @@ void PluginManager::LoadPlugins(std::string pluginsFolder)
 
                 std::cout << "[   \033[0;32mOK.\033[0;0m   ] Loaded commands for '" << pluginId->first << "': " << commandCount << " found." << std::endl;
 
-                plugins.insert(std::pair<std::string, PluginInfo>(pluginId->first, { plugin->Version, plugin->Author, plugin, pluginHandle }));
+                plugins.insert(std::pair<std::string, PluginInfo>(pluginId->first, { plugin->Version, plugin->Author, plugin, pluginHandle, plugin->Methods }));
 
                 loadedPlugins.insert(pluginId->first);
             }
@@ -147,7 +156,7 @@ void PluginManager::InitializePlugins()
     for(std::map<std::string, PluginInfo>::iterator pluginId = plugins.begin(); pluginId != plugins.end(); ++pluginId)
     {
         PluginInfo pluginInfo = pluginId->second;
-        Plugin* plugin = pluginInfo.Instance;
+        Plugin* plugin = (Plugin*)pluginInfo.Instance;
         plugin->Init();
     }
     std::cout << "[ ======= ] Plugins initialized." << std::endl;

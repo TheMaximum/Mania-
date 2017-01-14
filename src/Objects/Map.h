@@ -1,7 +1,11 @@
 #ifndef MAP_H_
 #define MAP_H_
 
+#include <map>
+#include <boost/any.hpp>
+
 #include "../GbxRemote/Response/GbxResponse.h"
+#include "../Utils/Parameter.h"
 
 //* Map
 /**
@@ -34,6 +38,8 @@ struct Map
     bool LapRace;             /**< \brief Map is multi-lap. */
     int NbLaps;               /**< \brief Number of laps. */
     int NbCheckpoints;        /**< \brief Number of checkpoints. */
+
+    std::map<std::string, boost::any> Additionals; /**< \brief Additional parameters. */
 
     /*!
      * \brief Constructs a Map object without input.

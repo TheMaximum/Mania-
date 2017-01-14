@@ -9,6 +9,7 @@
 #include <sstream>
 #include <cstdlib>
 #include <functional>
+#include <boost/any.hpp>
 
 #include <cppconn/driver.h>
 #include <cppconn/exception.h>
@@ -24,6 +25,8 @@
 #include "../UI/UIManager.h"
 #include "../Utils/Logging.h"
 
+#include "PluginHandler.h"
+
 //* Controller
 /**
  * \brief Struct with all instances needed for plugins.
@@ -35,6 +38,7 @@ struct Controller
     MapList* Maps;                          /**< \brief Maplist instance. */
     sql::Connection* Database;              /**< \brief Database instance. */
     UIManager* UI;                          /**< \brief UI manager instance. */
+    PluginHandler* Plugins;                 /**< \brief Plugin handler instance. */
 };
 
 //* Plugin
@@ -82,6 +86,8 @@ public:
         std::map<std::string, std::function<void(Player, std::vector<std::string>)>>(); /**< \brief Map with normal chat commands for the plugin. */
     std::map<std::string, std::function<void(Player, std::vector<std::string>)>> AdminCommands =
         std::map<std::string, std::function<void(Player, std::vector<std::string>)>>(); /**< \brief Map with admin chat commands for the plugin. */
+    std::map<std::string, std::function<boost::any(boost::any)>> Methods =
+        std::map<std::string, std::function<boost::any(boost::any)>>();                   /**< \brief Map with callable methods for the plugin. */
 
     std::string Version; /**< \brief Plugin version. */
     std::string Author;  /**< \brief Plugin author. */
@@ -109,6 +115,17 @@ protected:
     void RegisterAdminCommand(std::string name, std::function<void(Player, std::vector<std::string>)> method)
     {
         AdminCommands.insert(std::pair<std::string, std::function<void(Player, std::vector<std::string>)>>(name, method));
+    }
+
+    /*!
+     * \brief Register callable method.
+     *
+     * \param name   Method name.
+     * \param method Callable method.
+     */
+    void RegisterCallableMethod(std::string name, std::function<boost::any(boost::any)> method)
+    {
+        Methods.insert(std::pair<std::string, std::function<boost::any(boost::any)>>(name, method));
     }
 };
 
