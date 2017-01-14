@@ -23,7 +23,9 @@ void \hyperlink{structMap_ac8e78e5d9ba3951db798736fc33e907e}{Map\-Detailed} (std
 void \hyperlink{structMap_aceca3c7bca81223e4b54de1cc91f7a31}{Copy\-Detailed\-Map} (\hyperlink{structMap}{Map} map)
 \begin{DoxyCompactList}\small\item\em Copies information from map object. \end{DoxyCompactList}\item 
 void \hyperlink{structMap_af83b3a784e6fa9404c1940a2ca1b68a8}{Set\-Id} (int id)
-\begin{DoxyCompactList}\small\item\em Set database identifier value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Set database identifier value. \end{DoxyCompactList}\item 
+void \hyperlink{structMap_ab745d995eff65ccbd114f3c43a7cbf1f}{Update\-Additional} (std\-::string key, boost\-::any value)
+\begin{DoxyCompactList}\small\item\em Updates (or inserts) key with value. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -191,6 +193,25 @@ Set database identifier value.
 
 \begin{DoxyParams}{Parameters}
 {\em id} & \hyperlink{classDatabase}{Database} I\-D. \\
+\hline
+\end{DoxyParams}
+\hypertarget{structMap_ab745d995eff65ccbd114f3c43a7cbf1f}{\index{Map@{Map}!Update\-Additional@{Update\-Additional}}
+\index{Update\-Additional@{Update\-Additional}!Map@{Map}}
+\subsubsection[{Update\-Additional}]{\setlength{\rightskip}{0pt plus 5cm}void Map\-::\-Update\-Additional (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{key, }
+\item[{boost\-::any}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structMap_ab745d995eff65ccbd114f3c43a7cbf1f}
+
+
+Updates (or inserts) key with value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Additionals key. \\
+\hline
+{\em value} & Additionals value. \\
 \hline
 \end{DoxyParams}
 

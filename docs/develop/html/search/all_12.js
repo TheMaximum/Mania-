@@ -5,6 +5,7 @@ var searchData=
   ['uiframe',['UIFrame',['../structUIFrame.html',1,'']]],
   ['uilist',['UIList',['../structUIList.html',1,'']]],
   ['uimanager',['UIManager',['../classUIManager.html',1,'UIManager'],['../classUIManager.html#a4d6da1c7d4c1100402fb9384080c3cb2',1,'UIManager::UIManager()']]],
+  ['updateadditional',['UpdateAdditional',['../structMap.html#ab745d995eff65ccbd114f3c43a7cbf1f',1,'Map']]],
   ['uploadrate',['UploadRate',['../structPlayer.html#a28f9a31a54ac8ea0658a6b234523b29d',1,'Player']]],
   ['username',['username',['../structServerConfig.html#ad2216f13f13acbe6bfd61f275bc72e27',1,'ServerConfig::username()'],['../structDatabaseConfig.html#adefbb4c4d1e1754918dcad998d9e9164',1,'DatabaseConfig::username()']]]
 ];

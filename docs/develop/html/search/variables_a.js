@@ -8,7 +8,7 @@ var searchData=
   ['message',['message',['../structGbxError.html#af52353692b5c160deac99c4285f01a5a',1,'GbxError']]],
   ['method',['method',['../classGbxMessage.html#a10b6118916999db98f28e3f495eef6b4',1,'GbxMessage']]],
   ['methodname',['methodName',['../classGbxCallBack.html#a8c793be5cc61e7fecef301ea6932f840',1,'GbxCallBack']]],
-  ['methods',['methods',['../classManiaPP.html#a48cb1ddf328d18361417986fe8ab069c',1,'ManiaPP::methods()'],['../classPlugin.html#a4a8030e2fa113265d123aa6178c64318',1,'Plugin::Methods()'],['../structPluginInfo.html#a4fda3e831fda01ac915ce3a5dbcefcfd',1,'PluginInfo::Methods()']]],
+  ['methods',['Methods',['../classPlugin.html#a4a8030e2fa113265d123aa6178c64318',1,'Plugin::Methods()'],['../structPluginInfo.html#a4fda3e831fda01ac915ce3a5dbcefcfd',1,'PluginInfo::Methods()'],['../classManiaPP.html#a48cb1ddf328d18361417986fe8ab069c',1,'ManiaPP::methods()']]],
   ['methodsbeginmap',['methodsBeginMap',['../classEventManager.html#a7aa0f06399cd3927d85603b58cfef173',1,'EventManager']]],
   ['methodsbeginmatch',['methodsBeginMatch',['../classEventManager.html#abb7667e9222f00e33d792c733c82f89e',1,'EventManager']]],
   ['methodsbillupdated',['methodsBillUpdated',['../classEventManager.html#a0497e6be361d83e2c4dc8d0b5e20360a',1,'EventManager']]],
