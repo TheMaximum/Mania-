@@ -161,7 +161,7 @@ void JukeboxPlugin::DisplayMapList(Player player)
 
             return karmaA > karmaB;
         });
-}
+    }
 
     UIList list = UIList();
     list.Id = "MapList";
@@ -176,6 +176,7 @@ void JukeboxPlugin::DisplayMapList(Player player)
         list.Columns.push_back(std::pair<std::string, int>("Karma", 10));
     }
     list.Actions.insert(std::pair<std::string, std::pair<std::string, std::string>>("Name", std::pair<std::string, std::string>("JukeboxMap", "UId")));
+    list.Actions.insert(std::pair<std::string, std::pair<std::string, std::string>>("Author", std::pair<std::string, std::string>("ListAuthor", "Author")));
 
     for(int mapId = 0; mapId < mapsVector.size(); mapId++)
     {
