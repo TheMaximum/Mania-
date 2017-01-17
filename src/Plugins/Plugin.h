@@ -39,6 +39,7 @@ struct Controller
     sql::Connection* Database;              /**< \brief Database instance. */
     UIManager* UI;                          /**< \brief UI manager instance. */
     PluginHandler* Plugins;                 /**< \brief Plugin handler instance. */
+    ServerInfo* Info;                       /**< \brief Server information instance. */
 };
 
 //* Plugin

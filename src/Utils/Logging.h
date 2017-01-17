@@ -95,6 +95,10 @@ public:
         if(parameter.Type.find("array") != std::string::npos)
         {
             std::cout << spaces << "Parameter #" << paramId << ": array" << std::endl;
+            if(parameterName != "")
+            {
+                std::cout << " (" << parameterName << ")";
+            }
             spaces += "    ";
             std::vector<GbxResponseParameter> arrayParam = parameter.GetArray();
             for(int subParamId = 0; subParamId < arrayParam.size(); subParamId++)
@@ -106,6 +110,10 @@ public:
         else if(parameter.Type.find("struct") != std::string::npos)
         {
             std::cout << spaces << "Parameter #" << paramId << ": struct" << std::endl;
+            if(parameterName != "")
+            {
+                std::cout << " (" << parameterName << ")";
+            }
             spaces += "    ";
             std::map<std::string, GbxResponseParameter> structParam = parameter.GetStruct();
             int subParamId = 0;

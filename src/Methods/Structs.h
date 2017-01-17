@@ -1,7 +1,7 @@
 #ifndef METHODS_STRUCTS_H_
 #define METHODS_STRUCTS_H_
 
-//* ServerInfo
+//* ServerVersion
 /**
  * \brief Struct with server version information.
  */
@@ -30,6 +30,19 @@ struct SystemInfo
     std::string ServerLogin;    /**< \brief Server login. */
     int ServerPlayerId;         /**< \brief Server player identifier. */
     std::string TitleId;        /**< \brief Title identifier. */
+};
+
+//* ServerInfo
+/**
+ * \brief Struct with server information.
+ */
+struct ServerInfo
+{
+    std::string ControllerVersion; /**< \brief Version of the server controller. */
+    Player Account;                /**< \brief Player object of server. */
+    std::string PackMask;          /**< \brief Pack mask. */
+    ServerVersion Version;         /**< \brief Struct with server version information. */
+    SystemInfo System;             /**< \brief Struct with system information. */
 };
 
 //* ServerStatus

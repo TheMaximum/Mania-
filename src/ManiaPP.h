@@ -79,8 +79,7 @@ private:
     Database* db = NULL;                    /**< \brief Contains database connection and driver (needed on destruction). */
     sql::Connection* database = NULL;       /**< \brief Contains database driver. */
 
-    ServerVersion serverVersion;            /**< \brief Struct with server version information. */
-    SystemInfo systemInfo;                  /**< \brief Struct with system information. */
+    ServerInfo* serverInfo;                  /**< \brief Struct with server information. */
 
     /*!
      * \brief Gets a list of current players from the server.

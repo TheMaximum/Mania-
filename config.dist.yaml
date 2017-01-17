@@ -34,3 +34,9 @@ plugins:
     - 'MapWidget':
         widgetX: 49.2
         widgetY: 48.2
+    #- 'Dedimania':
+    #    code: '**********'
+    #    widgetEntries: 22
+    #    widgetTopCount: 5
+    #    widgetX: -64.7
+    #    widgetY: 28.2

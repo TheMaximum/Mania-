@@ -6,7 +6,8 @@ PluginManager::PluginManager(Config* configPtr,
                              std::map<std::string, Player>* playersPtr,
                              MapList* mapsPtr,
                              sql::Connection* databasePtr,
-                             UIManager* uiPtr)
+                             UIManager* uiPtr,
+                             ServerInfo* serverInfoPtr)
 {
     config = configPtr;
     plugins = std::map<std::string, PluginInfo>();
@@ -22,6 +23,7 @@ PluginManager::PluginManager(Config* configPtr,
     controller->Database = databasePtr;
     controller->UI = uiPtr;
     controller->Plugins = pluginHandler;
+    controller->Info = serverInfoPtr;
 }
 
 PluginManager::~PluginManager()

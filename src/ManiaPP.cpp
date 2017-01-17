@@ -21,6 +21,9 @@ ManiaPP::ManiaPP()
 
     methods = new Methods(server, players);
     ui = new UIManager(methods, events, players);
+
+    serverInfo = new ServerInfo();
+    serverInfo->ControllerVersion = VERSION;
 }
 
 ManiaPP::~ManiaPP()
@@ -45,6 +48,8 @@ ManiaPP::~ManiaPP()
         delete database; database = NULL;
     }
     delete db; db = NULL;
+
+    delete serverInfo; serverInfo = NULL;
 }
 
 bool ManiaPP::ConnectToServer()
@@ -76,18 +81,18 @@ bool ManiaPP::ConnectToServer()
                     ServerVersion getServerVersion = methods->GetVersion();
                     if(!getServerVersion.ApiVersion.empty())
                     {
-                        serverVersion = getServerVersion;
+                        serverInfo->Version = getServerVersion;
 
-                        std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved server version: '" << serverVersion.Build << "'." << std::endl;
+                        std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved server version: '" << serverInfo->Version.Build << "'." << std::endl;
 
                         std::cout << "[         ] Retrieving system info ... " << '\r' << std::flush;
 
                         SystemInfo getSystemInfo = methods->GetSystemInfo();
                         if(!getSystemInfo.ServerLogin.empty())
                         {
-                            systemInfo = getSystemInfo;
+                            serverInfo->System = getSystemInfo;
 
-                            std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved system info, server login: '" << systemInfo.ServerLogin << "'." << std::endl;
+                            std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved system info, server login: '" << serverInfo->System.ServerLogin << "'." << std::endl;
 
                             methods->SendHideManialinkPage();
 
@@ -105,7 +110,7 @@ bool ManiaPP::ConnectToServer()
                                     maps->SetCurrentMap(currentMap.UId);
                                     maps->Current->CopyDetailedMap(currentMap);
 
-                                    plugins = new PluginManager(config, methods, commands, players, maps, database, ui);
+                                    plugins = new PluginManager(config, methods, commands, players, maps, database, ui, serverInfo);
                                     plugins->SetEventManager(events);
                                     callbacks = new CallBackManager(server, commands, events, database, players, maps);
 
@@ -163,8 +168,8 @@ void ManiaPP::PrintServerInfo()
 {
     std::cout << "###############################################################################" << std::endl;
     std::cout << "  Mania++ v" << VERSION << " running on " << config->Server->address << ":" << config->Server->port << std::endl;
-    std::cout << "  Game    : " << serverVersion.Name << " / " << serverVersion.TitleId << std::endl;
-    std::cout << "  Version : " << serverVersion.Version << " / " << serverVersion.Build << std::endl;
+    std::cout << "  Game    : " << serverInfo->Version.Name << " / " << serverInfo->Version.TitleId << std::endl;
+    std::cout << "  Version : " << serverInfo->Version.Version << " / " << serverInfo->Version.Build << std::endl;
     std::cout << "###############################################################################" << std::endl;
 }
 
@@ -208,17 +213,22 @@ void ManiaPP::retrievePlayerList()
         for(int playerId = 0; playerId < playerList.size(); playerId++)
         {
             std::map<std::string, GbxResponseParameter> player = playerList.at(playerId).GetStruct();
-            if(player.find("Login")->second.GetString() != systemInfo.ServerLogin)
+
+            GbxParameters params = GbxParameters();
+            std::string login = player.find("Login")->second.GetString();
+            params.Put(&(login));
+
+            GbxMessage message = GbxMessage("GetDetailedPlayerInfo", params);
+            server->Query(message);
+            Player newPlayer = Player(player);
+            newPlayer.PlayerDetailed(server->GetResponse()->GetParameters().at(0).GetStruct());
+
+            if(player.find("Login")->second.GetString() == serverInfo->System.ServerLogin)
             {
-                GbxParameters params = GbxParameters();
-                std::string login = player.find("Login")->second.GetString();
-                params.Put(&(login));
-
-                GbxMessage message = GbxMessage("GetDetailedPlayerInfo", params);
-                server->Query(message);
-                Player newPlayer = Player(player);
-                newPlayer.PlayerDetailed(server->GetResponse()->GetParameters().at(0).GetStruct());
-
+                serverInfo->Account = newPlayer;
+            }
+            else
+            {
                 if(database != NULL)
                 {
                     sql::PreparedStatement* insertPstmt;
