@@ -12,10 +12,11 @@ var searchData=
   ['sendopenlinktologin',['SendOpenLinkToLogin',['../classMethods.html#a40beaa6cb9c971d8272d4166bde74524',1,'Methods']]],
   ['server',['server',['../classCallBackManager.html#a27cccc154989a36eb80580f3d9f69c51',1,'CallBackManager::server()'],['../classGbxRemote.html#a0b0b212b945da4266fb645affdac81cb',1,'GbxRemote::server()'],['../classManiaPP.html#ab81311d6901990cb99a7a30e0cbaab11',1,'ManiaPP::server()'],['../classMethods.html#a3236d275d78d0836cb633de4b1ab5dd8',1,'Methods::server()'],['../classTcpClient.html#a75a8bd28eca3f1eea17fb430ab14cade',1,'TcpClient::server()'],['../classUIManager.html#a33db2c26db770d39d59625138097cf4b',1,'UIManager::server()'],['../classConfig.html#a249a19a298cdcfd4223609142e15e5de',1,'Config::Server()'],['../structController.html#a768e582ffa588191e09533071ad3a37f',1,'Controller::Server()']]],
   ['serverconfig',['ServerConfig',['../structServerConfig.html',1,'']]],
+  ['serverinfo',['ServerInfo',['../structServerInfo.html',1,'ServerInfo'],['../classManiaPP.html#a981bea6157d689c0f371d6f01d18528b',1,'ManiaPP::serverInfo()']]],
   ['serverlogin',['ServerLogin',['../structSystemInfo.html#a7ddac6d99bc8a43171cf1feb8d4b4758',1,'SystemInfo']]],
   ['serverplayerid',['ServerPlayerId',['../structSystemInfo.html#aeb8cb49c244fed751e0dc6e83128aafe',1,'SystemInfo']]],
   ['serverstatus',['ServerStatus',['../structServerStatus.html',1,'']]],
-  ['serverversion',['ServerVersion',['../structServerVersion.html',1,'ServerVersion'],['../classManiaPP.html#ae5cc5086f09dcdb6b5d5dd4cb9a5476c',1,'ManiaPP::serverVersion()']]],
+  ['serverversion',['ServerVersion',['../structServerVersion.html',1,'']]],
   ['setapiversion',['SetApiVersion',['../classMethods.html#ad31d717a19f95d4213d6882a0caff0fa',1,'Methods']]],
   ['setbasicinfo',['setBasicInfo',['../structMap.html#a5a5864cc5b9e067f4383fae5bf01c381',1,'Map::setBasicInfo()'],['../structPlayer.html#ac4666bfba77342a37f3ab3628b26acd0',1,'Player::setBasicInfo()']]],
   ['setcallvoteratio',['SetCallVoteRatio',['../classMethods.html#a8e74a855649f8d1608fa8d873779189b',1,'Methods']]],
@@ -36,5 +37,6 @@ var searchData=
   ['spectatorstatus',['SpectatorStatus',['../structPlayer.html#a2037601661fb699454a88b5649485b30',1,'Player']]],
   ['statuschanged',['StatusChanged',['../classPlugin.html#a1d1a7c5ee8f037cc4277225994829902',1,'Plugin']]],
   ['struct',['Struct',['../classGbxResponseParameter.html#acc26f8d64983f92709d1fa38b8f33e66',1,'GbxResponseParameter']]],
-  ['systeminfo',['SystemInfo',['../structSystemInfo.html',1,'SystemInfo'],['../classManiaPP.html#aa81f571a6c007f2b7cf26101d9c23a3d',1,'ManiaPP::systemInfo()']]]
+  ['system',['System',['../structServerInfo.html#a97727217c6b07430e5d377668567f623',1,'ServerInfo']]],
+  ['systeminfo',['SystemInfo',['../structSystemInfo.html',1,'']]]
 ];

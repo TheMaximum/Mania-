@@ -99,9 +99,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a562e6cac47bc8af1bf688cce814a8a27"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPluginManager.html#a562e6cac47bc8af1bf688cce814a8a27">PluginManager</a> (<a class="el" href="classConfig.html">Config</a> *configPtr, <a class="el" href="classMethods.html">Methods</a> *methodsPtr, <a class="el" href="classCommandManager.html">CommandManager</a> *commandsPtr, std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt; *playersPtr, <a class="el" href="classMapList.html">MapList</a> *mapsPtr, sql::Connection *databasePtr, <a class="el" href="classUIManager.html">UIManager</a> *uiPtr)</td></tr>
-<tr class="memdesc:a562e6cac47bc8af1bf688cce814a8a27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the pointers the plugins need.  <a href="#a562e6cac47bc8af1bf688cce814a8a27">More...</a><br/></td></tr>
-<tr class="separator:a562e6cac47bc8af1bf688cce814a8a27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a069a83068775116bd53350f39db0c844"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPluginManager.html#a069a83068775116bd53350f39db0c844">PluginManager</a> (<a class="el" href="classConfig.html">Config</a> *configPtr, <a class="el" href="classMethods.html">Methods</a> *methodsPtr, <a class="el" href="classCommandManager.html">CommandManager</a> *commandsPtr, std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt; *playersPtr, <a class="el" href="classMapList.html">MapList</a> *mapsPtr, sql::Connection *databasePtr, <a class="el" href="classUIManager.html">UIManager</a> *uiPtr, <a class="el" href="structServerInfo.html">ServerInfo</a> *serverInfoPtr)</td></tr>
+<tr class="memdesc:a069a83068775116bd53350f39db0c844"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the pointers the plugins need.  <a href="#a069a83068775116bd53350f39db0c844">More...</a><br/></td></tr>
+<tr class="separator:a069a83068775116bd53350f39db0c844"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab657302ef5af357907ae11ad817f5dfc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab657302ef5af357907ae11ad817f5dfc"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPluginManager.html#ab657302ef5af357907ae11ad817f5dfc">~PluginManager</a> ()</td></tr>
 <tr class="memdesc:ab657302ef5af357907ae11ad817f5dfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor closes all open plugins. <br/></td></tr>
@@ -155,7 +155,7 @@ std::map&lt; std::string, <a class="el" href="structPluginInfo.html">PluginInfo<
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Manages the plugins. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a562e6cac47bc8af1bf688cce814a8a27"></a>
+<a class="anchor" id="a069a83068775116bd53350f39db0c844"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -199,7 +199,13 @@ std::map&lt; std::string, <a class="el" href="structPluginInfo.html">PluginInfo<
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classUIManager.html">UIManager</a> *&#160;</td>
-          <td class="paramname"><em>uiPtr</em>&#160;</td>
+          <td class="paramname"><em>uiPtr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structServerInfo.html">ServerInfo</a> *&#160;</td>
+          <td class="paramname"><em>serverInfoPtr</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -219,6 +225,7 @@ std::map&lt; std::string, <a class="el" href="structPluginInfo.html">PluginInfo<
     <tr><td class="paramname">mapsPtr</td><td>Current instance of the maplist. </td></tr>
     <tr><td class="paramname">databasePtr</td><td>Current instance of the database connection. </td></tr>
     <tr><td class="paramname">uiPtr</td><td>Current instance of the interface manager. </td></tr>
+    <tr><td class="paramname">serverInfoPtr</td><td>Current instance of the server information. </td></tr>
   </table>
   </dd>
 </dl>
@@ -281,7 +288,7 @@ std::map&lt; std::string, <a class="el" href="structPluginInfo.html">PluginInfo<
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 14 2017 14:02:44 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jan 17 2017 23:51:17 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

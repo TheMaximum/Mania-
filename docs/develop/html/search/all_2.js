@@ -59,6 +59,7 @@ var searchData=
   ['connecttodatabase',['ConnectToDatabase',['../classManiaPP.html#a943b0ecd20ca8c9235411d16a743e5ac',1,'ManiaPP']]],
   ['connecttoserver',['ConnectToServer',['../classManiaPP.html#a22561171876e54dbf633c70d9924c06a',1,'ManiaPP']]],
   ['controller',['Controller',['../structController.html',1,'Controller'],['../classPlugin.html#acd252bdd0b4050df6f221032d50acbe4',1,'Plugin::controller()'],['../classPluginManager.html#a3b08105f2c52f52d21d293fe0045ae1f',1,'PluginManager::controller()']]],
+  ['controllerversion',['ControllerVersion',['../structServerInfo.html#af708f8b3545fe87a6c86bbcebf14dc34',1,'ServerInfo']]],
   ['copperprice',['CopperPrice',['../structMap.html#aa9a7d229fb6b41092fb527bbcc913faf',1,'Map']]],
   ['copydetailedmap',['CopyDetailedMap',['../structMap.html#aceca3c7bca81223e4b54de1cc91f7a31',1,'Map']]],
   ['country',['Country',['../structPlayer.html#aa04503994922157165081fa29bf4729d',1,'Player']]],

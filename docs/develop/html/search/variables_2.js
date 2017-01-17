@@ -20,6 +20,7 @@ var searchData=
   ['connectiondownloadrate',['ConnectionDownloadRate',['../structSystemInfo.html#a3d6368c9202c50774197155ff1a6e8e7',1,'SystemInfo']]],
   ['connectionuploadrate',['ConnectionUploadRate',['../structSystemInfo.html#a57b905820121dd13c62026a58a5f9b34',1,'SystemInfo']]],
   ['controller',['controller',['../classPlugin.html#acd252bdd0b4050df6f221032d50acbe4',1,'Plugin::controller()'],['../classPluginManager.html#a3b08105f2c52f52d21d293fe0045ae1f',1,'PluginManager::controller()']]],
+  ['controllerversion',['ControllerVersion',['../structServerInfo.html#af708f8b3545fe87a6c86bbcebf14dc34',1,'ServerInfo']]],
   ['copperprice',['CopperPrice',['../structMap.html#aa9a7d229fb6b41092fb527bbcc913faf',1,'Map']]],
   ['country',['Country',['../structPlayer.html#aa04503994922157165081fa29bf4729d',1,'Player']]],
   ['current',['Current',['../classMapList.html#a9ff0021f3b08091091e58d3109c41400',1,'MapList']]],

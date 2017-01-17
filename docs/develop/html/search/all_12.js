@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['ui',['UI',['../structController.html#a6ff277dc9e9749bf599b240f93d413b9',1,'Controller::UI()'],['../classManiaPP.html#a961146c15f25d19ffc78b3e79ad4abac',1,'ManiaPP::ui()']]],
+  ['ui',['ui',['../classManiaPP.html#a961146c15f25d19ffc78b3e79ad4abac',1,'ManiaPP::ui()'],['../structController.html#a6ff277dc9e9749bf599b240f93d413b9',1,'Controller::UI()']]],
   ['uid',['UId',['../structMap.html#aeeaed7abcf77e119d5f59c0918183834',1,'Map']]],
   ['uiframe',['UIFrame',['../structUIFrame.html',1,'']]],
   ['uilist',['UIList',['../structUIList.html',1,'']]],
