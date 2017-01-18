@@ -36,32 +36,42 @@ void DedimaniaPlugin::OnBeginMap()
     {
         std::cout << "[         ] Retrieving Dedimania records for current map ... " << std::endl << std::flush;
 
-        std::stringstream getRecords;
-        getRecords << "<member><name>methodName</name><value><string>dedimania.GetChallengeRecords</string></value></member>";
-        getRecords << "<member><name>params</name><value><array><data>";
-        getRecords << "<member><name>SessionId</name><value><string>" << sessionId << "</string></value></member>";
-        getRecords << "<member><name>MapInfo</name><value><struct>";
-        getRecords << "<member><name>UId</name><value><string>" << currentMap.UId << "</string></value></member>";
-        getRecords << "<member><name>Name</name><value><string>" << currentMap.Name << "</string></value></member>";
-        getRecords << "<member><name>Environment</name><value><string>" << currentMap.Environment << "</string></value></member>";
-        getRecords << "<member><name>Author</name><value><string>" << currentMap.Author << "</string></value></member>";
-        getRecords << "<member><name>NbCheckpoints</name><value><int>" << currentMap.NbCheckpoints << "</int></value></member>";
-        getRecords << "<member><name>NbLaps</name><value><int>" << currentMap.NbLaps << "</int></value></member>";
-        getRecords << "</struct></value></member>";
-        // !!! Make work with actual values!!!
-        getRecords << "<member><name>GameMode</name><value><string>TA</string></value></member>";
-        getRecords << "<member><name>SrvInfo</name><value><struct>";
-        getRecords << "<member><name>SrvName</name><value><string>Testserver</string></value></member>";
-        getRecords << "<member><name>Comment</name><value><string>Teest</string></value></member>";
-        getRecords << "<member><name>Private</name><value><boolean>1</boolean></value></member>";
-        getRecords << "<member><name>NumPlayers</name><value><int>0</int></value></member>";
-        getRecords << "<member><name>MaxPlayers</name><value><int>20</int></value></member>";
-        getRecords << "<member><name>NumSpecs</name><value><int>0</int></value></member>";
-        getRecords << "<member><name>MaxSpecs</name><value><int>20</int></value></member>";
-        getRecords << "</struct></value></member>";
-        getRecords << "<member><name>Players</name><value><array><data></data></array></value></member>";
-        getRecords << "</data></array></value></member>";
-        currentCalls.Put(getRecords.str());
+        std::string serverName = "Testserver";
+        std::string comment = "Teest";
+        bool privateServer = true;
+        int numPlayers = 0;
+        int maxPlayers = 20;
+        int numSpecs = 0;
+        int maxSpecs = 20;
+
+        GbxStructParameters getRecs = GbxStructParameters();
+        std::string methodName = "dedimania.GetChallengeRecords";
+        getRecs.Put("methodName", Parameter(&methodName));
+        GbxParameters parameters = GbxParameters();
+        parameters.Put(&sessionId);
+            GbxStructParameters mapInfo = GbxStructParameters();
+            mapInfo.Put("UId", Parameter(&currentMap.UId));
+            mapInfo.Put("Name", Parameter(&currentMap.Name));
+            mapInfo.Put("Environment", Parameter(&currentMap.Environment));
+            mapInfo.Put("Author", Parameter(&currentMap.Author));
+            mapInfo.Put("NbCheckpoints", Parameter(&currentMap.NbCheckpoints));
+            mapInfo.Put("NbLaps", Parameter(&currentMap.NbLaps));
+        parameters.Put(&mapInfo);
+        std::string gameMode = "TA";
+        parameters.Put(&gameMode);
+            GbxStructParameters serverInfo = GbxStructParameters();
+            serverInfo.Put("SrvName", Parameter(&serverName));
+            serverInfo.Put("Comment", Parameter(&comment));
+            serverInfo.Put("Private", Parameter(&privateServer));
+            serverInfo.Put("NumPlayers", Parameter(&numPlayers));
+            serverInfo.Put("MaxPlayers", Parameter(&maxPlayers));
+            serverInfo.Put("NumSpecs", Parameter(&numSpecs));
+            serverInfo.Put("MaxSpecs", Parameter(&maxSpecs));
+        parameters.Put(&serverInfo);
+            GbxParameters players = GbxParameters();
+        parameters.Put(&players);
+        getRecs.Put("params", Parameter(&parameters));
+        currentCalls.push_back(getRecs);
 
         GbxResponse queryResponse = multicall();
         if(!hasError)
@@ -157,20 +167,25 @@ void DedimaniaPlugin::authenticate()
 {
     std::cout << "[         ] Connecting with Dedimania on dedimania.net:8081 ... " << std::endl << std::flush;
 
-    std::stringstream openSession;
-    openSession << "<member><name>methodName</name><value><string>dedimania.OpenSession</string></value></member>";
-    openSession << "<member><name>params</name><value><array><data><value><struct>";
-    openSession << "<member><name>Game</name><value><string>TM2</string></value></member>";
-    openSession << "<member><name>Login</name><value><string>" << controller->Info->System.ServerLogin << "</string></value></member>";
-    openSession << "<member><name>Code</name><value><string>" << dedimaniaCode << "</string></value></member>";
-    openSession << "<member><name>Path</name><value><string>World|" << controller->Info->Account.Path << "</string></value></member>";
-    openSession << "<member><name>Packmask</name><value><string>" << controller->Maps->Current->Environment << "</string></value></member>";
-    openSession << "<member><name>ServerVersion</name><value><string>" << controller->Info->Version.Version << "</string></value></member>";
-    openSession << "<member><name>ServerBuild</name><value><string>" << controller->Info->Version.Build << "</string></value></member>";
-    openSession << "<member><name>Tool</name><value><string>Mania++</string></value></member>";
-    openSession << "<member><name>Version</name><value><string>" << controller->Info->ControllerVersion << "</string></value></member>";
-    openSession << "</struct></value></data></array></value></member>";
-    currentCalls.Put(openSession.str());
+    GbxStructParameters session = GbxStructParameters();
+    std::string methodName = "dedimania.OpenSession";
+    session.Put("methodName", Parameter(&methodName));
+    GbxStructParameters params = GbxStructParameters();
+    std::string game = "TM2";
+    std::string tool = "Mania++";
+    params.Put("Game", Parameter(&game));
+    params.Put("Login", Parameter(&controller->Info->System.ServerLogin));
+    params.Put("Code", Parameter(&dedimaniaCode));
+    params.Put("Path", Parameter(&controller->Info->Account.Path));
+    params.Put("Packmask", Parameter(&controller->Maps->Current->Environment));
+    params.Put("ServerVersion", Parameter(&controller->Info->Version.Version));
+    params.Put("ServerBuild", Parameter(&controller->Info->Version.Build));
+    params.Put("Tool", Parameter(&tool));
+    params.Put("Version", Parameter(&controller->Info->ControllerVersion));
+    GbxParameters parameters = GbxParameters();
+    parameters.Put(&params);
+    session.Put("params", Parameter(&parameters));
+    currentCalls.push_back(session);
 
     GbxResponse queryResponse = multicall();
     if(!hasError)
@@ -208,15 +223,22 @@ GbxResponse DedimaniaPlugin::multicall()
 {
     GbxParameters params = GbxParameters();
     GbxParameters structArray = GbxParameters();
-    std::stringstream warnings;
-    warnings << "<member><name>methodName</name><value><string>dedimania.WarningsAndTTR</string></value></member>";
-    warnings << "<member><name>params</name><value><array><data></data></array></value></member>";
-    currentCalls.Put(warnings.str());
-    structArray.Put(&currentCalls);
+
+    GbxStructParameters ttr = GbxStructParameters();
+    std::string methodName = "dedimania.WarningsAndTTR";
+    ttr.Put("methodName", Parameter(&methodName));
+    GbxParameters parameters = GbxParameters();
+    ttr.Put("params", Parameter(&parameters));
+    currentCalls.push_back(ttr);
+
+    for(int callId = 0; callId < currentCalls.size(); callId++)
+    {
+        structArray.Put(&(currentCalls.at(callId)));
+    }
     params.Put(&structArray);
 
     GbxResponse response = query(GbxMessage("system.multicall", params));
-    currentCalls = GbxStructParameters();
+    currentCalls = std::vector<GbxStructParameters>();
     return response;
 }
 
@@ -266,7 +288,6 @@ GbxResponse DedimaniaPlugin::query(GbxMessage message)
 
     GbxResponse response;
     response.SetRaw(output);
-
     //std::cout << "Response: " << output << std::endl;
 
     std::vector<GbxResponseParameter> responseParams = response.GetParameters().at(0).GetArray();

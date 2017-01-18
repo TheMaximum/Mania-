@@ -70,7 +70,6 @@ void GbxParameter::dereferenceData(void* pointer)
 
         for(int paramId = 0; paramId < gbxParams.size(); paramId++)
         {
-            if(paramId > 0) data += "</struct></value><value><struct>";
             data += gbxParams.at(paramId);
         }
     }

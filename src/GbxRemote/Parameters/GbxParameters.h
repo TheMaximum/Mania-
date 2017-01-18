@@ -1,6 +1,7 @@
 #ifndef GBXPARAMETERS_H_
 #define GBXPARAMETERS_H_
 
+#include <sstream>
 #include <string>
 #include <vector>
 #include <map>
@@ -18,12 +19,33 @@ public:
     /*!
      * \brief Add parameter to the list.
      *
-     * \param text Parameter XML.
+     * \param text       Parameter XML.
      */
     void Put(std::string text)
     {
         parameters.push_back(text);
     }
+
+    /*!
+     * \brief Add parameter to the list.
+     *
+     * \param methodName Method name.
+     * \param parameter  Parameter.
+     */
+    void Put(std::string methodName, std::string parameter)
+    {
+        std::stringstream parameterStream;
+        parameterStream << "<member><name>" << methodName << "</name><value>" << parameter << "</value></member>";
+        parameters.push_back(parameterStream.str());
+    }
+
+    /*!
+     * \brief Add parameter to the list.
+     *
+     * \param methodName Method name.
+     * \param parameter  Parameter.
+     */
+    void Put(std::string methodName, Parameter parameter);
 
     /*!
      * \brief Return the current list of parameters.

@@ -13,6 +13,19 @@ struct Parameter
     void* pointer;                  /**< \brief Pointer to the parameter. */
     const std::type_info* typeinfo; /**< \brief Type information of the parameter. */
 
+    template<typename T>
+    Parameter(T* input)
+    {
+        pointer = input;
+        typeinfo = &typeid(T);
+    }
+
+    Parameter(void* input, const std::type_info* type)
+    {
+        pointer = input;
+        typeinfo = type;
+    }
+
     std::string GetType()
     {
         int status;

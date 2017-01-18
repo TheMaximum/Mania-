@@ -9,6 +9,7 @@
 #include "GbxRemote/Message/GbxMessage.h"
 #include "Socket/TcpClient.h"
 #include "Plugins/Plugin.h"
+#include "Utils/Parameter.h"
 #include "Utils/Time.h"
 
 #include "Objects/DediRecord.h"
@@ -34,7 +35,7 @@ private:
     std::string sessionId = "";
     int maxRank = 0;
 
-    GbxStructParameters currentCalls = GbxStructParameters();
+    std::vector<GbxStructParameters> currentCalls = std::vector<GbxStructParameters>();
 
     std::vector<DediRecord> records = std::vector<DediRecord>();
     DedimaniaWidget widget;

@@ -171,17 +171,17 @@ bool Methods::SetCallVoteRatiosEx(bool replaceAll, std::vector<ExtendedCallVoteR
     params.Put(&replaceAll);
 
     GbxParameters structArray = GbxParameters();
-    GbxStructParameters structRatios = GbxStructParameters();
     for(int ratioId = 0; ratioId < ratios.size(); ratioId++)
     {
+        GbxStructParameters structRatios = GbxStructParameters();
         ExtendedCallVoteRatio ratio = ratios.at(ratioId);
         std::stringstream stringStruct;
         stringStruct << "<member><name>Command</name><value><string>" << ratio.Command << "</string></value></member>";
         stringStruct << "<member><name>Param</name><value><string>" << ratio.Param << "</string></value></member>";
         stringStruct << "<member><name>Ratio</name><value><double>" << ratio.Ratio << "</double></value></member>";
         structRatios.Put(stringStruct.str());
+        structArray.Put(&structRatios);
     }
-    structArray.Put(&structRatios);
     params.Put(&structArray);
 
     if(server->Query(GbxMessage("SetCallVoteRatiosEx", params)))
