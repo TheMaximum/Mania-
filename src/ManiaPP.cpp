@@ -110,6 +110,11 @@ bool ManiaPP::ConnectToServer()
                                     maps->SetCurrentMap(currentMap.UId);
                                     maps->Current->CopyDetailedMap(currentMap);
 
+                                    serverInfo->Name = methods->GetServerName();
+                                    serverInfo->Comment = methods->GetServerComment();
+                                    serverInfo->MaxPlayers = methods->GetMaxPlayers().CurrentValue;
+                                    serverInfo->MaxSpectators = methods->GetMaxSpectators().CurrentValue;
+
                                     plugins = new PluginManager(config, methods, commands, players, maps, database, ui, serverInfo);
                                     plugins->SetEventManager(events);
                                     callbacks = new CallBackManager(server, commands, events, database, players, maps);
@@ -176,6 +181,10 @@ void ManiaPP::PrintServerInfo()
 void ManiaPP::MainLoop()
 {
     std::cout << "Starting our loop ..." << std::endl;
+
+    time_t lastSecond = std::time(0);
+    time_t lastMinute = std::time(0);
+
     while(true)
     {
         server->ReadCallBacks();
@@ -192,6 +201,19 @@ void ManiaPP::MainLoop()
             }
 
             server->ResetCBResponses();
+        }
+
+        time_t currentTime = std::time(0);
+        if(currentTime > lastSecond)
+        {
+            events->CallEverySecond();
+            lastSecond = currentTime;
+        }
+
+        if(currentTime >= (lastMinute + 60))
+        {
+            events->CallEveryMinute();
+            lastMinute = currentTime;
         }
     }
 }

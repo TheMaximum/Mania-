@@ -23,6 +23,7 @@ public:
     void Init();
     void OnBeginMap();
     void OnPlayerConnect(Player player);
+    void UpdateServer();
 
     void OpenDediRecords(Player player);
 
@@ -34,6 +35,7 @@ private:
     std::string dedimaniaCode = "";
     std::string sessionId = "";
     int maxRank = 0;
+    int updateServer = 0;
 
     std::vector<GbxStructParameters> currentCalls = std::vector<GbxStructParameters>();
 

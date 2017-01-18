@@ -7,6 +7,14 @@ DedimaniaPlugin::DedimaniaPlugin()
 
     BeginMap.push_back([this](Map map) { OnBeginMap(); });
     PlayerConnect.push_back([this](Player player) { OnPlayerConnect(player); });
+    EveryMinute.push_back([this]() {
+        updateServer++;
+        if(updateServer >= 3)
+        {
+            UpdateServer();
+            updateServer = 0;
+        }
+    });
     RegisterCommand("dedirecs", [this](Player player, std::vector<std::string> parameters) { OpenDediRecords(player); });
     RegisterCommand("dedirecords", [this](Player player, std::vector<std::string> parameters) { OpenDediRecords(player); });
 
@@ -34,15 +42,42 @@ void DedimaniaPlugin::OnBeginMap()
 
     if(sessionId != "")
     {
+        updateServer = 0;
+
         std::cout << "[         ] Retrieving Dedimania records for current map ... " << std::endl << std::flush;
 
-        std::string serverName = "Testserver";
-        std::string comment = "Teest";
-        bool privateServer = true;
         int numPlayers = 0;
-        int maxPlayers = 20;
         int numSpecs = 0;
-        int maxSpecs = 20;
+        bool privateServer = (controller->Server->GetServerPassword() != "");
+
+        GbxParameters players = GbxParameters();
+        std::vector<GbxStructParameters> playerVector = std::vector<GbxStructParameters>();
+        for(std::map<std::string, Player>::iterator playerIt = controller->Players->begin(); playerIt != controller->Players->end(); ++playerIt)
+        {
+            Player player = playerIt->second;
+
+            if(player.IsSpectator)
+            {
+                numSpecs++;
+            }
+            else
+            {
+                numPlayers++;
+            }
+
+            std::stringstream isSpec;
+            isSpec << "<boolean>" << player.IsSpectator << "</boolean>";
+
+            GbxStructParameters playerStruct = GbxStructParameters();
+            playerStruct.Put("Login", "<string>" + player.Login + "</string>");
+            playerStruct.Put("IsSpec", isSpec.str());
+            playerVector.push_back(playerStruct);
+        }
+
+        for(int playerId = 0; playerId < playerVector.size(); playerId++)
+        {
+            players.Put(&playerVector.at(playerId));
+        }
 
         GbxStructParameters getRecs = GbxStructParameters();
         std::string methodName = "dedimania.GetChallengeRecords";
@@ -60,15 +95,14 @@ void DedimaniaPlugin::OnBeginMap()
         std::string gameMode = "TA";
         parameters.Put(&gameMode);
             GbxStructParameters serverInfo = GbxStructParameters();
-            serverInfo.Put("SrvName", Parameter(&serverName));
-            serverInfo.Put("Comment", Parameter(&comment));
+            serverInfo.Put("SrvName", Parameter(&controller->Info->Name));
+            serverInfo.Put("Comment", Parameter(&controller->Info->Comment));
             serverInfo.Put("Private", Parameter(&privateServer));
             serverInfo.Put("NumPlayers", Parameter(&numPlayers));
-            serverInfo.Put("MaxPlayers", Parameter(&maxPlayers));
+            serverInfo.Put("MaxPlayers", Parameter(&controller->Info->MaxPlayers));
             serverInfo.Put("NumSpecs", Parameter(&numSpecs));
-            serverInfo.Put("MaxSpecs", Parameter(&maxSpecs));
+            serverInfo.Put("MaxSpecs", Parameter(&controller->Info->MaxSpectators));
         parameters.Put(&serverInfo);
-            GbxParameters players = GbxParameters();
         parameters.Put(&players);
         getRecs.Put("params", Parameter(&parameters));
         currentCalls.push_back(getRecs);
@@ -105,6 +139,77 @@ void DedimaniaPlugin::OnBeginMap()
     {
         Logging::PrintError(controller->Server->GetCurrentError());
     }
+}
+
+void DedimaniaPlugin::UpdateServer()
+{
+    /*Map currentMap = *controller->Maps->Current;
+
+    if(sessionId != "")
+    {
+        int numPlayers = 0;
+        int numSpecs = 0;
+        bool privateServer = (controller->Server->GetServerPassword() != "");
+
+        GbxParameters players = GbxParameters();
+        std::vector<GbxStructParameters> playerVector = std::vector<GbxStructParameters>();
+        for(std::map<std::string, Player>::iterator playerIt = controller->Players->begin(); playerIt != controller->Players->end(); ++playerIt)
+        {
+            Player player = playerIt->second;
+
+            if(player.IsSpectator)
+            {
+                numSpecs++;
+            }
+            else
+            {
+                numPlayers++;
+            }
+
+            std::stringstream isSpec;
+            isSpec << "<boolean>" << player.IsSpectator << "</boolean>";
+
+            GbxStructParameters playerStruct = GbxStructParameters();
+            playerStruct.Put("Login", "<string>" + player.Login + "</string>");
+            playerStruct.Put("IsSpec", isSpec.str());
+            playerVector.push_back(playerStruct);
+        }
+
+        for(int playerId = 0; playerId < playerVector.size(); playerId++)
+        {
+            players.Put(&playerVector.at(playerId));
+        }
+
+        GbxStructParameters getRecs = GbxStructParameters();
+        std::string methodName = "dedimania.UpdateServerPlayers";
+        getRecs.Put("methodName", Parameter(&methodName));
+        GbxParameters parameters = GbxParameters();
+        parameters.Put(&sessionId);
+            GbxStructParameters mapInfo = GbxStructParameters();
+            mapInfo.Put("UId", Parameter(&currentMap.UId));
+            mapInfo.Put("Name", Parameter(&currentMap.Name));
+            mapInfo.Put("Environment", Parameter(&currentMap.Environment));
+            mapInfo.Put("Author", Parameter(&currentMap.Author));
+            mapInfo.Put("NbCheckpoints", Parameter(&currentMap.NbCheckpoints));
+            mapInfo.Put("NbLaps", Parameter(&currentMap.NbLaps));
+        parameters.Put(&mapInfo);
+        std::string gameMode = "TA";
+        parameters.Put(&gameMode);
+            GbxStructParameters serverInfo = GbxStructParameters();
+            serverInfo.Put("SrvName", Parameter(&controller->Info->Name));
+            serverInfo.Put("Comment", Parameter(&controller->Info->Comment));
+            serverInfo.Put("Private", Parameter(&privateServer));
+            serverInfo.Put("NumPlayers", Parameter(&numPlayers));
+            serverInfo.Put("MaxPlayers", Parameter(&controller->Info->MaxPlayers));
+            serverInfo.Put("NumSpecs", Parameter(&numSpecs));
+            serverInfo.Put("MaxSpecs", Parameter(&controller->Info->MaxSpectators));
+        parameters.Put(&serverInfo);
+        parameters.Put(&players);
+        getRecs.Put("params", Parameter(&parameters));
+        currentCalls.push_back(getRecs);
+
+        GbxResponse queryResponse = multicall();
+    }*/
 }
 
 void DedimaniaPlugin::OnPlayerConnect(Player player)

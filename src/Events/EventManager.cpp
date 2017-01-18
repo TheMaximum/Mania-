@@ -2,6 +2,9 @@
 
 EventManager::EventManager()
 {
+    methodsEverySecond = std::vector<std::function<void()>>();
+    methodsEveryMinute = std::vector<std::function<void()>>();
+
     methodsPlayerConnect = std::vector<std::function<void(Player)>>();
     methodsPlayerDisconnect = std::vector<std::function<void(Player)>>();
     methodsPlayerChat = std::vector<std::function<void(Player, std::string)>>();
@@ -19,6 +22,28 @@ EventManager::EventManager()
     methodsMapListModified = std::vector<std::function<void(int, int, bool)>>();
     methodsPlayerInfoChanged = std::vector<std::function<void(Player)>>();
     methodsVoteUpdated = std::vector<std::function<void(std::string, std::string, std::string, std::string)>>();
+}
+
+int EventManager::RegisterEverySecond(std::vector<std::function<void()>> functions)
+{
+    int functionsAdded = 0;
+    for(int functionId = 0; functionId < functions.size(); functionId++)
+    {
+        methodsEverySecond.push_back(functions.at(functionId));
+        functionsAdded++;
+    }
+    return functionsAdded;
+}
+
+int EventManager::RegisterEveryMinute(std::vector<std::function<void()>> functions)
+{
+    int functionsAdded = 0;
+    for(int functionId = 0; functionId < functions.size(); functionId++)
+    {
+        methodsEveryMinute.push_back(functions.at(functionId));
+        functionsAdded++;
+    }
+    return functionsAdded;
 }
 
 int EventManager::RegisterPlayerConnect(std::vector<std::function<void(Player)>> functions)
@@ -206,6 +231,24 @@ int EventManager::RegisterVoteUpdated(std::vector<std::function<void(std::string
         functionsAdded++;
     }
     return functionsAdded;
+}
+
+void EventManager::CallEverySecond()
+{
+    for(int methodId = 0; methodId < methodsEverySecond.size(); methodId++)
+    {
+        std::function<void()> method = methodsEverySecond.at(methodId);
+        method();
+    }
+}
+
+void EventManager::CallEveryMinute()
+{
+    for(int methodId = 0; methodId < methodsEveryMinute.size(); methodId++)
+    {
+        std::function<void()> method = methodsEveryMinute.at(methodId);
+        method();
+    }
 }
 
 void EventManager::CallPlayerConnect(Player player)

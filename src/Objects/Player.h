@@ -65,6 +65,19 @@ struct Player
     /*!
      * \brief Formats a server response into a usable form.
      *
+     * \param serverStruct The struct with player information received from the server.
+     */
+    void SetBasic(std::map<std::string, GbxResponseParameter> serverStruct)
+    {
+        if(serverStruct.find("Login") != serverStruct.end())
+        {
+            setBasicInfo(serverStruct);
+        }
+    }
+
+    /*!
+     * \brief Formats a server response into a usable form.
+     *
      * \param serverStruct The struct with detailed player information received from the server.
      */
     void PlayerDetailed(std::map<std::string, GbxResponseParameter> serverStruct)

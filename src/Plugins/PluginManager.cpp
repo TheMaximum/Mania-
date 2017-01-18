@@ -105,6 +105,9 @@ void PluginManager::LoadPlugins(std::string pluginsFolder)
                 {
                     std::cout << "[         ] Loading events for '" << pluginId->first << "' ... " << '\r' << std::flush;
                     int eventCount = 0;
+                    eventCount += events->RegisterEverySecond(plugin->EverySecond);
+                    eventCount += events->RegisterEveryMinute(plugin->EveryMinute);
+
                     eventCount += events->RegisterPlayerConnect(plugin->PlayerConnect);
                     eventCount += events->RegisterPlayerDisconnect(plugin->PlayerDisconnect);
                     eventCount += events->RegisterPlayerChat(plugin->PlayerChat);

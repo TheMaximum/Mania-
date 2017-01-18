@@ -66,6 +66,8 @@ public:
 
     std::map<std::string, std::string> Settings;                                /**< \brief Plugin settings (from the config file). */
 
+    std::vector<std::function<void()>> EverySecond;                             /**< \brief Vector with functions for the EverySecond event. */
+    std::vector<std::function<void()>> EveryMinute;                             /**< \brief Vector with functions for the EveryMinute event. */
     std::vector<std::function<void(Player)>> PlayerConnect;                     /**< \brief Vector with functions for the PlayerConnect event. */
     std::vector<std::function<void(Player)>> PlayerDisconnect;                  /**< \brief Vector with functions for the PlayerDisconnect event. */
     std::vector<std::function<void(Player, std::string)>> PlayerChat;           /**< \brief Vector with functions for the PlayerChat event. */

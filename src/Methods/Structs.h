@@ -38,6 +38,11 @@ struct SystemInfo
  */
 struct ServerInfo
 {
+    std::string Name;
+    std::string Comment;
+    int MaxPlayers;
+    int MaxSpectators;
+
     std::string ControllerVersion; /**< \brief Version of the server controller. */
     Player Account;                /**< \brief Player object of server. */
     std::string PackMask;          /**< \brief Pack mask. */

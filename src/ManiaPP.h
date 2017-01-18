@@ -1,8 +1,6 @@
 #ifndef MANIAPP_H_
 #define MANIAPP_H_
 
-#include <chrono>
-
 #include "CallBacks/CallBackManager.h"
 #include "Config/Version.h"
 #include "Config/Config.h"

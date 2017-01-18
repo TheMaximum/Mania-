@@ -361,9 +361,18 @@ void CallBackManager::HandleMapListModified(std::vector<GbxResponseParameter> pa
 void CallBackManager::HandlePlayerInfoChanged(std::vector<GbxResponseParameter> parameters)
 {
     std::map<std::string, GbxResponseParameter> playerInfo = parameters.at(0).GetStruct();
-    Player player = Player(playerInfo);
+    std::string login = playerInfo.at("Login").GetString();
+    Player* player = &players->at(login);
+    player->SetBasic(playerInfo);
 
-    events->CallPlayerInfoChanged(player);
+    GbxParameters params = GbxParameters();
+    params.Put(&login);
+    GbxMessage message = GbxMessage("GetDetailedPlayerInfo", params);
+    server->Query(message);
+
+    player->PlayerDetailed(server->GetResponse()->GetParameters().at(0).GetStruct());
+
+    events->CallPlayerInfoChanged(*player);
 }
 
 void CallBackManager::HandleVoteUpdated(std::vector<GbxResponseParameter> parameters)

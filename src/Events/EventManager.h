@@ -21,6 +21,24 @@ public:
     EventManager();
 
     /*!
+     * \brief Register functions for the EverySecond callback (from controller).
+     *
+     * Returns how many functions were successfully added.
+     *
+     * \param functions Vector with functions to be added.
+     */
+    int RegisterEverySecond(std::vector<std::function<void()>> functions);
+
+    /*!
+     * \brief Register functions for the EveryMinute callback (from controller).
+     *
+     * Returns how many functions were successfully added.
+     *
+     * \param functions Vector with functions to be added.
+     */
+    int RegisterEveryMinute(std::vector<std::function<void()>> functions);
+
+    /*!
      * \brief Register functions for the PlayerConnect callback.
      *
      * Returns how many functions were successfully added.
@@ -174,6 +192,16 @@ public:
     int RegisterVoteUpdated(std::vector<std::function<void(std::string, std::string, std::string, std::string)>> functions);
 
     /*!
+     * \brief Calls all functions which are subscribed to the EverySecond event.
+     */
+    void CallEverySecond();
+
+    /*!
+     * \brief Calls all functions which are subscribed to the EveryMinute event.
+     */
+    void CallEveryMinute();
+
+    /*!
      * \brief Calls all functions which are subscribed to the PlayerConnect event.
      *
      * \param player Player that connected.
@@ -310,6 +338,9 @@ public:
     void CallVoteUpdated(std::string stateName, std::string login, std::string commandName, std::string commandParam);
 
 private:
+    std::vector<std::function<void()>> methodsEverySecond;                             /**< \brief Vector with functions for the EverySecond event. */
+    std::vector<std::function<void()>> methodsEveryMinute;                             /**< \brief Vector with functions for the EveryMinute event. */
+
     std::vector<std::function<void(Player)>> methodsPlayerConnect;                     /**< \brief Vector with functions for the PlayerConnect event. */
     std::vector<std::function<void(Player)>> methodsPlayerDisconnect;                  /**< \brief Vector with functions for the PlayerDisconnect event. */
     std::vector<std::function<void(Player, std::string)>> methodsPlayerChat;           /**< \brief Vector with functions for the PlayerChat event. */

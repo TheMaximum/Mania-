@@ -4,6 +4,7 @@
 #include "../GbxRemote/GbxRemote.h"
 #include "../Objects/Map.h"
 #include "../Objects/Player.h"
+#include "../Utils/Logging.h"
 #include "../Utils/Text.h"
 #include "Structs.h"
 
@@ -329,23 +330,6 @@ public:
     bool UnsetServerTag(std::string name);
     bool ResetServerTags();
 
-    bool SetServerName(std::string name);
-    std::string GetServerName();
-    bool SetServerComment(std::string comment);
-    std::string GetServerComment();
-    bool SetHideServer(int setting);
-    int GetHideServer();
-    bool IsRelayServer();
-    bool SetServerPassword(std::string password);
-    std::string GetServerPassword();
-    bool SetServerPasswordForSpectator(std::string password);
-    std::string GetServerPasswordForSpectator();
-
-    bool SetMaxPlayers(int limit);
-    int GetMaxPlayers();
-    bool SetMaxSpectators(int limit);
-    int GetMaxSpectators();
-
     bool SetLobbyInfo(bool isLobby, int numPlayers, int maxPlayers, double averageLevel);
     //struct{IsLobby,LobbyPlayers,LobbyMaxPlayers,LobbyPlayersLevel} GetLobbyInfo();
 
@@ -364,6 +348,95 @@ public:
     std::string GameDataDirectory();
     std::string GetMapsDirectory();
     std::string GetSkinsDirectory();*/
+
+    /*!
+     * \brief Sets the server name.
+     *
+     * \param name      New server name.
+     */
+    bool SetServerName(std::string name);
+
+    /*!
+     * \brief Returns the current server name.
+     */
+    std::string GetServerName();
+
+    /*!
+     * \brief Sets the server comment.
+     *
+     * \param comment   New server comment.
+     */
+    bool SetServerComment(std::string comment);
+
+    /*!
+     * \brief Returns the current server comment.
+     */
+    std::string GetServerComment();
+
+    /*!
+     * \brief Sets the hide setting of the server.
+     *
+     * \param setting   New hide setting (0 = visible, 1 = always hidden, 2 = hidden from nations).
+     */
+    bool SetHideServer(int setting);
+
+    /*!
+     * \brief Gets the hide setting of the server (0 = visible, 1 = always hidden, 2 = hidden from nations).
+     */
+    int GetHideServer();
+
+    /*!
+     * \brief Returns whether the server is a relay server.
+     */
+    bool IsRelayServer();
+
+    /*!
+     * \brief Sets the server password.
+     *
+     * \param password  New server password.
+     */
+    bool SetServerPassword(std::string password);
+
+    /*!
+     * \brief Gets the server password.
+     */
+    std::string GetServerPassword();
+
+    /*!
+     * \brief Sets the spectator password.
+     *
+     * \param password  New spectator password.
+     */
+    bool SetServerPasswordForSpectator(std::string password);
+
+    /*!
+     * \brief Gets the spectator password.
+     */
+    std::string GetServerPasswordForSpectator();
+
+    /*!
+     * \brief Sets the playerlimit.
+     *
+     * \param limit     New playerlimit.
+     */
+    bool SetMaxPlayers(int limit);
+
+    /*!
+     * \brief Gets the playerlimit.
+     */
+    CurrentNextValue GetMaxPlayers();
+
+    /*!
+     * \brief Sets the spectatorlimit.
+     *
+     * \param limit     New spectatorlimit.
+     */
+    bool SetMaxSpectators(int limit);
+
+    /*!
+     * \brief Gets the spectatorlimit.
+     */
+    CurrentNextValue GetMaxSpectators();
 
     /*!
      * \brief Provides a map object for the map being played next on the server.
