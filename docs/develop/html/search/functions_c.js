@@ -13,5 +13,5 @@ var searchData=
   ['printokflush',['PrintOKFlush',['../classLogging.html#a889f2ad8f991afdf0959cb1cad736fa7',1,'Logging']]],
   ['printparameter',['PrintParameter',['../classLogging.html#a1f8609052e40055fb9ef3ddd40d0620e',1,'Logging']]],
   ['printserverinfo',['PrintServerInfo',['../classManiaPP.html#a56d2774a29f21b3a164ae1f7ea6bd88b',1,'ManiaPP']]],
-  ['put',['Put',['../classGbxStructParameters.html#a1e045e8f50d30cdd810df10f3346bee4',1,'GbxStructParameters::Put()'],['../classGbxParameters.html#a2cf83794717cf9fdc13e5ff12e259f04',1,'GbxParameters::Put()']]]
+  ['put',['Put',['../classGbxStructParameters.html#a1e045e8f50d30cdd810df10f3346bee4',1,'GbxStructParameters::Put(std::string text)'],['../classGbxStructParameters.html#a97d487bfc030380abd4a6342139de30f',1,'GbxStructParameters::Put(std::string methodName, std::string parameter)'],['../classGbxStructParameters.html#a6661fc06c7721857dd4e65a6edd8c8d5',1,'GbxStructParameters::Put(std::string methodName, Parameter parameter)'],['../classGbxParameters.html#a2cf83794717cf9fdc13e5ff12e259f04',1,'GbxParameters::Put()']]]
 ];
