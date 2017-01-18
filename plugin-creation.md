@@ -61,6 +61,8 @@ Almost all callbacks from the server are relayed to the plugins. The table indic
 
 | CallBack                      | Methods vector    | Method parameters                                                          |
 | ----------------------------- | ----------------- | -------------------------------------------------------------------------- |
+| Every second (from controller) | EverySecond     |                         |
+| Every minute (from controller) | EveryMinute     |                         |
 | ManiaPlanet.PlayerConnect     | PlayerConnect     | ```Player```                                                               |
 | ManiaPlanet.PlayerDisconnect  | PlayerDisconnect  | ```Player```                                                               |
 | ManiaPlanet.PlayerChat        | PlayerChat        | ```Player```, ```std::string```                |
@@ -90,3 +92,5 @@ The controller features are accessible via a ```Controller``` struct, which is i
 | Current map list | ```Maps``` | [MapList](https://themaximum.github.io/mania-pp/docs/develop/html/classMapList.html) |
 | Database access | ```Database``` | [MySQL C++ Connector](https://dev.mysql.com/doc/connector-cpp/en/connector-cpp-getting-started-examples.html) |
 | Interface Manager | ```UI``` | [UIManager](https://themaximum.github.io/mania-pp/docs/develop/html/classUIManager.html) |
+| Inter-plugin communication | ```Plugins``` | [PluginHandler](https://themaximum.github.io/mania-pp/docs/develop/html/classPluginHandler.html) |
+| Server information | ```Info``` | [ServerInfo](https://themaximum.github.io/mania-pp/docs/develop/html/structServerInfo.html) |
