@@ -15,6 +15,8 @@ var searchData=
   ['methodsecho',['methodsEcho',['../classEventManager.html#a61180225295324ec1240bb4a8d119866',1,'EventManager']]],
   ['methodsendmap',['methodsEndMap',['../classEventManager.html#abf91c3327317273584e1a60d8a68ca6e',1,'EventManager']]],
   ['methodsendmatch',['methodsEndMatch',['../classEventManager.html#a57c6a54084081b1ea74736e30ad2e7cc',1,'EventManager']]],
+  ['methodseveryminute',['methodsEveryMinute',['../classEventManager.html#a597bdacbe09390cb276946a633fb444f',1,'EventManager']]],
+  ['methodseverysecond',['methodsEverySecond',['../classEventManager.html#a8a435afc23d23b676bb39e1c209fa1cd',1,'EventManager']]],
   ['methodsmaplistmodified',['methodsMapListModified',['../classEventManager.html#a9de43e00de48971bd1299a1d77b7b649',1,'EventManager']]],
   ['methodsplayerchat',['methodsPlayerChat',['../classEventManager.html#ae2e1c22386c1ea3397d29cbcf3d2523d',1,'EventManager']]],
   ['methodsplayercheckpoint',['methodsPlayerCheckpoint',['../classEventManager.html#aec8534b0e9229a761981003a749c8749',1,'EventManager']]],

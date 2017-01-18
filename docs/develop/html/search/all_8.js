@@ -14,6 +14,7 @@ var searchData=
   ['isdedicated',['IsDedicated',['../structSystemInfo.html#acd6f3cbafcee73181edc08dd3eae1599',1,'SystemInfo']]],
   ['isinofficialmode',['IsInOfficialMode',['../structPlayer.html#a76e8b5298bcbe9ff694b6ed490ef7ca5',1,'Player']]],
   ['isloaded',['IsLoaded',['../classPluginHandler.html#a594d629d4905880d708ee265b9e48396',1,'PluginHandler']]],
+  ['isrelayserver',['IsRelayServer',['../classMethods.html#a53ec97c30e8cdec66abecd3b1f2d5d15',1,'Methods']]],
   ['isserver',['IsServer',['../structSystemInfo.html#a13101b94bbf077f73232fa7c374def87',1,'SystemInfo']]],
   ['isspectator',['IsSpectator',['../structPlayer.html#a61ba0e32d336f5cd1eb152addf6848d2',1,'Player']]]
 ];

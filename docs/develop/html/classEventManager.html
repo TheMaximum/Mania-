@@ -100,6 +100,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a89099b22114f158b5c530edfea52371d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a89099b22114f158b5c530edfea52371d">EventManager</a> ()</td></tr>
 <tr class="separator:a89099b22114f158b5c530edfea52371d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb7862da212bc7ce1d20af2fea8d1ba3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#acb7862da212bc7ce1d20af2fea8d1ba3">RegisterEverySecond</a> (std::vector&lt; std::function&lt; void()&gt;&gt; functions)</td></tr>
+<tr class="memdesc:acb7862da212bc7ce1d20af2fea8d1ba3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register functions for the EverySecond callback (from controller).  <a href="#acb7862da212bc7ce1d20af2fea8d1ba3">More...</a><br/></td></tr>
+<tr class="separator:acb7862da212bc7ce1d20af2fea8d1ba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ebbc9674a8f664c975d3ecdc27346f1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a0ebbc9674a8f664c975d3ecdc27346f1">RegisterEveryMinute</a> (std::vector&lt; std::function&lt; void()&gt;&gt; functions)</td></tr>
+<tr class="memdesc:a0ebbc9674a8f664c975d3ecdc27346f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register functions for the EveryMinute callback (from controller).  <a href="#a0ebbc9674a8f664c975d3ecdc27346f1">More...</a><br/></td></tr>
+<tr class="separator:a0ebbc9674a8f664c975d3ecdc27346f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26aec3d9c2cfbdcb62c0f8e432c2fcae"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a26aec3d9c2cfbdcb62c0f8e432c2fcae">RegisterPlayerConnect</a> (std::vector&lt; std::function&lt; void(<a class="el" href="structPlayer.html">Player</a>)&gt;&gt; functions)</td></tr>
 <tr class="memdesc:a26aec3d9c2cfbdcb62c0f8e432c2fcae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register functions for the PlayerConnect callback.  <a href="#a26aec3d9c2cfbdcb62c0f8e432c2fcae">More...</a><br/></td></tr>
 <tr class="separator:a26aec3d9c2cfbdcb62c0f8e432c2fcae"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,6 +157,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa8833f57b1732204762c4d64c8546c53"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#aa8833f57b1732204762c4d64c8546c53">RegisterVoteUpdated</a> (std::vector&lt; std::function&lt; void(std::string, std::string, std::string, std::string)&gt;&gt; functions)</td></tr>
 <tr class="memdesc:aa8833f57b1732204762c4d64c8546c53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register functions for the VoteUpdated callback.  <a href="#aa8833f57b1732204762c4d64c8546c53">More...</a><br/></td></tr>
 <tr class="separator:aa8833f57b1732204762c4d64c8546c53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62f03057453cda9430cccd5c9e21878d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a62f03057453cda9430cccd5c9e21878d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a62f03057453cda9430cccd5c9e21878d">CallEverySecond</a> ()</td></tr>
+<tr class="memdesc:a62f03057453cda9430cccd5c9e21878d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls all functions which are subscribed to the EverySecond event. <br/></td></tr>
+<tr class="separator:a62f03057453cda9430cccd5c9e21878d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeee2f0768556dc8eb79be47362f05c9a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeee2f0768556dc8eb79be47362f05c9a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#aeee2f0768556dc8eb79be47362f05c9a">CallEveryMinute</a> ()</td></tr>
+<tr class="memdesc:aeee2f0768556dc8eb79be47362f05c9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls all functions which are subscribed to the EveryMinute event. <br/></td></tr>
+<tr class="separator:aeee2f0768556dc8eb79be47362f05c9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ba57f2276badf2fef783b2480b0fd46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a8ba57f2276badf2fef783b2480b0fd46">CallPlayerConnect</a> (<a class="el" href="structPlayer.html">Player</a> player)</td></tr>
 <tr class="memdesc:a8ba57f2276badf2fef783b2480b0fd46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls all functions which are subscribed to the PlayerConnect event.  <a href="#a8ba57f2276badf2fef783b2480b0fd46">More...</a><br/></td></tr>
 <tr class="separator:a8ba57f2276badf2fef783b2480b0fd46"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -206,6 +220,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr class="memitem:a8a435afc23d23b676bb39e1c209fa1cd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8a435afc23d23b676bb39e1c209fa1cd"></a>
+std::vector&lt; std::function<br class="typebreak"/>
+&lt; void()&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a8a435afc23d23b676bb39e1c209fa1cd">methodsEverySecond</a></td></tr>
+<tr class="memdesc:a8a435afc23d23b676bb39e1c209fa1cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector with functions for the EverySecond event. <br/></td></tr>
+<tr class="separator:a8a435afc23d23b676bb39e1c209fa1cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a597bdacbe09390cb276946a633fb444f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a597bdacbe09390cb276946a633fb444f"></a>
+std::vector&lt; std::function<br class="typebreak"/>
+&lt; void()&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a597bdacbe09390cb276946a633fb444f">methodsEveryMinute</a></td></tr>
+<tr class="memdesc:a597bdacbe09390cb276946a633fb444f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector with functions for the EveryMinute event. <br/></td></tr>
+<tr class="separator:a597bdacbe09390cb276946a633fb444f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98c39230b15f7d40fa5d3c87210a5fd9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a98c39230b15f7d40fa5d3c87210a5fd9"></a>
 std::vector&lt; std::function<br class="typebreak"/>
 &lt; void(<a class="el" href="structPlayer.html">Player</a>)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a98c39230b15f7d40fa5d3c87210a5fd9">methodsPlayerConnect</a></td></tr>
@@ -1025,6 +1049,56 @@ std::string)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a clas
 
 </div>
 </div>
+<a class="anchor" id="a0ebbc9674a8f664c975d3ecdc27346f1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int EventManager::RegisterEveryMinute </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::function&lt; void()&gt;&gt;&#160;</td>
+          <td class="paramname"><em>functions</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register functions for the EveryMinute callback (from controller). </p>
+<p>Returns how many functions were successfully added.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">functions</td><td>Vector with functions to be added. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="acb7862da212bc7ce1d20af2fea8d1ba3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int EventManager::RegisterEverySecond </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::function&lt; void()&gt;&gt;&#160;</td>
+          <td class="paramname"><em>functions</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register functions for the EverySecond callback (from controller). </p>
+<p>Returns how many functions were successfully added.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">functions</td><td>Vector with functions to be added. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a2793498f3b1e3bf82c9d8caab49387c0"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1307,7 +1381,7 @@ std::string)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a clas
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 18 2017 15:05:12 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 18 2017 17:07:42 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

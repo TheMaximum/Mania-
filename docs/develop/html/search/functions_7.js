@@ -5,5 +5,6 @@ var searchData=
   ['initwithip',['InitWithIp',['../classGbxRemote.html#aa9a57e73f2f5ebbde90484503bd0d16d',1,'GbxRemote']]],
   ['insertmap',['InsertMap',['../classMethods.html#a02eb54d04e3ea1970e5312f0aa061d28',1,'Methods']]],
   ['insertmaplist',['InsertMapList',['../classMethods.html#a1b5d820d4715a10ab6dbb6bed1b28ec4',1,'Methods']]],
-  ['isloaded',['IsLoaded',['../classPluginHandler.html#a594d629d4905880d708ee265b9e48396',1,'PluginHandler']]]
+  ['isloaded',['IsLoaded',['../classPluginHandler.html#a594d629d4905880d708ee265b9e48396',1,'PluginHandler']]],
+  ['isrelayserver',['IsRelayServer',['../classMethods.html#a53ec97c30e8cdec66abecd3b1f2d5d15',1,'Methods']]]
 ];

@@ -15,6 +15,10 @@ Handles events (callbacks) from server to plugins.
 \item 
 \hyperlink{classEventManager_a89099b22114f158b5c530edfea52371d}{Event\-Manager} ()
 \item 
+int \hyperlink{classEventManager_acb7862da212bc7ce1d20af2fea8d1ba3}{Register\-Every\-Second} (std\-::vector$<$ std\-::function$<$ void()$>$$>$ functions)
+\begin{DoxyCompactList}\small\item\em Register functions for the Every\-Second callback (from controller). \end{DoxyCompactList}\item 
+int \hyperlink{classEventManager_a0ebbc9674a8f664c975d3ecdc27346f1}{Register\-Every\-Minute} (std\-::vector$<$ std\-::function$<$ void()$>$$>$ functions)
+\begin{DoxyCompactList}\small\item\em Register functions for the Every\-Minute callback (from controller). \end{DoxyCompactList}\item 
 int \hyperlink{classEventManager_a26aec3d9c2cfbdcb62c0f8e432c2fcae}{Register\-Player\-Connect} (std\-::vector$<$ std\-::function$<$ void(\hyperlink{structPlayer}{Player})$>$$>$ functions)
 \begin{DoxyCompactList}\small\item\em Register functions for the Player\-Connect callback. \end{DoxyCompactList}\item 
 int \hyperlink{classEventManager_a56ed11f893eb5beebfbf294a196005e5}{Register\-Player\-Disconnect} (std\-::vector$<$ std\-::function$<$ void(\hyperlink{structPlayer}{Player})$>$$>$ functions)
@@ -49,6 +53,12 @@ int \hyperlink{classEventManager_a1ffe0d4b4a0bdbb8e488bc3bd3a58178}{Register\-Pl
 \begin{DoxyCompactList}\small\item\em Register functions for the Player\-Info\-Changed callback. \end{DoxyCompactList}\item 
 int \hyperlink{classEventManager_aa8833f57b1732204762c4d64c8546c53}{Register\-Vote\-Updated} (std\-::vector$<$ std\-::function$<$ void(std\-::string, std\-::string, std\-::string, std\-::string)$>$$>$ functions)
 \begin{DoxyCompactList}\small\item\em Register functions for the Vote\-Updated callback. \end{DoxyCompactList}\item 
+\hypertarget{classEventManager_a62f03057453cda9430cccd5c9e21878d}{void \hyperlink{classEventManager_a62f03057453cda9430cccd5c9e21878d}{Call\-Every\-Second} ()}\label{classEventManager_a62f03057453cda9430cccd5c9e21878d}
+
+\begin{DoxyCompactList}\small\item\em Calls all functions which are subscribed to the Every\-Second event. \end{DoxyCompactList}\item 
+\hypertarget{classEventManager_aeee2f0768556dc8eb79be47362f05c9a}{void \hyperlink{classEventManager_aeee2f0768556dc8eb79be47362f05c9a}{Call\-Every\-Minute} ()}\label{classEventManager_aeee2f0768556dc8eb79be47362f05c9a}
+
+\begin{DoxyCompactList}\small\item\em Calls all functions which are subscribed to the Every\-Minute event. \end{DoxyCompactList}\item 
 void \hyperlink{classEventManager_a8ba57f2276badf2fef783b2480b0fd46}{Call\-Player\-Connect} (\hyperlink{structPlayer}{Player} player)
 \begin{DoxyCompactList}\small\item\em Calls all functions which are subscribed to the Player\-Connect event. \end{DoxyCompactList}\item 
 void \hyperlink{classEventManager_aeef81d4160c3312c098ad72679a07c44}{Call\-Player\-Disconnect} (\hyperlink{structPlayer}{Player} player)
@@ -87,6 +97,14 @@ void \hyperlink{classEventManager_ad9907c7d0fd7a93e336e4a99db008540}{Call\-Vote\
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
+\hypertarget{classEventManager_a8a435afc23d23b676bb39e1c209fa1cd}{std\-::vector$<$ std\-::function\\*
+$<$ void()$>$ $>$ \hyperlink{classEventManager_a8a435afc23d23b676bb39e1c209fa1cd}{methods\-Every\-Second}}\label{classEventManager_a8a435afc23d23b676bb39e1c209fa1cd}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Every\-Second event. \end{DoxyCompactList}\item 
+\hypertarget{classEventManager_a597bdacbe09390cb276946a633fb444f}{std\-::vector$<$ std\-::function\\*
+$<$ void()$>$ $>$ \hyperlink{classEventManager_a597bdacbe09390cb276946a633fb444f}{methods\-Every\-Minute}}\label{classEventManager_a597bdacbe09390cb276946a633fb444f}
+
+\begin{DoxyCompactList}\small\item\em Vector with functions for the Every\-Minute event. \end{DoxyCompactList}\item 
 \hypertarget{classEventManager_a98c39230b15f7d40fa5d3c87210a5fd9}{std\-::vector$<$ std\-::function\\*
 $<$ void(\hyperlink{structPlayer}{Player})$>$ $>$ \hyperlink{classEventManager_a98c39230b15f7d40fa5d3c87210a5fd9}{methods\-Player\-Connect}}\label{classEventManager_a98c39230b15f7d40fa5d3c87210a5fd9}
 
@@ -590,6 +608,42 @@ Returns how many functions were successfully added.
 
 
 Register functions for the End\-Match callback. 
+
+Returns how many functions were successfully added.
+
+
+\begin{DoxyParams}{Parameters}
+{\em functions} & Vector with functions to be added. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_a0ebbc9674a8f664c975d3ecdc27346f1}{\index{Event\-Manager@{Event\-Manager}!Register\-Every\-Minute@{Register\-Every\-Minute}}
+\index{Register\-Every\-Minute@{Register\-Every\-Minute}!EventManager@{Event\-Manager}}
+\subsubsection[{Register\-Every\-Minute}]{\setlength{\rightskip}{0pt plus 5cm}int Event\-Manager\-::\-Register\-Every\-Minute (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::function$<$ void()$>$$>$}]{functions}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_a0ebbc9674a8f664c975d3ecdc27346f1}
+
+
+Register functions for the Every\-Minute callback (from controller). 
+
+Returns how many functions were successfully added.
+
+
+\begin{DoxyParams}{Parameters}
+{\em functions} & Vector with functions to be added. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classEventManager_acb7862da212bc7ce1d20af2fea8d1ba3}{\index{Event\-Manager@{Event\-Manager}!Register\-Every\-Second@{Register\-Every\-Second}}
+\index{Register\-Every\-Second@{Register\-Every\-Second}!EventManager@{Event\-Manager}}
+\subsubsection[{Register\-Every\-Second}]{\setlength{\rightskip}{0pt plus 5cm}int Event\-Manager\-::\-Register\-Every\-Second (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::function$<$ void()$>$$>$}]{functions}
+\end{DoxyParamCaption}
+)}}\label{classEventManager_acb7862da212bc7ce1d20af2fea8d1ba3}
+
+
+Register functions for the Every\-Second callback (from controller). 
 
 Returns how many functions were successfully added.
 
