@@ -214,7 +214,6 @@ void DedimaniaPlugin::UpdateServer()
             serverInfo.Put("NumSpecs", Parameter(&numSpecs));
             serverInfo.Put("MaxSpecs", Parameter(&controller->Info->MaxSpectators));
         parameters.Put(&serverInfo);
-            std::string gameMode = GameModeConverter::GetDediName(controller->Info->Mode);
             GbxStructParameters votesInfo = GbxStructParameters();
             votesInfo.Put("UId", Parameter(&currentMap.UId));
             votesInfo.Put("GameMode", Parameter(&gameMode));

@@ -14,6 +14,7 @@
 #include "Objects/Player.h"
 #include "Plugins/PluginManager.h"
 #include "UI/UIManager.h"
+#include "Utils/GameMode.h"
 #include "Utils/Logging.h"
 #include "Utils/Time.h"
 #include "Version/VersionChecker.h"

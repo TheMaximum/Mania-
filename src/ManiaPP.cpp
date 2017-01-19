@@ -175,7 +175,7 @@ void ManiaPP::PrintServerInfo()
     std::cout << "###############################################################################" << std::endl;
     std::cout << "  Mania++ v" << VERSION << " running on " << config->Server->address << ":" << config->Server->port << std::endl;
     std::cout << "  Name    : " << serverInfo->Name << " / " << serverInfo->Account.Login << std::endl;
-    std::cout << "  Game    : " << serverInfo->Version.Name << " / " << serverInfo->Version.TitleId << std::endl;
+    std::cout << "  Game    : " << serverInfo->Version.Name << " / " << serverInfo->Version.TitleId << " / " << GameModeConverter::GetName(serverInfo->Mode) << std::endl;
     std::cout << "  Version : " << serverInfo->Version.Version << " / " << serverInfo->Version.Build << std::endl;
     std::cout << "  Author  : TheM" << std::endl;
     std::cout << "###############################################################################" << std::endl;
