@@ -44,6 +44,13 @@ void DedimaniaPlugin::OnBeginMap()
     {
         updateServer = 0;
 
+        std::string gameMode = GameModeConverter::GetDediName(controller->Info->Mode);
+        if(gameMode == "n/a")
+        {
+            std::cout << "[ \033[0;31mFAILED!\033[0;0m ] Not retrieving Dedimania record, as game mode is not 'TA' or 'Rounds'!" << std::endl << std::flush;
+            return;
+        }
+
         std::cout << "[         ] Retrieving Dedimania records for current map ... " << std::endl << std::flush;
 
         int numPlayers = 0;
@@ -92,7 +99,6 @@ void DedimaniaPlugin::OnBeginMap()
             mapInfo.Put("NbCheckpoints", Parameter(&currentMap.NbCheckpoints));
             mapInfo.Put("NbLaps", Parameter(&currentMap.NbLaps));
         parameters.Put(&mapInfo);
-        std::string gameMode = "TA";
         parameters.Put(&gameMode);
             GbxStructParameters serverInfo = GbxStructParameters();
             serverInfo.Put("SrvName", Parameter(&controller->Info->Name));
@@ -143,10 +149,21 @@ void DedimaniaPlugin::OnBeginMap()
 
 void DedimaniaPlugin::UpdateServer()
 {
-    /*Map currentMap = *controller->Maps->Current;
+    Map currentMap = *controller->Maps->Current;
 
     if(sessionId != "")
     {
+        int updateServer = 0;
+
+        std::string gameMode = GameModeConverter::GetDediName(controller->Info->Mode);
+        if(gameMode == "n/a")
+        {
+            std::cout << "[ \033[0;31mFAILED!\033[0;0m ] Not updating Dedimania with player list, as game mode is not 'TA' or 'Rounds'!" << std::endl << std::flush;
+            return;
+        }
+
+        std::cout << "[         ] Updating Dedimania with player list ... " << std::endl << std::flush;
+
         int numPlayers = 0;
         int numSpecs = 0;
         bool privateServer = (controller->Server->GetServerPassword() != "");
@@ -168,10 +185,13 @@ void DedimaniaPlugin::UpdateServer()
 
             std::stringstream isSpec;
             isSpec << "<boolean>" << player.IsSpectator << "</boolean>";
+            std::stringstream vote;
+            vote << "<int>-1</int>";
 
             GbxStructParameters playerStruct = GbxStructParameters();
             playerStruct.Put("Login", "<string>" + player.Login + "</string>");
             playerStruct.Put("IsSpec", isSpec.str());
+            playerStruct.Put("Vote", vote.str());
             playerVector.push_back(playerStruct);
         }
 
@@ -185,17 +205,7 @@ void DedimaniaPlugin::UpdateServer()
         getRecs.Put("methodName", Parameter(&methodName));
         GbxParameters parameters = GbxParameters();
         parameters.Put(&sessionId);
-            GbxStructParameters mapInfo = GbxStructParameters();
-            mapInfo.Put("UId", Parameter(&currentMap.UId));
-            mapInfo.Put("Name", Parameter(&currentMap.Name));
-            mapInfo.Put("Environment", Parameter(&currentMap.Environment));
-            mapInfo.Put("Author", Parameter(&currentMap.Author));
-            mapInfo.Put("NbCheckpoints", Parameter(&currentMap.NbCheckpoints));
-            mapInfo.Put("NbLaps", Parameter(&currentMap.NbLaps));
-        parameters.Put(&mapInfo);
-        std::string gameMode = "TA";
-        parameters.Put(&gameMode);
-            GbxStructParameters serverInfo = GbxStructParameters();
+        GbxStructParameters serverInfo = GbxStructParameters();
             serverInfo.Put("SrvName", Parameter(&controller->Info->Name));
             serverInfo.Put("Comment", Parameter(&controller->Info->Comment));
             serverInfo.Put("Private", Parameter(&privateServer));
@@ -204,12 +214,25 @@ void DedimaniaPlugin::UpdateServer()
             serverInfo.Put("NumSpecs", Parameter(&numSpecs));
             serverInfo.Put("MaxSpecs", Parameter(&controller->Info->MaxSpectators));
         parameters.Put(&serverInfo);
+            std::string gameMode = GameModeConverter::GetDediName(controller->Info->Mode);
+            GbxStructParameters votesInfo = GbxStructParameters();
+            votesInfo.Put("UId", Parameter(&currentMap.UId));
+            votesInfo.Put("GameMode", Parameter(&gameMode));
+        parameters.Put(&votesInfo);
         parameters.Put(&players);
         getRecs.Put("params", Parameter(&parameters));
         currentCalls.push_back(getRecs);
 
         GbxResponse queryResponse = multicall();
-    }*/
+        if(!hasError)
+        {
+            std::cout << "\x1b[1A[   \033[0;32mOK.\033[0;0m   ] Successfully updated Dedimania with the player list." << std::endl << std::flush;
+        }
+        else
+        {
+            std::cout << "[ \033[0;31mFAILED!\033[0;0m ] Unable to update Dedimania with player list." << std::endl << std::flush;
+        }
+    }
 }
 
 void DedimaniaPlugin::OnPlayerConnect(Player player)
@@ -362,6 +385,8 @@ GbxResponse DedimaniaPlugin::query(GbxMessage message)
     std::stringstream postfields;
     postfields << "xmlrpc=" << encoded;
 
+    //std::string gzipped = GZip::Compress(postfields.str());
+
     curl = curl_easy_init();
 
     struct curl_slist *headers=NULL;
@@ -376,6 +401,7 @@ GbxResponse DedimaniaPlugin::query(GbxMessage message)
     curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
     curl_easy_setopt(curl, CURLOPT_POST, 1);
     curl_easy_setopt(curl, CURLOPT_USERAGENT, "Mania++/0.3.0");
+    curl_easy_setopt(curl, CURLOPT_ENCODING, "gzip");
     curl_easy_setopt(curl, CURLOPT_ACCEPT_ENCODING, "deflate,gzip");
     curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, DedimaniaPlugin::receiveData);
     curl_easy_setopt(curl, CURLOPT_WRITEDATA, &output);

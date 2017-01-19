@@ -83,6 +83,19 @@ public:
     }
 
     /*!
+     * \brief Prints a vector with GbxResponseParameter objects (for DEBUG purposes).
+     *
+     * \param parameters    Parameters to be printed.
+     */
+    static void PrintParameters(std::vector<GbxResponseParameter> parameters)
+    {
+        for(int paramId = 0; paramId < parameters.size(); paramId++)
+        {
+            PrintParameter(parameters.at(paramId), paramId);
+        }
+    }
+
+    /*!
      * \brief Prints a GbxResponseParameter (for DEBUG purposes).
      *
      * \param parameter     Parameter to be printed.

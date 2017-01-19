@@ -20,8 +20,9 @@ public:
      *
      * \param serverPtr     Pointer to server connection.
      * \param playerListPtr Pointer to the playerlist.
+     * \param serverInfoPtr Pointer to the server information
      */
-    Methods(GbxRemote* serverPtr, std::map<std::string, Player>* playerListPtr);
+    Methods(GbxRemote* serverPtr, std::map<std::string, Player>* playerListPtr, ServerInfo* serverInfoPtr);
 
     /*!
      * \brief Returns the current server error (from GbxRemote).
@@ -286,69 +287,6 @@ public:
      */
     std::vector<ManiaLinkPageAnswer> GetManialinkPageAnswers();
 
-    /*bool SendOpenLinkToLogin(std::string login, std::string link, int linkType);
-
-    bool Kick(std::string login, std::string message = "");
-    bool Ban(std::string login, std::string message = "");
-    bool BanAndBlackList(std::string login, std::string message, bool save = false);
-    bool UnBan(std::string login);
-    bool CleanBanList();
-    //array[struct{Login,ClientName,IPAddress}] GetBanList(int amount, int index);
-    bool BlackList(std::string login);
-    bool UnBlackList(std::string login);
-    bool CleanBlackList();
-    //array[struct{Login}] GetBlackList(int amount, int index);
-    bool LoadBlackList(std::string file);
-    bool SaveBlackList(std::string file);
-
-    bool AddGuest(std::string login);
-    bool RemoveGuest(std::string login);
-    bool CleanGuestList();
-    //array[struct{Login}] GetGuestList(int amount, int index);
-    bool LoadGuestList(std::string file);
-    bool SaveGuestList(std::string file);
-
-    bool SetBuddyNotification(std::string login, bool enabled);
-    bool GetBuddyNotification(std::string login);
-
-    // bool WriteFile(std::string file, base64 content);
-
-    bool Echo(std::string value1, std::string value2);
-
-    bool Ignore(std::string login);
-    bool UnIgnore(std::string login);
-    bool CleanIgnoreList();
-    // array[struct{Login}] GetIgnoreList(int amount, int index);
-
-    int Pay(std::string login, int cost, std::string label);
-    int SendBill(std::string loginFrom, int cost, std::string label, std::string loginTo = "");
-    // struct{State, StateName, TransactionId} GetBillState(int billId);
-    int GetServerPlanets();
-
-    //array[struct{Name, Value}] GetServerTags();
-    bool SetServerTag(std::string name, std::string value);
-    bool UnsetServerTag(std::string name);
-    bool ResetServerTags();
-
-    bool SetLobbyInfo(bool isLobby, int numPlayers, int maxPlayers, double averageLevel);
-    //struct{IsLobby,LobbyPlayers,LobbyMaxPlayers,LobbyPlayersLevel} GetLobbyInfo();
-
-    bool CustomizeQuitDialog(std::string manialink, std::string sendToServer, bool proposeAddToFavourites, int delayQuitButton);
-
-    bool KeepPlayerSlots(bool keepPlayerSlots);
-    bool IsKeepingPlayerSlots();
-
-    bool EnableP2PUpload(bool enable);
-    bool IsP2PUpload();
-    bool EnableP2PDownload(bool enable);
-    bool IsP2PDownload();
-    bool AllowMapDownload(bool allow);
-    bool IsMapDownloadAllowed();
-
-    std::string GameDataDirectory();
-    std::string GetMapsDirectory();
-    std::string GetSkinsDirectory();*/
-
     /*!
      * \brief Sets the server name.
      *
@@ -432,6 +370,18 @@ public:
      * \param limit     New spectatorlimit.
      */
     bool SetMaxSpectators(int limit);
+
+    /*!
+     * \brief Sets the game mode (0 = Script, 1 = Rounds, 2 = TimeAttack, 3 = Team, 4 = Laps, 5 = Cup, 6 = Stunts).
+     *
+     * \param mode      New game mode.
+     */
+    bool SetGameMode(GameMode mode);
+
+    /*!
+     * \brief Get the game mode (0 = Script, 1 = Rounds, 2 = TimeAttack, 3 = Team, 4 = Laps, 5 = Cup, 6 = Stunts).
+     */
+    GameMode GetGameMode();
 
     /*!
      * \brief Gets the spectatorlimit.
@@ -529,9 +479,73 @@ public:
      */
     int ChooseNextMapList(std::vector<std::string> fileNames);
 
+    /*bool SendOpenLinkToLogin(std::string login, std::string link, int linkType);
+
+    bool Kick(std::string login, std::string message = "");
+    bool Ban(std::string login, std::string message = "");
+    bool BanAndBlackList(std::string login, std::string message, bool save = false);
+    bool UnBan(std::string login);
+    bool CleanBanList();
+    //array[struct{Login,ClientName,IPAddress}] GetBanList(int amount, int index);
+    bool BlackList(std::string login);
+    bool UnBlackList(std::string login);
+    bool CleanBlackList();
+    //array[struct{Login}] GetBlackList(int amount, int index);
+    bool LoadBlackList(std::string file);
+    bool SaveBlackList(std::string file);
+
+    bool AddGuest(std::string login);
+    bool RemoveGuest(std::string login);
+    bool CleanGuestList();
+    //array[struct{Login}] GetGuestList(int amount, int index);
+    bool LoadGuestList(std::string file);
+    bool SaveGuestList(std::string file);
+
+    bool SetBuddyNotification(std::string login, bool enabled);
+    bool GetBuddyNotification(std::string login);
+
+    // bool WriteFile(std::string file, base64 content);
+
+    bool Echo(std::string value1, std::string value2);
+
+    bool Ignore(std::string login);
+    bool UnIgnore(std::string login);
+    bool CleanIgnoreList();
+    // array[struct{Login}] GetIgnoreList(int amount, int index);
+
+    int Pay(std::string login, int cost, std::string label);
+    int SendBill(std::string loginFrom, int cost, std::string label, std::string loginTo = "");
+    // struct{State, StateName, TransactionId} GetBillState(int billId);
+    int GetServerPlanets();
+
+    //array[struct{Name, Value}] GetServerTags();
+    bool SetServerTag(std::string name, std::string value);
+    bool UnsetServerTag(std::string name);
+    bool ResetServerTags();
+
+    bool SetLobbyInfo(bool isLobby, int numPlayers, int maxPlayers, double averageLevel);
+    //struct{IsLobby,LobbyPlayers,LobbyMaxPlayers,LobbyPlayersLevel} GetLobbyInfo();
+
+    bool CustomizeQuitDialog(std::string manialink, std::string sendToServer, bool proposeAddToFavourites, int delayQuitButton);
+
+    bool KeepPlayerSlots(bool keepPlayerSlots);
+    bool IsKeepingPlayerSlots();
+
+    bool EnableP2PUpload(bool enable);
+    bool IsP2PUpload();
+    bool EnableP2PDownload(bool enable);
+    bool IsP2PDownload();
+    bool AllowMapDownload(bool allow);
+    bool IsMapDownloadAllowed();
+
+    std::string GameDataDirectory();
+    std::string GetMapsDirectory();
+    std::string GetSkinsDirectory();*/
+
 private:
     GbxRemote* server;                         /**< \brief Pointer to GbxRemote. */
     std::map<std::string, Player>* playerList; /**< \brief Pointer to the playerlist. */
+    ServerInfo* serverInfo;                    /**< \brief Pointer to the server information. */
 };
 
 #endif // METHODS_H_

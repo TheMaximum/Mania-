@@ -17,6 +17,7 @@
 #include "../GbxRemote/Message/GbxMessage.h"
 #include "../GbxRemote/Parameters/GbxParameters.h"
 #include "../Maps/MapList.h"
+#include "../Methods/Structs.h"
 #include "../Objects/Map.h"
 #include "../Objects/Player.h"
 #include "../Utils/Logging.h"
@@ -40,8 +41,9 @@ public:
      * \param databasePtr       Pointer to the database connection.
      * \param playerList        Pointer to playerlist.
      * \param mapList           Pointer to maplist.
+     * \param serverInfoPtr     Pointer to server information.
      */
-    CallBackManager(GbxRemote* serverPtr, CommandManager* commandManagerPtr, EventManager* eventManagerPtr, sql::Connection* databasePtr, std::map<std::string, Player>* playerList, MapList* mapList);
+    CallBackManager(GbxRemote* serverPtr, CommandManager* commandManagerPtr, EventManager* eventManagerPtr, sql::Connection* databasePtr, std::map<std::string, Player>* playerList, MapList* mapList, ServerInfo* serverInfoPtr);
 
     /*!
      * \brief Handles callback (updates lists, calls plugin functions).
@@ -176,7 +178,8 @@ private:
     EventManager* events;                   /**< \brief Contains the event manager. */
     sql::Connection* database;              /**< \brief Contains the database connection. */
     std::map<std::string, Player>* players; /**< \brief Contains the list of players currently on the server. */
-    MapList* maps;       /**< \brief Contains the list of players currently on the server. */
+    MapList* maps;                          /**< \brief Contains the list of players currently on the server. */
+    ServerInfo* serverInfo;                 /**< \brief Contains the server information. */
 };
 
 #endif // CALLBACKMANAGER_H_

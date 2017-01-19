@@ -26,10 +26,14 @@ include_directories("${PROJECT_BINARY_DIR}")
 
 file(GLOB_RECURSE SOURCES src/*.cpp)
 
+find_package(Boost REQUIRED COMPONENTS iostreams)
+include_directories(${Boost_INCLUDE_DIR})
+
 add_executable(Mania++ ${SOURCES}
                        lib/pugixml/libpugixml.a)
 target_link_libraries(Mania++ yaml-cpp
                               ${EXECUTABLE_OUTPUT_PATH}/lib/pugixml/libpugixml.a
                               dl
                               mysqlcppconn
-                              curl)
+                              curl
+                              ${Boost_LIBRARIES})

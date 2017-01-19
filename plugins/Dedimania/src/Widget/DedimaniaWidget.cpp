@@ -178,6 +178,9 @@ bool DedimaniaWidget::DisplayToPlayer(Player player)
 
     for(int recordId = startPoint; recordId < (startPoint + (WidgetEntries - WidgetTopCount)); recordId++)
     {
+        if(recordId > records->size())
+            break;
+            
         DediRecord record = records->at(recordId);
         if(record.Login == player.Login)
         {

@@ -9,6 +9,8 @@
 #include "GbxRemote/Message/GbxMessage.h"
 #include "Socket/TcpClient.h"
 #include "Plugins/Plugin.h"
+#include "Utils/GameMode.h"
+#include "Utils/GZip.h"
 #include "Utils/Parameter.h"
 #include "Utils/Time.h"
 

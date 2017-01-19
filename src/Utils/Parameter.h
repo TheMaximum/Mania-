@@ -13,6 +13,11 @@ struct Parameter
     void* pointer;                  /**< \brief Pointer to the parameter. */
     const std::type_info* typeinfo; /**< \brief Type information of the parameter. */
 
+    /*!
+     * \brief Updates properties with input information.
+     *
+     * \param input Input to be parameterized.
+     */
     template<typename T>
     Parameter(T* input)
     {
@@ -20,12 +25,21 @@ struct Parameter
         typeinfo = &typeid(T);
     }
 
+    /*!
+     * \brief Updates properties with input information.
+     *
+     * \param input Pointer to content.
+     * \param type  Pointer type.
+     */
     Parameter(void* input, const std::type_info* type)
     {
         pointer = input;
         typeinfo = type;
     }
 
+    /*!
+     * \brief Returns demangled type information.
+     */
     std::string GetType()
     {
         int status;

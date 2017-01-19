@@ -17,7 +17,7 @@ void LocalRecordsPlugin::Init()
 {
     loadSettings();
     retrieveRecords(*controller->Maps->Current);
-    std::cout << "[  INFO   ] " << localRecords.List.size() << " records found for " << controller->Maps->Current->Name << "." << std::endl;
+    std::cout << "[   INFO  ] " << localRecords.List.size() << " records found for " << controller->Maps->Current->Name << "." << std::endl;
 
     widget = LocalRecordsWidget(controller->UI, &localRecords);
     widget.WidgetEntries = widgetEntries;
@@ -60,7 +60,7 @@ void LocalRecordsPlugin::loadSettings()
 void LocalRecordsPlugin::OnBeginMap(Map map)
 {
     retrieveRecords(*controller->Maps->Current);
-    std::cout << "[  INFO   ] " << localRecords.List.size() << " records found for " << controller->Maps->Current->Name << "." << std::endl;
+    std::cout << "[   INFO  ] " << localRecords.List.size() << " records found for " << controller->Maps->Current->Name << "." << std::endl;
 
     for(std::map<std::string, Player>::iterator player = controller->Players->begin(); player != controller->Players->end(); ++player)
     {

@@ -1,6 +1,8 @@
 #ifndef METHODS_STRUCTS_H_
 #define METHODS_STRUCTS_H_
 
+#include "../Utils/GameMode.h"
+
 //* ServerVersion
 /**
  * \brief Struct with server version information.
@@ -38,10 +40,11 @@ struct SystemInfo
  */
 struct ServerInfo
 {
-    std::string Name;
-    std::string Comment;
-    int MaxPlayers;
-    int MaxSpectators;
+    std::string Name;              /**< \brief Server name. */
+    std::string Comment;           /**< \brief Server comment. */
+    int MaxPlayers;                /**< \brief Maximum number of players. */
+    int MaxSpectators;             /**< \brief Maximum number of spectators. */
+    GameMode Mode;                 /**< \brief Current game mode. */
 
     std::string ControllerVersion; /**< \brief Version of the server controller. */
     Player Account;                /**< \brief Player object of server. */

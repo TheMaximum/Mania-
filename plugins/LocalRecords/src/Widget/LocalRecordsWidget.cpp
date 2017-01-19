@@ -170,6 +170,9 @@ bool LocalRecordsWidget::DisplayToPlayer(Player player)
 
     for(int recordId = startPoint; recordId < (startPoint + (WidgetEntries - WidgetTopCount)); recordId++)
     {
+        if(recordId > records->List.size())
+            break;
+            
         LocalRecord record = records->List.at(recordId);
         if(record.Login == player.Login)
         {

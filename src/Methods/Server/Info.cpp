@@ -11,6 +11,11 @@ bool Methods::SetServerName(std::string name)
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::istringstream(responseParams.at(0).GetString()) >> response;
+
+        if(response)
+        {
+            serverInfo->Name = name;
+        }
     }
 
     return response;
@@ -40,6 +45,11 @@ bool Methods::SetServerComment(std::string comment)
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::istringstream(responseParams.at(0).GetString()) >> response;
+
+        if(response)
+        {
+            serverInfo->Comment = comment;
+        }
     }
 
     return response;
@@ -169,6 +179,11 @@ bool Methods::SetMaxPlayers(int limit)
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::istringstream(responseParams.at(0).GetString()) >> response;
+
+        if(response)
+        {
+            serverInfo->MaxPlayers = limit;
+        }
     }
 
     return response;
@@ -200,6 +215,11 @@ bool Methods::SetMaxSpectators(int limit)
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::istringstream(responseParams.at(0).GetString()) >> response;
+
+        if(response)
+        {
+            serverInfo->MaxSpectators = limit;
+        }
     }
 
     return response;

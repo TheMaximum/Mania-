@@ -1,11 +1,12 @@
 #include "CallBackManager.h"
 
-CallBackManager::CallBackManager(GbxRemote* serverPtr, CommandManager* commandManagerPtr, EventManager* eventManagerPtr, sql::Connection* databasePtr, std::map<std::string, Player>* playerList, MapList* mapList)
+CallBackManager::CallBackManager(GbxRemote* serverPtr, CommandManager* commandManagerPtr, EventManager* eventManagerPtr, sql::Connection* databasePtr, std::map<std::string, Player>* playerList, MapList* mapList, ServerInfo* serverInfoPtr)
 {
     server = serverPtr;
     commands = commandManagerPtr;
     events = eventManagerPtr;
     database = databasePtr;
+    serverInfo = serverInfoPtr;
 
     players = playerList;
     maps = mapList;
@@ -13,12 +14,7 @@ CallBackManager::CallBackManager(GbxRemote* serverPtr, CommandManager* commandMa
 
 void CallBackManager::HandleCallBack(std::string methodName, std::vector<GbxResponseParameter> parameters)
 {
-    std::cout << "CALLBACK: " << methodName << " (parameters: " << parameters.size() << ")" << std::endl;
-    /*for(int paramId = 0; paramId < parameters.size(); paramId++)
-    {
-        GbxResponseParameter parameter = parameters.at(paramId);
-        Logging::PrintParameter(parameter, paramId);
-    }*/
+    std::cout << "[    CB   ] " << methodName << " (parameters: " << parameters.size() << ")" << std::endl;
 
     if(methodName.find("ManiaPlanet.PlayerConnect") != std::string::npos)
     {
@@ -34,11 +30,6 @@ void CallBackManager::HandleCallBack(std::string methodName, std::vector<GbxResp
     }
     else if(methodName.find("ManiaPlanet.PlayerManialinkPageAnswer") != std::string::npos)
     {
-        for(int paramId = 0; paramId < parameters.size(); paramId++)
-        {
-            GbxResponseParameter parameter = parameters.at(paramId);
-            Logging::PrintParameter(parameter, paramId);
-        }
         HandlePlayerManialinkPageAnswer(parameters);
     }
     else if(methodName.find("ManiaPlanet.Echo") != std::string::npos)
@@ -289,6 +280,10 @@ void CallBackManager::HandleBeginMap(std::vector<GbxResponseParameter> parameter
     Map* map = &(maps->List.at(mapStruct.at("UId").GetString()));
     map->MapDetailed(parameters.at(0).GetStruct());
 
+    GbxMessage message = GbxMessage("GetGameMode");
+    server->Query(message);
+    serverInfo->Mode = static_cast<GameMode>(atoi(server->GetResponse()->GetParameters().at(0).GetString().c_str()));
+
     maps->SetCurrentMap(mapStruct.at("UId").GetString());
     events->CallBeginMap(*map);
 }
@@ -322,12 +317,17 @@ void CallBackManager::HandlePlayerCheckpoint(std::vector<GbxResponseParameter> p
 
 void CallBackManager::HandlePlayerFinish(std::vector<GbxResponseParameter> parameters)
 {
-    std::string login = parameters.at(1).GetString();
-    Player* player = &players->at(login);
-    int time = atoi(parameters.at(2).GetString().c_str());
+    Logging::PrintParameters(parameters);
 
-    events->CallPlayerFinish(*player, time);
-    player->CurrentCheckpoints.clear();
+    std::string login = parameters.at(1).GetString();
+    if(login != serverInfo->Account.Login)
+    {
+        Player* player = &players->at(login);
+        int time = atoi(parameters.at(2).GetString().c_str());
+
+        events->CallPlayerFinish(*player, time);
+        player->CurrentCheckpoints.clear();
+    }
 }
 
 void CallBackManager::HandlePlayerIncoherence(std::vector<GbxResponseParameter> parameters)
@@ -362,17 +362,21 @@ void CallBackManager::HandlePlayerInfoChanged(std::vector<GbxResponseParameter> 
 {
     std::map<std::string, GbxResponseParameter> playerInfo = parameters.at(0).GetStruct();
     std::string login = playerInfo.at("Login").GetString();
-    Player* player = &players->at(login);
-    player->SetBasic(playerInfo);
 
-    GbxParameters params = GbxParameters();
-    params.Put(&login);
-    GbxMessage message = GbxMessage("GetDetailedPlayerInfo", params);
-    server->Query(message);
+    if(players->find(login) != players->end())
+    {
+        Player* player = &players->at(login);
+        player->SetBasic(playerInfo);
 
-    player->PlayerDetailed(server->GetResponse()->GetParameters().at(0).GetStruct());
+        GbxParameters params = GbxParameters();
+        params.Put(&login);
+        GbxMessage message = GbxMessage("GetDetailedPlayerInfo", params);
+        server->Query(message);
 
-    events->CallPlayerInfoChanged(*player);
+        player->PlayerDetailed(server->GetResponse()->GetParameters().at(0).GetStruct());
+
+        events->CallPlayerInfoChanged(*player);
+    }
 }
 
 void CallBackManager::HandleVoteUpdated(std::vector<GbxResponseParameter> parameters)

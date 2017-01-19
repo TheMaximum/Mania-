@@ -19,11 +19,11 @@ ManiaPP::ManiaPP()
     events = new EventManager();
     commands = new CommandManager();
 
-    methods = new Methods(server, players);
-    ui = new UIManager(methods, events, players);
-
     serverInfo = new ServerInfo();
     serverInfo->ControllerVersion = VERSION;
+
+    methods = new Methods(server, players, serverInfo);
+    ui = new UIManager(methods, events, players);
 }
 
 ManiaPP::~ManiaPP()
@@ -114,10 +114,11 @@ bool ManiaPP::ConnectToServer()
                                     serverInfo->Comment = methods->GetServerComment();
                                     serverInfo->MaxPlayers = methods->GetMaxPlayers().CurrentValue;
                                     serverInfo->MaxSpectators = methods->GetMaxSpectators().CurrentValue;
+                                    serverInfo->Mode = methods->GetGameMode();
 
                                     plugins = new PluginManager(config, methods, commands, players, maps, database, ui, serverInfo);
                                     plugins->SetEventManager(events);
-                                    callbacks = new CallBackManager(server, commands, events, database, players, maps);
+                                    callbacks = new CallBackManager(server, commands, events, database, players, maps, serverInfo);
 
                                     plugins->LoadPlugins();
                                     plugins->InitializePlugins();
@@ -173,15 +174,15 @@ void ManiaPP::PrintServerInfo()
 {
     std::cout << "###############################################################################" << std::endl;
     std::cout << "  Mania++ v" << VERSION << " running on " << config->Server->address << ":" << config->Server->port << std::endl;
+    std::cout << "  Name    : " << serverInfo->Name << " / " << serverInfo->Account.Login << std::endl;
     std::cout << "  Game    : " << serverInfo->Version.Name << " / " << serverInfo->Version.TitleId << std::endl;
     std::cout << "  Version : " << serverInfo->Version.Version << " / " << serverInfo->Version.Build << std::endl;
+    std::cout << "  Author  : TheM" << std::endl;
     std::cout << "###############################################################################" << std::endl;
 }
 
 void ManiaPP::MainLoop()
 {
-    std::cout << "Starting our loop ..." << std::endl;
-
     time_t lastSecond = std::time(0);
     time_t lastMinute = std::time(0);
 
