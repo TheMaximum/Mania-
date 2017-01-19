@@ -13,7 +13,7 @@ Handles callbacks from the server.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classCallBackManager_aecf87c2156353eb95b8ca85bebde8b71}{Call\-Back\-Manager} (\hyperlink{classGbxRemote}{Gbx\-Remote} $\ast$server\-Ptr, \hyperlink{classCommandManager}{Command\-Manager} $\ast$command\-Manager\-Ptr, \hyperlink{classEventManager}{Event\-Manager} $\ast$event\-Manager\-Ptr, sql\-::\-Connection $\ast$database\-Ptr, std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$player\-List, \hyperlink{classMapList}{Map\-List} $\ast$map\-List)
+\hyperlink{classCallBackManager_a8264fac119580102b33819fea6c78ef0}{Call\-Back\-Manager} (\hyperlink{classGbxRemote}{Gbx\-Remote} $\ast$server\-Ptr, \hyperlink{classCommandManager}{Command\-Manager} $\ast$command\-Manager\-Ptr, \hyperlink{classEventManager}{Event\-Manager} $\ast$event\-Manager\-Ptr, sql\-::\-Connection $\ast$database\-Ptr, std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$player\-List, \hyperlink{classMapList}{Map\-List} $\ast$map\-List, \hyperlink{structServerInfo}{Server\-Info} $\ast$server\-Info\-Ptr)
 \item 
 void \hyperlink{classCallBackManager_a8af5305f668aae4c563e7039b99015c2}{Handle\-Call\-Back} (std\-::string method\-Name, std\-::vector$<$ \hyperlink{classGbxResponseParameter}{Gbx\-Response\-Parameter} $>$ parameters)
 \begin{DoxyCompactList}\small\item\em Handles callback (updates lists, calls plugin functions). \end{DoxyCompactList}\item 
@@ -71,14 +71,17 @@ void \hyperlink{classCallBackManager_a7af7f38c8e0994fcbba2de59dee1921f}{Handle\-
 \begin{DoxyCompactList}\small\item\em Contains the list of players currently on the server. \end{DoxyCompactList}\item 
 \hypertarget{classCallBackManager_a4b3c557fca85e1ba8ab292fc9df3da7c}{\hyperlink{classMapList}{Map\-List} $\ast$ \hyperlink{classCallBackManager_a4b3c557fca85e1ba8ab292fc9df3da7c}{maps}}\label{classCallBackManager_a4b3c557fca85e1ba8ab292fc9df3da7c}
 
-\begin{DoxyCompactList}\small\item\em Contains the list of players currently on the server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Contains the list of players currently on the server. \end{DoxyCompactList}\item 
+\hypertarget{classCallBackManager_aed9d56d611bfcbc282f6c99f5b8408a2}{\hyperlink{structServerInfo}{Server\-Info} $\ast$ \hyperlink{classCallBackManager_aed9d56d611bfcbc282f6c99f5b8408a2}{server\-Info}}\label{classCallBackManager_aed9d56d611bfcbc282f6c99f5b8408a2}
+
+\begin{DoxyCompactList}\small\item\em Contains the server information. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Handles callbacks from the server. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classCallBackManager_aecf87c2156353eb95b8ca85bebde8b71}{\index{Call\-Back\-Manager@{Call\-Back\-Manager}!Call\-Back\-Manager@{Call\-Back\-Manager}}
+\hypertarget{classCallBackManager_a8264fac119580102b33819fea6c78ef0}{\index{Call\-Back\-Manager@{Call\-Back\-Manager}!Call\-Back\-Manager@{Call\-Back\-Manager}}
 \index{Call\-Back\-Manager@{Call\-Back\-Manager}!CallBackManager@{Call\-Back\-Manager}}
 \subsubsection[{Call\-Back\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}Call\-Back\-Manager\-::\-Call\-Back\-Manager (
 \begin{DoxyParamCaption}
@@ -87,9 +90,10 @@ Handles callbacks from the server.
 \item[{{\bf Event\-Manager} $\ast$}]{event\-Manager\-Ptr, }
 \item[{sql\-::\-Connection $\ast$}]{database\-Ptr, }
 \item[{std\-::map$<$ std\-::string, {\bf Player} $>$ $\ast$}]{player\-List, }
-\item[{{\bf Map\-List} $\ast$}]{map\-List}
+\item[{{\bf Map\-List} $\ast$}]{map\-List, }
+\item[{{\bf Server\-Info} $\ast$}]{server\-Info\-Ptr}
 \end{DoxyParamCaption}
-)}}\label{classCallBackManager_aecf87c2156353eb95b8ca85bebde8b71}
+)}}\label{classCallBackManager_a8264fac119580102b33819fea6c78ef0}
 Constructor takes pointers to playerlist and maplist to keep them updated.
 
 \begin{DoxyRefDesc}{Todo}
@@ -109,6 +113,8 @@ Constructor takes pointers to playerlist and maplist to keep them updated.
 {\em player\-List} & Pointer to playerlist. \\
 \hline
 {\em map\-List} & Pointer to maplist. \\
+\hline
+{\em server\-Info\-Ptr} & Pointer to server information. \\
 \hline
 \end{DoxyParams}
 

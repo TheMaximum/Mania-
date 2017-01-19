@@ -98,9 +98,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6a1eff4e430d47fefa63b0d71a3cc99d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a6a1eff4e430d47fefa63b0d71a3cc99d">Methods</a> (<a class="el" href="classGbxRemote.html">GbxRemote</a> *serverPtr, std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt; *playerListPtr)</td></tr>
-<tr class="memdesc:a6a1eff4e430d47fefa63b0d71a3cc99d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with link to server connection.  <a href="#a6a1eff4e430d47fefa63b0d71a3cc99d">More...</a><br/></td></tr>
-<tr class="separator:a6a1eff4e430d47fefa63b0d71a3cc99d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae35c8183fa69c2e3cf449603011b901e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#ae35c8183fa69c2e3cf449603011b901e">Methods</a> (<a class="el" href="classGbxRemote.html">GbxRemote</a> *serverPtr, std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt; *playerListPtr, <a class="el" href="structServerInfo.html">ServerInfo</a> *serverInfoPtr)</td></tr>
+<tr class="memdesc:ae35c8183fa69c2e3cf449603011b901e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with link to server connection.  <a href="#ae35c8183fa69c2e3cf449603011b901e">More...</a><br/></td></tr>
+<tr class="separator:ae35c8183fa69c2e3cf449603011b901e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada628a190370ff0914a55bfd8e0acd4f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ada628a190370ff0914a55bfd8e0acd4f"></a>
 <a class="el" href="structGbxError.html">GbxError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#ada628a190370ff0914a55bfd8e0acd4f">GetCurrentError</a> ()</td></tr>
 <tr class="memdesc:ada628a190370ff0914a55bfd8e0acd4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current server error (from <a class="el" href="classGbxRemote.html" title="Handles communication with the ManiaPlanet server. ">GbxRemote</a>). <br/></td></tr>
@@ -273,6 +273,13 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <tr class="memitem:a6d62a9089c8224eab05d89e040e2b646"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a6d62a9089c8224eab05d89e040e2b646">SetMaxSpectators</a> (int limit)</td></tr>
 <tr class="memdesc:a6d62a9089c8224eab05d89e040e2b646"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the spectatorlimit.  <a href="#a6d62a9089c8224eab05d89e040e2b646">More...</a><br/></td></tr>
 <tr class="separator:a6d62a9089c8224eab05d89e040e2b646"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4864378a281beca161604bac6404241"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#aa4864378a281beca161604bac6404241">SetGameMode</a> (GameMode mode)</td></tr>
+<tr class="memdesc:aa4864378a281beca161604bac6404241"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the game mode (0 = Script, 1 = Rounds, 2 = TimeAttack, 3 = Team, 4 = Laps, 5 = Cup, 6 = Stunts).  <a href="#aa4864378a281beca161604bac6404241">More...</a><br/></td></tr>
+<tr class="separator:aa4864378a281beca161604bac6404241"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a406444bf2ce093f29d96cca5230d1d7a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a406444bf2ce093f29d96cca5230d1d7a"></a>
+GameMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a406444bf2ce093f29d96cca5230d1d7a">GetGameMode</a> ()</td></tr>
+<tr class="memdesc:a406444bf2ce093f29d96cca5230d1d7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the game mode (0 = Script, 1 = Rounds, 2 = TimeAttack, 3 = Team, 4 = Laps, 5 = Cup, 6 = Stunts). <br/></td></tr>
+<tr class="separator:a406444bf2ce093f29d96cca5230d1d7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd5073d1575cc885e2de00faabaca50e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd5073d1575cc885e2de00faabaca50e"></a>
 <a class="el" href="structCurrentNextValue.html">CurrentNextValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#acd5073d1575cc885e2de00faabaca50e">GetMaxSpectators</a> ()</td></tr>
 <tr class="memdesc:acd5073d1575cc885e2de00faabaca50e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the spectatorlimit. <br/></td></tr>
@@ -328,11 +335,15 @@ Private Attributes</h2></td></tr>
 std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a2ffd93eb02b4b3e50359829f6aa229bd">playerList</a></td></tr>
 <tr class="memdesc:a2ffd93eb02b4b3e50359829f6aa229bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the playerlist. <br/></td></tr>
 <tr class="separator:a2ffd93eb02b4b3e50359829f6aa229bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8975019b5c58c62698ae2be1b777b5c9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8975019b5c58c62698ae2be1b777b5c9"></a>
+<a class="el" href="structServerInfo.html">ServerInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a8975019b5c58c62698ae2be1b777b5c9">serverInfo</a></td></tr>
+<tr class="memdesc:a8975019b5c58c62698ae2be1b777b5c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the server information. <br/></td></tr>
+<tr class="separator:a8975019b5c58c62698ae2be1b777b5c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains all server methods and returns usable data types. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a6a1eff4e430d47fefa63b0d71a3cc99d"></a>
+<a class="anchor" id="ae35c8183fa69c2e3cf449603011b901e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -346,7 +357,13 @@ std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt;
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt; *&#160;</td>
-          <td class="paramname"><em>playerListPtr</em>&#160;</td>
+          <td class="paramname"><em>playerListPtr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structServerInfo.html">ServerInfo</a> *&#160;</td>
+          <td class="paramname"><em>serverInfoPtr</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -361,6 +378,7 @@ std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt;
   <table class="params">
     <tr><td class="paramname">serverPtr</td><td>Pointer to server connection. </td></tr>
     <tr><td class="paramname">playerListPtr</td><td>Pointer to the playerlist. </td></tr>
+    <tr><td class="paramname">serverInfoPtr</td><td>Pointer to the server information </td></tr>
   </table>
   </dd>
 </dl>
@@ -1486,6 +1504,30 @@ std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt;
 
 </div>
 </div>
+<a class="anchor" id="aa4864378a281beca161604bac6404241"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Methods::SetGameMode </td>
+          <td>(</td>
+          <td class="paramtype">GameMode&#160;</td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the game mode (0 = Script, 1 = Rounds, 2 = TimeAttack, 3 = Team, 4 = Laps, 5 = Cup, 6 = Stunts). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>New game mode. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a2aa8eac9277996514cea4c429cf78342"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1661,6 +1703,7 @@ std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt;
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Methods.cpp</li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Server/CallVote.cpp</li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Server/Chat.cpp</li>
+<li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Server/Game.cpp</li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Server/Global.cpp</li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Server/Info.cpp</li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Server/ManiaLink.cpp</li>
@@ -1669,7 +1712,7 @@ std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt;
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 18 2017 17:07:43 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jan 19 2017 21:11:47 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

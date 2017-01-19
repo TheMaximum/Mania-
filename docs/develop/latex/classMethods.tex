@@ -13,7 +13,7 @@ Contains all server methods and returns usable data types.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classMethods_a6a1eff4e430d47fefa63b0d71a3cc99d}{Methods} (\hyperlink{classGbxRemote}{Gbx\-Remote} $\ast$server\-Ptr, std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$player\-List\-Ptr)
+\hyperlink{classMethods_ae35c8183fa69c2e3cf449603011b901e}{Methods} (\hyperlink{classGbxRemote}{Gbx\-Remote} $\ast$server\-Ptr, std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$player\-List\-Ptr, \hyperlink{structServerInfo}{Server\-Info} $\ast$server\-Info\-Ptr)
 \begin{DoxyCompactList}\small\item\em Constructor with link to server connection. \end{DoxyCompactList}\item 
 \hypertarget{classMethods_ada628a190370ff0914a55bfd8e0acd4f}{\hyperlink{structGbxError}{Gbx\-Error} \hyperlink{classMethods_ada628a190370ff0914a55bfd8e0acd4f}{Get\-Current\-Error} ()}\label{classMethods_ada628a190370ff0914a55bfd8e0acd4f}
 
@@ -136,6 +136,11 @@ bool \hyperlink{classMethods_a3bb5185161cf4d1076743e3f187a5c12}{Set\-Max\-Player
 \begin{DoxyCompactList}\small\item\em Gets the playerlimit. \end{DoxyCompactList}\item 
 bool \hyperlink{classMethods_a6d62a9089c8224eab05d89e040e2b646}{Set\-Max\-Spectators} (int limit)
 \begin{DoxyCompactList}\small\item\em Sets the spectatorlimit. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_aa4864378a281beca161604bac6404241}{Set\-Game\-Mode} (Game\-Mode mode)
+\begin{DoxyCompactList}\small\item\em Sets the game mode (0 = Script, 1 = Rounds, 2 = Time\-Attack, 3 = Team, 4 = Laps, 5 = Cup, 6 = Stunts). \end{DoxyCompactList}\item 
+\hypertarget{classMethods_a406444bf2ce093f29d96cca5230d1d7a}{Game\-Mode \hyperlink{classMethods_a406444bf2ce093f29d96cca5230d1d7a}{Get\-Game\-Mode} ()}\label{classMethods_a406444bf2ce093f29d96cca5230d1d7a}
+
+\begin{DoxyCompactList}\small\item\em Get the game mode (0 = Script, 1 = Rounds, 2 = Time\-Attack, 3 = Team, 4 = Laps, 5 = Cup, 6 = Stunts). \end{DoxyCompactList}\item 
 \hypertarget{classMethods_acd5073d1575cc885e2de00faabaca50e}{\hyperlink{structCurrentNextValue}{Current\-Next\-Value} \hyperlink{classMethods_acd5073d1575cc885e2de00faabaca50e}{Get\-Max\-Spectators} ()}\label{classMethods_acd5073d1575cc885e2de00faabaca50e}
 
 \begin{DoxyCompactList}\small\item\em Gets the spectatorlimit. \end{DoxyCompactList}\item 
@@ -174,21 +179,25 @@ int \hyperlink{classMethods_a7db232616b47d7afa1d3202bf156e624}{Choose\-Next\-Map
 \begin{DoxyCompactList}\small\item\em Pointer to \hyperlink{classGbxRemote}{Gbx\-Remote}. \end{DoxyCompactList}\item 
 \hypertarget{classMethods_a2ffd93eb02b4b3e50359829f6aa229bd}{std\-::map$<$ std\-::string, \hyperlink{structPlayer}{Player} $>$ $\ast$ \hyperlink{classMethods_a2ffd93eb02b4b3e50359829f6aa229bd}{player\-List}}\label{classMethods_a2ffd93eb02b4b3e50359829f6aa229bd}
 
-\begin{DoxyCompactList}\small\item\em Pointer to the playerlist. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Pointer to the playerlist. \end{DoxyCompactList}\item 
+\hypertarget{classMethods_a8975019b5c58c62698ae2be1b777b5c9}{\hyperlink{structServerInfo}{Server\-Info} $\ast$ \hyperlink{classMethods_a8975019b5c58c62698ae2be1b777b5c9}{server\-Info}}\label{classMethods_a8975019b5c58c62698ae2be1b777b5c9}
+
+\begin{DoxyCompactList}\small\item\em Pointer to the server information. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Contains all server methods and returns usable data types. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classMethods_a6a1eff4e430d47fefa63b0d71a3cc99d}{\index{Methods@{Methods}!Methods@{Methods}}
+\hypertarget{classMethods_ae35c8183fa69c2e3cf449603011b901e}{\index{Methods@{Methods}!Methods@{Methods}}
 \index{Methods@{Methods}!Methods@{Methods}}
 \subsubsection[{Methods}]{\setlength{\rightskip}{0pt plus 5cm}Methods\-::\-Methods (
 \begin{DoxyParamCaption}
 \item[{{\bf Gbx\-Remote} $\ast$}]{server\-Ptr, }
-\item[{std\-::map$<$ std\-::string, {\bf Player} $>$ $\ast$}]{player\-List\-Ptr}
+\item[{std\-::map$<$ std\-::string, {\bf Player} $>$ $\ast$}]{player\-List\-Ptr, }
+\item[{{\bf Server\-Info} $\ast$}]{server\-Info\-Ptr}
 \end{DoxyParamCaption}
-)}}\label{classMethods_a6a1eff4e430d47fefa63b0d71a3cc99d}
+)}}\label{classMethods_ae35c8183fa69c2e3cf449603011b901e}
 
 
 Constructor with link to server connection. 
@@ -198,6 +207,8 @@ Constructor with link to server connection.
 {\em server\-Ptr} & Pointer to server connection. \\
 \hline
 {\em player\-List\-Ptr} & Pointer to the playerlist. \\
+\hline
+{\em server\-Info\-Ptr} & Pointer to the server information \\
 \hline
 \end{DoxyParams}
 
@@ -863,6 +874,22 @@ Sets the server connection rates.
 {\em upload\-Rate} & New upload rate. \\
 \hline
 \end{DoxyParams}
+\hypertarget{classMethods_aa4864378a281beca161604bac6404241}{\index{Methods@{Methods}!Set\-Game\-Mode@{Set\-Game\-Mode}}
+\index{Set\-Game\-Mode@{Set\-Game\-Mode}!Methods@{Methods}}
+\subsubsection[{Set\-Game\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Set\-Game\-Mode (
+\begin{DoxyParamCaption}
+\item[{Game\-Mode}]{mode}
+\end{DoxyParamCaption}
+)}}\label{classMethods_aa4864378a281beca161604bac6404241}
+
+
+Sets the game mode (0 = Script, 1 = Rounds, 2 = Time\-Attack, 3 = Team, 4 = Laps, 5 = Cup, 6 = Stunts). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & New game mode. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classMethods_a2aa8eac9277996514cea4c429cf78342}{\index{Methods@{Methods}!Set\-Hide\-Server@{Set\-Hide\-Server}}
 \index{Set\-Hide\-Server@{Set\-Hide\-Server}!Methods@{Methods}}
 \subsubsection[{Set\-Hide\-Server}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Set\-Hide\-Server (
@@ -985,6 +1012,7 @@ The documentation for this class was generated from the following files\-:\begin
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/Methods.\-cpp\item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Call\-Vote.\-cpp\item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Chat.\-cpp\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Game.\-cpp\item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Global.\-cpp\item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Info.\-cpp\item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Mania\-Link.\-cpp\item 

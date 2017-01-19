@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['gamemodeconverter',['GameModeConverter',['../classGameModeConverter.html',1,'']]],
   ['gbxcallback',['GbxCallBack',['../classGbxCallBack.html',1,'']]],
   ['gbxerror',['GbxError',['../structGbxError.html',1,'']]],
   ['gbxfirstresponse',['GbxFirstResponse',['../structGbxFirstResponse.html',1,'']]],
@@ -12,5 +13,6 @@ var searchData=
   ['gbxresponseparameter',['GbxResponseParameter',['../classGbxResponseParameter.html',1,'']]],
   ['gbxserverresponse',['GbxServerResponse',['../classGbxServerResponse.html',1,'']]],
   ['gbxstructparameters',['GbxStructParameters',['../classGbxStructParameters.html',1,'']]],
-  ['gitversion',['GitVersion',['../structGitVersion.html',1,'']]]
+  ['gitversion',['GitVersion',['../structGitVersion.html',1,'']]],
+  ['gzip',['GZip',['../classGZip.html',1,'']]]
 ];

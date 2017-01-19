@@ -5,6 +5,8 @@ var searchData=
   ['maps',['Maps',['../structController.html#ab3ffbfa641bfee42c9440777f194bbb2',1,'Controller::Maps()'],['../classCallBackManager.html#a4b3c557fca85e1ba8ab292fc9df3da7c',1,'CallBackManager::maps()'],['../classManiaPP.html#a23c7e0ba8cf5fd45129b6a7a0fbe359b',1,'ManiaPP::maps()']]],
   ['mapstyle',['MapStyle',['../structMap.html#a5fe4c64985a8d769e21fe32bab7a879c',1,'Map']]],
   ['maptype',['MapType',['../structMap.html#a23d051ee3c7cfa606082e700099563b0',1,'Map']]],
+  ['maxplayers',['MaxPlayers',['../structServerInfo.html#a43e90d8209ae6481ded2f6974aa5b15a',1,'ServerInfo']]],
+  ['maxspectators',['MaxSpectators',['../structServerInfo.html#a4e766753bc57c2d13d5bd3a007707178',1,'ServerInfo']]],
   ['message',['message',['../structGbxError.html#af52353692b5c160deac99c4285f01a5a',1,'GbxError']]],
   ['method',['method',['../classGbxMessage.html#a10b6118916999db98f28e3f495eef6b4',1,'GbxMessage']]],
   ['methodname',['methodName',['../classGbxCallBack.html#a8c793be5cc61e7fecef301ea6932f840',1,'GbxCallBack']]],
@@ -28,5 +30,6 @@ var searchData=
   ['methodsplayermanialinkpageanswer',['methodsPlayerManialinkPageAnswer',['../classEventManager.html#a28d7fbe547c5177f293208ccf4f98fce',1,'EventManager']]],
   ['methodsstatuschanged',['methodsStatusChanged',['../classEventManager.html#affc955af43afb14a3b950a3cd30b4972',1,'EventManager']]],
   ['methodsvoteupdated',['methodsVoteUpdated',['../classEventManager.html#a0b441376e3947a06b84efdc722529ed9',1,'EventManager']]],
+  ['mode',['Mode',['../structServerInfo.html#ab37ce1284acdc55df878d382323863d3',1,'ServerInfo']]],
   ['mood',['Mood',['../structMap.html#ad2eb9a175623dc2077a1f34975641607',1,'Map']]]
 ];

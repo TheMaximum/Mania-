@@ -21,6 +21,7 @@ var searchData=
   ['setcurrentmap',['SetCurrentMap',['../classMapList.html#a8202d99b60adc444fb42f0ce2d2b3dbd',1,'MapList']]],
   ['setdetailedinfo',['setDetailedInfo',['../structMap.html#a23ae24725344c494f35da1fb95c521e8',1,'Map::setDetailedInfo()'],['../structPlayer.html#a179183e86a0b9a4b808593be96d65391',1,'Player::setDetailedInfo()']]],
   ['seteventmanager',['SetEventManager',['../classPluginManager.html#a7ed7485291babeed3109a1a364b6d308',1,'PluginManager']]],
+  ['setgamemode',['SetGameMode',['../classMethods.html#aa4864378a281beca161604bac6404241',1,'Methods']]],
   ['sethideserver',['SetHideServer',['../classMethods.html#a2aa8eac9277996514cea4c429cf78342',1,'Methods']]],
   ['setid',['SetId',['../structMap.html#af83b3a784e6fa9404c1940a2ca1b68a8',1,'Map::SetId()'],['../structPlayer.html#a8541713f4fceaf4d03745e9407c3c303',1,'Player::SetId()']]],
   ['setmaxplayers',['SetMaxPlayers',['../classMethods.html#a3bb5185161cf4d1076743e3f187a5c12',1,'Methods']]],

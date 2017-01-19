@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['callbackmanager',['CallBackManager',['../classCallBackManager.html#aecf87c2156353eb95b8ca85bebde8b71',1,'CallBackManager']]],
+  ['callbackmanager',['CallBackManager',['../classCallBackManager.html#a8264fac119580102b33819fea6c78ef0',1,'CallBackManager']]],
   ['callbeginmap',['CallBeginMap',['../classEventManager.html#a1bd59c3d511d37863b81d18bd09a7b5a',1,'EventManager']]],
   ['callbeginmatch',['CallBeginMatch',['../classEventManager.html#a22f3afb58eecc76787530b98e29971e2',1,'EventManager']]],
   ['callbillupdated',['CallBillUpdated',['../classEventManager.html#aee53ab1e28714b9cbcd381b23efae623',1,'EventManager']]],
@@ -37,6 +37,7 @@ var searchData=
   ['close',['Close',['../classTcpClient.html#ae7a96d69db612ef4827ee23c31332a4e',1,'TcpClient']]],
   ['closelist',['CloseList',['../classUIManager.html#af8510d387057f6778b88d5bcd8bd97a6',1,'UIManager']]],
   ['commandmanager',['CommandManager',['../classCommandManager.html#a8a13226bf933396a3f35dfb5bee3e813',1,'CommandManager']]],
+  ['compress',['Compress',['../classGZip.html#a93d3ae249d438d71917e7b7db9eb874b',1,'GZip']]],
   ['config',['Config',['../classConfig.html#ae67e338ea42e242cb5b374b6583c8b1c',1,'Config']]],
   ['connect',['Connect',['../classDatabase.html#a22555b63ce54c0b4a0e1b1aecb5e1bd4',1,'Database::Connect()'],['../classTcpClient.html#ac2e9bb63b4e0dc8f4508aa2a85431fe2',1,'TcpClient::Connect()']]],
   ['connecttodatabase',['ConnectToDatabase',['../classManiaPP.html#a943b0ecd20ca8c9235411d16a743e5ac',1,'ManiaPP']]],

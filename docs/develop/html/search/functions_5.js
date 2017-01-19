@@ -15,7 +15,9 @@ var searchData=
   ['getcurrentcallvote',['GetCurrentCallVote',['../classMethods.html#a8d457dcbd12a94aaf5d9913210e0862d',1,'Methods']]],
   ['getcurrenterror',['GetCurrentError',['../classGbxRemote.html#aa3f6e467372a23c3a53510d5488bea8a',1,'GbxRemote::GetCurrentError()'],['../classMethods.html#ada628a190370ff0914a55bfd8e0acd4f',1,'Methods::GetCurrentError()']]],
   ['getcurrentmapinfo',['GetCurrentMapInfo',['../classMethods.html#a4c8c8afabea84f839091c2a5a79b477d',1,'Methods']]],
+  ['getdediname',['GetDediName',['../classGameModeConverter.html#ab32af3449e8b99bdf663cec986ac12f0',1,'GameModeConverter']]],
   ['getfault',['GetFault',['../classGbxResponse.html#a42568c9c684b4c15f45b4f01056f24ad',1,'GbxResponse']]],
+  ['getgamemode',['GetGameMode',['../classMethods.html#a406444bf2ce093f29d96cca5230d1d7a',1,'Methods']]],
   ['gethideserver',['GetHideServer',['../classMethods.html#ac6c3f048240ebca8bbb835e4caab8b19',1,'Methods']]],
   ['getmanialinkpageanswers',['GetManialinkPageAnswers',['../classMethods.html#a43c84e59da7eb37e53bbd8f43299c454',1,'Methods']]],
   ['getmapinfo',['GetMapInfo',['../classMethods.html#a3a64508bc62765212bcf0d032b4f47ac',1,'Methods']]],
@@ -24,6 +26,7 @@ var searchData=
   ['getmaxspectators',['GetMaxSpectators',['../classMethods.html#acd5073d1575cc885e2de00faabaca50e',1,'Methods']]],
   ['getmethod',['GetMethod',['../classGbxMessage.html#a53e00a162c293251bef476ad74d0134c',1,'GbxMessage']]],
   ['getmethodname',['GetMethodName',['../classGbxCallBack.html#aaf01544527ca0559478221780b3f32f6',1,'GbxCallBack']]],
+  ['getname',['GetName',['../classGameModeConverter.html#a7406bdab20eb300afb82d246890155f7',1,'GameModeConverter']]],
   ['getnextmapinfo',['GetNextMapInfo',['../classMethods.html#afa0e3e406c14aad10521d4d6c6333a70',1,'Methods']]],
   ['getparameters',['GetParameters',['../classGbxStructParameters.html#a5d496ceb658abca1300ae093d26abedc',1,'GbxStructParameters::GetParameters()'],['../classGbxParameters.html#a0b80a76f2af231b5cd315c8a0af7770e',1,'GbxParameters::GetParameters()'],['../classGbxServerResponse.html#a6d42bdaaeff3368e1fab2984940d2a2c',1,'GbxServerResponse::GetParameters()']]],
   ['getprotocol',['GetProtocol',['../classGbxRemote.html#ae6e15060920a31482fd14045cfd42803',1,'GbxRemote']]],
@@ -37,6 +40,7 @@ var searchData=
   ['getstring',['GetString',['../classGbxResponseParameter.html#a014af0f74e937d9002cda3e6e791735b',1,'GbxResponseParameter']]],
   ['getstruct',['GetStruct',['../classGbxResponseParameter.html#ab6af5e0662d7d832b7606e9e0f461f22',1,'GbxResponseParameter']]],
   ['getsysteminfo',['GetSystemInfo',['../classMethods.html#a0030583fdad06ab0f2f589b79c904f09',1,'Methods']]],
+  ['gettype',['GetType',['../structParameter.html#acbaa165bda6b087c2e99fdb8925a7d89',1,'Parameter']]],
   ['getversion',['GetVersion',['../classMethods.html#a674b7c1f53296dca78fb14896b374e1e',1,'Methods']]],
   ['getxml',['GetXml',['../classGbxMessage.html#ac81e16efce7da483a696d6653e18c9d8',1,'GbxMessage::GetXml()'],['../classGbxParameter.html#a3c6800bca78c5bb4ed7de62cf552ee35',1,'GbxParameter::GetXml()']]]
 ];

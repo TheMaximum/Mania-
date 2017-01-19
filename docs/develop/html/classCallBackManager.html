@@ -98,8 +98,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aecf87c2156353eb95b8ca85bebde8b71"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCallBackManager.html#aecf87c2156353eb95b8ca85bebde8b71">CallBackManager</a> (<a class="el" href="classGbxRemote.html">GbxRemote</a> *serverPtr, <a class="el" href="classCommandManager.html">CommandManager</a> *commandManagerPtr, <a class="el" href="classEventManager.html">EventManager</a> *eventManagerPtr, sql::Connection *databasePtr, std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt; *playerList, <a class="el" href="classMapList.html">MapList</a> *mapList)</td></tr>
-<tr class="separator:aecf87c2156353eb95b8ca85bebde8b71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8264fac119580102b33819fea6c78ef0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCallBackManager.html#a8264fac119580102b33819fea6c78ef0">CallBackManager</a> (<a class="el" href="classGbxRemote.html">GbxRemote</a> *serverPtr, <a class="el" href="classCommandManager.html">CommandManager</a> *commandManagerPtr, <a class="el" href="classEventManager.html">EventManager</a> *eventManagerPtr, sql::Connection *databasePtr, std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt; *playerList, <a class="el" href="classMapList.html">MapList</a> *mapList, <a class="el" href="structServerInfo.html">ServerInfo</a> *serverInfoPtr)</td></tr>
+<tr class="separator:a8264fac119580102b33819fea6c78ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8af5305f668aae4c563e7039b99015c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCallBackManager.html#a8af5305f668aae4c563e7039b99015c2">HandleCallBack</a> (std::string methodName, std::vector&lt; <a class="el" href="classGbxResponseParameter.html">GbxResponseParameter</a> &gt; parameters)</td></tr>
 <tr class="memdesc:a8af5305f668aae4c563e7039b99015c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles callback (updates lists, calls plugin functions).  <a href="#a8af5305f668aae4c563e7039b99015c2">More...</a><br/></td></tr>
 <tr class="separator:a8af5305f668aae4c563e7039b99015c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,11 +181,15 @@ std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt;
 <a class="el" href="classMapList.html">MapList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCallBackManager.html#a4b3c557fca85e1ba8ab292fc9df3da7c">maps</a></td></tr>
 <tr class="memdesc:a4b3c557fca85e1ba8ab292fc9df3da7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the list of players currently on the server. <br/></td></tr>
 <tr class="separator:a4b3c557fca85e1ba8ab292fc9df3da7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed9d56d611bfcbc282f6c99f5b8408a2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aed9d56d611bfcbc282f6c99f5b8408a2"></a>
+<a class="el" href="structServerInfo.html">ServerInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCallBackManager.html#aed9d56d611bfcbc282f6c99f5b8408a2">serverInfo</a></td></tr>
+<tr class="memdesc:aed9d56d611bfcbc282f6c99f5b8408a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the server information. <br/></td></tr>
+<tr class="separator:aed9d56d611bfcbc282f6c99f5b8408a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Handles callbacks from the server. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="aecf87c2156353eb95b8ca85bebde8b71"></a>
+<a class="anchor" id="a8264fac119580102b33819fea6c78ef0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -223,7 +227,13 @@ std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt;
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classMapList.html">MapList</a> *&#160;</td>
-          <td class="paramname"><em>mapList</em>&#160;</td>
+          <td class="paramname"><em>mapList</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structServerInfo.html">ServerInfo</a> *&#160;</td>
+          <td class="paramname"><em>serverInfoPtr</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -242,6 +252,7 @@ std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt;
     <tr><td class="paramname">databasePtr</td><td>Pointer to the database connection. </td></tr>
     <tr><td class="paramname">playerList</td><td>Pointer to playerlist. </td></tr>
     <tr><td class="paramname">mapList</td><td>Pointer to maplist. </td></tr>
+    <tr><td class="paramname">serverInfoPtr</td><td>Pointer to server information. </td></tr>
   </table>
   </dd>
 </dl>
@@ -699,7 +710,7 @@ std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt;
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 18 2017 17:07:42 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jan 19 2017 21:11:46 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
