@@ -105,7 +105,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        numberString &lt;&lt; error.<a class="code" href="structGbxError.html#ae5627cae63e837beaa75f798e47be50e">number</a>;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span>* errorNumber = numberString.str().c_str();</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">int</span> errorNumberLength = strlen(errorNumber);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">int</span> spaces = (9 - errorNumberLength);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">int</span> spaces = (10 - errorNumberLength);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">if</span>(spaces &gt; 1)</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div>
@@ -143,12 +143,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
 <div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classLogging.html#a889f2ad8f991afdf0959cb1cad736fa7">   72</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classLogging.html#a889f2ad8f991afdf0959cb1cad736fa7">PrintOKFlush</a>()</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;[   \033[0;32mOK.\033[0;0m&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;[    \033[0;32mOK\033[0;0m&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
 <div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classLogging.html#add0483bd14aef74ec988606cd7dbfc4b">   80</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classLogging.html#add0483bd14aef74ec988606cd7dbfc4b">PrintFailedFlush</a>()</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;[ \033[0;31mFAILED!\033[0;0m&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;[  \033[0;31mFAILED\033[0;0m&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
 <div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classLogging.html#a1fca292b3759ce640b46796c550604e9">   90</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classLogging.html#a1fca292b3759ce640b46796c550604e9">PrintParameters</a>(std::vector&lt;GbxResponseParameter&gt; parameters)</div>
@@ -213,17 +213,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="structGbxError_html_af52353692b5c160deac99c4285f01a5a"><div class="ttname"><a href="structGbxError.html#af52353692b5c160deac99c4285f01a5a">GbxError::message</a></div><div class="ttdeci">std::string message</div><div class="ttdoc">Error message. </div><div class="ttdef"><b>Definition:</b> GbxStructs.h:30</div></div>
 <div class="ttc" id="classLogging_html_a7d4e2168b879a66d322d0b4fb2b298c4"><div class="ttname"><a href="classLogging.html#a7d4e2168b879a66d322d0b4fb2b298c4">Logging::PrintError</a></div><div class="ttdeci">static void PrintError(GbxError error)</div><div class="ttdoc">Prints error to console. </div><div class="ttdef"><b>Definition:</b> Logging.h:21</div></div>
 <div class="ttc" id="classGbxResponseParameter_html_aa1700ca65fa2526b112be24b5c0bdbf4"><div class="ttname"><a href="classGbxResponseParameter.html#aa1700ca65fa2526b112be24b5c0bdbf4">GbxResponseParameter::Type</a></div><div class="ttdeci">std::string Type</div><div class="ttdoc">XML-RPC data type. </div><div class="ttdef"><b>Definition:</b> GbxServerResponse.h:20</div></div>
-<div class="ttc" id="classLogging_html_a889f2ad8f991afdf0959cb1cad736fa7"><div class="ttname"><a href="classLogging.html#a889f2ad8f991afdf0959cb1cad736fa7">Logging::PrintOKFlush</a></div><div class="ttdeci">static void PrintOKFlush()</div><div class="ttdoc">Prints OK. in [ ]-spaces in console. </div><div class="ttdef"><b>Definition:</b> Logging.h:72</div></div>
+<div class="ttc" id="classLogging_html_a889f2ad8f991afdf0959cb1cad736fa7"><div class="ttname"><a href="classLogging.html#a889f2ad8f991afdf0959cb1cad736fa7">Logging::PrintOKFlush</a></div><div class="ttdeci">static void PrintOKFlush()</div><div class="ttdoc">Prints OK in [ ]-spaces in console. </div><div class="ttdef"><b>Definition:</b> Logging.h:72</div></div>
 <div class="ttc" id="classLogging_html_a1fca292b3759ce640b46796c550604e9"><div class="ttname"><a href="classLogging.html#a1fca292b3759ce640b46796c550604e9">Logging::PrintParameters</a></div><div class="ttdeci">static void PrintParameters(std::vector&lt; GbxResponseParameter &gt; parameters)</div><div class="ttdoc">Prints a vector with GbxResponseParameter objects (for DEBUG purposes). </div><div class="ttdef"><b>Definition:</b> Logging.h:90</div></div>
 <div class="ttc" id="structGbxError_html"><div class="ttname"><a href="structGbxError.html">GbxError</a></div><div class="ttdoc">Stores error details from the communication with the server. </div><div class="ttdef"><b>Definition:</b> GbxStructs.h:27</div></div>
 <div class="ttc" id="classGbxResponseParameter_html_ab6af5e0662d7d832b7606e9e0f461f22"><div class="ttname"><a href="classGbxResponseParameter.html#ab6af5e0662d7d832b7606e9e0f461f22">GbxResponseParameter::GetStruct</a></div><div class="ttdeci">std::map&lt; std::string, GbxResponseParameter &gt; GetStruct()</div><div class="ttdoc">Gets the value as map of parameters. </div><div class="ttdef"><b>Definition:</b> GbxServerResponse.h:41</div></div>
-<div class="ttc" id="classLogging_html_add0483bd14aef74ec988606cd7dbfc4b"><div class="ttname"><a href="classLogging.html#add0483bd14aef74ec988606cd7dbfc4b">Logging::PrintFailedFlush</a></div><div class="ttdeci">static void PrintFailedFlush()</div><div class="ttdoc">Prints Failed! in [ ]-spaces in console. </div><div class="ttdef"><b>Definition:</b> Logging.h:80</div></div>
+<div class="ttc" id="classLogging_html_add0483bd14aef74ec988606cd7dbfc4b"><div class="ttname"><a href="classLogging.html#add0483bd14aef74ec988606cd7dbfc4b">Logging::PrintFailedFlush</a></div><div class="ttdeci">static void PrintFailedFlush()</div><div class="ttdoc">Prints Failed in [ ]-spaces in console. </div><div class="ttdef"><b>Definition:</b> Logging.h:80</div></div>
 <div class="ttc" id="classGbxResponseParameter_html"><div class="ttname"><a href="classGbxResponseParameter.html">GbxResponseParameter</a></div><div class="ttdoc">Parameter deducted from server response. </div><div class="ttdef"><b>Definition:</b> GbxServerResponse.h:17</div></div>
 <div class="ttc" id="classLogging_html_ac1397db1b8ea6625f7dd2616f530cd7d"><div class="ttname"><a href="classLogging.html#ac1397db1b8ea6625f7dd2616f530cd7d">Logging::PrintError</a></div><div class="ttdeci">static void PrintError(int number, std::string message)</div><div class="ttdoc">Prints error to console. </div><div class="ttdef"><b>Definition:</b> Logging.h:61</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 19 2017 21:13:59 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jan 20 2017 12:38:31 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
