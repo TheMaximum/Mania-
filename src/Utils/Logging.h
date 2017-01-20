@@ -24,7 +24,7 @@ public:
         numberString << error.number;
         const char* errorNumber = numberString.str().c_str();
         int errorNumberLength = strlen(errorNumber);
-        int spaces = (9 - errorNumberLength);
+        int spaces = (10 - errorNumberLength);
 
         if(spaces > 1)
         {
@@ -67,19 +67,19 @@ public:
     }
 
     /*!
-     * \brief Prints OK. in [         ]-spaces in console.
+     * \brief Prints OK in [          ]-spaces in console.
      */
     static void PrintOKFlush()
     {
-        std::cout << "[   \033[0;32mOK.\033[0;0m" << std::endl;
+        std::cout << "[    \033[0;32mOK\033[0;0m" << std::endl;
     }
 
     /*!
-     * \brief Prints Failed! in [         ]-spaces in console.
+     * \brief Prints Failed in [          ]-spaces in console.
      */
     static void PrintFailedFlush()
     {
-        std::cout << "[ \033[0;31mFAILED!\033[0;0m" << std::endl;
+        std::cout << "[  \033[0;31mFAILED\033[0;0m" << std::endl;
     }
 
     /*!

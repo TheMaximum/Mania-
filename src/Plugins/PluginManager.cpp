@@ -28,15 +28,15 @@ PluginManager::PluginManager(Config* configPtr,
 
 PluginManager::~PluginManager()
 {
-    std::cout << "[ ======= ] Closing plugins ... " << std::endl;
+    std::cout << "[ ======== ] Closing plugins ... " << std::endl;
     for(std::map<std::string, PluginInfo>::iterator pluginId = plugins.begin(); pluginId != plugins.end(); ++pluginId)
     {
         PluginInfo pluginInfo = pluginId->second;
-        std::cout << "[         ] Closing plugin '" << pluginId->first << "' ... " << '\r' << std::flush;
+        std::cout << "[          ] Closing plugin '" << pluginId->first << "' ... " << '\r' << std::flush;
         dlclose(pluginInfo.Handle);
         Logging::PrintOKFlush();
     }
-    std::cout << "[ ======= ] All plugins closed." << std::endl;
+    std::cout << "[ ======== ] All plugins closed." << std::endl;
 
     if(pluginHandler != NULL)
     {
@@ -54,16 +54,16 @@ typedef Plugin* (*startplugin_t)();
 
 void PluginManager::LoadPlugins(std::string pluginsFolder)
 {
-    std::cout << "[         ] Discovering plugins ... " << '\r' << std::flush;
+    std::cout << "[          ] Discovering plugins ... " << '\r' << std::flush;
     std::map<std::string, std::string> pluginFiles = discoverPlugins(pluginsFolder);
-    std::cout << "[   \033[0;32mOK.\033[0;0m   ] Discovered plugins: " << pluginFiles.size() << " found." << std::endl;
-    std::cout << "[ ======= ] Loading plugins ... " << std::endl;
+    std::cout << "[    \033[0;32mOK\033[0;0m    ] Discovered plugins: " << pluginFiles.size() << " found." << std::endl;
+    std::cout << "[ ======== ] Loading plugins ... " << std::endl;
 
     std::set<std::string> loadedPlugins = std::set<std::string>();
 
     for(std::map<std::string, std::string>::iterator pluginId = pluginFiles.begin(); pluginId != pluginFiles.end(); ++pluginId)
     {
-        std::cout << "[         ] Loading plugin '" << pluginId->first << "' ... " << '\r' << std::flush;
+        std::cout << "[          ] Loading plugin '" << pluginId->first << "' ... " << '\r' << std::flush;
         void* pluginHandle = dlopen(pluginId->second.c_str(), RTLD_NOW);
         if(pluginHandle == NULL)
         {
@@ -99,11 +99,11 @@ void PluginManager::LoadPlugins(std::string pluginsFolder)
                 PluginConfig pluginConfig = config->Plugins->find(pluginId->first)->second;
                 plugin->Settings = pluginConfig.settings;
 
-                std::cout << "[   \033[0;32mOK.\033[0;0m   ] Loaded plugin '" << pluginId->first << "': v" << plugin->Version << " by " << plugin->Author << "." << std::endl;
+                std::cout << "[    \033[0;32mOK\033[0;0m    ] Loaded plugin '" << pluginId->first << "': v" << plugin->Version << " by " << plugin->Author << "." << std::endl;
 
                 if(events != NULL)
                 {
-                    std::cout << "[         ] Loading events for '" << pluginId->first << "' ... " << '\r' << std::flush;
+                    std::cout << "[          ] Loading events for '" << pluginId->first << "' ... " << '\r' << std::flush;
                     int eventCount = 0;
                     eventCount += events->RegisterEverySecond(plugin->EverySecond);
                     eventCount += events->RegisterEveryMinute(plugin->EveryMinute);
@@ -125,15 +125,15 @@ void PluginManager::LoadPlugins(std::string pluginsFolder)
                     eventCount += events->RegisterPlayerInfoChanged(plugin->PlayerInfoChanged);
                     eventCount += events->RegisterVoteUpdated(plugin->VoteUpdated);
 
-                    std::cout << "[   \033[0;32mOK.\033[0;0m   ] Loaded events for '" << pluginId->first << "': " << eventCount << " found." << std::endl;
+                    std::cout << "[    \033[0;32mOK\033[0;0m    ] Loaded events for '" << pluginId->first << "': " << eventCount << " found." << std::endl;
                 }
 
-                std::cout << "[         ] Loading commands for '" << pluginId->first << "' ... " << '\r' << std::flush;
+                std::cout << "[          ] Loading commands for '" << pluginId->first << "' ... " << '\r' << std::flush;
                 int commandCount = 0;
                 commandCount += commands->RegisterCommands(plugin->Commands);
                 commandCount += commands->RegisterAdminCommands(plugin->AdminCommands);
 
-                std::cout << "[   \033[0;32mOK.\033[0;0m   ] Loaded commands for '" << pluginId->first << "': " << commandCount << " found." << std::endl;
+                std::cout << "[    \033[0;32mOK\033[0;0m    ] Loaded commands for '" << pluginId->first << "': " << commandCount << " found." << std::endl;
 
                 plugins.insert(std::pair<std::string, PluginInfo>(pluginId->first, { plugin->Version, plugin->Author, plugin, pluginHandle, plugin->Methods }));
 
@@ -147,24 +147,24 @@ void PluginManager::LoadPlugins(std::string pluginsFolder)
     {
         if(loadedPlugins.find(configPluginId->first) == loadedPlugins.end())
         {
-            std::cout << "[ \033[0;31mFAILED!\033[0;0m ] Plugin '" << configPluginId->first << "' does not exist." << std::endl;
+            std::cout << "[  \033[0;31mFAILED\033[0;0m  ] Plugin '" << configPluginId->first << "' does not exist." << std::endl;
             notFound++;
         }
     }
 
-    std::cout << "[ ======= ] Plugins: " << plugins.size() << " loaded, " << notFound << " not found." << std::endl;
+    std::cout << "[ ======== ] Plugins: " << plugins.size() << " loaded, " << notFound << " not found." << std::endl;
 }
 
 void PluginManager::InitializePlugins()
 {
-    std::cout << "[ ======= ] Initializing plugins ... " << std::endl;
+    std::cout << "[ ======== ] Initializing plugins ... " << std::endl;
     for(std::map<std::string, PluginInfo>::iterator pluginId = plugins.begin(); pluginId != plugins.end(); ++pluginId)
     {
         PluginInfo pluginInfo = pluginId->second;
         Plugin* plugin = (Plugin*)pluginInfo.Instance;
         plugin->Init();
     }
-    std::cout << "[ ======= ] Plugins initialized." << std::endl;
+    std::cout << "[ ======== ] Plugins initialized." << std::endl;
 }
 
 std::map<std::string, std::string> PluginManager::discoverPlugins(std::string pluginsFolder)

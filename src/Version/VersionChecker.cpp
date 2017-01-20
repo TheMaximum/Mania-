@@ -2,7 +2,7 @@
 
 bool VersionChecker::CheckForUpdates(std::string repository, std::string currentVersion)
 {
-    std::cout << "[         ] Retrieving versions for '" << repository << "' ... " << '\r' << std::flush;
+    std::cout << "[          ] Retrieving versions for '" << repository << "' ... " << '\r' << std::flush;
     std::string rateLimit;
     std::string url = "https://api.github.com/rate_limit";
     retrieveData(url, &rateLimit);
@@ -58,11 +58,11 @@ bool VersionChecker::CheckForUpdates(std::string repository, std::string current
 
         if(newVersions.size() > 0)
         {
-            std::cout << "[ VERSION ] Got " << newVersions.size() << " new versions available for '" << repository << "':" << std::endl;
+            std::cout << "[ VERSION  ] Got " << newVersions.size() << " new versions available for '" << repository << "':" << std::endl;
             for(int newVersionId = 0; newVersionId < newVersions.size(); newVersionId++)
             {
                 GitVersion version = newVersions.at(newVersionId);
-                std::cout << "[   NEW   ]   " << version.Name << " (" << version.Tag << ")";
+                std::cout << "[   NEW    ]   " << version.Name << " (" << version.Tag << ")";
                 if(version.PreRelease)
                     std::cout << " (pre-release)";
                 std::cout << std::endl;

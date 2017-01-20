@@ -54,49 +54,49 @@ ManiaPP::~ManiaPP()
 
 bool ManiaPP::ConnectToServer()
 {
-    std::cout << "[         ] Connecting with server on " << config->Server->address << ":" << config->Server->port << " ... " << '\r' << std::flush;
+    std::cout << "[          ] Connecting with server on " << config->Server->address << ":" << config->Server->port << " ... " << '\r' << std::flush;
     if(server->InitWithIp(config->Server->address, config->Server->port))
     {
         logging->PrintOKFlush();
-        std::cout << "[   \033[0;32mOK.\033[0;0m   ] Current protocol: GBXRemote " << server->GetProtocol() << std::endl;
+        std::cout << "[    \033[0;32mOK\033[0;0m    ] Current protocol: GBXRemote " << server->GetProtocol() << std::endl;
 
-        std::cout << "[         ] Authenticating on the server with user '" << config->Server->username << "' ... " << '\r' << std::flush;
+        std::cout << "[          ] Authenticating on the server with user '" << config->Server->username << "' ... " << '\r' << std::flush;
         if(methods->Authenticate(config->Server->username, config->Server->password))
         {
             logging->PrintOKFlush();
 
             std::string apiVersion = server->GetApiVersion();
-            std::cout << "[         ] Setting API version to '" << apiVersion << "' ... " << '\r' << std::flush;
+            std::cout << "[          ] Setting API version to '" << apiVersion << "' ... " << '\r' << std::flush;
             if(methods->SetApiVersion(apiVersion))
             {
                 logging->PrintOKFlush();
 
-                std::cout << "[         ] Retrieving server methods ... " << '\r' << std::flush;
+                std::cout << "[          ] Retrieving server methods ... " << '\r' << std::flush;
                 std::vector<std::string> serverMethods = methods->ListMethods();
                 if(serverMethods.size() > 0)
                 {
-                    std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved server methods: " << serverMethods.size() << " found." << std::endl;
+                    std::cout << "[    \033[0;32mOK\033[0;0m    ] Retrieved server methods: " << serverMethods.size() << " found." << std::endl;
 
-                    std::cout << "[         ] Retrieving server version ... " << '\r' << std::flush;
+                    std::cout << "[          ] Retrieving server version ... " << '\r' << std::flush;
                     ServerVersion getServerVersion = methods->GetVersion();
                     if(!getServerVersion.ApiVersion.empty())
                     {
                         serverInfo->Version = getServerVersion;
 
-                        std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved server version: '" << serverInfo->Version.Build << "'." << std::endl;
+                        std::cout << "[    \033[0;32mOK\033[0;0m    ] Retrieved server version: '" << serverInfo->Version.Build << "'." << std::endl;
 
-                        std::cout << "[         ] Retrieving system info ... " << '\r' << std::flush;
+                        std::cout << "[          ] Retrieving system info ... " << '\r' << std::flush;
 
                         SystemInfo getSystemInfo = methods->GetSystemInfo();
                         if(!getSystemInfo.ServerLogin.empty())
                         {
                             serverInfo->System = getSystemInfo;
 
-                            std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved system info, server login: '" << serverInfo->System.ServerLogin << "'." << std::endl;
+                            std::cout << "[    \033[0;32mOK\033[0;0m    ] Retrieved system info, server login: '" << serverInfo->System.ServerLogin << "'." << std::endl;
 
                             methods->SendHideManialinkPage();
 
-                            std::cout << "[         ] Enabling CallBacks ... " << '\r' << std::flush;
+                            std::cout << "[          ] Enabling CallBacks ... " << '\r' << std::flush;
                             if(methods->EnableCallbacks(true))
                             {
                                 logging->PrintOKFlush();
@@ -147,7 +147,7 @@ bool ManiaPP::ConnectToServer()
 
 bool ManiaPP::ConnectToDatabase()
 {
-    std::cout << "[         ] Connecting to the database on '" << config->Database->address << ":" << config->Database->port << "' ... " << '\r' << std::flush;
+    std::cout << "[          ] Connecting to the database on '" << config->Database->address << ":" << config->Database->port << "' ... " << '\r' << std::flush;
     try
     {
         db = new Database(config->Database->address, config->Database->port);
@@ -221,7 +221,7 @@ void ManiaPP::MainLoop()
 
 void ManiaPP::retrievePlayerList()
 {
-    std::cout << "[         ] Retrieving current player list ... " << '\r' << std::flush;
+    std::cout << "[          ] Retrieving current player list ... " << '\r' << std::flush;
 
     int playerListLimit = 512; int playerListIndex = 0;
     GbxParameters params = GbxParameters();
@@ -311,7 +311,7 @@ void ManiaPP::retrievePlayerList()
             }
         }
 
-        std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved current player list: " << players->size() << " found." << std::endl;
+        std::cout << "[    \033[0;32mOK\033[0;0m    ] Retrieved current player list: " << players->size() << " found." << std::endl;
     }
     else
     {
@@ -322,7 +322,7 @@ void ManiaPP::retrievePlayerList()
 
 void ManiaPP::retrieveMapList()
 {
-    std::cout << "[         ] Retrieving current map list ... " << '\r' << std::flush;
+    std::cout << "[          ] Retrieving current map list ... " << '\r' << std::flush;
 
     std::vector<Map> list = methods->GetMapList(2048, 0);
     if(list.size() > 0)
@@ -389,7 +389,7 @@ void ManiaPP::retrieveMapList()
             maps->List.insert(std::pair<std::string, Map>(newMap.UId, newMap));
         }
 
-        std::cout << "[   \033[0;32mOK.\033[0;0m   ] Retrieved current map list: " << maps->List.size() << " found." << std::endl;
+        std::cout << "[    \033[0;32mOK\033[0;0m    ] Retrieved current map list: " << maps->List.size() << " found." << std::endl;
     }
     else
     {

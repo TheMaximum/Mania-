@@ -47,11 +47,11 @@ void DedimaniaPlugin::OnBeginMap()
         std::string gameMode = GameModeConverter::GetDediName(controller->Info->Mode);
         if(gameMode == "n/a")
         {
-            std::cout << "[ \033[0;31mFAILED!\033[0;0m ] Not retrieving Dedimania record, as game mode is not 'TA' or 'Rounds'!" << std::endl << std::flush;
+            std::cout << "[  \033[0;31mFAILED\033[0;0m  ] Not retrieving Dedimania record, as game mode is not 'TA' or 'Rounds'!" << std::endl << std::flush;
             return;
         }
 
-        std::cout << "[         ] Retrieving Dedimania records for current map ... " << std::endl << std::flush;
+        std::cout << "[          ] Retrieving Dedimania records for current map ... " << std::endl << std::flush;
 
         int numPlayers = 0;
         int numSpecs = 0;
@@ -133,11 +133,11 @@ void DedimaniaPlugin::OnBeginMap()
                     break;
             }
 
-            std::cout << "\x1b[1A[   \033[0;32mOK.\033[0;0m   ] Successfully retrieved Dedimania records for current map!" << std::endl << std::flush;
+            std::cout << "\x1b[1A[    \033[0;32mOK\033[0;0m    ] Successfully retrieved Dedimania records for current map!" << std::endl << std::flush;
         }
         else
         {
-            std::cout << "[ \033[0;31mFAILED!\033[0;0m ] Unable to retrieve records from Dedimania!" << std::endl << std::flush;
+            std::cout << "[  \033[0;31mFAILED\033[0;0m  ] Unable to retrieve records from Dedimania!" << std::endl << std::flush;
         }
     }
 
@@ -158,11 +158,11 @@ void DedimaniaPlugin::UpdateServer()
         std::string gameMode = GameModeConverter::GetDediName(controller->Info->Mode);
         if(gameMode == "n/a")
         {
-            std::cout << "[ \033[0;31mFAILED!\033[0;0m ] Not updating Dedimania with player list, as game mode is not 'TA' or 'Rounds'!" << std::endl << std::flush;
+            std::cout << "[  \033[0;31mFAILED\033[0;0m  ] Not updating Dedimania with player list, as game mode is not 'TA' or 'Rounds'!" << std::endl << std::flush;
             return;
         }
 
-        std::cout << "[         ] Updating Dedimania with player list ... " << std::endl << std::flush;
+        std::cout << "[          ] Updating Dedimania with player list ... " << std::endl << std::flush;
 
         int numPlayers = 0;
         int numSpecs = 0;
@@ -225,11 +225,11 @@ void DedimaniaPlugin::UpdateServer()
         GbxResponse queryResponse = multicall();
         if(!hasError)
         {
-            std::cout << "\x1b[1A[   \033[0;32mOK.\033[0;0m   ] Successfully updated Dedimania with the player list." << std::endl << std::flush;
+            std::cout << "\x1b[1A[    \033[0;32mOK\033[0;0m    ] Successfully updated Dedimania with the player list." << std::endl << std::flush;
         }
         else
         {
-            std::cout << "[ \033[0;31mFAILED!\033[0;0m ] Unable to update Dedimania with player list." << std::endl << std::flush;
+            std::cout << "[  \033[0;31mFAILED\033[0;0m  ] Unable to update Dedimania with player list." << std::endl << std::flush;
         }
     }
 }
@@ -292,7 +292,7 @@ void DedimaniaPlugin::loadSettings()
 
 void DedimaniaPlugin::authenticate()
 {
-    std::cout << "[         ] Connecting with Dedimania on dedimania.net:8081 ... " << std::endl << std::flush;
+    std::cout << "[          ] Connecting with Dedimania on dedimania.net:8081 ... " << std::endl << std::flush;
 
     GbxStructParameters session = GbxStructParameters();
     std::string methodName = "dedimania.OpenSession";
@@ -320,11 +320,11 @@ void DedimaniaPlugin::authenticate()
         std::vector<GbxResponseParameter> responseParams = queryResponse.GetParameters().at(0).GetArray();
         sessionId = responseParams.at(0).GetArray().at(0).GetStruct().at("SessionId").GetString();
 
-        std::cout << "\x1b[1A[   \033[0;32mOK.\033[0;0m   ] Connected with Dedimania (session: " << sessionId << ")!" << std::endl << std::flush;
+        std::cout << "\x1b[1A[    \033[0;32mOK\033[0;0m    ] Connected with Dedimania (session: " << sessionId << ")!" << std::endl << std::flush;
     }
     else
     {
-        std::cout << "[ \033[0;31mFAILED!\033[0;0m ] Failed to connect with Dedimania!" << std::endl << std::flush;
+        std::cout << "[  \033[0;31mFAILED\033[0;0m  ] Failed to connect with Dedimania!" << std::endl << std::flush;
     }
 }
 

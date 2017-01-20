@@ -221,7 +221,7 @@ bool UIManager::RegisterEvent(std::string answer, std::function<void(Player, std
     }
     else
     {
-        std::cout << "[ WARNING ] Trying to register action '" << answer << "', which is already taken." << std::endl;
+        std::cout << "[   WARN   ] Trying to register action '" << answer << "', which is already taken." << std::endl;
     }
 
     return false;

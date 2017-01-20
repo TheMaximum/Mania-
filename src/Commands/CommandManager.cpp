@@ -18,7 +18,7 @@ int CommandManager::RegisterCommands(std::map<std::string, std::function<void(Pl
         }
         else
         {
-            std::cout << "[ WARNING ] Tried to register command '" << method->first << "', which is already registered!" << std::endl;
+            std::cout << "[   WARN   ] Tried to register command '" << method->first << "', which is already registered!" << std::endl;
         }
     }
     return functionsAdded;
@@ -36,7 +36,7 @@ int CommandManager::RegisterAdminCommands(std::map<std::string, std::function<vo
         }
         else
         {
-            std::cout << "[ WARNING ] Tried to register admin-command '" << method->first << "', which is already registered!" << std::endl;
+            std::cout << "[   WARN   ] Tried to register admin-command '" << method->first << "', which is already registered!" << std::endl;
         }
     }
     return functionsAdded;

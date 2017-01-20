@@ -329,7 +329,7 @@ boost::any KarmaPlugin::GetKarmaByMapId(boost::any parameters)
 
 void KarmaPlugin::updateAllMapKarma()
 {
-    std::cout << "[         ] Retrieving karma for all maps ... " << '\r' << std::flush;
+    std::cout << "[          ] Retrieving karma for all maps ... " << '\r' << std::flush;
     for(std::map<std::string, Map>::iterator mapIt = controller->Maps->List.begin(); mapIt != controller->Maps->List.end(); ++mapIt)
     {
         mapIt->second.UpdateAdditional("Karma", GetKarmaByMapId(mapIt->second.Id));
