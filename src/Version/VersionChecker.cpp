@@ -62,7 +62,7 @@ bool VersionChecker::CheckForUpdates(std::string repository, std::string current
             for(int newVersionId = 0; newVersionId < newVersions.size(); newVersionId++)
             {
                 GitVersion version = newVersions.at(newVersionId);
-                std::cout << "[   NEW    ]   " << version.Name << " (" << version.Tag << ")";
+                std::cout << "[  UPDATE  ]   " << version.Name << " (" << version.Tag << ")";
                 if(version.PreRelease)
                     std::cout << " (pre-release)";
                 std::cout << std::endl;
@@ -70,7 +70,7 @@ bool VersionChecker::CheckForUpdates(std::string repository, std::string current
         }
         else
         {
-            std::cout << "[ VERSION ] No new version available for '" << repository << "'." << std::endl;
+            std::cout << "[ VERSION  ] No new version available for '" << repository << "'." << std::endl;
         }
     }
 }

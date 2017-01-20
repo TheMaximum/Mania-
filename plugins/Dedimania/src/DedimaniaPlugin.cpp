@@ -435,5 +435,7 @@ GbxResponse DedimaniaPlugin::query(GbxMessage message)
         }
     }
 
+    curl_slist_free_all(headers);
+
     return response;
 }

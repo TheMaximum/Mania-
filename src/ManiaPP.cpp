@@ -341,7 +341,7 @@ void ManiaPP::retrieveMapList()
                     insertPstmt->setString(2, newMap.Name);
                     insertPstmt->setString(3, newMap.Author);
                     insertPstmt->setString(4, newMap.Environment);
-                    insertPstmt->executeQuery();
+                    insertPstmt->execute();
                 }
                 catch(sql::SQLException &e)
                 {
