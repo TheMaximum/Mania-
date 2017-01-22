@@ -30,5 +30,7 @@ var searchData=
   ['setservercomment',['SetServerComment',['../classMethods.html#abae456c9d07f66cc13dcf496b2b65d4e',1,'Methods']]],
   ['setservername',['SetServerName',['../classMethods.html#a266f3dda30b8e145f886239933f6d461',1,'Methods']]],
   ['setserverpassword',['SetServerPassword',['../classMethods.html#a62fe24aedfd44cf477fc4a4a776bebd0',1,'Methods']]],
-  ['setserverpasswordforspectator',['SetServerPasswordForSpectator',['../classMethods.html#a7db5e1f09b0cc5e8277ee0d3ec357079',1,'Methods']]]
+  ['setserverpasswordforspectator',['SetServerPasswordForSpectator',['../classMethods.html#a7db5e1f09b0cc5e8277ee0d3ec357079',1,'Methods']]],
+  ['stripcolors',['StripColors',['../classFormatting.html#a8f55eb77096061677c92f595b2852f87',1,'Formatting']]],
+  ['striplinks',['StripLinks',['../classFormatting.html#a212bf4006619590eb484026aae053054',1,'Formatting']]]
 ];
