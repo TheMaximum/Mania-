@@ -10,6 +10,6 @@ var searchData=
   ['title',['Title',['../structUIList.html#a653f1be5fe8e835df46a7068c49ff75e',1,'UIList']]],
   ['titleid',['TitleId',['../structServerVersion.html#ac3bb8bad4747aa0272f1d16be6fb96bd',1,'ServerVersion::TitleId()'],['../structSystemInfo.html#ad4fb8ffe4a969e5e0d67d2dc343c3fae',1,'SystemInfo::TitleId()']]],
   ['todo_20list',['Todo List',['../todo.html',1,'']]],
-  ['type',['type',['../classGbxParameter.html#a19d4cab065cb0440c675e97babf45d02',1,'GbxParameter::type()'],['../classGbxResponseParameter.html#aa1700ca65fa2526b112be24b5c0bdbf4',1,'GbxResponseParameter::Type()']]],
+  ['type',['Type',['../classGbxResponseParameter.html#aa1700ca65fa2526b112be24b5c0bdbf4',1,'GbxResponseParameter::Type()'],['../classGbxParameter.html#a19d4cab065cb0440c675e97babf45d02',1,'GbxParameter::type()']]],
   ['typeinfo',['typeinfo',['../structParameter.html#a9f8602d10b3c497bde219c4e6a8b1b60',1,'Parameter']]]
 ];
