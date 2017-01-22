@@ -124,38 +124,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">case</span> GameMode::Stunts:</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Stunts&quot;</span>;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">case</span> GameMode::Script:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Script&quot;</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classGameModeConverter.html#ab32af3449e8b99bdf663cec986ac12f0">   60</a></span>&#160;    <span class="keyword">static</span> std::string <a class="code" href="classGameModeConverter.html#ab32af3449e8b99bdf663cec986ac12f0">GetDediName</a>(GameMode mode)</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">switch</span>(mode)</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">case</span> GameMode::TimeAttack:</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;TA&quot;</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">case</span> GameMode::Rounds:</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">case</span> GameMode::Team:</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">case</span> GameMode::Laps:</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">case</span> GameMode::Cup:</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Rounds&quot;</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;n/a&quot;</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif // GAMEMODE_H_</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Script&quot;</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classGameModeConverter.html#ab32af3449e8b99bdf663cec986ac12f0">   59</a></span>&#160;    <span class="keyword">static</span> std::string <a class="code" href="classGameModeConverter.html#ab32af3449e8b99bdf663cec986ac12f0">GetDediName</a>(GameMode mode)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">switch</span>(mode)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">case</span> GameMode::TimeAttack:</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;TA&quot;</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">case</span> GameMode::Rounds:</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">case</span> GameMode::Team:</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">case</span> GameMode::Cup:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Rounds&quot;</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;n/a&quot;</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif // GAMEMODE_H_</span></div>
 <div class="ttc" id="classGameModeConverter_html"><div class="ttname"><a href="classGameModeConverter.html">GameModeConverter</a></div><div class="ttdoc">Converts enum values into usable strings. </div><div class="ttdef"><b>Definition:</b> GameMode.h:24</div></div>
-<div class="ttc" id="classGameModeConverter_html_ab32af3449e8b99bdf663cec986ac12f0"><div class="ttname"><a href="classGameModeConverter.html#ab32af3449e8b99bdf663cec986ac12f0">GameModeConverter::GetDediName</a></div><div class="ttdeci">static std::string GetDediName(GameMode mode)</div><div class="ttdoc">Converts enum value into usable Dedimania-accepted string (so only TA or Rounds - n/a if not Dedi-acc...</div><div class="ttdef"><b>Definition:</b> GameMode.h:60</div></div>
+<div class="ttc" id="classGameModeConverter_html_ab32af3449e8b99bdf663cec986ac12f0"><div class="ttname"><a href="classGameModeConverter.html#ab32af3449e8b99bdf663cec986ac12f0">GameModeConverter::GetDediName</a></div><div class="ttdeci">static std::string GetDediName(GameMode mode)</div><div class="ttdoc">Converts enum value into usable Dedimania-accepted string (so only TA or Rounds - n/a if not Dedi-acc...</div><div class="ttdef"><b>Definition:</b> GameMode.h:59</div></div>
 <div class="ttc" id="classGameModeConverter_html_a7406bdab20eb300afb82d246890155f7"><div class="ttname"><a href="classGameModeConverter.html#a7406bdab20eb300afb82d246890155f7">GameModeConverter::GetName</a></div><div class="ttdeci">static std::string GetName(GameMode mode)</div><div class="ttdoc">Converts enum value into usable string. </div><div class="ttdef"><b>Definition:</b> GameMode.h:32</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 22 2017 18:17:30 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jan 22 2017 23:28:23 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
