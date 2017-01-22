@@ -38,7 +38,45 @@ public:
             char formattedCharArray[8];
             sprintf(formattedCharArray, "%d:%02d.%03d", minutes, seconds, tseconds);
 
-            return std::string(formattedCharArray);
+            formattedTime = std::string(formattedCharArray);
+        }
+
+        return formattedTime;
+    }
+
+    /*!
+     * \brief Formats time to 00:00:00 format.
+     *
+     * \param time         Time to be formatted.
+     */
+    static std::string FormatSeconds(int time)
+    {
+        std::string formattedTime = "00:00:00";
+
+        if(time > 0)
+        {
+            int hours = floor(time / 60 / 60);
+            int minutes = floor((time - (hours * 60 * 60)) / 60);
+            int seconds = (time - (hours * 60 * 60) - (minutes * 60));
+
+            if(hours > 999)
+            {
+                char formattedCharArray[10];
+                sprintf(formattedCharArray, "%04d:%02d:%02d", hours, minutes, seconds);
+                formattedTime = std::string(formattedCharArray);
+            }
+            else if(hours > 99)
+            {
+                char formattedCharArray[9];
+                sprintf(formattedCharArray, "%03d:%02d:%02d", hours, minutes, seconds);
+                formattedTime = std::string(formattedCharArray);
+            }
+            else
+            {
+                char formattedCharArray[8];
+                sprintf(formattedCharArray, "%02d:%02d:%02d", hours, minutes, seconds);
+                formattedTime = std::string(formattedCharArray);
+            }
         }
 
         return formattedTime;

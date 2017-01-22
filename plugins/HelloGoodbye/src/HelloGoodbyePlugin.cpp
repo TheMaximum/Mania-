@@ -33,9 +33,11 @@ void HelloGoodbyePlugin::OnPlayerDisconnect(Player player)
 {
     std::cout << "PLUGIN Player Disconnected: " << player.Login << "!" << std::endl;
 
+    time_t timeOnline = std::time(0) - player.JoinedAt; // Time online in seconds
+
     std::stringstream chatMessage;
     chatMessage << "$fff" << Formatting::StripColors(player.NickName);
-    chatMessage << " $39fhas left the game.";
+    chatMessage << " $39fhas left the game, time played: $fff" << Time::FormatSeconds(timeOnline) << "$39f.";
 
     controller->Server->ChatSendServerMessage(chatMessage.str());
 }
