@@ -7,6 +7,9 @@ DedimaniaPlugin::DedimaniaPlugin()
 
     BeginMap.push_back([this](Map map) { OnBeginMap(); });
     PlayerConnect.push_back([this](Player player) { OnPlayerConnect(player); });
+    PlayerFinish.push_back([this](Player player, int playerTime) { OnPlayerFinish(player, playerTime); });
+    EndMatch.push_back([this](std::vector<PlayerRanking> rankings, int winnerTeam) { OnEndMatch(rankings); });
+
     EveryMinute.push_back([this]() {
         updateServer++;
         if(updateServer >= 3)
@@ -15,6 +18,7 @@ DedimaniaPlugin::DedimaniaPlugin()
             updateServer = 0;
         }
     });
+
     RegisterCommand("dedirecs", [this](Player player, std::vector<std::string> parameters) { OpenDediRecords(player); });
     RegisterCommand("dedirecords", [this](Player player, std::vector<std::string> parameters) { OpenDediRecords(player); });
 
@@ -39,6 +43,9 @@ void DedimaniaPlugin::Init()
 void DedimaniaPlugin::OnBeginMap()
 {
     Map currentMap = *controller->Maps->Current;
+    records = std::vector<DediRecord>();
+    newRecords = std::vector<DediRecord>();
+    mapValid = false;
 
     if(sessionId != "")
     {
@@ -50,6 +57,20 @@ void DedimaniaPlugin::OnBeginMap()
             std::cout << "[  \033[0;31mFAILED\033[0;0m  ] Not retrieving Dedimania record, as game mode is not 'TA' or 'Rounds'!" << std::endl << std::flush;
             return;
         }
+
+        if(currentMap.NbCheckpoints < 2 && currentMap.Author != "Nadeo")
+        {
+            std::cout << "[  \033[0;31mFAILED\033[0;0m  ] Not retrieving Dedimania record, number of checkpoints < 2!" << std::endl << std::flush;
+            return;
+        }
+
+        if(currentMap.AuthorTime < 10000)
+        {
+            std::cout << "[  \033[0;31mFAILED\033[0;0m  ] Not retrieving Dedimania record, authortime < 10s!" << std::endl << std::flush;
+            return;
+        }
+
+        mapValid = true;
 
         std::cout << "[          ] Retrieving Dedimania records for current map ... " << std::endl << std::flush;
 
@@ -93,7 +114,8 @@ void DedimaniaPlugin::OnBeginMap()
         parameters.Put(&sessionId);
             GbxStructParameters mapInfo = GbxStructParameters();
             mapInfo.Put("UId", Parameter(&currentMap.UId));
-            mapInfo.Put("Name", Parameter(&currentMap.Name));
+            std::string mapName = Text::EscapeXML(currentMap.Name);
+            mapInfo.Put("Name", Parameter(&mapName));
             mapInfo.Put("Environment", Parameter(&currentMap.Environment));
             mapInfo.Put("Author", Parameter(&currentMap.Author));
             mapInfo.Put("NbCheckpoints", Parameter(&currentMap.NbCheckpoints));
@@ -101,7 +123,8 @@ void DedimaniaPlugin::OnBeginMap()
         parameters.Put(&mapInfo);
         parameters.Put(&gameMode);
             GbxStructParameters serverInfo = GbxStructParameters();
-            serverInfo.Put("SrvName", Parameter(&controller->Info->Name));
+            std::string srvName = Text::EscapeXML(controller->Info->Name);
+            serverInfo.Put("SrvName", Parameter(&srvName));
             serverInfo.Put("Comment", Parameter(&controller->Info->Comment));
             serverInfo.Put("Private", Parameter(&privateServer));
             serverInfo.Put("NumPlayers", Parameter(&numPlayers));
@@ -116,21 +139,23 @@ void DedimaniaPlugin::OnBeginMap()
         GbxResponse queryResponse = multicall();
         if(!hasError)
         {
-            std::vector<GbxResponseParameter> responseParams = queryResponse.GetParameters().at(0).GetArray().at(0).GetArray();
-            std::map<std::string, GbxResponseParameter> responseStruct = responseParams.at(0).GetStruct();
-            maxRank = atoi(responseStruct.find("ServerMaxRank")->second.GetString().c_str());
-            std::vector<GbxResponseParameter> recordsStruct = responseStruct.find("Records")->second.GetArray();
-
-            records = std::vector<DediRecord>();
-            for(int recordId = 0; recordId < recordsStruct.size(); recordId++)
+            if(queryResponse.GetParameters().at(0).GetArray().size() != 0)
             {
-                std::map<std::string, GbxResponseParameter> recordStruct = recordsStruct.at(recordId).GetStruct();
-                DediRecord record = DediRecord(recordStruct);
+                std::vector<GbxResponseParameter> responseParams = queryResponse.GetParameters().at(0).GetArray().at(0).GetArray();
+                std::map<std::string, GbxResponseParameter> responseStruct = responseParams.at(0).GetStruct();
+                maxRank = atoi(responseStruct.find("ServerMaxRank")->second.GetString().c_str());
+                std::vector<GbxResponseParameter> recordsStruct = responseStruct.find("Records")->second.GetArray();
 
-                records.push_back(record);
+                for(int recordId = 0; recordId < recordsStruct.size(); recordId++)
+                {
+                    std::map<std::string, GbxResponseParameter> recordStruct = recordsStruct.at(recordId).GetStruct();
+                    DediRecord record = DediRecord(recordStruct);
 
-                if(record.Rank == maxRank)
-                    break;
+                    records.push_back(record);
+
+                    if(record.Rank == maxRank)
+                        break;
+                }
             }
 
             std::cout << "\x1b[1A[    \033[0;32mOK\033[0;0m    ] Successfully retrieved Dedimania records for current map!" << std::endl << std::flush;
@@ -157,11 +182,7 @@ void DedimaniaPlugin::UpdateServer()
 
         std::string gameMode = GameModeConverter::GetDediName(controller->Info->Mode);
         if(gameMode == "n/a")
-        {
-            std::cout << "[  \033[0;31mFAILED\033[0;0m  ] Not updating Dedimania with player list, as game mode is not 'TA' or 'Rounds'!" << std::endl << std::flush;
-            return;
-        }
-
+            gameMode = GameModeConverter::GetName(controller->Info->Mode);
         std::cout << "[          ] Updating Dedimania with player list ... " << std::endl << std::flush;
 
         int numPlayers = 0;
@@ -206,7 +227,8 @@ void DedimaniaPlugin::UpdateServer()
         GbxParameters parameters = GbxParameters();
         parameters.Put(&sessionId);
         GbxStructParameters serverInfo = GbxStructParameters();
-            serverInfo.Put("SrvName", Parameter(&controller->Info->Name));
+            std::string srvName = Text::EscapeXML(controller->Info->Name);
+            serverInfo.Put("SrvName", Parameter(&srvName));
             serverInfo.Put("Comment", Parameter(&controller->Info->Comment));
             serverInfo.Put("Private", Parameter(&privateServer));
             serverInfo.Put("NumPlayers", Parameter(&numPlayers));
@@ -240,6 +262,129 @@ void DedimaniaPlugin::OnPlayerConnect(Player player)
     {
         Logging::PrintError(controller->Server->GetCurrentError());
     }
+}
+
+void DedimaniaPlugin::OnPlayerFinish(Player player, int time)
+{
+    if(!mapValid)
+        return;
+
+    if(GameModeConverter::GetDediName(controller->Info->Mode) == "n/a")
+        return;
+
+    if(time == 0)
+        return;
+
+    if(player.CurrentCheckpoints.size() != controller->Maps->Current->NbCheckpoints ||
+       time != player.CurrentCheckpoints.back())
+    {
+        std::cout << "[   DEDI   ] Player '" << player.Login << "' has inconsistent finish/checkpoints, ignoring: " << time << std::endl;
+        return;
+    }
+
+    if(player.CurrentCheckpoints.size() < 2 && controller->Maps->Current->Author != "Nadeo")
+    {
+        std::cout << "[   DEDI   ] Player '" << player.Login << "' has checks < 2, ignoring: " << time << std::endl;
+        return;
+    }
+
+    DediRecord playerRecord = DediRecord();
+    int recordIndex = -1;
+    for(int recordId = 0; recordId < records.size(); recordId++)
+    {
+        DediRecord record = records.at(recordId);
+        if(record.Login == player.Login)
+        {
+            playerRecord = record;
+            recordIndex = recordId;
+            break;
+        }
+    }
+
+    if(recordIndex == -1 || time < playerRecord.Time)
+    {
+        int newIndex = -1;
+
+        for(int dediId = 0; dediId < records.size(); dediId++)
+        {
+            DediRecord record = records.at(dediId);
+            if(time < record.Time)
+            {
+                newIndex = dediId;
+                break;
+            }
+        }
+
+        if(newIndex == -1)
+        {
+            if(records.size() < maxRank)
+            {
+                newIndex = records.size();
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        if(recordIndex != -1)
+            records.erase((records.begin()+recordIndex));
+
+        DediRecord newDedi = DediRecord();
+        newDedi.Rank = (newIndex + 1);
+        newDedi.Login = player.Login;
+        newDedi.NickName = player.NickName;
+        newDedi.Time = time;
+        newDedi.FormattedTime = Time::FormatTime(time);
+        newDedi.Checkpoints = player.CurrentCheckpoints;
+
+        if(newIndex == records.size())
+        {
+            records.push_back(newDedi);
+        }
+        else
+        {
+            records.insert((records.begin() + newIndex), newDedi);
+        }
+
+        newRecords.push_back(newDedi);
+
+        std::stringstream chatMessage;
+        chatMessage << "$fff" << Formatting::StripColors(player.NickName) << "$z$s$0b3 ";
+        chatMessage << "drove the $fff" << (newIndex+1) << ".$0b3 Dedimania record with a time of: $fff" << newDedi.FormattedTime << "$0b3";
+        if(recordIndex > -1)
+        {
+            chatMessage << " ($fff" << (recordIndex+1) << ".$0b3, $fff-" << Time::FormatTime((playerRecord.Time - newDedi.Time)) << "$0b3)";
+        }
+        chatMessage << "!";
+
+        controller->Server->ChatSendServerMessage(chatMessage.str());
+
+        if(!widget.DisplayToAll(controller->Players))
+        {
+            Logging::PrintError(controller->Server->GetCurrentError());
+        }
+    }
+    else if(time == playerRecord.Time)
+    {
+        std::stringstream chatMessage;
+        chatMessage << "$fff" << Formatting::StripColors(player.NickName) << "$z$s$0b3 equalled the $fff" << (recordIndex+1) << ".$0b3 Dedimania record ($fff" << playerRecord.FormattedTime << "$0b3).";
+        controller->Server->ChatSendServerMessage(chatMessage.str());
+    }
+}
+
+void DedimaniaPlugin::OnEndMatch(std::vector<PlayerRanking> rankings)
+{
+    if(sessionId == "")
+        return;
+
+    if(!mapValid)
+        return;
+
+    // Add all times from newRecords
+    // Retrieve VReplay from server (and save)
+    // Retrieve GReplay if new record is new first dedi
+    // Submit request to Dedimania
 }
 
 void DedimaniaPlugin::OpenDediRecords(Player player)
@@ -421,17 +566,20 @@ GbxResponse DedimaniaPlugin::query(GbxMessage message)
     //std::cout << "Response: " << output << std::endl;
 
     std::vector<GbxResponseParameter> responseParams = response.GetParameters().at(0).GetArray();
-    std::map<std::string, GbxResponseParameter> warningsAndTTR = responseParams.at((responseParams.size() - 1)).GetArray().at(0).GetStruct();
-    std::vector<GbxResponseParameter> warnings = warningsAndTTR.at("methods").GetArray();
-    for(int paramId = 0; paramId < warnings.size(); paramId++)
+    if(responseParams.size() != 0)
     {
-        std::map<std::string, GbxResponseParameter> warning = warnings.at(paramId).GetStruct();
-        if(warning.at("errors").GetString().length() > 1)
+        std::map<std::string, GbxResponseParameter> warningsAndTTR = responseParams.at((responseParams.size() - 1)).GetArray().at(0).GetStruct();
+        std::vector<GbxResponseParameter> warnings = warningsAndTTR.at("methods").GetArray();
+        for(int paramId = 0; paramId < warnings.size(); paramId++)
         {
-            hasError = true;
-            std::stringstream errorMessage;
-            errorMessage << "(" << warning.at("methodName").GetString() << ") " << warning.at("errors").GetString();
-            Logging::PrintError(-200, errorMessage.str());
+            std::map<std::string, GbxResponseParameter> warning = warnings.at(paramId).GetStruct();
+            if(warning.at("errors").GetString().length() > 1)
+            {
+                hasError = true;
+                std::stringstream errorMessage;
+                errorMessage << "(" << warning.at("methodName").GetString() << ") " << warning.at("errors").GetString();
+                Logging::PrintError(-200, errorMessage.str());
+            }
         }
     }
 

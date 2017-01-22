@@ -154,7 +154,7 @@ bool DedimaniaWidget::DisplayToPlayer(Player player)
         DediRecord record = records->at(recordId);
         if(record.Login == player.Login)
         {
-            playerRecord = record.Rank;
+            playerRecord = (recordId+1);
         }
     }
 
@@ -180,7 +180,7 @@ bool DedimaniaWidget::DisplayToPlayer(Player player)
     {
         if(recordId > records->size())
             break;
-            
+
         DediRecord record = records->at(recordId);
         if(record.Login == player.Login)
         {

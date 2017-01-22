@@ -7,15 +7,15 @@
 #include "base64.h"
 
 #include "GbxRemote/Message/GbxMessage.h"
-#include "Socket/TcpClient.h"
 #include "Plugins/Plugin.h"
+
+#include "Utils/Formatting.h"
 #include "Utils/GameMode.h"
 #include "Utils/GZip.h"
 #include "Utils/Parameter.h"
 #include "Utils/Time.h"
 
 #include "Objects/DediRecord.h"
-
 #include "Widget/DedimaniaWidget.h"
 
 class DedimaniaPlugin : public Plugin
@@ -25,6 +25,8 @@ public:
     void Init();
     void OnBeginMap();
     void OnPlayerConnect(Player player);
+    void OnPlayerFinish(Player player, int time);
+    void OnEndMatch(std::vector<PlayerRanking> rankings);
     void UpdateServer();
 
     void OpenDediRecords(Player player);
@@ -38,10 +40,12 @@ private:
     std::string sessionId = "";
     int maxRank = 0;
     int updateServer = 0;
+    bool mapValid = false;
 
     std::vector<GbxStructParameters> currentCalls = std::vector<GbxStructParameters>();
 
     std::vector<DediRecord> records = std::vector<DediRecord>();
+    std::vector<DediRecord> newRecords = std::vector<DediRecord>();
     DedimaniaWidget widget;
 
     int widgetEntries = 28;

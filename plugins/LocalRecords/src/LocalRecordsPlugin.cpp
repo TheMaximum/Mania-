@@ -154,7 +154,7 @@ void LocalRecordsPlugin::OnPlayerFinish(Player player, int playerTime)
             {
                 // Player equalled his record.
                 std::stringstream chatMessage;
-                chatMessage << "$fff" << player.NickName << "$z$s$0f3 equalled the $fff" << currentLocalIndex << ".$0f3 record ($fff" << currentLocal.FormattedTime << "$0f3).";
+                chatMessage << "$fff" << Formatting::StripColors(player.NickName) << "$z$s$0f3 equalled the $fff" << currentLocalIndex << ".$0f3 record ($fff" << currentLocal.FormattedTime << "$0f3).";
                 controller->Server->ChatSendServerMessage(chatMessage.str());
             }
         }
@@ -195,7 +195,7 @@ void LocalRecordsPlugin::OnPlayerFinish(Player player, int playerTime)
             int newLocalIndex = localRecords.GetPlayerRecordIndex(player);
 
             std::stringstream chatMessage;
-            chatMessage << "$fff" << player.NickName << "$z$s$0f3 ";
+            chatMessage << "$fff" << Formatting::StripColors(player.NickName) << "$z$s$0f3 ";
             chatMessage << "drove the $fff" << newLocalIndex << ".$0f3 record with a time of: $fff" << newLocal.FormattedTime << "$0f3";
             if(currentLocal.Id == 0)
             {

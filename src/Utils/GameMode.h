@@ -46,7 +46,6 @@ public:
             case GameMode::Stunts:
                 return "Stunts";
 
-            case GameMode::Script:
             default:
                 return "Script";
         }
@@ -65,7 +64,6 @@ public:
                 return "TA";
             case GameMode::Rounds:
             case GameMode::Team:
-            case GameMode::Laps:
             case GameMode::Cup:
                 return "Rounds";
 
