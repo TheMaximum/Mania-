@@ -1,6 +1,8 @@
 #ifndef MANIAPP_H_
 #define MANIAPP_H_
 
+#include <ctime>
+
 #include "CallBacks/CallBackManager.h"
 #include "Config/Version.h"
 #include "Config/Config.h"
@@ -14,6 +16,7 @@
 #include "Objects/Player.h"
 #include "Plugins/PluginManager.h"
 #include "UI/UIManager.h"
+#include "Utils/Formatting.h"
 #include "Utils/GameMode.h"
 #include "Utils/Logging.h"
 #include "Utils/Time.h"

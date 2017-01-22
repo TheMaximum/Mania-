@@ -16,8 +16,10 @@ LocalRecordsPlugin::LocalRecordsPlugin()
 void LocalRecordsPlugin::Init()
 {
     loadSettings();
+    updateAllMapLocals();
+
     retrieveRecords(*controller->Maps->Current);
-    std::cout << "[   INFO   ] " << localRecords.List.size() << " records found for " << controller->Maps->Current->Name << "." << std::endl;
+    std::cout << "[    \033[0;32mOK\033[0;0m    ] " << localRecords.List.size() << " records found for '" << Formatting::StripColors(controller->Maps->Current->Name, false) << "'." << std::endl;
 
     widget = LocalRecordsWidget(controller->UI, &localRecords);
     widget.WidgetEntries = widgetEntries;
@@ -25,8 +27,6 @@ void LocalRecordsPlugin::Init()
     widget.WidgetX = widgetX;
     widget.WidgetY = widgetY;
     controller->UI->RegisterEvent("OpenLocalRecords", ([this](Player player, std::string answer, std::vector<EntryVal> entries) { OpenLocalRecords(player); }));
-
-    updateAllMapLocals();
 
     if(!widget.DisplayToAll(controller->Players))
     {
@@ -60,7 +60,7 @@ void LocalRecordsPlugin::loadSettings()
 void LocalRecordsPlugin::OnBeginMap(Map map)
 {
     retrieveRecords(*controller->Maps->Current);
-    std::cout << "[   INFO   ] " << localRecords.List.size() << " records found for " << controller->Maps->Current->Name << "." << std::endl;
+    std::cout << "[    \033[0;32mOK\033[0;0m    ] " << localRecords.List.size() << " records found for '" << Formatting::StripColors(controller->Maps->Current->Name, false) << "'." << std::endl;
 
     for(std::map<std::string, Player>::iterator player = controller->Players->begin(); player != controller->Players->end(); ++player)
     {

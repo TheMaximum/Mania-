@@ -5,6 +5,7 @@
 #include <sstream>
 
 #include "Plugins/Plugin.h"
+#include "Utils/Formatting.h"
 #include "Utils/Time.h"
 
 #include "Objects/LocalRecord.h"

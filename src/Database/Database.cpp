@@ -8,6 +8,13 @@ Database::Database(std::string serverAddress, int serverPort)
 
 Database::~Database()
 {
+    if(Connection != NULL)
+    {
+        Connection->close();
+        delete Connection;
+        Connection = NULL;
+    }
+
     if(Driver != NULL)
     {
         Driver->threadEnd();

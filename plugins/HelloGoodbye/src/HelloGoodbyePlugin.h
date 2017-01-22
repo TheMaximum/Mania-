@@ -3,6 +3,7 @@
 
 #include <sstream>
 #include "Plugins/Plugin.h"
+#include "Utils/Formatting.h"
 
 class HelloGoodbyePlugin : public Plugin
 {

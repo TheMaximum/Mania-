@@ -58,7 +58,7 @@ bool VersionChecker::CheckForUpdates(std::string repository, std::string current
 
         if(newVersions.size() > 0)
         {
-            std::cout << "[ VERSION  ] Got " << newVersions.size() << " new versions available for '" << repository << "':" << std::endl;
+            std::cout << "[ OUTDATED ] Got " << newVersions.size() << " new versions available for '" << repository << "':" << std::endl;
             for(int newVersionId = 0; newVersionId < newVersions.size(); newVersionId++)
             {
                 GitVersion version = newVersions.at(newVersionId);
@@ -70,7 +70,7 @@ bool VersionChecker::CheckForUpdates(std::string repository, std::string current
         }
         else
         {
-            std::cout << "[ VERSION  ] No new version available for '" << repository << "'." << std::endl;
+            std::cout << "[    \033[0;32mOK\033[0;0m    ] No new version available for '" << repository << "'." << std::endl;
         }
     }
 }

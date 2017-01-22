@@ -12,6 +12,7 @@ struct Player
     // === Mania++ information ===
     int Id = 0;                          /**< \brief Player identifier (on database). */
     std::vector<int> CurrentCheckpoints; /**< \brief Checkpoint passes on current try. */
+    time_t JoinedAt;                     /**< \brief The timestamp on join. */
 
     // === Basic information ===
     int PlayerId;                        /**< \brief Player identifier (on server). */

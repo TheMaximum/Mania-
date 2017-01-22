@@ -41,12 +41,6 @@ ManiaPP::~ManiaPP()
     delete methods; methods = NULL;
 
     delete ui; ui = NULL;
-
-    if(database != NULL)
-    {
-        database->close();
-        delete database; database = NULL;
-    }
     delete db; db = NULL;
 
     delete serverInfo; serverInfo = NULL;
@@ -174,7 +168,7 @@ void ManiaPP::PrintServerInfo()
 {
     std::cout << "###############################################################################" << std::endl;
     std::cout << "  Mania++ v" << VERSION << " running on " << config->Server->address << ":" << config->Server->port << std::endl;
-    std::cout << "  Name    : " << serverInfo->Name << " / " << serverInfo->Account.Login << std::endl;
+    std::cout << "  Name    : " << Formatting::StripColors(serverInfo->Name, false) << " / " << serverInfo->Account.Login << std::endl;
     std::cout << "  Game    : " << serverInfo->Version.Name << " / " << serverInfo->Version.TitleId << " / " << GameModeConverter::GetName(serverInfo->Mode) << std::endl;
     std::cout << "  Version : " << serverInfo->Version.Version << " / " << serverInfo->Version.Build << std::endl;
     std::cout << "  Author  : TheM" << std::endl;
@@ -232,6 +226,8 @@ void ManiaPP::retrievePlayerList()
     {
         std::vector<GbxResponseParameter> responseParams = server->GetResponse()->GetParameters();
         std::vector<GbxResponseParameter> playerList = responseParams.at(0).GetArray();
+
+        time_t now = std::time(0);
 
         for(int playerId = 0; playerId < playerList.size(); playerId++)
         {
@@ -307,6 +303,7 @@ void ManiaPP::retrievePlayerList()
                     }
                 }
 
+                newPlayer.JoinedAt = now;
                 players->insert(std::pair<std::string, Player>(newPlayer.Login, newPlayer));
             }
         }

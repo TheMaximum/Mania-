@@ -14,7 +14,7 @@ CallBackManager::CallBackManager(GbxRemote* serverPtr, CommandManager* commandMa
 
 void CallBackManager::HandleCallBack(std::string methodName, std::vector<GbxResponseParameter> parameters)
 {
-    std::cout << "[    CB    ] " << methodName << " (parameters: " << parameters.size() << ")" << std::endl;
+    std::cout << "[ CALLBACK ] " << methodName << " (parameters: " << parameters.size() << ")" << std::endl;
 
     if(methodName.find("ManiaPlanet.PlayerConnect") != std::string::npos)
     {
@@ -155,6 +155,7 @@ void CallBackManager::HandlePlayerConnect(std::vector<GbxResponseParameter> para
         }
     }
 
+    newPlayer.JoinedAt = std::time(0);
     players->insert(std::pair<std::string, Player>(newPlayer.Login, newPlayer));
 
     std::cout << "Player connected: " << newPlayer.Login << " (# players: " << players->size() << ")" << std::endl;

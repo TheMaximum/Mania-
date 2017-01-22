@@ -19,11 +19,11 @@ void HelloGoodbyePlugin::OnPlayerConnect(Player player)
     std::cout << "PLUGIN Player Connected: " << player.Login << "!" << std::endl;
 
     std::stringstream chatMessage;
-    chatMessage << "$39fPlayer joins: ";
-    chatMessage << player.NickName;
-    chatMessage << " $z$s$39fNation: $fff";
+    chatMessage << "$39fPlayer joins: $fff";
+    chatMessage << Formatting::StripColors(player.NickName);
+    chatMessage << " $39fNation: $fff";
     chatMessage << player.Country;
-    chatMessage << " $z$s$39fLadder: $fff";
+    chatMessage << " $39fLadder: $fff";
     chatMessage << player.LadderRanking;
 
     controller->Server->ChatSendServerMessage(chatMessage.str());
@@ -34,8 +34,8 @@ void HelloGoodbyePlugin::OnPlayerDisconnect(Player player)
     std::cout << "PLUGIN Player Disconnected: " << player.Login << "!" << std::endl;
 
     std::stringstream chatMessage;
-    chatMessage << player.NickName;
-    chatMessage << " $z$s$39fhas left the game.";
+    chatMessage << "$fff" << Formatting::StripColors(player.NickName);
+    chatMessage << " $39fhas left the game.";
 
     controller->Server->ChatSendServerMessage(chatMessage.str());
 }
