@@ -424,8 +424,6 @@ void DedimaniaPlugin::OnEndMatch(std::vector<PlayerRanking> rankings)
     {
         std::string fileName = controller->Maps->Current->UId + "." + gameMode + "." + std::to_string(topRecord.Time) + "." + topRecord.Login + ".Replay.Gbx";
         greplay = controller->Server->GetGhostReplay(topRecord.Login, fileName);
-        std::cout << "GReplay: " << greplay << std::endl;
-        return;
     }
 
     GbxStructParameters setTimes = GbxStructParameters();

@@ -32,7 +32,6 @@ std::string Methods::GetGhostReplay(std::string login, std::string fileName)
 
     if(server->Query(GbxMessage("SaveBestGhostsReplay", params)))
     {
-        std::cout << "Getting content of '" << fullPath << "'" << std::endl;
         std::ifstream replayFile(fullPath);
         std::string fileContent((std::istreambuf_iterator<char>(replayFile)), (std::istreambuf_iterator<char>()));
         response = base64_encode(reinterpret_cast<const unsigned char*>(fileContent.c_str()), fileContent.length());
