@@ -324,6 +324,24 @@ GameMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <tr class="memitem:a7db232616b47d7afa1d3202bf156e624"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a7db232616b47d7afa1d3202bf156e624">ChooseNextMapList</a> (std::vector&lt; std::string &gt; fileNames)</td></tr>
 <tr class="memdesc:a7db232616b47d7afa1d3202bf156e624"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set as next maps the list of maps with the specified filenames, if they are present in the selection.  <a href="#a7db232616b47d7afa1d3202bf156e624">More...</a><br/></td></tr>
 <tr class="separator:a7db232616b47d7afa1d3202bf156e624"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a982673f597077730b8abd3b7ee49853b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a982673f597077730b8abd3b7ee49853b">GetValidationReplay</a> (std::string login)</td></tr>
+<tr class="memdesc:a982673f597077730b8abd3b7ee49853b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve validation replay by player login.  <a href="#a982673f597077730b8abd3b7ee49853b">More...</a><br/></td></tr>
+<tr class="separator:a982673f597077730b8abd3b7ee49853b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a517117fc33a06aaef7d1147635e93af4"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a517117fc33a06aaef7d1147635e93af4">GetGhostReplay</a> (std::string login, std::string fileName)</td></tr>
+<tr class="memdesc:a517117fc33a06aaef7d1147635e93af4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve ghost replay by player login.  <a href="#a517117fc33a06aaef7d1147635e93af4">More...</a><br/></td></tr>
+<tr class="separator:a517117fc33a06aaef7d1147635e93af4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3222ad3237a4871fca7e18ae9c55793"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae3222ad3237a4871fca7e18ae9c55793"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#ae3222ad3237a4871fca7e18ae9c55793">GameDataDirectory</a> ()</td></tr>
+<tr class="memdesc:ae3222ad3237a4871fca7e18ae9c55793"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the location of the GameData directory. <br/></td></tr>
+<tr class="separator:ae3222ad3237a4871fca7e18ae9c55793"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a261a73ca3361f05b03a69d06e72e19cf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a261a73ca3361f05b03a69d06e72e19cf"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a261a73ca3361f05b03a69d06e72e19cf">GetMapsDirectory</a> ()</td></tr>
+<tr class="memdesc:a261a73ca3361f05b03a69d06e72e19cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the location of the maps directory. <br/></td></tr>
+<tr class="separator:a261a73ca3361f05b03a69d06e72e19cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a839ff140e340c0be9411fce27763e96e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a839ff140e340c0be9411fce27763e96e"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMethods.html#a839ff140e340c0be9411fce27763e96e">GetSkinsDirectory</a> ()</td></tr>
+<tr class="memdesc:a839ff140e340c0be9411fce27763e96e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the location of the skins directory. <br/></td></tr>
+<tr class="separator:a839ff140e340c0be9411fce27763e96e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -862,6 +880,41 @@ std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt;
 
 </div>
 </div>
+<a class="anchor" id="a517117fc33a06aaef7d1147635e93af4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Methods::GetGhostReplay </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>login</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>fileName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieve ghost replay by player login. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">login</td><td><a class="el" href="structPlayer.html" title="Contains all information about a player in easy-to-use format. ">Player</a> login. </td></tr>
+    <tr><td class="paramname">fileName</td><td>File to store the replay in. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a3a64508bc62765212bcf0d032b4f47ac"></a>
 <div class="memitem">
 <div class="memproto">
@@ -954,6 +1007,30 @@ std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt;
 
 <p>Returns system information. </p>
 <p>Returns empty struct if no information could be retrieved. </p>
+
+</div>
+</div>
+<a class="anchor" id="a982673f597077730b8abd3b7ee49853b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Methods::GetValidationReplay </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>login</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieve validation replay by player login. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">login</td><td><a class="el" href="structPlayer.html" title="Contains all information about a player in easy-to-use format. ">Player</a> login. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1703,16 +1780,18 @@ std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt;
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Methods.cpp</li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Server/CallVote.cpp</li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Server/Chat.cpp</li>
+<li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Server/Directories.cpp</li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Server/Game.cpp</li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Server/Global.cpp</li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Server/Info.cpp</li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Server/ManiaLink.cpp</li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Server/Notice.cpp</li>
+<li>/home/travis/build/TheMaximum/mania-pp/src/Methods/Server/Replays.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 23 2017 10:43:42 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jan 23 2017 12:45:28 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

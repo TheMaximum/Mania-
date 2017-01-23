@@ -170,7 +170,20 @@ int \hyperlink{classMethods_a1b5d820d4715a10ab6dbb6bed1b28ec4}{Insert\-Map\-List
 bool \hyperlink{classMethods_a8feb1efefe49126cf39089ff6a2f0cd9}{Choose\-Next\-Map} (std\-::string file\-Name)
 \begin{DoxyCompactList}\small\item\em Set as next map the one with the specified filename, if it is present in the selection. \end{DoxyCompactList}\item 
 int \hyperlink{classMethods_a7db232616b47d7afa1d3202bf156e624}{Choose\-Next\-Map\-List} (std\-::vector$<$ std\-::string $>$ file\-Names)
-\begin{DoxyCompactList}\small\item\em Set as next maps the list of maps with the specified filenames, if they are present in the selection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Set as next maps the list of maps with the specified filenames, if they are present in the selection. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classMethods_a982673f597077730b8abd3b7ee49853b}{Get\-Validation\-Replay} (std\-::string login)
+\begin{DoxyCompactList}\small\item\em Retrieve validation replay by player login. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classMethods_a517117fc33a06aaef7d1147635e93af4}{Get\-Ghost\-Replay} (std\-::string login, std\-::string file\-Name)
+\begin{DoxyCompactList}\small\item\em Retrieve ghost replay by player login. \end{DoxyCompactList}\item 
+\hypertarget{classMethods_ae3222ad3237a4871fca7e18ae9c55793}{std\-::string \hyperlink{classMethods_ae3222ad3237a4871fca7e18ae9c55793}{Game\-Data\-Directory} ()}\label{classMethods_ae3222ad3237a4871fca7e18ae9c55793}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the location of the Game\-Data directory. \end{DoxyCompactList}\item 
+\hypertarget{classMethods_a261a73ca3361f05b03a69d06e72e19cf}{std\-::string \hyperlink{classMethods_a261a73ca3361f05b03a69d06e72e19cf}{Get\-Maps\-Directory} ()}\label{classMethods_a261a73ca3361f05b03a69d06e72e19cf}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the location of the maps directory. \end{DoxyCompactList}\item 
+\hypertarget{classMethods_a839ff140e340c0be9411fce27763e96e}{std\-::string \hyperlink{classMethods_a839ff140e340c0be9411fce27763e96e}{Get\-Skins\-Directory} ()}\label{classMethods_a839ff140e340c0be9411fce27763e96e}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the location of the skins directory. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -495,7 +508,26 @@ Enables/disables callbacks. Returns whether change was successful.
 
 Provides a map object for the map currently being played on the server. 
 
-This is mainly meant for the start-\/up of the controller. The current map can always be request via the Current property of \hyperlink{classMapList}{Map\-List}. \hypertarget{classMethods_a3a64508bc62765212bcf0d032b4f47ac}{\index{Methods@{Methods}!Get\-Map\-Info@{Get\-Map\-Info}}
+This is mainly meant for the start-\/up of the controller. The current map can always be request via the Current property of \hyperlink{classMapList}{Map\-List}. \hypertarget{classMethods_a517117fc33a06aaef7d1147635e93af4}{\index{Methods@{Methods}!Get\-Ghost\-Replay@{Get\-Ghost\-Replay}}
+\index{Get\-Ghost\-Replay@{Get\-Ghost\-Replay}!Methods@{Methods}}
+\subsubsection[{Get\-Ghost\-Replay}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Methods\-::\-Get\-Ghost\-Replay (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{login, }
+\item[{std\-::string}]{file\-Name}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a517117fc33a06aaef7d1147635e93af4}
+
+
+Retrieve ghost replay by player login. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em login} & \hyperlink{structPlayer}{Player} login. \\
+\hline
+{\em file\-Name} & File to store the replay in. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_a3a64508bc62765212bcf0d032b4f47ac}{\index{Methods@{Methods}!Get\-Map\-Info@{Get\-Map\-Info}}
 \index{Get\-Map\-Info@{Get\-Map\-Info}!Methods@{Methods}}
 \subsubsection[{Get\-Map\-Info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Map} Methods\-::\-Get\-Map\-Info (
 \begin{DoxyParamCaption}
@@ -552,7 +584,23 @@ Returns empty struct if no information could be retrieved. \hypertarget{classMet
 
 Returns system information. 
 
-Returns empty struct if no information could be retrieved. \hypertarget{classMethods_a674b7c1f53296dca78fb14896b374e1e}{\index{Methods@{Methods}!Get\-Version@{Get\-Version}}
+Returns empty struct if no information could be retrieved. \hypertarget{classMethods_a982673f597077730b8abd3b7ee49853b}{\index{Methods@{Methods}!Get\-Validation\-Replay@{Get\-Validation\-Replay}}
+\index{Get\-Validation\-Replay@{Get\-Validation\-Replay}!Methods@{Methods}}
+\subsubsection[{Get\-Validation\-Replay}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Methods\-::\-Get\-Validation\-Replay (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{login}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a982673f597077730b8abd3b7ee49853b}
+
+
+Retrieve validation replay by player login. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em login} & \hyperlink{structPlayer}{Player} login. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_a674b7c1f53296dca78fb14896b374e1e}{\index{Methods@{Methods}!Get\-Version@{Get\-Version}}
 \index{Get\-Version@{Get\-Version}!Methods@{Methods}}
 \subsubsection[{Get\-Version}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Server\-Version} Methods\-::\-Get\-Version (
 \begin{DoxyParamCaption}
@@ -1012,8 +1060,10 @@ The documentation for this class was generated from the following files\-:\begin
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/Methods.\-cpp\item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Call\-Vote.\-cpp\item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Chat.\-cpp\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Directories.\-cpp\item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Game.\-cpp\item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Global.\-cpp\item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Info.\-cpp\item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Mania\-Link.\-cpp\item 
-/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Notice.\-cpp\end{DoxyCompactItemize}
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Notice.\-cpp\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Replays.\-cpp\end{DoxyCompactItemize}

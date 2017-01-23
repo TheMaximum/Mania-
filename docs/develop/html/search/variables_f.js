@@ -5,7 +5,7 @@ var searchData=
   ['serverinfo',['serverInfo',['../classCallBackManager.html#aed9d56d611bfcbc282f6c99f5b8408a2',1,'CallBackManager::serverInfo()'],['../classManiaPP.html#a981bea6157d689c0f371d6f01d18528b',1,'ManiaPP::serverInfo()'],['../classMethods.html#a8975019b5c58c62698ae2be1b777b5c9',1,'Methods::serverInfo()']]],
   ['serverlogin',['ServerLogin',['../structSystemInfo.html#a7ddac6d99bc8a43171cf1feb8d4b4758',1,'SystemInfo']]],
   ['serverplayerid',['ServerPlayerId',['../structSystemInfo.html#aeb8cb49c244fed751e0dc6e83128aafe',1,'SystemInfo']]],
-  ['settings',['settings',['../structPluginConfig.html#a16711457d0b98557f4a55f7514ae2706',1,'PluginConfig::settings()'],['../classPlugin.html#a3ebbb5535520c01fb815ba2f1a7a14e3',1,'Plugin::Settings()']]],
+  ['settings',['Settings',['../classPlugin.html#a3ebbb5535520c01fb815ba2f1a7a14e3',1,'Plugin::Settings()'],['../structPluginConfig.html#a16711457d0b98557f4a55f7514ae2706',1,'PluginConfig::settings()']]],
   ['silvertime',['SilverTime',['../structMap.html#ad3121edccf9be02843ca91622a88a1a5',1,'Map']]],
   ['size',['size',['../structGbxFirstResponse.html#ad93a9c67024b28ecddb779457dd001f8',1,'GbxFirstResponse::size()'],['../structGbxQueryResponse.html#a0633cc01128e5eee2edba3ee503db1c4',1,'GbxQueryResponse::size()']]],
   ['sock',['sock',['../classTcpClient.html#af93f7c8c4d91d93379ba99fd3742c3dc',1,'TcpClient']]],

@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['gamedatadirectory',['GameDataDirectory',['../classMethods.html#ae3222ad3237a4871fca7e18ae9c55793',1,'Methods']]],
   ['gbxmessage',['GbxMessage',['../classGbxMessage.html#a843b7642b48be23073a4b981f80f95b7',1,'GbxMessage']]],
   ['gbxparameter',['GbxParameter',['../classGbxParameter.html#a3a341208c5af115d80553213b156dbdd',1,'GbxParameter']]],
   ['gbxserverresponse',['GbxServerResponse',['../classGbxServerResponse.html#a2198b6f6ca6b7da1ffd7bfa9a516d8b2',1,'GbxServerResponse']]],
@@ -18,10 +19,12 @@ var searchData=
   ['getdediname',['GetDediName',['../classGameModeConverter.html#ab32af3449e8b99bdf663cec986ac12f0',1,'GameModeConverter']]],
   ['getfault',['GetFault',['../classGbxResponse.html#a42568c9c684b4c15f45b4f01056f24ad',1,'GbxResponse']]],
   ['getgamemode',['GetGameMode',['../classMethods.html#a406444bf2ce093f29d96cca5230d1d7a',1,'Methods']]],
+  ['getghostreplay',['GetGhostReplay',['../classMethods.html#a517117fc33a06aaef7d1147635e93af4',1,'Methods']]],
   ['gethideserver',['GetHideServer',['../classMethods.html#ac6c3f048240ebca8bbb835e4caab8b19',1,'Methods']]],
   ['getmanialinkpageanswers',['GetManialinkPageAnswers',['../classMethods.html#a43c84e59da7eb37e53bbd8f43299c454',1,'Methods']]],
   ['getmapinfo',['GetMapInfo',['../classMethods.html#a3a64508bc62765212bcf0d032b4f47ac',1,'Methods']]],
   ['getmaplist',['GetMapList',['../classMethods.html#ad30f67839b950d23c566535f43afefb4',1,'Methods']]],
+  ['getmapsdirectory',['GetMapsDirectory',['../classMethods.html#a261a73ca3361f05b03a69d06e72e19cf',1,'Methods']]],
   ['getmaxplayers',['GetMaxPlayers',['../classMethods.html#ab9406a1962b9c0c64046ee672010fd91',1,'Methods']]],
   ['getmaxspectators',['GetMaxSpectators',['../classMethods.html#acd5073d1575cc885e2de00faabaca50e',1,'Methods']]],
   ['getmethod',['GetMethod',['../classGbxMessage.html#a53e00a162c293251bef476ad74d0134c',1,'GbxMessage']]],
@@ -36,11 +39,13 @@ var searchData=
   ['getservername',['GetServerName',['../classMethods.html#afda7117a45597a809eb7326ef7b7887c',1,'Methods']]],
   ['getserverpassword',['GetServerPassword',['../classMethods.html#a06a98b05cec73671368be700d39cef4f',1,'Methods']]],
   ['getserverpasswordforspectator',['GetServerPasswordForSpectator',['../classMethods.html#a2b23248dc7bf7ddbc451f826d44451b8',1,'Methods']]],
+  ['getskinsdirectory',['GetSkinsDirectory',['../classMethods.html#a839ff140e340c0be9411fce27763e96e',1,'Methods']]],
   ['getstatus',['GetStatus',['../classMethods.html#af39e05685756a82b5991a2fc25d5e941',1,'Methods']]],
   ['getstring',['GetString',['../classGbxResponseParameter.html#a014af0f74e937d9002cda3e6e791735b',1,'GbxResponseParameter']]],
   ['getstruct',['GetStruct',['../classGbxResponseParameter.html#ab6af5e0662d7d832b7606e9e0f461f22',1,'GbxResponseParameter']]],
   ['getsysteminfo',['GetSystemInfo',['../classMethods.html#a0030583fdad06ab0f2f589b79c904f09',1,'Methods']]],
   ['gettype',['GetType',['../structParameter.html#acbaa165bda6b087c2e99fdb8925a7d89',1,'Parameter']]],
+  ['getvalidationreplay',['GetValidationReplay',['../classMethods.html#a982673f597077730b8abd3b7ee49853b',1,'Methods']]],
   ['getversion',['GetVersion',['../classMethods.html#a674b7c1f53296dca78fb14896b374e1e',1,'Methods']]],
   ['getxml',['GetXml',['../classGbxMessage.html#ac81e16efce7da483a696d6653e18c9d8',1,'GbxMessage::GetXml()'],['../classGbxParameter.html#a3c6800bca78c5bb4ed7de62cf552ee35',1,'GbxParameter::GetXml()']]]
 ];
