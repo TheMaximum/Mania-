@@ -110,7 +110,7 @@ bool KarmaWidget::DisplayToPlayer(Player player, MapKarma* karma, int personalSc
     widget << "        <label posn=\"7.5 -6.35 1.75\" halign=\"center\" sizen=\"5 1\" text=\"" << colour << "$o$s" << prefix << karma->Karma << "\"/>";
 
     double barX = 1.5;
-    if(karma->Percentage == 0)
+    if((karma->PlusVotes + karma->MinVotes) == 0)
     {
         for(int i = 0; i < 10; i++)
         {

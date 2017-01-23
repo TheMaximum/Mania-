@@ -308,7 +308,7 @@ boost::any KarmaPlugin::GetKarmaByMapId(boost::any parameters)
         }
         catch(sql::SQLException &e)
         {
-            
+
         }
 
         if(pstmt != NULL)

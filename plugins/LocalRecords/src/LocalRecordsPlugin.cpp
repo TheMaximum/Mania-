@@ -331,12 +331,11 @@ void LocalRecordsPlugin::retrieveRecords(Map map)
 
         while(result->next())
         {
-            delete pstmt; pstmt = NULL;
             LocalRecord localRecord = LocalRecord(result);
 
-            pstmt = controller->Database->prepareStatement("SELECT * FROM `players` WHERE `Id` = ?");
-            pstmt->setInt(1, result->getInt("PlayerId"));
-            sql::ResultSet* playerResult = pstmt->executeQuery();
+            sql::PreparedStatement* playerPstmt = controller->Database->prepareStatement("SELECT * FROM `players` WHERE `Id` = ?");
+            playerPstmt->setInt(1, result->getInt("PlayerId"));
+            sql::ResultSet* playerResult = playerPstmt->executeQuery();
             playerResult->next();
 
             try
@@ -358,7 +357,11 @@ void LocalRecordsPlugin::retrieveRecords(Map map)
                 delete playerResult;
                 playerResult = NULL;
             }
+
+            delete playerPstmt; playerPstmt = NULL;
         }
+
+        delete pstmt; pstmt = NULL;
     }
     catch(sql::SQLException &e)
     {

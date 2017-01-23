@@ -29,9 +29,12 @@ public:
             }
         }
 
-        Percentage = std::round(((double)PlusVotes / (double)(PlusVotes + MinVotes)) * 1000) / 10;
-        MinPercentage = std::round((100 - Percentage) * 10) / 10;
-        Karma = (PlusVotes - MinVotes);
+        if((PlusVotes + MinVotes) > 0)
+        {
+            Percentage = std::round(((double)PlusVotes / (double)(PlusVotes + MinVotes)) * 1000) / 10;
+            MinPercentage = std::round((100 - Percentage) * 10) / 10;
+            Karma = (PlusVotes - MinVotes);
+        }
     }
 };
 
