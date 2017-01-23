@@ -479,6 +479,36 @@ public:
      */
     int ChooseNextMapList(std::vector<std::string> fileNames);
 
+    /*!
+     * \brief Retrieve validation replay by player login.
+     *
+     * \param login     Player login.
+     */
+    std::string GetValidationReplay(std::string login);
+
+    /*!
+     * \brief Retrieve ghost replay by player login.
+     *
+     * \param login     Player login.
+     * \param fileName  File to store the replay in.
+     */
+    std::string GetGhostReplay(std::string login, std::string fileName);
+
+    /*!
+     * \brief Retrieve the location of the GameData directory.
+     */
+    std::string GameDataDirectory();
+
+    /*!
+     * \brief Retrieve the location of the maps directory.
+     */
+    std::string GetMapsDirectory();
+
+    /*!
+     * \brief Retrieve the location of the skins directory.
+     */
+    std::string GetSkinsDirectory();
+
     /*bool SendOpenLinkToLogin(std::string login, std::string link, int linkType);
 
     bool Kick(std::string login, std::string message = "");

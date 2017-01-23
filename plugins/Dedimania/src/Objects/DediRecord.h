@@ -36,6 +36,18 @@ public:
             Checkpoints.push_back(atoi(checkpoint.c_str()));
         }
     }
+
+    std::string GetCheckpoints()
+    {
+        std::stringstream checkPoints;
+        for(int cpId = 0; cpId < Checkpoints.size(); cpId++)
+        {
+            if(cpId > 0) checkPoints << ",";
+            checkPoints << Checkpoints.at(cpId);
+        }
+
+        return checkPoints.str();
+    }
 };
 
 #endif // DEDIRECORD_H_

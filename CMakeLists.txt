@@ -8,6 +8,7 @@ set (EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR})
 link_directories(${PROJECT_SOURCE_DIR}/lib/yaml/build)
 include_directories("${PROJECT_SOURCE_DIR}/lib/yaml/include")
 include_directories("${PROJECT_SOURCE_DIR}/lib/json")
+include_directories("${PROJECT_SOURCE_DIR}/lib/base64")
 
 set (PROJECT_SOURCE_DIR ${PROJECT_SOURCE_DIR}/src)
 
@@ -30,7 +31,8 @@ find_package(Boost REQUIRED COMPONENTS iostreams)
 include_directories(${Boost_INCLUDE_DIR})
 
 add_executable(Mania++ ${SOURCES}
-                       lib/pugixml/libpugixml.a)
+                       lib/pugixml/libpugixml.a
+                       lib/base64/base64.cpp)
 target_link_libraries(Mania++ yaml-cpp
                               ${EXECUTABLE_OUTPUT_PATH}/lib/pugixml/libpugixml.a
                               dl

@@ -221,9 +221,9 @@ void DedimaniaPlugin::UpdateServer()
             players.Put(&playerVector.at(playerId));
         }
 
-        GbxStructParameters getRecs = GbxStructParameters();
+        GbxStructParameters update = GbxStructParameters();
         std::string methodName = "dedimania.UpdateServerPlayers";
-        getRecs.Put("methodName", Parameter(&methodName));
+        update.Put("methodName", Parameter(&methodName));
         GbxParameters parameters = GbxParameters();
         parameters.Put(&sessionId);
         GbxStructParameters serverInfo = GbxStructParameters();
@@ -241,8 +241,8 @@ void DedimaniaPlugin::UpdateServer()
             votesInfo.Put("GameMode", Parameter(&gameMode));
         parameters.Put(&votesInfo);
         parameters.Put(&players);
-        getRecs.Put("params", Parameter(&parameters));
-        currentCalls.push_back(getRecs);
+        update.Put("params", Parameter(&parameters));
+        currentCalls.push_back(update);
 
         GbxResponse queryResponse = multicall();
         if(!hasError)
@@ -347,6 +347,15 @@ void DedimaniaPlugin::OnPlayerFinish(Player player, int time)
             records.insert((records.begin() + newIndex), newDedi);
         }
 
+        for(int newId = 0; newId < newRecords.size(); newId++)
+        {
+            DediRecord tempNew = newRecords.at(newId);
+            if(tempNew.Login == player.Login)
+            {
+                newRecords.erase((newRecords.begin() + newId));
+            }
+        }
+
         newRecords.push_back(newDedi);
 
         std::stringstream chatMessage;
@@ -381,10 +390,79 @@ void DedimaniaPlugin::OnEndMatch(std::vector<PlayerRanking> rankings)
     if(!mapValid)
         return;
 
-    // Add all times from newRecords
-    // Retrieve VReplay from server (and save)
-    // Retrieve GReplay if new record is new first dedi
-    // Submit request to Dedimania
+    if(newRecords.size() == 0)
+        return;
+
+    std::sort(newRecords.begin(), newRecords.end(), [=](const DediRecord& a, const DediRecord& b) { return a.Time < b.Time; });
+
+    GbxParameters times = GbxParameters();
+    std::vector<GbxStructParameters> timesVector = std::vector<GbxStructParameters>();
+    for(int newDediId = 0; newDediId < newRecords.size(); newDediId++)
+    {
+        DediRecord newDedi = newRecords.at(newDediId);
+
+        GbxStructParameters dediStruct = GbxStructParameters();
+        dediStruct.Put("Login", "<string>" + newDedi.Login + "</string>");
+        dediStruct.Put("Best", "<int>" + std::to_string(newDedi.Time) + "</int>");
+        std::string checks = newDedi.GetCheckpoints();
+        dediStruct.Put("Checks", "<string>" + checks + "</string>");
+        timesVector.push_back(dediStruct);
+    }
+
+    for(int timeId = 0; timeId < timesVector.size(); timeId++)
+    {
+        times.Put(&timesVector.at(timeId));
+    }
+
+    std::string gameMode = GameModeConverter::GetDediName(controller->Info->Mode);
+
+    DediRecord topRecord = newRecords.at(0);
+    std::string vreplay = controller->Server->GetValidationReplay(topRecord.Login);
+    std::string vreplayChecks = topRecord.GetCheckpoints();
+    std::string greplay = "";
+    if(topRecord.Rank == 1)
+    {
+        std::string fileName = controller->Maps->Current->UId + "." + gameMode + "." + std::to_string(topRecord.Time) + "." + topRecord.Login + ".Replay.Gbx";
+        greplay = controller->Server->GetGhostReplay(topRecord.Login, fileName);
+        std::cout << "GReplay: " << greplay << std::endl;
+        return;
+    }
+
+    GbxStructParameters setTimes = GbxStructParameters();
+    std::string methodName = "dedimania.SetChallengeTimes";
+    setTimes.Put("methodName", Parameter(&methodName));
+    GbxParameters parameters = GbxParameters();
+    parameters.Put(&sessionId);
+        GbxStructParameters mapInfo = GbxStructParameters();
+        mapInfo.Put("UId", Parameter(&controller->Maps->Current->UId));
+        std::string mapName = Text::EscapeXML(controller->Maps->Current->Name);
+        mapInfo.Put("Name", Parameter(&mapName));
+        mapInfo.Put("Environment", Parameter(&controller->Maps->Current->Environment));
+        mapInfo.Put("Author", Parameter(&controller->Maps->Current->Author));
+        mapInfo.Put("NbCheckpoints", Parameter(&controller->Maps->Current->NbCheckpoints));
+        mapInfo.Put("NbLaps", Parameter(&controller->Maps->Current->NbLaps));
+    parameters.Put(&mapInfo);
+    parameters.Put(&gameMode);
+    parameters.Put(&times);
+    GbxStructParameters replays = GbxStructParameters();
+        replays.Put("VReplay", "<base64>" + vreplay + "</base64>");
+        replays.Put("VReplayChecks", Parameter(&vreplayChecks));
+        replays.Put("Top1GReplay", "<base64>" + greplay + "</base64>");
+    parameters.Put(&replays);
+    setTimes.Put("params", Parameter(&parameters));
+    currentCalls.push_back(setTimes);
+
+    GbxResponse queryResponse = multicall();
+    if(!hasError)
+    {
+        std::cout << "[    \033[0;32mOK\033[0;0m    ] Successfully submitted times to Dedimania." << std::endl << std::flush;
+    }
+    else
+    {
+        std::cout << "[  \033[0;31mFAILED\033[0;0m  ] Unable to submit times to Dedimania." << std::endl << std::flush;
+    }
+
+    newRecords = std::vector<DediRecord>();
 }
 
 void DedimaniaPlugin::OpenDediRecords(Player player)
