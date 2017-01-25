@@ -1,5 +1,5 @@
 # Install Git, Boost and MySQL
-sudo apt-get -y install git libboost-dev libboost-iostreams-dev libmysqlcppconn-dev libcurl4-openssl-dev
+sudo apt-get -y install git libboost-dev libboost-iostreams-dev libboost-regex-dev libmysqlcppconn-dev libcurl4-openssl-dev
 
 # Go to libraries directory
 cd ./lib/

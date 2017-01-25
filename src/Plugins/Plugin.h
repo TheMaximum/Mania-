@@ -86,10 +86,9 @@ public:
     std::vector<std::function<void(Player)>> PlayerInfoChanged;                 /**< \brief Vector with functions for the PlayerInfoChanged event. */
     std::vector<std::function<void(std::string, std::string, std::string, std::string)>> VoteUpdated; /**< \brief Vector with functions for the VoteUpdated event. */
 
-    std::map<std::string, ChatCommand> Commands = std::map<std::string, ChatCommand>(); /**< \brief Map with normal chat commands for the plugin. */
-    std::map<std::string, ChatCommand> AdminCommands = std::map<std::string, ChatCommand>(); /**< \brief Map with admin chat commands for the plugin. */
-    std::map<std::string, std::function<boost::any(boost::any)>> Methods =
-        std::map<std::string, std::function<boost::any(boost::any)>>();                 /**< \brief Map with callable methods for the plugin. */
+    std::map<std::string, ChatCommand> Commands;                                /**< \brief Map with normal chat commands for the plugin. */
+    std::map<std::string, ChatCommand> AdminCommands;                           /**< \brief Map with admin chat commands for the plugin. */
+    std::map<std::string, std::function<boost::any(boost::any)>> Methods;       /**< \brief Map with callable methods for the plugin. */
 
     std::string Version;     /**< \brief Plugin version. */
     std::string Author;      /**< \brief Plugin author. */
