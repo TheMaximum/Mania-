@@ -1,7 +1,8 @@
 #include "CommandManager.h"
 
-CommandManager::CommandManager()
+CommandManager::CommandManager(UIManager* uiManager)
 {
+    ui = uiManager;
     commands = std::map<std::string, ChatCommand>();
     adminCommands = std::map<std::string, ChatCommand>();
 }
@@ -23,6 +24,32 @@ int CommandManager::RegisterCommands(std::string plugin, std::map<std::string, C
         }
     }
     return functionsAdded;
+}
+
+void CommandManager::RegisterCommand(ChatCommand command)
+{
+    if(command.AdminCommand)
+    {
+        if(adminCommands.find(command.Command) == adminCommands.end())
+        {
+            adminCommands.insert(std::pair<std::string, ChatCommand>(command.Command, command));
+        }
+        else
+        {
+            std::cout << "[   WARN   ] Tried to register admin-command '" << command.Command << "', which is already registered!" << std::endl;
+        }
+    }
+    else
+    {
+        if(commands.find(command.Command) == commands.end())
+        {
+            commands.insert(std::pair<std::string, ChatCommand>(command.Command, command));
+        }
+        else
+        {
+            std::cout << "[   WARN   ] Tried to register command '" << command.Command << "', which is already registered!" << std::endl;
+        }
+    }
 }
 
 int CommandManager::RegisterAdminCommands(std::string plugin, std::map<std::string, ChatCommand> methods)

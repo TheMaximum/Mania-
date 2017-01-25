@@ -17,13 +17,14 @@ ManiaPP::ManiaPP()
     players = new std::map<std::string, Player>();
     maps = new MapList();
     events = new EventManager();
-    commands = new CommandManager();
 
     serverInfo = new ServerInfo();
     serverInfo->ControllerVersion = VERSION;
 
     methods = new Methods(server, players, serverInfo);
     ui = new UIManager(methods, events, players);
+
+    commands = new CommandManager(ui);
 }
 
 ManiaPP::~ManiaPP()
