@@ -24,6 +24,16 @@ PluginManager::PluginManager(Config* configPtr,
     controller->UI = uiPtr;
     controller->Plugins = pluginHandler;
     controller->Info = serverInfoPtr;
+
+    ChatCommand pluginCmd = ChatCommand();
+    pluginCmd.PluginName = "System";
+    pluginCmd.PluginVersion = -1;
+    pluginCmd.PluginAuthor = "TheM";
+    pluginCmd.Command = "plugins";
+    pluginCmd.Description = "Displays a list of loaded plugins.";
+    pluginCmd.AdminCommand = true;
+    pluginCmd.Method = [this](Player player, std::vector<std::string> parameters) { DisplayPluginList(player); };
+    commands->RegisterCommand(pluginCmd);
 }
 
 PluginManager::~PluginManager()
