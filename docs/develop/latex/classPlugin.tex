@@ -102,29 +102,33 @@ std\-::string, std\-::string, \\*
 std\-::string)$>$ $>$ \hyperlink{classPlugin_a869a88fc900c8a54c2607774cfa44dbc}{Vote\-Updated}}\label{classPlugin_a869a88fc900c8a54c2607774cfa44dbc}
 
 \begin{DoxyCompactList}\small\item\em Vector with functions for the Vote\-Updated event. \end{DoxyCompactList}\item 
-std\-::map$<$ std\-::string, \\*
-std\-::function$<$ void(\hyperlink{structPlayer}{Player}, \\*
-std\-::vector$<$ std\-::string $>$)$>$ $>$ \hyperlink{classPlugin_a588dcd49b4fe45b3a401b749795b95fe}{Commands}
+\hypertarget{classPlugin_aee4f6d78f9eebd617a344ab341bf3459}{std\-::map$<$ std\-::string, \\*
+\hyperlink{structChatCommand}{Chat\-Command} $>$ \hyperlink{classPlugin_aee4f6d78f9eebd617a344ab341bf3459}{Commands}}\label{classPlugin_aee4f6d78f9eebd617a344ab341bf3459}
+
 \begin{DoxyCompactList}\small\item\em \hyperlink{structMap}{Map} with normal chat commands for the plugin. \end{DoxyCompactList}\item 
-std\-::map$<$ std\-::string, \\*
-std\-::function$<$ void(\hyperlink{structPlayer}{Player}, \\*
-std\-::vector$<$ std\-::string $>$)$>$ $>$ \hyperlink{classPlugin_a7a1ba3ed5e3c0c23eb1ea2e33cc61c1a}{Admin\-Commands}
+\hypertarget{classPlugin_a95464d6918bc71c096dff5504f4b6051}{std\-::map$<$ std\-::string, \\*
+\hyperlink{structChatCommand}{Chat\-Command} $>$ \hyperlink{classPlugin_a95464d6918bc71c096dff5504f4b6051}{Admin\-Commands}}\label{classPlugin_a95464d6918bc71c096dff5504f4b6051}
+
 \begin{DoxyCompactList}\small\item\em \hyperlink{structMap}{Map} with admin chat commands for the plugin. \end{DoxyCompactList}\item 
-std\-::map$<$ std\-::string, \\*
-std\-::function$<$ boost\-::any(boost\-::any)$>$ $>$ \hyperlink{classPlugin_a4a8030e2fa113265d123aa6178c64318}{Methods}
+\hypertarget{classPlugin_a4a8030e2fa113265d123aa6178c64318}{std\-::map$<$ std\-::string, \\*
+std\-::function$<$ boost\-::any(boost\-::any)$>$ $>$ \hyperlink{classPlugin_a4a8030e2fa113265d123aa6178c64318}{Methods}}\label{classPlugin_a4a8030e2fa113265d123aa6178c64318}
+
 \begin{DoxyCompactList}\small\item\em \hyperlink{structMap}{Map} with callable methods for the plugin. \end{DoxyCompactList}\item 
 \hypertarget{classPlugin_a8e332303a494988d2444589ac21c3414}{std\-::string \hyperlink{classPlugin_a8e332303a494988d2444589ac21c3414}{Version}}\label{classPlugin_a8e332303a494988d2444589ac21c3414}
 
 \begin{DoxyCompactList}\small\item\em \hyperlink{classPlugin}{Plugin} version. \end{DoxyCompactList}\item 
 \hypertarget{classPlugin_a2b51c785a131a581164f2c82e83cb660}{std\-::string \hyperlink{classPlugin_a2b51c785a131a581164f2c82e83cb660}{Author}}\label{classPlugin_a2b51c785a131a581164f2c82e83cb660}
 
-\begin{DoxyCompactList}\small\item\em \hyperlink{classPlugin}{Plugin} author. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classPlugin}{Plugin} author. \end{DoxyCompactList}\item 
+\hypertarget{classPlugin_a6193c45b6440160ae79db041f71647c2}{std\-::string \hyperlink{classPlugin_a6193c45b6440160ae79db041f71647c2}{Description}}\label{classPlugin_a6193c45b6440160ae79db041f71647c2}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classPlugin}{Plugin} description. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classPlugin_a1f1b16c36188ef19f2f8d3a2fdc42578}{Register\-Command} (std\-::string name, std\-::function$<$ void(\hyperlink{structPlayer}{Player}, std\-::vector$<$ std\-::string $>$)$>$ method)
+void \hyperlink{classPlugin_a9e5eea29a253fc24459011c55cb0a8ff}{Register\-Command} (std\-::string name, std\-::string description, std\-::function$<$ void(\hyperlink{structPlayer}{Player}, std\-::vector$<$ std\-::string $>$)$>$ method)
 \begin{DoxyCompactList}\small\item\em Register chat command. \end{DoxyCompactList}\item 
-void \hyperlink{classPlugin_a99eca8fe24acb076090e76a502f4c1ed}{Register\-Admin\-Command} (std\-::string name, std\-::function$<$ void(\hyperlink{structPlayer}{Player}, std\-::vector$<$ std\-::string $>$)$>$ method)
+void \hyperlink{classPlugin_ac475431998fe527b1c9671acbb6dbe1d}{Register\-Admin\-Command} (std\-::string name, std\-::string description, std\-::function$<$ void(\hyperlink{structPlayer}{Player}, std\-::vector$<$ std\-::string $>$)$>$ method)
 \begin{DoxyCompactList}\small\item\em Register admin chat command. \end{DoxyCompactList}\item 
 void \hyperlink{classPlugin_a3c053c7efbed950494f16fc91228e7fd}{Register\-Callable\-Method} (std\-::string name, std\-::function$<$ boost\-::any(boost\-::any)$>$ method)
 \begin{DoxyCompactList}\small\item\em Register callable method. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -140,14 +144,15 @@ void \hyperlink{classPlugin_a3c053c7efbed950494f16fc91228e7fd}{Register\-Callabl
 \hyperlink{classPlugin}{Plugin} interface, inherited by all plugins. 
 
 \subsection{Member Function Documentation}
-\hypertarget{classPlugin_a99eca8fe24acb076090e76a502f4c1ed}{\index{Plugin@{Plugin}!Register\-Admin\-Command@{Register\-Admin\-Command}}
+\hypertarget{classPlugin_ac475431998fe527b1c9671acbb6dbe1d}{\index{Plugin@{Plugin}!Register\-Admin\-Command@{Register\-Admin\-Command}}
 \index{Register\-Admin\-Command@{Register\-Admin\-Command}!Plugin@{Plugin}}
 \subsubsection[{Register\-Admin\-Command}]{\setlength{\rightskip}{0pt plus 5cm}void Plugin\-::\-Register\-Admin\-Command (
 \begin{DoxyParamCaption}
 \item[{std\-::string}]{name, }
+\item[{std\-::string}]{description, }
 \item[{std\-::function$<$ void({\bf Player}, std\-::vector$<$ std\-::string $>$)$>$}]{method}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classPlugin_a99eca8fe24acb076090e76a502f4c1ed}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classPlugin_ac475431998fe527b1c9671acbb6dbe1d}
 
 
 Register admin chat command. 
@@ -155,6 +160,8 @@ Register admin chat command.
 
 \begin{DoxyParams}{Parameters}
 {\em name} & Admin chat command name. \\
+\hline
+{\em description} & Command description. \\
 \hline
 {\em method} & Method to be called for the command. \\
 \hline
@@ -178,14 +185,15 @@ Register callable method.
 {\em method} & Callable method. \\
 \hline
 \end{DoxyParams}
-\hypertarget{classPlugin_a1f1b16c36188ef19f2f8d3a2fdc42578}{\index{Plugin@{Plugin}!Register\-Command@{Register\-Command}}
+\hypertarget{classPlugin_a9e5eea29a253fc24459011c55cb0a8ff}{\index{Plugin@{Plugin}!Register\-Command@{Register\-Command}}
 \index{Register\-Command@{Register\-Command}!Plugin@{Plugin}}
 \subsubsection[{Register\-Command}]{\setlength{\rightskip}{0pt plus 5cm}void Plugin\-::\-Register\-Command (
 \begin{DoxyParamCaption}
 \item[{std\-::string}]{name, }
+\item[{std\-::string}]{description, }
 \item[{std\-::function$<$ void({\bf Player}, std\-::vector$<$ std\-::string $>$)$>$}]{method}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classPlugin_a1f1b16c36188ef19f2f8d3a2fdc42578}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classPlugin_a9e5eea29a253fc24459011c55cb0a8ff}
 
 
 Register chat command. 
@@ -193,6 +201,8 @@ Register chat command.
 
 \begin{DoxyParams}{Parameters}
 {\em name} & Chat command name. \\
+\hline
+{\em description} & Command description. \\
 \hline
 {\em method} & Method to be called for the command. \\
 \hline
@@ -213,45 +223,6 @@ Sets the controller instance.
 {\em controller\-Ptr} & Pointer to the controller instance. \\
 \hline
 \end{DoxyParams}
-
-
-\subsection{Member Data Documentation}
-\hypertarget{classPlugin_a7a1ba3ed5e3c0c23eb1ea2e33cc61c1a}{\index{Plugin@{Plugin}!Admin\-Commands@{Admin\-Commands}}
-\index{Admin\-Commands@{Admin\-Commands}!Plugin@{Plugin}}
-\subsubsection[{Admin\-Commands}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$std\-::string, std\-::function$<$void({\bf Player}, std\-::vector$<$std\-::string$>$)$>$ $>$ Plugin\-::\-Admin\-Commands}}\label{classPlugin_a7a1ba3ed5e3c0c23eb1ea2e33cc61c1a}
-{\bfseries Initial value\-:}
-\begin{DoxyCode}
-=
-        std::map<std::string, std::function<void(Player, std::vector<std::string>)>>()
-\end{DoxyCode}
-
-
-\hyperlink{structMap}{Map} with admin chat commands for the plugin. 
-
-\hypertarget{classPlugin_a588dcd49b4fe45b3a401b749795b95fe}{\index{Plugin@{Plugin}!Commands@{Commands}}
-\index{Commands@{Commands}!Plugin@{Plugin}}
-\subsubsection[{Commands}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$std\-::string, std\-::function$<$void({\bf Player}, std\-::vector$<$std\-::string$>$)$>$ $>$ Plugin\-::\-Commands}}\label{classPlugin_a588dcd49b4fe45b3a401b749795b95fe}
-{\bfseries Initial value\-:}
-\begin{DoxyCode}
-=
-        std::map<std::string, std::function<void(Player, std::vector<std::string>)>>()
-\end{DoxyCode}
-
-
-\hyperlink{structMap}{Map} with normal chat commands for the plugin. 
-
-\hypertarget{classPlugin_a4a8030e2fa113265d123aa6178c64318}{\index{Plugin@{Plugin}!Methods@{Methods}}
-\index{Methods@{Methods}!Plugin@{Plugin}}
-\subsubsection[{Methods}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$std\-::string, std\-::function$<$boost\-::any(boost\-::any)$>$ $>$ Plugin\-::\-Methods}}\label{classPlugin_a4a8030e2fa113265d123aa6178c64318}
-{\bfseries Initial value\-:}
-\begin{DoxyCode}
-=
-        std::map<std::string, std::function<boost::any(boost::any)>>()
-\end{DoxyCode}
-
-
-\hyperlink{structMap}{Map} with callable methods for the plugin. 
-
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}

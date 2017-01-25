@@ -98,38 +98,105 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8a13226bf933396a3f35dfb5bee3e813"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8a13226bf933396a3f35dfb5bee3e813"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandManager.html#a8a13226bf933396a3f35dfb5bee3e813">CommandManager</a> ()</td></tr>
-<tr class="memdesc:a8a13226bf933396a3f35dfb5bee3e813"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the command-maps. <br/></td></tr>
-<tr class="separator:a8a13226bf933396a3f35dfb5bee3e813"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a777c8b1861f5439013c9b8583cf2c0dc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandManager.html#a777c8b1861f5439013c9b8583cf2c0dc">RegisterCommands</a> (std::map&lt; std::string, std::function&lt; void(<a class="el" href="structPlayer.html">Player</a>, std::vector&lt; std::string &gt;)&gt;&gt; methods)</td></tr>
-<tr class="memdesc:a777c8b1861f5439013c9b8583cf2c0dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers the chat commands (from the plugins).  <a href="#a777c8b1861f5439013c9b8583cf2c0dc">More...</a><br/></td></tr>
-<tr class="separator:a777c8b1861f5439013c9b8583cf2c0dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af21873775c4c38a9257e27b28c0f0054"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandManager.html#af21873775c4c38a9257e27b28c0f0054">RegisterAdminCommands</a> (std::map&lt; std::string, std::function&lt; void(<a class="el" href="structPlayer.html">Player</a>, std::vector&lt; std::string &gt;)&gt;&gt; methods)</td></tr>
-<tr class="memdesc:af21873775c4c38a9257e27b28c0f0054"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers the admin chat commands (from the plugins).  <a href="#af21873775c4c38a9257e27b28c0f0054">More...</a><br/></td></tr>
-<tr class="separator:af21873775c4c38a9257e27b28c0f0054"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4720cf5ae3c3a5744ce0497609529201"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandManager.html#a4720cf5ae3c3a5744ce0497609529201">CommandManager</a> (<a class="el" href="classUIManager.html">UIManager</a> *uiManager)</td></tr>
+<tr class="memdesc:a4720cf5ae3c3a5744ce0497609529201"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the command-maps.  <a href="#a4720cf5ae3c3a5744ce0497609529201">More...</a><br/></td></tr>
+<tr class="separator:a4720cf5ae3c3a5744ce0497609529201"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5fd4d49aa57f6e764721dea41757668"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandManager.html#ae5fd4d49aa57f6e764721dea41757668">RegisterCommands</a> (std::string plugin, std::map&lt; std::string, <a class="el" href="structChatCommand.html">ChatCommand</a> &gt; methods)</td></tr>
+<tr class="memdesc:ae5fd4d49aa57f6e764721dea41757668"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers the chat commands (from the plugins).  <a href="#ae5fd4d49aa57f6e764721dea41757668">More...</a><br/></td></tr>
+<tr class="separator:ae5fd4d49aa57f6e764721dea41757668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6de4460ec73602e0a650bf8650365c82"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandManager.html#a6de4460ec73602e0a650bf8650365c82">RegisterCommand</a> (<a class="el" href="structChatCommand.html">ChatCommand</a> command)</td></tr>
+<tr class="memdesc:a6de4460ec73602e0a650bf8650365c82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a chat command.  <a href="#a6de4460ec73602e0a650bf8650365c82">More...</a><br/></td></tr>
+<tr class="separator:a6de4460ec73602e0a650bf8650365c82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c4267f0865407f6743408b0243d5bb3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandManager.html#a2c4267f0865407f6743408b0243d5bb3">RegisterAdminCommands</a> (std::string plugin, std::map&lt; std::string, <a class="el" href="structChatCommand.html">ChatCommand</a> &gt; methods)</td></tr>
+<tr class="memdesc:a2c4267f0865407f6743408b0243d5bb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers the admin chat commands (from the plugins).  <a href="#a2c4267f0865407f6743408b0243d5bb3">More...</a><br/></td></tr>
+<tr class="separator:a2c4267f0865407f6743408b0243d5bb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42082bb9a76c725e58aa9c327dd41080"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandManager.html#a42082bb9a76c725e58aa9c327dd41080">HandleCommand</a> (<a class="el" href="structPlayer.html">Player</a> player, std::string text)</td></tr>
 <tr class="memdesc:a42082bb9a76c725e58aa9c327dd41080"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles chat commands (from PlayerChat callback).  <a href="#a42082bb9a76c725e58aa9c327dd41080">More...</a><br/></td></tr>
 <tr class="separator:a42082bb9a76c725e58aa9c327dd41080"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a463e9c8106c7c509d3c56134c673b767"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandManager.html#a463e9c8106c7c509d3c56134c673b767">DisplayCommandList</a> (<a class="el" href="structPlayer.html">Player</a> player, bool admin=true)</td></tr>
+<tr class="memdesc:a463e9c8106c7c509d3c56134c673b767"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the command list to the user.  <a href="#a463e9c8106c7c509d3c56134c673b767">More...</a><br/></td></tr>
+<tr class="separator:a463e9c8106c7c509d3c56134c673b767"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:afe0e49a7ea5ca7bed954e6a120fd8475"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afe0e49a7ea5ca7bed954e6a120fd8475"></a>
+<tr class="memitem:ac192b6e14a4c2c99deff93445f59b97b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac192b6e14a4c2c99deff93445f59b97b"></a>
 std::map&lt; std::string, <br class="typebreak"/>
-std::function&lt; void(<a class="el" href="structPlayer.html">Player</a>, <br class="typebreak"/>
-std::vector&lt; std::string &gt;)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandManager.html#afe0e49a7ea5ca7bed954e6a120fd8475">commands</a></td></tr>
-<tr class="memdesc:afe0e49a7ea5ca7bed954e6a120fd8475"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structMap.html" title="Contains all information about a map in easy-to-use format. ">Map</a> with normal chat commands. <br/></td></tr>
-<tr class="separator:afe0e49a7ea5ca7bed954e6a120fd8475"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e3f6e976eae418ffa3063482e210fda"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6e3f6e976eae418ffa3063482e210fda"></a>
+<a class="el" href="structChatCommand.html">ChatCommand</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandManager.html#ac192b6e14a4c2c99deff93445f59b97b">commands</a></td></tr>
+<tr class="memdesc:ac192b6e14a4c2c99deff93445f59b97b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structMap.html" title="Contains all information about a map in easy-to-use format. ">Map</a> with normal chat commands. <br/></td></tr>
+<tr class="separator:ac192b6e14a4c2c99deff93445f59b97b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3d77a995f6ee7fc46c74a5ce146da34"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad3d77a995f6ee7fc46c74a5ce146da34"></a>
 std::map&lt; std::string, <br class="typebreak"/>
-std::function&lt; void(<a class="el" href="structPlayer.html">Player</a>, <br class="typebreak"/>
-std::vector&lt; std::string &gt;)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandManager.html#a6e3f6e976eae418ffa3063482e210fda">adminCommands</a></td></tr>
-<tr class="memdesc:a6e3f6e976eae418ffa3063482e210fda"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structMap.html" title="Contains all information about a map in easy-to-use format. ">Map</a> with admin chat commands. <br/></td></tr>
-<tr class="separator:a6e3f6e976eae418ffa3063482e210fda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<a class="el" href="structChatCommand.html">ChatCommand</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandManager.html#ad3d77a995f6ee7fc46c74a5ce146da34">adminCommands</a></td></tr>
+<tr class="memdesc:ad3d77a995f6ee7fc46c74a5ce146da34"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structMap.html" title="Contains all information about a map in easy-to-use format. ">Map</a> with admin chat commands. <br/></td></tr>
+<tr class="separator:ad3d77a995f6ee7fc46c74a5ce146da34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a650cf2a7fc83f6ba193e3ba095c9bc33"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a650cf2a7fc83f6ba193e3ba095c9bc33"></a>
+<a class="el" href="classUIManager.html">UIManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandManager.html#a650cf2a7fc83f6ba193e3ba095c9bc33">ui</a></td></tr>
+<tr class="memdesc:a650cf2a7fc83f6ba193e3ba095c9bc33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instance of the UI manager. <br/></td></tr>
+<tr class="separator:a650cf2a7fc83f6ba193e3ba095c9bc33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Manages the chat commands. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a4720cf5ae3c3a5744ce0497609529201"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CommandManager::CommandManager </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classUIManager.html">UIManager</a> *&#160;</td>
+          <td class="paramname"><em>uiManager</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the command-maps. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uiManager</td><td>Instance of the UI manager. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a463e9c8106c7c509d3c56134c673b767"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CommandManager::DisplayCommandList </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structPlayer.html">Player</a>&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>admin</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Displays the command list to the user. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">player</td><td>List requester. </td></tr>
+    <tr><td class="paramname">admin</td><td>Show admin commands or player commands? </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a42082bb9a76c725e58aa9c327dd41080"></a>
 <div class="memitem">
 <div class="memproto">
@@ -165,16 +232,26 @@ std::vector&lt; std::string &gt;)&gt; &gt;&#160;</td><td class="memItemRight" va
 
 </div>
 </div>
-<a class="anchor" id="af21873775c4c38a9257e27b28c0f0054"></a>
+<a class="anchor" id="a2c4267f0865407f6743408b0243d5bb3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">int CommandManager::RegisterAdminCommands </td>
           <td>(</td>
-          <td class="paramtype">std::map&lt; std::string, std::function&lt; void(<a class="el" href="structPlayer.html">Player</a>, std::vector&lt; std::string &gt;)&gt;&gt;&#160;</td>
-          <td class="paramname"><em>methods</em></td><td>)</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>plugin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">std::map&lt; std::string, <a class="el" href="structChatCommand.html">ChatCommand</a> &gt;&#160;</td>
+          <td class="paramname"><em>methods</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -182,6 +259,7 @@ std::vector&lt; std::string &gt;)&gt; &gt;&#160;</td><td class="memItemRight" va
 <p>Registers the admin chat commands (from the plugins). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">plugin</td><td>Name of the plugin the commands belong to. </td></tr>
     <tr><td class="paramname">methods</td><td><a class="el" href="classPlugin.html" title="Plugin interface, inherited by all plugins. ">Plugin</a> methods with admin command name. </td></tr>
   </table>
   </dd>
@@ -189,16 +267,50 @@ std::vector&lt; std::string &gt;)&gt; &gt;&#160;</td><td class="memItemRight" va
 
 </div>
 </div>
-<a class="anchor" id="a777c8b1861f5439013c9b8583cf2c0dc"></a>
+<a class="anchor" id="a6de4460ec73602e0a650bf8650365c82"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CommandManager::RegisterCommand </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structChatCommand.html">ChatCommand</a>&#160;</td>
+          <td class="paramname"><em>command</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Registers a chat command. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">command</td><td>Chat command. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae5fd4d49aa57f6e764721dea41757668"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">int CommandManager::RegisterCommands </td>
           <td>(</td>
-          <td class="paramtype">std::map&lt; std::string, std::function&lt; void(<a class="el" href="structPlayer.html">Player</a>, std::vector&lt; std::string &gt;)&gt;&gt;&#160;</td>
-          <td class="paramname"><em>methods</em></td><td>)</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>plugin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">std::map&lt; std::string, <a class="el" href="structChatCommand.html">ChatCommand</a> &gt;&#160;</td>
+          <td class="paramname"><em>methods</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -206,6 +318,7 @@ std::vector&lt; std::string &gt;)&gt; &gt;&#160;</td><td class="memItemRight" va
 <p>Registers the chat commands (from the plugins). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">plugin</td><td>Name of the plugin the commands belong to. </td></tr>
     <tr><td class="paramname">methods</td><td><a class="el" href="classPlugin.html" title="Plugin interface, inherited by all plugins. ">Plugin</a> methods with command name. </td></tr>
   </table>
   </dd>
@@ -216,11 +329,12 @@ std::vector&lt; std::string &gt;)&gt; &gt;&#160;</td><td class="memItemRight" va
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Commands/<a class="el" href="CommandManager_8h_source.html">CommandManager.h</a></li>
 <li>/home/travis/build/TheMaximum/mania-pp/src/Commands/CommandManager.cpp</li>
+<li>/home/travis/build/TheMaximum/mania-pp/src/Commands/CommandsList.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 23 2017 12:55:22 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 25 2017 22:59:04 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

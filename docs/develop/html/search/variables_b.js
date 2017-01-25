@@ -8,7 +8,7 @@ var searchData=
   ['maxplayers',['MaxPlayers',['../structServerInfo.html#a43e90d8209ae6481ded2f6974aa5b15a',1,'ServerInfo']]],
   ['maxspectators',['MaxSpectators',['../structServerInfo.html#a4e766753bc57c2d13d5bd3a007707178',1,'ServerInfo']]],
   ['message',['message',['../structGbxError.html#af52353692b5c160deac99c4285f01a5a',1,'GbxError']]],
-  ['method',['method',['../classGbxMessage.html#a10b6118916999db98f28e3f495eef6b4',1,'GbxMessage']]],
+  ['method',['method',['../classGbxMessage.html#a10b6118916999db98f28e3f495eef6b4',1,'GbxMessage::method()'],['../structChatCommand.html#a288ccc66531286af1103bd2a83c09ec5',1,'ChatCommand::Method()']]],
   ['methodname',['methodName',['../classGbxCallBack.html#a8c793be5cc61e7fecef301ea6932f840',1,'GbxCallBack']]],
   ['methods',['methods',['../classManiaPP.html#a48cb1ddf328d18361417986fe8ab069c',1,'ManiaPP::methods()'],['../classPlugin.html#a4a8030e2fa113265d123aa6178c64318',1,'Plugin::Methods()'],['../structPluginInfo.html#a4fda3e831fda01ac915ce3a5dbcefcfd',1,'PluginInfo::Methods()']]],
   ['methodsbeginmap',['methodsBeginMap',['../classEventManager.html#a7aa0f06399cd3927d85603b58cfef173',1,'EventManager']]],

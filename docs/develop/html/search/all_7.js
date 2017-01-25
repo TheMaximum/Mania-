@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['handle',['Handle',['../structPluginInfo.html#a3fc5df25e8b7e3b63bd0e92f270364f2',1,'PluginInfo::Handle()'],['../structGbxQueryResponse.html#a0f13a7b1745dcf1f7e17c0bc3a0acecb',1,'GbxQueryResponse::handle()']]],
+  ['handle',['handle',['../structGbxQueryResponse.html#a0f13a7b1745dcf1f7e17c0bc3a0acecb',1,'GbxQueryResponse::handle()'],['../structPluginInfo.html#a3fc5df25e8b7e3b63bd0e92f270364f2',1,'PluginInfo::Handle()']]],
   ['handlebeginmap',['HandleBeginMap',['../classCallBackManager.html#a0a106f538862503a6c5b268a75d18e7a',1,'CallBackManager']]],
   ['handlebeginmatch',['HandleBeginMatch',['../classCallBackManager.html#ad741782611d10c7a67e6d1a8630cc605',1,'CallBackManager']]],
   ['handlebillupdated',['HandleBillUpdated',['../classCallBackManager.html#a04ae5c8b9c11709fe19229037f891902',1,'CallBackManager']]],
