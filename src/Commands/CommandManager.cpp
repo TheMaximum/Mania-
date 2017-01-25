@@ -2,18 +2,19 @@
 
 CommandManager::CommandManager()
 {
-    commands = std::map<std::string, std::function<void(Player, std::vector<std::string>)>>();
-    adminCommands = std::map<std::string, std::function<void(Player, std::vector<std::string>)>>();
+    commands = std::map<std::string, ChatCommand>();
+    adminCommands = std::map<std::string, ChatCommand>();
 }
 
-int CommandManager::RegisterCommands(std::map<std::string, std::function<void(Player, std::vector<std::string>)>> methods)
+int CommandManager::RegisterCommands(std::string plugin, std::map<std::string, ChatCommand> methods)
 {
     int functionsAdded = 0;
-    for(std::map<std::string, std::function<void(Player, std::vector<std::string>)>>::iterator method = methods.begin(); method != methods.end(); ++method)
+    for(std::map<std::string, ChatCommand>::iterator method = methods.begin(); method != methods.end(); ++method)
     {
         if(commands.find(method->first) == commands.end())
         {
-            commands.insert(std::pair<std::string, std::function<void(Player, std::vector<std::string>)>>(method->first, method->second));
+            method->second.PluginName = plugin;
+            commands.insert(std::pair<std::string, ChatCommand>(method->first, method->second));
             functionsAdded++;
         }
         else
@@ -24,14 +25,15 @@ int CommandManager::RegisterCommands(std::map<std::string, std::function<void(Pl
     return functionsAdded;
 }
 
-int CommandManager::RegisterAdminCommands(std::map<std::string, std::function<void(Player, std::vector<std::string>)>> methods)
+int CommandManager::RegisterAdminCommands(std::string plugin, std::map<std::string, ChatCommand> methods)
 {
     int functionsAdded = 0;
-    for(std::map<std::string, std::function<void(Player, std::vector<std::string>)>>::iterator method = methods.begin(); method != methods.end(); ++method)
+    for(std::map<std::string, ChatCommand>::iterator method = methods.begin(); method != methods.end(); ++method)
     {
-        if(commands.find(method->first) == commands.end())
+        if(adminCommands.find(method->first) == commands.end())
         {
-            adminCommands.insert(std::pair<std::string, std::function<void(Player, std::vector<std::string>)>>(method->first, method->second));
+            method->second.PluginName = plugin;
+            adminCommands.insert(std::pair<std::string, ChatCommand>(method->first, method->second));
             functionsAdded++;
         }
         else
@@ -57,10 +59,11 @@ void CommandManager::HandleCommand(Player player, std::string text)
         parameters.erase(parameters.begin());
         std::cout << "'" << player.Login << "' called admin-command '" << adminCommand << "' with # parameters: " << parameters.size() << std::endl;
 
-        std::map<std::string, std::function<void(Player, std::vector<std::string>)>>::iterator commandIt = adminCommands.find(adminCommand);
+        std::map<std::string, ChatCommand>::iterator commandIt = adminCommands.find(adminCommand);
         if(commandIt != adminCommands.end())
         {
-            std::function<void(Player, std::vector<std::string>)> commandMethod = commandIt->second;
+            ChatCommand command = commandIt->second;
+            std::function<void(Player, std::vector<std::string>)> commandMethod = command.Method;
             commandMethod(player, parameters);
         }
     }
@@ -68,10 +71,11 @@ void CommandManager::HandleCommand(Player player, std::string text)
     {
         std::cout << "'" << player.Login << "' called command '" << command << "' with # parameters: " << parameters.size() << std::endl;
 
-        std::map<std::string, std::function<void(Player, std::vector<std::string>)>>::iterator commandIt = commands.find(command);
+        std::map<std::string, ChatCommand>::iterator commandIt = commands.find(command);
         if(commandIt != commands.end())
         {
-            std::function<void(Player, std::vector<std::string>)> commandMethod = commandIt->second;
+            ChatCommand command = commandIt->second;
+            std::function<void(Player, std::vector<std::string>)> commandMethod = command.Method;
             commandMethod(player, parameters);
         }
     }

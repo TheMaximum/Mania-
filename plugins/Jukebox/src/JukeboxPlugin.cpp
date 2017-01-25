@@ -4,10 +4,11 @@ JukeboxPlugin::JukeboxPlugin()
 {
     Version = "0.2.0";
     Author = "TheM";
+    Description = "Offers map list functionality and the possibility for players to decide what to play next.";
 
     EndMatch.push_back([this](std::vector<PlayerRanking> rankings, int winnerTeam) { OnEndMatch(); });
-    RegisterCommand("list", [this](Player player, std::vector<std::string> parameters) { DisplayMapList(player, parameters); });
-    RegisterCommand("jukebox", [this](Player player, std::vector<std::string> parameters) { ChatJukebox(player, parameters); });
+    RegisterCommand("list", "Display list of maps on the server.", [this](Player player, std::vector<std::string> parameters) { DisplayMapList(player, parameters); });
+    RegisterCommand("jukebox", "[list] = open current jukebox, [drop] = drop your jukeboxed map.", [this](Player player, std::vector<std::string> parameters) { ChatJukebox(player, parameters); });
 }
 
 void JukeboxPlugin::Init()

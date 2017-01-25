@@ -4,12 +4,13 @@ LocalRecordsPlugin::LocalRecordsPlugin()
 {
     Version = "0.2.0";
     Author = "TheM";
+    Description = "Displays and saves locally driven map records.";
 
     BeginMap.push_back([this](Map map) { OnBeginMap(map); });
     PlayerConnect.push_back([this](Player player) { OnPlayerConnect(player); });
     PlayerFinish.push_back([this](Player player, int playerTime) { OnPlayerFinish(player, playerTime); });
 
-    RegisterCommand("records", [this](Player player, std::vector<std::string> parameters) { OpenLocalRecords(player); });
+    RegisterCommand("records", "Display list of current Local records.", [this](Player player, std::vector<std::string> parameters) { OpenLocalRecords(player); });
     RegisterCallableMethod("GetLocalByMapId", [this](boost::any parameters) { return GetLocalByMapId(parameters); });
 }
 

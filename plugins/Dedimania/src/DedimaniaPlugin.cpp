@@ -4,6 +4,7 @@ DedimaniaPlugin::DedimaniaPlugin()
 {
     Version = "0.1.0";
     Author = "TheM";
+    Description = "Synchonizes records with the global Dedimania server.";
 
     BeginMap.push_back([this](Map map) { OnBeginMap(); });
     PlayerConnect.push_back([this](Player player) { OnPlayerConnect(player); });
@@ -19,8 +20,8 @@ DedimaniaPlugin::DedimaniaPlugin()
         }
     });
 
-    RegisterCommand("dedirecs", [this](Player player, std::vector<std::string> parameters) { OpenDediRecords(player); });
-    RegisterCommand("dedirecords", [this](Player player, std::vector<std::string> parameters) { OpenDediRecords(player); });
+    RegisterCommand("dedirecs", "Display list of current Dedimania records.", [this](Player player, std::vector<std::string> parameters) { OpenDediRecords(player); });
+    RegisterCommand("dedirecords", "Display list of current Dedimania records.", [this](Player player, std::vector<std::string> parameters) { OpenDediRecords(player); });
 
     curl_global_init(CURL_GLOBAL_ALL);
 }

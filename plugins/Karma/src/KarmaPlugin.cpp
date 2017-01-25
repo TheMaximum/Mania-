@@ -4,16 +4,18 @@ KarmaPlugin::KarmaPlugin()
 {
     Version = "0.2.0";
     Author = "TheM";
+    Description = "Offers players possibility to vote on maps and displays this.";
+
     karma = MapKarma();
 
     BeginMap.push_back([this](Map map) { OnBeginMap(map); });
     PlayerConnect.push_back([this](Player player) { OnPlayerConnect(player); });
     PlayerChat.push_back([this](Player player, std::string text) { OnPlayerChat(player, text); });
 
-    RegisterCommand("karma", [this](Player player, std::vector<std::string> parameters) { DisplayCurrentKarma(player); });
-    RegisterCommand("whokarma", [this](Player player, std::vector<std::string> parameters) { DisplayWhoKarma(player); });
-    RegisterCommand("++", [this](Player player, std::vector<std::string> parameters) { VotePositive(player); });
-    RegisterCommand("--", [this](Player player, std::vector<std::string> parameters) { VoteNegative(player); });
+    RegisterCommand("karma", "Display the current map karma.", [this](Player player, std::vector<std::string> parameters) { DisplayCurrentKarma(player); });
+    RegisterCommand("whokarma", "Display who voted what on this map.", [this](Player player, std::vector<std::string> parameters) { DisplayWhoKarma(player); });
+    RegisterCommand("++", "Vote positively for this map.", [this](Player player, std::vector<std::string> parameters) { VotePositive(player); });
+    RegisterCommand("--", "Vote negatively for this map.", [this](Player player, std::vector<std::string> parameters) { VoteNegative(player); });
     RegisterCallableMethod("GetKarmaByMapId", [this](boost::any parameters) { return GetKarmaByMapId(parameters); });
 }
 

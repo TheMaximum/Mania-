@@ -4,6 +4,7 @@ MapWidgetPlugin::MapWidgetPlugin()
 {
     Version = "0.1.0";
     Author = "TheM";
+    Description = "Displays map information in a widget.";
 
     BeginMap.push_back([this](Map map) { OnBeginMap(); });
     PlayerConnect.push_back([this](Player player) { OnPlayerConnect(player); });

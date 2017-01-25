@@ -5,6 +5,7 @@
 #include <map>
 #include <functional>
 
+#include "ChatCommand.h"
 #include "../Objects/Player.h"
 
 //* CommandManager
@@ -22,16 +23,18 @@ public:
     /*!
      * \brief Registers the chat commands (from the plugins).
      *
+     * \param plugin  Name of the plugin the commands belong to.
      * \param methods Plugin methods with command name.
      */
-    int RegisterCommands(std::map<std::string, std::function<void(Player, std::vector<std::string>)>> methods);
+    int RegisterCommands(std::string plugin, std::map<std::string, ChatCommand> methods);
 
     /*!
      * \brief Registers the admin chat commands (from the plugins).
      *
+     * \param plugin  Name of the plugin the commands belong to.
      * \param methods Plugin methods with admin command name.
      */
-    int RegisterAdminCommands(std::map<std::string, std::function<void(Player, std::vector<std::string>)>> methods);
+    int RegisterAdminCommands(std::string plugin, std::map<std::string, ChatCommand> methods);
 
     /*!
      * \brief Handles chat commands (from PlayerChat callback).
@@ -42,8 +45,8 @@ public:
     void HandleCommand(Player player, std::string text);
 
 private:
-    std::map<std::string, std::function<void(Player, std::vector<std::string>)>> commands;      /**< \brief Map with normal chat commands. */
-    std::map<std::string, std::function<void(Player, std::vector<std::string>)>> adminCommands; /**< \brief Map with admin chat commands. */
+    std::map<std::string, ChatCommand> commands;      /**< \brief Map with normal chat commands. */
+    std::map<std::string, ChatCommand> adminCommands; /**< \brief Map with admin chat commands. */
 };
 
 #endif // COMMANDMANAGER_H_

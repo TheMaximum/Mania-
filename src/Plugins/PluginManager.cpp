@@ -130,12 +130,12 @@ void PluginManager::LoadPlugins(std::string pluginsFolder)
 
                 std::cout << "[          ] Loading commands for '" << pluginId->first << "' ... " << '\r' << std::flush;
                 int commandCount = 0;
-                commandCount += commands->RegisterCommands(plugin->Commands);
-                commandCount += commands->RegisterAdminCommands(plugin->AdminCommands);
+                commandCount += commands->RegisterCommands(pluginId->first, plugin->Commands);
+                commandCount += commands->RegisterAdminCommands(pluginId->first, plugin->AdminCommands);
 
                 std::cout << "[    \033[0;32mOK\033[0;0m    ] Loaded commands for '" << pluginId->first << "': " << commandCount << " found." << std::endl;
 
-                plugins.insert(std::pair<std::string, PluginInfo>(pluginId->first, { plugin->Version, plugin->Author, plugin, pluginHandle, plugin->Methods }));
+                plugins.insert(std::pair<std::string, PluginInfo>(pluginId->first, { plugin->Version, plugin->Author, plugin->Description, plugin, pluginHandle, plugin->Methods }));
 
                 loadedPlugins.insert(pluginId->first);
             }

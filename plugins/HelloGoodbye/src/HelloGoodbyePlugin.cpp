@@ -4,6 +4,7 @@ HelloGoodbyePlugin::HelloGoodbyePlugin()
 {
     Version = "0.1.0";
     Author = "TheM";
+    Description = "Welcomes and says goodbye to joining and leaving players.";
 
     PlayerConnect.push_back([this](Player player) { OnPlayerConnect(player); });
     PlayerDisconnect.push_back([this](Player player) { OnPlayerDisconnect(player); });
