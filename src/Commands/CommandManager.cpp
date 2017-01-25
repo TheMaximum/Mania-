@@ -5,6 +5,21 @@ CommandManager::CommandManager(UIManager* uiManager)
     ui = uiManager;
     commands = std::map<std::string, ChatCommand>();
     adminCommands = std::map<std::string, ChatCommand>();
+
+    ChatCommand help = ChatCommand();
+    help.PluginName = "System";
+    help.PluginVersion = -1;
+    help.PluginAuthor = "TheM";
+    help.Command = "help";
+    help.Description = "Displays a list of chat commands.";
+    help.AdminCommand = false;
+    help.Method = [this](Player player, std::vector<std::string> parameters) { DisplayCommandList(player, false); };
+    RegisterCommand(help);
+
+    help.Description = "Displays a list of admin chat commands.";
+    help.AdminCommand = true;
+    help.Method = [this](Player player, std::vector<std::string> parameters) { DisplayCommandList(player, true); };
+    RegisterCommand(help);
 }
 
 int CommandManager::RegisterCommands(std::string plugin, std::map<std::string, ChatCommand> methods)
