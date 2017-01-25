@@ -28,7 +28,7 @@ var searchData=
   ['plugin',['Plugin',['../classPlugin.html',1,'']]],
   ['pluginauthor',['PluginAuthor',['../structChatCommand.html#ad82ece9647207fcfba2a9288d9ff0528',1,'ChatCommand']]],
   ['pluginconfig',['PluginConfig',['../structPluginConfig.html',1,'']]],
-  ['pluginhandler',['PluginHandler',['../classPluginHandler.html',1,'PluginHandler'],['../classPluginHandler.html#a3c6d5584880752aed8f9179c43f43a1a',1,'PluginHandler::PluginHandler()'],['../classPluginManager.html#a09ca067d35e6857a46744d217f2027be',1,'PluginManager::pluginHandler()']]],
+  ['pluginhandler',['PluginHandler',['../classPluginHandler.html',1,'PluginHandler'],['../classPluginManager.html#a09ca067d35e6857a46744d217f2027be',1,'PluginManager::pluginHandler()'],['../classPluginHandler.html#a3c6d5584880752aed8f9179c43f43a1a',1,'PluginHandler::PluginHandler()']]],
   ['plugininfo',['PluginInfo',['../structPluginInfo.html',1,'']]],
   ['pluginmanager',['PluginManager',['../classPluginManager.html',1,'PluginManager'],['../classPluginManager.html#a069a83068775116bd53350f39db0c844',1,'PluginManager::PluginManager()']]],
   ['pluginname',['PluginName',['../structChatCommand.html#aa1858f17632079a61dbae6fdfc0db3f7',1,'ChatCommand']]],

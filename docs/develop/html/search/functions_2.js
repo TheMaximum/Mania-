@@ -9,5 +9,6 @@ var searchData=
   ['discoverplugins',['discoverPlugins',['../classPluginManager.html#a6e1d97e5b23f0d8f003a518b8b5fb7a1',1,'PluginManager']]],
   ['display',['Display',['../classUIManager.html#a97f069a4a1c54f6e9569a194834e090c',1,'UIManager::Display(UIFrame frame)'],['../classUIManager.html#a83370680d61bea5a5464127a5f11b9a9',1,'UIManager::Display(UIFrame frame, Player player)']]],
   ['displaycommandlist',['DisplayCommandList',['../classCommandManager.html#a463e9c8106c7c509d3c56134c673b767',1,'CommandManager']]],
-  ['displaylist',['DisplayList',['../classUIManager.html#aa8187f1c1988d5934adc5c793be85778',1,'UIManager']]]
+  ['displaylist',['DisplayList',['../classUIManager.html#aa8187f1c1988d5934adc5c793be85778',1,'UIManager']]],
+  ['displaypluginlist',['DisplayPluginList',['../classPluginManager.html#a8465f355fe0df657e1c6380e67238e3c',1,'PluginManager']]]
 ];

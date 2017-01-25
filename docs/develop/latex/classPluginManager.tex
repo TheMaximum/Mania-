@@ -24,7 +24,9 @@ void \hyperlink{classPluginManager_a0ff203ba125f85688fa752bf789418f0}{Load\-Plug
 \begin{DoxyCompactList}\small\item\em Loads the plugins in the specified folder. \end{DoxyCompactList}\item 
 \hypertarget{classPluginManager_aba7e19d75b25ca1a91b92d95b173240f}{void \hyperlink{classPluginManager_aba7e19d75b25ca1a91b92d95b173240f}{Initialize\-Plugins} ()}\label{classPluginManager_aba7e19d75b25ca1a91b92d95b173240f}
 
-\begin{DoxyCompactList}\small\item\em Calls all Init() functions in the plugins (called after loading all plugins). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Calls all Init() functions in the plugins (called after loading all plugins). \end{DoxyCompactList}\item 
+void \hyperlink{classPluginManager_a8465f355fe0df657e1c6380e67238e3c}{Display\-Plugin\-List} (\hyperlink{structPlayer}{Player} player)
+\begin{DoxyCompactList}\small\item\em Displays the plugin list to the admin. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -99,6 +101,22 @@ Initializes the pointers the plugins need.
 
 
 \subsection{Member Function Documentation}
+\hypertarget{classPluginManager_a8465f355fe0df657e1c6380e67238e3c}{\index{Plugin\-Manager@{Plugin\-Manager}!Display\-Plugin\-List@{Display\-Plugin\-List}}
+\index{Display\-Plugin\-List@{Display\-Plugin\-List}!PluginManager@{Plugin\-Manager}}
+\subsubsection[{Display\-Plugin\-List}]{\setlength{\rightskip}{0pt plus 5cm}void Plugin\-Manager\-::\-Display\-Plugin\-List (
+\begin{DoxyParamCaption}
+\item[{{\bf Player}}]{player}
+\end{DoxyParamCaption}
+)}}\label{classPluginManager_a8465f355fe0df657e1c6380e67238e3c}
+
+
+Displays the plugin list to the admin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & List requester. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classPluginManager_a0ff203ba125f85688fa752bf789418f0}{\index{Plugin\-Manager@{Plugin\-Manager}!Load\-Plugins@{Load\-Plugins}}
 \index{Load\-Plugins@{Load\-Plugins}!PluginManager@{Plugin\-Manager}}
 \subsubsection[{Load\-Plugins}]{\setlength{\rightskip}{0pt plus 5cm}void Plugin\-Manager\-::\-Load\-Plugins (
@@ -136,4 +154,5 @@ Sets the event manager to be used for callbacks.
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Plugins/Plugin\-Manager.\-h\item 
-/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Plugins/Plugin\-Manager.\-cpp\end{DoxyCompactItemize}
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Plugins/Plugin\-Manager.\-cpp\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Plugins/Plugins\-U\-I.\-cpp\end{DoxyCompactItemize}
