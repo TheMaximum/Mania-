@@ -33,6 +33,9 @@ plugins:
         widgetTopCount: 5
         widgetX: 49.2
         widgetY: 28.2
+    - 'MapWidget':
+        widgetX: 49.2
+        widgetY: 48.2
     - 'Karma':
         widgetX: 49.2
         widgetY: 39.2

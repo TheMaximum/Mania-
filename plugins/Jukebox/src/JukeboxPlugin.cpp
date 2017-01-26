@@ -9,6 +9,8 @@ JukeboxPlugin::JukeboxPlugin()
     EndMatch.push_back([this](std::vector<PlayerRanking> rankings, int winnerTeam) { OnEndMatch(); });
     RegisterCommand("list", "Display list of maps on the server.", [this](Player player, std::vector<std::string> parameters) { DisplayMapList(player, parameters); });
     RegisterCommand("jukebox", "[list] = open current jukebox, [drop] = drop your jukeboxed map.", [this](Player player, std::vector<std::string> parameters) { ChatJukebox(player, parameters); });
+    RegisterAdminCommand("cjb", "Clear the jukebox.", Permission::Admin, [this](Player player, std::vector<std::string> parameters) { ChatClear(player); });
+    RegisterAdminCommand("clearjukebox", "Clear the jukebox.", Permission::Admin, [this](Player player, std::vector<std::string> parameters) { ChatClear(player); });
 }
 
 void JukeboxPlugin::Init()
@@ -78,12 +80,35 @@ void JukeboxPlugin::ChatJukebox(Player player, std::vector<std::string> paramete
                 }
             }
         }
+        else if(parameters.at(0).find("clear") != std::string::npos)
+        {
+            if(player.AccessLevel >= Permission::Admin)
+            {
+                ChatClear(player);
+            }
+        }
     }
     else
     {
         std::stringstream helpMessage;
         helpMessage << "$fff/jukebox$fa0 options: $fffdisplay/list$fa0 (displays current Jukebox list), $fffdrop$fa0 (drops your Jukebox entry).";
         controller->Server->ChatSendServerMessageToLogin(helpMessage.str(), player.Login);
+    }
+}
+
+void JukeboxPlugin::ChatClear(Player player)
+{
+    if(jukebox.size() > 0)
+    {
+        jukebox.clear();
+
+        std::stringstream clearMessage;
+        clearMessage << "$fa0" << Permissions::Text(player.AccessLevel) << " $fff" << player.NickName << "$z$s$fa0 cleared the jukebox.";
+        controller->Server->ChatSendServerMessage(clearMessage.str());
+    }
+    else
+    {
+        controller->Server->ChatSendServerMessageToLogin("$f00$iThe jukebox is already clear!", player.Login);
     }
 }
 

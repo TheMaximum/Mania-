@@ -72,7 +72,7 @@ int CommandManager::RegisterAdminCommands(std::string plugin, std::map<std::stri
     int functionsAdded = 0;
     for(std::map<std::string, ChatCommand>::iterator method = methods.begin(); method != methods.end(); ++method)
     {
-        if(adminCommands.find(method->first) == commands.end())
+        if(adminCommands.find(method->first) == adminCommands.end())
         {
             method->second.PluginName = plugin;
             adminCommands.insert(std::pair<std::string, ChatCommand>(method->first, method->second));

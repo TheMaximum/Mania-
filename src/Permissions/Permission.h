@@ -21,7 +21,7 @@ public:
         switch(perm)
         {
             case Permission::Master:
-                return "Master";
+                return "MasterAdmin";
             case Permission::Admin:
                 return "Admin";
             case Permission::Operator:
