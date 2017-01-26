@@ -26,16 +26,4 @@ void PluginManager::DisplayPluginList(Player player)
     }
 
     controller->UI->DisplayList(list, player);
-
-    /*struct PluginInfo
-    {
-        std::string Version;     /**< \brief Plugin version (from instance). *
-        std::string Author;      /**< \brief Plugin author (from instance). *
-        std::string Description; /**< \brief Plugin description (from instance). *
-
-        void* Instance;          /**< \brief Instance of the plugin. *
-        void* Handle;            /**< \brief Handle (from dlopen) of the plugin. *
-
-        std::map<std::string, std::function<boost::any(boost::any)>> Methods; /**< \brief Callable methods of the plugin. *
-    };*/
 }
