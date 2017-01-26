@@ -13,7 +13,7 @@ Manages the chat commands.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classCommandManager_a4720cf5ae3c3a5744ce0497609529201}{Command\-Manager} (\hyperlink{classUIManager}{U\-I\-Manager} $\ast$ui\-Manager)
+\hyperlink{classCommandManager_ae336627646d192bf5acccea5c5a4f5fc}{Command\-Manager} (\hyperlink{classUIManager}{U\-I\-Manager} $\ast$ui\-Manager, \hyperlink{classMethods}{Methods} $\ast$methods\-Ptr)
 \begin{DoxyCompactList}\small\item\em Initializes the command-\/maps. \end{DoxyCompactList}\item 
 int \hyperlink{classCommandManager_ae5fd4d49aa57f6e764721dea41757668}{Register\-Commands} (std\-::string plugin, std\-::map$<$ std\-::string, \hyperlink{structChatCommand}{Chat\-Command} $>$ methods)
 \begin{DoxyCompactList}\small\item\em Registers the chat commands (from the plugins). \end{DoxyCompactList}\item 
@@ -38,20 +38,24 @@ void \hyperlink{classCommandManager_a463e9c8106c7c509d3c56134c673b767}{Display\-
 \begin{DoxyCompactList}\small\item\em \hyperlink{structMap}{Map} with admin chat commands. \end{DoxyCompactList}\item 
 \hypertarget{classCommandManager_a650cf2a7fc83f6ba193e3ba095c9bc33}{\hyperlink{classUIManager}{U\-I\-Manager} $\ast$ \hyperlink{classCommandManager_a650cf2a7fc83f6ba193e3ba095c9bc33}{ui}}\label{classCommandManager_a650cf2a7fc83f6ba193e3ba095c9bc33}
 
-\begin{DoxyCompactList}\small\item\em Instance of the U\-I manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Instance of the U\-I manager. \end{DoxyCompactList}\item 
+\hypertarget{classCommandManager_a457bc5b1599cb70507ea74672b65b37d}{\hyperlink{classMethods}{Methods} $\ast$ {\bfseries methods}}\label{classCommandManager_a457bc5b1599cb70507ea74672b65b37d}
+
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Manages the chat commands. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classCommandManager_a4720cf5ae3c3a5744ce0497609529201}{\index{Command\-Manager@{Command\-Manager}!Command\-Manager@{Command\-Manager}}
+\hypertarget{classCommandManager_ae336627646d192bf5acccea5c5a4f5fc}{\index{Command\-Manager@{Command\-Manager}!Command\-Manager@{Command\-Manager}}
 \index{Command\-Manager@{Command\-Manager}!CommandManager@{Command\-Manager}}
 \subsubsection[{Command\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}Command\-Manager\-::\-Command\-Manager (
 \begin{DoxyParamCaption}
-\item[{{\bf U\-I\-Manager} $\ast$}]{ui\-Manager}
+\item[{{\bf U\-I\-Manager} $\ast$}]{ui\-Manager, }
+\item[{{\bf Methods} $\ast$}]{methods\-Ptr}
 \end{DoxyParamCaption}
-)}}\label{classCommandManager_a4720cf5ae3c3a5744ce0497609529201}
+)}}\label{classCommandManager_ae336627646d192bf5acccea5c5a4f5fc}
 
 
 Initializes the command-\/maps. 
@@ -59,6 +63,8 @@ Initializes the command-\/maps.
 
 \begin{DoxyParams}{Parameters}
 {\em ui\-Manager} & Instance of the U\-I manager. \\
+\hline
+{\em methods\-Ptr} & Instance of the \hyperlink{classMethods}{Methods}. \\
 \hline
 \end{DoxyParams}
 

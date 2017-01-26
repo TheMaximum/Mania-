@@ -3,7 +3,7 @@ var searchData=
   ['readcallbacks',['ReadCallBacks',['../classGbxRemote.html#ac595861af2f4d7349ce3841f0758507d',1,'GbxRemote']]],
   ['receive',['Receive',['../classTcpClient.html#aa000d653ba13fb447642e81890cdc866',1,'TcpClient']]],
   ['receivedata',['receiveData',['../classVersionChecker.html#a08332369b0012d1fa919471b559a13b1',1,'VersionChecker']]],
-  ['registeradmincommand',['RegisterAdminCommand',['../classPlugin.html#ac475431998fe527b1c9671acbb6dbe1d',1,'Plugin']]],
+  ['registeradmincommand',['RegisterAdminCommand',['../classPlugin.html#a902bac6667b0654c1211227f7a52d0fd',1,'Plugin']]],
   ['registeradmincommands',['RegisterAdminCommands',['../classCommandManager.html#a2c4267f0865407f6743408b0243d5bb3',1,'CommandManager']]],
   ['registerbeginmap',['RegisterBeginMap',['../classEventManager.html#ae77dfbbb9640ca9aa5b458d6959676ea',1,'EventManager']]],
   ['registerbeginmatch',['RegisterBeginMatch',['../classEventManager.html#afb7b0d6fd646ce3eb0568c95c8a4b89c',1,'EventManager']]],

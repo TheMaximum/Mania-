@@ -32,13 +32,19 @@ Reads and stores configuration information.
 \hypertarget{classConfig_af02b6ade87bcdd8368788283e42a6b74}{std\-::map$<$ std\-::string, \\*
 \hyperlink{structPluginConfig}{Plugin\-Config} $>$ $\ast$ \hyperlink{classConfig_af02b6ade87bcdd8368788283e42a6b74}{Plugins}}\label{classConfig_af02b6ade87bcdd8368788283e42a6b74}
 
-\begin{DoxyCompactList}\small\item\em List of plugin configurations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em List of plugin configurations. \end{DoxyCompactList}\item 
+\hypertarget{classConfig_a6615bbfedbc63f8e0cdf762fbb04063c}{std\-::map$<$ std\-::string, \\*
+Permission $>$ $\ast$ \hyperlink{classConfig_a6615bbfedbc63f8e0cdf762fbb04063c}{Permissions}}\label{classConfig_a6615bbfedbc63f8e0cdf762fbb04063c}
+
+\begin{DoxyCompactList}\small\item\em Overview of permissions from configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hypertarget{classConfig_a2ddcecec4284da0fb0b53da77e0d217a}{void \hyperlink{classConfig_a2ddcecec4284da0fb0b53da77e0d217a}{parse\-Config} ()}\label{classConfig_a2ddcecec4284da0fb0b53da77e0d217a}
 
 \begin{DoxyCompactList}\small\item\em Reads information from Y\-A\-M\-L file and puts this in configuration struct(s). \end{DoxyCompactList}\item 
+void \hyperlink{classConfig_a9f957b8967cbbc7123a105f71a7e0902}{parse\-Permissions} (Y\-A\-M\-L\-::\-Node permissions)
+\begin{DoxyCompactList}\small\item\em Reads permissions from Y\-A\-M\-L file. \end{DoxyCompactList}\item 
 void \hyperlink{classConfig_ab9bb8a0097656a79ef88fd125d7e5626}{parse\-Plugins} (Y\-A\-M\-L\-::\-Node plugins)
 \begin{DoxyCompactList}\small\item\em Reads plugin information from Y\-A\-M\-L file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
@@ -79,6 +85,22 @@ Calls parse\-Config to parse the configuration file.
 Deletes and nullifies the serverconfig. 
 
 \subsection{Member Function Documentation}
+\hypertarget{classConfig_a9f957b8967cbbc7123a105f71a7e0902}{\index{Config@{Config}!parse\-Permissions@{parse\-Permissions}}
+\index{parse\-Permissions@{parse\-Permissions}!Config@{Config}}
+\subsubsection[{parse\-Permissions}]{\setlength{\rightskip}{0pt plus 5cm}void Config\-::parse\-Permissions (
+\begin{DoxyParamCaption}
+\item[{Y\-A\-M\-L\-::\-Node}]{permissions}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classConfig_a9f957b8967cbbc7123a105f71a7e0902}
+
+
+Reads permissions from Y\-A\-M\-L file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em permissions} & Y\-A\-M\-L node that contains the permissions. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classConfig_ab9bb8a0097656a79ef88fd125d7e5626}{\index{Config@{Config}!parse\-Plugins@{parse\-Plugins}}
 \index{parse\-Plugins@{parse\-Plugins}!Config@{Config}}
 \subsubsection[{parse\-Plugins}]{\setlength{\rightskip}{0pt plus 5cm}void Config\-::parse\-Plugins (

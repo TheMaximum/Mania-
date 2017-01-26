@@ -1,6 +1,7 @@
 var searchData=
 [
   ['parameter',['Parameter',['../structParameter.html',1,'']]],
+  ['permissions',['Permissions',['../classPermissions.html',1,'']]],
   ['player',['Player',['../structPlayer.html',1,'']]],
   ['playerranking',['PlayerRanking',['../structPlayerRanking.html',1,'']]],
   ['plugin',['Plugin',['../classPlugin.html',1,'']]],

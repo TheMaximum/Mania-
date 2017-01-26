@@ -7,6 +7,7 @@ var searchData=
   ['parameters',['parameters',['../classGbxStructParameters.html#a28bc30c4732e983831d05ac4591a3aec',1,'GbxStructParameters::parameters()'],['../classGbxParameters.html#a6604ff8a98d2638dc760b51019657fcc',1,'GbxParameters::parameters()'],['../classGbxServerResponse.html#acfd80e7b92cf34e1f0cda88a11a1bed0',1,'GbxServerResponse::parameters()']]],
   ['password',['password',['../structServerConfig.html#a819f5b912feb1fdb68ebd4fe36eb11ea',1,'ServerConfig::password()'],['../structDatabaseConfig.html#aa17e906c33a2f1c2d1508afa50957b35',1,'DatabaseConfig::password()']]],
   ['path',['Path',['../structPlayer.html#a3da038886ddd825ebc9612b460ecd008',1,'Player']]],
+  ['permissions',['Permissions',['../classConfig.html#a6615bbfedbc63f8e0cdf762fbb04063c',1,'Config']]],
   ['playerchat',['PlayerChat',['../classPlugin.html#aa88b75d9b344326bc2ea4ac599f2c501',1,'Plugin']]],
   ['playercheckpoint',['PlayerCheckpoint',['../classPlugin.html#abc2ce0103b7783a4ff4b3009cb18af7b',1,'Plugin']]],
   ['playerconnect',['PlayerConnect',['../classPlugin.html#a02e032f548c5a002496ab6b02788342b',1,'Plugin']]],

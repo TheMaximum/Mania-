@@ -2,6 +2,7 @@ var searchData=
 [
   ['parameter',['Parameter',['../structParameter.html#a03adc91dc695b308db4e466c3c522afc',1,'Parameter::Parameter(T *input)'],['../structParameter.html#a47ca57d7377d16a561aa61eeb660fd40',1,'Parameter::Parameter(void *input, const std::type_info *type)']]],
   ['parseconfig',['parseConfig',['../classConfig.html#a2ddcecec4284da0fb0b53da77e0d217a',1,'Config']]],
+  ['parsepermissions',['parsePermissions',['../classConfig.html#a9f957b8967cbbc7123a105f71a7e0902',1,'Config']]],
   ['parseplugins',['parsePlugins',['../classConfig.html#ab9bb8a0097656a79ef88fd125d7e5626',1,'Config']]],
   ['parseversion',['parseVersion',['../classVersionCompare.html#a1fdc3833968e1579942fc420daed6dd9',1,'VersionCompare']]],
   ['player',['Player',['../structPlayer.html#affe0cc3cb714f6deb4e62f0c0d3f1fd8',1,'Player::Player()'],['../structPlayer.html#adf15eb006b535a4e1b72b419021f1f11',1,'Player::Player(std::map&lt; std::string, GbxResponseParameter &gt; serverStruct)']]],

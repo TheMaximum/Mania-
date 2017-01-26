@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['callbackmanager',['CallBackManager',['../classCallBackManager.html',1,'CallBackManager'],['../classCallBackManager.html#a8264fac119580102b33819fea6c78ef0',1,'CallBackManager::CallBackManager()']]],
+  ['callbackmanager',['CallBackManager',['../classCallBackManager.html',1,'CallBackManager'],['../classCallBackManager.html#aaba17921501672d9c0eb321a05b81519',1,'CallBackManager::CallBackManager()']]],
   ['callbacks',['callbacks',['../classManiaPP.html#af468d4b6eea93fd836950551eb7d3a01',1,'ManiaPP']]],
   ['callbeginmap',['CallBeginMap',['../classEventManager.html#a1bd59c3d511d37863b81d18bd09a7b5a',1,'EventManager']]],
   ['callbeginmatch',['CallBeginMatch',['../classEventManager.html#a22f3afb58eecc76787530b98e29971e2',1,'EventManager']]],
@@ -49,12 +49,12 @@ var searchData=
   ['code',['Code',['../structServerStatus.html#ad17b50be8d2cb9c1a62396885b1244cc',1,'ServerStatus']]],
   ['columns',['Columns',['../structUIList.html#a20ea14a5e0714135b877a3684cca4da9',1,'UIList']]],
   ['command',['Command',['../structChatCommand.html#af7f073123a46cbe3873299cf2410f022',1,'ChatCommand::Command()'],['../structCallVoteRatio.html#a14e3195672c370c5c85ad06287c1d509',1,'CallVoteRatio::Command()'],['../structExtendedCallVoteRatio.html#a8b25c752447c968f2522c2748077b096',1,'ExtendedCallVoteRatio::Command()']]],
-  ['commandmanager',['CommandManager',['../classCommandManager.html',1,'CommandManager'],['../classCommandManager.html#a4720cf5ae3c3a5744ce0497609529201',1,'CommandManager::CommandManager()']]],
-  ['commands',['commands',['../classCallBackManager.html#a29d2d950b831a6ab7194fa3a6951a5ef',1,'CallBackManager::commands()'],['../classCommandManager.html#ac192b6e14a4c2c99deff93445f59b97b',1,'CommandManager::commands()'],['../classManiaPP.html#afefa9bf6ecf35fffd4d3229e17e4dd2f',1,'ManiaPP::commands()'],['../classPluginManager.html#a2759d12d4da860a2c5a1dbb7f76a035a',1,'PluginManager::commands()'],['../classPlugin.html#aee4f6d78f9eebd617a344ab341bf3459',1,'Plugin::Commands()']]],
+  ['commandmanager',['CommandManager',['../classCommandManager.html',1,'CommandManager'],['../classCommandManager.html#ae336627646d192bf5acccea5c5a4f5fc',1,'CommandManager::CommandManager()']]],
+  ['commands',['Commands',['../classPlugin.html#aee4f6d78f9eebd617a344ab341bf3459',1,'Plugin::Commands()'],['../classCallBackManager.html#a29d2d950b831a6ab7194fa3a6951a5ef',1,'CallBackManager::commands()'],['../classCommandManager.html#ac192b6e14a4c2c99deff93445f59b97b',1,'CommandManager::commands()'],['../classManiaPP.html#afefa9bf6ecf35fffd4d3229e17e4dd2f',1,'ManiaPP::commands()'],['../classPluginManager.html#a2759d12d4da860a2c5a1dbb7f76a035a',1,'PluginManager::commands()']]],
   ['comment',['Comment',['../structServerInfo.html#a82d5babd55b867eca9f58e5ed32857c1',1,'ServerInfo']]],
   ['commit',['Commit',['../structGitVersion.html#a0a7fcfae969cad2cb90dc0353df5bf49',1,'GitVersion']]],
   ['compress',['Compress',['../classGZip.html#a93d3ae249d438d71917e7b7db9eb874b',1,'GZip']]],
-  ['config',['Config',['../classConfig.html',1,'Config'],['../classManiaPP.html#a9a91437fa70afd52c2dce19298888e36',1,'ManiaPP::config()'],['../classPluginManager.html#a185603a6a022cef13ca60454c80ae4c4',1,'PluginManager::config()'],['../classConfig.html#ae67e338ea42e242cb5b374b6583c8b1c',1,'Config::Config()']]],
+  ['config',['Config',['../classConfig.html',1,'Config'],['../classCallBackManager.html#a5779cf963d6431e2641d5145d6b31154',1,'CallBackManager::config()'],['../classManiaPP.html#a9a91437fa70afd52c2dce19298888e36',1,'ManiaPP::config()'],['../classPluginManager.html#a185603a6a022cef13ca60454c80ae4c4',1,'PluginManager::config()'],['../classConfig.html#ae67e338ea42e242cb5b374b6583c8b1c',1,'Config::Config()']]],
   ['configfile',['configFile',['../classConfig.html#a08b7b2c4eadf7dda51404f76fd6e0280',1,'Config']]],
   ['connect',['Connect',['../classDatabase.html#a22555b63ce54c0b4a0e1b1aecb5e1bd4',1,'Database::Connect()'],['../classTcpClient.html#ac2e9bb63b4e0dc8f4508aa2a85431fe2',1,'TcpClient::Connect()']]],
   ['connected',['connected',['../classGbxRemote.html#a56662ea222345c645ae897e056b5c8c8',1,'GbxRemote']]],

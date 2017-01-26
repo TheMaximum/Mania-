@@ -128,7 +128,7 @@ std\-::function$<$ boost\-::any(boost\-::any)$>$ $>$ \hyperlink{classPlugin_a4a8
 \item 
 void \hyperlink{classPlugin_a9e5eea29a253fc24459011c55cb0a8ff}{Register\-Command} (std\-::string name, std\-::string description, std\-::function$<$ void(\hyperlink{structPlayer}{Player}, std\-::vector$<$ std\-::string $>$)$>$ method)
 \begin{DoxyCompactList}\small\item\em Register chat command. \end{DoxyCompactList}\item 
-void \hyperlink{classPlugin_ac475431998fe527b1c9671acbb6dbe1d}{Register\-Admin\-Command} (std\-::string name, std\-::string description, std\-::function$<$ void(\hyperlink{structPlayer}{Player}, std\-::vector$<$ std\-::string $>$)$>$ method)
+void \hyperlink{classPlugin_a902bac6667b0654c1211227f7a52d0fd}{Register\-Admin\-Command} (std\-::string name, std\-::string description, Permission access, std\-::function$<$ void(\hyperlink{structPlayer}{Player}, std\-::vector$<$ std\-::string $>$)$>$ method)
 \begin{DoxyCompactList}\small\item\em Register admin chat command. \end{DoxyCompactList}\item 
 void \hyperlink{classPlugin_a3c053c7efbed950494f16fc91228e7fd}{Register\-Callable\-Method} (std\-::string name, std\-::function$<$ boost\-::any(boost\-::any)$>$ method)
 \begin{DoxyCompactList}\small\item\em Register callable method. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -144,15 +144,16 @@ void \hyperlink{classPlugin_a3c053c7efbed950494f16fc91228e7fd}{Register\-Callabl
 \hyperlink{classPlugin}{Plugin} interface, inherited by all plugins. 
 
 \subsection{Member Function Documentation}
-\hypertarget{classPlugin_ac475431998fe527b1c9671acbb6dbe1d}{\index{Plugin@{Plugin}!Register\-Admin\-Command@{Register\-Admin\-Command}}
+\hypertarget{classPlugin_a902bac6667b0654c1211227f7a52d0fd}{\index{Plugin@{Plugin}!Register\-Admin\-Command@{Register\-Admin\-Command}}
 \index{Register\-Admin\-Command@{Register\-Admin\-Command}!Plugin@{Plugin}}
 \subsubsection[{Register\-Admin\-Command}]{\setlength{\rightskip}{0pt plus 5cm}void Plugin\-::\-Register\-Admin\-Command (
 \begin{DoxyParamCaption}
 \item[{std\-::string}]{name, }
 \item[{std\-::string}]{description, }
+\item[{Permission}]{access, }
 \item[{std\-::function$<$ void({\bf Player}, std\-::vector$<$ std\-::string $>$)$>$}]{method}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classPlugin_ac475431998fe527b1c9671acbb6dbe1d}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classPlugin_a902bac6667b0654c1211227f7a52d0fd}
 
 
 Register admin chat command. 
@@ -162,6 +163,8 @@ Register admin chat command.
 {\em name} & Admin chat command name. \\
 \hline
 {\em description} & Command description. \\
+\hline
+{\em access} & Permission level required to use command. \\
 \hline
 {\em method} & Method to be called for the command. \\
 \hline

@@ -98,8 +98,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8264fac119580102b33819fea6c78ef0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCallBackManager.html#a8264fac119580102b33819fea6c78ef0">CallBackManager</a> (<a class="el" href="classGbxRemote.html">GbxRemote</a> *serverPtr, <a class="el" href="classCommandManager.html">CommandManager</a> *commandManagerPtr, <a class="el" href="classEventManager.html">EventManager</a> *eventManagerPtr, sql::Connection *databasePtr, std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt; *playerList, <a class="el" href="classMapList.html">MapList</a> *mapList, <a class="el" href="structServerInfo.html">ServerInfo</a> *serverInfoPtr)</td></tr>
-<tr class="separator:a8264fac119580102b33819fea6c78ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaba17921501672d9c0eb321a05b81519"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCallBackManager.html#aaba17921501672d9c0eb321a05b81519">CallBackManager</a> (<a class="el" href="classConfig.html">Config</a> *configPtr, <a class="el" href="classGbxRemote.html">GbxRemote</a> *serverPtr, <a class="el" href="classCommandManager.html">CommandManager</a> *commandManagerPtr, <a class="el" href="classEventManager.html">EventManager</a> *eventManagerPtr, sql::Connection *databasePtr, std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt; *playerList, <a class="el" href="classMapList.html">MapList</a> *mapList, <a class="el" href="structServerInfo.html">ServerInfo</a> *serverInfoPtr)</td></tr>
+<tr class="separator:aaba17921501672d9c0eb321a05b81519"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8af5305f668aae4c563e7039b99015c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCallBackManager.html#a8af5305f668aae4c563e7039b99015c2">HandleCallBack</a> (std::string methodName, std::vector&lt; <a class="el" href="classGbxResponseParameter.html">GbxResponseParameter</a> &gt; parameters)</td></tr>
 <tr class="memdesc:a8af5305f668aae4c563e7039b99015c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles callback (updates lists, calls plugin functions).  <a href="#a8af5305f668aae4c563e7039b99015c2">More...</a><br/></td></tr>
 <tr class="separator:a8af5305f668aae4c563e7039b99015c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -157,6 +157,10 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr class="memitem:a5779cf963d6431e2641d5145d6b31154"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5779cf963d6431e2641d5145d6b31154"></a>
+<a class="el" href="classConfig.html">Config</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCallBackManager.html#a5779cf963d6431e2641d5145d6b31154">config</a></td></tr>
+<tr class="memdesc:a5779cf963d6431e2641d5145d6b31154"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the configuration. <br/></td></tr>
+<tr class="separator:a5779cf963d6431e2641d5145d6b31154"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27cccc154989a36eb80580f3d9f69c51"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a27cccc154989a36eb80580f3d9f69c51"></a>
 <a class="el" href="classGbxRemote.html">GbxRemote</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCallBackManager.html#a27cccc154989a36eb80580f3d9f69c51">server</a></td></tr>
 <tr class="memdesc:a27cccc154989a36eb80580f3d9f69c51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the serverconnection. <br/></td></tr>
@@ -189,13 +193,19 @@ std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt;
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Handles callbacks from the server. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a8264fac119580102b33819fea6c78ef0"></a>
+<a class="anchor" id="aaba17921501672d9c0eb321a05b81519"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">CallBackManager::CallBackManager </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="classConfig.html">Config</a> *&#160;</td>
+          <td class="paramname"><em>configPtr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype"><a class="el" href="classGbxRemote.html">GbxRemote</a> *&#160;</td>
           <td class="paramname"><em>serverPtr</em>, </td>
         </tr>
@@ -246,6 +256,7 @@ std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt;
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>Replace pointer to <a class="el" href="classGbxRemote.html" title="Handles communication with the ManiaPlanet server. ">GbxRemote</a> with pointer to <a class="el" href="classMethods.html" title="Contains all server methods and returns usable data types. ">Methods</a>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">configPtr</td><td>Pointer to the <a class="el" href="classConfig.html" title="Reads and stores configuration information. ">Config</a>. </td></tr>
     <tr><td class="paramname">serverPtr</td><td>Pointer to the <a class="el" href="classGbxRemote.html" title="Handles communication with the ManiaPlanet server. ">GbxRemote</a>. </td></tr>
     <tr><td class="paramname">commandManagerPtr</td><td>Pointer to the <a class="el" href="classCommandManager.html" title="Manages the chat commands. ">CommandManager</a>. </td></tr>
     <tr><td class="paramname">eventManagerPtr</td><td>Pointer to the <a class="el" href="classEventManager.html" title="Handles events (callbacks) from server to plugins. ">EventManager</a>. </td></tr>
@@ -710,7 +721,7 @@ std::map&lt; std::string, <a class="el" href="structPlayer.html">Player</a> &gt;
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 26 2017 11:46:04 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jan 26 2017 14:24:59 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

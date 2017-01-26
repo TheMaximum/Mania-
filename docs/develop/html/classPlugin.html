@@ -243,9 +243,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a9e5eea29a253fc24459011c55cb0a8ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlugin.html#a9e5eea29a253fc24459011c55cb0a8ff">RegisterCommand</a> (std::string name, std::string description, std::function&lt; void(<a class="el" href="structPlayer.html">Player</a>, std::vector&lt; std::string &gt;)&gt; method)</td></tr>
 <tr class="memdesc:a9e5eea29a253fc24459011c55cb0a8ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register chat command.  <a href="#a9e5eea29a253fc24459011c55cb0a8ff">More...</a><br/></td></tr>
 <tr class="separator:a9e5eea29a253fc24459011c55cb0a8ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac475431998fe527b1c9671acbb6dbe1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlugin.html#ac475431998fe527b1c9671acbb6dbe1d">RegisterAdminCommand</a> (std::string name, std::string description, std::function&lt; void(<a class="el" href="structPlayer.html">Player</a>, std::vector&lt; std::string &gt;)&gt; method)</td></tr>
-<tr class="memdesc:ac475431998fe527b1c9671acbb6dbe1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register admin chat command.  <a href="#ac475431998fe527b1c9671acbb6dbe1d">More...</a><br/></td></tr>
-<tr class="separator:ac475431998fe527b1c9671acbb6dbe1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a902bac6667b0654c1211227f7a52d0fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlugin.html#a902bac6667b0654c1211227f7a52d0fd">RegisterAdminCommand</a> (std::string name, std::string description, Permission access, std::function&lt; void(<a class="el" href="structPlayer.html">Player</a>, std::vector&lt; std::string &gt;)&gt; method)</td></tr>
+<tr class="memdesc:a902bac6667b0654c1211227f7a52d0fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register admin chat command.  <a href="#a902bac6667b0654c1211227f7a52d0fd">More...</a><br/></td></tr>
+<tr class="separator:a902bac6667b0654c1211227f7a52d0fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c053c7efbed950494f16fc91228e7fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlugin.html#a3c053c7efbed950494f16fc91228e7fd">RegisterCallableMethod</a> (std::string name, std::function&lt; boost::any(boost::any)&gt; method)</td></tr>
 <tr class="memdesc:a3c053c7efbed950494f16fc91228e7fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register callable method.  <a href="#a3c053c7efbed950494f16fc91228e7fd">More...</a><br/></td></tr>
 <tr class="separator:a3c053c7efbed950494f16fc91228e7fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -260,7 +260,7 @@ Protected Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classPlugin.html" title="Plugin interface, inherited by all plugins. ">Plugin</a> interface, inherited by all plugins. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ac475431998fe527b1c9671acbb6dbe1d"></a>
+<a class="anchor" id="a902bac6667b0654c1211227f7a52d0fd"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -278,6 +278,12 @@ Protected Attributes</h2></td></tr>
           <td></td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>description</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Permission&#160;</td>
+          <td class="paramname"><em>access</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -303,6 +309,7 @@ Protected Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">name</td><td>Admin chat command name. </td></tr>
     <tr><td class="paramname">description</td><td>Command description. </td></tr>
+    <tr><td class="paramname">access</td><td>Permission level required to use command. </td></tr>
     <tr><td class="paramname">method</td><td>Method to be called for the command. </td></tr>
   </table>
   </dd>
@@ -441,7 +448,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 26 2017 11:46:04 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jan 26 2017 14:25:00 for Mania++ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
