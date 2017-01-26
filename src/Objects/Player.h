@@ -2,6 +2,7 @@
 #define PLAYER_H_
 
 #include "../GbxRemote/Response/GbxResponse.h"
+#include "../Permissions/Permission.h"
 
 //* Player
 /**
@@ -13,6 +14,7 @@ struct Player
     int Id = 0;                          /**< \brief Player identifier (on database). */
     std::vector<int> CurrentCheckpoints; /**< \brief Checkpoint passes on current try. */
     time_t JoinedAt;                     /**< \brief The timestamp on join. */
+    Permission AccessLevel = User;       /**< \brief Permission level. */
 
     // === Basic information ===
     int PlayerId;                        /**< \brief Player identifier (on server). */

@@ -31,7 +31,7 @@ PluginManager::PluginManager(Config* configPtr,
     pluginCmd.PluginAuthor = "TheM";
     pluginCmd.Command = "plugins";
     pluginCmd.Description = "Displays a list of loaded plugins.";
-    pluginCmd.AdminCommand = true;
+    pluginCmd.Access = Permission::Master;
     pluginCmd.Method = [this](Player player, std::vector<std::string> parameters) { DisplayPluginList(player); };
     commands->RegisterCommand(pluginCmd);
 }

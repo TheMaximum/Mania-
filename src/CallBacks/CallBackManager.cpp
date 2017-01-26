@@ -1,7 +1,8 @@
 #include "CallBackManager.h"
 
-CallBackManager::CallBackManager(GbxRemote* serverPtr, CommandManager* commandManagerPtr, EventManager* eventManagerPtr, sql::Connection* databasePtr, std::map<std::string, Player>* playerList, MapList* mapList, ServerInfo* serverInfoPtr)
+CallBackManager::CallBackManager(Config* configPtr, GbxRemote* serverPtr, CommandManager* commandManagerPtr, EventManager* eventManagerPtr, sql::Connection* databasePtr, std::map<std::string, Player>* playerList, MapList* mapList, ServerInfo* serverInfoPtr)
 {
+    config = configPtr;
     server = serverPtr;
     commands = commandManagerPtr;
     events = eventManagerPtr;
@@ -156,6 +157,10 @@ void CallBackManager::HandlePlayerConnect(std::vector<GbxResponseParameter> para
     }
 
     newPlayer.JoinedAt = std::time(0);
+    if(config->Permissions->find(newPlayer.Login) != config->Permissions->end())
+    {
+        newPlayer.AccessLevel = config->Permissions->at(newPlayer.Login);
+    }
     players->insert(std::pair<std::string, Player>(newPlayer.Login, newPlayer));
 
     std::cout << "Player connected: " << newPlayer.Login << " (# players: " << players->size() << ")" << std::endl;

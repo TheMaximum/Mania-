@@ -1,8 +1,9 @@
 #include "CommandManager.h"
 
-CommandManager::CommandManager(UIManager* uiManager)
+CommandManager::CommandManager(UIManager* uiManager, Methods* methodsPtr)
 {
     ui = uiManager;
+    methods = methodsPtr;
     commands = std::map<std::string, ChatCommand>();
     adminCommands = std::map<std::string, ChatCommand>();
 
@@ -12,12 +13,11 @@ CommandManager::CommandManager(UIManager* uiManager)
     help.PluginAuthor = "TheM";
     help.Command = "help";
     help.Description = "Displays a list of chat commands.";
-    help.AdminCommand = false;
     help.Method = [this](Player player, std::vector<std::string> parameters) { DisplayCommandList(player, false); };
     RegisterCommand(help);
 
     help.Description = "Displays a list of admin chat commands.";
-    help.AdminCommand = true;
+    help.Access = Permission::Operator;
     help.Method = [this](Player player, std::vector<std::string> parameters) { DisplayCommandList(player, true); };
     RegisterCommand(help);
 }
@@ -43,7 +43,7 @@ int CommandManager::RegisterCommands(std::string plugin, std::map<std::string, C
 
 void CommandManager::RegisterCommand(ChatCommand command)
 {
-    if(command.AdminCommand)
+    if(command.Access != Permission::User)
     {
         if(adminCommands.find(command.Command) == adminCommands.end())
         {
@@ -99,19 +99,26 @@ void CommandManager::HandleCommand(Player player, std::string text)
     {
         std::string adminCommand = parameters.at(0);
         parameters.erase(parameters.begin());
-        std::cout << "'" << player.Login << "' called admin-command '" << adminCommand << "' with # parameters: " << parameters.size() << std::endl;
+        std::cout << "[ COMMAND  ] '" << player.Login << "' called admin-command '" << adminCommand << "' with # parameters: " << parameters.size() << std::endl;
 
         std::map<std::string, ChatCommand>::iterator commandIt = adminCommands.find(adminCommand);
         if(commandIt != adminCommands.end())
         {
             ChatCommand command = commandIt->second;
-            std::function<void(Player, std::vector<std::string>)> commandMethod = command.Method;
-            commandMethod(player, parameters);
+            if(player.AccessLevel >= command.Access)
+            {
+                std::function<void(Player, std::vector<std::string>)> commandMethod = command.Method;
+                commandMethod(player, parameters);
+            }
+            else
+            {
+                methods->ChatSendServerMessageToLogin("$f00$iYou do not have the permissions to do that!", player.Login);
+            }
         }
     }
     else
     {
-        std::cout << "'" << player.Login << "' called command '" << command << "' with # parameters: " << parameters.size() << std::endl;
+        std::cout << "[ COMMAND  ] '" << player.Login << "' called command '" << command << "' with # parameters: " << parameters.size() << std::endl;
 
         std::map<std::string, ChatCommand>::iterator commandIt = commands.find(command);
         if(commandIt != commands.end())

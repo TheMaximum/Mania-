@@ -17,6 +17,12 @@ config:
     program:
         checkVersion: true
 
+permissions:
+    masters:
+        - 'A_TM_LOGIN'
+    admins:
+    operators:
+
 plugins:
     - 'HelloGoodbye'
     - 'Jukebox':

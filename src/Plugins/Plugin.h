@@ -120,16 +120,17 @@ protected:
      *
      * \param name        Admin chat command name.
      * \param description Command description.
+     * \param access      Permission level required to use command.
      * \param method      Method to be called for the command.
      */
-    void RegisterAdminCommand(std::string name, std::string description, std::function<void(Player, std::vector<std::string>)> method)
+    void RegisterAdminCommand(std::string name, std::string description, Permission access, std::function<void(Player, std::vector<std::string>)> method)
     {
         ChatCommand command = ChatCommand();
         command.PluginVersion = Version;
         command.PluginAuthor = Author;
         command.Command = name;
         command.Description = description;
-        command.AdminCommand = true;
+        command.Access = access;
         command.Method = method;
         AdminCommands.insert(std::pair<std::string, ChatCommand>(name, command));
     }

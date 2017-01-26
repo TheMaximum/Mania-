@@ -24,7 +24,7 @@ ManiaPP::ManiaPP()
     methods = new Methods(server, players, serverInfo);
     ui = new UIManager(methods, events, players);
 
-    commands = new CommandManager(ui);
+    commands = new CommandManager(ui, methods);
 }
 
 ManiaPP::~ManiaPP()
@@ -113,7 +113,7 @@ bool ManiaPP::ConnectToServer()
 
                                     plugins = new PluginManager(config, methods, commands, players, maps, database, ui, serverInfo);
                                     plugins->SetEventManager(events);
-                                    callbacks = new CallBackManager(server, commands, events, database, players, maps, serverInfo);
+                                    callbacks = new CallBackManager(config, server, commands, events, database, players, maps, serverInfo);
 
                                     plugins->LoadPlugins();
                                     plugins->InitializePlugins();
@@ -305,6 +305,10 @@ void ManiaPP::retrievePlayerList()
                 }
 
                 newPlayer.JoinedAt = now;
+                if(config->Permissions->find(newPlayer.Login) != config->Permissions->end())
+                {
+                    newPlayer.AccessLevel = config->Permissions->at(newPlayer.Login);
+                }
                 players->insert(std::pair<std::string, Player>(newPlayer.Login, newPlayer));
             }
         }
