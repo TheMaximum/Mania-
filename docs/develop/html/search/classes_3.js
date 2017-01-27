@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['formatting',['Formatting',['../classFormatting.html',1,'']]]
+  ['entryval',['EntryVal',['../structEntryVal.html',1,'']]],
+  ['eventmanager',['EventManager',['../classEventManager.html',1,'']]],
+  ['extendedcallvoteratio',['ExtendedCallVoteRatio',['../structExtendedCallVoteRatio.html',1,'']]]
 ];

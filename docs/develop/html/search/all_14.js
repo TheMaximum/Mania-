@@ -1,8 +1,14 @@
 var searchData=
 [
-  ['value',['Value',['../structEntryVal.html#a77a7420daaf63bf984aa0c4c0f2032a7',1,'EntryVal']]],
-  ['version',['Version',['../structServerVersion.html#ad831aec6294689dbe7f4d581795aa1ef',1,'ServerVersion::Version()'],['../structServerInfo.html#acf8188cc44967ffa44dc23e14dfe0cd7',1,'ServerInfo::Version()'],['../classPlugin.html#a8e332303a494988d2444589ac21c3414',1,'Plugin::Version()'],['../structPluginInfo.html#a0bb7d324b76fa63166f7c53492971e86',1,'PluginInfo::Version()']]],
-  ['versionchecker',['VersionChecker',['../classVersionChecker.html',1,'']]],
-  ['versioncompare',['VersionCompare',['../classVersionCompare.html',1,'']]],
-  ['voteupdated',['VoteUpdated',['../classPlugin.html#a869a88fc900c8a54c2607774cfa44dbc',1,'Plugin']]]
+  ['ui',['UI',['../structController.html#a6ff277dc9e9749bf599b240f93d413b9',1,'Controller::UI()'],['../classCommandManager.html#a650cf2a7fc83f6ba193e3ba095c9bc33',1,'CommandManager::ui()'],['../classManiaPP.html#a961146c15f25d19ffc78b3e79ad4abac',1,'ManiaPP::ui()']]],
+  ['uid',['UId',['../structMap.html#aeeaed7abcf77e119d5f59c0918183834',1,'Map']]],
+  ['uiframe',['UIFrame',['../structUIFrame.html',1,'']]],
+  ['uilist',['UIList',['../structUIList.html',1,'']]],
+  ['uimanager',['UIManager',['../classUIManager.html',1,'UIManager'],['../classUIManager.html#a4d6da1c7d4c1100402fb9384080c3cb2',1,'UIManager::UIManager()']]],
+  ['unban',['UnBan',['../classMethods.html#a2458e854e2c5c36bf394d64bd97b13d1',1,'Methods']]],
+  ['unblacklist',['UnBlackList',['../classMethods.html#a2bd013b4b9f849c58024dfbd1eaa1177',1,'Methods']]],
+  ['unignore',['UnIgnore',['../classMethods.html#a582b57b07d3f792e5e4802c12a9955f1',1,'Methods']]],
+  ['updateadditional',['UpdateAdditional',['../structMap.html#ab745d995eff65ccbd114f3c43a7cbf1f',1,'Map']]],
+  ['uploadrate',['UploadRate',['../structPlayer.html#a28f9a31a54ac8ea0658a6b234523b29d',1,'Player']]],
+  ['username',['username',['../structServerConfig.html#ad2216f13f13acbe6bfd61f275bc72e27',1,'ServerConfig::username()'],['../structDatabaseConfig.html#adefbb4c4d1e1754918dcad998d9e9164',1,'DatabaseConfig::username()']]]
 ];

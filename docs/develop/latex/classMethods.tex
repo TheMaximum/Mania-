@@ -183,7 +183,55 @@ std\-::string \hyperlink{classMethods_a517117fc33a06aaef7d1147635e93af4}{Get\-Gh
 \begin{DoxyCompactList}\small\item\em Retrieve the location of the maps directory. \end{DoxyCompactList}\item 
 \hypertarget{classMethods_a839ff140e340c0be9411fce27763e96e}{std\-::string \hyperlink{classMethods_a839ff140e340c0be9411fce27763e96e}{Get\-Skins\-Directory} ()}\label{classMethods_a839ff140e340c0be9411fce27763e96e}
 
-\begin{DoxyCompactList}\small\item\em Retrieve the location of the skins directory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Retrieve the location of the skins directory. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_a5800041dd330d6445f4e6eee54af3d1f}{Kick} (std\-::string login, std\-::string message=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Kick a player from the server. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_a0208506814a9baa623a21010f78a1883}{Ban} (std\-::string login, std\-::string message=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Ban a player from the server. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_abe95a1c58dfd4d2d51f7e02eb4b924f0}{Ban\-And\-Black\-List} (std\-::string login, std\-::string message, bool save=false)
+\begin{DoxyCompactList}\small\item\em Ban and blacklist a player from the server. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_a2458e854e2c5c36bf394d64bd97b13d1}{Un\-Ban} (std\-::string login)
+\begin{DoxyCompactList}\small\item\em Unban a player from the server. \end{DoxyCompactList}\item 
+\hypertarget{classMethods_a261546083d5e43f8424cd16ee23c545e}{bool \hyperlink{classMethods_a261546083d5e43f8424cd16ee23c545e}{Clean\-Ban\-List} ()}\label{classMethods_a261546083d5e43f8424cd16ee23c545e}
+
+\begin{DoxyCompactList}\small\item\em Clear the banlist. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{structBannedPlayer}{Banned\-Player} $>$ \hyperlink{classMethods_a43634e1c8520fbfdc35afab75e0246b4}{Get\-Ban\-List} (int amount, int index)
+\begin{DoxyCompactList}\small\item\em Retrieve the banlist. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_ab2f841668adfe9c23381abb39924b6d2}{Black\-List} (std\-::string login)
+\begin{DoxyCompactList}\small\item\em Blacklist a player from the server. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_a2bd013b4b9f849c58024dfbd1eaa1177}{Un\-Black\-List} (std\-::string login)
+\begin{DoxyCompactList}\small\item\em Unblacklist a player from the server. \end{DoxyCompactList}\item 
+\hypertarget{classMethods_a9bbf360ff5b4c296de9687feb3289c7b}{bool \hyperlink{classMethods_a9bbf360ff5b4c296de9687feb3289c7b}{Clean\-Black\-List} ()}\label{classMethods_a9bbf360ff5b4c296de9687feb3289c7b}
+
+\begin{DoxyCompactList}\small\item\em Clear the blacklist. \end{DoxyCompactList}\item 
+std\-::vector$<$ std\-::string $>$ \hyperlink{classMethods_a4994686b0a146cd57b01347003d9e390}{Get\-Black\-List} (int amount, int index)
+\begin{DoxyCompactList}\small\item\em Retrieve the blacklist. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_a965d56efe5c04be5f6422b4a84aa195a}{Load\-Black\-List} (std\-::string file)
+\begin{DoxyCompactList}\small\item\em Load the blacklist to the server. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_abcdea5712f34f19770fac20b593b2d38}{Save\-Black\-List} (std\-::string file)
+\begin{DoxyCompactList}\small\item\em Save the blacklist from the server. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_a020ab9aff0adf1b84b39a7db777796e8}{Add\-Guest} (std\-::string login)
+\begin{DoxyCompactList}\small\item\em Add a player as guest on the server. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_a19a4b24a569324b9a6b53d931fca9346}{Remove\-Guest} (std\-::string login)
+\begin{DoxyCompactList}\small\item\em Remove a player as guest on the server. \end{DoxyCompactList}\item 
+\hypertarget{classMethods_a6ec365a29cdbf37eb9c1f685e79ae2d0}{bool \hyperlink{classMethods_a6ec365a29cdbf37eb9c1f685e79ae2d0}{Clean\-Guest\-List} ()}\label{classMethods_a6ec365a29cdbf37eb9c1f685e79ae2d0}
+
+\begin{DoxyCompactList}\small\item\em Clear the guestlist. \end{DoxyCompactList}\item 
+std\-::vector$<$ std\-::string $>$ \hyperlink{classMethods_a82c204736e55479609c3f045f619aae0}{Get\-Guest\-List} (int amount, int index)
+\begin{DoxyCompactList}\small\item\em Retrieve the guestlist. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_a2688fe2a81de0b0816802607808f644d}{Load\-Guest\-List} (std\-::string file)
+\begin{DoxyCompactList}\small\item\em Load the guestlist to the server. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_a3e73ac8d0dfee50e3db46fcf93ac7fd2}{Save\-Guest\-List} (std\-::string file)
+\begin{DoxyCompactList}\small\item\em Save the guestlist from the server. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_a23af00f26e1ab1d97f42d527d8c41006}{Ignore} (std\-::string login)
+\begin{DoxyCompactList}\small\item\em Ignore a player on the server. \end{DoxyCompactList}\item 
+bool \hyperlink{classMethods_a582b57b07d3f792e5e4802c12a9955f1}{Un\-Ignore} (std\-::string login)
+\begin{DoxyCompactList}\small\item\em Unignore a player on the server. \end{DoxyCompactList}\item 
+\hypertarget{classMethods_a8394052dffa0a9ff24d94916386ed1ab}{bool \hyperlink{classMethods_a8394052dffa0a9ff24d94916386ed1ab}{Clean\-Ignore\-List} ()}\label{classMethods_a8394052dffa0a9ff24d94916386ed1ab}
+
+\begin{DoxyCompactList}\small\item\em Clear the ignorelist. \end{DoxyCompactList}\item 
+std\-::vector$<$ std\-::string $>$ \hyperlink{classMethods_a0ce37b940aa81f733a831776d420d4a2}{Get\-Ignore\-List} (int amount, int index)
+\begin{DoxyCompactList}\small\item\em Retrieve the ignorelist. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -227,6 +275,22 @@ Constructor with link to server connection.
 
 
 \subsection{Member Function Documentation}
+\hypertarget{classMethods_a020ab9aff0adf1b84b39a7db777796e8}{\index{Methods@{Methods}!Add\-Guest@{Add\-Guest}}
+\index{Add\-Guest@{Add\-Guest}!Methods@{Methods}}
+\subsubsection[{Add\-Guest}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Add\-Guest (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{login}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a020ab9aff0adf1b84b39a7db777796e8}
+
+
+Add a player as guest on the server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em login} & \hyperlink{structPlayer}{Player} login. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classMethods_aac29fafb7a9f491c64c24a5e24754f71}{\index{Methods@{Methods}!Add\-Map@{Add\-Map}}
 \index{Add\-Map@{Add\-Map}!Methods@{Methods}}
 \subsubsection[{Add\-Map}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Add\-Map (
@@ -276,6 +340,63 @@ Authenticates with the server. Returns whether authentication was successful.
 {\em username} & Server username (f.\-e. Super\-Admin). \\
 \hline
 {\em password} & Server password. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_a0208506814a9baa623a21010f78a1883}{\index{Methods@{Methods}!Ban@{Ban}}
+\index{Ban@{Ban}!Methods@{Methods}}
+\subsubsection[{Ban}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Ban (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{login, }
+\item[{std\-::string}]{message = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a0208506814a9baa623a21010f78a1883}
+
+
+Ban a player from the server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em login} & \hyperlink{structPlayer}{Player} login. \\
+\hline
+{\em message} & Optional ban message. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_abe95a1c58dfd4d2d51f7e02eb4b924f0}{\index{Methods@{Methods}!Ban\-And\-Black\-List@{Ban\-And\-Black\-List}}
+\index{Ban\-And\-Black\-List@{Ban\-And\-Black\-List}!Methods@{Methods}}
+\subsubsection[{Ban\-And\-Black\-List}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Ban\-And\-Black\-List (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{login, }
+\item[{std\-::string}]{message, }
+\item[{bool}]{save = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classMethods_abe95a1c58dfd4d2d51f7e02eb4b924f0}
+
+
+Ban and blacklist a player from the server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em login} & \hyperlink{structPlayer}{Player} login. \\
+\hline
+{\em message} & Ban message. \\
+\hline
+{\em save} & Save the blacklist. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_ab2f841668adfe9c23381abb39924b6d2}{\index{Methods@{Methods}!Black\-List@{Black\-List}}
+\index{Black\-List@{Black\-List}!Methods@{Methods}}
+\subsubsection[{Black\-List}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Black\-List (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{login}
+\end{DoxyParamCaption}
+)}}\label{classMethods_ab2f841668adfe9c23381abb39924b6d2}
+
+
+Blacklist a player from the server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em login} & \hyperlink{structPlayer}{Player} login. \\
 \hline
 \end{DoxyParams}
 \hypertarget{classMethods_a189f5fa70efe5470c45ecaa6d9824c0c}{\index{Methods@{Methods}!Call\-Vote@{Call\-Vote}}
@@ -497,6 +618,44 @@ Enables/disables callbacks. Returns whether change was successful.
 {\em enable} & Enable (true) or disable (false). \\
 \hline
 \end{DoxyParams}
+\hypertarget{classMethods_a43634e1c8520fbfdc35afab75e0246b4}{\index{Methods@{Methods}!Get\-Ban\-List@{Get\-Ban\-List}}
+\index{Get\-Ban\-List@{Get\-Ban\-List}!Methods@{Methods}}
+\subsubsection[{Get\-Ban\-List}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf Banned\-Player} $>$ Methods\-::\-Get\-Ban\-List (
+\begin{DoxyParamCaption}
+\item[{int}]{amount, }
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a43634e1c8520fbfdc35afab75e0246b4}
+
+
+Retrieve the banlist. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Amount of players from the banlist to be retrieved. \\
+\hline
+{\em index} & Starting index. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_a4994686b0a146cd57b01347003d9e390}{\index{Methods@{Methods}!Get\-Black\-List@{Get\-Black\-List}}
+\index{Get\-Black\-List@{Get\-Black\-List}!Methods@{Methods}}
+\subsubsection[{Get\-Black\-List}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ std\-::string $>$ Methods\-::\-Get\-Black\-List (
+\begin{DoxyParamCaption}
+\item[{int}]{amount, }
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a4994686b0a146cd57b01347003d9e390}
+
+
+Retrieve the blacklist. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Amount of players from the blacklist to be retrieved. \\
+\hline
+{\em index} & Starting index. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classMethods_a4c8c8afabea84f839091c2a5a79b477d}{\index{Methods@{Methods}!Get\-Current\-Map\-Info@{Get\-Current\-Map\-Info}}
 \index{Get\-Current\-Map\-Info@{Get\-Current\-Map\-Info}!Methods@{Methods}}
 \subsubsection[{Get\-Current\-Map\-Info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Map} Methods\-::\-Get\-Current\-Map\-Info (
@@ -525,6 +684,44 @@ Retrieve ghost replay by player login.
 {\em login} & \hyperlink{structPlayer}{Player} login. \\
 \hline
 {\em file\-Name} & File to store the replay in. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_a82c204736e55479609c3f045f619aae0}{\index{Methods@{Methods}!Get\-Guest\-List@{Get\-Guest\-List}}
+\index{Get\-Guest\-List@{Get\-Guest\-List}!Methods@{Methods}}
+\subsubsection[{Get\-Guest\-List}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ std\-::string $>$ Methods\-::\-Get\-Guest\-List (
+\begin{DoxyParamCaption}
+\item[{int}]{amount, }
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a82c204736e55479609c3f045f619aae0}
+
+
+Retrieve the guestlist. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Amount of players from the guestlist to be retrieved. \\
+\hline
+{\em index} & Starting index. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_a0ce37b940aa81f733a831776d420d4a2}{\index{Methods@{Methods}!Get\-Ignore\-List@{Get\-Ignore\-List}}
+\index{Get\-Ignore\-List@{Get\-Ignore\-List}!Methods@{Methods}}
+\subsubsection[{Get\-Ignore\-List}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ std\-::string $>$ Methods\-::\-Get\-Ignore\-List (
+\begin{DoxyParamCaption}
+\item[{int}]{amount, }
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a0ce37b940aa81f733a831776d420d4a2}
+
+
+Retrieve the ignorelist. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Amount of players from the ignorelist to be retrieved. \\
+\hline
+{\em index} & Starting index. \\
 \hline
 \end{DoxyParams}
 \hypertarget{classMethods_a3a64508bc62765212bcf0d032b4f47ac}{\index{Methods@{Methods}!Get\-Map\-Info@{Get\-Map\-Info}}
@@ -611,7 +808,23 @@ Retrieve validation replay by player login.
 
 Returns server version information. 
 
-Returns empty struct if no information could be retrieved. \hypertarget{classMethods_a02eb54d04e3ea1970e5312f0aa061d28}{\index{Methods@{Methods}!Insert\-Map@{Insert\-Map}}
+Returns empty struct if no information could be retrieved. \hypertarget{classMethods_a23af00f26e1ab1d97f42d527d8c41006}{\index{Methods@{Methods}!Ignore@{Ignore}}
+\index{Ignore@{Ignore}!Methods@{Methods}}
+\subsubsection[{Ignore}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Ignore (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{login}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a23af00f26e1ab1d97f42d527d8c41006}
+
+
+Ignore a player on the server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em login} & \hyperlink{structPlayer}{Player} login. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_a02eb54d04e3ea1970e5312f0aa061d28}{\index{Methods@{Methods}!Insert\-Map@{Insert\-Map}}
 \index{Insert\-Map@{Insert\-Map}!Methods@{Methods}}
 \subsubsection[{Insert\-Map}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Insert\-Map (
 \begin{DoxyParamCaption}
@@ -643,6 +856,25 @@ Insert the list of maps with the specified filenames after the current map.
 {\em file\-Names} & List of map filenames. \\
 \hline
 \end{DoxyParams}
+\hypertarget{classMethods_a5800041dd330d6445f4e6eee54af3d1f}{\index{Methods@{Methods}!Kick@{Kick}}
+\index{Kick@{Kick}!Methods@{Methods}}
+\subsubsection[{Kick}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Kick (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{login, }
+\item[{std\-::string}]{message = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a5800041dd330d6445f4e6eee54af3d1f}
+
+
+Kick a player from the server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em login} & \hyperlink{structPlayer}{Player} login. \\
+\hline
+{\em message} & Optional kick message. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classMethods_a7833782aa64f9072db30809552f83eef}{\index{Methods@{Methods}!List\-Methods@{List\-Methods}}
 \index{List\-Methods@{List\-Methods}!Methods@{Methods}}
 \subsubsection[{List\-Methods}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ std\-::string $>$ Methods\-::\-List\-Methods (
@@ -654,7 +886,55 @@ Insert the list of maps with the specified filenames after the current map.
 
 Returns list of available server methods. 
 
-Returns empty vector if no methods could be retrieved. \hypertarget{classMethods_a1fd515d35dfc0007303ff75c4f50a678}{\index{Methods@{Methods}!Remove\-Map@{Remove\-Map}}
+Returns empty vector if no methods could be retrieved. \hypertarget{classMethods_a965d56efe5c04be5f6422b4a84aa195a}{\index{Methods@{Methods}!Load\-Black\-List@{Load\-Black\-List}}
+\index{Load\-Black\-List@{Load\-Black\-List}!Methods@{Methods}}
+\subsubsection[{Load\-Black\-List}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Load\-Black\-List (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{file}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a965d56efe5c04be5f6422b4a84aa195a}
+
+
+Load the blacklist to the server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & Filename to load the blacklist from. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_a2688fe2a81de0b0816802607808f644d}{\index{Methods@{Methods}!Load\-Guest\-List@{Load\-Guest\-List}}
+\index{Load\-Guest\-List@{Load\-Guest\-List}!Methods@{Methods}}
+\subsubsection[{Load\-Guest\-List}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Load\-Guest\-List (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{file}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a2688fe2a81de0b0816802607808f644d}
+
+
+Load the guestlist to the server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & Filename to load the guestlist from. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_a19a4b24a569324b9a6b53d931fca9346}{\index{Methods@{Methods}!Remove\-Guest@{Remove\-Guest}}
+\index{Remove\-Guest@{Remove\-Guest}!Methods@{Methods}}
+\subsubsection[{Remove\-Guest}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Remove\-Guest (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{login}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a19a4b24a569324b9a6b53d931fca9346}
+
+
+Remove a player as guest on the server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em login} & \hyperlink{structPlayer}{Player} login. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_a1fd515d35dfc0007303ff75c4f50a678}{\index{Methods@{Methods}!Remove\-Map@{Remove\-Map}}
 \index{Remove\-Map@{Remove\-Map}!Methods@{Methods}}
 \subsubsection[{Remove\-Map}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Remove\-Map (
 \begin{DoxyParamCaption}
@@ -684,6 +964,38 @@ Remove the list of maps with the specified filenames from the current selection.
 
 \begin{DoxyParams}{Parameters}
 {\em file\-Names} & List of map filenames. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_abcdea5712f34f19770fac20b593b2d38}{\index{Methods@{Methods}!Save\-Black\-List@{Save\-Black\-List}}
+\index{Save\-Black\-List@{Save\-Black\-List}!Methods@{Methods}}
+\subsubsection[{Save\-Black\-List}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Save\-Black\-List (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{file}
+\end{DoxyParamCaption}
+)}}\label{classMethods_abcdea5712f34f19770fac20b593b2d38}
+
+
+Save the blacklist from the server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & Filename to save the blacklist to. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_a3e73ac8d0dfee50e3db46fcf93ac7fd2}{\index{Methods@{Methods}!Save\-Guest\-List@{Save\-Guest\-List}}
+\index{Save\-Guest\-List@{Save\-Guest\-List}!Methods@{Methods}}
+\subsubsection[{Save\-Guest\-List}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Save\-Guest\-List (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{file}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a3e73ac8d0dfee50e3db46fcf93ac7fd2}
+
+
+Save the guestlist from the server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & Filename to save the guestlist to. \\
 \hline
 \end{DoxyParams}
 \hypertarget{classMethods_ab04b0cae6a36c8202cabf1cd9ebc1a38}{\index{Methods@{Methods}!Send\-Display\-Manialink\-Page@{Send\-Display\-Manialink\-Page}}
@@ -1050,6 +1362,54 @@ Sets the spectator password.
 {\em password} & New spectator password. \\
 \hline
 \end{DoxyParams}
+\hypertarget{classMethods_a2458e854e2c5c36bf394d64bd97b13d1}{\index{Methods@{Methods}!Un\-Ban@{Un\-Ban}}
+\index{Un\-Ban@{Un\-Ban}!Methods@{Methods}}
+\subsubsection[{Un\-Ban}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Un\-Ban (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{login}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a2458e854e2c5c36bf394d64bd97b13d1}
+
+
+Unban a player from the server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em login} & \hyperlink{structPlayer}{Player} login. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_a2bd013b4b9f849c58024dfbd1eaa1177}{\index{Methods@{Methods}!Un\-Black\-List@{Un\-Black\-List}}
+\index{Un\-Black\-List@{Un\-Black\-List}!Methods@{Methods}}
+\subsubsection[{Un\-Black\-List}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Un\-Black\-List (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{login}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a2bd013b4b9f849c58024dfbd1eaa1177}
+
+
+Unblacklist a player from the server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em login} & \hyperlink{structPlayer}{Player} login. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMethods_a582b57b07d3f792e5e4802c12a9955f1}{\index{Methods@{Methods}!Un\-Ignore@{Un\-Ignore}}
+\index{Un\-Ignore@{Un\-Ignore}!Methods@{Methods}}
+\subsubsection[{Un\-Ignore}]{\setlength{\rightskip}{0pt plus 5cm}bool Methods\-::\-Un\-Ignore (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{login}
+\end{DoxyParamCaption}
+)}}\label{classMethods_a582b57b07d3f792e5e4802c12a9955f1}
+
+
+Unignore a player on the server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em login} & \hyperlink{structPlayer}{Player} login. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
@@ -1058,6 +1418,7 @@ The documentation for this class was generated from the following files\-:\begin
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Maps/Map\-Actions.\-cpp\item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Maps/Map\-Info.\-cpp\item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/Methods.\-cpp\item 
+/home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Players/Player\-Actions.\-cpp\item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Call\-Vote.\-cpp\item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Chat.\-cpp\item 
 /home/travis/build/\-The\-Maximum/mania-\/pp/src/\-Methods/\-Server/Directories.\-cpp\item 

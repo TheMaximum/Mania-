@@ -5,7 +5,7 @@ var searchData=
   ['id',['Id',['../structMap.html#af718266059246076a208fa4323e187f4',1,'Map::Id()'],['../structPlayer.html#a27cd3355e96dc3842d4f91b859673e0c',1,'Player::Id()'],['../structUIList.html#ae551552dcaae820fe1cc6413c61c8ecc',1,'UIList::Id()']]],
   ['info',['Info',['../structController.html#ac1dffd87d30ad42bdbcf294544f474da',1,'Controller']]],
   ['instance',['Instance',['../structPluginInfo.html#ad14fb40088de7f45f5cb6c9985124c78',1,'PluginInfo']]],
-  ['ipaddress',['IPAddress',['../structPlayer.html#a388787a2218deeaf7318f0fbbd3f5d0f',1,'Player']]],
+  ['ipaddress',['IPAddress',['../structBannedPlayer.html#aabfb374d31b035f99be879642f737f9d',1,'BannedPlayer::IPAddress()'],['../structPlayer.html#a388787a2218deeaf7318f0fbbd3f5d0f',1,'Player::IPAddress()']]],
   ['isdedicated',['IsDedicated',['../structSystemInfo.html#acd6f3cbafcee73181edc08dd3eae1599',1,'SystemInfo']]],
   ['isinofficialmode',['IsInOfficialMode',['../structPlayer.html#a76e8b5298bcbe9ff694b6ed490ef7ca5',1,'Player']]],
   ['isserver',['IsServer',['../structSystemInfo.html#a13101b94bbf077f73232fa7c374def87',1,'SystemInfo']]],

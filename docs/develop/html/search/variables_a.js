@@ -6,5 +6,5 @@ var searchData=
   ['laprace',['LapRace',['../structMap.html#a0b88590574688965bf8b7442f3792000',1,'Map']]],
   ['list',['List',['../classMapList.html#a02d028e30cdaf96170b885237b34990c',1,'MapList']]],
   ['logging',['logging',['../classManiaPP.html#aa4cea090301bdf0bf652ad377e7b01c0',1,'ManiaPP']]],
-  ['login',['Login',['../structPlayer.html#a38398818d43e186aa982a788744792d7',1,'Player']]]
+  ['login',['Login',['../structBannedPlayer.html#a2b4a31c68b935a9c3745c3e535daacc4',1,'BannedPlayer::Login()'],['../structPlayer.html#a38398818d43e186aa982a788744792d7',1,'Player::Login()']]]
 ];

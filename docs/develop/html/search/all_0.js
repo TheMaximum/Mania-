@@ -4,6 +4,7 @@ var searchData=
   ['accesslevel',['AccessLevel',['../structPlayer.html#aa83b14faf5c02be9dd38c6963b245916',1,'Player']]],
   ['account',['Account',['../structServerInfo.html#a4ce1342cad06ef64048b368ce0dec575',1,'ServerInfo']]],
   ['actions',['Actions',['../structUIList.html#aefc14c8b15732c34a99a27330e1f7691',1,'UIList']]],
+  ['addguest',['AddGuest',['../classMethods.html#a020ab9aff0adf1b84b39a7db777796e8',1,'Methods']]],
   ['additionals',['Additionals',['../structMap.html#a82524d649b33d280a49773629345b0bc',1,'Map']]],
   ['addmap',['AddMap',['../classMethods.html#aac29fafb7a9f491c64c24a5e24754f71',1,'Methods']]],
   ['addmaplist',['AddMapList',['../classMethods.html#a0b136a5a395e4a50c9f667d9fa495b08',1,'Methods']]],

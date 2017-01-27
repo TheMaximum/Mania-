@@ -3,6 +3,7 @@ var searchData=
   ['callbacks',['callbacks',['../classManiaPP.html#af468d4b6eea93fd836950551eb7d3a01',1,'ManiaPP']]],
   ['callerlogin',['CallerLogin',['../structCurrentCallVote.html#a113ae06f4c42a20fa09107d480579379',1,'CurrentCallVote']]],
   ['checkversion',['checkVersion',['../structProgramConfig.html#a81805b60cf29dde387be6672e4dd49aa',1,'ProgramConfig']]],
+  ['clientname',['ClientName',['../structBannedPlayer.html#ac0b15d071d1f4987b28e17ca4734048a',1,'BannedPlayer']]],
   ['clientversion',['ClientVersion',['../structPlayer.html#ae275137c2fe689552ebde4d3b1e5f4ff',1,'Player']]],
   ['closeonclick',['CloseOnClick',['../structUIFrame.html#a96c8c5d8129595ee565039a84a928ae7',1,'UIFrame']]],
   ['clublink',['ClubLink',['../structPlayer.html#af6acb51bf731275d73aa6cc55a8255a8',1,'Player']]],
