@@ -46,8 +46,8 @@ In this case, ```OnPlayerConnect``` is the method you want to get called when a 
 Adding chat commands also only works in the constructor and is simliar to subscribing on events. You can call the ```RegisterCommand``` (for /xxxx) and ```RegisterAdminCommand``` (for /admin xxxx) methods:
 
 ```C++
-RegisterCommand("test", [this](Player player, std::vector<std::string> parameters) { OnTestCommand(player, parameters); });
-RegisterAdminCommand("test", [this](Player player, std::vector<std::string> parameters) { OnAdminTestCommand(player, parameters); });
+RegisterCommand("test", "This is just a testing command.", [this](Player player, std::vector<std::string> parameters) { OnTestCommand(player, parameters); });
+RegisterAdminCommand("test", "This is just an admin testing command.", Permission::Operator, [this](Player player, std::vector<std::string> parameters) { OnAdminTestCommand(player, parameters); });
 ```
 
 The parameters you receive in your chat-function are the remaining words (so seperated by spaces) in the chat line.
