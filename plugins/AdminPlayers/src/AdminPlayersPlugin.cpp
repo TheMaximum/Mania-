@@ -29,9 +29,9 @@ AdminPlayersPlugin::AdminPlayersPlugin()
     RegisterAdminCommand("loadguestlist", "Load the guestlist from a file.", Permission::Admin, [this](Player player, std::vector<std::string> parameters) { ChatLoadGuestList(player, parameters); });
     RegisterAdminCommand("saveguestlist", "Save the guestlist to a file.", Permission::Admin, [this](Player player, std::vector<std::string> parameters) { ChatSaveGuestList(player, parameters); });
 
-    RegisterAdminCommand("ignore", "Ignores a player from the server.", Permission::Admin, [this](Player player, std::vector<std::string> parameters) { ChatIgnore(player, parameters); });
-    RegisterAdminCommand("unignore", "Un-ignores a player from the server.", Permission::Admin, [this](Player player, std::vector<std::string> parameters) { ChatUnIgnore(player, parameters); });
-    RegisterAdminCommand("showignorelist", "Display the current ignored players.", Permission::Admin, [this](Player player, std::vector<std::string> parameters) { ChatShowIgnoreList(player); });
+    RegisterAdminCommand("ignore", "Ignores a player from the server.", Permission::Operator, [this](Player player, std::vector<std::string> parameters) { ChatIgnore(player, parameters); });
+    RegisterAdminCommand("unignore", "Un-ignores a player from the server.", Permission::Operator, [this](Player player, std::vector<std::string> parameters) { ChatUnIgnore(player, parameters); });
+    RegisterAdminCommand("showignorelist", "Display the current ignored players.", Permission::Operator, [this](Player player, std::vector<std::string> parameters) { ChatShowIgnoreList(player); });
     RegisterAdminCommand("clearignorelist", "Clear the current ignored players.", Permission::Admin, [this](Player player, std::vector<std::string> parameters) { ChatClearIgnoreList(player); });
 }
 
