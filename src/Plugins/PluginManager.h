@@ -61,6 +61,13 @@ public:
      */
     void InitializePlugins();
 
+    /*!
+     * \brief Displays the plugin list to the admin.
+     *
+     * \param player  List requester.
+     */
+    void DisplayPluginList(Player player);
+
 private:
     /*!
      * \brief Disovers plugin (.so) files in the specified folder.

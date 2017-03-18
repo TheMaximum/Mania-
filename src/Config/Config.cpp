@@ -22,6 +22,7 @@ void Config::parseConfig()
     YAML::Node database = config["config"]["database"];
     YAML::Node program = config["config"]["program"];
     YAML::Node plugins = config["plugins"];
+    YAML::Node permissions = config["permissions"];
     std::cout << "[    \033[0;32mOK\033[0;0m" << std::endl;
 
     Server = new ServerConfig();
@@ -40,7 +41,34 @@ void Config::parseConfig()
     Program = new ProgramConfig();
     Program->checkVersion = program["checkVersion"].as<bool>();
 
+    parsePermissions(permissions);
     parsePlugins(plugins);
+}
+
+void Config::parsePermissions(YAML::Node permissions)
+{
+    Permissions = new std::map<std::string, Permission>();
+    
+    YAML::Node masters = permissions["masters"];
+    for(int masterId = 0; masterId < masters.size(); masterId++)
+    {
+        YAML::Node master = masters[masterId];
+        Permissions->insert(std::pair<std::string, Permission>(master.as<std::string>(), Permission::Master));
+    }
+
+    YAML::Node admins = permissions["admins"];
+    for(int adminId = 0; adminId < admins.size(); adminId++)
+    {
+        YAML::Node admin = admins[adminId];
+        Permissions->insert(std::pair<std::string, Permission>(admin.as<std::string>(), Permission::Admin));
+    }
+
+    YAML::Node operators = permissions["operators"];
+    for(int operatorId = 0; operatorId < operators.size(); operatorId++)
+    {
+        YAML::Node operatorUser = operators[operatorId];
+        Permissions->insert(std::pair<std::string, Permission>(operatorUser.as<std::string>(), Permission::Operator));
+    }
 }
 
 void Config::parsePlugins(YAML::Node plugins)

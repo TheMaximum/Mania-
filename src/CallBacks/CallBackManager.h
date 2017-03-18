@@ -12,6 +12,7 @@
 #include <cppconn/statement.h>
 #include <cppconn/prepared_statement.h>
 
+#include "../Config/Config.h"
 #include "../Commands/CommandManager.h"
 #include "../Events/EventManager.h"
 #include "../GbxRemote/GbxRemote.h"
@@ -36,6 +37,7 @@ public:
      *
      * \todo Replace pointer to GbxRemote with pointer to Methods.
      *
+     * \param configPtr         Pointer to the Config.
      * \param serverPtr         Pointer to the GbxRemote.
      * \param commandManagerPtr Pointer to the CommandManager.
      * \param eventManagerPtr   Pointer to the EventManager.
@@ -44,7 +46,7 @@ public:
      * \param mapList           Pointer to maplist.
      * \param serverInfoPtr     Pointer to server information.
      */
-    CallBackManager(GbxRemote* serverPtr, CommandManager* commandManagerPtr, EventManager* eventManagerPtr, sql::Connection* databasePtr, std::map<std::string, Player>* playerList, MapList* mapList, ServerInfo* serverInfoPtr);
+    CallBackManager(Config* configPtr, GbxRemote* serverPtr, CommandManager* commandManagerPtr, EventManager* eventManagerPtr, sql::Connection* databasePtr, std::map<std::string, Player>* playerList, MapList* mapList, ServerInfo* serverInfoPtr);
 
     /*!
      * \brief Handles callback (updates lists, calls plugin functions).
@@ -174,6 +176,7 @@ public:
     void HandleVoteUpdated(std::vector<GbxResponseParameter> parameters);
 
 private:
+    Config* config;                         /**< \brief Contains the configuration. */
     GbxRemote* server;                      /**< \brief Contains the serverconnection. */
     CommandManager* commands;               /**< \brief Contains the command manager. */
     EventManager* events;                   /**< \brief Contains the event manager. */

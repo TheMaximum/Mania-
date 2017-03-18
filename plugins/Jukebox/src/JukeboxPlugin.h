@@ -24,7 +24,9 @@ public:
     void Init();
     void OnEndMatch();
     void ChatJukebox(Player player, std::vector<std::string> parameters);
+    void ChatClear(Player player);
     void JukeboxMap(Player player, std::string answer);
+    void DisplayJukeboxList(Player player);
     void DisplayMapList(Player player, std::vector<std::string> parameters);
 
 private:

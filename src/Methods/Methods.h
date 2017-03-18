@@ -509,39 +509,166 @@ public:
      */
     std::string GetSkinsDirectory();
 
-    /*bool SendOpenLinkToLogin(std::string login, std::string link, int linkType);
-
+    /*!
+     * \brief Kick a player from the server.
+     *
+     * \param login     Player login.
+     * \param message   Optional kick message.
+     */
     bool Kick(std::string login, std::string message = "");
+
+    /*!
+     * \brief Ban a player from the server.
+     *
+     * \param login     Player login.
+     * \param message   Optional ban message.
+     */
     bool Ban(std::string login, std::string message = "");
+
+    /*!
+     * \brief Ban and blacklist a player from the server.
+     *
+     * \param login     Player login.
+     * \param message   Ban message.
+     * \param save      Save the blacklist.
+     */
     bool BanAndBlackList(std::string login, std::string message, bool save = false);
+
+    /*!
+     * \brief Unban a player from the server.
+     *
+     * \param login     Player login.
+     */
     bool UnBan(std::string login);
+
+    /*!
+     * \brief Clear the banlist.
+     */
     bool CleanBanList();
-    //array[struct{Login,ClientName,IPAddress}] GetBanList(int amount, int index);
+
+    /*!
+     * \brief Retrieve the banlist.
+     *
+     * \param amount    Amount of players from the banlist to be retrieved.
+     * \param index     Starting index.
+     */
+    std::vector<BannedPlayer> GetBanList(int amount, int index);
+
+    /*!
+     * \brief Blacklist a player from the server.
+     *
+     * \param login     Player login.
+     */
     bool BlackList(std::string login);
+
+    /*!
+     * \brief Unblacklist a player from the server.
+     *
+     * \param login     Player login.
+     */
     bool UnBlackList(std::string login);
+
+    /*!
+     * \brief Clear the blacklist.
+     */
     bool CleanBlackList();
-    //array[struct{Login}] GetBlackList(int amount, int index);
+
+    /*!
+     * \brief Retrieve the blacklist.
+     *
+     * \param amount    Amount of players from the blacklist to be retrieved.
+     * \param index     Starting index.
+     */
+    std::vector<std::string> GetBlackList(int amount, int index);
+
+    /*!
+     * \brief Load the blacklist to the server.
+     *
+     * \param file      Filename to load the blacklist from.
+     */
     bool LoadBlackList(std::string file);
+
+    /*!
+     * \brief Save the blacklist from the server.
+     *
+     * \param file      Filename to save the blacklist to.
+     */
     bool SaveBlackList(std::string file);
 
+    /*!
+     * \brief Add a player as guest on the server.
+     *
+     * \param login     Player login.
+     */
     bool AddGuest(std::string login);
+
+    /*!
+     * \brief Remove a player as guest on the server.
+     *
+     * \param login     Player login.
+     */
     bool RemoveGuest(std::string login);
+
+    /*!
+     * \brief Clear the guestlist.
+     */
     bool CleanGuestList();
-    //array[struct{Login}] GetGuestList(int amount, int index);
+
+    /*!
+     * \brief Retrieve the guestlist.
+     *
+     * \param amount    Amount of players from the guestlist to be retrieved.
+     * \param index     Starting index.
+     */
+    std::vector<std::string> GetGuestList(int amount, int index);
+
+    /*!
+     * \brief Load the guestlist to the server.
+     *
+     * \param file      Filename to load the guestlist from.
+     */
     bool LoadGuestList(std::string file);
+
+    /*!
+     * \brief Save the guestlist from the server.
+     *
+     * \param file      Filename to save the guestlist to.
+     */
     bool SaveGuestList(std::string file);
 
-    bool SetBuddyNotification(std::string login, bool enabled);
+    /*!
+     * \brief Ignore a player on the server.
+     *
+     * \param login     Player login.
+     */
+    bool Ignore(std::string login);
+
+    /*!
+     * \brief Unignore a player on the server.
+     *
+     * \param login     Player login.
+     */
+    bool UnIgnore(std::string login);
+
+    /*!
+     * \brief Clear the ignorelist.
+     */
+    bool CleanIgnoreList();
+
+    /*!
+     * \brief Retrieve the ignorelist.
+     *
+     * \param amount    Amount of players from the ignorelist to be retrieved.
+     * \param index     Starting index.
+     */
+    std::vector<std::string> GetIgnoreList(int amount, int index);
+
+    /*bool SetBuddyNotification(std::string login, bool enabled);
     bool GetBuddyNotification(std::string login);
 
     // bool WriteFile(std::string file, base64 content);
 
     bool Echo(std::string value1, std::string value2);
-
-    bool Ignore(std::string login);
-    bool UnIgnore(std::string login);
-    bool CleanIgnoreList();
-    // array[struct{Login}] GetIgnoreList(int amount, int index);
 
     int Pay(std::string login, int cost, std::string label);
     int SendBill(std::string loginFrom, int cost, std::string label, std::string loginTo = "");
@@ -566,11 +693,7 @@ public:
     bool EnableP2PDownload(bool enable);
     bool IsP2PDownload();
     bool AllowMapDownload(bool allow);
-    bool IsMapDownloadAllowed();
-
-    std::string GameDataDirectory();
-    std::string GetMapsDirectory();
-    std::string GetSkinsDirectory();*/
+    bool IsMapDownloadAllowed(); */
 
 private:
     GbxRemote* server;                         /**< \brief Pointer to GbxRemote. */

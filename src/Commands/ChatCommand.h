@@ -2,6 +2,7 @@
 #define CHATCOMMAND_H_
 
 #include "../Objects/Player.h"
+#include "../Permissions/Permission.h"
 
 //* ChatCommand
 /**
@@ -9,13 +10,13 @@
  */
 struct ChatCommand
 {
-    std::string PluginName;    /**< \brief Name of the plugin the command belongs to. */
-    std::string PluginVersion; /**< \brief Version of the plugin the command belongs to. */
-    std::string PluginAuthor;  /**< \brief Author of the plugin the command belongs to. */
+    std::string PluginName;     /**< \brief Name of the plugin the command belongs to. */
+    std::string PluginVersion;  /**< \brief Version of the plugin the command belongs to. */
+    std::string PluginAuthor;   /**< \brief Author of the plugin the command belongs to. */
 
-    std::string Command;       /**< \brief Chat command. */
-    std::string Description;   /**< \brief Chat command description. */
-    bool AdminCommand = false; /**< \brief Is it an admin command? */
+    std::string Command;        /**< \brief Chat command. */
+    std::string Description;    /**< \brief Chat command description. */
+    Permission Access = User;   /**< \brief Command access level. */
     std::function<void(Player, std::vector<std::string>)> Method; /**< \brief Chat command method. */
 };
 

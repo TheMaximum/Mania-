@@ -6,6 +6,8 @@
 
 #include <yaml-cpp/yaml.h>
 
+#include "../Permissions/Permission.h"
+
 //* ServerConfig
 /**
  * \brief Server connection settings.
@@ -80,13 +82,21 @@ public:
     ServerConfig* Server;               /**< \brief Instance of ServerConfig which stores the server connection settings. */
     DatabaseConfig* Database;           /**< \brief Instance of DatabaseConfig which stores the database server connection settings. */
     ProgramConfig* Program;             /**< \brief Instance of ProgramConfig which stores program settings. */
-    std::map<std::string, PluginConfig>* Plugins; /**< \brief List of plugin configurations. */
+    std::map<std::string, PluginConfig>* Plugins;   /**< \brief List of plugin configurations. */
+    std::map<std::string, Permission>* Permissions; /**< \brief Overview of permissions from configuration. */
 
 private:
     /*!
      * \brief Reads information from YAML file and puts this in configuration struct(s).
      */
     void parseConfig();
+
+    /*!
+     * \brief Reads permissions from YAML file.
+     *
+     * \param permissions YAML node that contains the permissions.
+     */
+    void parsePermissions(YAML::Node permissions);
 
     /*!
      * \brief Reads plugin information from YAML file.

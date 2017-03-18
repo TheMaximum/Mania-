@@ -115,4 +115,15 @@ struct CurrentNextValue
     int NextValue;    /**< \brief Next value of the setting. */
 };
 
+//* BannedPlayer
+/**
+ * \brief Struct with information of banned player.
+ */
+struct BannedPlayer
+{
+    std::string Login;      /**< \brief Player login. */
+    std::string ClientName; /**< \brief Player client name. */
+    std::string IPAddress;  /**< \brief Player IP address. */
+};
+
 #endif // METHODS_STRUCTS_H_
