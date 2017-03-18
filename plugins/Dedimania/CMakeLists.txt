@@ -17,7 +17,7 @@ include_directories("${PROJECT_SOURCE_DIR}/../../../src")
 
 file(GLOB_RECURSE SOURCES src/*.cpp)
 
-find_package(Boost REQUIRED COMPONENTS iostreams)
+find_package(Boost REQUIRED COMPONENTS iostreams regex)
 include_directories(${Boost_INCLUDE_DIR})
 
 add_library(DedimaniaPlugin SHARED ${SOURCES} ../../lib/base64/base64.cpp)
